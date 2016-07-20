@@ -2,7 +2,7 @@
 //  WBSBlogUITests.m
 //  WBSBlogUITests
 //
-//  Created by Weberson on 16/7/19.
+//  Created by Weberson on 16/7/1.
 //  Copyright © 2016年 Weberson. All rights reserved.
 //
 
