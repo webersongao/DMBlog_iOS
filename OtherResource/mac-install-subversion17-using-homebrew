@@ -1,0 +1,26 @@
+        tangyouweideMac-mini:~ terwer$ brew search subversion
+        homebrew/versions/subversion16    	subversion
+        homebrew/versions/subversion17
+        tangyouweideMac-mini:~ terwer$ brew install homebrew/versions/subversion17
+        ==> Tapping homebrew/versions
+        Cloning into '/usr/local/Library/Taps/homebrew/homebrew-versions'...
+        remote: Counting objects: 245, done.
+        remote: Compressing objects: 100% (232/232), done.
+        remote: Total 245 (delta 23), reused 112 (delta 13), pack-reused 0
+        Receiving objects: 100% (245/245), 260.09 KiB | 0 bytes/s, done.
+        Resolving deltas: 100% (23/23), done.
+        Checking connectivity... done.
+        Tapped 242 formulae (266 files, 1.5M)
+        ==> Installing subversion17 from homebrew/homebrew-versions
+        ==> Downloading https://homebrew.bintray.com/bottles-versions/subversion17-1.7.1
+        ######################################################################## 100.0%
+        ==> Pouring subversion17-1.7.14_1.yosemite.bottle.2.tar.gz
+        ==> Caveats
+        svntools have been installed to:
+          /usr/local/opt/subversion17/libexec
+        
+        Bash completion has been installed to:
+          /usr/local/etc/bash_completion.d
+        ==> Summary
+        🍺  /usr/local/Cellar/subversion17/1.7.14_1: 281 files, 9.3M
+        tangyouweideMac-mini:~ terwer$ 

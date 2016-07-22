@@ -1,0 +1,15 @@
+//
+//  ToMarkdown.h
+//  ToMarkdown
+//
+//  Created by Atsushi Nagase on 11/2/13.
+//  Copyright (c) 2013 LittleApps Inc. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+
+@interface ToMarkdown : NSObject
+
++ (NSString *)fromHTML:(NSString *)htmlString;
+
+@end
