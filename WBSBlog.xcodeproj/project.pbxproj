@@ -470,25 +470,28 @@
 		4EF152F51D3F2DF400D28265 /* user-background@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF1525C1D3F2DF400D28265 /* user-background@3x.png */; };
 		4EF152F61D3F2E0900D28265 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EF151B31D3F29DA00D28265 /* libiconv.tbd */; };
 		4EF152FB1D3F3A1A00D28265 /* WBSSettingsPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF152FA1D3F3A1A00D28265 /* WBSSettingsPage.m */; };
-		4EF153231D3F3C3500D28265 /* NSString+StringByStrippingHTML.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF152FF1D3F3C3500D28265 /* NSString+StringByStrippingHTML.m */; };
-		4EF153241D3F3C3500D28265 /* TGBlogJsonApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF153011D3F3C3500D28265 /* TGBlogJsonApi.m */; };
-		4EF153251D3F3C3500D28265 /* TGCategory+TGCategoryFromDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF153031D3F3C3500D28265 /* TGCategory+TGCategoryFromDictionary.m */; };
-		4EF153261D3F3C3500D28265 /* TGCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF153051D3F3C3500D28265 /* TGCategory.m */; };
-		4EF153271D3F3C3500D28265 /* TGComment+TGCommentFromDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF153071D3F3C3500D28265 /* TGComment+TGCommentFromDictionary.m */; };
-		4EF153281D3F3C3500D28265 /* TGComment.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF153091D3F3C3500D28265 /* TGComment.m */; };
-		4EF1532B1D3F3C3500D28265 /* TGPost+SDPostFromDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF153111D3F3C3500D28265 /* TGPost+SDPostFromDictionary.m */; };
-		4EF1532C1D3F3C3500D28265 /* TGPost.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF153131D3F3C3500D28265 /* TGPost.m */; };
-		4EF1532D1D3F3C3500D28265 /* TGTag+TGTagFromDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF153151D3F3C3500D28265 /* TGTag+TGTagFromDictionary.m */; };
-		4EF1532E1D3F3C3500D28265 /* TGTag.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF153171D3F3C3500D28265 /* TGTag.m */; };
-		4EF153301D3F3C3500D28265 /* TGMetaWeblogAuthApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF1531D1D3F3C3500D28265 /* TGMetaWeblogAuthApi.m */; };
-		4EF153311D3F3C3500D28265 /* TGMetaWeblogXMLRPCApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF153201D3F3C3500D28265 /* TGMetaWeblogXMLRPCApi.m */; };
-		4EF153321D3F3C3500D28265 /* TGXMLRPCApiClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF153221D3F3C3500D28265 /* TGXMLRPCApiClient.m */; };
 		4EF5E3FE1D41C847002B6AFF /* WBSLoginNavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF5E3FB1D41C847002B6AFF /* WBSLoginNavViewController.m */; };
 		4EF5E3FF1D41C847002B6AFF /* WBSLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF5E3FD1D41C847002B6AFF /* WBSLoginViewController.m */; };
 		4EF5E4021D41C870002B6AFF /* WBSSelectBlogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF5E4011D41C870002B6AFF /* WBSSelectBlogViewController.m */; };
 		4EF5E4111D41EC67002B6AFF /* WBSLogin.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EF5E4101D41EC67002B6AFF /* WBSLogin.xib */; };
 		4EF5E4141D41FD23002B6AFF /* login-Close.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF5E4121D41FD23002B6AFF /* login-Close.png */; };
 		4EF5E4151D41FD23002B6AFF /* login-open.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF5E4131D41FD23002B6AFF /* login-open.png */; };
+		4EF5E43C1D4230DA002B6AFF /* NSString+StringByStrippingHTML.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF5E4181D4230DA002B6AFF /* NSString+StringByStrippingHTML.m */; };
+		4EF5E43D1D4230DA002B6AFF /* TGBlogJsonApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF5E41A1D4230DA002B6AFF /* TGBlogJsonApi.m */; };
+		4EF5E43E1D4230DA002B6AFF /* TGCategory+TGCategoryFromDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF5E41C1D4230DA002B6AFF /* TGCategory+TGCategoryFromDictionary.m */; };
+		4EF5E43F1D4230DA002B6AFF /* TGCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF5E41E1D4230DA002B6AFF /* TGCategory.m */; };
+		4EF5E4401D4230DA002B6AFF /* TGComment+TGCommentFromDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF5E4201D4230DA002B6AFF /* TGComment+TGCommentFromDictionary.m */; };
+		4EF5E4411D4230DA002B6AFF /* TGComment.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF5E4221D4230DA002B6AFF /* TGComment.m */; };
+		4EF5E4421D4230DA002B6AFF /* TGMetaWeblogAuthApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF5E4251D4230DA002B6AFF /* TGMetaWeblogAuthApi.m */; };
+		4EF5E4431D4230DA002B6AFF /* TGMetaWeblogXMLRPCApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF5E4281D4230DA002B6AFF /* TGMetaWeblogXMLRPCApi.m */; };
+		4EF5E4441D4230DA002B6AFF /* TGPost+SDPostFromDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF5E42A1D4230DA002B6AFF /* TGPost+SDPostFromDictionary.m */; };
+		4EF5E4451D4230DA002B6AFF /* TGPost.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF5E42C1D4230DA002B6AFF /* TGPost.m */; };
+		4EF5E4461D4230DA002B6AFF /* TGTag+TGTagFromDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF5E42E1D4230DA002B6AFF /* TGTag+TGTagFromDictionary.m */; };
+		4EF5E4471D4230DA002B6AFF /* TGTag.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF5E4301D4230DA002B6AFF /* TGTag.m */; };
+		4EF5E4481D4230DA002B6AFF /* TGXMLRPCApiClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF5E4321D4230DA002B6AFF /* TGXMLRPCApiClient.m */; };
+		4EF5E4491D4230DA002B6AFF /* TGMetaWeblogAuthApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF5E4361D4230DA002B6AFF /* TGMetaWeblogAuthApi.m */; };
+		4EF5E44A1D4230DA002B6AFF /* TGMetaWeblogXMLRPCApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF5E4391D4230DA002B6AFF /* TGMetaWeblogXMLRPCApi.m */; };
+		4EF5E44B1D4230DA002B6AFF /* TGXMLRPCApiClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF5E43B1D4230DA002B6AFF /* TGXMLRPCApiClient.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1270,34 +1273,6 @@
 		4EF1525C1D3F2DF400D28265 /* user-background@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "user-background@3x.png"; sourceTree = "<group>"; };
 		4EF152F91D3F3A1A00D28265 /* WBSSettingsPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSSettingsPage.h; sourceTree = "<group>"; };
 		4EF152FA1D3F3A1A00D28265 /* WBSSettingsPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBSSettingsPage.m; sourceTree = "<group>"; };
-		4EF152FE1D3F3C3500D28265 /* NSString+StringByStrippingHTML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+StringByStrippingHTML.h"; sourceTree = "<group>"; };
-		4EF152FF1D3F3C3500D28265 /* NSString+StringByStrippingHTML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+StringByStrippingHTML.m"; sourceTree = "<group>"; };
-		4EF153001D3F3C3500D28265 /* TGBlogJsonApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGBlogJsonApi.h; sourceTree = "<group>"; };
-		4EF153011D3F3C3500D28265 /* TGBlogJsonApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGBlogJsonApi.m; sourceTree = "<group>"; };
-		4EF153021D3F3C3500D28265 /* TGCategory+TGCategoryFromDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TGCategory+TGCategoryFromDictionary.h"; sourceTree = "<group>"; };
-		4EF153031D3F3C3500D28265 /* TGCategory+TGCategoryFromDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TGCategory+TGCategoryFromDictionary.m"; sourceTree = "<group>"; };
-		4EF153041D3F3C3500D28265 /* TGCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGCategory.h; sourceTree = "<group>"; };
-		4EF153051D3F3C3500D28265 /* TGCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGCategory.m; sourceTree = "<group>"; };
-		4EF153061D3F3C3500D28265 /* TGComment+TGCommentFromDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TGComment+TGCommentFromDictionary.h"; sourceTree = "<group>"; };
-		4EF153071D3F3C3500D28265 /* TGComment+TGCommentFromDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TGComment+TGCommentFromDictionary.m"; sourceTree = "<group>"; };
-		4EF153081D3F3C3500D28265 /* TGComment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGComment.h; sourceTree = "<group>"; };
-		4EF153091D3F3C3500D28265 /* TGComment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGComment.m; sourceTree = "<group>"; };
-		4EF153101D3F3C3500D28265 /* TGPost+SDPostFromDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TGPost+SDPostFromDictionary.h"; sourceTree = "<group>"; };
-		4EF153111D3F3C3500D28265 /* TGPost+SDPostFromDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TGPost+SDPostFromDictionary.m"; sourceTree = "<group>"; };
-		4EF153121D3F3C3500D28265 /* TGPost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGPost.h; sourceTree = "<group>"; };
-		4EF153131D3F3C3500D28265 /* TGPost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGPost.m; sourceTree = "<group>"; };
-		4EF153141D3F3C3500D28265 /* TGTag+TGTagFromDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TGTag+TGTagFromDictionary.h"; sourceTree = "<group>"; };
-		4EF153151D3F3C3500D28265 /* TGTag+TGTagFromDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TGTag+TGTagFromDictionary.m"; sourceTree = "<group>"; };
-		4EF153161D3F3C3500D28265 /* TGTag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGTag.h; sourceTree = "<group>"; };
-		4EF153171D3F3C3500D28265 /* TGTag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGTag.m; sourceTree = "<group>"; };
-		4EF1531B1D3F3C3500D28265 /* TGMetaWeblogApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGMetaWeblogApi.h; sourceTree = "<group>"; };
-		4EF1531C1D3F3C3500D28265 /* TGMetaWeblogAuthApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGMetaWeblogAuthApi.h; sourceTree = "<group>"; };
-		4EF1531D1D3F3C3500D28265 /* TGMetaWeblogAuthApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGMetaWeblogAuthApi.m; sourceTree = "<group>"; };
-		4EF1531E1D3F3C3500D28265 /* TGMetaWeblogBaseApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGMetaWeblogBaseApi.h; sourceTree = "<group>"; };
-		4EF1531F1D3F3C3500D28265 /* TGMetaWeblogXMLRPCApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGMetaWeblogXMLRPCApi.h; sourceTree = "<group>"; };
-		4EF153201D3F3C3500D28265 /* TGMetaWeblogXMLRPCApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGMetaWeblogXMLRPCApi.m; sourceTree = "<group>"; };
-		4EF153211D3F3C3500D28265 /* TGXMLRPCApiClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGXMLRPCApiClient.h; sourceTree = "<group>"; };
-		4EF153221D3F3C3500D28265 /* TGXMLRPCApiClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGXMLRPCApiClient.m; sourceTree = "<group>"; };
 		4EF5E3FA1D41C847002B6AFF /* WBSLoginNavViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSLoginNavViewController.h; sourceTree = "<group>"; };
 		4EF5E3FB1D41C847002B6AFF /* WBSLoginNavViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBSLoginNavViewController.m; sourceTree = "<group>"; };
 		4EF5E3FC1D41C847002B6AFF /* WBSLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSLoginViewController.h; sourceTree = "<group>"; };
@@ -1307,6 +1282,42 @@
 		4EF5E4101D41EC67002B6AFF /* WBSLogin.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WBSLogin.xib; sourceTree = "<group>"; };
 		4EF5E4121D41FD23002B6AFF /* login-Close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "login-Close.png"; path = "WBSBlog/Images/login-Close.png"; sourceTree = SOURCE_ROOT; };
 		4EF5E4131D41FD23002B6AFF /* login-open.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "login-open.png"; path = "WBSBlog/Images/login-open.png"; sourceTree = SOURCE_ROOT; };
+		4EF5E4171D4230DA002B6AFF /* NSString+StringByStrippingHTML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+StringByStrippingHTML.h"; sourceTree = "<group>"; };
+		4EF5E4181D4230DA002B6AFF /* NSString+StringByStrippingHTML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+StringByStrippingHTML.m"; sourceTree = "<group>"; };
+		4EF5E4191D4230DA002B6AFF /* TGBlogJsonApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGBlogJsonApi.h; sourceTree = "<group>"; };
+		4EF5E41A1D4230DA002B6AFF /* TGBlogJsonApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGBlogJsonApi.m; sourceTree = "<group>"; };
+		4EF5E41B1D4230DA002B6AFF /* TGCategory+TGCategoryFromDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TGCategory+TGCategoryFromDictionary.h"; sourceTree = "<group>"; };
+		4EF5E41C1D4230DA002B6AFF /* TGCategory+TGCategoryFromDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TGCategory+TGCategoryFromDictionary.m"; sourceTree = "<group>"; };
+		4EF5E41D1D4230DA002B6AFF /* TGCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGCategory.h; sourceTree = "<group>"; };
+		4EF5E41E1D4230DA002B6AFF /* TGCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGCategory.m; sourceTree = "<group>"; };
+		4EF5E41F1D4230DA002B6AFF /* TGComment+TGCommentFromDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TGComment+TGCommentFromDictionary.h"; sourceTree = "<group>"; };
+		4EF5E4201D4230DA002B6AFF /* TGComment+TGCommentFromDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TGComment+TGCommentFromDictionary.m"; sourceTree = "<group>"; };
+		4EF5E4211D4230DA002B6AFF /* TGComment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGComment.h; sourceTree = "<group>"; };
+		4EF5E4221D4230DA002B6AFF /* TGComment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGComment.m; sourceTree = "<group>"; };
+		4EF5E4231D4230DA002B6AFF /* TGMetaWeblogApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGMetaWeblogApi.h; sourceTree = "<group>"; };
+		4EF5E4241D4230DA002B6AFF /* TGMetaWeblogAuthApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGMetaWeblogAuthApi.h; sourceTree = "<group>"; };
+		4EF5E4251D4230DA002B6AFF /* TGMetaWeblogAuthApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGMetaWeblogAuthApi.m; sourceTree = "<group>"; };
+		4EF5E4261D4230DA002B6AFF /* TGMetaWeblogBaseApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGMetaWeblogBaseApi.h; sourceTree = "<group>"; };
+		4EF5E4271D4230DA002B6AFF /* TGMetaWeblogXMLRPCApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGMetaWeblogXMLRPCApi.h; sourceTree = "<group>"; };
+		4EF5E4281D4230DA002B6AFF /* TGMetaWeblogXMLRPCApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGMetaWeblogXMLRPCApi.m; sourceTree = "<group>"; };
+		4EF5E4291D4230DA002B6AFF /* TGPost+SDPostFromDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TGPost+SDPostFromDictionary.h"; sourceTree = "<group>"; };
+		4EF5E42A1D4230DA002B6AFF /* TGPost+SDPostFromDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TGPost+SDPostFromDictionary.m"; sourceTree = "<group>"; };
+		4EF5E42B1D4230DA002B6AFF /* TGPost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGPost.h; sourceTree = "<group>"; };
+		4EF5E42C1D4230DA002B6AFF /* TGPost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGPost.m; sourceTree = "<group>"; };
+		4EF5E42D1D4230DA002B6AFF /* TGTag+TGTagFromDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TGTag+TGTagFromDictionary.h"; sourceTree = "<group>"; };
+		4EF5E42E1D4230DA002B6AFF /* TGTag+TGTagFromDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TGTag+TGTagFromDictionary.m"; sourceTree = "<group>"; };
+		4EF5E42F1D4230DA002B6AFF /* TGTag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGTag.h; sourceTree = "<group>"; };
+		4EF5E4301D4230DA002B6AFF /* TGTag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGTag.m; sourceTree = "<group>"; };
+		4EF5E4311D4230DA002B6AFF /* TGXMLRPCApiClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGXMLRPCApiClient.h; sourceTree = "<group>"; };
+		4EF5E4321D4230DA002B6AFF /* TGXMLRPCApiClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGXMLRPCApiClient.m; sourceTree = "<group>"; };
+		4EF5E4341D4230DA002B6AFF /* TGMetaWeblogApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGMetaWeblogApi.h; sourceTree = "<group>"; };
+		4EF5E4351D4230DA002B6AFF /* TGMetaWeblogAuthApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGMetaWeblogAuthApi.h; sourceTree = "<group>"; };
+		4EF5E4361D4230DA002B6AFF /* TGMetaWeblogAuthApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGMetaWeblogAuthApi.m; sourceTree = "<group>"; };
+		4EF5E4371D4230DA002B6AFF /* TGMetaWeblogBaseApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGMetaWeblogBaseApi.h; sourceTree = "<group>"; };
+		4EF5E4381D4230DA002B6AFF /* TGMetaWeblogXMLRPCApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGMetaWeblogXMLRPCApi.h; sourceTree = "<group>"; };
+		4EF5E4391D4230DA002B6AFF /* TGMetaWeblogXMLRPCApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGMetaWeblogXMLRPCApi.m; sourceTree = "<group>"; };
+		4EF5E43A1D4230DA002B6AFF /* TGXMLRPCApiClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGXMLRPCApiClient.h; sourceTree = "<group>"; };
+		4EF5E43B1D4230DA002B6AFF /* TGXMLRPCApiClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGXMLRPCApiClient.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1359,7 +1370,7 @@
 		4EF149D01D3DF61D00D28265 /* WBSBlog */ = {
 			isa = PBXGroup;
 			children = (
-				4EF150581D3E371C00D28265 /* temp临时 */,
+				4EF150581D3E371C00D28265 /* Temp临时 */,
 				4EF150BB1D3E38C700D28265 /* Base基本 */,
 				4EF14A341D3E30DF00D28265 /* 主页_Home */,
 				4EF14A3A1D3E30DF00D28265 /* 标签_Tag */,
@@ -2167,8 +2178,8 @@
 		4EF150091D3E362A00D28265 /* Url_API */ = {
 			isa = PBXGroup;
 			children = (
-				4EF152FD1D3F3C3500D28265 /* BlogJsonApi */,
-				4EF1531A1D3F3C3500D28265 /* MetaWeblogApi */,
+				4EF5E4161D4230DA002B6AFF /* BlogJsonApi */,
+				4EF5E4331D4230DA002B6AFF /* MetaWeblogApi */,
 			);
 			name = Url_API;
 			path = ../Others;
@@ -2204,7 +2215,7 @@
 			path = ToMarkdown;
 			sourceTree = "<group>";
 		};
-		4EF150581D3E371C00D28265 /* temp临时 */ = {
+		4EF150581D3E371C00D28265 /* Temp临时 */ = {
 			isa = PBXGroup;
 			children = (
 				4EF150681D3E376000D28265 /* WBSEditingBar.h */,
@@ -2224,7 +2235,7 @@
 				4EF150611D3E374300D28265 /* WBSLastCell.h */,
 				4EF150621D3E374300D28265 /* WBSLastCell.m */,
 			);
-			name = "temp临时";
+			name = "Temp临时";
 			sourceTree = "<group>";
 		};
 		4EF150771D3E37BA00D28265 /* Catagory */ = {
@@ -2659,54 +2670,62 @@
 			path = publish;
 			sourceTree = "<group>";
 		};
-		4EF152FD1D3F3C3500D28265 /* BlogJsonApi */ = {
-			isa = PBXGroup;
-			children = (
-				4EF152FE1D3F3C3500D28265 /* NSString+StringByStrippingHTML.h */,
-				4EF152FF1D3F3C3500D28265 /* NSString+StringByStrippingHTML.m */,
-				4EF153001D3F3C3500D28265 /* TGBlogJsonApi.h */,
-				4EF153011D3F3C3500D28265 /* TGBlogJsonApi.m */,
-				4EF153021D3F3C3500D28265 /* TGCategory+TGCategoryFromDictionary.h */,
-				4EF153031D3F3C3500D28265 /* TGCategory+TGCategoryFromDictionary.m */,
-				4EF153041D3F3C3500D28265 /* TGCategory.h */,
-				4EF153051D3F3C3500D28265 /* TGCategory.m */,
-				4EF153061D3F3C3500D28265 /* TGComment+TGCommentFromDictionary.h */,
-				4EF153071D3F3C3500D28265 /* TGComment+TGCommentFromDictionary.m */,
-				4EF153081D3F3C3500D28265 /* TGComment.h */,
-				4EF153091D3F3C3500D28265 /* TGComment.m */,
-				4EF153101D3F3C3500D28265 /* TGPost+SDPostFromDictionary.h */,
-				4EF153111D3F3C3500D28265 /* TGPost+SDPostFromDictionary.m */,
-				4EF153121D3F3C3500D28265 /* TGPost.h */,
-				4EF153131D3F3C3500D28265 /* TGPost.m */,
-				4EF153141D3F3C3500D28265 /* TGTag+TGTagFromDictionary.h */,
-				4EF153151D3F3C3500D28265 /* TGTag+TGTagFromDictionary.m */,
-				4EF153161D3F3C3500D28265 /* TGTag.h */,
-				4EF153171D3F3C3500D28265 /* TGTag.m */,
-			);
-			path = BlogJsonApi;
-			sourceTree = "<group>";
-		};
-		4EF1531A1D3F3C3500D28265 /* MetaWeblogApi */ = {
-			isa = PBXGroup;
-			children = (
-				4EF1531B1D3F3C3500D28265 /* TGMetaWeblogApi.h */,
-				4EF1531C1D3F3C3500D28265 /* TGMetaWeblogAuthApi.h */,
-				4EF1531D1D3F3C3500D28265 /* TGMetaWeblogAuthApi.m */,
-				4EF1531E1D3F3C3500D28265 /* TGMetaWeblogBaseApi.h */,
-				4EF1531F1D3F3C3500D28265 /* TGMetaWeblogXMLRPCApi.h */,
-				4EF153201D3F3C3500D28265 /* TGMetaWeblogXMLRPCApi.m */,
-				4EF153211D3F3C3500D28265 /* TGXMLRPCApiClient.h */,
-				4EF153221D3F3C3500D28265 /* TGXMLRPCApiClient.m */,
-			);
-			path = MetaWeblogApi;
-			sourceTree = "<group>";
-		};
 		4EF5E4031D41C878002B6AFF /* View */ = {
 			isa = PBXGroup;
 			children = (
 				4EF5E4101D41EC67002B6AFF /* WBSLogin.xib */,
 			);
 			name = View;
+			sourceTree = "<group>";
+		};
+		4EF5E4161D4230DA002B6AFF /* BlogJsonApi */ = {
+			isa = PBXGroup;
+			children = (
+				4EF5E4171D4230DA002B6AFF /* NSString+StringByStrippingHTML.h */,
+				4EF5E4181D4230DA002B6AFF /* NSString+StringByStrippingHTML.m */,
+				4EF5E4191D4230DA002B6AFF /* TGBlogJsonApi.h */,
+				4EF5E41A1D4230DA002B6AFF /* TGBlogJsonApi.m */,
+				4EF5E41B1D4230DA002B6AFF /* TGCategory+TGCategoryFromDictionary.h */,
+				4EF5E41C1D4230DA002B6AFF /* TGCategory+TGCategoryFromDictionary.m */,
+				4EF5E41D1D4230DA002B6AFF /* TGCategory.h */,
+				4EF5E41E1D4230DA002B6AFF /* TGCategory.m */,
+				4EF5E41F1D4230DA002B6AFF /* TGComment+TGCommentFromDictionary.h */,
+				4EF5E4201D4230DA002B6AFF /* TGComment+TGCommentFromDictionary.m */,
+				4EF5E4211D4230DA002B6AFF /* TGComment.h */,
+				4EF5E4221D4230DA002B6AFF /* TGComment.m */,
+				4EF5E4231D4230DA002B6AFF /* TGMetaWeblogApi.h */,
+				4EF5E4241D4230DA002B6AFF /* TGMetaWeblogAuthApi.h */,
+				4EF5E4251D4230DA002B6AFF /* TGMetaWeblogAuthApi.m */,
+				4EF5E4261D4230DA002B6AFF /* TGMetaWeblogBaseApi.h */,
+				4EF5E4271D4230DA002B6AFF /* TGMetaWeblogXMLRPCApi.h */,
+				4EF5E4281D4230DA002B6AFF /* TGMetaWeblogXMLRPCApi.m */,
+				4EF5E4291D4230DA002B6AFF /* TGPost+SDPostFromDictionary.h */,
+				4EF5E42A1D4230DA002B6AFF /* TGPost+SDPostFromDictionary.m */,
+				4EF5E42B1D4230DA002B6AFF /* TGPost.h */,
+				4EF5E42C1D4230DA002B6AFF /* TGPost.m */,
+				4EF5E42D1D4230DA002B6AFF /* TGTag+TGTagFromDictionary.h */,
+				4EF5E42E1D4230DA002B6AFF /* TGTag+TGTagFromDictionary.m */,
+				4EF5E42F1D4230DA002B6AFF /* TGTag.h */,
+				4EF5E4301D4230DA002B6AFF /* TGTag.m */,
+				4EF5E4311D4230DA002B6AFF /* TGXMLRPCApiClient.h */,
+				4EF5E4321D4230DA002B6AFF /* TGXMLRPCApiClient.m */,
+			);
+			path = BlogJsonApi;
+			sourceTree = "<group>";
+		};
+		4EF5E4331D4230DA002B6AFF /* MetaWeblogApi */ = {
+			isa = PBXGroup;
+			children = (
+				4EF5E4341D4230DA002B6AFF /* TGMetaWeblogApi.h */,
+				4EF5E4351D4230DA002B6AFF /* TGMetaWeblogAuthApi.h */,
+				4EF5E4361D4230DA002B6AFF /* TGMetaWeblogAuthApi.m */,
+				4EF5E4371D4230DA002B6AFF /* TGMetaWeblogBaseApi.h */,
+				4EF5E4381D4230DA002B6AFF /* TGMetaWeblogXMLRPCApi.h */,
+				4EF5E4391D4230DA002B6AFF /* TGMetaWeblogXMLRPCApi.m */,
+				4EF5E43A1D4230DA002B6AFF /* TGXMLRPCApiClient.h */,
+				4EF5E43B1D4230DA002B6AFF /* TGXMLRPCApiClient.m */,
+			);
+			path = MetaWeblogApi;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -3019,13 +3038,12 @@
 				4EF14FC61D3E32F700D28265 /* GPUImageSolidColorGenerator.m in Sources */,
 				4EF14F5A1D3E32F700D28265 /* GPUImageColorDodgeBlendFilter.m in Sources */,
 				4EF14FA81D3E32F700D28265 /* GPUImageOverlayBlendFilter.m in Sources */,
-				4EF153301D3F3C3500D28265 /* TGMetaWeblogAuthApi.m in Sources */,
 				4EF14F3E1D3E32F700D28265 /* UIImageView+WebCache.m in Sources */,
 				4EF1510A1D3F1B3000D28265 /* MASConstraint.m in Sources */,
 				4EF14F081D3E32F700D28265 /* mkdio.c in Sources */,
-				4EF153261D3F3C3500D28265 /* TGCategory.m in Sources */,
 				4EF14F741D3E32F700D28265 /* GPUImageGammaFilter.m in Sources */,
 				4EF150511D3E36DE00D28265 /* TMDHeading.m in Sources */,
+				4EF5E4461D4230DA002B6AFF /* TGTag+TGTagFromDictionary.m in Sources */,
 				4EF14F7B1D3E32F700D28265 /* GPUImageHardLightBlendFilter.m in Sources */,
 				4EF14F871D3E32F700D28265 /* GPUImageiOSBlurFilter.m in Sources */,
 				4EF14F681D3E32F700D28265 /* GPUImageDivideBlendFilter.m in Sources */,
@@ -3041,6 +3059,7 @@
 				4EF14FA21D3E32F700D28265 /* GPUImageNobleCornerDetectionFilter.m in Sources */,
 				4EF150541D3E36DE00D28265 /* TMDItalic.m in Sources */,
 				4EF14FDE1D3E32F700D28265 /* GPUImageVignetteFilter.m in Sources */,
+				4EF5E4431D4230DA002B6AFF /* TGMetaWeblogXMLRPCApi.m in Sources */,
 				4EF150671D3E374300D28265 /* WBSLastCell.m in Sources */,
 				4EF14F231D3E32F700D28265 /* UIButton+AFNetworking.m in Sources */,
 				4EF14F571D3E32F700D28265 /* GPUImageClosingFilter.m in Sources */,
@@ -3060,7 +3079,6 @@
 				4EF14F3C1D3E32F700D28265 /* UIImage+MultiFormat.m in Sources */,
 				4EF150D41D3E39BB00D28265 /* WBSOptionButton.m in Sources */,
 				4EF14F831D3E32F700D28265 /* GPUImageHoughTransformLineDetector.m in Sources */,
-				4EF153271D3F3C3500D28265 /* TGComment+TGCommentFromDictionary.m in Sources */,
 				4EF14FA31D3E32F700D28265 /* GPUImageNonMaximumSuppressionFilter.m in Sources */,
 				4EF1510F1D3F1B3000D28265 /* NSArray+MASAdditions.m in Sources */,
 				4EF14F861D3E32F700D28265 /* GPUImageHueFilter.m in Sources */,
@@ -3074,6 +3092,7 @@
 				4EF150701D3E376000D28265 /* WBSOperationBar.m in Sources */,
 				4EF14FB61D3E32F700D28265 /* GPUImageRGBDilationFilter.m in Sources */,
 				4EF150D91D3E39C900D28265 /* WBSBottomBarViewController.m in Sources */,
+				4EF5E43E1D4230DA002B6AFF /* TGCategory+TGCategoryFromDictionary.m in Sources */,
 				4EF151B11D3F27C400D28265 /* WPXMLRPCDecoderDelegate.m in Sources */,
 				4EF14FD41D3E32F700D28265 /* GPUImageToneCurveFilter.m in Sources */,
 				4EF14FD31D3E32F700D28265 /* GPUImageTiltShiftFilter.m in Sources */,
@@ -3091,9 +3110,9 @@
 				4EF151AD1D3F27C400D28265 /* WPBase64Utils.m in Sources */,
 				4EF14F4A1D3E32F700D28265 /* GPUImageAlphaBlendFilter.m in Sources */,
 				4EF14F941D3E32F700D28265 /* GPUImageLuminanceRangeFilter.m in Sources */,
+				4EF5E44A1D4230DA002B6AFF /* TGMetaWeblogXMLRPCApi.m in Sources */,
 				4EF14F031D3E32F700D28265 /* emmatch.c in Sources */,
 				4EF14FD91D3E32F700D28265 /* GPUImageTwoPassFilter.m in Sources */,
-				4EF153231D3F3C3500D28265 /* NSString+StringByStrippingHTML.m in Sources */,
 				4EF14FE31D3E32F700D28265 /* GPUImageZoomBlurFilter.m in Sources */,
 				4EF14F321D3E32F700D28265 /* NSData+ImageContentType.m in Sources */,
 				4EF14FBC1D3E32F700D28265 /* GPUImageScreenBlendFilter.m in Sources */,
@@ -3102,22 +3121,20 @@
 				4EF14F981D3E32F700D28265 /* GPUImageMaskFilter.m in Sources */,
 				4EF150E41D3E39F100D28265 /* WBSHorizonalTableViewController.m in Sources */,
 				4EF14F0E1D3E32F700D28265 /* NSString+GHMarkdownParser.m in Sources */,
-				4EF153251D3F3C3500D28265 /* TGCategory+TGCategoryFromDictionary.m in Sources */,
 				4EF14FDC1D3E32F700D28265 /* GPUImageUnsharpMaskFilter.m in Sources */,
 				4EF14F9D1D3E32F700D28265 /* GPUImageMotionBlurFilter.m in Sources */,
 				4EF150551D3E36DE00D28265 /* TMDLineBreak.m in Sources */,
 				4EF14F581D3E32F700D28265 /* GPUImageColorBlendFilter.m in Sources */,
 				4EF14FB71D3E32F700D28265 /* GPUImageRGBErosionFilter.m in Sources */,
 				4EF14F671D3E32F700D28265 /* GPUImageDissolveBlendFilter.m in Sources */,
-				4EF1532E1D3F3C3500D28265 /* TGTag.m in Sources */,
 				4EF14FAF1D3E32F700D28265 /* GPUImagePolarPixellateFilter.m in Sources */,
 				4EF14FE41D3E32F700D28265 /* GPUImageContext.m in Sources */,
-				4EF153241D3F3C3500D28265 /* TGBlogJsonApi.m in Sources */,
 				4EF14FCB1D3E32F700D28265 /* GPUImageSubtractBlendFilter.m in Sources */,
 				4EF14F691D3E32F700D28265 /* GPUImageEmbossFilter.m in Sources */,
 				4EF14FC41D3E32F700D28265 /* GPUImageSoftEleganceFilter.m in Sources */,
 				4EF150521D3E36DE00D28265 /* TMDHorizontalRule.m in Sources */,
 				4EF14F911D3E32F700D28265 /* GPUImageLocalBinaryPatternFilter.m in Sources */,
+				4EF5E4481D4230DA002B6AFF /* TGXMLRPCApiClient.m in Sources */,
 				4EF150641D3E374300D28265 /* WBSEmojiPageVC.m in Sources */,
 				4EF14F0B1D3E32F700D28265 /* setup.c in Sources */,
 				4EF14F9E1D3E32F700D28265 /* GPUImageMotionDetector.m in Sources */,
@@ -3129,7 +3146,6 @@
 				4EF14F221D3E32F700D28265 /* UIAlertView+AFNetworking.m in Sources */,
 				4EF150A51D3E384B00D28265 /* WBSCategoryCell.m in Sources */,
 				4EF14F6C1D3E32F700D28265 /* GPUImageExposureFilter.m in Sources */,
-				4EF153281D3F3C3500D28265 /* TGComment.m in Sources */,
 				4EF14FA91D3E32F700D28265 /* GPUImageParallelCoordinateLineTransformFilter.m in Sources */,
 				4EF14FDA1D3E32F700D28265 /* GPUImageTwoPassTextureSamplingFilter.m in Sources */,
 				4EF14FE71D3E32F700D28265 /* GPUImagePicture.m in Sources */,
@@ -3141,9 +3157,9 @@
 				4EF14FAB1D3E32F700D28265 /* GPUImagePinchDistortionFilter.m in Sources */,
 				4EF150A71D3E384B00D28265 /* WBSPostCell.m in Sources */,
 				4EF14FCF1D3E32F700D28265 /* GPUImageThreeInputFilter.m in Sources */,
-				4EF1532C1D3F3C3500D28265 /* TGPost.m in Sources */,
 				4EF14F241D3E32F700D28265 /* UIImageView+AFNetworking.m in Sources */,
 				4EF150D31D3E39BB00D28265 /* WBSRootTabBarController.m in Sources */,
+				4EF5E4451D4230DA002B6AFF /* TGPost.m in Sources */,
 				4EF14F791D3E32F700D28265 /* GPUImageGrayscaleFilter.m in Sources */,
 				4EF5E4021D41C870002B6AFF /* WBSSelectBlogViewController.m in Sources */,
 				4EF14F7A1D3E32F700D28265 /* GPUImageHalftoneFilter.m in Sources */,
@@ -3159,16 +3175,17 @@
 				4EF14FB11D3E32F700D28265 /* GPUImagePosterizeFilter.m in Sources */,
 				4EF14FCD1D3E32F700D28265 /* GPUImageTextureInput.m in Sources */,
 				4EF14FD81D3E32F700D28265 /* GPUImageTwoInputFilter.m in Sources */,
+				4EF5E4491D4230DA002B6AFF /* TGMetaWeblogAuthApi.m in Sources */,
 				4EF14F4E1D3E32F700D28265 /* GPUImageBilateralFilter.m in Sources */,
 				4EF150AA1D3E384B00D28265 /* WBSDropdownMenuView.m in Sources */,
 				4EF150841D3E37C500D28265 /* UIImageView+Util.m in Sources */,
 				4EF14F701D3E32F700D28265 /* GPUImageFilterGroup.m in Sources */,
-				4EF153321D3F3C3500D28265 /* TGXMLRPCApiClient.m in Sources */,
 				4EF14F491D3E32F700D28265 /* GPUImageAddBlendFilter.m in Sources */,
 				4EF150E61D3E39F100D28265 /* WBSTitleBarView.m in Sources */,
 				4EF14FB91D3E32F700D28265 /* GPUImageRGBOpeningFilter.m in Sources */,
 				4EF14F7F1D3E32F700D28265 /* GPUImageHighPassFilter.m in Sources */,
 				4EF14F0C1D3E32F700D28265 /* tags.c in Sources */,
+				4EF5E4421D4230DA002B6AFF /* TGMetaWeblogAuthApi.m in Sources */,
 				4EF14FB01D3E32F700D28265 /* GPUImagePolkaDotFilter.m in Sources */,
 				4EF1510C1D3F1B3000D28265 /* MASLayoutConstraint.m in Sources */,
 				4EF151AF1D3F27C400D28265 /* WPXMLRPCDataCleaner.m in Sources */,
@@ -3179,6 +3196,7 @@
 				4EF14FC71D3E32F700D28265 /* GPUImageSourceOverBlendFilter.m in Sources */,
 				4EF14F841D3E32F700D28265 /* GPUImageHSBFilter.m in Sources */,
 				4EF14F211D3E32F700D28265 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
+				4EF5E44B1D4230DA002B6AFF /* TGXMLRPCApiClient.m in Sources */,
 				4EF14F191D3E32F700D28265 /* AFSecurityPolicy.m in Sources */,
 				4EF151121D3F1B3000D28265 /* ViewController+MASAdditions.m in Sources */,
 				4EF14F1D1D3E32F700D28265 /* AFURLSessionManager.m in Sources */,
@@ -3194,6 +3212,7 @@
 				4EF14FA61D3E32F700D28265 /* GPUImageOpeningFilter.m in Sources */,
 				4EF14FA51D3E32F700D28265 /* GPUImageOpacityFilter.m in Sources */,
 				4EF1506E1D3E376000D28265 /* WBSEditingBar.m in Sources */,
+				4EF5E4411D4230DA002B6AFF /* TGComment.m in Sources */,
 				4EF14FBD1D3E32F700D28265 /* GPUImageSepiaFilter.m in Sources */,
 				4EF14F501D3E32F700D28265 /* GPUImageBrightnessFilter.m in Sources */,
 				4EF14F371D3E32F700D28265 /* SDWebImageDownloaderOperation.m in Sources */,
@@ -3202,6 +3221,7 @@
 				4EF150A81D3E384B00D28265 /* WBSPostEditViewController.m in Sources */,
 				4EF14F8A1D3E32F700D28265 /* GPUImageKuwaharaRadius3Filter.m in Sources */,
 				4EF150CD1D3E39A500D28265 /* WBSErrorViewController.m in Sources */,
+				4EF5E4401D4230DA002B6AFF /* TGComment+TGCommentFromDictionary.m in Sources */,
 				4EF151B21D3F27C400D28265 /* WPXMLRPCEncoder.m in Sources */,
 				4EF14FDD1D3E32F700D28265 /* GPUImageVideoCamera.m in Sources */,
 				4EF14F9B1D3E32F700D28265 /* GPUImageMonochromeFilter.m in Sources */,
@@ -3212,7 +3232,6 @@
 				4EF14F881D3E32F700D28265 /* GPUImageJFAVoronoiFilter.m in Sources */,
 				4EF14F021D3E32F700D28265 /* Csio.c in Sources */,
 				4EF150CE1D3E39A500D28265 /* WBSOBObjsViewController.m in Sources */,
-				4EF153311D3F3C3500D28265 /* TGMetaWeblogXMLRPCApi.m in Sources */,
 				4EF14FD01D3E32F700D28265 /* GPUImageThresholdEdgeDetectionFilter.m in Sources */,
 				4EF14F541D3E32F700D28265 /* GPUImageCGAColorspaceFilter.m in Sources */,
 				4EF14F181D3E32F700D28265 /* AFNetworkReachabilityManager.m in Sources */,
@@ -3230,15 +3249,17 @@
 				4EF14F1B1D3E32F700D28265 /* AFURLRequestSerialization.m in Sources */,
 				4EF14F331D3E32F700D28265 /* SDImageCache.m in Sources */,
 				4EF14FB21D3E32F700D28265 /* GPUImagePrewittEdgeDetectionFilter.m in Sources */,
+				4EF5E43C1D4230DA002B6AFF /* NSString+StringByStrippingHTML.m in Sources */,
+				4EF5E4441D4230DA002B6AFF /* TGPost+SDPostFromDictionary.m in Sources */,
 				4EF14F471D3E32F700D28265 /* GPUImage3x3TextureSamplingFilter.m in Sources */,
 				4EF150AE1D3E387C00D28265 /* WBSTagViewController.m in Sources */,
+				4EF5E43D1D4230DA002B6AFF /* TGBlogJsonApi.m in Sources */,
 				4EF14F821D3E32F700D28265 /* GPUImageHistogramGenerator.m in Sources */,
 				4EF150DA1D3E39C900D28265 /* WBSDetailsViewController.m in Sources */,
 				4EF14F6F1D3E32F700D28265 /* GPUImageFilter.m in Sources */,
 				4EF150951D3E380F00D28265 /* UIFont+FontAwesome.m in Sources */,
 				4EF14F4D1D3E32F700D28265 /* GPUImageAverageLuminanceThresholdFilter.m in Sources */,
 				4EF14FBA1D3E32F700D28265 /* GPUImageSaturationBlendFilter.m in Sources */,
-				4EF1532B1D3F3C3500D28265 /* TGPost+SDPostFromDictionary.m in Sources */,
 				4EF150631D3E374300D28265 /* WWTagsCloudView.m in Sources */,
 				4EF14F381D3E32F700D28265 /* SDWebImageManager.m in Sources */,
 				4EF14F2D1D3E32F700D28265 /* RECommonFunctions.m in Sources */,
@@ -3253,7 +3274,6 @@
 				4EF14F391D3E32F700D28265 /* SDWebImagePrefetcher.m in Sources */,
 				4EF14F991D3E32F700D28265 /* GPUImageMedianFilter.m in Sources */,
 				4EF150571D3E36DE00D28265 /* ToMarkdown.m in Sources */,
-				4EF1532D1D3F3C3500D28265 /* TGTag+TGTagFromDictionary.m in Sources */,
 				4EF14FE51D3E32F700D28265 /* GPUImageMovieWriter.m in Sources */,
 				4EF14F891D3E32F700D28265 /* GPUImageKuwaharaFilter.m in Sources */,
 				4EF14F7E1D3E32F700D28265 /* GPUImageHighlightShadowFilter.m in Sources */,
@@ -3275,6 +3295,7 @@
 				4EF14F201D3E32F700D28265 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				4EF150561D3E36DE00D28265 /* TMDParagraph.m in Sources */,
 				4EF14F4C1D3E32F700D28265 /* GPUImageAverageColor.m in Sources */,
+				4EF5E4471D4230DA002B6AFF /* TGTag.m in Sources */,
 				4EF14F651D3E32F700D28265 /* GPUImageDirectionalNonMaximumSuppressionFilter.m in Sources */,
 				4EF14FAD1D3E32F700D28265 /* GPUImagePixellatePositionFilter.m in Sources */,
 				4EF1504D1D3E36DE00D28265 /* TMDAnchor.m in Sources */,
@@ -3289,6 +3310,7 @@
 				4EF150751D3E377D00D28265 /* WBSUtils.m in Sources */,
 				4EF14FD71D3E32F700D28265 /* GPUImageTwoInputCrossTextureSamplingFilter.m in Sources */,
 				4EF14F041D3E32F700D28265 /* generate.c in Sources */,
+				4EF5E43F1D4230DA002B6AFF /* TGCategory.m in Sources */,
 				4EF14F761D3E32F700D28265 /* GPUImageGaussianBlurPositionFilter.m in Sources */,
 				4EF14F6D1D3E32F700D28265 /* GPUImageFalseColorFilter.m in Sources */,
 				4EF150931D3E380F00D28265 /* FAImageView.m in Sources */,
