@@ -39,19 +39,13 @@
 /// 16进制 颜色
 #define HEXColor(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0] //<! 16进制 颜色
 
-<<<<<<< HEAD
-/// 橘黄色按钮
-#define kOrangeColorOfButton RGBCOLOR(255, 102, 0)
 
-/// 左右 边距  大小
-#define kMarginSize 5
-=======
 /// 浅蓝色按钮
 #define kBlueColorOfButton RGBCOLOR(92, 154, 213)
 
 /// 左右 边距  大小
 #define kMarginSize 20
->>>>>>> origin/master
+
 
 
 // 屏幕宽高 Bounds

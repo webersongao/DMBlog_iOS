@@ -25,11 +25,7 @@ typedef NS_ENUM(NSUInteger, PostType){
 
 
 /**
-<<<<<<< HEAD
- *  API 类型枚举 15-08-04 by terwer
-=======
  *  API 类型枚举 15-08-04 by weberson
->>>>>>> origin/master
  */
 typedef NS_ENUM(NSInteger,APIType){
     /**
