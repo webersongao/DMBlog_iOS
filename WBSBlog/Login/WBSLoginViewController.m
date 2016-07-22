@@ -66,27 +66,27 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     //判断登录状态
-//    WBSApiInfo *apiInfo                                                                        = [WBSConfig getAuthoizedApiInfo];
-//    if (apiInfo) {
-//        KLog(@"Current baseURL:%@ username:%@ password:%@", apiInfo.baseURL, apiInfo.username, apiInfo.password);
-//        //已经登录过，跳转到主界面，停止程序继续
-//        [WBSUtils goToMainViewController];
-//        return;
-//    }
-//
-//    //初始化导航栏
-//    self.navigationItem.title                                                                = @"登录";
-//
-//    self.navigationItem.rightBarButtonItem                                                     = [[UIBarButtonItem alloc] initWithTitle:@"选择" style:UIBarButtonItemStylePlain target:self action:@selector(selectBlog)];
-//
-//    self.view.backgroundColor                                                                  = [UIColor themeColor];
-//
-//    //初始化视图和布局
-//    [self setupSubviews];
-//    [self setLayout];
-//
-//    // 默认为wordpress博客
-//    self.footerApi = @"xmlrpc.php";
+    WBSApiInfo *apiInfo                                                                        = [WBSConfig getAuthoizedApiInfo];
+    if (apiInfo) {
+        KLog(@"Current baseURL:%@ username:%@ password:%@", apiInfo.baseURL, apiInfo.username, apiInfo.password);
+        //已经登录过，跳转到主界面，停止程序继续
+        [WBSUtils goToMainViewController];
+        return;
+    }
+
+    //初始化导航栏
+    self.navigationItem.title                                                                = @"登录";
+
+    self.navigationItem.rightBarButtonItem                                                     = [[UIBarButtonItem alloc] initWithTitle:@"选择" style:UIBarButtonItemStylePlain target:self action:@selector(selectBlog)];
+
+    self.view.backgroundColor                                                                  = [UIColor themeColor];
+
+    //初始化视图和布局
+    [self setupSubviews];
+    [self setLayout];
+
+    // 默认为wordpress博客
+    self.footerApi = @"xmlrpc.php";
 
 }
 
