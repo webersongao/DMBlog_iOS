@@ -22,9 +22,15 @@
     // Override point for customization after application launch.
     
     //初始化程序入口，设置登录界面为首页
+<<<<<<< HEAD
     WBSLoginNavViewController *loginNavViewController = [[WBSLoginNavViewController alloc] init];
     WBSLoginViewController *loginController = [[WBSLoginViewController alloc]init];
     [loginNavViewController pushViewController:loginController animated:YES];
+=======
+//    WBSLoginViewController *loginController = [[WBSLoginViewController alloc]initWithNibName:@"WBSLogin" bundle:nil];
+        WBSLoginViewController *loginController = [[WBSLoginViewController alloc]init];
+        WBSLoginNavViewController *loginNavViewController = [[WBSLoginNavViewController alloc] initWithRootViewController:loginController];
+>>>>>>> origin/master
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.rootViewController = loginNavViewController;
@@ -78,10 +84,13 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+<<<<<<< HEAD
 //禁止屏幕横屏
 - (NSUInteger)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window
 {
     return UIInterfaceOrientationMaskPortrait;
 }
+=======
+>>>>>>> origin/master
 
 @end

@@ -12,7 +12,11 @@
 #import "WBSBrowserViewController.h"
 #import "GHMarkdownParser.h"
 #import "WBSErrorViewController.h"
+<<<<<<< HEAD
 #import "WBSOBTabBarController.h"
+=======
+#import "WBSRootTabBarController.h"
+>>>>>>> origin/master
 #import "RESideMenu.h"
 #import "WBSSideMenuViewController.h"
 #import "AppDelegate.h"
@@ -358,7 +362,11 @@
  */
 + (NSInteger)networkStatus
 {
+<<<<<<< HEAD
     Reachability *reachability = [Reachability reachabilityWithHostName:@"www.terwer.com"];
+=======
+    Reachability *reachability = [Reachability reachabilityWithHostName:@"www.webersongao.com"];
+>>>>>>> origin/master
     return reachability.currentReachabilityStatus;
 }
 
@@ -373,7 +381,11 @@
 }
 
 /**
+<<<<<<< HEAD
  *  将Markdown字符串转换为html 15-07-30 by terwer
+=======
+ *  将Markdown字符串转换为html 
+>>>>>>> origin/master
  *
  *  @param markdownString markdownString
  *
@@ -471,7 +483,11 @@
  *  跳转到主界面
  */
 + (void)goToMainViewController {
+<<<<<<< HEAD
     WBSOBTabBarController *tabBarController = [WBSOBTabBarController new];
+=======
+    WBSRootTabBarController *tabBarController = [[WBSRootTabBarController alloc]init];
+>>>>>>> origin/master
     AppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
     tabBarController.delegate = (id <UITabBarControllerDelegate>) appDelegate;
     
@@ -489,4 +505,8 @@
     //设置根视图
     appDelegate.window.rootViewController = sideMenuTabBarViewController;
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/master
 @end

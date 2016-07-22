@@ -1,0 +1,32 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "6AE28138615FF09B7944463EAF80DF722E68997A",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+    "13a5ace6-f3e5-fd4a-9556-92488a982591++4447" : {
+
+    }
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "6AE28138615FF09B7944463EAF80DF722E68997A" : 0,
+    "13a5ace6-f3e5-fd4a-9556-92488a982591++4447" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "6A575B42-7B01-4EA4-8FD4-B019C4C45677",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "6AE28138615FF09B7944463EAF80DF722E68997A" : "WBSBlog\/",
+    "13a5ace6-f3e5-fd4a-9556-92488a982591++4447" : "WBSBlog\/WBSBlog\/Masonry\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "WBSBlog",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "WBSBlog.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/123.56.113.100\/svn\/qianjin_ios",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "13a5ace6-f3e5-fd4a-9556-92488a982591++4447"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/webersongao\/WBSBlog.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "6AE28138615FF09B7944463EAF80DF722E68997A"
+    }
+  ]
+}

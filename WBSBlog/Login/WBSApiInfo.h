@@ -46,5 +46,10 @@
  *
  *  @return ApiInfo实例
  */
+<<<<<<< HEAD
 -(instancetype)initWithBaseURL:(NSString *)baseURL andGenerateAuthCookie:cookie;
+=======
+-(instancetype)initWithBaseURL:(NSString *)baseURL andGenerateAuthCookie:(NSString *)cookie;
+
+>>>>>>> origin/master
 @end

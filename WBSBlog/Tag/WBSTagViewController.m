@@ -168,7 +168,10 @@
                     NSLog(@"%@",[tempTag valueForKey:@"title"]);
                     [_tags addObject:[tempTag valueForKey:@"title"]];
                 }
+<<<<<<< HEAD
                 
+=======
+>>>>>>> origin/master
                 //生成标签
                 [self drawTags];
                 

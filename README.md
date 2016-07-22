@@ -14,21 +14,21 @@ WBSBlog is an open source *Wordpress* client for iOS, released under the Apache 
 
 演示
 ---
-1、启动界面
+1、博客首页
 
 ![](OtherResource/1.png)
 
 2、导航
 
-![](OtherResource/1.png)
+![](OtherResource/2.png)
 
 3、发布
 
-![](OtherResource/2.png)
+![](OtherResource/3.png)
 
 4、设置
 
-![](OtherResource/3.png)
+![](OtherResource/4.png)
 
 ## 运行项目
 1. 下载zip文件
@@ -54,7 +54,11 @@ WBSBlog is an open source *Wordpress* client for iOS, released under the Apache 
 13            | GHMarkdownParser  |解析文章为HTML
 
 ## 开源协议
+<<<<<<< HEAD
 Oneblog app is under the Apache License V2. See [the LICENSE file](https://github.com/terwer/OneblogiOS/blob/master/LICENSE.md) for more details.
+=======
+Oneblog app is under the MIT License  See [the LICENSE file](https://github.com/webersongao/WBSBlog/blob/master/LICENSE) for more details.
+>>>>>>> origin/master
 
 更新记录
 ======
@@ -85,3 +89,10 @@ v0.1 2016-07-19
 
 1、[OneBlogiOS](https://github.com/terwer/OneblogiOS)
 
+<<<<<<< HEAD
+=======
+2、[WP_REST_API_Documentation](http://v2.wp-api.org)
+
+3、[WP REST API](https://github.com/webersongao/WBSBlog/blob/master/OtherResource/wordpress-json-api-http-sample-data.md)
+
+>>>>>>> origin/master

@@ -23,7 +23,11 @@
     return self;
 }
 
+<<<<<<< HEAD
 -(instancetype)initWithBaseURL:baseURL andGenerateAuthCookie:cookie{
+=======
+-(instancetype)initWithBaseURL:baseURL andGenerateAuthCookie:(NSString *)cookie{
+>>>>>>> origin/master
     if (self = [super init]) {
         //确保全部都不能为空
         if (!baseURL||!cookie) {

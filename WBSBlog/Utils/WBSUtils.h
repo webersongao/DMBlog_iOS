@@ -31,7 +31,11 @@ static NSString * const kKeyMinutes = @"minutes";
 + (NSDictionary *)emojiDict;
 
 /**
+<<<<<<< HEAD
  *  去除字符串里面的空格、换行以及Markdown特殊字符，如：＝、＃ 15-07-27 by terwer
+=======
+ *  去除字符串里面的空格、换行以及Markdown特殊字符，如：＝、＃
+>>>>>>> origin/master
  *
  *  @param str 原字符串
  *
@@ -40,7 +44,11 @@ static NSString * const kKeyMinutes = @"minutes";
 +(NSString *)removeSpaceAndNewlineAndChars:(NSString *)str;
 
 /**
+<<<<<<< HEAD
  *  提取字符串 15-07-27 by terwer
+=======
+ *  提取字符串
+>>>>>>> origin/master
  *
  *  @param str 原始字符串
  *  @param length  最小长度
@@ -50,7 +58,11 @@ static NSString * const kKeyMinutes = @"minutes";
 +(NSString *)shortString:(NSString *)str andLength:(NSInteger)length;
 
 /**
+<<<<<<< HEAD
  *  美化评论显示 15-07-27 by terwer
+=======
+ *  美化评论显示
+>>>>>>> origin/master
  *
  *  @param commentCount 评论数目
  *
@@ -59,7 +71,11 @@ static NSString * const kKeyMinutes = @"minutes";
 + (NSAttributedString *)attributedCommentCount:(int)commentCount;
 
 /**
+<<<<<<< HEAD
  *  显示时间距离现在的信息 15-07-27 by terwer
+=======
+ *  显示时间距离现在的信息
+>>>>>>> origin/master
  *
  *  @param dateStr 原始时间字符串
  *
@@ -68,7 +84,11 @@ static NSString * const kKeyMinutes = @"minutes";
 + (NSAttributedString *)attributedTimeString:(NSDate *)date;
 
 /**
+<<<<<<< HEAD
  *  创建提示框 15-0727 by terwer
+=======
+ *  创建提示框
+>>>>>>> origin/master
  *
  *  @return MBProgressHUD
  */
@@ -84,7 +104,11 @@ static NSString * const kKeyMinutes = @"minutes";
 + (NSString *)unescapeHTML:(NSString *)originalHTML;
 
 /**
+<<<<<<< HEAD
  *  在Webview里面浏览网页 15-07-29 by terewr
+=======
+ *  在Webview里面浏览网页
+>>>>>>> origin/master
  *
  *  @param target 跳转之前的仕途控制器，一般为当前视图控制器
  *  @param url    要浏览的网址
@@ -92,7 +116,11 @@ static NSString * const kKeyMinutes = @"minutes";
 +(void)navigateUrl:(UIViewController *)target withUrl:(NSURL *)url andTitle:(NSString *)pageTitle;
 
 /**
+<<<<<<< HEAD
  *  将Markdown字符串转换为html 15-07-30 by terwer
+=======
+ *  将Markdown字符串转换为html
+>>>>>>> origin/master
  *
  *  @param markdownString markdownString
  *

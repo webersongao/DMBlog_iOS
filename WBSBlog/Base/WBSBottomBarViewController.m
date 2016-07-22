@@ -298,7 +298,12 @@
 
 - (void)sendContent
 {
+<<<<<<< HEAD
     NSAssert(false, @"Over ride in subclasses");
+=======
+    KLog(@"暂时不支持评论回复");
+//    NSAssert(false, @"Over ride in subclasses");
+>>>>>>> origin/master
 }
 
 
