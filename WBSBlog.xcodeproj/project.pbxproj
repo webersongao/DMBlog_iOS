@@ -22,7 +22,6 @@
 		4EF14F051D3E32F700D28265 /* github_flavoured.c in Sources */ = {isa = PBXBuildFile; fileRef = 4EF14D241D3E32F600D28265 /* github_flavoured.c */; };
 		4EF14F061D3E32F700D28265 /* html5.c in Sources */ = {isa = PBXBuildFile; fileRef = 4EF14D251D3E32F600D28265 /* html5.c */; };
 		4EF14F071D3E32F700D28265 /* markdown.c in Sources */ = {isa = PBXBuildFile; fileRef = 4EF14D261D3E32F600D28265 /* markdown.c */; };
-		4EF14F081D3E32F700D28265 /* mkdio.c in Sources */ = {isa = PBXBuildFile; fileRef = 4EF14D281D3E32F600D28265 /* mkdio.c */; };
 		4EF14F091D3E32F700D28265 /* mkdio.h.in in Resources */ = {isa = PBXBuildFile; fileRef = 4EF14D2A1D3E32F600D28265 /* mkdio.h.in */; };
 		4EF14F0A1D3E32F700D28265 /* resource.c in Sources */ = {isa = PBXBuildFile; fileRef = 4EF14D2B1D3E32F600D28265 /* resource.c */; };
 		4EF14F0B1D3E32F700D28265 /* setup.c in Sources */ = {isa = PBXBuildFile; fileRef = 4EF14D2C1D3E32F600D28265 /* setup.c */; };
@@ -30,7 +29,6 @@
 		4EF14F0D1D3E32F700D28265 /* xml.c in Sources */ = {isa = PBXBuildFile; fileRef = 4EF14D2F1D3E32F600D28265 /* xml.c */; };
 		4EF14F0E1D3E32F700D28265 /* NSString+GHMarkdownParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF14D341D3E32F600D28265 /* NSString+GHMarkdownParser.m */; };
 		4EF14F0F1D3E32F700D28265 /* GHMarkdownParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF14D361D3E32F600D28265 /* GHMarkdownParser.m */; };
-		4EF14F121D3E32F700D28265 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 4EF14D3A1D3E32F600D28265 /* LICENSE */; };
 		4EF14F131D3E32F700D28265 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF14D3C1D3E32F600D28265 /* MBProgressHUD.m */; };
 		4EF14F151D3E32F700D28265 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF14D411D3E32F600D28265 /* AFHTTPRequestOperation.m */; };
 		4EF14F161D3E32F700D28265 /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF14D431D3E32F600D28265 /* AFHTTPRequestOperationManager.m */; };
@@ -41,7 +39,6 @@
 		4EF14F1B1D3E32F700D28265 /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF14D4E1D3E32F600D28265 /* AFURLRequestSerialization.m */; };
 		4EF14F1C1D3E32F700D28265 /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF14D501D3E32F600D28265 /* AFURLResponseSerialization.m */; };
 		4EF14F1D1D3E32F700D28265 /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF14D521D3E32F600D28265 /* AFURLSessionManager.m */; };
-		4EF14F1E1D3E32F700D28265 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 4EF14D531D3E32F600D28265 /* LICENSE */; };
 		4EF14F201D3E32F700D28265 /* AFNetworkActivityIndicatorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF14D571D3E32F600D28265 /* AFNetworkActivityIndicatorManager.m */; };
 		4EF14F211D3E32F700D28265 /* UIActivityIndicatorView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF14D591D3E32F600D28265 /* UIActivityIndicatorView+AFNetworking.m */; };
 		4EF14F221D3E32F700D28265 /* UIAlertView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF14D5B1D3E32F600D28265 /* UIAlertView+AFNetworking.m */; };
@@ -50,13 +47,10 @@
 		4EF14F251D3E32F700D28265 /* UIProgressView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF14D621D3E32F600D28265 /* UIProgressView+AFNetworking.m */; };
 		4EF14F261D3E32F700D28265 /* UIRefreshControl+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF14D641D3E32F600D28265 /* UIRefreshControl+AFNetworking.m */; };
 		4EF14F271D3E32F700D28265 /* UIWebView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF14D661D3E32F600D28265 /* UIWebView+AFNetworking.m */; };
-		4EF14F281D3E32F700D28265 /* LICENCE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4EF14D681D3E32F600D28265 /* LICENCE.txt */; };
 		4EF14F291D3E32F700D28265 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF14D6A1D3E32F600D28265 /* Reachability.m */; };
-		4EF14F2B1D3E32F700D28265 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 4EF14D6D1D3E32F600D28265 /* LICENSE */; };
 		4EF14F2D1D3E32F700D28265 /* RECommonFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF14D711D3E32F600D28265 /* RECommonFunctions.m */; };
 		4EF14F2E1D3E32F700D28265 /* RESideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF14D731D3E32F600D28265 /* RESideMenu.m */; };
 		4EF14F2F1D3E32F700D28265 /* UIViewController+RESideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF14D751D3E32F600D28265 /* UIViewController+RESideMenu.m */; };
-		4EF14F301D3E32F700D28265 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 4EF14D771D3E32F600D28265 /* LICENSE */; };
 		4EF14F321D3E32F700D28265 /* NSData+ImageContentType.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF14D7B1D3E32F600D28265 /* NSData+ImageContentType.m */; };
 		4EF14F331D3E32F700D28265 /* SDImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF14D7D1D3E32F600D28265 /* SDImageCache.m */; };
 		4EF14F341D3E32F700D28265 /* SDWebImageCompat.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF14D7F1D3E32F600D28265 /* SDWebImageCompat.m */; };
@@ -69,7 +63,6 @@
 		4EF14F3B1D3E32F700D28265 /* UIImage+GIF.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF14D8E1D3E32F600D28265 /* UIImage+GIF.m */; };
 		4EF14F3C1D3E32F700D28265 /* UIImage+MultiFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF14D901D3E32F600D28265 /* UIImage+MultiFormat.m */; };
 		4EF14F3D1D3E32F700D28265 /* UIImageView+HighlightedWebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF14D921D3E32F600D28265 /* UIImageView+HighlightedWebCache.m */; };
-		4EF14F3E1D3E32F700D28265 /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF14D941D3E32F600D28265 /* UIImageView+WebCache.m */; };
 		4EF14F3F1D3E32F700D28265 /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF14D961D3E32F600D28265 /* UIView+WebCacheOperation.m */; };
 		4EF14F401D3E32F700D28265 /* lookup.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF14D9A1D3E32F600D28265 /* lookup.png */; };
 		4EF14F411D3E32F700D28265 /* lookup_amatorka.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF14D9B1D3E32F600D28265 /* lookup_amatorka.png */; };
@@ -123,7 +116,6 @@
 		4EF14F711D3E32F700D28265 /* GPUImageFilterPipeline.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF14DFA1D3E32F600D28265 /* GPUImageFilterPipeline.m */; };
 		4EF14F721D3E32F700D28265 /* GPUImageFramebuffer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF14DFC1D3E32F600D28265 /* GPUImageFramebuffer.m */; };
 		4EF14F731D3E32F700D28265 /* GPUImageFramebufferCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF14DFE1D3E32F600D28265 /* GPUImageFramebufferCache.m */; };
-		4EF14F741D3E32F700D28265 /* GPUImageGammaFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF14E001D3E32F600D28265 /* GPUImageGammaFilter.m */; };
 		4EF14F751D3E32F700D28265 /* GPUImageGaussianBlurFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF14E021D3E32F600D28265 /* GPUImageGaussianBlurFilter.m */; };
 		4EF14F761D3E32F700D28265 /* GPUImageGaussianBlurPositionFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF14E041D3E32F600D28265 /* GPUImageGaussianBlurPositionFilter.m */; };
 		4EF14F771D3E32F700D28265 /* GPUImageGaussianSelectiveBlurFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF14E061D3E32F600D28265 /* GPUImageGaussianSelectiveBlurFilter.m */; };
@@ -240,15 +232,12 @@
 		4EF14FE61D3E32F700D28265 /* GPUImagePicture+TextureSubimage.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF14EE71D3E32F700D28265 /* GPUImagePicture+TextureSubimage.m */; };
 		4EF14FE71D3E32F700D28265 /* GPUImagePicture.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF14EE91D3E32F700D28265 /* GPUImagePicture.m */; };
 		4EF14FE81D3E32F700D28265 /* GPUImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF14EEB1D3E32F700D28265 /* GPUImageView.m */; };
-		4EF14FE91D3E32F700D28265 /* License.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4EF14EEC1D3E32F700D28265 /* License.txt */; };
-		4EF14FF91D3E332800D28265 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 4EF14FF41D3E332800D28265 /* LICENSE */; };
 		4EF14FFB1D3E332800D28265 /* TTTAttributedLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF14FF81D3E332800D28265 /* TTTAttributedLabel.m */; };
 		4EF150081D3E360900D28265 /* WBSApiInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF150071D3E360900D28265 /* WBSApiInfo.m */; };
 		4EF1504D1D3E36DE00D28265 /* TMDAnchor.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF150371D3E36DE00D28265 /* TMDAnchor.m */; };
 		4EF1504E1D3E36DE00D28265 /* TMDBold.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF150391D3E36DE00D28265 /* TMDBold.m */; };
 		4EF1504F1D3E36DE00D28265 /* TMDCode.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF1503B1D3E36DE00D28265 /* TMDCode.m */; };
 		4EF150501D3E36DE00D28265 /* TMDElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF1503D1D3E36DE00D28265 /* TMDElement.m */; };
-		4EF150511D3E36DE00D28265 /* TMDHeading.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF1503F1D3E36DE00D28265 /* TMDHeading.m */; };
 		4EF150521D3E36DE00D28265 /* TMDHorizontalRule.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF150411D3E36DE00D28265 /* TMDHorizontalRule.m */; };
 		4EF150531D3E36DE00D28265 /* TMDImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF150431D3E36DE00D28265 /* TMDImage.m */; };
 		4EF150541D3E36DE00D28265 /* TMDItalic.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF150451D3E36DE00D28265 /* TMDItalic.m */; };
@@ -284,224 +273,64 @@
 		4EF150AB1D3E384B00D28265 /* WBSTitleMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF150A41D3E384B00D28265 /* WBSTitleMenuViewController.m */; };
 		4EF150AE1D3E387C00D28265 /* WBSTagViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF150AD1D3E387C00D28265 /* WBSTagViewController.m */; };
 		4EF150B71D3E389900D28265 /* WBSMyInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF150B01D3E389900D28265 /* WBSMyInfoController.m */; };
-<<<<<<< HEAD
-<<<<<<< HEAD
-		4EF150B81D3E389900D28265 /* WBSLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF150B21D3E389900D28265 /* WBSLoginViewController.m */; };
-		4EF150B91D3E389900D28265 /* WBSLoginNavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF150B41D3E389900D28265 /* WBSLoginNavViewController.m */; };
-		4EF150BA1D3E389900D28265 /* WBSSelectBlogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF150B61D3E389900D28265 /* WBSSelectBlogViewController.m */; };
-		4EF150C11D3E38DC00D28265 /* WBSBrowserNavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF150BE1D3E38DC00D28265 /* WBSBrowserNavViewController.m */; };
-		4EF150C21D3E38DC00D28265 /* WBSBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF150C01D3E38DC00D28265 /* WBSBrowserViewController.m */; };
-		4EF150CD1D3E39A500D28265 /* WBSErrorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF150CA1D3E39A500D28265 /* WBSErrorViewController.m */; };
-		4EF150CE1D3E39A500D28265 /* WBSOBObjsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF150CC1D3E39A500D28265 /* WBSOBObjsViewController.m */; };
-		4EF150D31D3E39BB00D28265 /* WBSOBTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF150D01D3E39BB00D28265 /* WBSOBTabBarController.m */; };
-		4EF150D31D3E39BB00D28265 /* WBSRootTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF150D01D3E39BB00D28265 /* WBSRootTabBarController.m */; };
-
-		4EF150D41D3E39BB00D28265 /* WBSOptionButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF150D21D3E39BB00D28265 /* WBSOptionButton.m */; };
-		4EF150D91D3E39C900D28265 /* WBSBottomBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF150D61D3E39C900D28265 /* WBSBottomBarViewController.m */; };
-		4EF150DA1D3E39C900D28265 /* WBSDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF150D81D3E39C900D28265 /* WBSDetailsViewController.m */; };
-		4EF150DD1D3E39D500D28265 /* WBSSideMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF150DC1D3E39D500D28265 /* WBSSideMenuViewController.m */; };
-		4EF150E41D3E39F100D28265 /* WBSHorizonalTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF150DF1D3E39F100D28265 /* WBSHorizonalTableViewController.m */; };
-		4EF150E51D3E39F100D28265 /* WBSSwipableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF150E11D3E39F100D28265 /* WBSSwipableViewController.m */; };
-		4EF150E61D3E39F100D28265 /* WBSTitleBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF150E31D3E39F100D28265 /* WBSTitleBarView.m */; };
-		4EF150EC1D3E3AAF00D28265 /* emoji.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4EF150E91D3E3AAF00D28265 /* emoji.plist */; };
-		4EF150ED1D3E3AAF00D28265 /* emojiToText.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4EF150EA1D3E3AAF00D28265 /* emojiToText.plist */; };
-		4EF150EE1D3E3AAF00D28265 /* WBSBlog.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4EF150EB1D3E3AAF00D28265 /* WBSBlog.plist */; };
-		4EF151091D3F1B3000D28265 /* MASCompositeConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF150F11D3F1B2F00D28265 /* MASCompositeConstraint.m */; };
-		4EF1510A1D3F1B3000D28265 /* MASConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF150F41D3F1B2F00D28265 /* MASConstraint.m */; };
-		4EF1510B1D3F1B3000D28265 /* MASConstraintMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF150F61D3F1B2F00D28265 /* MASConstraintMaker.m */; };
-		4EF1510C1D3F1B3000D28265 /* MASLayoutConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF150F81D3F1B2F00D28265 /* MASLayoutConstraint.m */; };
-		4EF1510D1D3F1B3000D28265 /* MASViewAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF150FC1D3F1B2F00D28265 /* MASViewAttribute.m */; };
-		4EF1510E1D3F1B3000D28265 /* MASViewConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF150FE1D3F1B2F00D28265 /* MASViewConstraint.m */; };
-		4EF1510F1D3F1B3000D28265 /* NSArray+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF151001D3F1B2F00D28265 /* NSArray+MASAdditions.m */; };
-		4EF151101D3F1B3000D28265 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF151031D3F1B2F00D28265 /* NSLayoutConstraint+MASDebugAdditions.m */; };
-		4EF151111D3F1B3000D28265 /* View+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF151051D3F1B3000D28265 /* View+MASAdditions.m */; };
-		4EF151121D3F1B3000D28265 /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF151081D3F1B3000D28265 /* ViewController+MASAdditions.m */; };
-		4EF151AD1D3F27C400D28265 /* WPBase64Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF151A11D3F27C400D28265 /* WPBase64Utils.m */; };
-		4EF151AE1D3F27C400D28265 /* WPStringUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF151A31D3F27C400D28265 /* WPStringUtils.m */; };
-		4EF151AF1D3F27C400D28265 /* WPXMLRPCDataCleaner.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF151A61D3F27C400D28265 /* WPXMLRPCDataCleaner.m */; };
-		4EF151B01D3F27C400D28265 /* WPXMLRPCDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF151A81D3F27C400D28265 /* WPXMLRPCDecoder.m */; };
-		4EF151B11D3F27C400D28265 /* WPXMLRPCDecoderDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF151AA1D3F27C400D28265 /* WPXMLRPCDecoderDelegate.m */; };
-		4EF151B21D3F27C400D28265 /* WPXMLRPCEncoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF151AC1D3F27C400D28265 /* WPXMLRPCEncoder.m */; };
-		4EF1525D1D3F2DF400D28265 /* widget-original@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF151B61D3F2DF400D28265 /* widget-original@2x.png */; };
-		4EF1525E1D3F2DF400D28265 /* widget-original@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF151B71D3F2DF400D28265 /* widget-original@3x.png */; };
-		4EF1525F1D3F2DF400D28265 /* widget-original@3x.psd in Resources */ = {isa = PBXBuildFile; fileRef = 4EF151B81D3F2DF400D28265 /* widget-original@3x.psd */; };
-		4EF152601D3F2DF400D28265 /* widget_repost@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF151B91D3F2DF400D28265 /* widget_repost@2x.png */; };
-		4EF152611D3F2DF400D28265 /* widget_repost@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF151BA1D3F2DF400D28265 /* widget_repost@3x.png */; };
-		4EF152621D3F2DF400D28265 /* widget_repost@3x.psd in Resources */ = {isa = PBXBuildFile; fileRef = 4EF151BB1D3F2DF400D28265 /* widget_repost@3x.psd */; };
-		4EF152631D3F2DF400D28265 /* widget_taday@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF151BC1D3F2DF400D28265 /* widget_taday@2x.png */; };
-		4EF152641D3F2DF400D28265 /* widget_taday@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF151BD1D3F2DF400D28265 /* widget_taday@3x.png */; };
-		4EF152651D3F2DF400D28265 /* widget_taday@3x.psd in Resources */ = {isa = PBXBuildFile; fileRef = 4EF151BE1D3F2DF400D28265 /* widget_taday@3x.psd */; };
-		4EF152661D3F2DF400D28265 /* done.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF151C01D3F2DF400D28265 /* done.png */; };
-		4EF152671D3F2DF400D28265 /* done@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF151C11D3F2DF400D28265 /* done@2x.png */; };
-		4EF152681D3F2DF400D28265 /* done@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF151C21D3F2DF400D28265 /* done@3x.png */; };
-		4EF152691D3F2DF400D28265 /* error.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF151C41D3F2DF400D28265 /* error.png */; };
-		4EF1526A1D3F2DF400D28265 /* error@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF151C51D3F2DF400D28265 /* error@2x.png */; };
-		4EF1526B1D3F2DF400D28265 /* error@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF151C61D3F2DF400D28265 /* error@3x.png */; };
-		4EF1526C1D3F2DF400D28265 /* Icon-40.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF151C81D3F2DF400D28265 /* Icon-40.png */; };
-		4EF1526D1D3F2DF400D28265 /* Icon-40@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF151C91D3F2DF400D28265 /* Icon-40@2x.png */; };
-		4EF1526E1D3F2DF400D28265 /* Icon-40@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF151CA1D3F2DF400D28265 /* Icon-40@3x.png */; };
-		4EF1526F1D3F2DF400D28265 /* Icon-60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF151CB1D3F2DF400D28265 /* Icon-60@2x.png */; };
-		4EF152701D3F2DF400D28265 /* Icon-60@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF151CC1D3F2DF400D28265 /* Icon-60@3x.png */; };
-		4EF152711D3F2DF400D28265 /* Icon-76.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF151CD1D3F2DF400D28265 /* Icon-76.png */; };
-		4EF152721D3F2DF400D28265 /* Icon-76@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF151CE1D3F2DF400D28265 /* Icon-76@2x.png */; };
-		4EF152731D3F2DF400D28265 /* Icon-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF151CF1D3F2DF400D28265 /* Icon-Small.png */; };
-		4EF152741D3F2DF400D28265 /* Icon-Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF151D01D3F2DF400D28265 /* Icon-Small@2x.png */; };
-		4EF152751D3F2DF400D28265 /* Icon-Small@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF151D11D3F2DF400D28265 /* Icon-Small@3x.png */; };
-		4EF152761D3F2DF400D28265 /* logo.psd in Resources */ = {isa = PBXBuildFile; fileRef = 4EF151D21D3F2DF400D28265 /* logo.psd */; };
-		4EF152771D3F2DF400D28265 /* start(1242x2208).png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF151D41D3F2DF400D28265 /* start(1242x2208).png */; };
-		4EF152781D3F2DF400D28265 /* start(1536x2048).png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF151D51D3F2DF400D28265 /* start(1536x2048).png */; };
-		4EF152791D3F2DF400D28265 /* start(640x1136).png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF151D61D3F2DF400D28265 /* start(640x1136).png */; };
-		4EF1527A1D3F2DF400D28265 /* start(640x960).png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF151D71D3F2DF400D28265 /* start(640x960).png */; };
-		4EF1527B1D3F2DF400D28265 /* start(750x1334).png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF151D81D3F2DF400D28265 /* start(750x1334).png */; };
-		4EF1527C1D3F2DF400D28265 /* start(768x1024).png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF151D91D3F2DF400D28265 /* start(768x1024).png */; };
-		4EF1527D1D3F2DF400D28265 /* start.psd in Resources */ = {isa = PBXBuildFile; fileRef = 4EF151DA1D3F2DF400D28265 /* start.psd */; };
-		4EF1527E1D3F2DF400D28265 /* login-email@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF151DC1D3F2DF400D28265 /* login-email@2x.png */; };
-		4EF1527F1D3F2DF400D28265 /* login-email@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF151DD1D3F2DF400D28265 /* login-email@3x.png */; };
-		4EF152801D3F2DF400D28265 /* login-password@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF151DE1D3F2DF400D28265 /* login-password@2x.png */; };
-		4EF152811D3F2DF400D28265 /* login-password@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF151DF1D3F2DF400D28265 /* login-password@3x.png */; };
-		4EF152821D3F2DF400D28265 /* login-url@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF151E01D3F2DF400D28265 /* login-url@2x.png */; };
-		4EF152831D3F2DF400D28265 /* login-url@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF151E11D3F2DF400D28265 /* login-url@3x.png */; };
-		4EF152841D3F2DF400D28265 /* menu-background(320x480)@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF151E31D3F2DF400D28265 /* menu-background(320x480)@2x.png */; };
-		4EF152851D3F2DF400D28265 /* menu-background(320x568)@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF151E41D3F2DF400D28265 /* menu-background(320x568)@2x.png */; };
-		4EF152861D3F2DF400D28265 /* menu-background(375x667)@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF151E51D3F2DF400D28265 /* menu-background(375x667)@2x.png */; };
-		4EF152871D3F2DF400D28265 /* menu-background(414x736)@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF151E61D3F2DF400D28265 /* menu-background(414x736)@3x.png */; };
-		4EF152881D3F2DF400D28265 /* navigationbar-search.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF151E81D3F2DF400D28265 /* navigationbar-search.png */; };
-		4EF152891D3F2DF400D28265 /* navigationbar-search@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF151E91D3F2DF400D28265 /* navigationbar-search@2x.png */; };
-		4EF1528A1D3F2DF400D28265 /* navigationbar-search@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF151EA1D3F2DF400D28265 /* navigationbar-search@3x.png */; };
-		4EF1528B1D3F2DF400D28265 /* navigationbar-sidebar.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF151EC1D3F2DF400D28265 /* navigationbar-sidebar.png */; };
-		4EF1528C1D3F2DF400D28265 /* navigationbar-sidebar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF151ED1D3F2DF400D28265 /* navigationbar-sidebar@2x.png */; };
-		4EF1528D1D3F2DF400D28265 /* navigationbar-sidebar@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF151EE1D3F2DF400D28265 /* navigationbar-sidebar@3x.png */; };
-		4EF1528E1D3F2DF400D28265 /* note.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF151F01D3F2DF400D28265 /* note.png */; };
-		4EF1528F1D3F2DF400D28265 /* note@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF151F11D3F2DF400D28265 /* note@2x.png */; };
-		4EF152901D3F2DF400D28265 /* note@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF151F21D3F2DF400D28265 /* note@3x.png */; };
-		4EF152911D3F2DF400D28265 /* picture.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF151F31D3F2DF400D28265 /* picture.png */; };
-		4EF152921D3F2DF400D28265 /* picture@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF151F41D3F2DF400D28265 /* picture@2x.png */; };
-		4EF152931D3F2DF400D28265 /* picture@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF151F51D3F2DF400D28265 /* picture@3x.png */; };
-		4EF152941D3F2DF400D28265 /* scan.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF151F61D3F2DF400D28265 /* scan.png */; };
-		4EF152951D3F2DF400D28265 /* scan@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF151F71D3F2DF400D28265 /* scan@2x.png */; };
-		4EF152961D3F2DF400D28265 /* scan@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF151F81D3F2DF400D28265 /* scan@3x.png */; };
-		4EF152971D3F2DF400D28265 /* search.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF151F91D3F2DF400D28265 /* search.png */; };
-		4EF152981D3F2DF400D28265 /* search@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF151FA1D3F2DF400D28265 /* search@2x.png */; };
-		4EF152991D3F2DF400D28265 /* search@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF151FB1D3F2DF400D28265 /* search@3x.png */; };
-		4EF1529A1D3F2DF400D28265 /* shake@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF151FC1D3F2DF400D28265 /* shake@2x.png */; };
-		4EF1529B1D3F2DF400D28265 /* shake@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF151FD1D3F2DF400D28265 /* shake@3x.png */; };
-		4EF1529C1D3F2DF400D28265 /* shooting.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF151FE1D3F2DF400D28265 /* shooting.png */; };
-		4EF1529D1D3F2DF400D28265 /* shooting@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF151FF1D3F2DF400D28265 /* shooting@2x.png */; };
-		4EF1529E1D3F2DF400D28265 /* shooting@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF152001D3F2DF400D28265 /* shooting@3x.png */; };
-		4EF1529F1D3F2DF400D28265 /* sound.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF152011D3F2DF400D28265 /* sound.png */; };
-		4EF152A01D3F2DF400D28265 /* sound@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF152021D3F2DF400D28265 /* sound@2x.png */; };
-		4EF152A11D3F2DF400D28265 /* sound@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF152031D3F2DF400D28265 /* sound@3x.png */; };
-		4EF152A21D3F2DF400D28265 /* tweetEditing.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF152041D3F2DF400D28265 /* tweetEditing.png */; };
-		4EF152A31D3F2DF400D28265 /* tweetEditing@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF152051D3F2DF400D28265 /* tweetEditing@2x.png */; };
-		4EF152A41D3F2DF400D28265 /* tweetEditing@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF152061D3F2DF400D28265 /* tweetEditing@3x.png */; };
-		4EF152A51D3F2DF400D28265 /* default－portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF152081D3F2DF400D28265 /* default－portrait.png */; };
-		4EF152A61D3F2DF400D28265 /* default－portrait@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF152091D3F2DF400D28265 /* default－portrait@2x.png */; };
-		4EF152A71D3F2DF400D28265 /* default－portrait@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF1520A1D3F2DF400D28265 /* default－portrait@3x.png */; };
-		4EF152A81D3F2DF400D28265 /* sidemenu-day@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF1520C1D3F2DF400D28265 /* sidemenu-day@2x.png */; };
-		4EF152A91D3F2DF400D28265 /* sidemenu-day@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF1520D1D3F2DF400D28265 /* sidemenu-day@3x.png */; };
-		4EF152AA1D3F2DF400D28265 /* sidemenu-night@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF1520E1D3F2DF400D28265 /* sidemenu-night@2x.png */; };
-		4EF152AB1D3F2DF400D28265 /* sidemenu-night@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF1520F1D3F2DF400D28265 /* sidemenu-night@3x.png */; };
-		4EF152AC1D3F2DF400D28265 /* sidemenu-software@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF152101D3F2DF400D28265 /* sidemenu-software@2x.png */; };
-		4EF152AD1D3F2DF400D28265 /* sidemenu-software@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF152111D3F2DF400D28265 /* sidemenu-software@3x.png */; };
-		4EF152AE1D3F2DF400D28265 /* sidemenu_blog@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF152121D3F2DF400D28265 /* sidemenu_blog@2x.png */; };
-		4EF152AF1D3F2DF400D28265 /* sidemenu_blog@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF152131D3F2DF400D28265 /* sidemenu_blog@3x.png */; };
-		4EF152B01D3F2DF400D28265 /* sidemenu_QA@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF152141D3F2DF400D28265 /* sidemenu_QA@2x.png */; };
-		4EF152B11D3F2DF400D28265 /* sidemenu_QA@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF152151D3F2DF400D28265 /* sidemenu_QA@3x.png */; };
-		4EF152B21D3F2DF400D28265 /* sidemenu_setting@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF152161D3F2DF400D28265 /* sidemenu_setting@2x.png */; };
-		4EF152B31D3F2DF400D28265 /* sidemenu_setting@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF152171D3F2DF400D28265 /* sidemenu_setting@3x.png */; };
-		4EF152B41D3F2DF400D28265 /* tabbar-discover-selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF152191D3F2DF400D28265 /* tabbar-discover-selected.png */; };
-		4EF152B51D3F2DF400D28265 /* tabbar-discover-selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF1521A1D3F2DF400D28265 /* tabbar-discover-selected@2x.png */; };
-		4EF152B61D3F2DF400D28265 /* tabbar-discover-selected@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF1521B1D3F2DF400D28265 /* tabbar-discover-selected@3x.png */; };
-		4EF152B71D3F2DF400D28265 /* tabbar-discover-selected@3x.psd in Resources */ = {isa = PBXBuildFile; fileRef = 4EF1521C1D3F2DF400D28265 /* tabbar-discover-selected@3x.psd */; };
-		4EF152B81D3F2DF400D28265 /* tabbar-discover.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF1521D1D3F2DF400D28265 /* tabbar-discover.png */; };
-		4EF152B91D3F2DF400D28265 /* tabbar-discover@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF1521E1D3F2DF400D28265 /* tabbar-discover@2x.png */; };
-		4EF152BA1D3F2DF400D28265 /* tabbar-discover@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF1521F1D3F2DF400D28265 /* tabbar-discover@3x.png */; };
-		4EF152BB1D3F2DF400D28265 /* tabbar-me-selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF152201D3F2DF400D28265 /* tabbar-me-selected.png */; };
-		4EF152BC1D3F2DF400D28265 /* tabbar-me-selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF152211D3F2DF400D28265 /* tabbar-me-selected@2x.png */; };
-		4EF152BD1D3F2DF400D28265 /* tabbar-me-selected@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF152221D3F2DF400D28265 /* tabbar-me-selected@3x.png */; };
-		4EF152BE1D3F2DF400D28265 /* tabbar-me-selected@3x.psd in Resources */ = {isa = PBXBuildFile; fileRef = 4EF152231D3F2DF400D28265 /* tabbar-me-selected@3x.psd */; };
-		4EF152BF1D3F2DF400D28265 /* tabbar-me.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF152241D3F2DF400D28265 /* tabbar-me.png */; };
-		4EF152C01D3F2DF400D28265 /* tabbar-me@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF152251D3F2DF400D28265 /* tabbar-me@2x.png */; };
-		4EF152C11D3F2DF400D28265 /* tabbar-me@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF152261D3F2DF400D28265 /* tabbar-me@3x.png */; };
-		4EF152C21D3F2DF400D28265 /* tabbar-more.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF152271D3F2DF400D28265 /* tabbar-more.png */; };
-		4EF152C31D3F2DF400D28265 /* tabbar-more@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF152281D3F2DF400D28265 /* tabbar-more@2x.png */; };
-		4EF152C41D3F2DF400D28265 /* tabbar-more@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF152291D3F2DF400D28265 /* tabbar-more@3x.png */; };
-		4EF152C51D3F2DF400D28265 /* tabbar-news-selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF1522A1D3F2DF400D28265 /* tabbar-news-selected.png */; };
-		4EF152C61D3F2DF400D28265 /* tabbar-news-selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF1522B1D3F2DF400D28265 /* tabbar-news-selected@2x.png */; };
-		4EF152C71D3F2DF400D28265 /* tabbar-news-selected@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF1522C1D3F2DF400D28265 /* tabbar-news-selected@3x.png */; };
-		4EF152C81D3F2DF400D28265 /* tabbar-news-selected@3x.psd in Resources */ = {isa = PBXBuildFile; fileRef = 4EF1522D1D3F2DF400D28265 /* tabbar-news-selected@3x.psd */; };
-		4EF152C91D3F2DF400D28265 /* tabbar-news.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF1522E1D3F2DF400D28265 /* tabbar-news.png */; };
-		4EF152CA1D3F2DF400D28265 /* tabbar-news@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF1522F1D3F2DF400D28265 /* tabbar-news@2x.png */; };
-		4EF152CB1D3F2DF400D28265 /* tabbar-news@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF152301D3F2DF400D28265 /* tabbar-news@3x.png */; };
-		4EF152CC1D3F2DF400D28265 /* tabbar-tweet-selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF152311D3F2DF400D28265 /* tabbar-tweet-selected.png */; };
-		4EF152CD1D3F2DF400D28265 /* tabbar-tweet-selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF152321D3F2DF400D28265 /* tabbar-tweet-selected@2x.png */; };
-		4EF152CE1D3F2DF400D28265 /* tabbar-tweet-selected@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF152331D3F2DF400D28265 /* tabbar-tweet-selected@3x.png */; };
-		4EF152CF1D3F2DF400D28265 /* tabbar-tweet-selected@3x.psd in Resources */ = {isa = PBXBuildFile; fileRef = 4EF152341D3F2DF400D28265 /* tabbar-tweet-selected@3x.psd */; };
-		4EF152D01D3F2DF400D28265 /* tabbar-tweet.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF152351D3F2DF400D28265 /* tabbar-tweet.png */; };
-		4EF152D11D3F2DF400D28265 /* tabbar-tweet@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF152361D3F2DF400D28265 /* tabbar-tweet@2x.png */; };
-		4EF152D21D3F2DF400D28265 /* tabbar-tweet@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF152371D3F2DF400D28265 /* tabbar-tweet@3x.png */; };
-		4EF152D31D3F2DF400D28265 /* send@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF152391D3F2DF400D28265 /* send@2x.png */; };
-		4EF152D41D3F2DF400D28265 /* send@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF1523A1D3F2DF400D28265 /* send@3x.png */; };
-		4EF152D51D3F2DF400D28265 /* toolbar-barSwitch@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF1523B1D3F2DF400D28265 /* toolbar-barSwitch@2x.png */; };
-		4EF152D61D3F2DF400D28265 /* toolbar-barSwitch@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF1523C1D3F2DF400D28265 /* toolbar-barSwitch@3x.png */; };
-		4EF152D71D3F2DF400D28265 /* toolbar-comments@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF1523D1D3F2DF400D28265 /* toolbar-comments@2x.png */; };
-		4EF152D81D3F2DF400D28265 /* toolbar-comments@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF1523E1D3F2DF400D28265 /* toolbar-comments@3x.png */; };
-		4EF152D91D3F2DF400D28265 /* toolbar-editingComment@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF1523F1D3F2DF400D28265 /* toolbar-editingComment@2x.png */; };
-		4EF152DA1D3F2DF400D28265 /* toolbar-editingComment@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF152401D3F2DF400D28265 /* toolbar-editingComment@3x.png */; };
-		4EF152DB1D3F2DF400D28265 /* toolbar-emoji2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF152411D3F2DF400D28265 /* toolbar-emoji2@2x.png */; };
-		4EF152DC1D3F2DF400D28265 /* toolbar-emoji2@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF152421D3F2DF400D28265 /* toolbar-emoji2@3x.png */; };
-		4EF152DD1D3F2DF400D28265 /* toolbar-emoji@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF152431D3F2DF400D28265 /* toolbar-emoji@2x.png */; };
-		4EF152DE1D3F2DF400D28265 /* toolbar-emoji@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF152441D3F2DF400D28265 /* toolbar-emoji@3x.png */; };
-		4EF152DF1D3F2DF400D28265 /* toolbar-image@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF152451D3F2DF400D28265 /* toolbar-image@2x.png */; };
-		4EF152E01D3F2DF400D28265 /* toolbar-image@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF152461D3F2DF400D28265 /* toolbar-image@3x.png */; };
-		4EF152E11D3F2DF400D28265 /* toolbar-keyboardUp@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF152471D3F2DF400D28265 /* toolbar-keyboardUp@2x.png */; };
-		4EF152E21D3F2DF400D28265 /* toolbar-keyboardUp@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF152481D3F2DF400D28265 /* toolbar-keyboardUp@3x.png */; };
-		4EF152E31D3F2DF400D28265 /* toolbar-mention@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF152491D3F2DF400D28265 /* toolbar-mention@2x.png */; };
-		4EF152E41D3F2DF400D28265 /* toolbar-mention@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF1524A1D3F2DF400D28265 /* toolbar-mention@3x.png */; };
-		4EF152E51D3F2DF400D28265 /* toolbar-reference@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF1524B1D3F2DF400D28265 /* toolbar-reference@2x.png */; };
-		4EF152E61D3F2DF400D28265 /* toolbar-reference@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF1524C1D3F2DF400D28265 /* toolbar-reference@3x.png */; };
-		4EF152E71D3F2DF400D28265 /* toolbar-report@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF1524D1D3F2DF400D28265 /* toolbar-report@2x.png */; };
-		4EF152E81D3F2DF400D28265 /* toolbar-report@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF1524E1D3F2DF400D28265 /* toolbar-report@3x.png */; };
-		4EF152E91D3F2DF400D28265 /* toolbar-separatorline@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF1524F1D3F2DF400D28265 /* toolbar-separatorline@2x.png */; };
-		4EF152EA1D3F2DF400D28265 /* toolbar-separatorline@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF152501D3F2DF400D28265 /* toolbar-separatorline@3x.png */; };
-		4EF152EB1D3F2DF400D28265 /* toolbar-share@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF152511D3F2DF400D28265 /* toolbar-share@2x.png */; };
-		4EF152EC1D3F2DF400D28265 /* toolbar-share@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF152521D3F2DF400D28265 /* toolbar-share@3x.png */; };
-		4EF152ED1D3F2DF400D28265 /* toolbar-star@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF152531D3F2DF400D28265 /* toolbar-star@2x.png */; };
-		4EF152EE1D3F2DF400D28265 /* toolbar-star@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF152541D3F2DF400D28265 /* toolbar-star@3x.png */; };
-		4EF152EF1D3F2DF400D28265 /* toolbar-starred@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF152551D3F2DF400D28265 /* toolbar-starred@2x.png */; };
-		4EF152F01D3F2DF400D28265 /* toolbar-starred@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF152561D3F2DF400D28265 /* toolbar-starred@3x.png */; };
-		4EF152F11D3F2DF400D28265 /* toolbar-text@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF152571D3F2DF400D28265 /* toolbar-text@2x.png */; };
-		4EF152F21D3F2DF400D28265 /* toolbar-text@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF152581D3F2DF400D28265 /* toolbar-text@3x.png */; };
-		4EF152F31D3F2DF400D28265 /* user-background-320@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF1525A1D3F2DF400D28265 /* user-background-320@2x.png */; };
-		4EF152F41D3F2DF400D28265 /* user-background-375@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF1525B1D3F2DF400D28265 /* user-background-375@2x.png */; };
-		4EF152F51D3F2DF400D28265 /* user-background@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF1525C1D3F2DF400D28265 /* user-background@3x.png */; };
-		4EF152F61D3F2E0900D28265 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EF151B31D3F29DA00D28265 /* libiconv.tbd */; };
-		4EF152FB1D3F3A1A00D28265 /* WBSSettingsPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF152FA1D3F3A1A00D28265 /* WBSSettingsPage.m */; };
-
->>>>>>> origin/master
-		4EF5E3FE1D41C847002B6AFF /* WBSLoginNavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF5E3FB1D41C847002B6AFF /* WBSLoginNavViewController.m */; };
-		4EF5E3FF1D41C847002B6AFF /* WBSLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF5E3FD1D41C847002B6AFF /* WBSLoginViewController.m */; };
-		4EF5E4021D41C870002B6AFF /* WBSSelectBlogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF5E4011D41C870002B6AFF /* WBSSelectBlogViewController.m */; };
-		4EF5E4111D41EC67002B6AFF /* WBSLogin.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EF5E4101D41EC67002B6AFF /* WBSLogin.xib */; };
-		4EF5E4141D41FD23002B6AFF /* login-Close.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF5E4121D41FD23002B6AFF /* login-Close.png */; };
-		4EF5E4151D41FD23002B6AFF /* login-open.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EF5E4131D41FD23002B6AFF /* login-open.png */; };
-		4EF5E43C1D4230DA002B6AFF /* NSString+StringByStrippingHTML.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF5E4181D4230DA002B6AFF /* NSString+StringByStrippingHTML.m */; };
-		4EF5E43D1D4230DA002B6AFF /* TGBlogJsonApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF5E41A1D4230DA002B6AFF /* TGBlogJsonApi.m */; };
-		4EF5E43E1D4230DA002B6AFF /* TGCategory+TGCategoryFromDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF5E41C1D4230DA002B6AFF /* TGCategory+TGCategoryFromDictionary.m */; };
-		4EF5E43F1D4230DA002B6AFF /* TGCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF5E41E1D4230DA002B6AFF /* TGCategory.m */; };
-		4EF5E4401D4230DA002B6AFF /* TGComment+TGCommentFromDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF5E4201D4230DA002B6AFF /* TGComment+TGCommentFromDictionary.m */; };
-		4EF5E4411D4230DA002B6AFF /* TGComment.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF5E4221D4230DA002B6AFF /* TGComment.m */; };
-		4EF5E4421D4230DA002B6AFF /* TGMetaWeblogAuthApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF5E4251D4230DA002B6AFF /* TGMetaWeblogAuthApi.m */; };
-		4EF5E4431D4230DA002B6AFF /* TGMetaWeblogXMLRPCApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF5E4281D4230DA002B6AFF /* TGMetaWeblogXMLRPCApi.m */; };
-		4EF5E4441D4230DA002B6AFF /* TGPost+SDPostFromDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF5E42A1D4230DA002B6AFF /* TGPost+SDPostFromDictionary.m */; };
-		4EF5E4451D4230DA002B6AFF /* TGPost.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF5E42C1D4230DA002B6AFF /* TGPost.m */; };
-		4EF5E4461D4230DA002B6AFF /* TGTag+TGTagFromDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF5E42E1D4230DA002B6AFF /* TGTag+TGTagFromDictionary.m */; };
-		4EF5E4471D4230DA002B6AFF /* TGTag.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF5E4301D4230DA002B6AFF /* TGTag.m */; };
-		4EF5E4481D4230DA002B6AFF /* TGXMLRPCApiClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF5E4321D4230DA002B6AFF /* TGXMLRPCApiClient.m */; };
-		4EF5E4491D4230DA002B6AFF /* TGMetaWeblogAuthApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF5E4361D4230DA002B6AFF /* TGMetaWeblogAuthApi.m */; };
-		4EF5E44A1D4230DA002B6AFF /* TGMetaWeblogXMLRPCApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF5E4391D4230DA002B6AFF /* TGMetaWeblogXMLRPCApi.m */; };
-		4EF5E44B1D4230DA002B6AFF /* TGXMLRPCApiClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF5E43B1D4230DA002B6AFF /* TGXMLRPCApiClient.m */; };
-
+		4EF38F321D42F56E00CE28A4 /* NSString+StringByStrippingHTML.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF38F171D42F56E00CE28A4 /* NSString+StringByStrippingHTML.m */; };
+		4EF38F331D42F56E00CE28A4 /* TGBlogJsonApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF38F191D42F56E00CE28A4 /* TGBlogJsonApi.m */; };
+		4EF38F341D42F56E00CE28A4 /* TGCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF38F1B1D42F56E00CE28A4 /* TGCategory.m */; };
+		4EF38F351D42F56E00CE28A4 /* TGCategory+TGCategoryFromDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF38F1D1D42F56E00CE28A4 /* TGCategory+TGCategoryFromDictionary.m */; };
+		4EF38F361D42F56E00CE28A4 /* TGComment.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF38F1F1D42F56E00CE28A4 /* TGComment.m */; };
+		4EF38F371D42F56E00CE28A4 /* TGComment+TGCommentFromDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF38F211D42F56E00CE28A4 /* TGComment+TGCommentFromDictionary.m */; };
+		4EF38F3A1D42F56E00CE28A4 /* TGPost.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF38F291D42F56E00CE28A4 /* TGPost.m */; };
+		4EF38F3B1D42F56E00CE28A4 /* TGPost+SDPostFromDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF38F2B1D42F56E00CE28A4 /* TGPost+SDPostFromDictionary.m */; };
+		4EF38F3C1D42F56E00CE28A4 /* TGTag.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF38F2D1D42F56E00CE28A4 /* TGTag.m */; };
+		4EF38F3D1D42F56E00CE28A4 /* TGTag+TGTagFromDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF38F2F1D42F56E00CE28A4 /* TGTag+TGTagFromDictionary.m */; };
+		4EF38F471D42F57A00CE28A4 /* TGMetaWeblogAuthApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF38F411D42F57A00CE28A4 /* TGMetaWeblogAuthApi.m */; };
+		4EF38F481D42F57A00CE28A4 /* TGMetaWeblogXMLRPCApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF38F441D42F57A00CE28A4 /* TGMetaWeblogXMLRPCApi.m */; };
+		4EF38F491D42F57A00CE28A4 /* TGXMLRPCApiClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF38F461D42F57A00CE28A4 /* TGXMLRPCApiClient.m */; };
+		4EF38F501D42F5AC00CE28A4 /* WBSLoginNavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF38F4B1D42F5AC00CE28A4 /* WBSLoginNavViewController.m */; };
+		4EF38F511D42F5AC00CE28A4 /* WBSLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF38F4D1D42F5AC00CE28A4 /* WBSLoginViewController.m */; };
+		4EF38F521D42F5AC00CE28A4 /* WBSSelectBlogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF38F4F1D42F5AC00CE28A4 /* WBSSelectBlogViewController.m */; };
+		4EF38F541D42F5BA00CE28A4 /* WBSLogin.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EF38F531D42F5BA00CE28A4 /* WBSLogin.xib */; };
+		4EF38F551D42F8F700CE28A4 /* WBSOBObjsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF150CC1D3E39A500D28265 /* WBSOBObjsViewController.m */; };
+		4EF38F561D42F9E600CE28A4 /* WBSSideMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF150DC1D3E39D500D28265 /* WBSSideMenuViewController.m */; };
+		4EF38F571D42FA1B00CE28A4 /* WBSRootTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF150D01D3E39BB00D28265 /* WBSRootTabBarController.m */; };
+		4EF38F581D42FA2F00CE28A4 /* WBSSettingsPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF152FA1D3F3A1A00D28265 /* WBSSettingsPage.m */; };
+		4EF38F591D42FA5800CE28A4 /* WPXMLRPCDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF151A81D3F27C400D28265 /* WPXMLRPCDecoder.m */; };
+		4EF38F5A1D42FA6100CE28A4 /* WBSSwipableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF150E11D3E39F100D28265 /* WBSSwipableViewController.m */; };
+		4EF38F5B1D42FA6A00CE28A4 /* WBSOptionButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF150D21D3E39BB00D28265 /* WBSOptionButton.m */; };
+		4EF38F5C1D42FAB200CE28A4 /* TMDHeading.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF1503F1D3E36DE00D28265 /* TMDHeading.m */; };
+		4EF38F5D1D42FAE100CE28A4 /* WBSBrowserNavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF150BE1D3E38DC00D28265 /* WBSBrowserNavViewController.m */; };
+		4EF38F5E1D42FAE100CE28A4 /* WBSBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF150C01D3E38DC00D28265 /* WBSBrowserViewController.m */; };
+		4EF38F5F1D42FAE800CE28A4 /* WBSDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF150D81D3E39C900D28265 /* WBSDetailsViewController.m */; };
+		4EF38F601D42FAF000CE28A4 /* WBSErrorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF150CA1D3E39A500D28265 /* WBSErrorViewController.m */; };
+		4EF38F611D42FB1E00CE28A4 /* WBSBottomBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF150D61D3E39C900D28265 /* WBSBottomBarViewController.m */; };
+		4EF38F621D42FB2C00CE28A4 /* WBSHorizonalTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF150DF1D3E39F100D28265 /* WBSHorizonalTableViewController.m */; };
+		4EF38F631D42FB3300CE28A4 /* WBSTitleBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF150E31D3E39F100D28265 /* WBSTitleBarView.m */; };
+		4EF38F641D42FB7B00CE28A4 /* WPXMLRPCDataCleaner.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF151A61D3F27C400D28265 /* WPXMLRPCDataCleaner.m */; };
+		4EF38F651D42FB7B00CE28A4 /* WPXMLRPCDecoderDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF151AA1D3F27C400D28265 /* WPXMLRPCDecoderDelegate.m */; };
+		4EF38F661D42FB7B00CE28A4 /* WPXMLRPCEncoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF151AC1D3F27C400D28265 /* WPXMLRPCEncoder.m */; };
+		4EF38F671D42FB9700CE28A4 /* WPBase64Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF151A11D3F27C400D28265 /* WPBase64Utils.m */; };
+		4EF38F681D42FBA400CE28A4 /* WPStringUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF151A31D3F27C400D28265 /* WPStringUtils.m */; };
+		4EF38F691D42FBD200CE28A4 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EF151B31D3F29DA00D28265 /* libiconv.tbd */; };
+		4EF38F6A1D430AE600CE28A4 /* mkdio.c in Sources */ = {isa = PBXBuildFile; fileRef = 4EF14D281D3E32F600D28265 /* mkdio.c */; };
+		4EF5E3FE1D41C847002B6AFF /* (null) in Sources */ = {isa = PBXBuildFile; };
+		4EF5E3FF1D41C847002B6AFF /* (null) in Sources */ = {isa = PBXBuildFile; };
+		4EF5E4021D41C870002B6AFF /* (null) in Sources */ = {isa = PBXBuildFile; };
+		4EF5E4111D41EC67002B6AFF /* (null) in Resources */ = {isa = PBXBuildFile; };
+		4EF5E4141D41FD23002B6AFF /* (null) in Resources */ = {isa = PBXBuildFile; };
+		4EF5E4151D41FD23002B6AFF /* (null) in Resources */ = {isa = PBXBuildFile; };
+		4EF5E43C1D4230DA002B6AFF /* (null) in Sources */ = {isa = PBXBuildFile; };
+		4EF5E43D1D4230DA002B6AFF /* (null) in Sources */ = {isa = PBXBuildFile; };
+		4EF5E43F1D4230DA002B6AFF /* (null) in Sources */ = {isa = PBXBuildFile; };
+		4EF5E4401D4230DA002B6AFF /* (null) in Sources */ = {isa = PBXBuildFile; };
+		4EF5E4411D4230DA002B6AFF /* (null) in Sources */ = {isa = PBXBuildFile; };
+		4EF5E4421D4230DA002B6AFF /* (null) in Sources */ = {isa = PBXBuildFile; };
+		4EF5E4441D4230DA002B6AFF /* (null) in Sources */ = {isa = PBXBuildFile; };
+		4EF5E4451D4230DA002B6AFF /* (null) in Sources */ = {isa = PBXBuildFile; };
+		4EF5E4471D4230DA002B6AFF /* (null) in Sources */ = {isa = PBXBuildFile; };
+		4EF5E4481D4230DA002B6AFF /* (null) in Sources */ = {isa = PBXBuildFile; };
+		4EF5E4491D4230DA002B6AFF /* (null) in Sources */ = {isa = PBXBuildFile; };
+		4EF5E44A1D4230DA002B6AFF /* (null) in Sources */ = {isa = PBXBuildFile; };
+		4EF5E44B1D4230DA002B6AFF /* (null) in Sources */ = {isa = PBXBuildFile; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1061,18 +890,6 @@
 		4EF150AD1D3E387C00D28265 /* WBSTagViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBSTagViewController.m; sourceTree = "<group>"; };
 		4EF150AF1D3E389900D28265 /* WBSMyInfoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSMyInfoController.h; sourceTree = "<group>"; };
 		4EF150B01D3E389900D28265 /* WBSMyInfoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBSMyInfoController.m; sourceTree = "<group>"; };
-<<<<<<< HEAD
-<<<<<<< HEAD
-		4EF150B11D3E389900D28265 /* WBSLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WBSLoginViewController.h; path = ../Me/WBSLoginViewController.h; sourceTree = "<group>"; };
-		4EF150B21D3E389900D28265 /* WBSLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WBSLoginViewController.m; path = ../Me/WBSLoginViewController.m; sourceTree = "<group>"; };
-		4EF150B31D3E389900D28265 /* WBSLoginNavViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WBSLoginNavViewController.h; path = ../Me/WBSLoginNavViewController.h; sourceTree = "<group>"; };
-		4EF150B41D3E389900D28265 /* WBSLoginNavViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WBSLoginNavViewController.m; path = ../Me/WBSLoginNavViewController.m; sourceTree = "<group>"; };
-		4EF150B51D3E389900D28265 /* WBSSelectBlogViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WBSSelectBlogViewController.h; path = ../Me/WBSSelectBlogViewController.h; sourceTree = "<group>"; };
-		4EF150B61D3E389900D28265 /* WBSSelectBlogViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WBSSelectBlogViewController.m; path = ../Me/WBSSelectBlogViewController.m; sourceTree = "<group>"; };
-=======
->>>>>>> origin/master
-=======
->>>>>>> origin/master
 		4EF150BD1D3E38DC00D28265 /* WBSBrowserNavViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSBrowserNavViewController.h; sourceTree = "<group>"; };
 		4EF150BE1D3E38DC00D28265 /* WBSBrowserNavViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBSBrowserNavViewController.m; sourceTree = "<group>"; };
 		4EF150BF1D3E38DC00D28265 /* WBSBrowserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSBrowserViewController.h; sourceTree = "<group>"; };
@@ -1081,18 +898,8 @@
 		4EF150CA1D3E39A500D28265 /* WBSErrorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBSErrorViewController.m; sourceTree = "<group>"; };
 		4EF150CB1D3E39A500D28265 /* WBSOBObjsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSOBObjsViewController.h; sourceTree = "<group>"; };
 		4EF150CC1D3E39A500D28265 /* WBSOBObjsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBSOBObjsViewController.m; sourceTree = "<group>"; };
-<<<<<<< HEAD
-<<<<<<< HEAD
-		4EF150CF1D3E39BB00D28265 /* WBSOBTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSOBTabBarController.h; sourceTree = "<group>"; };
-		4EF150D01D3E39BB00D28265 /* WBSOBTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBSOBTabBarController.m; sourceTree = "<group>"; };
-=======
 		4EF150CF1D3E39BB00D28265 /* WBSRootTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSRootTabBarController.h; sourceTree = "<group>"; };
 		4EF150D01D3E39BB00D28265 /* WBSRootTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBSRootTabBarController.m; sourceTree = "<group>"; };
->>>>>>> origin/master
-=======
-		4EF150CF1D3E39BB00D28265 /* WBSRootTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSRootTabBarController.h; sourceTree = "<group>"; };
-		4EF150D01D3E39BB00D28265 /* WBSRootTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBSRootTabBarController.m; sourceTree = "<group>"; };
->>>>>>> origin/master
 		4EF150D11D3E39BB00D28265 /* WBSOptionButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSOptionButton.h; sourceTree = "<group>"; };
 		4EF150D21D3E39BB00D28265 /* WBSOptionButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBSOptionButton.m; sourceTree = "<group>"; };
 		4EF150D51D3E39C900D28265 /* WBSBottomBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSBottomBarViewController.h; sourceTree = "<group>"; };
@@ -1305,88 +1112,41 @@
 		4EF1525C1D3F2DF400D28265 /* user-background@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "user-background@3x.png"; sourceTree = "<group>"; };
 		4EF152F91D3F3A1A00D28265 /* WBSSettingsPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSSettingsPage.h; sourceTree = "<group>"; };
 		4EF152FA1D3F3A1A00D28265 /* WBSSettingsPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBSSettingsPage.m; sourceTree = "<group>"; };
-<<<<<<< HEAD
-<<<<<<< HEAD
-		4EF152FE1D3F3C3500D28265 /* NSString+StringByStrippingHTML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+StringByStrippingHTML.h"; sourceTree = "<group>"; };
-		4EF152FF1D3F3C3500D28265 /* NSString+StringByStrippingHTML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+StringByStrippingHTML.m"; sourceTree = "<group>"; };
-		4EF153001D3F3C3500D28265 /* TGBlogJsonApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGBlogJsonApi.h; sourceTree = "<group>"; };
-		4EF153011D3F3C3500D28265 /* TGBlogJsonApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGBlogJsonApi.m; sourceTree = "<group>"; };
-		4EF153021D3F3C3500D28265 /* TGCategory+TGCategoryFromDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TGCategory+TGCategoryFromDictionary.h"; sourceTree = "<group>"; };
-		4EF153031D3F3C3500D28265 /* TGCategory+TGCategoryFromDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TGCategory+TGCategoryFromDictionary.m"; sourceTree = "<group>"; };
-		4EF153041D3F3C3500D28265 /* TGCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGCategory.h; sourceTree = "<group>"; };
-		4EF153051D3F3C3500D28265 /* TGCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGCategory.m; sourceTree = "<group>"; };
-		4EF153061D3F3C3500D28265 /* TGComment+TGCommentFromDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TGComment+TGCommentFromDictionary.h"; sourceTree = "<group>"; };
-		4EF153071D3F3C3500D28265 /* TGComment+TGCommentFromDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TGComment+TGCommentFromDictionary.m"; sourceTree = "<group>"; };
-		4EF153081D3F3C3500D28265 /* TGComment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGComment.h; sourceTree = "<group>"; };
-		4EF153091D3F3C3500D28265 /* TGComment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGComment.m; sourceTree = "<group>"; };
-		4EF153101D3F3C3500D28265 /* TGPost+SDPostFromDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TGPost+SDPostFromDictionary.h"; sourceTree = "<group>"; };
-		4EF153111D3F3C3500D28265 /* TGPost+SDPostFromDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TGPost+SDPostFromDictionary.m"; sourceTree = "<group>"; };
-		4EF153121D3F3C3500D28265 /* TGPost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGPost.h; sourceTree = "<group>"; };
-		4EF153131D3F3C3500D28265 /* TGPost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGPost.m; sourceTree = "<group>"; };
-		4EF153141D3F3C3500D28265 /* TGTag+TGTagFromDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TGTag+TGTagFromDictionary.h"; sourceTree = "<group>"; };
-		4EF153151D3F3C3500D28265 /* TGTag+TGTagFromDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TGTag+TGTagFromDictionary.m"; sourceTree = "<group>"; };
-		4EF153161D3F3C3500D28265 /* TGTag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGTag.h; sourceTree = "<group>"; };
-		4EF153171D3F3C3500D28265 /* TGTag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGTag.m; sourceTree = "<group>"; };
-		4EF1531B1D3F3C3500D28265 /* TGMetaWeblogApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGMetaWeblogApi.h; sourceTree = "<group>"; };
-		4EF1531C1D3F3C3500D28265 /* TGMetaWeblogAuthApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGMetaWeblogAuthApi.h; sourceTree = "<group>"; };
-		4EF1531D1D3F3C3500D28265 /* TGMetaWeblogAuthApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGMetaWeblogAuthApi.m; sourceTree = "<group>"; };
-		4EF1531E1D3F3C3500D28265 /* TGMetaWeblogBaseApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGMetaWeblogBaseApi.h; sourceTree = "<group>"; };
-		4EF1531F1D3F3C3500D28265 /* TGMetaWeblogXMLRPCApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGMetaWeblogXMLRPCApi.h; sourceTree = "<group>"; };
-		4EF153201D3F3C3500D28265 /* TGMetaWeblogXMLRPCApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGMetaWeblogXMLRPCApi.m; sourceTree = "<group>"; };
-		4EF153211D3F3C3500D28265 /* TGXMLRPCApiClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGXMLRPCApiClient.h; sourceTree = "<group>"; };
-		4EF153221D3F3C3500D28265 /* TGXMLRPCApiClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGXMLRPCApiClient.m; sourceTree = "<group>"; };
-=======
-=======
->>>>>>> origin/master
-		4EF5E3FA1D41C847002B6AFF /* WBSLoginNavViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSLoginNavViewController.h; sourceTree = "<group>"; };
-		4EF5E3FB1D41C847002B6AFF /* WBSLoginNavViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBSLoginNavViewController.m; sourceTree = "<group>"; };
-		4EF5E3FC1D41C847002B6AFF /* WBSLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSLoginViewController.h; sourceTree = "<group>"; };
-		4EF5E3FD1D41C847002B6AFF /* WBSLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBSLoginViewController.m; sourceTree = "<group>"; };
-		4EF5E4001D41C870002B6AFF /* WBSSelectBlogViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSSelectBlogViewController.h; sourceTree = "<group>"; };
-		4EF5E4011D41C870002B6AFF /* WBSSelectBlogViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBSSelectBlogViewController.m; sourceTree = "<group>"; };
-		4EF5E4101D41EC67002B6AFF /* WBSLogin.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WBSLogin.xib; sourceTree = "<group>"; };
-		4EF5E4121D41FD23002B6AFF /* login-Close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "login-Close.png"; path = "WBSBlog/Images/login-Close.png"; sourceTree = SOURCE_ROOT; };
-		4EF5E4131D41FD23002B6AFF /* login-open.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "login-open.png"; path = "WBSBlog/Images/login-open.png"; sourceTree = SOURCE_ROOT; };
-		4EF5E4171D4230DA002B6AFF /* NSString+StringByStrippingHTML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+StringByStrippingHTML.h"; sourceTree = "<group>"; };
-		4EF5E4181D4230DA002B6AFF /* NSString+StringByStrippingHTML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+StringByStrippingHTML.m"; sourceTree = "<group>"; };
-		4EF5E4191D4230DA002B6AFF /* TGBlogJsonApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGBlogJsonApi.h; sourceTree = "<group>"; };
-		4EF5E41A1D4230DA002B6AFF /* TGBlogJsonApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGBlogJsonApi.m; sourceTree = "<group>"; };
-		4EF5E41B1D4230DA002B6AFF /* TGCategory+TGCategoryFromDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TGCategory+TGCategoryFromDictionary.h"; sourceTree = "<group>"; };
-		4EF5E41C1D4230DA002B6AFF /* TGCategory+TGCategoryFromDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TGCategory+TGCategoryFromDictionary.m"; sourceTree = "<group>"; };
-		4EF5E41D1D4230DA002B6AFF /* TGCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGCategory.h; sourceTree = "<group>"; };
-		4EF5E41E1D4230DA002B6AFF /* TGCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGCategory.m; sourceTree = "<group>"; };
-		4EF5E41F1D4230DA002B6AFF /* TGComment+TGCommentFromDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TGComment+TGCommentFromDictionary.h"; sourceTree = "<group>"; };
-		4EF5E4201D4230DA002B6AFF /* TGComment+TGCommentFromDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TGComment+TGCommentFromDictionary.m"; sourceTree = "<group>"; };
-		4EF5E4211D4230DA002B6AFF /* TGComment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGComment.h; sourceTree = "<group>"; };
-		4EF5E4221D4230DA002B6AFF /* TGComment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGComment.m; sourceTree = "<group>"; };
-		4EF5E4231D4230DA002B6AFF /* TGMetaWeblogApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGMetaWeblogApi.h; sourceTree = "<group>"; };
-		4EF5E4241D4230DA002B6AFF /* TGMetaWeblogAuthApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGMetaWeblogAuthApi.h; sourceTree = "<group>"; };
-		4EF5E4251D4230DA002B6AFF /* TGMetaWeblogAuthApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGMetaWeblogAuthApi.m; sourceTree = "<group>"; };
-		4EF5E4261D4230DA002B6AFF /* TGMetaWeblogBaseApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGMetaWeblogBaseApi.h; sourceTree = "<group>"; };
-		4EF5E4271D4230DA002B6AFF /* TGMetaWeblogXMLRPCApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGMetaWeblogXMLRPCApi.h; sourceTree = "<group>"; };
-		4EF5E4281D4230DA002B6AFF /* TGMetaWeblogXMLRPCApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGMetaWeblogXMLRPCApi.m; sourceTree = "<group>"; };
-		4EF5E4291D4230DA002B6AFF /* TGPost+SDPostFromDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TGPost+SDPostFromDictionary.h"; sourceTree = "<group>"; };
-		4EF5E42A1D4230DA002B6AFF /* TGPost+SDPostFromDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TGPost+SDPostFromDictionary.m"; sourceTree = "<group>"; };
-		4EF5E42B1D4230DA002B6AFF /* TGPost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGPost.h; sourceTree = "<group>"; };
-		4EF5E42C1D4230DA002B6AFF /* TGPost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGPost.m; sourceTree = "<group>"; };
-		4EF5E42D1D4230DA002B6AFF /* TGTag+TGTagFromDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TGTag+TGTagFromDictionary.h"; sourceTree = "<group>"; };
-		4EF5E42E1D4230DA002B6AFF /* TGTag+TGTagFromDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TGTag+TGTagFromDictionary.m"; sourceTree = "<group>"; };
-		4EF5E42F1D4230DA002B6AFF /* TGTag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGTag.h; sourceTree = "<group>"; };
-		4EF5E4301D4230DA002B6AFF /* TGTag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGTag.m; sourceTree = "<group>"; };
-		4EF5E4311D4230DA002B6AFF /* TGXMLRPCApiClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGXMLRPCApiClient.h; sourceTree = "<group>"; };
-		4EF5E4321D4230DA002B6AFF /* TGXMLRPCApiClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGXMLRPCApiClient.m; sourceTree = "<group>"; };
-		4EF5E4341D4230DA002B6AFF /* TGMetaWeblogApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGMetaWeblogApi.h; sourceTree = "<group>"; };
-		4EF5E4351D4230DA002B6AFF /* TGMetaWeblogAuthApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGMetaWeblogAuthApi.h; sourceTree = "<group>"; };
-		4EF5E4361D4230DA002B6AFF /* TGMetaWeblogAuthApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGMetaWeblogAuthApi.m; sourceTree = "<group>"; };
-		4EF5E4371D4230DA002B6AFF /* TGMetaWeblogBaseApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGMetaWeblogBaseApi.h; sourceTree = "<group>"; };
-		4EF5E4381D4230DA002B6AFF /* TGMetaWeblogXMLRPCApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGMetaWeblogXMLRPCApi.h; sourceTree = "<group>"; };
-		4EF5E4391D4230DA002B6AFF /* TGMetaWeblogXMLRPCApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGMetaWeblogXMLRPCApi.m; sourceTree = "<group>"; };
-		4EF5E43A1D4230DA002B6AFF /* TGXMLRPCApiClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGXMLRPCApiClient.h; sourceTree = "<group>"; };
-		4EF5E43B1D4230DA002B6AFF /* TGXMLRPCApiClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGXMLRPCApiClient.m; sourceTree = "<group>"; };
-<<<<<<< HEAD
->>>>>>> origin/master
-=======
->>>>>>> origin/master
+		4EF38F161D42F56E00CE28A4 /* NSString+StringByStrippingHTML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+StringByStrippingHTML.h"; sourceTree = "<group>"; };
+		4EF38F171D42F56E00CE28A4 /* NSString+StringByStrippingHTML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+StringByStrippingHTML.m"; sourceTree = "<group>"; };
+		4EF38F181D42F56E00CE28A4 /* TGBlogJsonApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGBlogJsonApi.h; sourceTree = "<group>"; };
+		4EF38F191D42F56E00CE28A4 /* TGBlogJsonApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGBlogJsonApi.m; sourceTree = "<group>"; };
+		4EF38F1A1D42F56E00CE28A4 /* TGCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGCategory.h; sourceTree = "<group>"; };
+		4EF38F1B1D42F56E00CE28A4 /* TGCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGCategory.m; sourceTree = "<group>"; };
+		4EF38F1C1D42F56E00CE28A4 /* TGCategory+TGCategoryFromDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TGCategory+TGCategoryFromDictionary.h"; sourceTree = "<group>"; };
+		4EF38F1D1D42F56E00CE28A4 /* TGCategory+TGCategoryFromDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TGCategory+TGCategoryFromDictionary.m"; sourceTree = "<group>"; };
+		4EF38F1E1D42F56E00CE28A4 /* TGComment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGComment.h; sourceTree = "<group>"; };
+		4EF38F1F1D42F56E00CE28A4 /* TGComment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGComment.m; sourceTree = "<group>"; };
+		4EF38F201D42F56E00CE28A4 /* TGComment+TGCommentFromDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TGComment+TGCommentFromDictionary.h"; sourceTree = "<group>"; };
+		4EF38F211D42F56E00CE28A4 /* TGComment+TGCommentFromDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TGComment+TGCommentFromDictionary.m"; sourceTree = "<group>"; };
+		4EF38F281D42F56E00CE28A4 /* TGPost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGPost.h; sourceTree = "<group>"; };
+		4EF38F291D42F56E00CE28A4 /* TGPost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGPost.m; sourceTree = "<group>"; };
+		4EF38F2A1D42F56E00CE28A4 /* TGPost+SDPostFromDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TGPost+SDPostFromDictionary.h"; sourceTree = "<group>"; };
+		4EF38F2B1D42F56E00CE28A4 /* TGPost+SDPostFromDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TGPost+SDPostFromDictionary.m"; sourceTree = "<group>"; };
+		4EF38F2C1D42F56E00CE28A4 /* TGTag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGTag.h; sourceTree = "<group>"; };
+		4EF38F2D1D42F56E00CE28A4 /* TGTag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGTag.m; sourceTree = "<group>"; };
+		4EF38F2E1D42F56E00CE28A4 /* TGTag+TGTagFromDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TGTag+TGTagFromDictionary.h"; sourceTree = "<group>"; };
+		4EF38F2F1D42F56E00CE28A4 /* TGTag+TGTagFromDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TGTag+TGTagFromDictionary.m"; sourceTree = "<group>"; };
+		4EF38F3F1D42F57A00CE28A4 /* TGMetaWeblogApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGMetaWeblogApi.h; sourceTree = "<group>"; };
+		4EF38F401D42F57A00CE28A4 /* TGMetaWeblogAuthApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGMetaWeblogAuthApi.h; sourceTree = "<group>"; };
+		4EF38F411D42F57A00CE28A4 /* TGMetaWeblogAuthApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGMetaWeblogAuthApi.m; sourceTree = "<group>"; };
+		4EF38F421D42F57A00CE28A4 /* TGMetaWeblogBaseApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGMetaWeblogBaseApi.h; sourceTree = "<group>"; };
+		4EF38F431D42F57A00CE28A4 /* TGMetaWeblogXMLRPCApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGMetaWeblogXMLRPCApi.h; sourceTree = "<group>"; };
+		4EF38F441D42F57A00CE28A4 /* TGMetaWeblogXMLRPCApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGMetaWeblogXMLRPCApi.m; sourceTree = "<group>"; };
+		4EF38F451D42F57A00CE28A4 /* TGXMLRPCApiClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGXMLRPCApiClient.h; sourceTree = "<group>"; };
+		4EF38F461D42F57A00CE28A4 /* TGXMLRPCApiClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGXMLRPCApiClient.m; sourceTree = "<group>"; };
+		4EF38F4A1D42F5AC00CE28A4 /* WBSLoginNavViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSLoginNavViewController.h; sourceTree = "<group>"; };
+		4EF38F4B1D42F5AC00CE28A4 /* WBSLoginNavViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBSLoginNavViewController.m; sourceTree = "<group>"; };
+		4EF38F4C1D42F5AC00CE28A4 /* WBSLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSLoginViewController.h; sourceTree = "<group>"; };
+		4EF38F4D1D42F5AC00CE28A4 /* WBSLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBSLoginViewController.m; sourceTree = "<group>"; };
+		4EF38F4E1D42F5AC00CE28A4 /* WBSSelectBlogViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSSelectBlogViewController.h; sourceTree = "<group>"; };
+		4EF38F4F1D42F5AC00CE28A4 /* WBSSelectBlogViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBSSelectBlogViewController.m; sourceTree = "<group>"; };
+		4EF38F531D42F5BA00CE28A4 /* WBSLogin.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WBSLogin.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1394,7 +1154,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4EF152F61D3F2E0900D28265 /* libiconv.tbd in Frameworks */,
+				4EF38F691D42FBD200CE28A4 /* libiconv.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1439,15 +1199,7 @@
 		4EF149D01D3DF61D00D28265 /* WBSBlog */ = {
 			isa = PBXGroup;
 			children = (
-<<<<<<< HEAD
-<<<<<<< HEAD
-				4EF150581D3E371C00D28265 /* temp临时 */,
-=======
 				4EF150581D3E371C00D28265 /* Temp临时 */,
->>>>>>> origin/master
-=======
-				4EF150581D3E371C00D28265 /* Temp临时 */,
->>>>>>> origin/master
 				4EF150BB1D3E38C700D28265 /* Base基本 */,
 				4EF14A341D3E30DF00D28265 /* 主页_Home */,
 				4EF14A3A1D3E30DF00D28265 /* 标签_Tag */,
@@ -1618,13 +1370,13 @@
 		4EF14D191D3E32F600D28265 /* GHMarkdownParser */ = {
 			isa = PBXGroup;
 			children = (
-				4EF14D1A1D3E32F600D28265 /* discount */,
+				4EF14D1A1D3E32F600D28265 /* Discount */,
 				4EF14D301D3E32F600D28265 /* GHMarkdownParser */,
 			);
 			path = GHMarkdownParser;
 			sourceTree = "<group>";
 		};
-		4EF14D1A1D3E32F600D28265 /* discount */ = {
+		4EF14D1A1D3E32F600D28265 /* Discount */ = {
 			isa = PBXGroup;
 			children = (
 				4EF14D1B1D3E32F600D28265 /* amalloc.c */,
@@ -1649,6 +1401,7 @@
 				4EF14D2E1D3E32F600D28265 /* tags.h */,
 				4EF14D2F1D3E32F600D28265 /* xml.c */,
 			);
+			name = Discount;
 			path = discount;
 			sourceTree = "<group>";
 		};
@@ -2230,28 +1983,13 @@
 		4EF150041D3E35BD00D28265 /* 登陆_Login */ = {
 			isa = PBXGroup;
 			children = (
-<<<<<<< HEAD
-<<<<<<< HEAD
-				4EF150B11D3E389900D28265 /* WBSLoginViewController.h */,
-				4EF150B21D3E389900D28265 /* WBSLoginViewController.m */,
-				4EF150B31D3E389900D28265 /* WBSLoginNavViewController.h */,
-				4EF150B41D3E389900D28265 /* WBSLoginNavViewController.m */,
-				4EF150B51D3E389900D28265 /* WBSSelectBlogViewController.h */,
-				4EF150B61D3E389900D28265 /* WBSSelectBlogViewController.m */,
-=======
-=======
->>>>>>> origin/master
-				4EF5E3FC1D41C847002B6AFF /* WBSLoginViewController.h */,
-				4EF5E3FD1D41C847002B6AFF /* WBSLoginViewController.m */,
-				4EF5E3FA1D41C847002B6AFF /* WBSLoginNavViewController.h */,
-				4EF5E3FB1D41C847002B6AFF /* WBSLoginNavViewController.m */,
-				4EF5E4001D41C870002B6AFF /* WBSSelectBlogViewController.h */,
-				4EF5E4011D41C870002B6AFF /* WBSSelectBlogViewController.m */,
+				4EF38F4A1D42F5AC00CE28A4 /* WBSLoginNavViewController.h */,
+				4EF38F4B1D42F5AC00CE28A4 /* WBSLoginNavViewController.m */,
+				4EF38F4C1D42F5AC00CE28A4 /* WBSLoginViewController.h */,
+				4EF38F4D1D42F5AC00CE28A4 /* WBSLoginViewController.m */,
+				4EF38F4E1D42F5AC00CE28A4 /* WBSSelectBlogViewController.h */,
+				4EF38F4F1D42F5AC00CE28A4 /* WBSSelectBlogViewController.m */,
 				4EF5E4031D41C878002B6AFF /* View */,
-<<<<<<< HEAD
->>>>>>> origin/master
-=======
->>>>>>> origin/master
 				4EF150051D3E35F600D28265 /* Model */,
 			);
 			name = "登陆_Login";
@@ -2270,18 +2008,8 @@
 		4EF150091D3E362A00D28265 /* Url_API */ = {
 			isa = PBXGroup;
 			children = (
-<<<<<<< HEAD
-<<<<<<< HEAD
-				4EF152FD1D3F3C3500D28265 /* BlogJsonApi */,
-				4EF1531A1D3F3C3500D28265 /* MetaWeblogApi */,
-=======
 				4EF5E4161D4230DA002B6AFF /* BlogJsonApi */,
 				4EF5E4331D4230DA002B6AFF /* MetaWeblogApi */,
->>>>>>> origin/master
-=======
-				4EF5E4161D4230DA002B6AFF /* BlogJsonApi */,
-				4EF5E4331D4230DA002B6AFF /* MetaWeblogApi */,
->>>>>>> origin/master
 			);
 			name = Url_API;
 			path = ../Others;
@@ -2317,15 +2045,7 @@
 			path = ToMarkdown;
 			sourceTree = "<group>";
 		};
-<<<<<<< HEAD
-<<<<<<< HEAD
-		4EF150581D3E371C00D28265 /* temp临时 */ = {
-=======
 		4EF150581D3E371C00D28265 /* Temp临时 */ = {
->>>>>>> origin/master
-=======
-		4EF150581D3E371C00D28265 /* Temp临时 */ = {
->>>>>>> origin/master
 			isa = PBXGroup;
 			children = (
 				4EF150681D3E376000D28265 /* WBSEditingBar.h */,
@@ -2345,15 +2065,7 @@
 				4EF150611D3E374300D28265 /* WBSLastCell.h */,
 				4EF150621D3E374300D28265 /* WBSLastCell.m */,
 			);
-<<<<<<< HEAD
-<<<<<<< HEAD
-			name = "temp临时";
-=======
 			name = "Temp临时";
->>>>>>> origin/master
-=======
-			name = "Temp临时";
->>>>>>> origin/master
 			sourceTree = "<group>";
 		};
 		4EF150771D3E37BA00D28265 /* Catagory */ = {
@@ -2398,18 +2110,8 @@
 				4EF150CA1D3E39A500D28265 /* WBSErrorViewController.m */,
 				4EF150CB1D3E39A500D28265 /* WBSOBObjsViewController.h */,
 				4EF150CC1D3E39A500D28265 /* WBSOBObjsViewController.m */,
-<<<<<<< HEAD
-<<<<<<< HEAD
-				4EF150CF1D3E39BB00D28265 /* WBSOBTabBarController.h */,
-				4EF150D01D3E39BB00D28265 /* WBSOBTabBarController.m */,
-=======
 				4EF150CF1D3E39BB00D28265 /* WBSRootTabBarController.h */,
 				4EF150D01D3E39BB00D28265 /* WBSRootTabBarController.m */,
->>>>>>> origin/master
-=======
-				4EF150CF1D3E39BB00D28265 /* WBSRootTabBarController.h */,
-				4EF150D01D3E39BB00D28265 /* WBSRootTabBarController.m */,
->>>>>>> origin/master
 				4EF150D11D3E39BB00D28265 /* WBSOptionButton.h */,
 				4EF150D21D3E39BB00D28265 /* WBSOptionButton.m */,
 				4EF150BD1D3E38DC00D28265 /* WBSBrowserNavViewController.h */,
@@ -2588,16 +2290,6 @@
 				4EF151DF1D3F2DF400D28265 /* login-password@3x.png */,
 				4EF151E01D3F2DF400D28265 /* login-url@2x.png */,
 				4EF151E11D3F2DF400D28265 /* login-url@3x.png */,
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-				4EF5E4121D41FD23002B6AFF /* login-Close.png */,
-				4EF5E4131D41FD23002B6AFF /* login-open.png */,
->>>>>>> origin/master
-=======
-				4EF5E4121D41FD23002B6AFF /* login-Close.png */,
-				4EF5E4131D41FD23002B6AFF /* login-open.png */,
->>>>>>> origin/master
 			);
 			path = login;
 			sourceTree = "<group>";
@@ -2806,38 +2498,10 @@
 			path = publish;
 			sourceTree = "<group>";
 		};
-<<<<<<< HEAD
-<<<<<<< HEAD
-		4EF152FD1D3F3C3500D28265 /* BlogJsonApi */ = {
-			isa = PBXGroup;
-			children = (
-				4EF152FE1D3F3C3500D28265 /* NSString+StringByStrippingHTML.h */,
-				4EF152FF1D3F3C3500D28265 /* NSString+StringByStrippingHTML.m */,
-				4EF153001D3F3C3500D28265 /* TGBlogJsonApi.h */,
-				4EF153011D3F3C3500D28265 /* TGBlogJsonApi.m */,
-				4EF153021D3F3C3500D28265 /* TGCategory+TGCategoryFromDictionary.h */,
-				4EF153031D3F3C3500D28265 /* TGCategory+TGCategoryFromDictionary.m */,
-				4EF153041D3F3C3500D28265 /* TGCategory.h */,
-				4EF153051D3F3C3500D28265 /* TGCategory.m */,
-				4EF153061D3F3C3500D28265 /* TGComment+TGCommentFromDictionary.h */,
-				4EF153071D3F3C3500D28265 /* TGComment+TGCommentFromDictionary.m */,
-				4EF153081D3F3C3500D28265 /* TGComment.h */,
-				4EF153091D3F3C3500D28265 /* TGComment.m */,
-				4EF153101D3F3C3500D28265 /* TGPost+SDPostFromDictionary.h */,
-				4EF153111D3F3C3500D28265 /* TGPost+SDPostFromDictionary.m */,
-				4EF153121D3F3C3500D28265 /* TGPost.h */,
-				4EF153131D3F3C3500D28265 /* TGPost.m */,
-				4EF153141D3F3C3500D28265 /* TGTag+TGTagFromDictionary.h */,
-				4EF153151D3F3C3500D28265 /* TGTag+TGTagFromDictionary.m */,
-				4EF153161D3F3C3500D28265 /* TGTag.h */,
-				4EF153171D3F3C3500D28265 /* TGTag.m */,
-=======
-=======
->>>>>>> origin/master
 		4EF5E4031D41C878002B6AFF /* View */ = {
 			isa = PBXGroup;
 			children = (
-				4EF5E4101D41EC67002B6AFF /* WBSLogin.xib */,
+				4EF38F531D42F5BA00CE28A4 /* WBSLogin.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -2845,73 +2509,41 @@
 		4EF5E4161D4230DA002B6AFF /* BlogJsonApi */ = {
 			isa = PBXGroup;
 			children = (
-				4EF5E4171D4230DA002B6AFF /* NSString+StringByStrippingHTML.h */,
-				4EF5E4181D4230DA002B6AFF /* NSString+StringByStrippingHTML.m */,
-				4EF5E4191D4230DA002B6AFF /* TGBlogJsonApi.h */,
-				4EF5E41A1D4230DA002B6AFF /* TGBlogJsonApi.m */,
-				4EF5E41B1D4230DA002B6AFF /* TGCategory+TGCategoryFromDictionary.h */,
-				4EF5E41C1D4230DA002B6AFF /* TGCategory+TGCategoryFromDictionary.m */,
-				4EF5E41D1D4230DA002B6AFF /* TGCategory.h */,
-				4EF5E41E1D4230DA002B6AFF /* TGCategory.m */,
-				4EF5E41F1D4230DA002B6AFF /* TGComment+TGCommentFromDictionary.h */,
-				4EF5E4201D4230DA002B6AFF /* TGComment+TGCommentFromDictionary.m */,
-				4EF5E4211D4230DA002B6AFF /* TGComment.h */,
-				4EF5E4221D4230DA002B6AFF /* TGComment.m */,
-				4EF5E4231D4230DA002B6AFF /* TGMetaWeblogApi.h */,
-				4EF5E4241D4230DA002B6AFF /* TGMetaWeblogAuthApi.h */,
-				4EF5E4251D4230DA002B6AFF /* TGMetaWeblogAuthApi.m */,
-				4EF5E4261D4230DA002B6AFF /* TGMetaWeblogBaseApi.h */,
-				4EF5E4271D4230DA002B6AFF /* TGMetaWeblogXMLRPCApi.h */,
-				4EF5E4281D4230DA002B6AFF /* TGMetaWeblogXMLRPCApi.m */,
-				4EF5E4291D4230DA002B6AFF /* TGPost+SDPostFromDictionary.h */,
-				4EF5E42A1D4230DA002B6AFF /* TGPost+SDPostFromDictionary.m */,
-				4EF5E42B1D4230DA002B6AFF /* TGPost.h */,
-				4EF5E42C1D4230DA002B6AFF /* TGPost.m */,
-				4EF5E42D1D4230DA002B6AFF /* TGTag+TGTagFromDictionary.h */,
-				4EF5E42E1D4230DA002B6AFF /* TGTag+TGTagFromDictionary.m */,
-				4EF5E42F1D4230DA002B6AFF /* TGTag.h */,
-				4EF5E4301D4230DA002B6AFF /* TGTag.m */,
-				4EF5E4311D4230DA002B6AFF /* TGXMLRPCApiClient.h */,
-				4EF5E4321D4230DA002B6AFF /* TGXMLRPCApiClient.m */,
-<<<<<<< HEAD
->>>>>>> origin/master
-=======
->>>>>>> origin/master
+				4EF38F161D42F56E00CE28A4 /* NSString+StringByStrippingHTML.h */,
+				4EF38F171D42F56E00CE28A4 /* NSString+StringByStrippingHTML.m */,
+				4EF38F181D42F56E00CE28A4 /* TGBlogJsonApi.h */,
+				4EF38F191D42F56E00CE28A4 /* TGBlogJsonApi.m */,
+				4EF38F1A1D42F56E00CE28A4 /* TGCategory.h */,
+				4EF38F1B1D42F56E00CE28A4 /* TGCategory.m */,
+				4EF38F1C1D42F56E00CE28A4 /* TGCategory+TGCategoryFromDictionary.h */,
+				4EF38F1D1D42F56E00CE28A4 /* TGCategory+TGCategoryFromDictionary.m */,
+				4EF38F1E1D42F56E00CE28A4 /* TGComment.h */,
+				4EF38F1F1D42F56E00CE28A4 /* TGComment.m */,
+				4EF38F201D42F56E00CE28A4 /* TGComment+TGCommentFromDictionary.h */,
+				4EF38F211D42F56E00CE28A4 /* TGComment+TGCommentFromDictionary.m */,
+				4EF38F281D42F56E00CE28A4 /* TGPost.h */,
+				4EF38F291D42F56E00CE28A4 /* TGPost.m */,
+				4EF38F2A1D42F56E00CE28A4 /* TGPost+SDPostFromDictionary.h */,
+				4EF38F2B1D42F56E00CE28A4 /* TGPost+SDPostFromDictionary.m */,
+				4EF38F2C1D42F56E00CE28A4 /* TGTag.h */,
+				4EF38F2D1D42F56E00CE28A4 /* TGTag.m */,
+				4EF38F2E1D42F56E00CE28A4 /* TGTag+TGTagFromDictionary.h */,
+				4EF38F2F1D42F56E00CE28A4 /* TGTag+TGTagFromDictionary.m */,
 			);
 			path = BlogJsonApi;
 			sourceTree = "<group>";
 		};
-<<<<<<< HEAD
-<<<<<<< HEAD
-		4EF1531A1D3F3C3500D28265 /* MetaWeblogApi */ = {
-			isa = PBXGroup;
-			children = (
-				4EF1531B1D3F3C3500D28265 /* TGMetaWeblogApi.h */,
-				4EF1531C1D3F3C3500D28265 /* TGMetaWeblogAuthApi.h */,
-				4EF1531D1D3F3C3500D28265 /* TGMetaWeblogAuthApi.m */,
-				4EF1531E1D3F3C3500D28265 /* TGMetaWeblogBaseApi.h */,
-				4EF1531F1D3F3C3500D28265 /* TGMetaWeblogXMLRPCApi.h */,
-				4EF153201D3F3C3500D28265 /* TGMetaWeblogXMLRPCApi.m */,
-				4EF153211D3F3C3500D28265 /* TGXMLRPCApiClient.h */,
-				4EF153221D3F3C3500D28265 /* TGXMLRPCApiClient.m */,
-=======
-=======
->>>>>>> origin/master
 		4EF5E4331D4230DA002B6AFF /* MetaWeblogApi */ = {
 			isa = PBXGroup;
 			children = (
-				4EF5E4341D4230DA002B6AFF /* TGMetaWeblogApi.h */,
-				4EF5E4351D4230DA002B6AFF /* TGMetaWeblogAuthApi.h */,
-				4EF5E4361D4230DA002B6AFF /* TGMetaWeblogAuthApi.m */,
-				4EF5E4371D4230DA002B6AFF /* TGMetaWeblogBaseApi.h */,
-				4EF5E4381D4230DA002B6AFF /* TGMetaWeblogXMLRPCApi.h */,
-				4EF5E4391D4230DA002B6AFF /* TGMetaWeblogXMLRPCApi.m */,
-				4EF5E43A1D4230DA002B6AFF /* TGXMLRPCApiClient.h */,
-				4EF5E43B1D4230DA002B6AFF /* TGXMLRPCApiClient.m */,
-<<<<<<< HEAD
->>>>>>> origin/master
-=======
->>>>>>> origin/master
+				4EF38F3F1D42F57A00CE28A4 /* TGMetaWeblogApi.h */,
+				4EF38F401D42F57A00CE28A4 /* TGMetaWeblogAuthApi.h */,
+				4EF38F411D42F57A00CE28A4 /* TGMetaWeblogAuthApi.m */,
+				4EF38F421D42F57A00CE28A4 /* TGMetaWeblogBaseApi.h */,
+				4EF38F431D42F57A00CE28A4 /* TGMetaWeblogXMLRPCApi.h */,
+				4EF38F441D42F57A00CE28A4 /* TGMetaWeblogXMLRPCApi.m */,
+				4EF38F451D42F57A00CE28A4 /* TGXMLRPCApiClient.h */,
+				4EF38F461D42F57A00CE28A4 /* TGXMLRPCApiClient.m */,
 			);
 			path = MetaWeblogApi;
 			sourceTree = "<group>";
@@ -3020,203 +2652,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4EF152B61D3F2DF400D28265 /* tabbar-discover-selected@3x.png in Resources */,
-				4EF152B31D3F2DF400D28265 /* sidemenu_setting@3x.png in Resources */,
-				4EF152811D3F2DF400D28265 /* login-password@3x.png in Resources */,
-				4EF152C51D3F2DF400D28265 /* tabbar-news-selected.png in Resources */,
-				4EF152A31D3F2DF400D28265 /* tweetEditing@2x.png in Resources */,
-				4EF152E61D3F2DF400D28265 /* toolbar-reference@3x.png in Resources */,
-				4EF152871D3F2DF400D28265 /* menu-background(414x736)@3x.png in Resources */,
-				4EF152E51D3F2DF400D28265 /* toolbar-reference@2x.png in Resources */,
-				4EF1527A1D3F2DF400D28265 /* start(640x960).png in Resources */,
-				4EF152A61D3F2DF400D28265 /* default－portrait@2x.png in Resources */,
-				4EF1526C1D3F2DF400D28265 /* Icon-40.png in Resources */,
-				4EF152821D3F2DF400D28265 /* login-url@2x.png in Resources */,
-				4EF152691D3F2DF400D28265 /* error.png in Resources */,
-				4EF152D91D3F2DF400D28265 /* toolbar-editingComment@2x.png in Resources */,
-				4EF152AD1D3F2DF400D28265 /* sidemenu-software@3x.png in Resources */,
-				4EF1529B1D3F2DF400D28265 /* shake@3x.png in Resources */,
-				4EF152961D3F2DF400D28265 /* scan@3x.png in Resources */,
-				4EF152D31D3F2DF400D28265 /* send@2x.png in Resources */,
-				4EF152F51D3F2DF400D28265 /* user-background@3x.png in Resources */,
-				4EF152B71D3F2DF400D28265 /* tabbar-discover-selected@3x.psd in Resources */,
-				4EF152EA1D3F2DF400D28265 /* toolbar-separatorline@3x.png in Resources */,
-				4EF152F01D3F2DF400D28265 /* toolbar-starred@3x.png in Resources */,
 				4EF14F401D3E32F700D28265 /* lookup.png in Resources */,
-				4EF152771D3F2DF400D28265 /* start(1242x2208).png in Resources */,
-				4EF152741D3F2DF400D28265 /* Icon-Small@2x.png in Resources */,
-				4EF152841D3F2DF400D28265 /* menu-background(320x480)@2x.png in Resources */,
-				4EF152EF1D3F2DF400D28265 /* toolbar-starred@2x.png in Resources */,
-				4EF152D01D3F2DF400D28265 /* tabbar-tweet.png in Resources */,
-				4EF152F21D3F2DF400D28265 /* toolbar-text@3x.png in Resources */,
-				4EF152AC1D3F2DF400D28265 /* sidemenu-software@2x.png in Resources */,
-				4EF1525E1D3F2DF400D28265 /* widget-original@3x.png in Resources */,
-				4EF152E91D3F2DF400D28265 /* toolbar-separatorline@2x.png in Resources */,
-				4EF152C21D3F2DF400D28265 /* tabbar-more.png in Resources */,
-				4EF152E81D3F2DF400D28265 /* toolbar-report@3x.png in Resources */,
-				4EF152CB1D3F2DF400D28265 /* tabbar-news@3x.png in Resources */,
-				4EF152791D3F2DF400D28265 /* start(640x1136).png in Resources */,
-				4EF152EB1D3F2DF400D28265 /* toolbar-share@2x.png in Resources */,
-				4EF152D71D3F2DF400D28265 /* toolbar-comments@2x.png in Resources */,
-				4EF152AB1D3F2DF400D28265 /* sidemenu-night@3x.png in Resources */,
-				4EF152B11D3F2DF400D28265 /* sidemenu_QA@3x.png in Resources */,
-				4EF152B01D3F2DF400D28265 /* sidemenu_QA@2x.png in Resources */,
-				4EF152C91D3F2DF400D28265 /* tabbar-news.png in Resources */,
-				4EF152611D3F2DF400D28265 /* widget_repost@3x.png in Resources */,
-				4EF1525D1D3F2DF400D28265 /* widget-original@2x.png in Resources */,
-				4EF152881D3F2DF400D28265 /* navigationbar-search.png in Resources */,
-				4EF152661D3F2DF400D28265 /* done.png in Resources */,
-				4EF152901D3F2DF400D28265 /* note@3x.png in Resources */,
-				4EF152761D3F2DF400D28265 /* logo.psd in Resources */,
-				4EF152D41D3F2DF400D28265 /* send@3x.png in Resources */,
-				4EF1526A1D3F2DF400D28265 /* error@2x.png in Resources */,
-				4EF152A81D3F2DF400D28265 /* sidemenu-day@2x.png in Resources */,
-				4EF1529F1D3F2DF400D28265 /* sound.png in Resources */,
-				4EF152781D3F2DF400D28265 /* start(1536x2048).png in Resources */,
-				4EF14F121D3E32F700D28265 /* LICENSE in Resources */,
-				4EF152CD1D3F2DF400D28265 /* tabbar-tweet-selected@2x.png in Resources */,
-				4EF1525F1D3F2DF400D28265 /* widget-original@3x.psd in Resources */,
-				4EF152991D3F2DF400D28265 /* search@3x.png in Resources */,
-				4EF152681D3F2DF400D28265 /* done@3x.png in Resources */,
-				4EF152F31D3F2DF400D28265 /* user-background-320@2x.png in Resources */,
 				4EF14F441D3E32F700D28265 /* lookup_soft_elegance_2.png in Resources */,
-				4EF152BE1D3F2DF400D28265 /* tabbar-me-selected@3x.psd in Resources */,
-				4EF152B91D3F2DF400D28265 /* tabbar-discover@2x.png in Resources */,
-				4EF152941D3F2DF400D28265 /* scan.png in Resources */,
-				4EF152731D3F2DF400D28265 /* Icon-Small.png in Resources */,
-				4EF152B41D3F2DF400D28265 /* tabbar-discover-selected.png in Resources */,
-				4EF152DE1D3F2DF400D28265 /* toolbar-emoji@3x.png in Resources */,
-				4EF150ED1D3E3AAF00D28265 /* emojiToText.plist in Resources */,
-				4EF152ED1D3F2DF400D28265 /* toolbar-star@2x.png in Resources */,
-				4EF1528A1D3F2DF400D28265 /* navigationbar-search@3x.png in Resources */,
-				4EF1527B1D3F2DF400D28265 /* start(750x1334).png in Resources */,
-				4EF1526B1D3F2DF400D28265 /* error@3x.png in Resources */,
 				4EF149E11D3DF61D00D28265 /* LaunchScreen.storyboard in Resources */,
-				4EF152B21D3F2DF400D28265 /* sidemenu_setting@2x.png in Resources */,
 				4EF14F411D3E32F700D28265 /* lookup_amatorka.png in Resources */,
-				4EF1526E1D3F2DF400D28265 /* Icon-40@3x.png in Resources */,
-				4EF152E21D3F2DF400D28265 /* toolbar-keyboardUp@3x.png in Resources */,
-				4EF152D11D3F2DF400D28265 /* tabbar-tweet@2x.png in Resources */,
-				4EF152721D3F2DF400D28265 /* Icon-76@2x.png in Resources */,
-				4EF152971D3F2DF400D28265 /* search.png in Resources */,
-				4EF152E41D3F2DF400D28265 /* toolbar-mention@3x.png in Resources */,
-				4EF152AE1D3F2DF400D28265 /* sidemenu_blog@2x.png in Resources */,
-				4EF152D61D3F2DF400D28265 /* toolbar-barSwitch@3x.png in Resources */,
-				4EF152CF1D3F2DF400D28265 /* tabbar-tweet-selected@3x.psd in Resources */,
-				4EF152711D3F2DF400D28265 /* Icon-76.png in Resources */,
 				4EF150921D3E380F00D28265 /* FontAwesome.ttf in Resources */,
 				4EF149DE1D3DF61D00D28265 /* Assets.xcassets in Resources */,
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-				4EF5E4141D41FD23002B6AFF /* login-Close.png in Resources */,
->>>>>>> origin/master
-=======
-				4EF5E4141D41FD23002B6AFF /* login-Close.png in Resources */,
->>>>>>> origin/master
-				4EF152831D3F2DF400D28265 /* login-url@3x.png in Resources */,
-				4EF152A41D3F2DF400D28265 /* tweetEditing@3x.png in Resources */,
-				4EF1528E1D3F2DF400D28265 /* note.png in Resources */,
-				4EF152BD1D3F2DF400D28265 /* tabbar-me-selected@3x.png in Resources */,
-				4EF152CC1D3F2DF400D28265 /* tabbar-tweet-selected.png in Resources */,
-				4EF14F1E1D3E32F700D28265 /* LICENSE in Resources */,
-				4EF1527F1D3F2DF400D28265 /* login-email@3x.png in Resources */,
-				4EF152CA1D3F2DF400D28265 /* tabbar-news@2x.png in Resources */,
-				4EF1529E1D3F2DF400D28265 /* shooting@3x.png in Resources */,
-				4EF152A11D3F2DF400D28265 /* sound@3x.png in Resources */,
-				4EF152951D3F2DF400D28265 /* scan@2x.png in Resources */,
-				4EF152C71D3F2DF400D28265 /* tabbar-news-selected@3x.png in Resources */,
-				4EF152671D3F2DF400D28265 /* done@2x.png in Resources */,
-				4EF152A91D3F2DF400D28265 /* sidemenu-day@3x.png in Resources */,
-				4EF152F11D3F2DF400D28265 /* toolbar-text@2x.png in Resources */,
-				4EF152981D3F2DF400D28265 /* search@2x.png in Resources */,
-				4EF152921D3F2DF400D28265 /* picture@2x.png in Resources */,
-				4EF152C41D3F2DF400D28265 /* tabbar-more@3x.png in Resources */,
-				4EF152891D3F2DF400D28265 /* navigationbar-search@2x.png in Resources */,
-				4EF14F301D3E32F700D28265 /* LICENSE in Resources */,
-				4EF152BA1D3F2DF400D28265 /* tabbar-discover@3x.png in Resources */,
-				4EF152EE1D3F2DF400D28265 /* toolbar-star@3x.png in Resources */,
-				4EF1529D1D3F2DF400D28265 /* shooting@2x.png in Resources */,
-				4EF152601D3F2DF400D28265 /* widget_repost@2x.png in Resources */,
-				4EF152D51D3F2DF400D28265 /* toolbar-barSwitch@2x.png in Resources */,
-				4EF152A51D3F2DF400D28265 /* default－portrait.png in Resources */,
-				4EF152A71D3F2DF400D28265 /* default－portrait@3x.png in Resources */,
-				4EF14FF91D3E332800D28265 /* LICENSE in Resources */,
+				4EF5E4141D41FD23002B6AFF /* (null) in Resources */,
 				4EF14F431D3E32F700D28265 /* lookup_soft_elegance_1.png in Resources */,
-				4EF152DA1D3F2DF400D28265 /* toolbar-editingComment@3x.png in Resources */,
-				4EF1528B1D3F2DF400D28265 /* navigationbar-sidebar.png in Resources */,
-				4EF152D21D3F2DF400D28265 /* tabbar-tweet@3x.png in Resources */,
-				4EF1528F1D3F2DF400D28265 /* note@2x.png in Resources */,
-				4EF1529A1D3F2DF400D28265 /* shake@2x.png in Resources */,
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-				4EF5E4151D41FD23002B6AFF /* login-open.png in Resources */,
->>>>>>> origin/master
-=======
-				4EF5E4151D41FD23002B6AFF /* login-open.png in Resources */,
->>>>>>> origin/master
-				4EF152911D3F2DF400D28265 /* picture.png in Resources */,
-				4EF152C81D3F2DF400D28265 /* tabbar-news-selected@3x.psd in Resources */,
-				4EF152E71D3F2DF400D28265 /* toolbar-report@2x.png in Resources */,
-				4EF152701D3F2DF400D28265 /* Icon-60@3x.png in Resources */,
-				4EF1528D1D3F2DF400D28265 /* navigationbar-sidebar@3x.png in Resources */,
-				4EF152B81D3F2DF400D28265 /* tabbar-discover.png in Resources */,
-				4EF152A01D3F2DF400D28265 /* sound@2x.png in Resources */,
-				4EF150EE1D3E3AAF00D28265 /* WBSBlog.plist in Resources */,
-				4EF152861D3F2DF400D28265 /* menu-background(375x667)@2x.png in Resources */,
-				4EF152631D3F2DF400D28265 /* widget_taday@2x.png in Resources */,
-				4EF1527C1D3F2DF400D28265 /* start(768x1024).png in Resources */,
-				4EF152DD1D3F2DF400D28265 /* toolbar-emoji@2x.png in Resources */,
-				4EF152651D3F2DF400D28265 /* widget_taday@3x.psd in Resources */,
-				4EF1527E1D3F2DF400D28265 /* login-email@2x.png in Resources */,
-				4EF152E01D3F2DF400D28265 /* toolbar-image@3x.png in Resources */,
-				4EF152A21D3F2DF400D28265 /* tweetEditing.png in Resources */,
-				4EF152C11D3F2DF400D28265 /* tabbar-me@3x.png in Resources */,
-				4EF14F281D3E32F700D28265 /* LICENCE.txt in Resources */,
-				4EF152621D3F2DF400D28265 /* widget_repost@3x.psd in Resources */,
-				4EF152C01D3F2DF400D28265 /* tabbar-me@2x.png in Resources */,
-				4EF1526F1D3F2DF400D28265 /* Icon-60@2x.png in Resources */,
-				4EF152BF1D3F2DF400D28265 /* tabbar-me.png in Resources */,
-				4EF1528C1D3F2DF400D28265 /* navigationbar-sidebar@2x.png in Resources */,
-				4EF152F41D3F2DF400D28265 /* user-background-375@2x.png in Resources */,
-				4EF150EC1D3E3AAF00D28265 /* emoji.plist in Resources */,
-				4EF152931D3F2DF400D28265 /* picture@3x.png in Resources */,
-				4EF152DC1D3F2DF400D28265 /* toolbar-emoji2@3x.png in Resources */,
-				4EF14F2B1D3E32F700D28265 /* LICENSE in Resources */,
-				4EF152CE1D3F2DF400D28265 /* tabbar-tweet-selected@3x.png in Resources */,
-				4EF152B51D3F2DF400D28265 /* tabbar-discover-selected@2x.png in Resources */,
-				4EF152D81D3F2DF400D28265 /* toolbar-comments@3x.png in Resources */,
-				4EF1527D1D3F2DF400D28265 /* start.psd in Resources */,
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-				4EF5E4111D41EC67002B6AFF /* WBSLogin.xib in Resources */,
->>>>>>> origin/master
-=======
-				4EF5E4111D41EC67002B6AFF /* WBSLogin.xib in Resources */,
->>>>>>> origin/master
-				4EF14FE91D3E32F700D28265 /* License.txt in Resources */,
-				4EF152C61D3F2DF400D28265 /* tabbar-news-selected@2x.png in Resources */,
+				4EF5E4151D41FD23002B6AFF /* (null) in Resources */,
+				4EF5E4111D41EC67002B6AFF /* (null) in Resources */,
 				4EF14F421D3E32F700D28265 /* lookup_miss_etikate.png in Resources */,
 				4EF14F091D3E32F700D28265 /* mkdio.h.in in Resources */,
-				4EF152EC1D3F2DF400D28265 /* toolbar-share@3x.png in Resources */,
-				4EF152AF1D3F2DF400D28265 /* sidemenu_blog@3x.png in Resources */,
-				4EF152751D3F2DF400D28265 /* Icon-Small@3x.png in Resources */,
-				4EF152DF1D3F2DF400D28265 /* toolbar-image@2x.png in Resources */,
-				4EF152BC1D3F2DF400D28265 /* tabbar-me-selected@2x.png in Resources */,
-				4EF152801D3F2DF400D28265 /* login-password@2x.png in Resources */,
-				4EF152AA1D3F2DF400D28265 /* sidemenu-night@2x.png in Resources */,
-				4EF1526D1D3F2DF400D28265 /* Icon-40@2x.png in Resources */,
-				4EF152E11D3F2DF400D28265 /* toolbar-keyboardUp@2x.png in Resources */,
-				4EF152641D3F2DF400D28265 /* widget_taday@3x.png in Resources */,
-				4EF152C31D3F2DF400D28265 /* tabbar-more@2x.png in Resources */,
 				4EF14F011D3E32F700D28265 /* blocktags in Resources */,
-				4EF152DB1D3F2DF400D28265 /* toolbar-emoji2@2x.png in Resources */,
-				4EF1529C1D3F2DF400D28265 /* shooting.png in Resources */,
-				4EF152E31D3F2DF400D28265 /* toolbar-mention@2x.png in Resources */,
-				4EF152BB1D3F2DF400D28265 /* tabbar-me-selected.png in Resources */,
-				4EF152851D3F2DF400D28265 /* menu-background(320x568)@2x.png in Resources */,
+				4EF38F541D42F5BA00CE28A4 /* WBSLogin.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3241,45 +2690,37 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-<<<<<<< HEAD
-<<<<<<< HEAD
-				4EF150BA1D3E389900D28265 /* WBSSelectBlogViewController.m in Sources */,
-=======
->>>>>>> origin/master
-=======
->>>>>>> origin/master
+				4EF38F6A1D430AE600CE28A4 /* mkdio.c in Sources */,
+				4EF38F681D42FBA400CE28A4 /* WPStringUtils.m in Sources */,
+				4EF38F671D42FB9700CE28A4 /* WPBase64Utils.m in Sources */,
+				4EF38F641D42FB7B00CE28A4 /* WPXMLRPCDataCleaner.m in Sources */,
+				4EF38F651D42FB7B00CE28A4 /* WPXMLRPCDecoderDelegate.m in Sources */,
+				4EF38F661D42FB7B00CE28A4 /* WPXMLRPCEncoder.m in Sources */,
+				4EF38F631D42FB3300CE28A4 /* WBSTitleBarView.m in Sources */,
+				4EF38F621D42FB2C00CE28A4 /* WBSHorizonalTableViewController.m in Sources */,
+				4EF38F611D42FB1E00CE28A4 /* WBSBottomBarViewController.m in Sources */,
+				4EF38F601D42FAF000CE28A4 /* WBSErrorViewController.m in Sources */,
+				4EF38F5F1D42FAE800CE28A4 /* WBSDetailsViewController.m in Sources */,
+				4EF38F5D1D42FAE100CE28A4 /* WBSBrowserNavViewController.m in Sources */,
+				4EF38F5E1D42FAE100CE28A4 /* WBSBrowserViewController.m in Sources */,
+				4EF38F5C1D42FAB200CE28A4 /* TMDHeading.m in Sources */,
+				4EF38F5B1D42FA6A00CE28A4 /* WBSOptionButton.m in Sources */,
+				4EF38F5A1D42FA6100CE28A4 /* WBSSwipableViewController.m in Sources */,
+				4EF38F591D42FA5800CE28A4 /* WPXMLRPCDecoder.m in Sources */,
+				4EF38F581D42FA2F00CE28A4 /* WBSSettingsPage.m in Sources */,
+				4EF38F571D42FA1B00CE28A4 /* WBSRootTabBarController.m in Sources */,
+				4EF38F561D42F9E600CE28A4 /* WBSSideMenuViewController.m in Sources */,
+				4EF38F551D42F8F700CE28A4 /* WBSOBObjsViewController.m in Sources */,
 				4EF14F251D3E32F700D28265 /* UIProgressView+AFNetworking.m in Sources */,
 				4EF14F971D3E32F700D28265 /* GPUImageLuminosityBlendFilter.m in Sources */,
+				4EF38F471D42F57A00CE28A4 /* TGMetaWeblogAuthApi.m in Sources */,
 				4EF14F1A1D3E32F700D28265 /* AFURLConnectionOperation.m in Sources */,
 				4EF14FC61D3E32F700D28265 /* GPUImageSolidColorGenerator.m in Sources */,
 				4EF14F5A1D3E32F700D28265 /* GPUImageColorDodgeBlendFilter.m in Sources */,
 				4EF14FA81D3E32F700D28265 /* GPUImageOverlayBlendFilter.m in Sources */,
-<<<<<<< HEAD
-<<<<<<< HEAD
-				4EF153301D3F3C3500D28265 /* TGMetaWeblogAuthApi.m in Sources */,
-				4EF14F3E1D3E32F700D28265 /* UIImageView+WebCache.m in Sources */,
-				4EF1510A1D3F1B3000D28265 /* MASConstraint.m in Sources */,
-				4EF14F081D3E32F700D28265 /* mkdio.c in Sources */,
-				4EF153261D3F3C3500D28265 /* TGCategory.m in Sources */,
-				4EF14F741D3E32F700D28265 /* GPUImageGammaFilter.m in Sources */,
-				4EF150511D3E36DE00D28265 /* TMDHeading.m in Sources */,
-=======
-=======
->>>>>>> origin/master
-				4EF14F3E1D3E32F700D28265 /* UIImageView+WebCache.m in Sources */,
-				4EF1510A1D3F1B3000D28265 /* MASConstraint.m in Sources */,
-				4EF14F081D3E32F700D28265 /* mkdio.c in Sources */,
-				4EF14F741D3E32F700D28265 /* GPUImageGammaFilter.m in Sources */,
-				4EF150511D3E36DE00D28265 /* TMDHeading.m in Sources */,
-				4EF5E4461D4230DA002B6AFF /* TGTag+TGTagFromDictionary.m in Sources */,
-<<<<<<< HEAD
->>>>>>> origin/master
-=======
->>>>>>> origin/master
 				4EF14F7B1D3E32F700D28265 /* GPUImageHardLightBlendFilter.m in Sources */,
 				4EF14F871D3E32F700D28265 /* GPUImageiOSBlurFilter.m in Sources */,
 				4EF14F681D3E32F700D28265 /* GPUImageDivideBlendFilter.m in Sources */,
-				4EF1510E1D3F1B3000D28265 /* MASViewConstraint.m in Sources */,
 				4EF14F7D1D3E32F700D28265 /* GPUImageHazeFilter.m in Sources */,
 				4EF14FA71D3E32F700D28265 /* GPUImageOutput.m in Sources */,
 				4EF14FD11D3E32F700D28265 /* GPUImageThresholdedNonMaximumSuppressionFilter.m in Sources */,
@@ -3287,18 +2728,11 @@
 				4EF14FC51D3E32F700D28265 /* GPUImageSoftLightBlendFilter.m in Sources */,
 				4EF14F4B1D3E32F700D28265 /* GPUImageAmatorkaFilter.m in Sources */,
 				4EF150861D3E37C500D28265 /* UIColor+Util.m in Sources */,
+				4EF38F3A1D42F56E00CE28A4 /* TGPost.m in Sources */,
 				4EF14F9C1D3E32F700D28265 /* GPUImageMosaicFilter.m in Sources */,
 				4EF14FA21D3E32F700D28265 /* GPUImageNobleCornerDetectionFilter.m in Sources */,
 				4EF150541D3E36DE00D28265 /* TMDItalic.m in Sources */,
 				4EF14FDE1D3E32F700D28265 /* GPUImageVignetteFilter.m in Sources */,
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-				4EF5E4431D4230DA002B6AFF /* TGMetaWeblogXMLRPCApi.m in Sources */,
->>>>>>> origin/master
-=======
-				4EF5E4431D4230DA002B6AFF /* TGMetaWeblogXMLRPCApi.m in Sources */,
->>>>>>> origin/master
 				4EF150671D3E374300D28265 /* WBSLastCell.m in Sources */,
 				4EF14F231D3E32F700D28265 /* UIButton+AFNetworking.m in Sources */,
 				4EF14F571D3E32F700D28265 /* GPUImageClosingFilter.m in Sources */,
@@ -3316,37 +2750,16 @@
 				4EF14F8B1D3E32F700D28265 /* GPUImageLanczosResamplingFilter.m in Sources */,
 				4EF150B71D3E389900D28265 /* WBSMyInfoController.m in Sources */,
 				4EF14F3C1D3E32F700D28265 /* UIImage+MultiFormat.m in Sources */,
-				4EF150D41D3E39BB00D28265 /* WBSOptionButton.m in Sources */,
 				4EF14F831D3E32F700D28265 /* GPUImageHoughTransformLineDetector.m in Sources */,
-<<<<<<< HEAD
-<<<<<<< HEAD
-				4EF153271D3F3C3500D28265 /* TGComment+TGCommentFromDictionary.m in Sources */,
-=======
->>>>>>> origin/master
-=======
->>>>>>> origin/master
 				4EF14FA31D3E32F700D28265 /* GPUImageNonMaximumSuppressionFilter.m in Sources */,
-				4EF1510F1D3F1B3000D28265 /* NSArray+MASAdditions.m in Sources */,
 				4EF14F861D3E32F700D28265 /* GPUImageHueFilter.m in Sources */,
 				4EF14F591D3E32F700D28265 /* GPUImageColorBurnBlendFilter.m in Sources */,
-				4EF1510D1D3F1B3000D28265 /* MASViewAttribute.m in Sources */,
 				4EF14F1C1D3E32F700D28265 /* AFURLResponseSerialization.m in Sources */,
 				4EF14F351D3E32F700D28265 /* SDWebImageDecoder.m in Sources */,
 				4EF14F341D3E32F700D28265 /* SDWebImageCompat.m in Sources */,
 				4EF14F2F1D3E32F700D28265 /* UIViewController+RESideMenu.m in Sources */,
-				4EF150C21D3E38DC00D28265 /* WBSBrowserViewController.m in Sources */,
 				4EF150701D3E376000D28265 /* WBSOperationBar.m in Sources */,
 				4EF14FB61D3E32F700D28265 /* GPUImageRGBDilationFilter.m in Sources */,
-				4EF150D91D3E39C900D28265 /* WBSBottomBarViewController.m in Sources */,
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-				4EF5E43E1D4230DA002B6AFF /* TGCategory+TGCategoryFromDictionary.m in Sources */,
->>>>>>> origin/master
-=======
-				4EF5E43E1D4230DA002B6AFF /* TGCategory+TGCategoryFromDictionary.m in Sources */,
->>>>>>> origin/master
-				4EF151B11D3F27C400D28265 /* WPXMLRPCDecoderDelegate.m in Sources */,
 				4EF14FD41D3E32F700D28265 /* GPUImageToneCurveFilter.m in Sources */,
 				4EF14FD31D3E32F700D28265 /* GPUImageTiltShiftFilter.m in Sources */,
 				4EF150A61D3E384B00D28265 /* WBSPostViewController.m in Sources */,
@@ -3356,76 +2769,36 @@
 				4EF14F4F1D3E32F700D28265 /* GPUImageBoxBlurFilter.m in Sources */,
 				4EF14F901D3E32F700D28265 /* GPUImageLineGenerator.m in Sources */,
 				4EF14F7C1D3E32F700D28265 /* GPUImageHarrisCornerDetectionFilter.m in Sources */,
-				4EF152FB1D3F3A1A00D28265 /* WBSSettingsPage.m in Sources */,
+				4EF38F341D42F56E00CE28A4 /* TGCategory.m in Sources */,
 				4EF14F931D3E32F700D28265 /* GPUImageLowPassFilter.m in Sources */,
 				4EF14FC31D3E32F700D28265 /* GPUImageSobelEdgeDetectionFilter.m in Sources */,
 				4EF1504E1D3E36DE00D28265 /* TMDBold.m in Sources */,
-				4EF151AD1D3F27C400D28265 /* WPBase64Utils.m in Sources */,
 				4EF14F4A1D3E32F700D28265 /* GPUImageAlphaBlendFilter.m in Sources */,
 				4EF14F941D3E32F700D28265 /* GPUImageLuminanceRangeFilter.m in Sources */,
-<<<<<<< HEAD
-<<<<<<< HEAD
+				4EF5E44A1D4230DA002B6AFF /* (null) in Sources */,
 				4EF14F031D3E32F700D28265 /* emmatch.c in Sources */,
 				4EF14FD91D3E32F700D28265 /* GPUImageTwoPassFilter.m in Sources */,
-				4EF153231D3F3C3500D28265 /* NSString+StringByStrippingHTML.m in Sources */,
-=======
-				4EF5E44A1D4230DA002B6AFF /* TGMetaWeblogXMLRPCApi.m in Sources */,
-				4EF14F031D3E32F700D28265 /* emmatch.c in Sources */,
-				4EF14FD91D3E32F700D28265 /* GPUImageTwoPassFilter.m in Sources */,
->>>>>>> origin/master
-=======
-				4EF5E44A1D4230DA002B6AFF /* TGMetaWeblogXMLRPCApi.m in Sources */,
-				4EF14F031D3E32F700D28265 /* emmatch.c in Sources */,
-				4EF14FD91D3E32F700D28265 /* GPUImageTwoPassFilter.m in Sources */,
->>>>>>> origin/master
 				4EF14FE31D3E32F700D28265 /* GPUImageZoomBlurFilter.m in Sources */,
 				4EF14F321D3E32F700D28265 /* NSData+ImageContentType.m in Sources */,
 				4EF14FBC1D3E32F700D28265 /* GPUImageScreenBlendFilter.m in Sources */,
 				4EF14F5D1D3E32F700D28265 /* GPUImageColorPackingFilter.m in Sources */,
 				4EF14F9F1D3E32F700D28265 /* GPUImageMovie.m in Sources */,
 				4EF14F981D3E32F700D28265 /* GPUImageMaskFilter.m in Sources */,
-				4EF150E41D3E39F100D28265 /* WBSHorizonalTableViewController.m in Sources */,
 				4EF14F0E1D3E32F700D28265 /* NSString+GHMarkdownParser.m in Sources */,
-<<<<<<< HEAD
-<<<<<<< HEAD
-				4EF153251D3F3C3500D28265 /* TGCategory+TGCategoryFromDictionary.m in Sources */,
-=======
->>>>>>> origin/master
-=======
->>>>>>> origin/master
 				4EF14FDC1D3E32F700D28265 /* GPUImageUnsharpMaskFilter.m in Sources */,
 				4EF14F9D1D3E32F700D28265 /* GPUImageMotionBlurFilter.m in Sources */,
 				4EF150551D3E36DE00D28265 /* TMDLineBreak.m in Sources */,
 				4EF14F581D3E32F700D28265 /* GPUImageColorBlendFilter.m in Sources */,
 				4EF14FB71D3E32F700D28265 /* GPUImageRGBErosionFilter.m in Sources */,
 				4EF14F671D3E32F700D28265 /* GPUImageDissolveBlendFilter.m in Sources */,
-<<<<<<< HEAD
-<<<<<<< HEAD
-				4EF1532E1D3F3C3500D28265 /* TGTag.m in Sources */,
 				4EF14FAF1D3E32F700D28265 /* GPUImagePolarPixellateFilter.m in Sources */,
 				4EF14FE41D3E32F700D28265 /* GPUImageContext.m in Sources */,
-				4EF153241D3F3C3500D28265 /* TGBlogJsonApi.m in Sources */,
-=======
-				4EF14FAF1D3E32F700D28265 /* GPUImagePolarPixellateFilter.m in Sources */,
-				4EF14FE41D3E32F700D28265 /* GPUImageContext.m in Sources */,
->>>>>>> origin/master
-=======
-				4EF14FAF1D3E32F700D28265 /* GPUImagePolarPixellateFilter.m in Sources */,
-				4EF14FE41D3E32F700D28265 /* GPUImageContext.m in Sources */,
->>>>>>> origin/master
 				4EF14FCB1D3E32F700D28265 /* GPUImageSubtractBlendFilter.m in Sources */,
 				4EF14F691D3E32F700D28265 /* GPUImageEmbossFilter.m in Sources */,
 				4EF14FC41D3E32F700D28265 /* GPUImageSoftEleganceFilter.m in Sources */,
 				4EF150521D3E36DE00D28265 /* TMDHorizontalRule.m in Sources */,
 				4EF14F911D3E32F700D28265 /* GPUImageLocalBinaryPatternFilter.m in Sources */,
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-				4EF5E4481D4230DA002B6AFF /* TGXMLRPCApiClient.m in Sources */,
->>>>>>> origin/master
-=======
-				4EF5E4481D4230DA002B6AFF /* TGXMLRPCApiClient.m in Sources */,
->>>>>>> origin/master
+				4EF5E4481D4230DA002B6AFF /* (null) in Sources */,
 				4EF150641D3E374300D28265 /* WBSEmojiPageVC.m in Sources */,
 				4EF14F0B1D3E32F700D28265 /* setup.c in Sources */,
 				4EF14F9E1D3E32F700D28265 /* GPUImageMotionDetector.m in Sources */,
@@ -3437,13 +2810,6 @@
 				4EF14F221D3E32F700D28265 /* UIAlertView+AFNetworking.m in Sources */,
 				4EF150A51D3E384B00D28265 /* WBSCategoryCell.m in Sources */,
 				4EF14F6C1D3E32F700D28265 /* GPUImageExposureFilter.m in Sources */,
-<<<<<<< HEAD
-<<<<<<< HEAD
-				4EF153281D3F3C3500D28265 /* TGComment.m in Sources */,
-=======
->>>>>>> origin/master
-=======
->>>>>>> origin/master
 				4EF14FA91D3E32F700D28265 /* GPUImageParallelCoordinateLineTransformFilter.m in Sources */,
 				4EF14FDA1D3E32F700D28265 /* GPUImageTwoPassTextureSamplingFilter.m in Sources */,
 				4EF14FE71D3E32F700D28265 /* GPUImagePicture.m in Sources */,
@@ -3455,131 +2821,67 @@
 				4EF14FAB1D3E32F700D28265 /* GPUImagePinchDistortionFilter.m in Sources */,
 				4EF150A71D3E384B00D28265 /* WBSPostCell.m in Sources */,
 				4EF14FCF1D3E32F700D28265 /* GPUImageThreeInputFilter.m in Sources */,
-<<<<<<< HEAD
-<<<<<<< HEAD
-				4EF1532C1D3F3C3500D28265 /* TGPost.m in Sources */,
 				4EF14F241D3E32F700D28265 /* UIImageView+AFNetworking.m in Sources */,
-				4EF150D31D3E39BB00D28265 /* WBSOBTabBarController.m in Sources */,
+				4EF5E4451D4230DA002B6AFF /* (null) in Sources */,
 				4EF14F791D3E32F700D28265 /* GPUImageGrayscaleFilter.m in Sources */,
-=======
-=======
->>>>>>> origin/master
-				4EF14F241D3E32F700D28265 /* UIImageView+AFNetworking.m in Sources */,
-				4EF150D31D3E39BB00D28265 /* WBSRootTabBarController.m in Sources */,
-				4EF5E4451D4230DA002B6AFF /* TGPost.m in Sources */,
-				4EF14F791D3E32F700D28265 /* GPUImageGrayscaleFilter.m in Sources */,
-				4EF5E4021D41C870002B6AFF /* WBSSelectBlogViewController.m in Sources */,
-<<<<<<< HEAD
->>>>>>> origin/master
-=======
->>>>>>> origin/master
+				4EF5E4021D41C870002B6AFF /* (null) in Sources */,
 				4EF14F7A1D3E32F700D28265 /* GPUImageHalftoneFilter.m in Sources */,
 				4EF14F361D3E32F700D28265 /* SDWebImageDownloader.m in Sources */,
 				4EF14F3A1D3E32F700D28265 /* UIButton+WebCache.m in Sources */,
 				4EF14FE11D3E32F700D28265 /* GPUImageWhiteBalanceFilter.m in Sources */,
-				4EF150DD1D3E39D500D28265 /* WBSSideMenuViewController.m in Sources */,
 				4EF14FFB1D3E332800D28265 /* TTTAttributedLabel.m in Sources */,
-				4EF150C11D3E38DC00D28265 /* WBSBrowserNavViewController.m in Sources */,
 				4EF14F921D3E32F700D28265 /* GPUImageLookupFilter.m in Sources */,
-				4EF151091D3F1B3000D28265 /* MASCompositeConstraint.m in Sources */,
 				4EF14FB51D3E32F700D28265 /* GPUImageRGBClosingFilter.m in Sources */,
 				4EF14FB11D3E32F700D28265 /* GPUImagePosterizeFilter.m in Sources */,
 				4EF14FCD1D3E32F700D28265 /* GPUImageTextureInput.m in Sources */,
 				4EF14FD81D3E32F700D28265 /* GPUImageTwoInputFilter.m in Sources */,
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-				4EF5E4491D4230DA002B6AFF /* TGMetaWeblogAuthApi.m in Sources */,
->>>>>>> origin/master
-=======
-				4EF5E4491D4230DA002B6AFF /* TGMetaWeblogAuthApi.m in Sources */,
->>>>>>> origin/master
+				4EF5E4491D4230DA002B6AFF /* (null) in Sources */,
 				4EF14F4E1D3E32F700D28265 /* GPUImageBilateralFilter.m in Sources */,
 				4EF150AA1D3E384B00D28265 /* WBSDropdownMenuView.m in Sources */,
 				4EF150841D3E37C500D28265 /* UIImageView+Util.m in Sources */,
 				4EF14F701D3E32F700D28265 /* GPUImageFilterGroup.m in Sources */,
-<<<<<<< HEAD
-<<<<<<< HEAD
-				4EF153321D3F3C3500D28265 /* TGXMLRPCApiClient.m in Sources */,
-=======
->>>>>>> origin/master
-=======
->>>>>>> origin/master
 				4EF14F491D3E32F700D28265 /* GPUImageAddBlendFilter.m in Sources */,
-				4EF150E61D3E39F100D28265 /* WBSTitleBarView.m in Sources */,
 				4EF14FB91D3E32F700D28265 /* GPUImageRGBOpeningFilter.m in Sources */,
 				4EF14F7F1D3E32F700D28265 /* GPUImageHighPassFilter.m in Sources */,
 				4EF14F0C1D3E32F700D28265 /* tags.c in Sources */,
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-				4EF5E4421D4230DA002B6AFF /* TGMetaWeblogAuthApi.m in Sources */,
->>>>>>> origin/master
-=======
-				4EF5E4421D4230DA002B6AFF /* TGMetaWeblogAuthApi.m in Sources */,
->>>>>>> origin/master
+				4EF38F521D42F5AC00CE28A4 /* WBSSelectBlogViewController.m in Sources */,
+				4EF5E4421D4230DA002B6AFF /* (null) in Sources */,
 				4EF14FB01D3E32F700D28265 /* GPUImagePolkaDotFilter.m in Sources */,
-				4EF1510C1D3F1B3000D28265 /* MASLayoutConstraint.m in Sources */,
-				4EF151AF1D3F27C400D28265 /* WPXMLRPCDataCleaner.m in Sources */,
 				4EF14FAA1D3E32F700D28265 /* GPUImagePerlinNoiseFilter.m in Sources */,
 				4EF150941D3E380F00D28265 /* NSString+FontAwesome.m in Sources */,
 				4EF14F481D3E32F700D28265 /* GPUImageAdaptiveThresholdFilter.m in Sources */,
 				4EF150851D3E37C500D28265 /* UIView+Util.m in Sources */,
+				4EF38F491D42F57A00CE28A4 /* TGXMLRPCApiClient.m in Sources */,
 				4EF14FC71D3E32F700D28265 /* GPUImageSourceOverBlendFilter.m in Sources */,
 				4EF14F841D3E32F700D28265 /* GPUImageHSBFilter.m in Sources */,
 				4EF14F211D3E32F700D28265 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-				4EF5E44B1D4230DA002B6AFF /* TGXMLRPCApiClient.m in Sources */,
->>>>>>> origin/master
-=======
-				4EF5E44B1D4230DA002B6AFF /* TGXMLRPCApiClient.m in Sources */,
->>>>>>> origin/master
+				4EF5E44B1D4230DA002B6AFF /* (null) in Sources */,
 				4EF14F191D3E32F700D28265 /* AFSecurityPolicy.m in Sources */,
-				4EF151121D3F1B3000D28265 /* ViewController+MASAdditions.m in Sources */,
 				4EF14F1D1D3E32F700D28265 /* AFURLSessionManager.m in Sources */,
 				4EF14F721D3E32F700D28265 /* GPUImageFramebuffer.m in Sources */,
 				4EF14FB31D3E32F700D28265 /* GPUImageRawDataInput.m in Sources */,
 				4EF14F0A1D3E32F700D28265 /* resource.c in Sources */,
-				4EF151AE1D3F27C400D28265 /* WPStringUtils.m in Sources */,
 				4EF14F261D3E32F700D28265 /* UIRefreshControl+AFNetworking.m in Sources */,
 				4EF150761D3E377D00D28265 /* WBSConfig.m in Sources */,
 				4EF14F511D3E32F700D28265 /* GPUImageBuffer.m in Sources */,
 				4EF14F0D1D3E32F700D28265 /* xml.c in Sources */,
+				4EF38F501D42F5AC00CE28A4 /* WBSLoginNavViewController.m in Sources */,
 				4EF14F3F1D3E32F700D28265 /* UIView+WebCacheOperation.m in Sources */,
 				4EF14FA61D3E32F700D28265 /* GPUImageOpeningFilter.m in Sources */,
 				4EF14FA51D3E32F700D28265 /* GPUImageOpacityFilter.m in Sources */,
 				4EF1506E1D3E376000D28265 /* WBSEditingBar.m in Sources */,
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-				4EF5E4411D4230DA002B6AFF /* TGComment.m in Sources */,
->>>>>>> origin/master
-=======
-				4EF5E4411D4230DA002B6AFF /* TGComment.m in Sources */,
->>>>>>> origin/master
+				4EF5E4411D4230DA002B6AFF /* (null) in Sources */,
 				4EF14FBD1D3E32F700D28265 /* GPUImageSepiaFilter.m in Sources */,
 				4EF14F501D3E32F700D28265 /* GPUImageBrightnessFilter.m in Sources */,
 				4EF14F371D3E32F700D28265 /* SDWebImageDownloaderOperation.m in Sources */,
+				4EF38F331D42F56E00CE28A4 /* TGBlogJsonApi.m in Sources */,
 				4EF14F171D3E32F700D28265 /* AFHTTPSessionManager.m in Sources */,
 				4EF14F8D1D3E32F700D28265 /* GPUImageLevelsFilter.m in Sources */,
 				4EF150A81D3E384B00D28265 /* WBSPostEditViewController.m in Sources */,
 				4EF14F8A1D3E32F700D28265 /* GPUImageKuwaharaRadius3Filter.m in Sources */,
-				4EF150CD1D3E39A500D28265 /* WBSErrorViewController.m in Sources */,
-<<<<<<< HEAD
-<<<<<<< HEAD
-				4EF151B21D3F27C400D28265 /* WPXMLRPCEncoder.m in Sources */,
-				4EF150B81D3E389900D28265 /* WBSLoginViewController.m in Sources */,
-=======
-				4EF5E4401D4230DA002B6AFF /* TGComment+TGCommentFromDictionary.m in Sources */,
-				4EF151B21D3F27C400D28265 /* WPXMLRPCEncoder.m in Sources */,
->>>>>>> origin/master
-=======
-				4EF5E4401D4230DA002B6AFF /* TGComment+TGCommentFromDictionary.m in Sources */,
-				4EF151B21D3F27C400D28265 /* WPXMLRPCEncoder.m in Sources */,
->>>>>>> origin/master
+				4EF5E4401D4230DA002B6AFF /* (null) in Sources */,
 				4EF14FDD1D3E32F700D28265 /* GPUImageVideoCamera.m in Sources */,
+				4EF38F351D42F56E00CE28A4 /* TGCategory+TGCategoryFromDictionary.m in Sources */,
 				4EF14F9B1D3E32F700D28265 /* GPUImageMonochromeFilter.m in Sources */,
 				4EF150531D3E36DE00D28265 /* TMDImage.m in Sources */,
 				4EF14F951D3E32F700D28265 /* GPUImageLuminanceThresholdFilter.m in Sources */,
@@ -3587,14 +2889,6 @@
 				4EF14F531D3E32F700D28265 /* GPUImageCannyEdgeDetectionFilter.m in Sources */,
 				4EF14F881D3E32F700D28265 /* GPUImageJFAVoronoiFilter.m in Sources */,
 				4EF14F021D3E32F700D28265 /* Csio.c in Sources */,
-				4EF150CE1D3E39A500D28265 /* WBSOBObjsViewController.m in Sources */,
-<<<<<<< HEAD
-<<<<<<< HEAD
-				4EF153311D3F3C3500D28265 /* TGMetaWeblogXMLRPCApi.m in Sources */,
-=======
->>>>>>> origin/master
-=======
->>>>>>> origin/master
 				4EF14FD01D3E32F700D28265 /* GPUImageThresholdEdgeDetectionFilter.m in Sources */,
 				4EF14F541D3E32F700D28265 /* GPUImageCGAColorspaceFilter.m in Sources */,
 				4EF14F181D3E32F700D28265 /* AFNetworkReachabilityManager.m in Sources */,
@@ -3607,41 +2901,21 @@
 				4EF14FD61D3E32F700D28265 /* GPUImageTransformFilter.m in Sources */,
 				4EF14F161D3E32F700D28265 /* AFHTTPRequestOperationManager.m in Sources */,
 				4EF14FD21D3E32F700D28265 /* GPUImageThresholdSketchFilter.m in Sources */,
-				4EF151111D3F1B3000D28265 /* View+MASAdditions.m in Sources */,
-				4EF151101D3F1B3000D28265 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				4EF14F1B1D3E32F700D28265 /* AFURLRequestSerialization.m in Sources */,
 				4EF14F331D3E32F700D28265 /* SDImageCache.m in Sources */,
 				4EF14FB21D3E32F700D28265 /* GPUImagePrewittEdgeDetectionFilter.m in Sources */,
-<<<<<<< HEAD
-<<<<<<< HEAD
+				4EF5E43C1D4230DA002B6AFF /* (null) in Sources */,
+				4EF5E4441D4230DA002B6AFF /* (null) in Sources */,
 				4EF14F471D3E32F700D28265 /* GPUImage3x3TextureSamplingFilter.m in Sources */,
 				4EF150AE1D3E387C00D28265 /* WBSTagViewController.m in Sources */,
-=======
-=======
->>>>>>> origin/master
-				4EF5E43C1D4230DA002B6AFF /* NSString+StringByStrippingHTML.m in Sources */,
-				4EF5E4441D4230DA002B6AFF /* TGPost+SDPostFromDictionary.m in Sources */,
-				4EF14F471D3E32F700D28265 /* GPUImage3x3TextureSamplingFilter.m in Sources */,
-				4EF150AE1D3E387C00D28265 /* WBSTagViewController.m in Sources */,
-				4EF5E43D1D4230DA002B6AFF /* TGBlogJsonApi.m in Sources */,
-<<<<<<< HEAD
->>>>>>> origin/master
-=======
->>>>>>> origin/master
+				4EF5E43D1D4230DA002B6AFF /* (null) in Sources */,
 				4EF14F821D3E32F700D28265 /* GPUImageHistogramGenerator.m in Sources */,
-				4EF150DA1D3E39C900D28265 /* WBSDetailsViewController.m in Sources */,
 				4EF14F6F1D3E32F700D28265 /* GPUImageFilter.m in Sources */,
 				4EF150951D3E380F00D28265 /* UIFont+FontAwesome.m in Sources */,
 				4EF14F4D1D3E32F700D28265 /* GPUImageAverageLuminanceThresholdFilter.m in Sources */,
 				4EF14FBA1D3E32F700D28265 /* GPUImageSaturationBlendFilter.m in Sources */,
-<<<<<<< HEAD
-<<<<<<< HEAD
-				4EF1532B1D3F3C3500D28265 /* TGPost+SDPostFromDictionary.m in Sources */,
-=======
->>>>>>> origin/master
-=======
->>>>>>> origin/master
 				4EF150631D3E374300D28265 /* WWTagsCloudView.m in Sources */,
+				4EF38F371D42F56E00CE28A4 /* TGComment+TGCommentFromDictionary.m in Sources */,
 				4EF14F381D3E32F700D28265 /* SDWebImageManager.m in Sources */,
 				4EF14F2D1D3E32F700D28265 /* RECommonFunctions.m in Sources */,
 				4EF14FD51D3E32F700D28265 /* GPUImageToonFilter.m in Sources */,
@@ -3655,27 +2929,22 @@
 				4EF14F391D3E32F700D28265 /* SDWebImagePrefetcher.m in Sources */,
 				4EF14F991D3E32F700D28265 /* GPUImageMedianFilter.m in Sources */,
 				4EF150571D3E36DE00D28265 /* ToMarkdown.m in Sources */,
-<<<<<<< HEAD
-<<<<<<< HEAD
-				4EF1532D1D3F3C3500D28265 /* TGTag+TGTagFromDictionary.m in Sources */,
-=======
->>>>>>> origin/master
-=======
->>>>>>> origin/master
 				4EF14FE51D3E32F700D28265 /* GPUImageMovieWriter.m in Sources */,
 				4EF14F891D3E32F700D28265 /* GPUImageKuwaharaFilter.m in Sources */,
+				4EF38F3C1D42F56E00CE28A4 /* TGTag.m in Sources */,
 				4EF14F7E1D3E32F700D28265 /* GPUImageHighlightShadowFilter.m in Sources */,
 				4EF14F961D3E32F700D28265 /* GPUImageLuminosity.m in Sources */,
 				4EF150831D3E37C500D28265 /* UIImage+Util.m in Sources */,
+				4EF38F481D42F57A00CE28A4 /* TGMetaWeblogXMLRPCApi.m in Sources */,
 				4EF14F561D3E32F700D28265 /* GPUImageChromaKeyFilter.m in Sources */,
 				4EF14FA01D3E32F700D28265 /* GPUImageMovieComposition.m in Sources */,
+				4EF38F321D42F56E00CE28A4 /* NSString+StringByStrippingHTML.m in Sources */,
 				4EF14F461D3E32F700D28265 /* GPUImage3x3ConvolutionFilter.m in Sources */,
 				4EF149D31D3DF61D00D28265 /* main.m in Sources */,
 				4EF14FDB1D3E32F700D28265 /* GPUImageUIElement.m in Sources */,
 				4EF14F5F1D3E32F700D28265 /* GPUImageCropFilter.m in Sources */,
 				4EF14FBB1D3E32F700D28265 /* GPUImageSaturationFilter.m in Sources */,
 				4EF14F131D3E32F700D28265 /* MBProgressHUD.m in Sources */,
-				4EF151B01D3F27C400D28265 /* WPXMLRPCDecoder.m in Sources */,
 				4EF14F771D3E32F700D28265 /* GPUImageGaussianSelectiveBlurFilter.m in Sources */,
 				4EF14F001D3E32F700D28265 /* basename.c in Sources */,
 				4EF14FCC1D3E32F700D28265 /* GPUImageSwirlFilter.m in Sources */,
@@ -3683,43 +2952,23 @@
 				4EF14F201D3E32F700D28265 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				4EF150561D3E36DE00D28265 /* TMDParagraph.m in Sources */,
 				4EF14F4C1D3E32F700D28265 /* GPUImageAverageColor.m in Sources */,
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-				4EF5E4471D4230DA002B6AFF /* TGTag.m in Sources */,
->>>>>>> origin/master
-=======
-				4EF5E4471D4230DA002B6AFF /* TGTag.m in Sources */,
->>>>>>> origin/master
+				4EF5E4471D4230DA002B6AFF /* (null) in Sources */,
 				4EF14F651D3E32F700D28265 /* GPUImageDirectionalNonMaximumSuppressionFilter.m in Sources */,
 				4EF14FAD1D3E32F700D28265 /* GPUImagePixellatePositionFilter.m in Sources */,
 				4EF1504D1D3E36DE00D28265 /* TMDAnchor.m in Sources */,
 				4EF14F631D3E32F700D28265 /* GPUImageDifferenceBlendFilter.m in Sources */,
 				4EF14FA41D3E32F700D28265 /* GPUImageNormalBlendFilter.m in Sources */,
+				4EF38F3B1D42F56E00CE28A4 /* TGPost+SDPostFromDictionary.m in Sources */,
 				4EF14F601D3E32F700D28265 /* GPUImageCrosshairGenerator.m in Sources */,
 				4EF14F061D3E32F700D28265 /* html5.c in Sources */,
 				4EF14FBE1D3E32F700D28265 /* GPUImageSharpenFilter.m in Sources */,
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-				4EF5E3FF1D41C847002B6AFF /* WBSLoginViewController.m in Sources */,
->>>>>>> origin/master
-=======
-				4EF5E3FF1D41C847002B6AFF /* WBSLoginViewController.m in Sources */,
->>>>>>> origin/master
+				4EF5E3FF1D41C847002B6AFF /* (null) in Sources */,
 				4EF14F5B1D3E32F700D28265 /* GPUImageColorInvertFilter.m in Sources */,
 				4EF14FE21D3E32F700D28265 /* GPUImageXYDerivativeFilter.m in Sources */,
 				4EF150751D3E377D00D28265 /* WBSUtils.m in Sources */,
 				4EF14FD71D3E32F700D28265 /* GPUImageTwoInputCrossTextureSamplingFilter.m in Sources */,
 				4EF14F041D3E32F700D28265 /* generate.c in Sources */,
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-				4EF5E43F1D4230DA002B6AFF /* TGCategory.m in Sources */,
->>>>>>> origin/master
-=======
-				4EF5E43F1D4230DA002B6AFF /* TGCategory.m in Sources */,
->>>>>>> origin/master
+				4EF5E43F1D4230DA002B6AFF /* (null) in Sources */,
 				4EF14F761D3E32F700D28265 /* GPUImageGaussianBlurPositionFilter.m in Sources */,
 				4EF14F6D1D3E32F700D28265 /* GPUImageFalseColorFilter.m in Sources */,
 				4EF150931D3E380F00D28265 /* FAImageView.m in Sources */,
@@ -3728,6 +2977,7 @@
 				4EF14FB41D3E32F700D28265 /* GPUImageRawDataOutput.m in Sources */,
 				4EF14EFF1D3E32F700D28265 /* amalloc.c in Sources */,
 				4EF150081D3E360900D28265 /* WBSApiInfo.m in Sources */,
+				4EF38F3D1D42F56E00CE28A4 /* TGTag+TGTagFromDictionary.m in Sources */,
 				4EF14F9A1D3E32F700D28265 /* GPUImageMissEtikateFilter.m in Sources */,
 				4EF14F0F1D3E32F700D28265 /* GHMarkdownParser.m in Sources */,
 				4EF14FE61D3E32F700D28265 /* GPUImagePicture+TextureSubimage.m in Sources */,
@@ -3735,31 +2985,17 @@
 				4EF14F451D3E32F700D28265 /* GLProgram.m in Sources */,
 				4EF14F291D3E32F700D28265 /* Reachability.m in Sources */,
 				4EF150AB1D3E384B00D28265 /* WBSTitleMenuViewController.m in Sources */,
-				4EF1510B1D3F1B3000D28265 /* MASConstraintMaker.m in Sources */,
 				4EF14F3B1D3E32F700D28265 /* UIImage+GIF.m in Sources */,
 				4EF150A91D3E384B00D28265 /* WBSPostDetailViewController.m in Sources */,
 				4EF14F2E1D3E32F700D28265 /* RESideMenu.m in Sources */,
+				4EF38F511D42F5AC00CE28A4 /* WBSLoginViewController.m in Sources */,
 				4EF14F051D3E32F700D28265 /* github_flavoured.c in Sources */,
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-				4EF5E3FE1D41C847002B6AFF /* WBSLoginNavViewController.m in Sources */,
->>>>>>> origin/master
-=======
-				4EF5E3FE1D41C847002B6AFF /* WBSLoginNavViewController.m in Sources */,
->>>>>>> origin/master
-				4EF150E51D3E39F100D28265 /* WBSSwipableViewController.m in Sources */,
+				4EF5E3FE1D41C847002B6AFF /* (null) in Sources */,
+				4EF38F361D42F56E00CE28A4 /* TGComment.m in Sources */,
 				4EF14F751D3E32F700D28265 /* GPUImageGaussianBlurFilter.m in Sources */,
 				4EF14F8F1D3E32F700D28265 /* GPUImageLinearBurnBlendFilter.m in Sources */,
 				4EF14FA11D3E32F700D28265 /* GPUImageMultiplyBlendFilter.m in Sources */,
 				4EF14FAE1D3E32F700D28265 /* GPUImagePoissonBlendFilter.m in Sources */,
-<<<<<<< HEAD
-<<<<<<< HEAD
-				4EF150B91D3E389900D28265 /* WBSLoginNavViewController.m in Sources */,
-=======
->>>>>>> origin/master
-=======
->>>>>>> origin/master
 				4EF14F6E1D3E32F700D28265 /* GPUImageFASTCornerDetectionFilter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
