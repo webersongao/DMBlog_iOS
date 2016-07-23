@@ -3181,7 +3181,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/WBSBlog/Lib",
 				);
-				GCC_PREFIX_HEADER = WBSBlog/WBSPrefixHeader.pch;
+				GCC_PREFIX_HEADER = ./WBSBlog/WBSPrefixHeader.pch;
 				INFOPLIST_FILE = WBSBlog/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -3201,7 +3201,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/WBSBlog/Lib",
 				);
-				GCC_PREFIX_HEADER = WBSBlog/WBSPrefixHeader.pch;
+				GCC_PREFIX_HEADER = ./WBSBlog/WBSPrefixHeader.pch;
 				INFOPLIST_FILE = WBSBlog/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

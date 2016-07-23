@@ -1112,7 +1112,7 @@ compile_document(Line *ptr, MMIOT *f)
     ParagraphRoot d = { 0, 0 };
     ANCHOR(Line) source = { 0, 0 };
     Paragraph *p = 0;
-    struct kw *tag;
+    struct kw *tag = NULL;
     int eaten, unclosed;
 
     while ( ptr ) {

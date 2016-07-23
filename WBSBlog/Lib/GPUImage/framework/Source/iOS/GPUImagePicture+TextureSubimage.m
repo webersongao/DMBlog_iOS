@@ -54,7 +54,7 @@
     }
 
     GLubyte *imageData = NULL;
-    CFDataRef dataFromImageDataProvider;
+    CFDataRef dataFromImageDataProvider = NULL;
     if (shouldRedrawUsingCoreGraphics)
     {
         // For resized or incompatible image: redraw

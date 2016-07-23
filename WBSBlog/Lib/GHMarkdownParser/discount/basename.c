@@ -17,7 +17,7 @@
 static char *
 e_basename(const char *string, const int size, void *context)
 {
-    char *ret;
+    char *ret = NULL;
     char *base = (char*)context;
     
     if ( base && string && (*string == '/') && (ret=malloc(strlen(base)+size+2)) ) {
