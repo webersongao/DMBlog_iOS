@@ -22,9 +22,8 @@
     // Override point for customization after application launch.
     
     //初始化程序入口，设置登录界面为首页
-//    WBSLoginViewController *loginController = [[WBSLoginViewController alloc]initWithNibName:@"WBSLogin" bundle:nil];
-        WBSLoginViewController *loginController = [[WBSLoginViewController alloc]init];
-        WBSLoginNavViewController *loginNavViewController = [[WBSLoginNavViewController alloc] initWithRootViewController:loginController];
+    WBSLoginViewController *loginController = [[WBSLoginViewController alloc]initWithNibName:@"WBSLogin" bundle:nil];
+    WBSLoginNavViewController *loginNavViewController = [[WBSLoginNavViewController alloc] initWithRootViewController:loginController];
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.rootViewController = loginNavViewController;
     [self.window makeKeyAndVisible];

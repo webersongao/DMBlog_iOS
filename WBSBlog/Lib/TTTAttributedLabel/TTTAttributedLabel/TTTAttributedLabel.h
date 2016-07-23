@@ -217,6 +217,7 @@ IB_DESIGNABLE
 /**
  The space in points added between lines within the paragraph. This value is always nonnegative and is 0.0 by default.
  */
+
 @property (nonatomic, assign) IBInspectable CGFloat lineSpacing;
 
 /**
