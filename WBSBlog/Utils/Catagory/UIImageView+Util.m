@@ -13,7 +13,10 @@
 
 - (void)loadPortrait:(NSURL *)portraitURL
 {
-    [self sd_setImageWithURL:portraitURL placeholderImage:[UIImage imageNamed:@"default-portrait"] options:0];
+    if (portraitURL.absoluteString.length < 1 ) {
+        return;
+    }
+    [self sd_setImageWithURL:portraitURL placeholderImage:[UIImage imageNamed:@"default-portrait"] options:0]; 
 }
 
 @end
