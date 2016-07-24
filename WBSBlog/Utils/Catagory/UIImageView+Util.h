@@ -10,6 +10,7 @@
 
 @interface UIImageView (Util)
 
+// 下载图片
 - (void)loadPortrait:(NSURL *)portraitURL;
 
 @end

@@ -16,6 +16,7 @@
 #import "TGBlogJsonApi.h"
 #import "WBSErrorViewController.h"
 
+
 static NSString *kMyInfoCellID = @"myInfoCell";
 
 @interface WBSMyInfoController ()
@@ -53,7 +54,7 @@ static NSString *kMyInfoCellID = @"myInfoCell";
 }
 
 - (void) viewDidAppear:(BOOL)animated{
-    //JSON API不支持
+    //非 JSON API不支持
     if (![WBSConfig isJSONAPIEnable]) {
         WBSErrorViewController *errorCtl = [[WBSErrorViewController alloc]init];
         [WBSUtils showApiNotSupported:self redirectTo:errorCtl];
@@ -95,7 +96,8 @@ static NSString *kMyInfoCellID = @"myInfoCell";
     _portrait = [UIImageView new];
     _portrait.contentMode = UIViewContentModeScaleAspectFit;
     [_portrait setCornerRadius:25];
-    [_portrait loadPortrait:[NSURL URLWithString:@""]];
+    // 头像写死
+//    [_portrait loadPortrait:[NSURL URLWithString:@"http://h.hiphotos.baidu.com/zhidao/wh%3D450%2C600/sign=433dd90830fa828bd17695e7c82f6d02/cb8065380cd7912368dec979ae345982b2b78085.jpg"]];
     _portrait.userInteractionEnabled = YES;
     [_portrait addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapPortrait)]];
     [header addSubview:_portrait];

@@ -2410,6 +2410,8 @@
 		4EF38FAB1D4310E300CE28A4 /* 主页_Home */ = {
 			isa = PBXGroup;
 			children = (
+				4EF38FB61D4310E300CE28A4 /* WBSPostViewController.h */,
+				4EF38FB71D4310E300CE28A4 /* WBSPostViewController.m */,
 				4EF38FAC1D4310E300CE28A4 /* WBSCategoryCell.h */,
 				4EF38FAD1D4310E300CE28A4 /* WBSCategoryCell.m */,
 				4EF38FAE1D4310E300CE28A4 /* WBSDropdownMenuView.h */,
@@ -2420,8 +2422,6 @@
 				4EF38FB31D4310E300CE28A4 /* WBSPostDetailViewController.m */,
 				4EF38FB41D4310E300CE28A4 /* WBSPostEditViewController.h */,
 				4EF38FB51D4310E300CE28A4 /* WBSPostEditViewController.m */,
-				4EF38FB61D4310E300CE28A4 /* WBSPostViewController.h */,
-				4EF38FB71D4310E300CE28A4 /* WBSPostViewController.m */,
 				4EF38FB81D4310E300CE28A4 /* WBSTitleMenuViewController.h */,
 				4EF38FB91D4310E300CE28A4 /* WBSTitleMenuViewController.m */,
 			);
