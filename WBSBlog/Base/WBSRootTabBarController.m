@@ -52,14 +52,14 @@
         
         //博客
         blogSVC = [[WBSSwipableViewController alloc] initWithTitle:@"首页"
-                                                   andSubTitles:@[@"文章",@"页面"]
-                                                 andControllers:@[ postViewCtl,pageViewCtl]
-                                                    underTabbar:YES];
+                                                      andSubTitles:@[@"文章",@"页面"]
+                                                    andControllers:@[ postViewCtl,pageViewCtl]
+                                                       underTabbar:YES];
     }else{
         blogSVC = [[WBSSwipableViewController alloc] initWithTitle:@"首页"
-                                                   andSubTitles:nil
-                                                 andControllers:@[ postViewCtl]
-                                                    underTabbar:YES];
+                                                      andSubTitles:nil
+                                                    andControllers:@[ postViewCtl]
+                                                       underTabbar:YES];
     }
     return blogSVC;
 }
@@ -94,8 +94,6 @@
     NSArray *images = @[@"tabbar-news", @"tabbar-tweet", @"blank", @"tabbar-discover", @"tabbar-me"];
     [self.tabBar.items enumerateObjectsUsingBlock:^(UITabBarItem *item, NSUInteger idx, BOOL *stop) {
         [item setTitle:titles[idx]];
-        //NSLog(@"%@",images[idx]);
-        //NSLog(@"%@",[images[idx] stringByAppendingString:@"-selected"]);
         if (!([images[idx] isEqualToString:@"blank"])) {
             [item setImage:[UIImage imageNamed:images[idx]]];
             [item setSelectedImage:[UIImage imageNamed:[images[idx] stringByAppendingString:@"-selected"]]];
@@ -120,8 +118,8 @@
     
     for (int i = 0; i < 6; i++) {
         WBSOptionButton *optionButton = [[WBSOptionButton alloc] initWithTitle:buttonTitles[i]
-                                                                   image:[UIImage imageNamed:buttonImages[i]]
-                                                                andColor:[UIColor colorWithHex:buttonColors[i]]];
+                                                                         image:[UIImage imageNamed:buttonImages[i]]
+                                                                      andColor:[UIColor colorWithHex:buttonColors[i]]];
         
         optionButton.frame = CGRectMake((_screenWidth/6 * (i%3*2+1) - (_length+16)/2),
                                         _screenHeight + 150 + i/3*100,
@@ -216,6 +214,7 @@
 - (void)changeTheButtonStateAnimatedToOpen:(BOOL)isPressed
 {
     if (isPressed) {
+        // 隐藏撰写的按钮
         [self removeBlurView];
         
         [_animator removeAllBehaviors];
@@ -234,6 +233,7 @@
             });
         }
     } else {
+        // 显示撰写的按钮
         [self addBlurView];
         
         [_animator removeAllBehaviors];
