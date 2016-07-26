@@ -7,6 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E4AD5EB1D477536002BFD98 /* WBSBottomBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E4AD5D51D477536002BFD98 /* WBSBottomBarViewController.m */; };
+		4E4AD5EC1D477536002BFD98 /* WBSBrowserNavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E4AD5D71D477536002BFD98 /* WBSBrowserNavViewController.m */; };
+		4E4AD5ED1D477536002BFD98 /* WBSBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E4AD5D91D477536002BFD98 /* WBSBrowserViewController.m */; };
+		4E4AD5EE1D477536002BFD98 /* WBSDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E4AD5DB1D477536002BFD98 /* WBSDetailsViewController.m */; };
+		4E4AD5EF1D477536002BFD98 /* WBSErrorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E4AD5DD1D477536002BFD98 /* WBSErrorViewController.m */; };
+		4E4AD5F01D477536002BFD98 /* WBSOBObjsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E4AD5DF1D477536002BFD98 /* WBSOBObjsViewController.m */; };
+		4E4AD5F11D477536002BFD98 /* WBSOBTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E4AD5E11D477536002BFD98 /* WBSOBTabBarController.m */; };
+		4E4AD5F21D477536002BFD98 /* WBSRootTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E4AD5E31D477536002BFD98 /* WBSRootTabBarController.m */; };
+		4E4AD5F31D477536002BFD98 /* WBSSideMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E4AD5E51D477536002BFD98 /* WBSSideMenuViewController.m */; };
+		4E4AD5F41D477536002BFD98 /* WBSOptionButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E4AD5EA1D477536002BFD98 /* WBSOptionButton.m */; };
+		4E4AD5F71D477570002BFD98 /* WBSSwipableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E4AD5F61D477570002BFD98 /* WBSSwipableViewController.m */; };
+		4E4AD5FA1D477582002BFD98 /* WBSTitleBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E4AD5F91D477582002BFD98 /* WBSTitleBarView.m */; };
+		4E4AD5FD1D477595002BFD98 /* WBSHorizonalTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E4AD5FC1D477595002BFD98 /* WBSHorizonalTableViewController.m */; };
 		4EF149D31D3DF61D00D28265 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF149D21D3DF61D00D28265 /* main.m */; };
 		4EF149D61D3DF61D00D28265 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF149D51D3DF61D00D28265 /* AppDelegate.m */; };
 		4EF149DE1D3DF61D00D28265 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4EF149DD1D3DF61D00D28265 /* Assets.xcassets */; };
@@ -262,20 +275,8 @@
 		4EF38F511D42F5AC00CE28A4 /* WBSLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF38F4D1D42F5AC00CE28A4 /* WBSLoginViewController.m */; };
 		4EF38F521D42F5AC00CE28A4 /* WBSSelectBlogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF38F4F1D42F5AC00CE28A4 /* WBSSelectBlogViewController.m */; };
 		4EF38F541D42F5BA00CE28A4 /* WBSLogin.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EF38F531D42F5BA00CE28A4 /* WBSLogin.xib */; };
-		4EF38F551D42F8F700CE28A4 /* WBSOBObjsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF150CC1D3E39A500D28265 /* WBSOBObjsViewController.m */; };
-		4EF38F561D42F9E600CE28A4 /* WBSSideMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF150DC1D3E39D500D28265 /* WBSSideMenuViewController.m */; };
-		4EF38F571D42FA1B00CE28A4 /* WBSRootTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF150D01D3E39BB00D28265 /* WBSRootTabBarController.m */; };
 		4EF38F581D42FA2F00CE28A4 /* WBSSettingsPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF152FA1D3F3A1A00D28265 /* WBSSettingsPage.m */; };
-		4EF38F5A1D42FA6100CE28A4 /* WBSSwipableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF150E11D3E39F100D28265 /* WBSSwipableViewController.m */; };
-		4EF38F5B1D42FA6A00CE28A4 /* WBSOptionButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF150D21D3E39BB00D28265 /* WBSOptionButton.m */; };
 		4EF38F5C1D42FAB200CE28A4 /* TMDHeading.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF1503F1D3E36DE00D28265 /* TMDHeading.m */; };
-		4EF38F5D1D42FAE100CE28A4 /* WBSBrowserNavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF150BE1D3E38DC00D28265 /* WBSBrowserNavViewController.m */; };
-		4EF38F5E1D42FAE100CE28A4 /* WBSBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF150C01D3E38DC00D28265 /* WBSBrowserViewController.m */; };
-		4EF38F5F1D42FAE800CE28A4 /* WBSDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF150D81D3E39C900D28265 /* WBSDetailsViewController.m */; };
-		4EF38F601D42FAF000CE28A4 /* WBSErrorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF150CA1D3E39A500D28265 /* WBSErrorViewController.m */; };
-		4EF38F611D42FB1E00CE28A4 /* WBSBottomBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF150D61D3E39C900D28265 /* WBSBottomBarViewController.m */; };
-		4EF38F621D42FB2C00CE28A4 /* WBSHorizonalTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF150DF1D3E39F100D28265 /* WBSHorizonalTableViewController.m */; };
-		4EF38F631D42FB3300CE28A4 /* WBSTitleBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF150E31D3E39F100D28265 /* WBSTitleBarView.m */; };
 		4EF38F691D42FBD200CE28A4 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EF151B31D3F29DA00D28265 /* libiconv.tbd */; };
 		4EF38F6A1D430AE600CE28A4 /* mkdio.c in Sources */ = {isa = PBXBuildFile; fileRef = 4EF14D281D3E32F600D28265 /* mkdio.c */; };
 		4EF38F701D430E6B00CE28A4 /* NSString+GHMarkdownParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF38F6D1D430E6B00CE28A4 /* NSString+GHMarkdownParser.m */; };
@@ -381,6 +382,32 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4E4AD5D41D477536002BFD98 /* WBSBottomBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSBottomBarViewController.h; sourceTree = "<group>"; };
+		4E4AD5D51D477536002BFD98 /* WBSBottomBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBSBottomBarViewController.m; sourceTree = "<group>"; };
+		4E4AD5D61D477536002BFD98 /* WBSBrowserNavViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSBrowserNavViewController.h; sourceTree = "<group>"; };
+		4E4AD5D71D477536002BFD98 /* WBSBrowserNavViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBSBrowserNavViewController.m; sourceTree = "<group>"; };
+		4E4AD5D81D477536002BFD98 /* WBSBrowserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSBrowserViewController.h; sourceTree = "<group>"; };
+		4E4AD5D91D477536002BFD98 /* WBSBrowserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBSBrowserViewController.m; sourceTree = "<group>"; };
+		4E4AD5DA1D477536002BFD98 /* WBSDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSDetailsViewController.h; sourceTree = "<group>"; };
+		4E4AD5DB1D477536002BFD98 /* WBSDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBSDetailsViewController.m; sourceTree = "<group>"; };
+		4E4AD5DC1D477536002BFD98 /* WBSErrorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSErrorViewController.h; sourceTree = "<group>"; };
+		4E4AD5DD1D477536002BFD98 /* WBSErrorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBSErrorViewController.m; sourceTree = "<group>"; };
+		4E4AD5DE1D477536002BFD98 /* WBSOBObjsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSOBObjsViewController.h; sourceTree = "<group>"; };
+		4E4AD5DF1D477536002BFD98 /* WBSOBObjsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBSOBObjsViewController.m; sourceTree = "<group>"; };
+		4E4AD5E01D477536002BFD98 /* WBSOBTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSOBTabBarController.h; sourceTree = "<group>"; };
+		4E4AD5E11D477536002BFD98 /* WBSOBTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBSOBTabBarController.m; sourceTree = "<group>"; };
+		4E4AD5E21D477536002BFD98 /* WBSRootTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSRootTabBarController.h; sourceTree = "<group>"; };
+		4E4AD5E31D477536002BFD98 /* WBSRootTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBSRootTabBarController.m; sourceTree = "<group>"; };
+		4E4AD5E41D477536002BFD98 /* WBSSideMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSSideMenuViewController.h; sourceTree = "<group>"; };
+		4E4AD5E51D477536002BFD98 /* WBSSideMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBSSideMenuViewController.m; sourceTree = "<group>"; };
+		4E4AD5E91D477536002BFD98 /* WBSOptionButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSOptionButton.h; sourceTree = "<group>"; };
+		4E4AD5EA1D477536002BFD98 /* WBSOptionButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBSOptionButton.m; sourceTree = "<group>"; };
+		4E4AD5F51D477570002BFD98 /* WBSSwipableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSSwipableViewController.h; sourceTree = "<group>"; };
+		4E4AD5F61D477570002BFD98 /* WBSSwipableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBSSwipableViewController.m; sourceTree = "<group>"; };
+		4E4AD5F81D477582002BFD98 /* WBSTitleBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSTitleBarView.h; sourceTree = "<group>"; };
+		4E4AD5F91D477582002BFD98 /* WBSTitleBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBSTitleBarView.m; sourceTree = "<group>"; };
+		4E4AD5FB1D477595002BFD98 /* WBSHorizonalTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSHorizonalTableViewController.h; sourceTree = "<group>"; };
+		4E4AD5FC1D477595002BFD98 /* WBSHorizonalTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBSHorizonalTableViewController.m; sourceTree = "<group>"; };
 		4EF149CE1D3DF61D00D28265 /* WBSBlog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WBSBlog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EF149D21D3DF61D00D28265 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4EF149D41D3DF61D00D28265 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ../AppDelegate.h; sourceTree = "<group>"; };
@@ -892,30 +919,6 @@
 		4EF150AD1D3E387C00D28265 /* WBSTagViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBSTagViewController.m; sourceTree = "<group>"; };
 		4EF150AF1D3E389900D28265 /* WBSMyInfoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSMyInfoController.h; sourceTree = "<group>"; };
 		4EF150B01D3E389900D28265 /* WBSMyInfoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBSMyInfoController.m; sourceTree = "<group>"; };
-		4EF150BD1D3E38DC00D28265 /* WBSBrowserNavViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSBrowserNavViewController.h; sourceTree = "<group>"; };
-		4EF150BE1D3E38DC00D28265 /* WBSBrowserNavViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBSBrowserNavViewController.m; sourceTree = "<group>"; };
-		4EF150BF1D3E38DC00D28265 /* WBSBrowserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSBrowserViewController.h; sourceTree = "<group>"; };
-		4EF150C01D3E38DC00D28265 /* WBSBrowserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBSBrowserViewController.m; sourceTree = "<group>"; };
-		4EF150C91D3E39A500D28265 /* WBSErrorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSErrorViewController.h; sourceTree = "<group>"; };
-		4EF150CA1D3E39A500D28265 /* WBSErrorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBSErrorViewController.m; sourceTree = "<group>"; };
-		4EF150CB1D3E39A500D28265 /* WBSOBObjsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSOBObjsViewController.h; sourceTree = "<group>"; };
-		4EF150CC1D3E39A500D28265 /* WBSOBObjsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBSOBObjsViewController.m; sourceTree = "<group>"; };
-		4EF150CF1D3E39BB00D28265 /* WBSRootTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSRootTabBarController.h; sourceTree = "<group>"; };
-		4EF150D01D3E39BB00D28265 /* WBSRootTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBSRootTabBarController.m; sourceTree = "<group>"; };
-		4EF150D11D3E39BB00D28265 /* WBSOptionButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSOptionButton.h; sourceTree = "<group>"; };
-		4EF150D21D3E39BB00D28265 /* WBSOptionButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBSOptionButton.m; sourceTree = "<group>"; };
-		4EF150D51D3E39C900D28265 /* WBSBottomBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSBottomBarViewController.h; sourceTree = "<group>"; };
-		4EF150D61D3E39C900D28265 /* WBSBottomBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBSBottomBarViewController.m; sourceTree = "<group>"; };
-		4EF150D71D3E39C900D28265 /* WBSDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSDetailsViewController.h; sourceTree = "<group>"; };
-		4EF150D81D3E39C900D28265 /* WBSDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBSDetailsViewController.m; sourceTree = "<group>"; };
-		4EF150DB1D3E39D500D28265 /* WBSSideMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSSideMenuViewController.h; sourceTree = "<group>"; };
-		4EF150DC1D3E39D500D28265 /* WBSSideMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBSSideMenuViewController.m; sourceTree = "<group>"; };
-		4EF150DE1D3E39F100D28265 /* WBSHorizonalTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSHorizonalTableViewController.h; sourceTree = "<group>"; };
-		4EF150DF1D3E39F100D28265 /* WBSHorizonalTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBSHorizonalTableViewController.m; sourceTree = "<group>"; };
-		4EF150E01D3E39F100D28265 /* WBSSwipableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSSwipableViewController.h; sourceTree = "<group>"; };
-		4EF150E11D3E39F100D28265 /* WBSSwipableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBSSwipableViewController.m; sourceTree = "<group>"; };
-		4EF150E21D3E39F100D28265 /* WBSTitleBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSTitleBarView.h; sourceTree = "<group>"; };
-		4EF150E31D3E39F100D28265 /* WBSTitleBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBSTitleBarView.m; sourceTree = "<group>"; };
 		4EF150E91D3E3AAF00D28265 /* emoji.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = emoji.plist; sourceTree = "<group>"; };
 		4EF150EA1D3E3AAF00D28265 /* emojiToText.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = emojiToText.plist; sourceTree = "<group>"; };
 		4EF150EB1D3E3AAF00D28265 /* WBSBlog.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = WBSBlog.plist; sourceTree = "<group>"; };
@@ -1207,6 +1210,72 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4E4AD5D21D477536002BFD98 /* 框架_Main */ = {
+			isa = PBXGroup;
+			children = (
+				4E4AD5D31D477536002BFD98 /* Controller */,
+				4E4AD5E61D477536002BFD98 /* Model */,
+				4E4AD5E81D477536002BFD98 /* View */,
+				4E4AD5E71D477536002BFD98 /* SwipableViewController */,
+			);
+			name = "框架_Main";
+			path = Main;
+			sourceTree = "<group>";
+		};
+		4E4AD5D31D477536002BFD98 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				4E4AD5FB1D477595002BFD98 /* WBSHorizonalTableViewController.h */,
+				4E4AD5FC1D477595002BFD98 /* WBSHorizonalTableViewController.m */,
+				4E4AD5D41D477536002BFD98 /* WBSBottomBarViewController.h */,
+				4E4AD5D51D477536002BFD98 /* WBSBottomBarViewController.m */,
+				4E4AD5D61D477536002BFD98 /* WBSBrowserNavViewController.h */,
+				4E4AD5D71D477536002BFD98 /* WBSBrowserNavViewController.m */,
+				4E4AD5D81D477536002BFD98 /* WBSBrowserViewController.h */,
+				4E4AD5D91D477536002BFD98 /* WBSBrowserViewController.m */,
+				4E4AD5DA1D477536002BFD98 /* WBSDetailsViewController.h */,
+				4E4AD5DB1D477536002BFD98 /* WBSDetailsViewController.m */,
+				4E4AD5DC1D477536002BFD98 /* WBSErrorViewController.h */,
+				4E4AD5DD1D477536002BFD98 /* WBSErrorViewController.m */,
+				4E4AD5DE1D477536002BFD98 /* WBSOBObjsViewController.h */,
+				4E4AD5DF1D477536002BFD98 /* WBSOBObjsViewController.m */,
+				4E4AD5E01D477536002BFD98 /* WBSOBTabBarController.h */,
+				4E4AD5E11D477536002BFD98 /* WBSOBTabBarController.m */,
+				4E4AD5E21D477536002BFD98 /* WBSRootTabBarController.h */,
+				4E4AD5E31D477536002BFD98 /* WBSRootTabBarController.m */,
+				4E4AD5E41D477536002BFD98 /* WBSSideMenuViewController.h */,
+				4E4AD5E51D477536002BFD98 /* WBSSideMenuViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		4E4AD5E61D477536002BFD98 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4E4AD5E71D477536002BFD98 /* SwipableViewController */ = {
+			isa = PBXGroup;
+			children = (
+				4E4AD5F51D477570002BFD98 /* WBSSwipableViewController.h */,
+				4E4AD5F61D477570002BFD98 /* WBSSwipableViewController.m */,
+			);
+			path = SwipableViewController;
+			sourceTree = "<group>";
+		};
+		4E4AD5E81D477536002BFD98 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4E4AD5F81D477582002BFD98 /* WBSTitleBarView.h */,
+				4E4AD5F91D477582002BFD98 /* WBSTitleBarView.m */,
+				4E4AD5E91D477536002BFD98 /* WBSOptionButton.h */,
+				4E4AD5EA1D477536002BFD98 /* WBSOptionButton.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		4EF149C51D3DF61D00D28265 = {
 			isa = PBXGroup;
 			children = (
@@ -1234,7 +1303,7 @@
 			isa = PBXGroup;
 			children = (
 				4EF150581D3E371C00D28265 /* Temp临时 */,
-				4EF150BB1D3E38C700D28265 /* Base基本 */,
+				4E4AD5D21D477536002BFD98 /* 框架_Main */,
 				4EF38FAB1D4310E300CE28A4 /* 主页_Home */,
 				4EF38FC11D4310F100CE28A4 /* 撰写_Publish */,
 				4EF14A3A1D3E30DF00D28265 /* 标签_Tag */,
@@ -2062,62 +2131,6 @@
 			path = catagory;
 			sourceTree = "<group>";
 		};
-		4EF150BB1D3E38C700D28265 /* Base基本 */ = {
-			isa = PBXGroup;
-			children = (
-				4EF150C91D3E39A500D28265 /* WBSErrorViewController.h */,
-				4EF150CA1D3E39A500D28265 /* WBSErrorViewController.m */,
-				4EF150CB1D3E39A500D28265 /* WBSOBObjsViewController.h */,
-				4EF150CC1D3E39A500D28265 /* WBSOBObjsViewController.m */,
-				4EF150CF1D3E39BB00D28265 /* WBSRootTabBarController.h */,
-				4EF150D01D3E39BB00D28265 /* WBSRootTabBarController.m */,
-				4EF150D11D3E39BB00D28265 /* WBSOptionButton.h */,
-				4EF150D21D3E39BB00D28265 /* WBSOptionButton.m */,
-				4EF150BD1D3E38DC00D28265 /* WBSBrowserNavViewController.h */,
-				4EF150BE1D3E38DC00D28265 /* WBSBrowserNavViewController.m */,
-				4EF150BF1D3E38DC00D28265 /* WBSBrowserViewController.h */,
-				4EF150C01D3E38DC00D28265 /* WBSBrowserViewController.m */,
-				4EF150C81D3E398600D28265 /* SwipableViewController */,
-				4EF150C71D3E394E00D28265 /* 详情 */,
-				4EF150C61D3E393E00D28265 /* 侧滑 */,
-			);
-			name = "Base基本";
-			path = Base;
-			sourceTree = "<group>";
-		};
-		4EF150C61D3E393E00D28265 /* 侧滑 */ = {
-			isa = PBXGroup;
-			children = (
-				4EF150DB1D3E39D500D28265 /* WBSSideMenuViewController.h */,
-				4EF150DC1D3E39D500D28265 /* WBSSideMenuViewController.m */,
-			);
-			name = "侧滑";
-			sourceTree = "<group>";
-		};
-		4EF150C71D3E394E00D28265 /* 详情 */ = {
-			isa = PBXGroup;
-			children = (
-				4EF150D51D3E39C900D28265 /* WBSBottomBarViewController.h */,
-				4EF150D61D3E39C900D28265 /* WBSBottomBarViewController.m */,
-				4EF150D71D3E39C900D28265 /* WBSDetailsViewController.h */,
-				4EF150D81D3E39C900D28265 /* WBSDetailsViewController.m */,
-			);
-			name = "详情";
-			sourceTree = "<group>";
-		};
-		4EF150C81D3E398600D28265 /* SwipableViewController */ = {
-			isa = PBXGroup;
-			children = (
-				4EF150DE1D3E39F100D28265 /* WBSHorizonalTableViewController.h */,
-				4EF150DF1D3E39F100D28265 /* WBSHorizonalTableViewController.m */,
-				4EF150E01D3E39F100D28265 /* WBSSwipableViewController.h */,
-				4EF150E11D3E39F100D28265 /* WBSSwipableViewController.m */,
-				4EF150E21D3E39F100D28265 /* WBSTitleBarView.h */,
-				4EF150E31D3E39F100D28265 /* WBSTitleBarView.m */,
-			);
-			path = SwipableViewController;
-			sourceTree = "<group>";
-		};
 		4EF151B51D3F2DF400D28265 /* cell_widget */ = {
 			isa = PBXGroup;
 			children = (
@@ -2736,20 +2749,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				4EF38F6A1D430AE600CE28A4 /* mkdio.c in Sources */,
-				4EF38F631D42FB3300CE28A4 /* WBSTitleBarView.m in Sources */,
-				4EF38F621D42FB2C00CE28A4 /* WBSHorizonalTableViewController.m in Sources */,
-				4EF38F611D42FB1E00CE28A4 /* WBSBottomBarViewController.m in Sources */,
-				4EF38F601D42FAF000CE28A4 /* WBSErrorViewController.m in Sources */,
-				4EF38F5F1D42FAE800CE28A4 /* WBSDetailsViewController.m in Sources */,
-				4EF38F5D1D42FAE100CE28A4 /* WBSBrowserNavViewController.m in Sources */,
-				4EF38F5E1D42FAE100CE28A4 /* WBSBrowserViewController.m in Sources */,
 				4EF38F5C1D42FAB200CE28A4 /* TMDHeading.m in Sources */,
-				4EF38F5B1D42FA6A00CE28A4 /* WBSOptionButton.m in Sources */,
-				4EF38F5A1D42FA6100CE28A4 /* WBSSwipableViewController.m in Sources */,
 				4EF38F581D42FA2F00CE28A4 /* WBSSettingsPage.m in Sources */,
-				4EF38F571D42FA1B00CE28A4 /* WBSRootTabBarController.m in Sources */,
-				4EF38F561D42F9E600CE28A4 /* WBSSideMenuViewController.m in Sources */,
-				4EF38F551D42F8F700CE28A4 /* WBSOBObjsViewController.m in Sources */,
 				4EF14F251D3E32F700D28265 /* UIProgressView+AFNetworking.m in Sources */,
 				4EF14F971D3E32F700D28265 /* GPUImageLuminosityBlendFilter.m in Sources */,
 				4EF14F1A1D3E32F700D28265 /* AFURLConnectionOperation.m in Sources */,
@@ -2811,6 +2812,7 @@
 				4EF14FBF1D3E32F700D28265 /* GPUImageShiTomasiFeatureDetectionFilter.m in Sources */,
 				4EF14FC91D3E32F700D28265 /* GPUImageStillCamera.m in Sources */,
 				4EF14F4F1D3E32F700D28265 /* GPUImageBoxBlurFilter.m in Sources */,
+				4E4AD5ED1D477536002BFD98 /* WBSBrowserViewController.m in Sources */,
 				4EF14F901D3E32F700D28265 /* GPUImageLineGenerator.m in Sources */,
 				4EF14F7C1D3E32F700D28265 /* GPUImageHarrisCornerDetectionFilter.m in Sources */,
 				4EF38FD21D4311D000CE28A4 /* WPStringUtils.m in Sources */,
@@ -2833,6 +2835,7 @@
 				4EF14F981D3E32F700D28265 /* GPUImageMaskFilter.m in Sources */,
 				4EF14FDC1D3E32F700D28265 /* GPUImageUnsharpMaskFilter.m in Sources */,
 				4EF38FBA1D4310E300CE28A4 /* WBSCategoryCell.m in Sources */,
+				4E4AD5EB1D477536002BFD98 /* WBSBottomBarViewController.m in Sources */,
 				4EF14F9D1D3E32F700D28265 /* GPUImageMotionBlurFilter.m in Sources */,
 				4EF150551D3E36DE00D28265 /* TMDLineBreak.m in Sources */,
 				4EF14F581D3E32F700D28265 /* GPUImageColorBlendFilter.m in Sources */,
@@ -2860,6 +2863,7 @@
 				4EF14FA91D3E32F700D28265 /* GPUImageParallelCoordinateLineTransformFilter.m in Sources */,
 				4EF14FDA1D3E32F700D28265 /* GPUImageTwoPassTextureSamplingFilter.m in Sources */,
 				4EF14FE71D3E32F700D28265 /* GPUImagePicture.m in Sources */,
+				4E4AD5EE1D477536002BFD98 /* WBSDetailsViewController.m in Sources */,
 				4EF390391D43138100CE28A4 /* TGBlogJsonApi.m in Sources */,
 				4EF14F521D3E32F700D28265 /* GPUImageBulgeDistortionFilter.m in Sources */,
 				4EF14F641D3E32F700D28265 /* GPUImageDilationFilter.m in Sources */,
@@ -2911,6 +2915,7 @@
 				4EF14F211D3E32F700D28265 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				4EF5E44B1D4230DA002B6AFF /* (null) in Sources */,
 				4EF14F191D3E32F700D28265 /* AFSecurityPolicy.m in Sources */,
+				4E4AD5F11D477536002BFD98 /* WBSOBTabBarController.m in Sources */,
 				4EF14F1D1D3E32F700D28265 /* AFURLSessionManager.m in Sources */,
 				4EF14F721D3E32F700D28265 /* GPUImageFramebuffer.m in Sources */,
 				4EF14FB31D3E32F700D28265 /* GPUImageRawDataInput.m in Sources */,
@@ -2926,6 +2931,7 @@
 				4EF14FA51D3E32F700D28265 /* GPUImageOpacityFilter.m in Sources */,
 				4EF1506E1D3E376000D28265 /* WBSEditingBar.m in Sources */,
 				4EF5E4411D4230DA002B6AFF /* (null) in Sources */,
+				4E4AD5F31D477536002BFD98 /* WBSSideMenuViewController.m in Sources */,
 				4EF14FBD1D3E32F700D28265 /* GPUImageSepiaFilter.m in Sources */,
 				4EF14F501D3E32F700D28265 /* GPUImageBrightnessFilter.m in Sources */,
 				4EF14F371D3E32F700D28265 /* SDWebImageDownloaderOperation.m in Sources */,
@@ -2935,7 +2941,9 @@
 				4EF14F8D1D3E32F700D28265 /* GPUImageLevelsFilter.m in Sources */,
 				4EF38FBE1D4310E300CE28A4 /* WBSPostEditViewController.m in Sources */,
 				4EF14F8A1D3E32F700D28265 /* GPUImageKuwaharaRadius3Filter.m in Sources */,
+				4E4AD5F21D477536002BFD98 /* WBSRootTabBarController.m in Sources */,
 				4EF5E4401D4230DA002B6AFF /* (null) in Sources */,
+				4E4AD5FA1D477582002BFD98 /* WBSTitleBarView.m in Sources */,
 				4EF390431D43138100CE28A4 /* TGTag.m in Sources */,
 				4EF14FDD1D3E32F700D28265 /* GPUImageVideoCamera.m in Sources */,
 				4EF38FA21D430F4600CE28A4 /* View+MASAdditions.m in Sources */,
@@ -2963,7 +2971,10 @@
 				4EF14FB21D3E32F700D28265 /* GPUImagePrewittEdgeDetectionFilter.m in Sources */,
 				4EF5E43C1D4230DA002B6AFF /* (null) in Sources */,
 				4EF5E4441D4230DA002B6AFF /* (null) in Sources */,
+				4E4AD5F01D477536002BFD98 /* WBSOBObjsViewController.m in Sources */,
 				4EF14F471D3E32F700D28265 /* GPUImage3x3TextureSamplingFilter.m in Sources */,
+				4E4AD5F41D477536002BFD98 /* WBSOptionButton.m in Sources */,
+				4E4AD5EF1D477536002BFD98 /* WBSErrorViewController.m in Sources */,
 				4EF150AE1D3E387C00D28265 /* WBSTagViewController.m in Sources */,
 				4EF5E43D1D4230DA002B6AFF /* (null) in Sources */,
 				4EF14F821D3E32F700D28265 /* GPUImageHistogramGenerator.m in Sources */,
@@ -3014,6 +3025,7 @@
 				4EF38F9C1D430F4600CE28A4 /* MASConstraintMaker.m in Sources */,
 				4EF14F631D3E32F700D28265 /* GPUImageDifferenceBlendFilter.m in Sources */,
 				4EF14FA41D3E32F700D28265 /* GPUImageNormalBlendFilter.m in Sources */,
+				4E4AD5F71D477570002BFD98 /* WBSSwipableViewController.m in Sources */,
 				4EF14F601D3E32F700D28265 /* GPUImageCrosshairGenerator.m in Sources */,
 				4EF14F061D3E32F700D28265 /* html5.c in Sources */,
 				4EF14FBE1D3E32F700D28265 /* GPUImageSharpenFilter.m in Sources */,
@@ -3041,6 +3053,7 @@
 				4EF14F451D3E32F700D28265 /* GLProgram.m in Sources */,
 				4EF14F291D3E32F700D28265 /* Reachability.m in Sources */,
 				4EF14F3B1D3E32F700D28265 /* UIImage+GIF.m in Sources */,
+				4E4AD5FD1D477595002BFD98 /* WBSHorizonalTableViewController.m in Sources */,
 				4EF38F9E1D430F4600CE28A4 /* MASViewAttribute.m in Sources */,
 				4EF14F2E1D3E32F700D28265 /* RESideMenu.m in Sources */,
 				4EF38F511D42F5AC00CE28A4 /* WBSLoginViewController.m in Sources */,
@@ -3050,6 +3063,7 @@
 				4EF14F751D3E32F700D28265 /* GPUImageGaussianBlurFilter.m in Sources */,
 				4EF14F8F1D3E32F700D28265 /* GPUImageLinearBurnBlendFilter.m in Sources */,
 				4EF14FA11D3E32F700D28265 /* GPUImageMultiplyBlendFilter.m in Sources */,
+				4E4AD5EC1D477536002BFD98 /* WBSBrowserNavViewController.m in Sources */,
 				4EF14FAE1D3E32F700D28265 /* GPUImagePoissonBlendFilter.m in Sources */,
 				4EF14F6E1D3E32F700D28265 /* GPUImageFASTCornerDetectionFilter.m in Sources */,
 			);
