@@ -126,8 +126,6 @@
     [_apiTypeSwitch addTarget:self action:@selector(doSwitch) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_apiTypeSwitch];
     
-    
-    
     //添加手势，点击屏幕其他区域关闭键盘的操作
     UITapGestureRecognizer *gesture                                                            = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hidenKeyboard)];
     gesture.numberOfTapsRequired                                                               = 1;
@@ -387,7 +385,7 @@
 
 
 /********-----------------------------------------***********
- #pragma mark -懒加载
+ #pragma mark -懒加载   以下代码暂时可删
  ********-----------------------------------------***********/
 -(TTTAttributedLabel *)messageInfo{
     if (_messageInfo == nil) {
@@ -401,9 +399,7 @@
         NSString *info                                                                             = @"温馨提示：您可以登录任何实现了XML-RPC MetaWeblog API接口的博客。目前已经支持并测试通过的博客：Wordpress、ZBlog、Cnblogs、OSChina、163、51CTO、Sina。\r由于MetaWeblog API接口的限制，暂时只能进行文章的显示、查看、新增、修改和删除。\r部分功能有些博客不支持，详情看这里。\r更多功能需要服务端API支持，详情查看：Wordpress JSON API。";
         _messageInfo.text                                                                          = info;
         NSRange range1                                                                             = [info rangeOfString:@"XML-RPC MetaWeblog API"];
-        _messageInfo.linkAttributes                                                                = @{
-                                                                                                       (NSString *) kCTForegroundColorAttributeName : [UIColor colorWithHex:0x428bd1]
-                                                                                                       };
+        _messageInfo.linkAttributes = @{(NSString *) kCTForegroundColorAttributeName : [UIColor colorWithHex:0x428bd1]};
         [_messageInfo addLinkToURL:[NSURL URLWithString:@"https://en.wikipedia.org/wiki/MetaWeblog"] withRange:range1];
         NSRange range2                                                                             = [info rangeOfString:@"详情看这里"];
         [_messageInfo addLinkToURL:[NSURL URLWithString:@"呜呜呜"] withRange:range2];
