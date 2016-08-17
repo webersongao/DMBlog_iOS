@@ -6,7 +6,7 @@
 //  Copyright © 2016年 Weberson. All rights reserved.
 //
 
-#import "WBSPostViewController.h"
+#import "WBSHomePostViewController.h"
 #import "TGMetaWeblogApi.h"
 #import "WBSPostCell.h"
 #import "WBSUtils.h"
@@ -78,8 +78,7 @@ const int MAX_PAGE_SIZE = 10;//每页显示数目
         _postSearchController.searchResultsUpdater = self;
         _postSearchController.hidesNavigationBarDuringPresentation =NO;
         self.tableView.tableHeaderView = _postSearchController.searchBar;
-    }
-    else{
+    }else{
         //不显示页面的时候才有分类，否则页面会混乱
         /*if (![Config isShowPage]) {
          // 设置导航栏中间的titleView
