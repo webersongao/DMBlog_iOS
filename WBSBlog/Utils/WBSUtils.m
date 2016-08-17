@@ -173,8 +173,8 @@
     @try {
         compsPast = [calendar components:unitFlags fromDate:date];
         daysInLastMonth = [calendar rangeOfUnit:NSDayCalendarUnit
-                         inUnit:NSMonthCalendarUnit
-                        forDate:date].length;
+                                         inUnit:NSMonthCalendarUnit
+                                        forDate:date].length;
     }
     @catch (NSException *exception) {
         compsPast = [calendar components:unitFlags fromDate:[NSDate date]];
@@ -185,7 +185,7 @@
     
     NSDateComponents *compsNow = [calendar components:unitFlags fromDate:[NSDate date]];
     
-      NSInteger years = [compsNow year] - [compsPast year];
+    NSInteger years = [compsNow year] - [compsPast year];
     NSInteger months = [compsNow month] - [compsPast month] + years * 12;
     NSInteger days = [compsNow day] - [compsPast day] + months * daysInLastMonth;
     NSInteger hours = [compsNow hour] - [compsPast hour] + days * 24;
@@ -444,7 +444,7 @@
  *  在当前页面展示API不受支持的信息
  *
  *  @param target target
-
+ 
  *  @param to     to
  */
 + (void)showApiNotSupported:(UIViewController *)target redirectTo:(WBSErrorViewController *)to{
@@ -475,9 +475,7 @@
     AppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
     tabBarController.delegate = (id <UITabBarControllerDelegate>) appDelegate;
     
-    RESideMenu *sideMenuTabBarViewController = [[RESideMenu alloc] initWithContentViewController:tabBarController
-                                                                          leftMenuViewController:[WBSSideMenuViewController new]
-                                                                         rightMenuViewController:nil];
+    RESideMenu *sideMenuTabBarViewController = [[RESideMenu alloc] initWithContentViewController:tabBarController                                                                          leftMenuViewController:[WBSSideMenuViewController new]                                                          rightMenuViewController:nil];
     
     //设置样式
     sideMenuTabBarViewController.scaleContentView = YES;
