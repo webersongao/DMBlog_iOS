@@ -9,7 +9,7 @@
 #import "WBSOBTabBarController.h"
 #import "WBSOptionButton.h"
 #include "RESideMenu.h"
-#import "WBSPostViewController.h"
+#import "WBSHomePostViewController.h"
 #import "WBSSwipableViewController.h"
 #import "WBSTagViewController.h"
 #import "WBSMyInfoController.h"

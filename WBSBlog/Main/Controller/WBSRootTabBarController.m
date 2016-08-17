@@ -9,7 +9,7 @@
 #import "WBSRootTabBarController.h"
 #import "WBSOptionButton.h"
 #include "RESideMenu.h"
-#import "WBSPostViewController.h"
+#import "WBSHomePostViewController.h"
 #import "WBSSwipableViewController.h"
 #import "WBSTagViewController.h"
 #import "WBSMyInfoController.h"
@@ -33,36 +33,6 @@
 
 @implementation WBSRootTabBarController
 
-//创建博客视图控制器
--(WBSSwipableViewController *)createBlogViewController:(BOOL)isSearch{
-    //全部
-    WBSPostViewController *postViewCtl = [[WBSPostViewController alloc]initWithPostType:PostTypePost];
-    //是否搜索
-    if (isSearch) {
-        postViewCtl.isSearch = YES;
-        postViewCtl.postResultType = PostResultTypeSearch;
-    }
-    WBSSwipableViewController *blogSVC ;
-    //由于metaWeblog api的限制，无法筛选出热门和置顶文章
-    //JSON API才有页面，搜索没有页面
-    if ([WBSConfig isJSONAPIEnable]&& !isSearch && [WBSConfig isShowPage]) {
-        //最新
-        UIViewController *pageViewCtl = [[WBSPostViewController alloc]initWithPostType:PostTypePage];
-        postViewCtl.postResultType = PostResultTypeRecent;
-        
-        //博客
-        blogSVC = [[WBSSwipableViewController alloc] initWithTitle:@"首页"
-                                                   andSubTitles:@[@"文章",@"页面"]
-                                                 andControllers:@[ postViewCtl,pageViewCtl]
-                                                    underTabbar:YES];
-    }else{
-        blogSVC = [[WBSSwipableViewController alloc] initWithTitle:@"首页"
-                                                   andSubTitles:nil
-                                                 andControllers:@[ postViewCtl]
-                                                    underTabbar:YES];
-    }
-    return blogSVC;
-}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -96,7 +66,7 @@
         NSLog(@"---图片名称---%@",images[idx]);
         
         NSLog(@"---选中图片名称---%@",[images[idx] stringByAppendingString:@"-selected"]);
-
+        
         if (!([images[idx] isEqualToString:@"blank"])) {
             [item setImage:[UIImage imageNamed:images[idx]]];
             [item setSelectedImage:[UIImage imageNamed:[images[idx] stringByAppendingString:@"-selected"]]];
@@ -121,8 +91,8 @@
     
     for (int i = 0; i < 6; i++) {
         WBSOptionButton *optionButton = [[WBSOptionButton alloc] initWithTitle:buttonTitles[i]
-                                                                   image:[UIImage imageNamed:buttonImages[i]]
-                                                                andColor:[UIColor colorWithHex:buttonColors[i]]];
+                                                                         image:[UIImage imageNamed:buttonImages[i]]
+                                                                      andColor:[UIColor colorWithHex:buttonColors[i]]];
         
         optionButton.frame = CGRectMake((_screenWidth/6 * (i%3*2+1) - (_length+16)/2),
                                         _screenHeight + 150 + i/3*100,
@@ -139,6 +109,38 @@
     }
     
 }
+
+//创建博客视图控制器
+-(WBSSwipableViewController *)createBlogViewController:(BOOL)isSearch{
+    //全部
+    WBSPostViewController *postViewCtl = [[WBSPostViewController alloc]initWithPostType:PostTypePost];
+    //是否搜索
+    if (isSearch) {
+        postViewCtl.isSearch = YES;
+        postViewCtl.postResultType = PostResultTypeSearch;
+    }
+    WBSSwipableViewController *blogSVC ;
+    //由于metaWeblog api的限制，无法筛选出热门和置顶文章
+    //JSON API才有页面，搜索没有页面
+    if ([WBSConfig isJSONAPIEnable]&& !isSearch && [WBSConfig isShowPage]) {
+        //最新
+        UIViewController *pageViewCtl = [[WBSPostViewController alloc]initWithPostType:PostTypePage];
+        postViewCtl.postResultType = PostResultTypeRecent;
+        
+        //博客
+        blogSVC = [[WBSSwipableViewController alloc] initWithTitle:@"首页"
+                                                   andSubTitles:@[@"文章",@"页面"]
+                                                 andControllers:@[ postViewCtl,pageViewCtl]
+                                                    underTabbar:YES];
+    }else{
+        blogSVC = [[WBSSwipableViewController alloc] initWithTitle:@"首页"
+                                                   andSubTitles:nil
+                                                 andControllers:@[ postViewCtl]
+                                                    underTabbar:YES];
+    }
+    return blogSVC;
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

@@ -20,6 +20,8 @@
 		4E4AD5F71D477570002BFD98 /* WBSSwipableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E4AD5F61D477570002BFD98 /* WBSSwipableViewController.m */; };
 		4E4AD5FA1D477582002BFD98 /* WBSTitleBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E4AD5F91D477582002BFD98 /* WBSTitleBarView.m */; };
 		4E4AD5FD1D477595002BFD98 /* WBSHorizonalTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E4AD5FC1D477595002BFD98 /* WBSHorizonalTableViewController.m */; };
+		4E6375421D640F4700D24E25 /* tabbar-discover-selected@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E6375401D640F4700D24E25 /* tabbar-discover-selected@3x.png */; };
+		4E6375431D640F4700D24E25 /* tabbar-discover-selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E6375411D640F4700D24E25 /* tabbar-discover-selected@2x.png */; };
 		4EF149D31D3DF61D00D28265 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF149D21D3DF61D00D28265 /* main.m */; };
 		4EF149D61D3DF61D00D28265 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF149D51D3DF61D00D28265 /* AppDelegate.m */; };
 		4EF149DE1D3DF61D00D28265 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4EF149DD1D3DF61D00D28265 /* Assets.xcassets */; };
@@ -296,7 +298,7 @@
 		4EF38FBC1D4310E300CE28A4 /* WBSPostCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF38FB11D4310E300CE28A4 /* WBSPostCell.m */; };
 		4EF38FBD1D4310E300CE28A4 /* WBSPostDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF38FB31D4310E300CE28A4 /* WBSPostDetailViewController.m */; };
 		4EF38FBE1D4310E300CE28A4 /* WBSPostEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF38FB51D4310E300CE28A4 /* WBSPostEditViewController.m */; };
-		4EF38FBF1D4310E300CE28A4 /* WBSPostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF38FB71D4310E300CE28A4 /* WBSPostViewController.m */; };
+		4EF38FBF1D4310E300CE28A4 /* WBSHomePostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF38FB71D4310E300CE28A4 /* WBSHomePostViewController.m */; };
 		4EF38FC01D4310E300CE28A4 /* WBSTitleMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF38FB91D4310E300CE28A4 /* WBSTitleMenuViewController.m */; };
 		4EF38FD11D4311D000CE28A4 /* WPBase64Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF38FC51D4311D000CE28A4 /* WPBase64Utils.m */; };
 		4EF38FD21D4311D000CE28A4 /* WPStringUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF38FC71D4311D000CE28A4 /* WPStringUtils.m */; };
@@ -398,8 +400,8 @@
 		4E4AD5E11D477536002BFD98 /* WBSOBTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBSOBTabBarController.m; sourceTree = "<group>"; };
 		4E4AD5E21D477536002BFD98 /* WBSRootTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSRootTabBarController.h; sourceTree = "<group>"; };
 		4E4AD5E31D477536002BFD98 /* WBSRootTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBSRootTabBarController.m; sourceTree = "<group>"; };
-		4E4AD5E41D477536002BFD98 /* WBSSideMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSSideMenuViewController.h; sourceTree = "<group>"; };
-		4E4AD5E51D477536002BFD98 /* WBSSideMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBSSideMenuViewController.m; sourceTree = "<group>"; };
+		4E4AD5E41D477536002BFD98 /* WBSSideMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WBSSideMenuViewController.h; path = ../Main/Controller/WBSSideMenuViewController.h; sourceTree = "<group>"; };
+		4E4AD5E51D477536002BFD98 /* WBSSideMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WBSSideMenuViewController.m; path = ../Main/Controller/WBSSideMenuViewController.m; sourceTree = "<group>"; };
 		4E4AD5E91D477536002BFD98 /* WBSOptionButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSOptionButton.h; sourceTree = "<group>"; };
 		4E4AD5EA1D477536002BFD98 /* WBSOptionButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBSOptionButton.m; sourceTree = "<group>"; };
 		4E4AD5F51D477570002BFD98 /* WBSSwipableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSSwipableViewController.h; sourceTree = "<group>"; };
@@ -408,6 +410,8 @@
 		4E4AD5F91D477582002BFD98 /* WBSTitleBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBSTitleBarView.m; sourceTree = "<group>"; };
 		4E4AD5FB1D477595002BFD98 /* WBSHorizonalTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSHorizonalTableViewController.h; sourceTree = "<group>"; };
 		4E4AD5FC1D477595002BFD98 /* WBSHorizonalTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBSHorizonalTableViewController.m; sourceTree = "<group>"; };
+		4E6375401D640F4700D24E25 /* tabbar-discover-selected@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar-discover-selected@3x.png"; sourceTree = "<group>"; };
+		4E6375411D640F4700D24E25 /* tabbar-discover-selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar-discover-selected@2x.png"; sourceTree = "<group>"; };
 		4EF149CE1D3DF61D00D28265 /* WBSBlog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WBSBlog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EF149D21D3DF61D00D28265 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4EF149D41D3DF61D00D28265 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ../AppDelegate.h; sourceTree = "<group>"; };
@@ -993,8 +997,6 @@
 		4EF152151D3F2DF400D28265 /* sidemenu_QA@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sidemenu_QA@3x.png"; sourceTree = "<group>"; };
 		4EF152161D3F2DF400D28265 /* sidemenu_setting@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sidemenu_setting@2x.png"; sourceTree = "<group>"; };
 		4EF152171D3F2DF400D28265 /* sidemenu_setting@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sidemenu_setting@3x.png"; sourceTree = "<group>"; };
-		4EF1521A1D3F2DF400D28265 /* tabbar-discover-selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar-discover-selected@2x.png"; sourceTree = "<group>"; };
-		4EF1521B1D3F2DF400D28265 /* tabbar-discover-selected@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar-discover-selected@3x.png"; sourceTree = "<group>"; };
 		4EF1521C1D3F2DF400D28265 /* tabbar-discover-selected_Beta.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = "tabbar-discover-selected_Beta.psd"; sourceTree = "<group>"; };
 		4EF1521D1D3F2DF400D28265 /* tabbar-discover.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar-discover.png"; sourceTree = "<group>"; };
 		4EF1521E1D3F2DF400D28265 /* tabbar-discover@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar-discover@2x.png"; sourceTree = "<group>"; };
@@ -1106,8 +1108,8 @@
 		4EF38FB31D4310E300CE28A4 /* WBSPostDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBSPostDetailViewController.m; sourceTree = "<group>"; };
 		4EF38FB41D4310E300CE28A4 /* WBSPostEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSPostEditViewController.h; sourceTree = "<group>"; };
 		4EF38FB51D4310E300CE28A4 /* WBSPostEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBSPostEditViewController.m; sourceTree = "<group>"; };
-		4EF38FB61D4310E300CE28A4 /* WBSPostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSPostViewController.h; sourceTree = "<group>"; };
-		4EF38FB71D4310E300CE28A4 /* WBSPostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBSPostViewController.m; sourceTree = "<group>"; };
+		4EF38FB61D4310E300CE28A4 /* WBSHomePostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSHomePostViewController.h; sourceTree = "<group>"; };
+		4EF38FB71D4310E300CE28A4 /* WBSHomePostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBSHomePostViewController.m; sourceTree = "<group>"; };
 		4EF38FB81D4310E300CE28A4 /* WBSTitleMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSTitleMenuViewController.h; sourceTree = "<group>"; };
 		4EF38FB91D4310E300CE28A4 /* WBSTitleMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBSTitleMenuViewController.m; sourceTree = "<group>"; };
 		4EF38FC41D4311D000CE28A4 /* WPBase64Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPBase64Utils.h; sourceTree = "<group>"; };
@@ -1242,8 +1244,6 @@
 				4E4AD5E11D477536002BFD98 /* WBSOBTabBarController.m */,
 				4E4AD5E21D477536002BFD98 /* WBSRootTabBarController.h */,
 				4E4AD5E31D477536002BFD98 /* WBSRootTabBarController.m */,
-				4E4AD5E41D477536002BFD98 /* WBSSideMenuViewController.h */,
-				4E4AD5E51D477536002BFD98 /* WBSSideMenuViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1308,7 +1308,7 @@
 				4EF14A3A1D3E30DF00D28265 /* 标签_Tag */,
 				4EF38FC21D4310F100CE28A4 /* 搜索_Search */,
 				4EF14A371D3E30DF00D28265 /* 我的_Me */,
-				4EF152F71D3F39A400D28265 /* 左滑_Left_bar */,
+				4EF152F71D3F39A400D28265 /* 左侧栏_Left_bar */,
 				4EF150041D3E35BD00D28265 /* 登陆_Login */,
 				4EF14A3B1D3E30DF00D28265 /* Utils工具 */,
 				4EF14A361D3E30DF00D28265 /* Lib三方库 */,
@@ -2275,8 +2275,8 @@
 		4EF152181D3F2DF400D28265 /* tabbar */ = {
 			isa = PBXGroup;
 			children = (
-				4EF1521A1D3F2DF400D28265 /* tabbar-discover-selected@2x.png */,
-				4EF1521B1D3F2DF400D28265 /* tabbar-discover-selected@3x.png */,
+				4E6375401D640F4700D24E25 /* tabbar-discover-selected@3x.png */,
+				4E6375411D640F4700D24E25 /* tabbar-discover-selected@2x.png */,
 				4EF1521C1D3F2DF400D28265 /* tabbar-discover-selected_Beta.psd */,
 				4EF1521D1D3F2DF400D28265 /* tabbar-discover.png */,
 				4EF1521E1D3F2DF400D28265 /* tabbar-discover@2x.png */,
@@ -2358,12 +2358,14 @@
 			path = user_background;
 			sourceTree = "<group>";
 		};
-		4EF152F71D3F39A400D28265 /* 左滑_Left_bar */ = {
+		4EF152F71D3F39A400D28265 /* 左侧栏_Left_bar */ = {
 			isa = PBXGroup;
 			children = (
+				4E4AD5E41D477536002BFD98 /* WBSSideMenuViewController.h */,
+				4E4AD5E51D477536002BFD98 /* WBSSideMenuViewController.m */,
 				4EF152F81D3F3A1A00D28265 /* SetUp_设置 */,
 			);
-			name = "左滑_Left_bar";
+			name = "左侧栏_Left_bar";
 			path = Left_bar;
 			sourceTree = "<group>";
 		};
@@ -2421,8 +2423,8 @@
 		4EF38FAB1D4310E300CE28A4 /* 主页_Home */ = {
 			isa = PBXGroup;
 			children = (
-				4EF38FB61D4310E300CE28A4 /* WBSPostViewController.h */,
-				4EF38FB71D4310E300CE28A4 /* WBSPostViewController.m */,
+				4EF38FB61D4310E300CE28A4 /* WBSHomePostViewController.h */,
+				4EF38FB71D4310E300CE28A4 /* WBSHomePostViewController.m */,
 				4EF38FAC1D4310E300CE28A4 /* WBSCategoryCell.h */,
 				4EF38FAD1D4310E300CE28A4 /* WBSCategoryCell.m */,
 				4EF38FAE1D4310E300CE28A4 /* WBSDropdownMenuView.h */,
@@ -2698,6 +2700,7 @@
 				4EF3907A1D435E6700CE28A4 /* start(750x1334).png in Resources */,
 				4EF3907C1D435E6700CE28A4 /* start.psd in Resources */,
 				4EF3906B1D435E4600CE28A4 /* Icon-Small@2x.png in Resources */,
+				4E6375431D640F4700D24E25 /* tabbar-discover-selected@2x.png in Resources */,
 				4EF390681D435E4600CE28A4 /* Icon-76.png in Resources */,
 				4EF14F411D3E32F700D28265 /* lookup_amatorka.png in Resources */,
 				4EF149DE1D3DF61D00D28265 /* Assets.xcassets in Resources */,
@@ -2712,6 +2715,7 @@
 				4EF5E4111D41EC67002B6AFF /* (null) in Resources */,
 				4EF390791D435E6700CE28A4 /* start(640x960).png in Resources */,
 				4EF390531D433D8400CE28A4 /* login-Close@2x.png in Resources */,
+				4E6375421D640F4700D24E25 /* tabbar-discover-selected@3x.png in Resources */,
 				4EF390771D435E6700CE28A4 /* start(1536x2048).png in Resources */,
 				4EF390651D435E4600CE28A4 /* Icon-40@3x.png in Resources */,
 				4EF14F421D3E32F700D28265 /* lookup_miss_etikate.png in Resources */,
@@ -2805,7 +2809,7 @@
 				4EF14FD31D3E32F700D28265 /* GPUImageTiltShiftFilter.m in Sources */,
 				4EF14F8C1D3E32F700D28265 /* GPUImageLaplacianFilter.m in Sources */,
 				4EF38FD41D4311D000CE28A4 /* WPXMLRPCDecoder.m in Sources */,
-				4EF38FBF1D4310E300CE28A4 /* WBSPostViewController.m in Sources */,
+				4EF38FBF1D4310E300CE28A4 /* WBSHomePostViewController.m in Sources */,
 				4EF390451D43138100CE28A4 /* TGMetaWeblogAuthApi.m in Sources */,
 				4EF14FBF1D3E32F700D28265 /* GPUImageShiTomasiFeatureDetectionFilter.m in Sources */,
 				4EF14FC91D3E32F700D28265 /* GPUImageStillCamera.m in Sources */,

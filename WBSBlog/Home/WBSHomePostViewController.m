@@ -6,7 +6,7 @@
 //  Copyright © 2016年 Weberson. All rights reserved.
 //
 
-#import "WBSPostViewController.h"
+#import "WBSHomePostViewController.h"
 #import "TGMetaWeblogApi.h"
 #import "WBSPostCell.h"
 #import "WBSUtils.h"

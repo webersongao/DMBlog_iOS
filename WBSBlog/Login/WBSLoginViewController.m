@@ -71,7 +71,8 @@
     //判断登录状态
     WBSApiInfo *apiInfo = [WBSConfig getAuthoizedApiInfo];
     if (apiInfo) {
-        KLog(@"Current baseURL:%@ username:%@ password:%@", apiInfo.baseURL, apiInfo.username, apiInfo.password);
+        // 已经登录
+        KLog(@"Current baseURL:%@ username:%@ password:%@-- 已经登录！", apiInfo.baseURL, apiInfo.username, apiInfo.password);
         //已经登录过，跳转到主界面，停止程序继续
         [WBSUtils goToMainViewController];
         return;
