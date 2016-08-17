@@ -13,7 +13,6 @@
 		4E4AD5EE1D477536002BFD98 /* WBSDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E4AD5DB1D477536002BFD98 /* WBSDetailsViewController.m */; };
 		4E4AD5EF1D477536002BFD98 /* WBSErrorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E4AD5DD1D477536002BFD98 /* WBSErrorViewController.m */; };
 		4E4AD5F01D477536002BFD98 /* WBSOBObjsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E4AD5DF1D477536002BFD98 /* WBSOBObjsViewController.m */; };
-		4E4AD5F11D477536002BFD98 /* WBSOBTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E4AD5E11D477536002BFD98 /* WBSOBTabBarController.m */; };
 		4E4AD5F21D477536002BFD98 /* WBSRootTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E4AD5E31D477536002BFD98 /* WBSRootTabBarController.m */; };
 		4E4AD5F31D477536002BFD98 /* WBSSideMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E4AD5E51D477536002BFD98 /* WBSSideMenuViewController.m */; };
 		4E4AD5F41D477536002BFD98 /* WBSOptionButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E4AD5EA1D477536002BFD98 /* WBSOptionButton.m */; };
@@ -22,6 +21,7 @@
 		4E4AD5FD1D477595002BFD98 /* WBSHorizonalTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E4AD5FC1D477595002BFD98 /* WBSHorizonalTableViewController.m */; };
 		4E6375421D640F4700D24E25 /* tabbar-discover-selected@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E6375401D640F4700D24E25 /* tabbar-discover-selected@3x.png */; };
 		4E6375431D640F4700D24E25 /* tabbar-discover-selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E6375411D640F4700D24E25 /* tabbar-discover-selected@2x.png */; };
+		4E6375461D644A8400D24E25 /* WBSRootNaviViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E6375451D644A8400D24E25 /* WBSRootNaviViewController.m */; };
 		4EF149D31D3DF61D00D28265 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF149D21D3DF61D00D28265 /* main.m */; };
 		4EF149D61D3DF61D00D28265 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF149D51D3DF61D00D28265 /* AppDelegate.m */; };
 		4EF149DE1D3DF61D00D28265 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4EF149DD1D3DF61D00D28265 /* Assets.xcassets */; };
@@ -396,8 +396,6 @@
 		4E4AD5DD1D477536002BFD98 /* WBSErrorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBSErrorViewController.m; sourceTree = "<group>"; };
 		4E4AD5DE1D477536002BFD98 /* WBSOBObjsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSOBObjsViewController.h; sourceTree = "<group>"; };
 		4E4AD5DF1D477536002BFD98 /* WBSOBObjsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBSOBObjsViewController.m; sourceTree = "<group>"; };
-		4E4AD5E01D477536002BFD98 /* WBSOBTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSOBTabBarController.h; sourceTree = "<group>"; };
-		4E4AD5E11D477536002BFD98 /* WBSOBTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBSOBTabBarController.m; sourceTree = "<group>"; };
 		4E4AD5E21D477536002BFD98 /* WBSRootTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSRootTabBarController.h; sourceTree = "<group>"; };
 		4E4AD5E31D477536002BFD98 /* WBSRootTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBSRootTabBarController.m; sourceTree = "<group>"; };
 		4E4AD5E41D477536002BFD98 /* WBSSideMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WBSSideMenuViewController.h; path = ../Main/Controller/WBSSideMenuViewController.h; sourceTree = "<group>"; };
@@ -412,6 +410,8 @@
 		4E4AD5FC1D477595002BFD98 /* WBSHorizonalTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBSHorizonalTableViewController.m; sourceTree = "<group>"; };
 		4E6375401D640F4700D24E25 /* tabbar-discover-selected@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar-discover-selected@3x.png"; sourceTree = "<group>"; };
 		4E6375411D640F4700D24E25 /* tabbar-discover-selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar-discover-selected@2x.png"; sourceTree = "<group>"; };
+		4E6375441D644A8400D24E25 /* WBSRootNaviViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSRootNaviViewController.h; sourceTree = "<group>"; };
+		4E6375451D644A8400D24E25 /* WBSRootNaviViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBSRootNaviViewController.m; sourceTree = "<group>"; };
 		4EF149CE1D3DF61D00D28265 /* WBSBlog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WBSBlog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EF149D21D3DF61D00D28265 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4EF149D41D3DF61D00D28265 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ../AppDelegate.h; sourceTree = "<group>"; };
@@ -956,9 +956,9 @@
 		4EF151E81D3F2DF400D28265 /* navigationbar-search.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navigationbar-search.png"; sourceTree = "<group>"; };
 		4EF151E91D3F2DF400D28265 /* navigationbar-search@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navigationbar-search@2x.png"; sourceTree = "<group>"; };
 		4EF151EA1D3F2DF400D28265 /* navigationbar-search@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navigationbar-search@3x.png"; sourceTree = "<group>"; };
-		4EF151EC1D3F2DF400D28265 /* navigationbar-sidebar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navigationbar-sidebar.png"; sourceTree = "<group>"; };
-		4EF151ED1D3F2DF400D28265 /* navigationbar-sidebar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navigationbar-sidebar@2x.png"; sourceTree = "<group>"; };
-		4EF151EE1D3F2DF400D28265 /* navigationbar-sidebar@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navigationbar-sidebar@3x.png"; sourceTree = "<group>"; };
+		4EF151EC1D3F2DF400D28265 /* navigationbar_sidebar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navigationbar_sidebar.png; sourceTree = "<group>"; };
+		4EF151ED1D3F2DF400D28265 /* navigationbar_sidebar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navigationbar_sidebar@2x.png"; sourceTree = "<group>"; };
+		4EF151EE1D3F2DF400D28265 /* navigationbar_sidebar@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navigationbar_sidebar@3x.png"; sourceTree = "<group>"; };
 		4EF151F01D3F2DF400D28265 /* note.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = note.png; sourceTree = "<group>"; };
 		4EF151F11D3F2DF400D28265 /* note@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "note@2x.png"; sourceTree = "<group>"; };
 		4EF151F21D3F2DF400D28265 /* note@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "note@3x.png"; sourceTree = "<group>"; };
@@ -1226,6 +1226,10 @@
 		4E4AD5D31D477536002BFD98 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				4E4AD5E21D477536002BFD98 /* WBSRootTabBarController.h */,
+				4E4AD5E31D477536002BFD98 /* WBSRootTabBarController.m */,
+				4E6375441D644A8400D24E25 /* WBSRootNaviViewController.h */,
+				4E6375451D644A8400D24E25 /* WBSRootNaviViewController.m */,
 				4E4AD5FB1D477595002BFD98 /* WBSHorizonalTableViewController.h */,
 				4E4AD5FC1D477595002BFD98 /* WBSHorizonalTableViewController.m */,
 				4E4AD5D41D477536002BFD98 /* WBSBottomBarViewController.h */,
@@ -1240,10 +1244,6 @@
 				4E4AD5DD1D477536002BFD98 /* WBSErrorViewController.m */,
 				4E4AD5DE1D477536002BFD98 /* WBSOBObjsViewController.h */,
 				4E4AD5DF1D477536002BFD98 /* WBSOBObjsViewController.m */,
-				4E4AD5E01D477536002BFD98 /* WBSOBTabBarController.h */,
-				4E4AD5E11D477536002BFD98 /* WBSOBTabBarController.m */,
-				4E4AD5E21D477536002BFD98 /* WBSRootTabBarController.h */,
-				4E4AD5E31D477536002BFD98 /* WBSRootTabBarController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -2206,9 +2206,9 @@
 		4EF151EB1D3F2DF400D28265 /* navibar-sidebarIcon */ = {
 			isa = PBXGroup;
 			children = (
-				4EF151EC1D3F2DF400D28265 /* navigationbar-sidebar.png */,
-				4EF151ED1D3F2DF400D28265 /* navigationbar-sidebar@2x.png */,
-				4EF151EE1D3F2DF400D28265 /* navigationbar-sidebar@3x.png */,
+				4EF151EC1D3F2DF400D28265 /* navigationbar_sidebar.png */,
+				4EF151ED1D3F2DF400D28265 /* navigationbar_sidebar@2x.png */,
+				4EF151EE1D3F2DF400D28265 /* navigationbar_sidebar@3x.png */,
 			);
 			path = "navibar-sidebarIcon";
 			sourceTree = "<group>";
@@ -2917,7 +2917,6 @@
 				4EF14F211D3E32F700D28265 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				4EF5E44B1D4230DA002B6AFF /* (null) in Sources */,
 				4EF14F191D3E32F700D28265 /* AFSecurityPolicy.m in Sources */,
-				4E4AD5F11D477536002BFD98 /* WBSOBTabBarController.m in Sources */,
 				4EF14F1D1D3E32F700D28265 /* AFURLSessionManager.m in Sources */,
 				4EF14F721D3E32F700D28265 /* GPUImageFramebuffer.m in Sources */,
 				4EF14FB31D3E32F700D28265 /* GPUImageRawDataInput.m in Sources */,
@@ -2998,6 +2997,7 @@
 				4EF14F991D3E32F700D28265 /* GPUImageMedianFilter.m in Sources */,
 				4EF150571D3E36DE00D28265 /* ToMarkdown.m in Sources */,
 				4EF14FE51D3E32F700D28265 /* GPUImageMovieWriter.m in Sources */,
+				4E6375461D644A8400D24E25 /* WBSRootNaviViewController.m in Sources */,
 				4EF38FE31D4311F000CE28A4 /* NSString+FontAwesome.m in Sources */,
 				4EF14F891D3E32F700D28265 /* GPUImageKuwaharaFilter.m in Sources */,
 				4EF14F7E1D3E32F700D28265 /* GPUImageHighlightShadowFilter.m in Sources */,

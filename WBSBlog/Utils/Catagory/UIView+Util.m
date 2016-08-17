@@ -34,6 +34,13 @@
     return screenshot;
 }
 
+/**
+ @author Weberson
+ 
+ 灰色遮罩
+ 
+ @return <#return value description#>
+ */
 - (UIImage *)updateBlur
 {
     UIImage *screenshot = [self convertViewToImage];
