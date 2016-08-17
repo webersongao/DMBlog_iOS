@@ -88,14 +88,15 @@
                              [self addNavigationItemForViewController:searchTableVC withItembars:YES],
                              [[UINavigationController alloc] initWithRootViewController:myInfoVC]
                              ];
-    
     //底部中间按钮
     NSArray *titles = @[@"博客", @"标签", @"", @"搜索", @"我"];
     NSArray *images = @[@"tabbar-news", @"tabbar-tweet", @"blank", @"tabbar-discover", @"tabbar-me"];
     [self.tabBar.items enumerateObjectsUsingBlock:^(UITabBarItem *item, NSUInteger idx, BOOL *stop) {
         [item setTitle:titles[idx]];
-        //NSLog(@"%@",images[idx]);
-        //NSLog(@"%@",[images[idx] stringByAppendingString:@"-selected"]);
+        NSLog(@"---图片名称---%@",images[idx]);
+        
+        NSLog(@"---选中图片名称---%@",[images[idx] stringByAppendingString:@"-selected"]);
+
         if (!([images[idx] isEqualToString:@"blank"])) {
             [item setImage:[UIImage imageNamed:images[idx]]];
             [item setSelectedImage:[UIImage imageNamed:[images[idx] stringByAppendingString:@"-selected"]]];

@@ -1,5 +1,5 @@
 //
-//  OBTabBarController.m
+//  WBSOBTabBarController.m
 //  WBSBlog
 //
 //  Created by Weberson on 16/7/20.
@@ -92,13 +92,13 @@
     //底部中间按钮
     NSArray *titles = @[@"博客", @"标签", @"", @"搜索", @"我"];
     NSArray *images = @[@"tabbar-news", @"tabbar-tweet", @"blank", @"tabbar-discover", @"tabbar-me"];
-    [self.tabBar.items enumerateObjectsUsingBlock:^(UITabBarItem *item, NSUInteger idx, BOOL *stop) {
-        [item setTitle:titles[idx]];
-        //NSLog(@"%@",images[idx]);
-        //NSLog(@"%@",[images[idx] stringByAppendingString:@"-selected"]);
+    [self.tabBar.items enumerateObjectsUsingBlock:^(UITabBarItem *barItem, NSUInteger idx, BOOL *stop) {
+        [barItem setTitle:titles[idx]];
+        NSLog(@"---图片名称---%@",images[idx]);
+        NSLog(@"---选中图片名称---%@",[images[idx] stringByAppendingString:@"-selected"]);
         if (!([images[idx] isEqualToString:@"blank"])) {
-            [item setImage:[UIImage imageNamed:images[idx]]];
-            [item setSelectedImage:[UIImage imageNamed:[images[idx] stringByAppendingString:@"-selected"]]];
+            [barItem setImage:[UIImage imageNamed:images[idx]]];
+            [barItem setSelectedImage:[UIImage imageNamed:[images[idx] stringByAppendingString:@"-selected"]]];
         }
     }];
     
