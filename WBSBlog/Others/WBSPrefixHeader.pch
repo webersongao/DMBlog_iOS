@@ -48,8 +48,8 @@
 #define kMarginSize 20
 
 // tababr的文字颜色
-#define BottomTextColor RGBCOLOR(158, 158, 158)
-#define BottomTextSelectColor RGBCOLOR(42, 143, 225)
+#define BottomTextColor     RGBCOLOR(158, 158, 158)
+#define BottomTextSelectColor   RGBCOLOR(42, 143, 225)
 
 // 屏幕宽高 Bounds
 #define SCREEN_Bounds [UIScreen mainScreen].bounds

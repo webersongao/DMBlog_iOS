@@ -110,7 +110,6 @@
  */
 - (void)addChildVC:(UIViewController *)vc Background:(UIColor *)Color title:(NSString *)title imageName:(NSString *)imageName selectImageName:(NSString *)selectImageName
 {
-    
     vc.title=title;
     //如果直接复制，tabbar会渲染成灰色
     //UIImageRenderingModeAlwaysOriginal 告诉图片不要渲染

@@ -17,8 +17,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-    self.navigationItem.leftBarButtonItem  = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"navigationbar_sidebar"] style:UIBarButtonItemStylePlain target:self action:@selector(onClickMenuButton)];
+    
+//  self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"navigationbar_sidebar"] style:UIBarButtonItemStyleDone target:self action:@selector(onClickMenuButton)];
+    
 }
 
 
@@ -28,7 +29,6 @@
 -(void)onClickMenuButton{
     [self.sideMenuViewController presentLeftMenuViewController];
 }
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

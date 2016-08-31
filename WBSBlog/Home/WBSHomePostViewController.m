@@ -17,6 +17,7 @@
 #import "WBSTitleMenuViewController.h"
 #import "WBSErrorViewController.h"
 #import "WBSLoginViewController.h"
+#import "RESideMenu.h"
 
 static NSString *kPostCellID = @"PostCell";//CellID
 const int MAX_DESCRIPTION_LENGTH = 60;//描述最多字数
@@ -103,6 +104,7 @@ const int MAX_PAGE_SIZE = 10;//每页显示数目
     self.tableView.editing=!self.tableView.editing;
     NSLog(@"编辑");
 }
+
 
 - (void) viewDidAppear:(BOOL)animated{
     //JSON API不支持
