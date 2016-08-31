@@ -13,7 +13,7 @@
 #import "WBSLoginViewController.h"
 #import "WBSMyInfoController.h"
 #import "RESideMenu.h"
-#import "WBSPostViewController.h"
+#import "WBSHomePostViewController.h"
 #import "WBSSwipableViewController.h"
 #import "WBSSettingsPage.h"
 #import "AppDelegate.h"
@@ -26,7 +26,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     self.tableView.bounces = NO;
     
     CGSize screenSize = [UIScreen mainScreen].bounds.size;
@@ -50,9 +49,11 @@
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
-    NSArray *usersInformation ;
-    UIImage *portrait;
+    // 用户昵称数组
+    NSArray *usersInformationArr = [[NSArray alloc]initWithObjects:@"未登录", nil];
+    UIImage *portrait = [[UIImage alloc]init];
     
+    // 用户头像View
     UIView *headerView = [UIView new];
     headerView.backgroundColor = [UIColor clearColor];
     
@@ -69,10 +70,13 @@
         portraitView.image = portrait;
     }
     
+    /**
+     @author Weberson
+     昵称名字Label
+     */
     UILabel *nameLabel = [UILabel new];
-    nameLabel.text = usersInformation[0];
+    nameLabel.text = usersInformationArr[0];
     nameLabel.font = [UIFont boldSystemFontOfSize:20];
-    
     nameLabel.translatesAutoresizingMaskIntoConstraints = NO;
     [headerView addSubview:nameLabel];
     
@@ -83,6 +87,7 @@
     
     portraitView.userInteractionEnabled = YES;
     nameLabel.userInteractionEnabled = YES;
+    // 点击图像或者昵称 登录账户
     [portraitView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pushLoginPage)]];
     [nameLabel addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pushLoginPage)]];
     
@@ -108,9 +113,9 @@
     
     cell.backgroundColor = [UIColor clearColor];
     
-    UIView *selectedBackground = [UIView new];
-    selectedBackground.backgroundColor = [UIColor colorWithHex:0xCFCFCF];
-    [cell setSelectedBackgroundView:selectedBackground];
+    UIView *selectedBackgroundView = [UIView new];
+    selectedBackgroundView.backgroundColor = [UIColor colorWithHex:0xCFCFCF];
+    [cell setSelectedBackgroundView:selectedBackgroundView];
     
     cell.imageView.image = [UIImage imageNamed:@[@"sidemenu_blog", @"sidemenu_setting",  @"sidemenu-software"][indexPath.row]];
     cell.textLabel.text = @[@"博客", @"设置",  @"注销"][indexPath.row];
@@ -137,10 +142,7 @@
         case 0: {
             NSLog(@"博客");
             WBSPostViewController *postViewCtl = [[WBSPostViewController alloc]initWithPostType:PostTypePost];
-            WBSSwipableViewController *blogSVC = [[WBSSwipableViewController alloc] initWithTitle:@"博客"
-                                                                               andSubTitles:nil
-                                                                             andControllers:@[ postViewCtl]
-                                                                                underTabbar:NO];
+            WBSSwipableViewController *blogSVC = [[WBSSwipableViewController alloc] initWithTitle:@"博客" andSubTitles:nil andControllers:@[ postViewCtl]underTabbar:NO];
             
             [self setContentViewController:blogSVC];
             break;
@@ -164,9 +166,11 @@
 - (void)setContentViewController:(UIViewController *)viewController
 {
     viewController.hidesBottomBarWhenPushed = YES;
+    // 获取导航控制器
     UINavigationController *nav = (UINavigationController *)((UITabBarController *)self.sideMenuViewController.contentViewController).selectedViewController;
+        // 获取 导航控制器的第一个控制器
     UIViewController *vc = nav.viewControllers[0];
-    vc.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStyleBordered target:nil action:nil];
+    vc.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStylePlain target:nil action:nil];
     [nav pushViewController:viewController animated:NO];
     //隐藏侧边栏
     [self.sideMenuViewController hideMenuViewController];
@@ -178,8 +182,10 @@
 - (void)pushLoginPage
 {
     if (![WBSConfig getAuthoizedApiInfo]) {
+        // 如果 没有登录 跳转到登录控制器
         [self setContentViewController:[WBSLoginNavViewController new]];
     } else {
+        // 已经登录  跳转到个人信息界面
         WBSMyInfoController *myInfoVC = [[WBSMyInfoController alloc]initWithStyle:UITableViewStyleGrouped];
         [self setContentViewController:myInfoVC];
     }
@@ -205,10 +211,10 @@
     //跳转到登陆界面
     //NSLog(@"logout");
     WBSLoginViewController *loginController = [[WBSLoginViewController alloc]init];
-    WBSLoginNavViewController *login = [[WBSLoginNavViewController alloc] init];
-    [login pushViewController:loginController animated:YES];
+    WBSLoginNavViewController *loginNaviVC = [[WBSLoginNavViewController alloc] init];
+    [loginNaviVC pushViewController:loginController animated:YES];
     AppDelegate * appsDelegate =[[UIApplication sharedApplication] delegate];
     [appsDelegate.window setRootViewController:nil];
-    [appsDelegate.window setRootViewController:login];
+    [appsDelegate.window setRootViewController:loginNaviVC];
 }
 @end

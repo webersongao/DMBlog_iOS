@@ -32,7 +32,7 @@
         
         if (title) {self.title = title;}
                 
-        //默认不现实TitleBar
+        //默认不显示TitleBar
         CGFloat titleBarHeight = 0;
         //当传递了subTitles时才去指定TitleBar
         if (subTitles) {
@@ -70,7 +70,7 @@
         };
         
         _viewPager.scrollView = ^(CGFloat offsetRatio, NSUInteger focusIndex, NSUInteger animationIndex) {
-            NSLog(@"viewpager is scrolling...");
+            NSLog(@"界面滚动中:viewpager is scrolling...");
             UIButton *titleFrom = weakTitleBar.titleButtons[animationIndex];
             UIButton *titleTo = weakTitleBar.titleButtons[focusIndex];
             //CGFloat colorValue = (CGFloat)0x90 / (CGFloat)0xFF;
@@ -107,14 +107,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
