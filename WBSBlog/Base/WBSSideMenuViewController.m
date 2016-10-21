@@ -17,6 +17,7 @@
 #import "WBSSwipableViewController.h"
 #import "WBSSettingsPage.h"
 #import "AppDelegate.h"
+#import "WBSScanQRCodeViewController.h"
 
 @interface WBSSideMenuViewController ()
 
@@ -92,7 +93,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 3;
+    return 4;
 }
 
 
@@ -112,8 +113,8 @@
     selectedBackground.backgroundColor = [UIColor colorWithHex:0xCFCFCF];
     [cell setSelectedBackgroundView:selectedBackground];
     
-    cell.imageView.image = [UIImage imageNamed:@[@"sidemenu_blog", @"sidemenu_setting",  @"sidemenu-software"][indexPath.row]];
-    cell.textLabel.text = @[@"博客", @"设置",  @"注销"][indexPath.row];
+    cell.imageView.image = [UIImage imageNamed:@[@"sidemenu_blog", @"sidemenu_setting",  @"sidemenu-software", @"sidemenu_setting"][indexPath.row]];
+    cell.textLabel.text = @[@"博客", @"设置",  @"注销", @"二维码"][indexPath.row];
     cell.textLabel.textColor = [UIColor colorWithHex:0x428bd1];
     //将注销设置成红色
     if (indexPath.row == 2) {
@@ -138,9 +139,9 @@
             NSLog(@"博客");
             WBSPostViewController *postViewCtl = [[WBSPostViewController alloc]initWithPostType:PostTypePost];
             WBSSwipableViewController *blogSVC = [[WBSSwipableViewController alloc] initWithTitle:@"博客"
-                                                                               andSubTitles:nil
-                                                                             andControllers:@[ postViewCtl]
-                                                                                underTabbar:NO];
+                                                                                     andSubTitles:nil
+                                                                                   andControllers:@[ postViewCtl]
+                                                                                      underTabbar:NO];
             
             [self setContentViewController:blogSVC];
             break;
@@ -154,6 +155,12 @@
         case 2: {//退出
             NSLog(@"退出");
             [self performSelector:@selector(logout:) withObject:nil];
+            break;
+        }
+        case 3: {//二维码
+            NSLog(@"二维码");
+            WBSScanQRCodeViewController *QRCodeVC = [[WBSScanQRCodeViewController alloc] init];
+            [self setContentViewController:QRCodeVC];
             break;
         }
         default: break;
