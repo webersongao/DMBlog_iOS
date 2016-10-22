@@ -16,6 +16,7 @@
 #import "WBSDropdownMenuView.h"
 #import "WBSTitleMenuViewController.h"
 #import "WBSErrorViewController.h"
+#import "WBSLoginViewController.h"
 
 static NSString *kPostCellID = @"PostCell";//CellID
 const int MAX_DESCRIPTION_LENGTH = 60;//描述最多字数
@@ -490,6 +491,8 @@ const int MAX_PAGE_SIZE = 10;//每页显示数目
                          }
                          failure:^(NSError *error) {
                              NSLog(@"Error fetching posts: %@", [error localizedDescription]);
+                             
+                             NSLog(@"错误信息是：---%@----",error);
                              MBProgressHUD *HUD = [WBSUtils createHUD];
                              HUD.mode = MBProgressHUDModeCustomView;
                              HUD.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"HUD-error"]];
@@ -610,7 +613,6 @@ const int MAX_PAGE_SIZE = 10;//每页显示数目
                         super.didRefreshSucceed();
                     }
                 }
-                
                 //获取数据
                 //NSDictionary *dictionaryPosts = [result objectForKey:@"category"];
                 NSArray *posts = [result objectForKey:@"posts"];
@@ -700,7 +702,6 @@ const int MAX_PAGE_SIZE = 10;//每页显示数目
                         super.didRefreshSucceed();
                     }
                 }
-                
                 //获取数据
                 //NSDictionary *dictionaryPosts = [result objectForKey:@"category"];
                 NSArray *posts = [result objectForKey:@"posts"];
@@ -795,20 +796,20 @@ const int MAX_PAGE_SIZE = 10;//每页显示数目
             NSLog(@"deleteURL URL:%@",deleteURL);
             
             if ([status isEqualToString:@"ok"]) {
-//                //删除开始=======================
-//                [manager GET:deleteURL parameters:parmeters
-//                     success:^(AFHTTPRequestOperation *operation, NSDictionary *result) {
-//                         NSString *status = [result objectForKey:@"status"];
-//                         if ([status isEqualToString:@"ok"]) {
-//                             NSLog(@"删除成功。");
-//                         }else{
-//                             NSLog(@"删除失败。%@",[result objectForKey:@"error"]);
-//                         }
-//                     }
-//                     failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-//                         NSLog(@"系统失败");
-//                     }];
-//                //删除结束=======================
+                //                //删除开始=======================
+                //                [manager GET:deleteURL parameters:parmeters
+                //                     success:^(AFHTTPRequestOperation *operation, NSDictionary *result) {
+                //                         NSString *status = [result objectForKey:@"status"];
+                //                         if ([status isEqualToString:@"ok"]) {
+                //                             NSLog(@"删除成功。");
+                //                         }else{
+                //                             NSLog(@"删除失败。%@",[result objectForKey:@"error"]);
+                //                         }
+                //                     }
+                //                     failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                //                         NSLog(@"系统失败");
+                //                     }];
+                //                //删除结束=======================
             }
             
         }

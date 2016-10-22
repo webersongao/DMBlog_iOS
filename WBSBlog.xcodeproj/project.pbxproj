@@ -34,6 +34,7 @@
 		4E8AC7EB1DBA675500E2E60D /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4E8AC7E51DBA675500E2E60D /* SVProgressHUD.bundle */; };
 		4E8AC7EC1DBA675500E2E60D /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E8AC7E71DBA675500E2E60D /* SVProgressHUD.m */; };
 		4E8AC7ED1DBA675500E2E60D /* SVRadialGradientLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E8AC7E91DBA675500E2E60D /* SVRadialGradientLayer.m */; };
+		4E8AC7EF1DBA7D2A00E2E60D /* WBSLogin.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E8AC7EE1DBA7D2A00E2E60D /* WBSLogin.xib */; };
 		4EF149D31D3DF61D00D28265 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF149D21D3DF61D00D28265 /* main.m */; };
 		4EF149D61D3DF61D00D28265 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF149D51D3DF61D00D28265 /* AppDelegate.m */; };
 		4EF149DE1D3DF61D00D28265 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4EF149DD1D3DF61D00D28265 /* Assets.xcassets */; };
@@ -288,7 +289,6 @@
 		4EF38F501D42F5AC00CE28A4 /* WBSLoginNavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF38F4B1D42F5AC00CE28A4 /* WBSLoginNavViewController.m */; };
 		4EF38F511D42F5AC00CE28A4 /* WBSLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF38F4D1D42F5AC00CE28A4 /* WBSLoginViewController.m */; };
 		4EF38F521D42F5AC00CE28A4 /* WBSSelectBlogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF38F4F1D42F5AC00CE28A4 /* WBSSelectBlogViewController.m */; };
-		4EF38F541D42F5BA00CE28A4 /* WBSLogin.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EF38F531D42F5BA00CE28A4 /* WBSLogin.xib */; };
 		4EF38F551D42F8F700CE28A4 /* WBSOBObjsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF150CC1D3E39A500D28265 /* WBSOBObjsViewController.m */; };
 		4EF38F561D42F9E600CE28A4 /* WBSSideMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF150DC1D3E39D500D28265 /* WBSSideMenuViewController.m */; };
 		4EF38F571D42FA1B00CE28A4 /* WBSRootTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF150D01D3E39BB00D28265 /* WBSRootTabBarController.m */; };
@@ -444,6 +444,7 @@
 		4E8AC7E71DBA675500E2E60D /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
 		4E8AC7E81DBA675500E2E60D /* SVRadialGradientLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVRadialGradientLayer.h; sourceTree = "<group>"; };
 		4E8AC7E91DBA675500E2E60D /* SVRadialGradientLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVRadialGradientLayer.m; sourceTree = "<group>"; };
+		4E8AC7EE1DBA7D2A00E2E60D /* WBSLogin.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WBSLogin.xib; sourceTree = "<group>"; };
 		4EF149CE1D3DF61D00D28265 /* WBSBlog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WBSBlog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EF149D21D3DF61D00D28265 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4EF149D41D3DF61D00D28265 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ../AppDelegate.h; sourceTree = "<group>"; };
@@ -1127,7 +1128,6 @@
 		4EF38F4D1D42F5AC00CE28A4 /* WBSLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBSLoginViewController.m; sourceTree = "<group>"; };
 		4EF38F4E1D42F5AC00CE28A4 /* WBSSelectBlogViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSSelectBlogViewController.h; sourceTree = "<group>"; };
 		4EF38F4F1D42F5AC00CE28A4 /* WBSSelectBlogViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBSSelectBlogViewController.m; sourceTree = "<group>"; };
-		4EF38F531D42F5BA00CE28A4 /* WBSLogin.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WBSLogin.xib; sourceTree = "<group>"; };
 		4EF38F6C1D430E6B00CE28A4 /* NSString+GHMarkdownParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+GHMarkdownParser.h"; sourceTree = "<group>"; };
 		4EF38F6D1D430E6B00CE28A4 /* NSString+GHMarkdownParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+GHMarkdownParser.m"; sourceTree = "<group>"; };
 		4EF38F6E1D430E6B00CE28A4 /* GHMarkdownParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHMarkdownParser.h; sourceTree = "<group>"; };
@@ -2708,7 +2708,7 @@
 		4EF5E4031D41C878002B6AFF /* View */ = {
 			isa = PBXGroup;
 			children = (
-				4EF38F531D42F5BA00CE28A4 /* WBSLogin.xib */,
+				4E8AC7EE1DBA7D2A00E2E60D /* WBSLogin.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -2864,11 +2864,11 @@
 				4EF3907B1D435E6700CE28A4 /* start(768x1024).png in Resources */,
 				4EF390641D435E4600CE28A4 /* Icon-40@2x.png in Resources */,
 				4E8AC7C81DBA61EC00E2E60D /* cellLine@2x.png in Resources */,
+				4E8AC7EF1DBA7D2A00E2E60D /* WBSLogin.xib in Resources */,
 				4EF14F011D3E32F700D28265 /* blocktags in Resources */,
 				4E8AC7EB1DBA675500E2E60D /* SVProgressHUD.bundle in Resources */,
 				4EF390691D435E4600CE28A4 /* Icon-76@2x.png in Resources */,
 				4E8AC7CB1DBA61EC00E2E60D /* connect_alert_mac_mute@2x.png in Resources */,
-				4EF38F541D42F5BA00CE28A4 /* WBSLogin.xib in Resources */,
 				4E8AC7CE1DBA61EC00E2E60D /* scan_animation.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
