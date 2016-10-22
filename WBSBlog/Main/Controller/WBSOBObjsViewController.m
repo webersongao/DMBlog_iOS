@@ -98,8 +98,7 @@
     if (!_shouldFetchDataAfterLoaded) {return;}
     if (_needRefreshAnimation) {
         [self.refreshControl beginRefreshing];
-        [self.tableView setContentOffset:CGPointMake(0, self.tableView.contentOffset.y-self.refreshControl.frame.size.height)
-                                animated:YES];
+        [self.tableView setContentOffset:CGPointMake(0, self.tableView.contentOffset.y-self.refreshControl.frame.size.height) animated:YES];
     }
     
     [self fetchObjectsOnPage:0 refresh:NO];

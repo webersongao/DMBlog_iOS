@@ -9,7 +9,7 @@
 #import "WBSTagViewController.h"
 #import "WBSUtils.h"
 #import "AFNetworking.h"
-#import "WBSPostViewController.h"
+#import "WBSHomePostViewController.h"
 #import "WBSConfig.h"
 #import "MBProgressHUD.h"
 #import "WBSErrorViewController.h"
