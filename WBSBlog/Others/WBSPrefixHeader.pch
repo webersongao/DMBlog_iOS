@@ -38,8 +38,13 @@
 
 /// 16进制 颜色
 #define HEXColor(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0] //<! 16进制 颜色
+<<<<<<< HEAD
+// 定义RGB颜色
+#define RGBCOLOR(r,g,b) [UIColor colorWithRed:(r)/255.0f green:(g)/255.0f blue:(b)/255.0f alpha:1]
+=======
 // RGB 颜色
 #define RGBCOLOR(r,g,b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:255/255.0]
+>>>>>>> master
 
 /// 浅蓝色按钮
 #define kBlueColorOfButton RGBCOLOR(92, 154, 213)
@@ -62,4 +67,11 @@
 #define KZBlog @"ZBlog"
 #define KCnBlog @"http://www.cnblogs.com"
 #define KOtherBlog @"otherBlog"
+
+
+//临时增加
+#pragma mark ---- RGBA color functions
+#define RGBA(c,a) [UIColor colorWithRed:((float)((c&0xFF0000)>>16))/255.0 green:((float)((c&0xFF00)>>8))/255.0 blue:((float)(c&0xFF))/255.0 alpha:a]
+#define TempRGB(c) RGBA(c,1)
+
 
