@@ -15,6 +15,18 @@
 
 @implementation WBSRootNaviViewController
 
+
++(instancetype)sharedNavigationVC{
+    
+    static WBSRootNaviViewController * instance = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        instance = [[self alloc]init];
+    });
+
+    return instance;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     

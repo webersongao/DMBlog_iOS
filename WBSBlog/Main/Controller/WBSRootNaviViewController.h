@@ -10,4 +10,7 @@
 
 @interface WBSRootNaviViewController : UINavigationController
 
+
++(instancetype)sharedNavigationVC;
+
 @end
