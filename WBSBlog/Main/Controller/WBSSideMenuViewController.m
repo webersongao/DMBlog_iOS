@@ -17,6 +17,7 @@
 #import "WBSSwipableViewController.h"
 #import "WBSSettingsPage.h"
 #import "AppDelegate.h"
+#import "WBSScanQRCodeViewController.h"
 
 @interface WBSSideMenuViewController ()
 
@@ -97,7 +98,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 3;
+    return 4;
 }
 
 
@@ -117,8 +118,8 @@
     selectedBackgroundView.backgroundColor = [UIColor colorWithHex:0xCFCFCF];
     [cell setSelectedBackgroundView:selectedBackgroundView];
     
-    cell.imageView.image = [UIImage imageNamed:@[@"sidemenu_blog", @"sidemenu_setting",  @"sidemenu-software"][indexPath.row]];
-    cell.textLabel.text = @[@"博客", @"设置",  @"注销"][indexPath.row];
+    cell.imageView.image = [UIImage imageNamed:@[@"sidemenu_blog", @"sidemenu_setting",  @"sidemenu-software", @"sidemenu_setting"][indexPath.row]];
+    cell.textLabel.text = @[@"博客", @"设置",  @"注销", @"二维码"][indexPath.row];
     cell.textLabel.textColor = [UIColor colorWithHex:0x428bd1];
     //将注销设置成红色
     if (indexPath.row == 2) {
@@ -158,6 +159,12 @@
             [self performSelector:@selector(logout:) withObject:nil];
             break;
         }
+        case 3: {//二维码
+            NSLog(@"二维码");
+            WBSScanQRCodeViewController *ScanQRcodeVC = [[WBSScanQRCodeViewController alloc]init];
+            [self setContentViewController:ScanQRcodeVC];
+            break;
+        }
         default: break;
     }
     
@@ -185,7 +192,7 @@
         // 如果 没有登录 跳转到登录控制器
         [self setContentViewController:[WBSLoginNavViewController new]];
     } else {
-        // 已经登录  跳转到个人信息界面
+        // 已经登录  跳转到个人信息界面 XMLRPC接口不支持该功能
         WBSMyInfoController *myInfoVC = [[WBSMyInfoController alloc]initWithStyle:UITableViewStyleGrouped];
         [self setContentViewController:myInfoVC];
     }

@@ -83,13 +83,16 @@
     
     self.navigationItem.rightBarButtonItem                                                     = [[UIBarButtonItem alloc] initWithTitle:@"选择" style:UIBarButtonItemStylePlain target:self action:@selector(selectBlog)];
     
-    self.view.backgroundColor                                                                  = [UIColor themeColor];
+    self.view.backgroundColor = [UIColor themeColor];
     
     //    //初始化视图和布局
     [self setupSubviews];
     
     // 默认为wordpress博客
     self.footerApi = @"xmlrpc.php";
+    UIView *indexView = [[[NSBundle mainBundle]loadNibNamed:@"WBSLogin" owner:self options:nil]lastObject];
+    self.view = indexView;
+    
     
 }
 
