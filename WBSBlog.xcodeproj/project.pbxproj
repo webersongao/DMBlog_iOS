@@ -51,8 +51,11 @@
 		4E4AD5FD1D477595002BFD98 /* WBSHorizonalTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E4AD5FC1D477595002BFD98 /* WBSHorizonalTableViewController.m */; };
 		4E6375461D644A8400D24E25 /* WBSRootNaviViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E6375451D644A8400D24E25 /* WBSRootNaviViewController.m */; };
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> master
 =======
+=======
+>>>>>>> master
 		4EBEC5D41DBB10630038DFE0 /* bgImageHighLight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EBEC5C41DBB10630038DFE0 /* bgImageHighLight@2x.png */; };
 		4EBEC5D51DBB10630038DFE0 /* blueHL@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EBEC5C51DBB10630038DFE0 /* blueHL@2x.png */; };
 		4EBEC5D61DBB10630038DFE0 /* btn_hov@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EBEC5C61DBB10630038DFE0 /* btn_hov@2x.png */; };
@@ -82,6 +85,9 @@
 		4EBEC6261DBB12D80038DFE0 /* SAMKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EBEC6211DBB12D80038DFE0 /* SAMKeychain.m */; };
 		4EBEC6271DBB12D80038DFE0 /* SAMKeychainQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EBEC6231DBB12D80038DFE0 /* SAMKeychainQuery.m */; };
 		4EBEC6281DBB12D80038DFE0 /* SAMKeychain.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4EBEC6251DBB12D80038DFE0 /* SAMKeychain.bundle */; };
+<<<<<<< HEAD
+>>>>>>> master
+=======
 >>>>>>> master
 		4EF149D31D3DF61D00D28265 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF149D21D3DF61D00D28265 /* main.m */; };
 		4EF149D61D3DF61D00D28265 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF149D51D3DF61D00D28265 /* AppDelegate.m */; };
@@ -520,8 +526,11 @@
 		4E6375441D644A8400D24E25 /* WBSRootNaviViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSRootNaviViewController.h; sourceTree = "<group>"; };
 		4E6375451D644A8400D24E25 /* WBSRootNaviViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBSRootNaviViewController.m; sourceTree = "<group>"; };
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> master
 =======
+=======
+>>>>>>> master
 		4EBEC5C41DBB10630038DFE0 /* bgImageHighLight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bgImageHighLight@2x.png"; sourceTree = "<group>"; };
 		4EBEC5C51DBB10630038DFE0 /* blueHL@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blueHL@2x.png"; sourceTree = "<group>"; };
 		4EBEC5C61DBB10630038DFE0 /* btn_hov@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_hov@2x.png"; sourceTree = "<group>"; };
@@ -560,6 +569,9 @@
 		4EBEC6221DBB12D80038DFE0 /* SAMKeychainQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAMKeychainQuery.h; sourceTree = "<group>"; };
 		4EBEC6231DBB12D80038DFE0 /* SAMKeychainQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAMKeychainQuery.m; sourceTree = "<group>"; };
 		4EBEC6251DBB12D80038DFE0 /* SAMKeychain.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SAMKeychain.bundle; sourceTree = "<group>"; };
+<<<<<<< HEAD
+>>>>>>> master
+=======
 >>>>>>> master
 		4EF149CE1D3DF61D00D28265 /* WBSBlog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WBSBlog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EF149D21D3DF61D00D28265 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -1497,6 +1509,89 @@
 			);
 			path = View;
 >>>>>>> master
+			sourceTree = "<group>";
+		};
+		4EBEC5C31DBB10630038DFE0 /* QrCode */ = {
+			isa = PBXGroup;
+			children = (
+				4EBEC5C41DBB10630038DFE0 /* bgImageHighLight@2x.png */,
+				4EBEC5C51DBB10630038DFE0 /* blueHL@2x.png */,
+				4EBEC5C61DBB10630038DFE0 /* btn_hov@2x.png */,
+				4EBEC5C71DBB10630038DFE0 /* cellLine@2x.png */,
+				4EBEC5C81DBB10630038DFE0 /* connect_alert_mac@2x.png */,
+				4EBEC5C91DBB10630038DFE0 /* connect_alert_mac@3x.png */,
+				4EBEC5CA1DBB10630038DFE0 /* connect_alert_mac_mute@2x.png */,
+				4EBEC5CB1DBB10630038DFE0 /* connect_alert_mac_mute@3x.png */,
+				4EBEC5CC1DBB10630038DFE0 /* greenHL@2x.png */,
+				4EBEC5CD1DBB10630038DFE0 /* scan_animation.png */,
+				4EBEC5CE1DBB10630038DFE0 /* scan_animation@2x.png */,
+				4EBEC5CF1DBB10630038DFE0 /* scan_animation@3x.png */,
+				4EBEC5D01DBB10630038DFE0 /* scan_frame@2x.png */,
+				4EBEC5D11DBB10630038DFE0 /* scan_frame@3x.png */,
+				4EBEC5D21DBB10630038DFE0 /* toolbar_leftarrow@2x.png */,
+				4EBEC5D31DBB10630038DFE0 /* toolbar_leftarrow@3x.png */,
+			);
+			name = QrCode;
+			path = user_background/QrCode;
+			sourceTree = "<group>";
+		};
+		4EBEC5E41DBB10920038DFE0 /* 二维码 */ = {
+			isa = PBXGroup;
+			children = (
+				4EBEC5E51DBB10A90038DFE0 /* WBSScanQRCodeViewController.h */,
+				4EBEC5E61DBB10A90038DFE0 /* WBSScanQRCodeViewController.m */,
+				4EBEC5E71DBB10A90038DFE0 /* WBSQRCodeOauthViewController.h */,
+				4EBEC5E81DBB10A90038DFE0 /* WBSQRCodeOauthViewController.m */,
+				4EBEC5E91DBB10A90038DFE0 /* WBSQRCodeLoginViewController.h */,
+				4EBEC5EA1DBB10A90038DFE0 /* WBSQRCodeLoginViewController.m */,
+			);
+			name = "二维码";
+			sourceTree = "<group>";
+		};
+		4EBEC6061DBB12AB0038DFE0 /* SVProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				4EBEC6071DBB12AB0038DFE0 /* LICENSE.txt */,
+				4EBEC6081DBB12AB0038DFE0 /* README.md */,
+				4EBEC6091DBB12AB0038DFE0 /* SVProgressHUD */,
+			);
+			path = SVProgressHUD;
+			sourceTree = "<group>";
+		};
+		4EBEC6091DBB12AB0038DFE0 /* SVProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				4EBEC60A1DBB12AB0038DFE0 /* SVIndefiniteAnimatedView.h */,
+				4EBEC60B1DBB12AB0038DFE0 /* SVIndefiniteAnimatedView.m */,
+				4EBEC60C1DBB12AB0038DFE0 /* SVProgressAnimatedView.h */,
+				4EBEC60D1DBB12AB0038DFE0 /* SVProgressAnimatedView.m */,
+				4EBEC60E1DBB12AB0038DFE0 /* SVProgressHUD.bundle */,
+				4EBEC60F1DBB12AB0038DFE0 /* SVProgressHUD.h */,
+				4EBEC6101DBB12AB0038DFE0 /* SVProgressHUD.m */,
+				4EBEC6111DBB12AB0038DFE0 /* SVRadialGradientLayer.h */,
+				4EBEC6121DBB12AB0038DFE0 /* SVRadialGradientLayer.m */,
+			);
+			path = SVProgressHUD;
+			sourceTree = "<group>";
+		};
+		4EBEC61F1DBB12D70038DFE0 /* SAMKeychain */ = {
+			isa = PBXGroup;
+			children = (
+				4EBEC6201DBB12D80038DFE0 /* SAMKeychain.h */,
+				4EBEC6211DBB12D80038DFE0 /* SAMKeychain.m */,
+				4EBEC6221DBB12D80038DFE0 /* SAMKeychainQuery.h */,
+				4EBEC6231DBB12D80038DFE0 /* SAMKeychainQuery.m */,
+				4EBEC6241DBB12D80038DFE0 /* Support */,
+			);
+			path = SAMKeychain;
+			sourceTree = "<group>";
+		};
+		4EBEC6241DBB12D80038DFE0 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				4EBEC6251DBB12D80038DFE0 /* SAMKeychain.bundle */,
+			);
+			path = Support;
 			sourceTree = "<group>";
 		};
 		4EBEC5C31DBB10630038DFE0 /* QrCode */ = {
@@ -3085,6 +3180,7 @@
 				4EF390681D435E4600CE28A4 /* Icon-76.png in Resources */,
 				4EF14F411D3E32F700D28265 /* lookup_amatorka.png in Resources */,
 <<<<<<< HEAD
+<<<<<<< HEAD
 				4E8AC7D21DBA61EC00E2E60D /* scan_frame@3x.png in Resources */,
 				4E8AC7D41DBA61EC00E2E60D /* toolbar_leftarrow@3x.png in Resources */,
 				4E8AC7C91DBA61EC00E2E60D /* connect_alert_mac@2x.png in Resources */,
@@ -3093,10 +3189,15 @@
 				4E8AC7C71DBA61EC00E2E60D /* btn_hov@2x.png in Resources */,
 =======
 =======
+=======
+>>>>>>> master
 				4EBEC5E21DBB10630038DFE0 /* toolbar_leftarrow@2x.png in Resources */,
 				4EBEC5DA1DBB10630038DFE0 /* connect_alert_mac_mute@2x.png in Resources */,
 				4EF149DE1D3DF61D00D28265 /* Assets.xcassets in Resources */,
 				4EBEC6181DBB12AB0038DFE0 /* LICENSE.txt in Resources */,
+<<<<<<< HEAD
+>>>>>>> master
+=======
 >>>>>>> master
 				4EF6A74D1D6471B900B63A40 /* tabbar-tweet-selected@2x.png in Resources */,
 >>>>>>> master
@@ -3110,6 +3211,10 @@
 =======
 				4EF6A74A1D646FF100B63A40 /* tabbar-discover-selected@2x.png in Resources */,
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> master
+=======
+				4EBEC5D61DBB10630038DFE0 /* btn_hov@2x.png in Resources */,
 >>>>>>> master
 =======
 				4EBEC5D61DBB10630038DFE0 /* btn_hov@2x.png in Resources */,
@@ -3132,7 +3237,11 @@
 				4EF390531D433D8400CE28A4 /* login-Close@2x.png in Resources */,
 				4EF390771D435E6700CE28A4 /* start(1536x2048).png in Resources */,
 <<<<<<< HEAD
+<<<<<<< HEAD
 				4E8AC7C51DBA61EC00E2E60D /* bgImageHighLight@2x.png in Resources */,
+=======
+				4EBEC5DB1DBB10630038DFE0 /* connect_alert_mac_mute@3x.png in Resources */,
+>>>>>>> master
 =======
 				4EBEC5DB1DBB10630038DFE0 /* connect_alert_mac_mute@3x.png in Resources */,
 >>>>>>> master
@@ -3150,15 +3259,21 @@
 				4E8AC7EF1DBA7D2A00E2E60D /* WBSLogin.xib in Resources */,
 				4EF14F011D3E32F700D28265 /* blocktags in Resources */,
 <<<<<<< HEAD
+<<<<<<< HEAD
 				4E8AC7EB1DBA675500E2E60D /* SVProgressHUD.bundle in Resources */,
 				4EF390691D435E4600CE28A4 /* Icon-76@2x.png in Resources */,
 				4E8AC7CB1DBA61EC00E2E60D /* connect_alert_mac_mute@2x.png in Resources */,
 				4E8AC7CE1DBA61EC00E2E60D /* scan_animation.png in Resources */,
 =======
+=======
+>>>>>>> master
 				4EBEC5D71DBB10630038DFE0 /* cellLine@2x.png in Resources */,
 				4EF390691D435E4600CE28A4 /* Icon-76@2x.png in Resources */,
 				4EF38F541D42F5BA00CE28A4 /* WBSLogin.xib in Resources */,
 				4EBEC6281DBB12D80038DFE0 /* SAMKeychain.bundle in Resources */,
+<<<<<<< HEAD
+>>>>>>> master
+=======
 >>>>>>> master
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -3663,6 +3778,11 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+					"$(PROJECT_DIR)/WBSBlog/Lib/WPXMLRPC/SAMKeychain",
+					"$(PROJECT_DIR)/WBSBlog/Lib/WPXMLRPC/SVProgressHUD",
+>>>>>>> master
 =======
 					"$(PROJECT_DIR)/WBSBlog/Lib/WPXMLRPC/SAMKeychain",
 					"$(PROJECT_DIR)/WBSBlog/Lib/WPXMLRPC/SVProgressHUD",
@@ -3693,6 +3813,11 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+					"$(PROJECT_DIR)/WBSBlog/Lib/WPXMLRPC/SAMKeychain",
+					"$(PROJECT_DIR)/WBSBlog/Lib/WPXMLRPC/SVProgressHUD",
+>>>>>>> master
 =======
 					"$(PROJECT_DIR)/WBSBlog/Lib/WPXMLRPC/SAMKeychain",
 					"$(PROJECT_DIR)/WBSBlog/Lib/WPXMLRPC/SVProgressHUD",
