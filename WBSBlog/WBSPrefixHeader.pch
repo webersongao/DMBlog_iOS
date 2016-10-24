@@ -65,7 +65,7 @@
 #define k2LineHeight 1
 #define k3LineHeight 0.5
 
-#define BGColor(r, g, b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
+#define RGBColor(r, g, b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
 #define SCREEN_B [UIScreen mainScreen].bounds
 #define SCREEN_S [UIScreen mainScreen].bounds.size
 #define SCREEN_H [UIScreen mainScreen].bounds.size.height
