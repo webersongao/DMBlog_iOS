@@ -168,8 +168,13 @@
         }
         case 3: {//二维码
             NSLog(@"二维码");
+<<<<<<< HEAD
             WBSScanQRCodeViewController *QRCodeVC = [[WBSScanQRCodeViewController alloc] init];
             [self setContentViewController:QRCodeVC];
+=======
+            WBSScanQRCodeViewController *ScanQRcodeVC = [[WBSScanQRCodeViewController alloc]init];
+            [self setContentViewController:ScanQRcodeVC];
+>>>>>>> master
             break;
         }
         default: break;
@@ -199,7 +204,7 @@
         // 如果 没有登录 跳转到登录控制器
         [self setContentViewController:[WBSLoginNavViewController new]];
     } else {
-        // 已经登录  跳转到个人信息界面
+        // 已经登录  跳转到个人信息界面 XMLRPC接口不支持该功能
         WBSMyInfoController *myInfoVC = [[WBSMyInfoController alloc]initWithStyle:UITableViewStyleGrouped];
         [self setContentViewController:myInfoVC];
     }
