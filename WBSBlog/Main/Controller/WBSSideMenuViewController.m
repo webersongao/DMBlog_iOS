@@ -143,14 +143,7 @@
         case 0: {
             NSLog(@"博客");
             WBSPostViewController *postViewCtl = [[WBSPostViewController alloc]initWithPostType:PostTypePost];
-<<<<<<< HEAD:WBSBlog/Base/WBSSideMenuViewController.m
-            WBSSwipableViewController *blogSVC = [[WBSSwipableViewController alloc] initWithTitle:@"博客"
-                                                                                     andSubTitles:nil
-                                                                                   andControllers:@[ postViewCtl]
-                                                                                      underTabbar:NO];
-=======
             WBSSwipableViewController *blogSVC = [[WBSSwipableViewController alloc] initWithTitle:@"博客" andSubTitles:nil andControllers:@[ postViewCtl]underTabbar:NO];
->>>>>>> master:WBSBlog/Main/Controller/WBSSideMenuViewController.m
             
             [self setContentViewController:blogSVC];
             break;
@@ -168,23 +161,9 @@
         }
         case 3: {//二维码
             NSLog(@"二维码");
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-            WBSScanQRCodeViewController *QRCodeVC = [[WBSScanQRCodeViewController alloc] init];
-            [self setContentViewController:QRCodeVC];
-=======
             WBSScanQRCodeViewController *ScanQRcodeVC = [[WBSScanQRCodeViewController alloc]init];
             [self setContentViewController:ScanQRcodeVC];
->>>>>>> master
-=======
-            WBSScanQRCodeViewController *ScanQRcodeVC = [[WBSScanQRCodeViewController alloc]init];
-            [self setContentViewController:ScanQRcodeVC];
->>>>>>> master
-=======
-            WBSScanQRCodeViewController *ScanQRcodeVC = [[WBSScanQRCodeViewController alloc]init];
-            [self setContentViewController:ScanQRcodeVC];
->>>>>>> master
+
             break;
         }
         default: break;
