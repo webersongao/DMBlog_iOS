@@ -1,8 +1,13 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+=======
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+>>>>>>> master
 =======
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
@@ -34,8 +39,13 @@
             <subviews>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="www.jack_blog.com" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ouF-z1-9cy">
                     <frame key="frameInset" minX="50" minY="190" width="530" height="30"/>
+=======
+
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="www.jack_blog.com" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ouF-z1-9cy">
+>>>>>>> master
 =======
 
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="www.jack_blog.com" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ouF-z1-9cy">
@@ -50,9 +60,12 @@
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login-email.png" translatesAutoresizingMaskIntoConstraints="NO" id="QmP-0N-MA9">
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
                     <rect key="frame" x="20" y="235" width="20" height="20"/>
 
+=======
+>>>>>>> master
 =======
 >>>>>>> master
 =======
@@ -64,9 +77,13 @@
                 </imageView>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="是否启用JSON API" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4zA-a5-BhN">
 
                     <rect key="frame" x="20" y="319" width="127" height="30"/>
+=======
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="是否启用JSON API" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4zA-a5-BhN">
+>>>>>>> master
 =======
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="是否启用JSON API" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4zA-a5-BhN">
 >>>>>>> master
@@ -89,6 +106,7 @@
                 </label>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rNI-CL-fto">
 
                     <rect key="frame" x="10" y="384" width="580" height="35"/>
@@ -97,11 +115,16 @@
 =======
 =======
 >>>>>>> master
+=======
+>>>>>>> master
 
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rNI-CL-fto">
 
                     <color key="backgroundColor" red="0.32549019607843138" green="0.53725490196078429" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> master
+=======
 >>>>>>> master
 =======
 >>>>>>> master
@@ -123,9 +146,12 @@
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login-url.png" translatesAutoresizingMaskIntoConstraints="NO" id="Zq5-gr-JrT">
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
                     <rect key="frame" x="20" y="195" width="20" height="20"/>
 
+=======
+>>>>>>> master
 =======
 >>>>>>> master
 =======
@@ -138,9 +164,12 @@
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login-password.png" translatesAutoresizingMaskIntoConstraints="NO" id="jDg-4J-D59">
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
                     <rect key="frame" x="20" y="275" width="20" height="20"/>
 
+=======
+>>>>>>> master
 =======
 >>>>>>> master
 =======
@@ -152,9 +181,14 @@
                 </imageView>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CbH-J7-ulA">
 
                     <rect key="frame" x="540" y="322" width="35" height="25"/>
+=======
+
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CbH-J7-ulA">
+>>>>>>> master
 =======
 
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CbH-J7-ulA">
@@ -177,8 +211,13 @@
                 </button>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Login_Logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="5X9-Y4-d0d">
                     <frame key="frameInset" minX="270" minY="90" width="60" height="60"/>
+=======
+
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Login_Logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="5X9-Y4-d0d">
+>>>>>>> master
 =======
 
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Login_Logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="5X9-Y4-d0d">
@@ -194,9 +233,14 @@
                 </imageView>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7DQ-sJ-S3j">
 
                     <rect key="frame" x="20" y="429" width="52" height="20"/>
+=======
+
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7DQ-sJ-S3j">
+>>>>>>> master
 =======
 
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7DQ-sJ-S3j">
@@ -213,7 +257,12 @@
                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                     <state key="normal" title="温馨提示:">
+=======
+                    <state key="normal" title="提示:">
+
+>>>>>>> master
 =======
                     <state key="normal" title="提示:">
 
@@ -230,10 +279,15 @@
                 </button>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="默认使用XMLRPC接口，可自由切换到JSON API接口" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sqk-js-kC9">
 
                     <rect key="frame" x="82" y="429" width="498" height="15"/>
 
+=======
+
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="默认使用XMLRPC接口，可自由切换到JSON API接口" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sqk-js-kC9">
+>>>>>>> master
 =======
 
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="默认使用XMLRPC接口，可自由切换到JSON API接口" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sqk-js-kC9">
@@ -250,7 +304,10 @@
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="UserName" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="B0Y-uJ-x7q">
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                     <rect key="frame" x="50" y="230" width="530" height="30"/>
+=======
+>>>>>>> master
 =======
 >>>>>>> master
 =======
@@ -266,7 +323,10 @@
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="PassWord" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QqO-VN-AEe">
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                     <rect key="frame" x="50" y="270" width="530" height="30"/>
+=======
+>>>>>>> master
 =======
 >>>>>>> master
 =======

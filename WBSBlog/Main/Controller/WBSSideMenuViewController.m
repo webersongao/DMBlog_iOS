@@ -170,8 +170,13 @@
             NSLog(@"二维码");
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             WBSScanQRCodeViewController *QRCodeVC = [[WBSScanQRCodeViewController alloc] init];
             [self setContentViewController:QRCodeVC];
+=======
+            WBSScanQRCodeViewController *ScanQRcodeVC = [[WBSScanQRCodeViewController alloc]init];
+            [self setContentViewController:ScanQRcodeVC];
+>>>>>>> master
 =======
             WBSScanQRCodeViewController *ScanQRcodeVC = [[WBSScanQRCodeViewController alloc]init];
             [self setContentViewController:ScanQRcodeVC];
