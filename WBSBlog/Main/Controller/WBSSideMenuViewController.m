@@ -163,6 +163,7 @@
             NSLog(@"二维码");
             WBSScanQRCodeViewController *ScanQRcodeVC = [[WBSScanQRCodeViewController alloc]init];
             [self setContentViewController:ScanQRcodeVC];
+
             break;
         }
         default: break;
