@@ -18,6 +18,13 @@
 #import "WBSConfig.h"
 
 
+#define KbaseUrl @"www.swiftartisan.com"
+#define KuserName @"521@weberson"
+#define KpassWord @"web@13303208939"
+
+
+
+
 @interface WBSLoginViewController () <UITextFieldDelegate, UIGestureRecognizerDelegate, TTTAttributedLabelDelegate>
 
 /**
@@ -198,77 +205,84 @@
     NSString *username                                                                         = [_usernameField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     NSString *password                                                                         = [_passwordField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     
+    // 临时添加默认账号
+    _baseURLField.text = KbaseUrl;
+    _usernameField.text = KuserName;
+    _passwordField.text = KpassWord;
+    
     //登陆提示
-    _HUD = [WBSUtils createHUD];
+//    _HUD = [WBSUtils createHUD];
     
     //登陆验证
-    if ([baseURL isEqualToString:@""]) {
-        _HUD.labelText = @"博客API地址不能为空！";
-        _HUD.mode = MBProgressHUDModeCustomView;
-        _HUD.userInteractionEnabled = NO;
-        //隐藏提示
-        [_HUD hide:YES afterDelay:1];
-        return;
-    }
+//    if ([baseURL isEqualToString:@""]) {
+//        _HUD.labelText = @"博客API地址不能为空！";
+//        _HUD.mode = MBProgressHUDModeCustomView;
+//        _HUD.userInteractionEnabled = NO;
+//        //隐藏提示
+//        [_HUD hide:YES afterDelay:1];
+//        return;
+//    }
+//    
+//    if ([baseURL hasPrefix:@"http"]) {
+//        _HUD.labelText = @"博客地址勿带http";
+//        _HUD.mode = MBProgressHUDModeCustomView;
+//        _HUD.userInteractionEnabled = NO;
+//        //隐藏提示
+//        [_HUD hide:YES afterDelay:1];
+//        return;
+//    }
+//    
+//    if ([username isEqualToString:@""]) {
+//        _HUD.labelText = @"用户名不能为空！";
+//        _HUD.mode = MBProgressHUDModeCustomView;
+//        _HUD.userInteractionEnabled = NO;
+//        //隐藏提示
+//        [_HUD hide:YES afterDelay:1];
+//        return;
+//    }
+//    
+//    if (username.length < 5 || username.length > 20) {
+//        _HUD.labelText = @"用户名只能在5-20之间！";
+//        _HUD.mode = MBProgressHUDModeCustomView;
+//        _HUD.userInteractionEnabled = NO;
+//        //隐藏提示
+//        [_HUD hide:YES afterDelay:1];
+//        return;
+//    }
+//    
+//    if ([password isEqualToString:@""]) {
+//        _HUD.labelText = @"密码不能为空！";
+//        _HUD.mode = MBProgressHUDModeCustomView;
+//        _HUD.userInteractionEnabled = NO;
+//        //隐藏提示
+//        [_HUD hide:YES afterDelay:1];
+//        return;
+//    }
+//    
+//    if (password.length < 5 || password.length > 20) {
+//        _HUD.labelText = @"密码只能在5-20之间！";
+//        _HUD.mode = MBProgressHUDModeCustomView;
+//        _HUD.userInteractionEnabled = NO;
+//        //隐藏提示
+//        [_HUD hide:YES afterDelay:1];
+//        return;
+//    }
     
-    if ([baseURL hasPrefix:@"http"]) {
-        _HUD.labelText = @"博客地址勿带http";
-        _HUD.mode = MBProgressHUDModeCustomView;
-        _HUD.userInteractionEnabled = NO;
-        //隐藏提示
-        [_HUD hide:YES afterDelay:1];
-        return;
-    }
+//    _HUD.labelText = @"正在登录";
+//    _HUD.userInteractionEnabled = NO;
     
-    if ([username isEqualToString:@""]) {
-        _HUD.labelText = @"用户名不能为空！";
-        _HUD.mode = MBProgressHUDModeCustomView;
-        _HUD.userInteractionEnabled = NO;
-        //隐藏提示
-        [_HUD hide:YES afterDelay:1];
-        return;
-    }
+     [self loginWithJOSNAPI:baseURL username:username password:password];
     
-    if (username.length < 5 || username.length > 20) {
-        _HUD.labelText = @"用户名只能在5-20之间！";
-        _HUD.mode = MBProgressHUDModeCustomView;
-        _HUD.userInteractionEnabled = NO;
-        //隐藏提示
-        [_HUD hide:YES afterDelay:1];
-        return;
-    }
-    
-    if ([password isEqualToString:@""]) {
-        _HUD.labelText = @"密码不能为空！";
-        _HUD.mode = MBProgressHUDModeCustomView;
-        _HUD.userInteractionEnabled = NO;
-        //隐藏提示
-        [_HUD hide:YES afterDelay:1];
-        return;
-    }
-    
-    if (password.length < 5 || password.length > 20) {
-        _HUD.labelText = @"密码只能在5-20之间！";
-        _HUD.mode = MBProgressHUDModeCustomView;
-        _HUD.userInteractionEnabled = NO;
-        //隐藏提示
-        [_HUD hide:YES afterDelay:1];
-        return;
-    }
-    
-    _HUD.labelText = @"正在登录";
-    _HUD.userInteractionEnabled = NO;
-    
-    if (_apiTypeSwitch.on) {
-        KLog(@"JSON API");
-        [self loginWithJOSNAPI:baseURL username:username password:password];
-    } else {
-        KLog(@"XMLRPC API");
-        //对baseUrl进行包装  暂时不支持Https
-        baseURL = [NSString stringWithFormat:@"http://%@/%@",baseURL,self.footerApi];
-        KLog(@"最后的地址是%@",baseURL);
-        [self loginWithXmlrpc:baseURL username:username password:password];
-    }
+//    if (_apiTypeSwitch.on) {
+//        KLog(@"JSON API");
+//        [self loginWithJOSNAPI:baseURL username:username password:password];
+//    } else {
+//        KLog(@"XMLRPC API");
+//        //对baseUrl进行包装  暂时不支持Https
+//        baseURL = [NSString stringWithFormat:@"http://%@/%@",baseURL,self.footerApi];
+//        KLog(@"最后的地址是%@",baseURL);
+//        [self loginWithXmlrpc:baseURL username:username password:password];
+//    }
 }
 
 /**
@@ -315,7 +329,7 @@
     
     NSString *requestURL                                                                       = [NSString stringWithFormat:@"%@/user/generate_auth_cookie/?username=%@&password=%@", baseURL, username, password];
     
-    KLog(@"登陆请求地址：login request URL:%@", requestURL);
+    KLog(@"----jsonApi登陆请求地址：login request URL:%@", requestURL);
     //获取作者数据
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     [manager GET:requestURL parameters:nil
