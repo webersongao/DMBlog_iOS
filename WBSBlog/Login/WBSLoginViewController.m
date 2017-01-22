@@ -18,6 +18,13 @@
 #import "WBSConfig.h"
 
 
+#define KbaseUrl @"www.swiftartisan.com"
+#define KuserName @"521@weberson"
+#define KpassWord @"web@13303208939"
+
+
+
+
 @interface WBSLoginViewController () <UITextFieldDelegate, UIGestureRecognizerDelegate, TTTAttributedLabelDelegate>
 
 /**
@@ -198,77 +205,84 @@
     NSString *username                                                                         = [_usernameField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     NSString *password                                                                         = [_passwordField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     
+    // 临时添加默认账号
+    _baseURLField.text = KbaseUrl;
+    _usernameField.text = KuserName;
+    _passwordField.text = KpassWord;
+    
     //登陆提示
-    _HUD                                                                                       = [WBSUtils createHUD];
+//    _HUD = [WBSUtils createHUD];
     
     //登陆验证
-    if ([baseURL isEqualToString:@""]) {
-        _HUD.labelText                                                                             = @"博客API地址不能为空！";
-        _HUD.mode                                                                                  = MBProgressHUDModeCustomView;
-        _HUD.userInteractionEnabled                                                                = NO;
-        //隐藏提示
-        [_HUD hide:YES afterDelay:1];
-        return;
-    }
+//    if ([baseURL isEqualToString:@""]) {
+//        _HUD.labelText = @"博客API地址不能为空！";
+//        _HUD.mode = MBProgressHUDModeCustomView;
+//        _HUD.userInteractionEnabled = NO;
+//        //隐藏提示
+//        [_HUD hide:YES afterDelay:1];
+//        return;
+//    }
+//    
+//    if ([baseURL hasPrefix:@"http"]) {
+//        _HUD.labelText = @"博客地址勿带http";
+//        _HUD.mode = MBProgressHUDModeCustomView;
+//        _HUD.userInteractionEnabled = NO;
+//        //隐藏提示
+//        [_HUD hide:YES afterDelay:1];
+//        return;
+//    }
+//    
+//    if ([username isEqualToString:@""]) {
+//        _HUD.labelText = @"用户名不能为空！";
+//        _HUD.mode = MBProgressHUDModeCustomView;
+//        _HUD.userInteractionEnabled = NO;
+//        //隐藏提示
+//        [_HUD hide:YES afterDelay:1];
+//        return;
+//    }
+//    
+//    if (username.length < 5 || username.length > 20) {
+//        _HUD.labelText = @"用户名只能在5-20之间！";
+//        _HUD.mode = MBProgressHUDModeCustomView;
+//        _HUD.userInteractionEnabled = NO;
+//        //隐藏提示
+//        [_HUD hide:YES afterDelay:1];
+//        return;
+//    }
+//    
+//    if ([password isEqualToString:@""]) {
+//        _HUD.labelText = @"密码不能为空！";
+//        _HUD.mode = MBProgressHUDModeCustomView;
+//        _HUD.userInteractionEnabled = NO;
+//        //隐藏提示
+//        [_HUD hide:YES afterDelay:1];
+//        return;
+//    }
+//    
+//    if (password.length < 5 || password.length > 20) {
+//        _HUD.labelText = @"密码只能在5-20之间！";
+//        _HUD.mode = MBProgressHUDModeCustomView;
+//        _HUD.userInteractionEnabled = NO;
+//        //隐藏提示
+//        [_HUD hide:YES afterDelay:1];
+//        return;
+//    }
     
-    if ([baseURL hasPrefix:@"http"]) {
-        _HUD.labelText                                                                             = @"博客地址勿带http";
-        _HUD.mode                                                                                  = MBProgressHUDModeCustomView;
-        _HUD.userInteractionEnabled                                                                = NO;
-        //隐藏提示
-        [_HUD hide:YES afterDelay:1];
-        return;
-    }
+//    _HUD.labelText = @"正在登录";
+//    _HUD.userInteractionEnabled = NO;
     
-    if ([username isEqualToString:@""]) {
-        _HUD.labelText                                                                             = @"用户名不能为空！";
-        _HUD.mode                                                                                  = MBProgressHUDModeCustomView;
-        _HUD.userInteractionEnabled                                                                = NO;
-        //隐藏提示
-        [_HUD hide:YES afterDelay:1];
-        return;
-    }
+     [self loginWithJOSNAPI:baseURL username:username password:password];
     
-    if (username.length < 5 || username.length > 20) {
-        _HUD.labelText                                                                             = @"用户名只能在5-20之间！";
-        _HUD.mode                                                                                  = MBProgressHUDModeCustomView;
-        _HUD.userInteractionEnabled                                                                = NO;
-        //隐藏提示
-        [_HUD hide:YES afterDelay:1];
-        return;
-    }
-    
-    if ([password isEqualToString:@""]) {
-        _HUD.labelText                                                                             = @"密码不能为空！";
-        _HUD.mode                                                                                  = MBProgressHUDModeCustomView;
-        _HUD.userInteractionEnabled                                                                = NO;
-        //隐藏提示
-        [_HUD hide:YES afterDelay:1];
-        return;
-    }
-    
-    if (password.length < 5 || password.length > 20) {
-        _HUD.labelText                                                                             = @"密码只能在5-20之间！";
-        _HUD.mode                                                                                  = MBProgressHUDModeCustomView;
-        _HUD.userInteractionEnabled                                                                = NO;
-        //隐藏提示
-        [_HUD hide:YES afterDelay:1];
-        return;
-    }
-    
-    _HUD.labelText                                                                             = @"正在登录";
-    _HUD.userInteractionEnabled                                                                = NO;
-    
-    if (_apiTypeSwitch.on) {
-        KLog(@"JSON API");
-        [self loginWithJOSNAPI:baseURL username:username password:password];
-    } else {
-        KLog(@"XMLRPC API");
-        //对baseUrl进行包装  暂时不支持Https
-        baseURL                                                                                    = [NSString stringWithFormat:@"http://%@/%@",baseURL,self.footerApi];
-        KLog(@"最后的地址是%@",baseURL);
-        [self loginWithXmlrpc:baseURL username:username password:password];
-    }
+//    if (_apiTypeSwitch.on) {
+//        KLog(@"JSON API");
+//        [self loginWithJOSNAPI:baseURL username:username password:password];
+//    } else {
+//        KLog(@"XMLRPC API");
+//        //对baseUrl进行包装  暂时不支持Https
+//        baseURL = [NSString stringWithFormat:@"http://%@/%@",baseURL,self.footerApi];
+//        KLog(@"最后的地址是%@",baseURL);
+//        [self loginWithXmlrpc:baseURL username:username password:password];
+//    }
 }
 
 /**
@@ -315,16 +329,16 @@
     
     NSString *requestURL                                                                       = [NSString stringWithFormat:@"%@/user/generate_auth_cookie/?username=%@&password=%@", baseURL, username, password];
     
-    KLog(@"登陆请求地址：login request URL:%@", requestURL);
+    KLog(@"----jsonApi登陆请求地址：login request URL:%@", requestURL);
     //获取作者数据
-    AFHTTPRequestOperationManager *manager                                                     = [AFHTTPRequestOperationManager manager];
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     [manager GET:requestURL parameters:nil
          success:^(AFHTTPRequestOperation *operation, NSDictionary *result) {
              dispatch_async(dispatch_get_main_queue(), ^{
                  //刷新数据
                  //KLog(@"JSON: %@", responseObject);
                  KLog(@"status:%@", [result objectForKey:@"status"]);
-                 NSString *status                                                                           = [result objectForKey:@"status"];
+                 NSString *status = [result objectForKey:@"status"];
                  if ([status isEqualToString:@"ok"]) {
                      NSString *cookie                                                                           = result[@"cookie"];
                      
@@ -349,9 +363,9 @@
          }
          failure:^(AFHTTPRequestOperation *operation, NSError *error) {
              KLog(@"Error login with json api: %@", [error localizedDescription]);
-             _HUD.mode                                                                                  = MBProgressHUDModeCustomView;
-             _HUD.customView                                                                            = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"HUD-error"]];
-             _HUD.labelText                                                                             = [NSString stringWithFormat:@"错误：%@", [error localizedDescription]];
+             _HUD.mode = MBProgressHUDModeCustomView;
+             _HUD.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"HUD-error"]];
+             _HUD.labelText = [NSString stringWithFormat:@"错误：%@", [error localizedDescription]];
              [_HUD hide:YES afterDelay:1];
              
          }];
@@ -360,12 +374,12 @@
 #pragma mark - 超链接代理
 
 - (void)attributedLabel:(TTTAttributedLabel *)label didLongPressLinkWithURL:(NSURL *)url atPoint:(CGPoint)point {
-    UIAlertController *confirmCtl                                                              = [UIAlertController alertControllerWithTitle:@"温馨提示" message:@"是否使用Safari打开网页？" preferredStyle:UIAlertControllerStyleAlert];
-    UIAlertAction *yesAction                                                                   = [UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+    UIAlertController *confirmCtl = [UIAlertController alertControllerWithTitle:@"温馨提示" message:@"是否使用Safari打开网页？" preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *yesAction  = [UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
         //调用Safari打开网页
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[url absoluteString]]];
     }];
-    UIAlertAction *noAction                                                                    = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDestructive handler:nil];
+    UIAlertAction *noAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDestructive handler:nil];
     [confirmCtl addAction:yesAction];
     [confirmCtl addAction:noAction];
     [self presentViewController:confirmCtl animated:YES completion:nil];
@@ -379,7 +393,7 @@
  */
 - (void)attributedLabel:(TTTAttributedLabel *)label didSelectLinkWithURL:(NSURL *)url {
     KLog(@"Selected url:%@", [url absoluteString]);
-    NSString *title                                                                            = @"What is MetaWeblog API?";
+    NSString *title = @"What is MetaWeblog API?";
     if ([[url absoluteString] isEqualToString:@"https://github.com/webersongao/WBSBlog/blob/master/OtherResource/metaweblog-api-http-sample-data.md"]) {
         title                                                                                      = @"Wordpress JSON API";
     }
@@ -393,21 +407,21 @@
 -(TTTAttributedLabel *)messageInfo{
     if (_messageInfo == nil) {
         
-        _messageInfo                                                                               = [TTTAttributedLabel new];
-        _messageInfo.delegate                                                                      = self;
-        _messageInfo.numberOfLines                                                                 = 0;
-        _messageInfo.lineBreakMode                                                                 = NSLineBreakByWordWrapping;
-        _messageInfo.backgroundColor                                                               = [UIColor themeColor];
-        _messageInfo.font                                                                          = [UIFont systemFontOfSize:12];
-        NSString *info                                                                             = @"温馨提示：您可以登录任何实现了XML-RPC MetaWeblog API接口的博客。目前已经支持并测试通过的博客：Wordpress、ZBlog、Cnblogs、OSChina、163、51CTO、Sina。\r由于MetaWeblog API接口的限制，暂时只能进行文章的显示、查看、新增、修改和删除。\r部分功能有些博客不支持，详情看这里。\r更多功能需要服务端API支持，详情查看：Wordpress JSON API。";
-        _messageInfo.text                                                                          = info;
-        NSRange range1                                                                             = [info rangeOfString:@"XML-RPC MetaWeblog API"];
+        _messageInfo = [TTTAttributedLabel new];
+        _messageInfo.delegate = self;
+        _messageInfo.numberOfLines = 0;
+        _messageInfo.lineBreakMode = NSLineBreakByWordWrapping;
+        _messageInfo.backgroundColor = [UIColor themeColor];
+        _messageInfo.font = [UIFont systemFontOfSize:12];
+        NSString *info = @"温馨提示：您可以登录任何实现了XML-RPC MetaWeblog API接口的博客。目前已经支持并测试通过的博客：Wordpress、ZBlog、Cnblogs、OSChina、163、51CTO、Sina。\r由于MetaWeblog API接口的限制，暂时只能进行文章的显示、查看、新增、修改和删除。\r部分功能有些博客不支持，详情看这里。\r更多功能需要服务端API支持，详情查看：Wordpress JSON API。";
+        _messageInfo.text = info;
+        NSRange range1 = [info rangeOfString:@"XML-RPC MetaWeblog API"];
         _messageInfo.linkAttributes = @{(NSString *) kCTForegroundColorAttributeName : [UIColor colorWithHex:0x428bd1]};
         [_messageInfo addLinkToURL:[NSURL URLWithString:@"https://en.wikipedia.org/wiki/MetaWeblog"] withRange:range1];
-        NSRange range2                                                                             = [info rangeOfString:@"详情看这里"];
+        NSRange range2 = [info rangeOfString:@"详情看这里"];
         [_messageInfo addLinkToURL:[NSURL URLWithString:@"呜呜呜"] withRange:range2];
         [self.view addSubview:_messageInfo];
-        NSRange range3                                                                             = [info rangeOfString:@"Wordpress JSON API"];
+        NSRange range3 = [info rangeOfString:@"Wordpress JSON API"];
         [_messageInfo addLinkToURL:[NSURL URLWithString:@"https://github.com/webersongao/WBSBlog/blob/master/OtherResource/wordpress-json-api-http-sample-data.md"] withRange:range3];
     }
     return _messageInfo;
