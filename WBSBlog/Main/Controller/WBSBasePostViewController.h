@@ -1,5 +1,5 @@
 //
-//  WBSOBObjsViewController.h
+//  WBSBasePostViewController.h
 //  WBSBlog
 //
 //  Created by Weberson on 16/7/20.
@@ -11,7 +11,7 @@
 #import "TGMetaWeblogApi.h"
 #import "TGBlogJsonApi.h"
 
-@interface WBSOBObjsViewController : UITableViewController
+@interface WBSBasePostViewController : UITableViewController
 
 @property (nonatomic, copy) NSString * (^generateURL)(NSUInteger page);
 @property (nonatomic, copy) void (^tableWillReload)(NSUInteger responseObjectsCount);

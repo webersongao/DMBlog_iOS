@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "WBSOBObjsViewController.h"
+#import "WBSBasePostViewController.h"
 
-@interface WBSMyInfoController : WBSOBObjsViewController
+@interface WBSMyInfoController : WBSBasePostViewController
 
 @end

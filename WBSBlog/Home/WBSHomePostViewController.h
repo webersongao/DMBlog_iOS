@@ -1,5 +1,5 @@
 //
-//  WBSBlogsViewController.h
+//  WBSHomePostViewController.h
 //  WBSBlog
 //
 //  Created by Weberson on 16/7/20.
@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "WBSOBObjsViewController.h"
+#import "WBSBasePostViewController.h"
 
 /**
  *  文章类型枚举
@@ -65,7 +65,7 @@ typedef NS_ENUM(NSUInteger, PostResultType){
     PostResultTypeTag
 };
 
-@interface WBSPostViewController : WBSOBObjsViewController
+@interface WBSHomePostViewController : WBSBasePostViewController
 
 /**
  *  API类型

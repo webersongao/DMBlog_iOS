@@ -8,6 +8,7 @@
 
 #import "WBSSelectBlogViewController.h"
 #import "WBSUtils.h"
+#import "WBSMacro.h"
 
 @interface WBSSelectBlogViewController () <UITableViewDelegate, UITableViewDataSource>
 
@@ -96,61 +97,61 @@
     NSLog(@"You selected this: %@", self.blogTypeArray[indexPath.row]);
     
     NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
-    [def setObject:[NSString stringWithFormat:@"%d", NO] forKey:@"isJSONAPIEnable"];
+    [def setObject:[NSString stringWithFormat:@"%d", NO] forKey:WBSIs_JSONAPI];
     [def synchronize];
     
     switch (indexPath.row) {
         case 0:
-            NSLog(@"Wordpress");
+            [WBSUtils showSuccessMessage:@"Wordpress"];
             //            _xmlrpcURLSuffix = @"http://www.webersongao.com/xmlrpc.php";
             _xmlrpcURLPrefix = KWordPress;
             _xmlrpcURLSuffix = @"xmlrpc.php";
             [self doSelectBlog];
             break;
         case 1:
-            NSLog(@"ZBlog");
+            [WBSUtils showErrorMessage:@"ZBlog"];
             //            _xmlrpcURLSuffix = @"http://www.webersongao.com:8080/xmlrpc";
             _xmlrpcURLPrefix = KZBlog;
             _xmlrpcURLSuffix = @"xmlrpc";
             [self doSelectBlog];
             break;
         case 2:
-            NSLog(@"Cnblogs");
+            [WBSUtils showStatusMessage:@"Cnblogs"];
             //            _xmlrpcURLSuffix = @"http://www.cnblogs.com/weberson/services/metaweblog.aspx";
             _xmlrpcURLPrefix = @"http://www.cnblogs.com";
             _xmlrpcURLSuffix = @"services/metaweblog.aspx";
             [self doSelectBlog];
             break;
         case 3:
-            NSLog(@"OSChina");
+            [WBSUtils showSuccessMessage:@"OSChina"];
             _xmlrpcURLPrefix = KOtherBlog;
             _xmlrpcURLSuffix = @"http://my.oschina.net/action/xmlrpc";
             [self doSelectBlog];
             break;
         case 4:
-            NSLog(@"163");
+             [WBSUtils showSuccessMessage:@"163博客"];
             _xmlrpcURLPrefix = KOtherBlog;
             _xmlrpcURLSuffix = @"http://os.blog.163.com/api/xmlrpc/metaweblog/";
             [self doSelectBlog];
             break;
         case 5:
-            NSLog(@"51CTO");
+             [WBSUtils showSuccessMessage:@"51CTO"];
             _xmlrpcURLPrefix = KOtherBlog;
             _xmlrpcURLSuffix = @"http://weberson.blog.51cto.com/xmlrpc.php";
             [self doSelectBlog];
             break;
         case 6:
-            NSLog(@"Sina");
+             [WBSUtils showSuccessMessage:@"Sina博客"];
             _xmlrpcURLPrefix = KOtherBlog;
             _xmlrpcURLSuffix = @"http://upload.move.blog.sina.com.cn/blog_rebuild/blog/xmlrpc.php";
             [self doSelectBlog];
             break;
         case 7: {
-            NSLog(@"JSON API");
+             [WBSUtils showSuccessMessage:@"JSON API"];
             // JSON API 的方式 暂时未修改
             _xmlrpcURLSuffix = @"http://www.webersongao.com/api/";
             NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
-            [def setObject:[NSString stringWithFormat:@"%d", YES] forKey:@"isJSONAPIEnable"];
+            [def setObject:[NSString stringWithFormat:@"%d", YES] forKey:WBSIs_JSONAPI];
             [def synchronize];
             [self doSelectBlog];
             break;
@@ -178,8 +179,8 @@
     }
     NSLog(@"选择了博客：　%@", _xmlrpcURLSuffix);
     NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
-    [def setObject:_xmlrpcURLSuffix forKey:@"xmlrpcURLSuffix"];
-    [def setObject:_xmlrpcURLPrefix forKey:@"xmlrpcURLPrefix"];
+    [def setObject:_xmlrpcURLSuffix forKey:WBSXmlrpcSubffix];
+    [def setObject:_xmlrpcURLPrefix forKey:WBSXmlrpcPrefix];
     [def synchronize];
     
     

@@ -1,12 +1,12 @@
 //
-//  WBSOBObjsViewController.m
+//  WBSBasePostViewController.m
 //  WBSBlog
 //
 //  Created by Weberson on 16/7/20.
 //  Copyright © 2016年 Weberson. All rights reserved.
 //
 
-#import "WBSOBObjsViewController.h"
+#import "WBSBasePostViewController.h"
 #import "WBSUtils.h"
 #import "WBSConfig.h"
 #import "WBSLoginNavViewController.h"
@@ -14,13 +14,13 @@
 #import "TGBlogJsonApi.h"
 #import "AppDelegate.h"
 
-@interface WBSOBObjsViewController ()
+@interface WBSBasePostViewController ()
 
 @property (nonatomic, assign) BOOL refreshInProgress;
 
 @end
 
-@implementation WBSOBObjsViewController
+@implementation WBSBasePostViewController
 
 - (instancetype)init
 {
@@ -56,7 +56,7 @@
     //===================================
     WBSApiInfo *apiInfo = [WBSConfig getAuthoizedApiInfo];
     if(!apiInfo){
-        NSLog(@"登陆超时，请重新登录。");
+        KLog(@"登陆超时，请重新登录。");
         WBSLoginNavViewController *loginNavCtl = [[WBSLoginNavViewController alloc]init];
         WBSLoginViewController *loginCtl =[[WBSLoginViewController alloc]init];
         AppDelegate *app = [UIApplication sharedApplication].delegate;

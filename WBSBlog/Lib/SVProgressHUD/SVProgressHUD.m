@@ -272,7 +272,8 @@ static const CGFloat SVProgressHUDDefaultAnimationDuration = 0.15;
 }
 
 + (void)showImage:(UIImage*)image status:(NSString*)status {
-    NSTimeInterval displayInterval = [self displayDurationForString:status];
+//    NSTimeInterval displayInterval = [self displayDurationForString:status];
+    NSTimeInterval displayInterval = 0.6;  // 写死时间
     [[self sharedView] showImage:image status:status duration:displayInterval];
 }
 

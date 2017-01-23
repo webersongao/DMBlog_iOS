@@ -9,6 +9,7 @@
 #import "WBSSettingsPage.h"
 #import "WBSUtils.h"
 #import "SDImageCache.h"
+#import "WBSMacro.h"
 
 @interface WBSSettingsPage ()<UIAlertViewDelegate>
 
@@ -72,11 +73,11 @@
         NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
         
         if (indexPath.row == 0) {
-            switchview.on = [def objectForKey:@"isShowPage"];
+            switchview.on = [def objectForKey:WBSIs_ShowPage];
         }else if(indexPath.row == 1){
-            switchview.on = [def objectForKey:@"isJSONAPIEnable"];
+            switchview.on = [def objectForKey:WBSIs_JSONAPI];
         }else{
-            switchview.on = [def objectForKey:@"isWordpressOptimization"];
+            switchview.on = [def objectForKey:WBSIs_WP_Optimization];
         }
         
         [switchview addTarget:self action:@selector(updateSwitchAtIndexPath:) forControlEvents:UIControlEventValueChanged];
@@ -136,7 +137,7 @@
     NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
     
     //检测设置依赖
-    if(! [[def objectForKey:@"isJSONAPIEnable"] boolValue] && sender.tag != 1){
+    if(! [[def objectForKey:WBSIs_JSONAPI] boolValue] && sender.tag != 1){
         MBProgressHUD *HUD = [WBSUtils createHUD];
         HUD.mode = MBProgressHUDModeCustomView;
         HUD.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"HUD-none"]];
@@ -146,22 +147,22 @@
     }
     
     if (sender.on) {
-        NSLog(@"on:%ld",sender.tag);
+        KLog(@"on:%ld",sender.tag);
         if (sender.tag == 0) {
-            [def setObject:@NO forKey:@"isShowPage"];
+            [def setObject:@NO forKey:WBSIs_ShowPage];
         }else if(sender.tag == 1){
-            [def setObject:@NO forKey:@"isJSONAPIEnable"];
+            [def setObject:@NO forKey:WBSIs_JSONAPI];
         }else{
-            [def setObject:@NO forKey:@"isWordpressOptimization"];
+            [def setObject:@NO forKey:WBSIs_WP_Optimization];
         }
     } else {
         NSLog(@"off:%ld",sender.tag);
         if (sender.tag == 0) {
-            [def setObject:@YES forKey:@"isShowPage"];
+            [def setObject:@YES forKey:WBSIs_ShowPage];
         }else if(sender.tag == 1){
-            [def setObject:@YES forKey:@"isJSONAPIEnable"];
+            [def setObject:@YES forKey:WBSIs_JSONAPI];
         }else{
-            [def setObject:@YES forKey:@"isWordpressOptimization"];
+            [def setObject:@YES forKey:WBSIs_WP_Optimization];
         }
     }
     

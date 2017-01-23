@@ -29,7 +29,6 @@
 @interface WBSDetailsViewController () <UIWebViewDelegate, UIScrollViewDelegate, UIAlertViewDelegate>
 
 @property (nonatomic, strong) UIWebView *detailsView;
-@property (nonatomic, strong) MBProgressHUD *HUD;
 
 @end
 
@@ -71,8 +70,7 @@
     [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"|[detailsView]|" options:0 metrics:nil views:views]];
     [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[detailsView][bottomBar]" options:NSLayoutFormatAlignAllLeft | NSLayoutFormatAlignAllRight metrics:nil views:views]];
     // 添加等待动画
-    _HUD = [WBSUtils createHUD];
-    _HUD.userInteractionEnabled = NO;
+    [WBSUtils showStatusMessage:nil];
     
     [self fetchDetails:NO];
     
@@ -161,7 +159,7 @@
     if (!flag) {
         NSString *htmlString = postContent;
         [_detailsView loadHTMLString:htmlString baseURL:nil];
-        [_HUD hide:YES afterDelay:1];
+        [WBSUtils dismissHUDWithDelay:1];
     }else{
         
         NSLog(@"fetch details");
@@ -175,15 +173,18 @@
             [_detailsView loadHTMLString:htmlString baseURL:nil];
             //NSLog(@"获取到的数据为：%@",html);
             //隐藏加载状态
-            [_HUD hide:YES afterDelay:1];
+            [WBSUtils dismissHUDWithDelay:1];
         }failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-            NSLog(@"发生错误！%@",error);
-            _HUD.mode = MBProgressHUDModeCustomView;
-            _HUD.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"HUD-error"]];
+            KLog(@"发生错误！%@",error);
+    
             NSString *errorMesage =  [NSString stringWithFormat:@"网络异常，加载详情失败:%@",[error localizedDescription]];
-            _HUD.labelText = errorMesage;
-            NSLog(@"%@",errorMesage);
-            [_HUD hide:YES afterDelay:1];
+            
+            [WBSUtils showErrorMessage:errorMesage];
+            KLog(@"%@",errorMesage);
+        
+            
+        
+    
         }];
         NSOperationQueue *queue = [[NSOperationQueue alloc] init];
         [queue addOperation:operation];
