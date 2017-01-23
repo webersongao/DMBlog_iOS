@@ -18,6 +18,7 @@
 #import "WBSSettingsPage.h"
 #import "AppDelegate.h"
 #import "WBSScanQRCodeViewController.h"
+#import "WBSMacro.h"
 
 @interface WBSSideMenuViewController ()
 
@@ -142,7 +143,7 @@
     switch (indexPath.row) {
         case 0: {
             NSLog(@"博客");
-            WBSPostViewController *postViewCtl = [[WBSPostViewController alloc]initWithPostType:PostTypePost];
+            WBSHomePostViewController *postViewCtl = [[WBSHomePostViewController alloc]initWithPostType:PostTypePost];
             WBSSwipableViewController *blogSVC = [[WBSSwipableViewController alloc] initWithTitle:@"博客" andSubTitles:nil andControllers:@[ postViewCtl]underTabbar:NO];
             
             [self setContentViewController:blogSVC];
@@ -201,13 +202,13 @@
 
 #pragma mark 退出
 //退出
--(void) logout:(id)sender{
+-(void)logout:(id)sender{
     //清空缓存数据
     NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
-    [def setObject:nil forKey:@"baseURL"];
-    [def setObject:nil forKey:@"mw_username"];
-    [def setObject:nil forKey:@"mw_password"];
-    [def setObject:nil forKey:@"generate_auth_cookie"];
+    [def setObject:nil forKey:WBSSiteBaseURL];
+    [def setObject:nil forKey:WBSUserUserName];
+    [def setObject:nil forKey:WBSUserPassWord];
+    [def setObject:nil forKey:WBSSiteAuthCookie];
     [def synchronize];
     
     MBProgressHUD *HUD = [WBSUtils createHUD];

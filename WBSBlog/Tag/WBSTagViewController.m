@@ -13,6 +13,7 @@
 #import "WBSConfig.h"
 #import "MBProgressHUD.h"
 #import "WBSErrorViewController.h"
+#import "WBSMacro.h"
 
 @interface WBSTagViewController ()
 @property (strong, nonatomic) WWTagsCloudView* tagCloud;
@@ -75,7 +76,7 @@
     NSInteger tagID = [self getIDByTag:_tags[tagIndex]];
     NSLog(@"%ld",tagID);
     
-    WBSPostViewController *postCtl = [[WBSPostViewController alloc]initWithPostType:PostTypePost];
+    WBSHomePostViewController *postCtl = [[WBSHomePostViewController alloc]initWithPostType:PostTypePost];
     postCtl.title = [NSString stringWithFormat:@"当前标签:%@",_tags[tagIndex]];
     //设置结果类型为标签文章，并且设置标签ID
     postCtl.postResultType = PostResultTypeTag;
@@ -130,7 +131,7 @@
 -(void)fetchTags{
     
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    NSString *baseURL = [userDefaults objectForKey:@"baseURL"];
+    NSString *baseURL = [userDefaults objectForKey:WBSSiteBaseURL];
     
     NSString *requestURL = [NSString stringWithFormat:@"%@/get_tag_index/",baseURL];
     

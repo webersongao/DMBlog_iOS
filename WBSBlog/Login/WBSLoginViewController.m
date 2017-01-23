@@ -16,6 +16,7 @@
 #import "TTTAttributedLabel.h"
 #import "WBSSelectBlogViewController.h"
 #import "WBSConfig.h"
+#import "WBSNetRequest.h"
 
 
 #define KbaseUrl @"www.swiftartisan.com"
@@ -50,10 +51,6 @@
  *  登陆按钮
  */
 @property (weak, nonatomic) IBOutlet UIButton *loginButton;
-/**
- *  提示框
- */
-@property(nonatomic, strong) MBProgressHUD *HUD;
 /**
  *  点击温馨提示之后的  提示信息
  */
@@ -201,174 +198,62 @@
 #pragma mark 登录相关
 - (IBAction)loginButtonDidClick:(UIButton *)sender {
     
-    NSString *baseURL                                                                          = [_baseURLField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-    NSString *username                                                                         = [_usernameField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-    NSString *password                                                                         = [_passwordField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-    
     // 临时添加默认账号
     _baseURLField.text = KbaseUrl;
     _usernameField.text = KuserName;
     _passwordField.text = KpassWord;
     
-    //登陆提示
-//    _HUD = [WBSUtils createHUD];
+    NSString *baseURL = [_baseURLField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    NSString *username = [_usernameField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    NSString *password = [_passwordField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     
     //登陆验证
-//    if ([baseURL isEqualToString:@""]) {
-//        _HUD.labelText = @"博客API地址不能为空！";
-//        _HUD.mode = MBProgressHUDModeCustomView;
-//        _HUD.userInteractionEnabled = NO;
-//        //隐藏提示
-//        [_HUD hide:YES afterDelay:1];
-//        return;
-//    }
-//    
-//    if ([baseURL hasPrefix:@"http"]) {
-//        _HUD.labelText = @"博客地址勿带http";
-//        _HUD.mode = MBProgressHUDModeCustomView;
-//        _HUD.userInteractionEnabled = NO;
-//        //隐藏提示
-//        [_HUD hide:YES afterDelay:1];
-//        return;
-//    }
-//    
-//    if ([username isEqualToString:@""]) {
-//        _HUD.labelText = @"用户名不能为空！";
-//        _HUD.mode = MBProgressHUDModeCustomView;
-//        _HUD.userInteractionEnabled = NO;
-//        //隐藏提示
-//        [_HUD hide:YES afterDelay:1];
-//        return;
-//    }
-//    
-//    if (username.length < 5 || username.length > 20) {
-//        _HUD.labelText = @"用户名只能在5-20之间！";
-//        _HUD.mode = MBProgressHUDModeCustomView;
-//        _HUD.userInteractionEnabled = NO;
-//        //隐藏提示
-//        [_HUD hide:YES afterDelay:1];
-//        return;
-//    }
-//    
-//    if ([password isEqualToString:@""]) {
-//        _HUD.labelText = @"密码不能为空！";
-//        _HUD.mode = MBProgressHUDModeCustomView;
-//        _HUD.userInteractionEnabled = NO;
-//        //隐藏提示
-//        [_HUD hide:YES afterDelay:1];
-//        return;
-//    }
-//    
-//    if (password.length < 5 || password.length > 20) {
-//        _HUD.labelText = @"密码只能在5-20之间！";
-//        _HUD.mode = MBProgressHUDModeCustomView;
-//        _HUD.userInteractionEnabled = NO;
-//        //隐藏提示
-//        [_HUD hide:YES afterDelay:1];
-//        return;
-//    }
+    if ([baseURL isEqualToString:@""]) {
+        [WBSUtils showErrorMessage:@"博客API地址不能为空！"];
+        return;
+    }
     
-//    _HUD.labelText = @"正在登录";
-//    _HUD.userInteractionEnabled = NO;
+    if ([baseURL hasPrefix:@"http"]) {
+        [WBSUtils showErrorMessage:@"博客地址勿带http"];
+        return;
+    }
     
-     [self loginWithJOSNAPI:baseURL username:username password:password];
+    if ([username isEqualToString:@""]) {
+        [WBSUtils showErrorMessage:@"用户名不能为空！"];
+        
+        return;
+    }
     
-//    if (_apiTypeSwitch.on) {
-//        KLog(@"JSON API");
-//        [self loginWithJOSNAPI:baseURL username:username password:password];
-//    } else {
-//        KLog(@"XMLRPC API");
-//        //对baseUrl进行包装  暂时不支持Https
-//        baseURL = [NSString stringWithFormat:@"http://%@/%@",baseURL,self.footerApi];
-//        KLog(@"最后的地址是%@",baseURL);
-//        [self loginWithXmlrpc:baseURL username:username password:password];
-//    }
-}
-
-/**
- *  使用XMLRPC API登陆
- *
- *  @param baseURL  baseURL
- *  @param username username
- *  @param pasword  pasword
- */
-- (void)loginWithXmlrpc:(NSString *)baseURL username:(NSString *)username password:(NSString *)pasword {
-    //登录
-    KLog(@"current user Info :===%@---%@---%@==", baseURL, username, pasword);
-    [TGMetaWeblogAuthApi signInWithURL:baseURL
-                              username:username
-                              password:pasword
-                               success:^(NSURL *xmlrpcURL) {
-                                   KLog(@"登陆成功----success----:%@", xmlrpcURL);
-                                   NSUserDefaults *def                                                                        = [NSUserDefaults standardUserDefaults];
-                                   [def setObject:[xmlrpcURL absoluteString] forKey:@"baseURL"];
-                                   [def setObject:self.usernameField.text forKey:@"mw_username"];
-                                   [def setObject:self.passwordField.text forKey:@"mw_password"];
-                                   [def synchronize];
-                                   //隐藏提示
-                                   [_HUD hide:YES afterDelay:1];
-                                   //登录成功，跳转到主界面
-                                   [WBSUtils goToMainViewController];
-                               }
-                               failure:^(NSError *error) {
-                                   _HUD.mode                                                                                  = MBProgressHUDModeCustomView;
-                                   _HUD.customView                                                                            = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"HUD-error"]];
-                                   _HUD.labelText                                                                             = [NSString stringWithFormat:@"错误：%@", [error localizedDescription]];
-                                   [_HUD hide:YES afterDelay:1];
-                               }];
-}
-
-/**
- *  使用JSON API登陆
- *
- *  @param baseURL  baseURL
- *  @param username username
- *  @param password password
- */
-- (void)loginWithJOSNAPI:(NSString *)baseURL username:(NSString *)username password:(NSString *)password {
+    if (username.length < 5 || username.length > 20) {
+        
+        [WBSUtils showErrorMessage:@"用户名只能在5-20之间！"];
+        return;
+    }
     
-    NSString *requestURL                                                                       = [NSString stringWithFormat:@"%@/user/generate_auth_cookie/?username=%@&password=%@", baseURL, username, password];
+    if ([password isEqualToString:@""]) {
+        [WBSUtils showErrorMessage:@"密码不能为空!"];
+        return;
+    }
     
-    KLog(@"----jsonApi登陆请求地址：login request URL:%@", requestURL);
-    //获取作者数据
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    [manager GET:requestURL parameters:nil
-         success:^(AFHTTPRequestOperation *operation, NSDictionary *result) {
-             dispatch_async(dispatch_get_main_queue(), ^{
-                 //刷新数据
-                 //KLog(@"JSON: %@", responseObject);
-                 KLog(@"status:%@", [result objectForKey:@"status"]);
-                 NSString *status = [result objectForKey:@"status"];
-                 if ([status isEqualToString:@"ok"]) {
-                     NSString *cookie                                                                           = result[@"cookie"];
-                     
-                     NSUserDefaults *userDefaults                                                               = [NSUserDefaults standardUserDefaults];
-                     [userDefaults setObject:cookie forKey:@"generate_auth_cookie"];
-                     [userDefaults synchronize];
-                     
-                     KLog(@"登陆成功-JSON API login ok");
-                     
-                     [_HUD hide:YES afterDelay:1];
-                     
-                     //登陆成功，跳转到主界面
-                     [WBSUtils goToMainViewController];
-                 } else {
-                     KLog(@"登录失败-login error");
-                     _HUD.mode                                                                                  = MBProgressHUDModeCustomView;
-                     _HUD.customView                                                                            = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"HUD-error"]];
-                     _HUD.labelText                                                                             = [NSString stringWithFormat:@"错误：%@", result[@"error"]];
-                     [_HUD hide:YES afterDelay:1];
-                 }
-             });
-         }
-         failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-             KLog(@"Error login with json api: %@", [error localizedDescription]);
-             _HUD.mode = MBProgressHUDModeCustomView;
-             _HUD.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"HUD-error"]];
-             _HUD.labelText = [NSString stringWithFormat:@"错误：%@", [error localizedDescription]];
-             [_HUD hide:YES afterDelay:1];
-             
-         }];
+    if (password.length < 5 || password.length > 20) {
+        [WBSUtils showErrorMessage:@"密码只能在5-20之间!"];
+        return;
+    }
+    
+    [WBSUtils showStatusMessage:@"登录中..."];
+    
+    BOOL isLoginSuccess = NO;
+    if (_apiTypeSwitch.on) {
+        KLog(@"JSON API");
+       isLoginSuccess =  [WBSNetRequest postToLoginWithSiteUrlStr:baseURL userNameStr:username PassWordStr:password isJsonAPi:YES];
+    } else {
+        KLog(@"XMLRPC API");
+      isLoginSuccess = [WBSNetRequest postToLoginWithSiteUrlStr:baseURL userNameStr:username PassWordStr:password isJsonAPi:NO];
+        
+    }
+    if (isLoginSuccess) {
+        [WBSUtils goToMainViewController];
+    }
 }
 
 #pragma mark - 超链接代理

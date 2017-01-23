@@ -65,7 +65,7 @@
 //创建博客视图控制器
 -(WBSSwipableViewController *)createBlogViewController:(BOOL)isSearch{
     //全部
-    WBSPostViewController *postViewCtl = [[WBSPostViewController alloc]initWithPostType:PostTypePost];
+    WBSHomePostViewController *postViewCtl = [[WBSHomePostViewController alloc]initWithPostType:PostTypePost];
     //是否搜索
     if (isSearch) {
         postViewCtl.isSearch = YES;
@@ -76,7 +76,7 @@
     //JSON API才有页面，搜索没有页面
     if ([WBSConfig isJSONAPIEnable]&& !isSearch && [WBSConfig isShowPage]) {
         //最新
-        UIViewController *pageViewCtl = [[WBSPostViewController alloc]initWithPostType:PostTypePage];
+        UIViewController *pageViewCtl = [[WBSHomePostViewController alloc]initWithPostType:PostTypePage];
         postViewCtl.postResultType = PostResultTypeRecent;
         
         //博客

@@ -11,6 +11,7 @@
 #import "WBSUtils.h"
 #import "AFNetworking.h"
 #import "WBSCategoryCell.h"
+#import "WBSMacro.h"
 
 static NSString *kCategoryCellID = @"categoryCell";
 
@@ -74,7 +75,7 @@ static NSString *kCategoryCellID = @"categoryCell";
 -(void)fetchCategories{
     
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    NSString *baseURL = [userDefaults objectForKey:@"baseURL"];
+    NSString *baseURL = [userDefaults objectForKey:WBSSiteBaseURL];
 
     NSString *requestURL = [NSString stringWithFormat:@"%@/get_category_index/",baseURL];
     

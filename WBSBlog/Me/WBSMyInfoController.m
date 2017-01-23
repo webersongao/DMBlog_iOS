@@ -15,6 +15,7 @@
 #import "UIImageView+Util.h"
 #import "TGBlogJsonApi.h"
 #import "WBSErrorViewController.h"
+#import "WBSMacro.h"
 
 
 static NSString *kMyInfoCellID = @"myInfoCell";
@@ -195,7 +196,7 @@ static NSString *kMyInfoCellID = @"myInfoCell";
     
     NSLog(@"fetching autoer data...");
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    NSString *baseURL = [userDefaults objectForKey:@"baseURL"];
+    NSString *baseURL = [userDefaults objectForKey:WBSSiteBaseURL];
 
     NSString *requestURL = [NSString stringWithFormat:@"%@/get_author_index/",baseURL];
     

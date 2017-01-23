@@ -1,5 +1,5 @@
 //
-//  WBSBlogsViewController.m
+//  WBSHomePostViewController.m
 //  WBSBlog
 //
 //  Created by Weberson on 16/7/20.
@@ -18,19 +18,20 @@
 #import "WBSErrorViewController.h"
 #import "WBSLoginViewController.h"
 #import "RESideMenu.h"
+#import "WBSMacro.h"
 
 static NSString *kPostCellID = @"PostCell";//CellID
 const int MAX_DESCRIPTION_LENGTH = 60;//描述最多字数
 const int MAX_PAGE_SIZE = 10;//每页显示数目
 //super.page //当前页码（由于MetaWeblog API不支持分页，因此，此参数仅仅JSON API有用）
 
-@interface WBSPostViewController ()<UISearchResultsUpdating,DropdownMenuDelegate, TitleMenuDelegate>{
+@interface WBSHomePostViewController ()<UISearchResultsUpdating,DropdownMenuDelegate, TitleMenuDelegate>{
     AFHTTPRequestOperationManager *manager;
 }
 
 @end
 
-@implementation WBSPostViewController
+@implementation WBSHomePostViewController
 
 /**
  *  根据文章类型初始化
@@ -386,10 +387,10 @@ const int MAX_PAGE_SIZE = 10;//每页显示数目
         TGBlogJsonApi *jsonAPI = self.api;
         
         NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-        NSString *baseURL = [userDefaults objectForKey:@"baseURL"];
+        NSString *baseURL = [userDefaults objectForKey:WBSSiteBaseURL];
         
         //从plist读取DigPostCount
-        NSString *path = [[NSBundle mainBundle]pathForResource:@"WBSBlog" ofType:@"plist"];
+        NSString *path = [[NSBundle mainBundle]pathForResource:@"WBSBlogSetting" ofType:@"plist"];
         NSDictionary *settings = [NSDictionary dictionaryWithContentsOfFile:path];
         NSInteger digPostCount = [[settings objectForKey:@"DigPostCount"] integerValue];
         //由于置顶文章会影响分页数目，因此需要把他排除
@@ -397,13 +398,13 @@ const int MAX_PAGE_SIZE = 10;//每页显示数目
         NSString *requestURL = [NSString stringWithFormat:@"%@/get_recent_posts/?page=%lu&count=%d&post_type=%@",baseURL,super.page+1,MAX_PAGE_SIZE,(_postType == PostTypePost?@"post":@"page")];
         [jsonAPI parseURL:requestURL success:^(NSArray *posts, NSInteger postsCount) {
             
-            NSLog(@"requestURL:%@",requestURL);
+            KLog(@"requestURL:%@",requestURL);
             
-            NSLog(@"JSON API Fetched %ld posts", postsCount);
+            KLog(@"JSON API Fetched %ld posts", postsCount);
             if (self.page == 0) {
                 postsCount -= digPostCount;
             }
-            NSLog(@"NO dig posts %ld", (long)postsCount);
+            KLog(@"NO dig posts %ld", (long)postsCount);
             
             //处理刷新
             if (refresh) {
@@ -484,22 +485,16 @@ const int MAX_PAGE_SIZE = 10;//每页显示数目
                                  
                                  [self.tableView reloadData];
                                  //显示提示
-                                 MBProgressHUD *HUD = [WBSUtils createHUD];
-                                 HUD.detailsLabelText = @"加载成功";
-                                 [HUD hide:YES afterDelay:1];
+                                 [WBSUtils showSuccessMessage:@"加载成功"];
                              });
                              
                          }
                          failure:^(NSError *error) {
-                             NSLog(@"Error fetching posts: %@", [error localizedDescription]);
+                             KLog(@"Error fetching posts: %@", [error localizedDescription]);
                              
-                             NSLog(@"错误信息是：---%@----",error);
-                             MBProgressHUD *HUD = [WBSUtils createHUD];
-                             HUD.mode = MBProgressHUDModeCustomView;
-                             HUD.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"HUD-error"]];
-                             HUD.detailsLabelText = [NSString stringWithFormat:@"%@", error.userInfo[NSLocalizedDescriptionKey]];
+                             KLog(@"错误信息是：---%@----",error);
                              
-                             [HUD hide:YES afterDelay:1];
+                             [WBSUtils showErrorMessage:[NSString stringWithFormat:@"%@", error.userInfo[NSLocalizedDescriptionKey]]];
                              
                              super.lastCell.status = LastCellStatusError;
                              if (self.refreshControl.refreshing) {
@@ -519,8 +514,7 @@ const int MAX_PAGE_SIZE = 10;//每页显示数目
     self.apiType = APITypeJSON;
     
     //创建加载中
-    MBProgressHUD *HUD = [WBSUtils createHUD];
-    HUD.detailsLabelText = @"加载中";
+    [WBSUtils showStatusMessage:@"加载中"];
     
     TGBlogJsonApi *jsonAPI = self.api;
     if ([searchString isEqualToString:@""]) {
@@ -528,7 +522,7 @@ const int MAX_PAGE_SIZE = 10;//每页显示数目
     }
     
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    NSString *baseURL = [userDefaults objectForKey:@"baseURL"];
+    NSString *baseURL = [userDefaults objectForKey:WBSSiteBaseURL];
     
     [jsonAPI parseURL:[NSString stringWithFormat:@"%@/get_search_results/?search=%@&page=%lu&count=%d&post_type=post",baseURL,searchString,super.page+1,MAX_PAGE_SIZE]
               success:^(NSArray *postsArray, NSInteger postsCount) {
@@ -567,11 +561,11 @@ const int MAX_PAGE_SIZE = 10;//每页显示数目
                       [self.tableView reloadData];
                       
                       //取消加载中
-                      [HUD hide:YES afterDelay:1];
+                      [WBSUtils dismissHUD];
                   });
               }failure:^(NSError *error) {
                   NSLog(@"Error: %@", error);
-                  [HUD hide:YES afterDelay:1];
+                  [WBSUtils dismissHUD];
               }];
     
 }
@@ -588,11 +582,10 @@ const int MAX_PAGE_SIZE = 10;//每页显示数目
     NSLog(@"current categoryId: %lu",(unsigned long)categortId);
     
     //创建加载中
-    MBProgressHUD *HUD = [WBSUtils createHUD];
-    HUD.detailsLabelText = @"加载中";
+    [WBSUtils showStatusMessage:@"加载中"];
     
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    NSString *baseURL = [userDefaults objectForKey:@"baseURL"];
+    NSString *baseURL = [userDefaults objectForKey:WBSSiteBaseURL];
     
     NSString *requestURL = [NSString stringWithFormat:@"%@/get_category_posts/?id=%lu&page=%lu&count=%d&post_type=post",baseURL,categortId,super.page+1,MAX_PAGE_SIZE];
     
@@ -643,7 +636,7 @@ const int MAX_PAGE_SIZE = 10;//每页显示数目
                 
                 [self.tableView reloadData];
                 
-                [HUD hide:YES afterDelay:1];
+                [WBSUtils dismissHUD];
             }else{
                 NSLog(@"category posts get error");
             }
@@ -677,11 +670,10 @@ const int MAX_PAGE_SIZE = 10;//每页显示数目
     NSLog(@"current tagId: %lu",(unsigned long)tagId);
     
     //创建加载中
-    MBProgressHUD *HUD = [WBSUtils createHUD];
-    HUD.detailsLabelText = @"加载中";
+    [WBSUtils showStatusMessage:@"加载中"];
     
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    NSString *baseURL = [userDefaults objectForKey:@"baseURL"];
+    NSString *baseURL = [userDefaults objectForKey:WBSSiteBaseURL];
     
     NSString *requestURL = [NSString stringWithFormat:@"%@/get_tag_posts/?id=%lu&page=%lu&count=%d&post_type=post",baseURL,tagId,super.page+1,MAX_PAGE_SIZE];
     
@@ -704,7 +696,6 @@ const int MAX_PAGE_SIZE = 10;//每页显示数目
                     }
                 }
                 //获取数据
-                //NSDictionary *dictionaryPosts = [result objectForKey:@"category"];
                 NSArray *posts = [result objectForKey:@"posts"];
                 self.posts = posts;
                 
@@ -732,7 +723,7 @@ const int MAX_PAGE_SIZE = 10;//每页显示数目
                 
                 [self.tableView reloadData];
                 
-                [HUD hide:YES afterDelay:1];
+                [WBSUtils dismissHUD];
             }else{
                 NSLog(@"tag posts get error");
             }
@@ -963,9 +954,9 @@ const int MAX_PAGE_SIZE = 10;//每页显示数目
 #pragma mark - TitleMenuDelegate
 -(void)selectAtIndexPathAndID:(NSIndexPath *)indexPath ID:(NSInteger)ID title:(NSString *)title
 {
-    NSLog(@"indexPath = %ld", indexPath.row);
-    NSLog(@"当前选择了%@", title);
-    NSLog(@"当前分类ID %ld",ID);
+    KLog(@"indexPath = %ld", indexPath.row);
+    KLog(@"当前选择了%@", title);
+    KLog(@"当前分类ID %ld",ID);
     
     //修改导航栏的标题
     [_titleButton setTitle:title forState:UIControlStateNormal];
