@@ -2,7 +2,7 @@
 
 著名开源内容管理系统Wordpress的移动iOS版（非官方），目前仅支持Wordpress，后续将开放支Zblog
 
-WBSBlog is an open source *Wordpress* client for iOS, released under the Apache License V2. The author stole the idea from [Terwer](https://github.com/terwer) ’s [OneBlogiOS](https://github.com/terwer/OneblogiOS) , so that people can make crappy clones.
+WBSBlog is an open source *Wordpress* client for iOS, released under the Apache License V2. The author stole the idea from [Terwer](https://github.com/terwer) ’s [OneBlog](https://github.com/terwer/OneblogiOS) , so that people can make crappy clones.
 
 ## 目录简介
 * API ——— 包含API和API返回数据的封装模型
@@ -86,9 +86,9 @@ v0.1 2016-07-19
 
 1、[OneBlogiOS](https://github.com/terwer/OneblogiOS)
 
-
 2、[WP_REST_API_Documentation](http://v2.wp-api.org)
 
 3、[WP REST API](https://github.com/webersongao/WBSBlog/blob/master/OtherResource/wordpress-json-api-http-sample-data.md)
+4、[iUnlocker](https://github.com/iMuFeng/iUnlocker)
 
 

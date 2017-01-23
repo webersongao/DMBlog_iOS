@@ -21,6 +21,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="www.jack_blog.com" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ouF-z1-9cy">
                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                     <textInputTraits key="textInputTraits"/>
@@ -32,6 +33,7 @@
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="是否启用JSON API" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4zA-a5-BhN">
+
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="2PX-wQ-WT1"/>
                         <constraint firstAttribute="height" constant="30" id="J89-5O-P4U"/>
@@ -45,7 +47,9 @@
                         </mask>
                     </variation>
                 </label>
+
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rNI-CL-fto">
+
                     <color key="backgroundColor" red="0.32549019607843138" green="0.53725490196078429" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="35" id="Yxa-4t-lNs"/>
@@ -74,7 +78,9 @@
                         <constraint firstAttribute="width" constant="20" id="tkA-5d-qo3"/>
                     </constraints>
                 </imageView>
+
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CbH-J7-ulA">
+
                     <constraints>
                         <constraint firstAttribute="width" constant="35" id="tMG-PA-teZ"/>
                         <constraint firstAttribute="height" constant="25" id="vq4-6U-yom"/>
@@ -86,38 +92,47 @@
                         <action selector="apiTypeButtonDidClick:" destination="-1" eventType="touchUpInside" id="RL3-f9-wn3"/>
                     </connections>
                 </button>
+
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Login_Logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="5X9-Y4-d0d">
                     <constraints>
                         <constraint firstAttribute="width" constant="60" id="ZJE-My-uGB"/>
                         <constraint firstAttribute="height" constant="60" id="lHF-s4-YAb"/>
                     </constraints>
                 </imageView>
+
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7DQ-sJ-S3j">
+
                     <constraints>
                         <constraint firstAttribute="height" constant="20" id="IUO-6R-FVP"/>
                         <constraint firstAttribute="width" constant="32" id="PXV-mh-XnC"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                     <state key="normal" title="提示:">
+
                         <color key="titleColor" red="0.35172888851264189" green="0.6025560943949948" blue="0.84540027976651189" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
                     <connections>
                         <action selector="tipsButtonDidClick:" destination="-1" eventType="touchUpInside" id="fL9-qT-94W"/>
                     </connections>
                 </button>
+
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="默认使用XMLRPC接口，可自由切换到JSON API接口" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sqk-js-kC9">
                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="UserName" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="B0Y-uJ-x7q">
+
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="6et-fy-Jnn"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
+
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="PassWord" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QqO-VN-AEe">
+
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="nbF-Zc-mN6"/>
                         <constraint firstAttribute="height" constant="30" id="o7d-0T-Y6E"/>

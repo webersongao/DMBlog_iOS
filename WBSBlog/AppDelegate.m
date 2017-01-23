@@ -19,7 +19,6 @@
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
     
     //初始化程序入口，设置登录界面为首页
     WBSLoginViewController *loginController = [[WBSLoginViewController alloc]initWithNibName:@"WBSLogin" bundle:nil];
