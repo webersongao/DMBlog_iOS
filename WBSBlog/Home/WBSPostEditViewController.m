@@ -103,7 +103,7 @@
  *  预览
  */
 -(void)preview{
-    NSLog(@"文章预览。");
+    KLog(@"文章预览。");
     WBSPostDetailViewController *detailsViewController = [[WBSPostDetailViewController alloc] initWithPost:_post];
     [self.navigationController pushViewController:detailsViewController animated:YES];
 }
@@ -111,10 +111,10 @@
 -(void)publish{
     //修改文章
     if (self.post) {
-        NSLog(@"正在修改文章...");
+        KLog(@"正在修改文章...");
     }
     else{
-        NSLog(@"正在发布文章...");
+        KLog(@"正在发布文章...");
     }
 }
 

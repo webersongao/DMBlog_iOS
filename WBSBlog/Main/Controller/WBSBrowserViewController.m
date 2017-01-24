@@ -8,7 +8,6 @@
 
 #import "WBSBrowserViewController.h"
 #import "AFNetworking.h"
-#import "WBSUtils.h"
 
 @interface WBSBrowserViewController ()<UIWebViewDelegate, UIScrollViewDelegate, UIAlertViewDelegate>
 
@@ -80,7 +79,7 @@
     [confirmCtl addAction:yesAction];
     [confirmCtl addAction:noAction];
     [self presentViewController:confirmCtl animated:YES completion:nil];
-    NSLog(@"分享：%@",_url);
+    KLog(@"分享：%@",_url);
 }
 
 
@@ -114,7 +113,7 @@
  */
 - (void)fetchDetails
 {
-    NSLog(@"fetch details");
+    KLog(@"fetch details");
     NSURLRequest *request =[NSURLRequest requestWithURL:_url];
     [_detailsView loadRequest:request];
 }

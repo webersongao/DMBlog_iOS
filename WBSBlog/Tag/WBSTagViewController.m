@@ -7,13 +7,9 @@
 //
 
 #import "WBSTagViewController.h"
-#import "WBSUtils.h"
 #import "AFNetworking.h"
 #import "WBSHomePostViewController.h"
-#import "WBSConfig.h"
-#import "MBProgressHUD.h"
 #import "WBSErrorViewController.h"
-#import "WBSMacro.h"
 
 @interface WBSTagViewController ()
 @property (strong, nonatomic) WWTagsCloudView* tagCloud;
@@ -52,7 +48,7 @@
     }
 
     CGRect tagFrame = _tagCloud.frame;
-    NSLog(@"%g", tagFrame.origin.y);
+    KLog(@"%g", tagFrame.origin.y);
     //修复返回时错位问题
     if (tagFrame.origin.y == 20) {
         tagFrame.origin.y -= 60;
@@ -74,7 +70,7 @@
 -(void)tagClickAtIndex:(NSInteger)tagIndex
 {
     NSInteger tagID = [self getIDByTag:_tags[tagIndex]];
-    NSLog(@"%ld",tagID);
+    KLog(@"%ld",tagID);
     
     WBSHomePostViewController *postCtl = [[WBSHomePostViewController alloc]initWithPostType:PostTypePost];
     postCtl.title = [NSString stringWithFormat:@"当前标签:%@",_tags[tagIndex]];
@@ -136,17 +132,16 @@
     NSString *requestURL = [NSString stringWithFormat:@"%@/get_tag_index/",baseURL];
     
     //创建加载中
-    MBProgressHUD *HUD = [WBSUtils createHUD];
-    HUD.detailsLabelText = @"标签加载中...";
     
-    NSLog(@"category request URL:%@",requestURL);
+    [WBSUtils showStatusMessage:@"标签加载中..."];
+    KLog(@"category request URL:%@",requestURL);
     //获取作者数据
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     [manager GET:requestURL parameters:nil success:^(AFHTTPRequestOperation *operation, NSDictionary *result) {
         dispatch_async(dispatch_get_main_queue(), ^{
             //刷新数据
-            //NSLog(@"JSON: %@", responseObject);
-            NSLog(@"status:%@",[result objectForKey:@"status"]);
+            //KLog(@"JSON: %@", responseObject);
+            KLog(@"status:%@",[result objectForKey:@"status"]);
             NSString *status = [result objectForKey:@"status"];
             if ([status isEqualToString:@"ok"]) {
                 //获取数据
@@ -163,29 +158,25 @@
                         return NSOrderedSame;
                 }];
                 
-                NSLog(@"tags get ok :%lu",(unsigned long)_sortedTags.count);
+                KLog(@"tags get ok :%lu",(unsigned long)_sortedTags.count);
                 _tags = [NSMutableArray array];
                 for (id tempTag in _sortedTags) {
-                    NSLog(@"%@",[tempTag valueForKey:@"title"]);
+                    KLog(@"%@",[tempTag valueForKey:@"title"]);
                     [_tags addObject:[tempTag valueForKey:@"title"]];
                 }
                 //生成标签
                 [self drawTags];
                 
                 //取消加载中
-                [HUD hide:YES afterDelay:1];
+                [WBSUtils dismissHUD];
             }else{
-                NSLog(@"tags get error");
+                KLog(@"tags get error");
             }
         });
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"Error fetching authors: %@", [error localizedDescription]);
-        MBProgressHUD *HUD = [WBSUtils createHUD];
-        HUD.mode = MBProgressHUDModeCustomView;
-        HUD.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"HUD-error"]];
-        HUD.detailsLabelText = [NSString stringWithFormat:@"%@", error.userInfo[NSLocalizedDescriptionKey]];
+        [WBSUtils showErrorMessage:[NSString stringWithFormat:@"%@", error.userInfo[NSLocalizedDescriptionKey]]];
+        KLog(@"Error fetching authors: %@", [error localizedDescription]);
         
-        [HUD hide:YES afterDelay:1];
     }];
 }
 

@@ -11,7 +11,6 @@
 #import "AFNetworking.h"
 #import "SAMKeychain.h"
 #import "SVProgressHUD.h"
-#import "WBSUtils.h"
 
 @interface WBSQRCodeOauthViewController ()
 
@@ -108,11 +107,11 @@
           success:^(NSURLSessionTask *task, id res) {
               [SVProgressHUD showSuccessWithStatus:@"授权成功"];
               [self toRootViewController];
-              NSLog(@"response:%@", res);
+              KLog(@"response:%@", res);
           }
           failure:^(NSURLSessionTask *task, NSError *error) {
               [SVProgressHUD showErrorWithStatus:@"授权失败"];
-              NSLog(@"error:%@", error);
+              KLog(@"error:%@", error);
           }];
 }
 

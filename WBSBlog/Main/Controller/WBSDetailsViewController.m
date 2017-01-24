@@ -7,9 +7,7 @@
 //
 
 #import "WBSDetailsViewController.h"
-#import "WBSUtils.h"
 #import "AFNetworking.h"
-#import "WBSConfig.h"
 #import "TGBlogJsonApi.h"
 
 #define HTML_STYLE @"<style>\
@@ -114,7 +112,7 @@
  *  刷新
  */
 - (void)refresh{
-    NSLog(@"refreshing...");
+    KLog(@"refreshing...");
     [self fetchDetails:YES];
 }
 
@@ -150,19 +148,19 @@
         categroies = [post objectForKey:@"categories"];
     }
     
-    NSLog(@"post url:%@",url);
+    KLog(@"post url:%@",url);
     NSString *authorStr = [NSString stringWithFormat:@"<a href='%@'>%@</a> 发布于 %@", url,author, [WBSUtils intervalSinceNow:dateCreated]];
     
     NSString *postContent = [NSString stringWithFormat:@"<body style='background-color:#EBEBF3'>%@<div id='WBSBlog_title'>%@</div><div id='WBSBlog_outline'>%@</div><hr/><div id='WBSBlog_body'>%@</div>%@</body>", HTML_STYLE, title, authorStr, [WBSUtils markdownToHtml:content], HTML_BOTTOM];
     
-    NSLog(@"loading details");
+    KLog(@"loading details");
     if (!flag) {
         NSString *htmlString = postContent;
         [_detailsView loadHTMLString:htmlString baseURL:nil];
         [WBSUtils dismissHUDWithDelay:1];
     }else{
         
-        NSLog(@"fetch details");
+        KLog(@"fetch details");
         NSString *str=[NSString stringWithFormat:@"%@",[_result objectForKey:@"link"]];
         NSURL *url = [NSURL URLWithString:[str stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
         NSURLRequest *request = [NSURLRequest requestWithURL:url];
@@ -171,7 +169,7 @@
             NSString *responseHtml = operation.responseString;
             NSString *htmlString = [WBSUtils markdownToHtml:responseHtml];
             [_detailsView loadHTMLString:htmlString baseURL:nil];
-            //NSLog(@"获取到的数据为：%@",html);
+            //KLog(@"获取到的数据为：%@",html);
             //隐藏加载状态
             [WBSUtils dismissHUDWithDelay:1];
         }failure:^(AFHTTPRequestOperation *operation, NSError *error) {

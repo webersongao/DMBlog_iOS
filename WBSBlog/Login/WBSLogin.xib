@@ -84,7 +84,7 @@
                     </constraints>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CbH-J7-ulA">
-                    <rect key="frame" x="315" y="322.5" width="35" height="25"/>
+                    <rect key="frame" x="315" y="323" width="35" height="25"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="35" id="tMG-PA-teZ"/>
                         <constraint firstAttribute="height" constant="25" id="vq4-6U-yom"/>
@@ -97,7 +97,7 @@
                     </connections>
                 </button>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Login_Logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="5X9-Y4-d0d">
-                    <rect key="frame" x="157.5" y="90" width="60" height="60"/>
+                    <rect key="frame" x="158" y="90" width="60" height="60"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="60" id="ZJE-My-uGB"/>
                         <constraint firstAttribute="height" constant="60" id="lHF-s4-YAb"/>
@@ -118,7 +118,7 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="默认使用XMLRPC接口，可自由切换到JSON API接口" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sqk-js-kC9">
-                    <rect key="frame" x="62" y="430" width="293" height="14.5"/>
+                    <rect key="frame" x="62" y="430" width="293" height="15"/>
                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
@@ -145,6 +145,20 @@
                         </mask>
                     </variation>
                 </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2zd-IG-8sx">
+                    <rect key="frame" x="143" y="537" width="90" height="30"/>
+                    <color key="backgroundColor" red="0.32549019610000002" green="0.53725490200000003" blue="0.7843137255" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="90" id="W5z-Dt-Rjt"/>
+                        <constraint firstAttribute="height" constant="30" id="dVm-hD-P6o"/>
+                    </constraints>
+                    <state key="normal" title="游客登录">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="guestLogin:" destination="-1" eventType="touchUpInside" id="yxk-DJ-wxv"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -168,11 +182,13 @@
                 <constraint firstItem="QqO-VN-AEe" firstAttribute="centerY" secondItem="jDg-4J-D59" secondAttribute="centerY" id="Srg-zo-Z3D"/>
                 <constraint firstItem="5X9-Y4-d0d" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="90" id="WIz-xd-nmg"/>
                 <constraint firstItem="ouF-z1-9cy" firstAttribute="top" secondItem="5X9-Y4-d0d" secondAttribute="bottom" constant="40" id="ZQt-l7-WWD"/>
+                <constraint firstAttribute="bottom" secondItem="2zd-IG-8sx" secondAttribute="bottom" constant="100" id="a1c-DM-F8f"/>
                 <constraint firstItem="B0Y-uJ-x7q" firstAttribute="leading" secondItem="ouF-z1-9cy" secondAttribute="leading" id="bXk-Gp-9rl"/>
                 <constraint firstItem="5X9-Y4-d0d" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="bfq-V3-qVY"/>
                 <constraint firstAttribute="trailing" secondItem="rNI-CL-fto" secondAttribute="trailing" constant="10" id="blm-1T-ase"/>
                 <constraint firstItem="ouF-z1-9cy" firstAttribute="top" secondItem="Zq5-gr-JrT" secondAttribute="top" id="bw5-Yw-gVV"/>
                 <constraint firstItem="QqO-VN-AEe" firstAttribute="top" secondItem="jDg-4J-D59" secondAttribute="top" id="dUc-EL-4fx"/>
+                <constraint firstItem="2zd-IG-8sx" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="eOZ-ZJ-mBy"/>
                 <constraint firstItem="4zA-a5-BhN" firstAttribute="top" secondItem="QqO-VN-AEe" secondAttribute="bottom" constant="30" id="fZZ-ZT-W9z"/>
                 <constraint firstItem="QqO-VN-AEe" firstAttribute="leading" secondItem="ouF-z1-9cy" secondAttribute="leading" id="hhC-O0-iJ3"/>
                 <constraint firstItem="QmP-0N-MA9" firstAttribute="leading" secondItem="Zq5-gr-JrT" secondAttribute="leading" id="jvf-V4-8vc"/>
@@ -191,19 +207,19 @@
             <nil key="simulatedStatusBarMetrics"/>
             <variation key="default">
                 <mask key="constraints">
+                    <exclude reference="bw5-Yw-gVV"/>
+                    <exclude reference="LUO-hn-6y5"/>
+                    <exclude reference="9Kn-yn-3Ap"/>
+                    <exclude reference="dUc-EL-4fx"/>
+                    <exclude reference="2cf-hB-jWz"/>
                     <exclude reference="HFa-ae-HVc"/>
                     <exclude reference="fZZ-ZT-W9z"/>
                     <exclude reference="vf1-ot-XCN"/>
                     <exclude reference="LLn-3L-Edk"/>
-                    <exclude reference="LUO-hn-6y5"/>
-                    <exclude reference="9Kn-yn-3Ap"/>
-                    <exclude reference="dUc-EL-4fx"/>
                     <exclude reference="IjU-f2-XYs"/>
-                    <exclude reference="2cf-hB-jWz"/>
-                    <exclude reference="bw5-Yw-gVV"/>
                 </mask>
             </variation>
-            <point key="canvasLocation" x="234" y="231"/>
+            <point key="canvasLocation" x="233.5" y="230.5"/>
         </view>
     </objects>
     <resources>

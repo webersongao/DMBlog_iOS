@@ -7,7 +7,7 @@
 //
 
 #import "WBSConfig.h"
-#import "WBSMacro.h"
+
 
 @implementation WBSConfig
 

@@ -60,6 +60,7 @@
 		4EDFD7DA1E35A991006DD1E6 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4EDFD7D31E35A991006DD1E6 /* SVProgressHUD.bundle */; };
 		4EDFD7DB1E35A991006DD1E6 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EDFD7D51E35A991006DD1E6 /* SVProgressHUD.m */; };
 		4EDFD7DC1E35A991006DD1E6 /* SVRadialGradientLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EDFD7D71E35A991006DD1E6 /* SVRadialGradientLayer.m */; };
+		4EDFD7F11E360463006DD1E6 /* UIWindow+KeyWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EDFD7F01E360463006DD1E6 /* UIWindow+KeyWindow.m */; };
 		4EF149D31D3DF61D00D28265 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF149D21D3DF61D00D28265 /* main.m */; };
 		4EF149D61D3DF61D00D28265 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF149D51D3DF61D00D28265 /* AppDelegate.m */; };
 		4EF149DE1D3DF61D00D28265 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4EF149DD1D3DF61D00D28265 /* Assets.xcassets */; };
@@ -79,7 +80,6 @@
 		4EF14F0B1D3E32F700D28265 /* setup.c in Sources */ = {isa = PBXBuildFile; fileRef = 4EF14D2C1D3E32F600D28265 /* setup.c */; };
 		4EF14F0C1D3E32F700D28265 /* tags.c in Sources */ = {isa = PBXBuildFile; fileRef = 4EF14D2D1D3E32F600D28265 /* tags.c */; };
 		4EF14F0D1D3E32F700D28265 /* xml.c in Sources */ = {isa = PBXBuildFile; fileRef = 4EF14D2F1D3E32F600D28265 /* xml.c */; };
-		4EF14F131D3E32F700D28265 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF14D3C1D3E32F600D28265 /* MBProgressHUD.m */; };
 		4EF14F151D3E32F700D28265 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF14D411D3E32F600D28265 /* AFHTTPRequestOperation.m */; };
 		4EF14F161D3E32F700D28265 /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF14D431D3E32F600D28265 /* AFHTTPRequestOperationManager.m */; };
 		4EF14F171D3E32F700D28265 /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF14D451D3E32F600D28265 /* AFHTTPSessionManager.m */; };
@@ -513,6 +513,8 @@
 		4EDFD7D51E35A991006DD1E6 /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
 		4EDFD7D61E35A991006DD1E6 /* SVRadialGradientLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVRadialGradientLayer.h; sourceTree = "<group>"; };
 		4EDFD7D71E35A991006DD1E6 /* SVRadialGradientLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVRadialGradientLayer.m; sourceTree = "<group>"; };
+		4EDFD7EF1E360462006DD1E6 /* UIWindow+KeyWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIWindow+KeyWindow.h"; path = "WBSBlog/Utils/Catagory/UIWindow+KeyWindow.h"; sourceTree = SOURCE_ROOT; };
+		4EDFD7F01E360463006DD1E6 /* UIWindow+KeyWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIWindow+KeyWindow.m"; path = "WBSBlog/Utils/Catagory/UIWindow+KeyWindow.m"; sourceTree = SOURCE_ROOT; };
 		4EF149CE1D3DF61D00D28265 /* WBSBlog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WBSBlog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EF149D21D3DF61D00D28265 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4EF149D41D3DF61D00D28265 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ../AppDelegate.h; sourceTree = "<group>"; };
@@ -546,8 +548,6 @@
 		4EF14D2D1D3E32F600D28265 /* tags.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.objc; fileEncoding = 4; path = tags.c; sourceTree = "<group>"; };
 		4EF14D2E1D3E32F600D28265 /* tags.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tags.h; sourceTree = "<group>"; };
 		4EF14D2F1D3E32F600D28265 /* xml.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.objc; fileEncoding = 4; path = xml.c; sourceTree = "<group>"; };
-		4EF14D3B1D3E32F600D28265 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
-		4EF14D3C1D3E32F600D28265 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		4EF14D401D3E32F600D28265 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
 		4EF14D411D3E32F600D28265 /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperation.m; sourceTree = "<group>"; };
 		4EF14D421D3E32F600D28265 /* AFHTTPRequestOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperationManager.h; sourceTree = "<group>"; };
@@ -1559,7 +1559,6 @@
 			children = (
 				4EDFD78C1E348E98006DD1E6 /* FMDB */,
 				4EF14D191D3E32F600D28265 /* GHMarkdownParser */,
-				4EF14D391D3E32F600D28265 /* MBProgressHUD */,
 				4EF14D3E1D3E32F600D28265 /* AFNetworking */,
 				4EF14D671D3E32F600D28265 /* Reachability */,
 				4EF14D6C1D3E32F600D28265 /* RESideMenu */,
@@ -1707,15 +1706,6 @@
 				4EF38F6B1D430E6B00CE28A4 /* Foundation and Class Additions */,
 			);
 			path = GHMarkdownParser;
-			sourceTree = "<group>";
-		};
-		4EF14D391D3E32F600D28265 /* MBProgressHUD */ = {
-			isa = PBXGroup;
-			children = (
-				4EF14D3B1D3E32F600D28265 /* MBProgressHUD.h */,
-				4EF14D3C1D3E32F600D28265 /* MBProgressHUD.m */,
-			);
-			path = MBProgressHUD;
 			sourceTree = "<group>";
 		};
 		4EF14D3E1D3E32F600D28265 /* AFNetworking */ = {
@@ -2347,6 +2337,8 @@
 				4EF1507F1D3E37C500D28265 /* UIView+Util.m */,
 				4EF150801D3E37C500D28265 /* UIColor+Util.h */,
 				4EF150811D3E37C500D28265 /* UIColor+Util.m */,
+				4EDFD7EF1E360462006DD1E6 /* UIWindow+KeyWindow.h */,
+				4EDFD7F01E360463006DD1E6 /* UIWindow+KeyWindow.m */,
 			);
 			name = Catagory;
 			path = catagory;
@@ -3235,6 +3227,7 @@
 				4EF14F471D3E32F700D28265 /* GPUImage3x3TextureSamplingFilter.m in Sources */,
 				4E4AD5F41D477536002BFD98 /* WBSOptionButton.m in Sources */,
 				4E4AD5EF1D477536002BFD98 /* WBSErrorViewController.m in Sources */,
+				4EDFD7F11E360463006DD1E6 /* UIWindow+KeyWindow.m in Sources */,
 				4EF150AE1D3E387C00D28265 /* WBSTagViewController.m in Sources */,
 				4EF5E43D1D4230DA002B6AFF /* (null) in Sources */,
 				4EDFD7A01E348F76006DD1E6 /* UserModel.m in Sources */,
@@ -3273,7 +3266,6 @@
 				4EF14F5F1D3E32F700D28265 /* GPUImageCropFilter.m in Sources */,
 				4EDFD7D81E35A991006DD1E6 /* SVIndefiniteAnimatedView.m in Sources */,
 				4EF14FBB1D3E32F700D28265 /* GPUImageSaturationFilter.m in Sources */,
-				4EF14F131D3E32F700D28265 /* MBProgressHUD.m in Sources */,
 				4EF14F771D3E32F700D28265 /* GPUImageGaussianSelectiveBlurFilter.m in Sources */,
 				4EF14F001D3E32F700D28265 /* basename.c in Sources */,
 				4EF14FCC1D3E32F700D28265 /* GPUImageSwirlFilter.m in Sources */,
@@ -3461,7 +3453,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/WBSBlog/Lib",
 				);
-				GCC_PREFIX_HEADER = ./WBSBlog/WBSPrefixHeader.pch;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/WBSBlog/Others/WBSPrefixHeader.pch";
 				INFOPLIST_FILE = WBSBlog/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -3488,7 +3480,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/WBSBlog/Lib",
 				);
-				GCC_PREFIX_HEADER = ./WBSBlog/WBSPrefixHeader.pch;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/WBSBlog/Others/WBSPrefixHeader.pch";
 				INFOPLIST_FILE = WBSBlog/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -3531,6 +3523,7 @@
 		4EF14A021D3DF61D00D28265 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = WBSBlogUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.webersongao.WBSBlog.WBSBlogUITests;
@@ -3542,6 +3535,7 @@
 		4EF14A031D3DF61D00D28265 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = WBSBlogUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.webersongao.WBSBlog.WBSBlogUITests;

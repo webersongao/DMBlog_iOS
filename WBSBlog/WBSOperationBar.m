@@ -8,8 +8,6 @@
 
 #import "WBSOperationBar.h"
 #import "AppDelegate.h"
-#import "WBSConfig.h"
-#import "WBSUtils.h"
 
 @implementation WBSOperationBar
 

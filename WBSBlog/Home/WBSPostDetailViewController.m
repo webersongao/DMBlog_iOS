@@ -18,7 +18,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    NSLog(@"This is post detail...");
+    KLog(@"This is post detail...");
     
     self.navigationItem.title = @"文章详情";
     self.navigationItem.backBarButtonItem =[[UIBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStylePlain target:nil action:nil];
@@ -46,7 +46,7 @@
  *  编辑文章
  */
 - (void)editPost{
-    NSLog(@"editing post...");
+    KLog(@"editing post...");
     WBSPostEditViewController *postEditVC = [[WBSPostEditViewController alloc]init];
     postEditVC.post = super.result;
     [self.navigationController pushViewController:postEditVC animated:NO];

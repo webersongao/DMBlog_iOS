@@ -8,8 +8,6 @@
 
 #import "WBSEditingBar.h"
 #import "WBSGrowingTextView.h"
-#import "WBSUtils.h"
-#import "WBSConfig.h"
 #import "AppDelegate.h"
 
 @interface WBSEditingBar ()

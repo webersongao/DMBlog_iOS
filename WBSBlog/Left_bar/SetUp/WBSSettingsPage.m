@@ -7,9 +7,7 @@
 //
 
 #import "WBSSettingsPage.h"
-#import "WBSUtils.h"
 #import "SDImageCache.h"
-#import "WBSMacro.h"
 
 @interface WBSSettingsPage ()<UIAlertViewDelegate>
 
@@ -120,11 +118,7 @@
         [[SDImageCache sharedImageCache] clearMemory];
         [[SDImageCache sharedImageCache] clearDisk];
         //操作提示
-        MBProgressHUD *HUD = [WBSUtils createHUD];
-        HUD.mode = MBProgressHUDModeCustomView;
-        HUD.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"HUD-done"]];
-        HUD.labelText = [NSString stringWithFormat:@"缓存清除成功"];
-        [HUD hide:YES afterDelay:1];
+        [WBSUtils showSuccessMessage:@"缓存清除成功"];
     }
 }
 
@@ -138,11 +132,7 @@
     
     //检测设置依赖
     if(! [[def objectForKey:WBSIs_JSONAPI] boolValue] && sender.tag != 1){
-        MBProgressHUD *HUD = [WBSUtils createHUD];
-        HUD.mode = MBProgressHUDModeCustomView;
-        HUD.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"HUD-none"]];
-        HUD.labelText = [NSString stringWithFormat:@"此选项需要JSON API支持。"];
-        [HUD hide:YES afterDelay:1];
+        [WBSUtils showErrorMessage:@"此选项需要JSON API支持"];
         return;
     }
     
@@ -156,7 +146,7 @@
             [def setObject:@NO forKey:WBSIs_WP_Optimization];
         }
     } else {
-        NSLog(@"off:%ld",sender.tag);
+        KLog(@"off:%ld",sender.tag);
         if (sender.tag == 0) {
             [def setObject:@YES forKey:WBSIs_ShowPage];
         }else if(sender.tag == 1){

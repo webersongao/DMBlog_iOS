@@ -7,9 +7,6 @@
 //
 
 #import "WBSBasePostViewController.h"
-#import "WBSUtils.h"
-#import "WBSConfig.h"
-#import "WBSLoginNavViewController.h"
 #import "WBSLoginViewController.h"
 #import "TGBlogJsonApi.h"
 #import "AppDelegate.h"
@@ -55,14 +52,13 @@
     //检测登陆状态
     //===================================
     WBSApiInfo *apiInfo = [WBSConfig getAuthoizedApiInfo];
-    if(!apiInfo){
+    BOOL isguest = [WBSUtils getBooltforKey:WBSGuestLoginMode];
+    if(!apiInfo && !isguest){
         KLog(@"登陆超时，请重新登录。");
-        WBSLoginNavViewController *loginNavCtl = [[WBSLoginNavViewController alloc]init];
-        WBSLoginViewController *loginCtl =[[WBSLoginViewController alloc]init];
-        AppDelegate *app = [UIApplication sharedApplication].delegate;
-        [loginNavCtl pushViewController:loginCtl animated:YES];
-        app.window.rootViewController =loginNavCtl;
-        [app.window makeKeyAndVisible];
+        WBSLoginViewController *loginCtrl =[[WBSLoginViewController alloc]init];
+        
+        [self.navigationController pushViewController:loginCtrl animated:YES];
+        
         return;
     }
     

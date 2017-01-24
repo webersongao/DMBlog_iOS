@@ -8,7 +8,6 @@
 
 #import "WBSErrorViewController.h"
 #import "UIColor+Util.h"
-#import "WBSUtils.h"
 
 @interface WBSErrorViewController ()
 
@@ -43,7 +42,7 @@
 
 
 - (void)returnHome{
-    NSLog(@"跳转到主界面。");
+    KLog(@"跳转到主界面。");
     [WBSUtils goToMainViewController];
 }
 @end

@@ -7,8 +7,6 @@
 //
 
 #import "WBSSelectBlogViewController.h"
-#import "WBSUtils.h"
-#import "WBSMacro.h"
 
 @interface WBSSelectBlogViewController () <UITableViewDelegate, UITableViewDataSource>
 
@@ -94,7 +92,7 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    NSLog(@"You selected this: %@", self.blogTypeArray[indexPath.row]);
+    KLog(@"You selected this: %@", self.blogTypeArray[indexPath.row]);
     
     NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
     [def setObject:[NSString stringWithFormat:@"%d", NO] forKey:WBSIs_JSONAPI];
@@ -158,7 +156,7 @@
         }
             
         default:
-            NSLog(@"Other");
+            KLog(@"Other");
             _xmlrpcURLSuffix = @"";
             [self doSelectBlog];
             break;
@@ -171,13 +169,10 @@
  */
 - (void)doSelectBlog {
     if (!_xmlrpcURLSuffix) {
-        MBProgressHUD *HUD = [WBSUtils createHUD];
-        HUD.detailsLabelText = @"请选择博客类型";
-        HUD.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"HUD-error"]];
-        [HUD hide:YES afterDelay:1];
+        [WBSUtils showErrorMessage:@"请选择博客类型"];
         return;
     }
-    NSLog(@"选择了博客：　%@", _xmlrpcURLSuffix);
+    KLog(@"选择了博客：　%@", _xmlrpcURLSuffix);
     NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
     [def setObject:_xmlrpcURLSuffix forKey:WBSXmlrpcSubffix];
     [def setObject:_xmlrpcURLPrefix forKey:WBSXmlrpcPrefix];

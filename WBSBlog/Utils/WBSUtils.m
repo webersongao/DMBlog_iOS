@@ -17,6 +17,7 @@
 #import "WBSSideMenuViewController.h"
 #import "AppDelegate.h"
 #import "SVProgressHUD.h"
+#import "UIWindow+KeyWindow.h"
 
 @implementation WBSUtils
 
@@ -25,21 +26,8 @@
  *  跳转到主界面
  */
 + (void)goToMainViewController {
-    WBSRootTabBarController *tabBarController = [[WBSRootTabBarController alloc]init];
-    AppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
-    tabBarController.delegate = (id <UITabBarControllerDelegate>) appDelegate;
-    
-    RESideMenu *sideMenuTabBarViewController = [[RESideMenu alloc] initWithContentViewController:tabBarController                                                                          leftMenuViewController:[WBSSideMenuViewController new]                                                          rightMenuViewController:nil];
-    
-    //设置样式
-    sideMenuTabBarViewController.scaleContentView = YES;
-    sideMenuTabBarViewController.contentViewScaleValue = 0.95;
-    sideMenuTabBarViewController.scaleMenuView = NO;
-    sideMenuTabBarViewController.contentViewShadowEnabled = YES;
-    sideMenuTabBarViewController.contentViewShadowRadius = 4.5;
-    
-    //设置根视图
-    appDelegate.window.rootViewController = sideMenuTabBarViewController;
+    //切换控制器
+    [[UIApplication sharedApplication].keyWindow switchToRootViewController];
 }
 
 
@@ -430,39 +418,6 @@
     }];
 }
 
-#pragma mark 消息提示框
-/**
- *  创建弹出框
- *
- *  @return 弹出框实例
- */
-+ (MBProgressHUD *)createHUD
-{
-    UIWindow *window = [[UIApplication sharedApplication].windows lastObject];
-    MBProgressHUD *HUD = [[MBProgressHUD alloc] initWithWindow:window];
-    HUD.detailsLabelFont = [UIFont boldSystemFontOfSize:16];
-    [window addSubview:HUD];
-    [HUD show:YES];
-    //[HUD addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:HUD action:@selector(hide:)]];
-    return HUD;
-}
-
-/**
- *  创建弹出框
- *
- *  @return 弹出框实例
- */
-+ (MBProgressHUD *)DismissHUD
-{
-    UIWindow *window = [[UIApplication sharedApplication].windows lastObject];
-    MBProgressHUD *HUD = [[MBProgressHUD alloc] initWithWindow:window];
-    HUD.detailsLabelFont = [UIFont boldSystemFontOfSize:16];
-    [window addSubview:HUD];
-    [HUD show:YES];
-    //[HUD addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:HUD action:@selector(hide:)]];
-    return HUD;
-}
-
 /**
  *  在当前页面展示API不受支持的信息
  */
@@ -508,12 +463,12 @@
     [defaults synchronize];
 }
 
-+ (id)ObjectforKey:(NSString *)key{
++ (id)getObjectforKey:(NSString *)key{
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     return [defaults objectForKey:key];
 }
 
-+ (BOOL)BooltforKey:(NSString *)key{
++ (BOOL)getBooltforKey:(NSString *)key{
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     return [defaults boolForKey:key];
 }
