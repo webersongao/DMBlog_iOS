@@ -8,7 +8,6 @@
 
 #import "WBSPlaceholderTextView.h"
 #import "AppDelegate.h"
-#import "WBSConfig.h"
 
 @interface WBSPlaceholderTextView ()
 

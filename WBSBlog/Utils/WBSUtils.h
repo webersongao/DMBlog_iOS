@@ -12,7 +12,6 @@
 #import "UIImage+Util.h"
 #import "UIFont+FontAwesome.h"
 #import "NSString+FontAwesome.h"
-#import "MBProgressHUD.h"
 #import "NSTextAttachment+Util.h"
 
 
@@ -53,9 +52,9 @@ typedef enum{
 
 + (void)saveDataWithBool:(BOOL)boo forKey:(NSString *)key;
 
-+ (id)ObjectforKey:(NSString *)key;
++ (id)getObjectforKey:(NSString *)key;
 
-+ (BOOL)BooltforKey:(NSString *)key;
++ (BOOL)getBooltforKey:(NSString *)key;
 
 /********************* SVProgressHUD **********************/
 
@@ -121,13 +120,6 @@ typedef enum{
  *  显示时间距离现在的信息
  */;
 + (NSAttributedString *)attributedTimeString:(NSDate *)date;
-
-/**
- *  创建提示框
- *
- *  @return MBProgressHUD
- */
-+ (MBProgressHUD *)createHUD;
 
 /**
  *  还原HTMl特殊字符

@@ -9,13 +9,11 @@
 #import "WBSMyInfoController.h"
 #import "WBSApiInfo.h"
 #import "WBSLoginNavViewController.h"
-#import "WBSConfig.h"
 #import "RESideMenu.h"
-#import "WBSUtils.h"
 #import "UIImageView+Util.h"
 #import "TGBlogJsonApi.h"
 #import "WBSErrorViewController.h"
-#import "WBSMacro.h"
+
 
 
 static NSString *kMyInfoCellID = @"myInfoCell";
@@ -194,7 +192,7 @@ static NSString *kMyInfoCellID = @"myInfoCell";
         return;
     }
     
-    NSLog(@"fetching autoer data...");
+    KLog(@"fetching autoer data...");
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     NSString *baseURL = [userDefaults objectForKey:WBSSiteBaseURL];
 
@@ -206,11 +204,11 @@ static NSString *kMyInfoCellID = @"myInfoCell";
         
         //刷新数据
         dispatch_async(dispatch_get_main_queue(), ^{
-            //NSLog(@"JSON: %@", responseObject);
-            NSLog(@"status:%@",[result objectForKey:@"status"]);
+            //KLog(@"JSON: %@", responseObject);
+            KLog(@"status:%@",[result objectForKey:@"status"]);
             NSString *status = [result objectForKey:@"status"];
             if ([status isEqualToString:@"ok"]) {
-                NSLog(@"authors get ok");
+                KLog(@"authors get ok");
                 //处理刷新
                 if (refresh) {
                     super.page = 0;
@@ -237,14 +235,9 @@ static NSString *kMyInfoCellID = @"myInfoCell";
         
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"Error fetching authors: %@", [error localizedDescription]);
-        MBProgressHUD *HUD = [WBSUtils createHUD];
-        HUD.mode = MBProgressHUDModeCustomView;
-        HUD.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"HUD-error"]];
-        HUD.detailsLabelText = [NSString stringWithFormat:@"%@", error.userInfo[NSLocalizedDescriptionKey]];
+        KLog(@"Error fetching authors: %@", [error localizedDescription]);
         
-        [HUD hide:YES afterDelay:1];
-        
+        [WBSUtils showErrorMessage:[NSString stringWithFormat:@"%@", error.userInfo[NSLocalizedDescriptionKey]]];
         super.lastCell.status = LastCellStatusError;
         if (self.refreshControl.refreshing) {
             [self.refreshControl endRefreshing];

@@ -7,8 +7,6 @@
 //
 
 #import "WBSSideMenuViewController.h"
-#import "WBSUtils.h"
-#import "WBSConfig.h"
 #import "WBSLoginNavViewController.h"
 #import "WBSLoginViewController.h"
 #import "WBSMyInfoController.h"
@@ -18,7 +16,6 @@
 #import "WBSSettingsPage.h"
 #import "AppDelegate.h"
 #import "WBSScanQRCodeViewController.h"
-#import "WBSMacro.h"
 
 @interface WBSSideMenuViewController ()
 
@@ -142,7 +139,7 @@
     
     switch (indexPath.row) {
         case 0: {
-            NSLog(@"博客");
+            KLog(@"博客");
             WBSHomePostViewController *postViewCtl = [[WBSHomePostViewController alloc]initWithPostType:PostTypePost];
             WBSSwipableViewController *blogSVC = [[WBSSwipableViewController alloc] initWithTitle:@"博客" andSubTitles:nil andControllers:@[ postViewCtl]underTabbar:NO];
             
@@ -150,18 +147,18 @@
             break;
         }
         case 1: {
-            NSLog(@"设置");
+            KLog(@"设置");
             WBSSettingsPage *settingPage = [[WBSSettingsPage alloc]init];
             [self setContentViewController:settingPage];
             break;
         }
         case 2: {//退出
-            NSLog(@"退出");
+            KLog(@"退出");
             [self performSelector:@selector(logout:) withObject:nil];
             break;
         }
         case 3: {//二维码
-            NSLog(@"二维码");
+            KLog(@"二维码");
             WBSScanQRCodeViewController *ScanQRcodeVC = [[WBSScanQRCodeViewController alloc]init];
             [self setContentViewController:ScanQRcodeVC];
 
@@ -211,14 +208,10 @@
     [def setObject:nil forKey:WBSSiteAuthCookie];
     [def synchronize];
     
-    MBProgressHUD *HUD = [WBSUtils createHUD];
-    HUD.mode = MBProgressHUDModeCustomView;
-    HUD.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"HUD-done"]];
-    HUD.labelText = @"注销成功";
-    [HUD hide:YES afterDelay:0.5];
+    [WBSUtils showSuccessMessage:@"注销成功"];
     
     //跳转到登陆界面
-    //NSLog(@"logout");
+    //KLog(@"logout");
     WBSLoginViewController *loginController = [[WBSLoginViewController alloc]init];
     WBSLoginNavViewController *loginNaviVC = [[WBSLoginNavViewController alloc] init];
     [loginNaviVC pushViewController:loginController animated:YES];

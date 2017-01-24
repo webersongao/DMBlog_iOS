@@ -11,7 +11,6 @@
 #import "AFNetworking.h"
 #import "SAMKeychain.h"
 #import "SVProgressHUD.h"
-#import "WBSUtils.h"
 #import <CommonCrypto/CommonDigest.h>
 
 @interface WBSQRCodeLoginViewController ()
@@ -108,10 +107,10 @@
         [manager POST:adminUrl
            parameters:params
               success:^(NSURLSessionTask *task, id res) {
-                  NSLog(@"response:%@", res);
+                  KLog(@"response:%@", res);
               }
               failure:^(NSURLSessionTask *task, NSError *error) {
-                  NSLog(@"error:%@", error);
+                  KLog(@"error:%@", error);
               }];
     }
 
@@ -148,11 +147,11 @@
               success:^(NSURLSessionTask *task, id res) {
                   [SVProgressHUD showSuccessWithStatus:@"登录成功"];
                   [self toRootViewController];
-                  NSLog(@"response:%@", res);
+                  KLog(@"response:%@", res);
               }
               failure:^(NSURLSessionTask *task, NSError *error) {
                   [SVProgressHUD showErrorWithStatus:@"登录失败"];
-                  NSLog(@"error:%@", error);
+                  KLog(@"error:%@", error);
               }];
     }
 }

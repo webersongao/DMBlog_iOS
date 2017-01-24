@@ -7,7 +7,6 @@
 //
 
 #import "WBSEmojiPanelVC.h"
-#import "WBSUtils.h"
 
 #import <objc/runtime.h>
 

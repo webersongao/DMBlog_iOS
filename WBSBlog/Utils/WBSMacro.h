@@ -15,6 +15,10 @@
 #ifndef GoodJob_API_h
 #define GoodJob_API_h
 
+#define KbaseUrl @"www.swiftartisan.com"
+#define KuserName @""
+#define KpassWord @""
+
  /********************* 公共接口 *************************/
 // 线上服务器
 //#define WBSBlogCommonAPI @"https://www.swiftartisan.com/wp-json"
@@ -44,6 +48,9 @@
 /// 授权key
 #define WBSSiteAuthCookie                       @"KAuthCookie"
 
+// 游客登录
+#define WBSGuestLoginMode                       @"guestLoginMode"
+
 /// 是否启用JsonApi
 #define WBSIs_JSONAPI                           @"K_Is_JSONAPI_Enable"
 
@@ -62,7 +69,6 @@
 ///xmlrpcURL 后缀
 #define WBSXmlrpcSubffix                          @"xmlrpcURLSuffix"
 
-//#define WBSSiteBaseURL                          @"blogBaseURL"
 //
 //#define WBSSiteBaseURL                          @"blogBaseURL"
 //

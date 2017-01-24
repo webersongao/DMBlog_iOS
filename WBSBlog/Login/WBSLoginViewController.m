@@ -7,7 +7,6 @@
 //
 
 #import "WBSLoginViewController.h"
-#import "WBSUtils.h"
 #import "WBSRootTabBarController.h"
 #import "WBSSideMenuViewController.h"
 #import "RESideMenu.h"
@@ -15,14 +14,7 @@
 #import "TGMetaWeblogApi.h"
 #import "TTTAttributedLabel.h"
 #import "WBSSelectBlogViewController.h"
-#import "WBSConfig.h"
 #import "WBSNetRequest.h"
-
-
-#define KbaseUrl @"www.swiftartisan.com"
-#define KuserName @"521@weberson"
-#define KpassWord @"web@13303208939"
-
 
 
 
@@ -113,16 +105,16 @@
 
 - (void)setupSubviews {
     
-    _baseURLField.textColor                                                                    = [UIColor colorWithRed:56.0f / 255.0f green:84.0f / 255.0f blue:135.0f / 255.0f alpha:1.0f];
-    _baseURLField.autocapitalizationType                                                       = UITextAutocapitalizationTypeNone;
-    _baseURLField.keyboardType                                                                 = UIKeyboardTypeEmailAddress;
-    _baseURLField.delegate                                                                     = self;
-    _baseURLField.returnKeyType                                                                = UIReturnKeyNext;
-    _baseURLField.enablesReturnKeyAutomatically                                                = YES;
+    _baseURLField.textColor = [UIColor colorWithRed:56.0f / 255.0f green:84.0f / 255.0f blue:135.0f / 255.0f alpha:1.0f];
+    _baseURLField.autocapitalizationType = UITextAutocapitalizationTypeNone;
+    _baseURLField.keyboardType = UIKeyboardTypeEmailAddress;
+    _baseURLField.delegate = self;
+    _baseURLField.returnKeyType = UIReturnKeyNext;
+    _baseURLField.enablesReturnKeyAutomatically = YES;
     
-    _usernameField.textColor                                                                   = [UIColor colorWithRed:56.0f / 255.0f green:84.0f / 255.0f blue:135.0f / 255.0f alpha:1.0f];
+    _usernameField.textColor = [UIColor colorWithRed:56.0f / 255.0f green:84.0f / 255.0f blue:135.0f / 255.0f alpha:1.0f];
     
-    _passwordField.textColor                                                                   = [UIColor colorWithRed:56.0f / 255.0f green:84.0f / 255.0f blue:135.0f / 255.0f alpha:1.0f];
+    _passwordField.textColor = [UIColor colorWithRed:56.0f / 255.0f green:84.0f / 255.0f blue:135.0f / 255.0f alpha:1.0f];
     
     
     [_usernameField addTarget:self action:@selector(returnOnKeyboard:) forControlEvents:UIControlEventEditingDidEndOnExit];
@@ -134,11 +126,11 @@
     [self.view addSubview:_apiTypeSwitch];
     
     //添加手势，点击屏幕其他区域关闭键盘的操作
-    UITapGestureRecognizer *gesture                                                            = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hidenKeyboard)];
-    gesture.numberOfTapsRequired                                                               = 1;
-    gesture.delegate                                                                           = self;
+    UITapGestureRecognizer *gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hidenKeyboard)];
+    gesture.numberOfTapsRequired = 1;
+    gesture.delegate = self;
     //解决TTTAttributedLabel的代理方法didSelectLinkWithURL不触发的Bug 15-07-29
-    gesture.cancelsTouchesInView                                                               = NO;
+    gesture.cancelsTouchesInView = NO;
     [self.view addGestureRecognizer:gesture];
 }
 
@@ -252,9 +244,19 @@
         
     }
     if (isLoginSuccess) {
+        [WBSUtils saveDataWithBool:NO forKey:WBSGuestLoginMode];
         [WBSUtils goToMainViewController];
     }
 }
+/// 游客登录
+- (IBAction)guestLogin:(UIButton *)sender {
+
+    [WBSUtils saveDataWithBool:YES forKey:WBSGuestLoginMode];
+    [WBSUtils goToMainViewController];
+    
+}
+
+
 
 #pragma mark - 超链接代理
 

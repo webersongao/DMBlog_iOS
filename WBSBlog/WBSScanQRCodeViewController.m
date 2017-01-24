@@ -143,7 +143,7 @@
 }
 
 - (void)handleScanResult:(NSString *)result {
-    NSLog(@"扫码成功，信息为：%@", result);
+    KLog(@"扫码成功，信息为：%@", result);
     
     id targetController;
     

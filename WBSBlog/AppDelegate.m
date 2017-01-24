@@ -9,7 +9,6 @@
 #import "AppDelegate.h"
 #import "WBSLoginNavViewController.h"
 #import "WBSLoginViewController.h"
-#import "WBSUtils.h"
 
 
 @interface AppDelegate ()<UIApplicationDelegate, UITabBarControllerDelegate>

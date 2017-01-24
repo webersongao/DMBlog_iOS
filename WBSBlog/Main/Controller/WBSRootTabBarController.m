@@ -13,10 +13,8 @@
 #import "WBSSwipableViewController.h"
 #import "WBSTagViewController.h"
 #import "WBSMyInfoController.h"
-#import "WBSUtils.h"
 #import "WBSRootNaviViewController.h"
 #import "WBSPostEditViewController.h"
-#import "WBSConfig.h"
 
 @interface WBSRootTabBarController ()<UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 

@@ -9,7 +9,6 @@
 #import "WBSEmojiPageVC.h"
 #import "WBSEmojiPanelVC.h"
 #import "WBSPlaceholderTextView.h"
-#import "WBSUtils.h"
 
 @interface WBSEmojiPageVC () <UIPageViewControllerDataSource>
 

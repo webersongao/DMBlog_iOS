@@ -9,8 +9,6 @@
 #import "WBSNetRequest.h"
 #import "NetworkingCenter.h"
 #import "TGMetaWeblogAuthApi.h"
-#import "WBSUtils.h"
-#import "WBSMacro.h"
 #import "SingleObject.h"
 
 @implementation WBSNetRequest
@@ -34,7 +32,6 @@
                  KLog(@"status:%@", [result objectForKey:@"status"]);
                  NSString *status = [result objectForKey:@"status"];
                  if ([status isEqualToString:@"ok"]) {
-                     
                      isLoginSuccess = YES;
                      NSString *cookieStr = result[@"cookie"];
                      [WBSUtils saveDataWithValue:cookieStr forKey:WBSSiteAuthCookie];
@@ -78,7 +75,9 @@
         [SingleObject shareSingleObject].isLogin = YES;
     }else{
         [SingleObject shareSingleObject].isLogin = NO;
-        [WBSUtils showErrorMessage:errorStr];
+        if (errorStr) {
+            [WBSUtils showErrorMessage:errorStr];
+        }
     }
     
     return isLoginSuccess;

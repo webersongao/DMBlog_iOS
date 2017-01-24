@@ -7,7 +7,6 @@
 //
 
 #import "WBSPostCell.h"
-#import "WBSUtils.h"
 
 @implementation WBSPostCell
 

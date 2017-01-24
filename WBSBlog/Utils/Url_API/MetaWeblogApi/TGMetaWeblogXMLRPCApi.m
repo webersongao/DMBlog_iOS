@@ -63,14 +63,14 @@
     // ------------------------------------------------
     if (url == nil || [url isEqualToString:@""]) {
         NSError *error = [NSError errorWithDomain:@"com.terwer.api" code:0 userInfo:[NSDictionary dictionaryWithObject:NSLocalizedString(@"Empty URL", @"") forKey:NSLocalizedDescriptionKey]];
-        NSLog(@"%@",[error localizedDescription]);
+        KLog(@"%@",[error localizedDescription]);
         return failure ? failure(error) : nil;
     }
     
     // ------------------------------------------------------------------------
     // 1. Assume the given url is the home page and XML-RPC sits at /xmlrpc.php
     // ------------------------------------------------------------------------
-    NSLog( @"1. Assume the given url is XML-RPC endpoint" );
+    KLog( @"1. Assume the given url is XML-RPC endpoint" );
     NSURL *baseURL = [NSURL URLWithString:url];
     if (!baseURL.scheme) {
         url = [NSString stringWithFormat:@"http://%@", url];
@@ -83,27 +83,27 @@
         // Not a valid URL. Could be a bad protocol (htpp://), syntax error (http//), ...
         // See https://github.com/koke/NSURL-Guess for extra help cleaning user typed URLs
         NSError *error = [NSError errorWithDomain:@"com.terwer.api" code:1 userInfo:[NSDictionary dictionaryWithObject:NSLocalizedString(@"Invalid URL", @"") forKey:NSLocalizedDescriptionKey]];
-        NSLog(@"%@",[error localizedDescription]);
+        KLog(@"%@",[error localizedDescription]);
         return failure ? failure(error) : nil;
     }
-    NSLog(@"Trying the following URL,like /xmlrpc.php: %@", xmlrpcURL );
+    KLog(@"Trying the following URL,like /xmlrpc.php: %@", xmlrpcURL );
     
     [self validateXMLRPCUrl:xmlrpcURL success:^(NSURL *validatedXmlrpcURL){
         if (success) {
             success(validatedXmlrpcURL);
         }
     } failure:^(NSError *error){
-        NSLog(@"%@",[error localizedDescription]);
+        KLog(@"%@",[error localizedDescription]);
         
         // -------------------------------------------
         // 2. Try the given url as an XML-RPC endpoint
         // -------------------------------------------
-        NSLog(@"2. Try the xmlrpc url as an XML-RPC endpoint");
+        KLog(@"2. Try the xmlrpc url as an XML-RPC endpoint");
         
         xmlrpc = [NSString stringWithFormat:@"%@/xmlrpc.php", url];
         
         xmlrpcURL = [NSURL URLWithString:url];
-        NSLog( @"Trying the following URL: %@", url);
+        KLog( @"Trying the following URL: %@", url);
         
         
         [self  validateXMLRPCUrl:xmlrpcURL success:^(NSURL *validatedXmlrpcURL){
@@ -111,7 +111,7 @@
                 success(validatedXmlrpcURL);
             }
         } failure:^(NSError *error){
-            NSLog(@"%@",[error localizedDescription]);
+            KLog(@"%@",[error localizedDescription]);
             if (failure) {
                 failure(error);
                 return;
@@ -130,8 +130,8 @@
                  parameters:parameters
                     success:^(AFHTTPRequestOperation *operation, id responseObject) {
                         if (success) {
-                            //NSLog(@"test metaWeblog.getRecentPosts response:%@",responseObject);
-                            NSLog(@"test metaWeblog.getRecentPosts success");
+                            //KLog(@"test metaWeblog.getRecentPosts response:%@",responseObject);
+                            KLog(@"test metaWeblog.getRecentPosts success");
                             success(url);
                         }
                     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
