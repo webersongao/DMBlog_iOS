@@ -26,6 +26,15 @@
     self.window.rootViewController = loginNavViewController;
     [self.window makeKeyAndVisible];
     
+    // 全局设置
+    [self initCommonSetting];
+    
+    return YES;
+}
+
+
+-(void)initCommonSetting{
+
     /************ 全局控件外观设置 **************/
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     
@@ -49,7 +58,6 @@
     [[UITextField appearance] setTintColor:[UIColor nameColor]];
     [[UITextView appearance]  setTintColor:[UIColor nameColor]];
     
-    return YES;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

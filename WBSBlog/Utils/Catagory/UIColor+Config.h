@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UIColor (Util)
+@interface UIColor (Config)
 
 + (UIColor *)colorWithHex:(int)hexValue alpha:(CGFloat)alpha;
 + (UIColor *)colorWithHex:(int)hexValue;

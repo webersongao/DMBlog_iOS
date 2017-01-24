@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "UIColor+Util.h"
+#import "UIColor+Config.h"
 #import "UIView+Util.h"
 #import "UIImage+Util.h"
 #import "UIFont+FontAwesome.h"
@@ -31,9 +31,6 @@ typedef enum{
 }FilePath;
 
 @interface WBSUtils : NSObject
-
-
-
 
 //  跳转到主界面
 + (void)goToMainViewController;
@@ -194,7 +191,7 @@ typedef enum{
 
 
 /// 网址 账号密码信息校验
-+(BOOL)checkUrlString:(NSString *)urlString userNameStr:(NSString *)userNameStr passWord:(NSString *)passWord;
++(BOOL)checkUrlString:(NSString *)urlString userNameStr:(NSString *)userNameStr passWord:(NSString *)passWordStr;
 
 
 @end

@@ -9,16 +9,13 @@
 #import "WBSNetRequest.h"
 #import "NetworkingCenter.h"
 #import "TGMetaWeblogAuthApi.h"
-#import "SingleObject.h"
 
 @implementation WBSNetRequest
 
 
 /// 用户登录
-+ (BOOL)postToLoginWithSiteUrlStr:(NSString *)siteUrl userNameStr:(NSString *)userName PassWordStr:(NSString *)PassWord  isJsonAPi:(BOOL)isJsonApi{
-    
-    __block BOOL isLoginSuccess = NO;
-    __block NSString *errorStr = @"";
++ (void)postToLogin:(void (^) (BOOL isLoginSuccess,NSString * errorMsg)) LoginSuccessblock SiteUrlStr:(NSString *)siteUrl userNameStr:(NSString *)userName PassWordStr:(NSString *)PassWord  isJsonAPi:(BOOL)isJsonApi{
+    weakSelf(self)
     if (isJsonApi) {
         // 使用JSON API登陆
         NSString *requestURL = [NSString stringWithFormat:@"%@/user/generate_auth_cookie/?username=%@&password=%@", siteUrl, userName, PassWord];
@@ -32,20 +29,28 @@
                  KLog(@"status:%@", [result objectForKey:@"status"]);
                  NSString *status = [result objectForKey:@"status"];
                  if ([status isEqualToString:@"ok"]) {
-                     isLoginSuccess = YES;
                      NSString *cookieStr = result[@"cookie"];
                      [WBSUtils saveDataWithValue:cookieStr forKey:WBSSiteAuthCookie];
+                     [WBSUtils saveDataWithValue:siteUrl forKey:WBSSiteBaseURL];
+                     [WBSUtils saveDataWithValue:userName forKey:WBSUserUserName];
+                     [WBSUtils saveDataWithValue:PassWord forKey:WBSUserPassWord];
+                     [SingleObject shareSingleObject].isLogin = YES;
+                     
+                     LoginSuccessblock(YES,nil);
                      
                  } else {
-                     isLoginSuccess = NO;
-                     errorStr = [NSString stringWithFormat:@"请求错误：%@", result[@"error"]];
+                     
+                     NSString * errorStr = [NSString stringWithFormat:@"请求错误：%@", result[@"error"]];
+                     [SingleObject shareSingleObject].isLogin = NO;
+                     LoginSuccessblock(NO,errorStr);
                      
                  }
              }
              failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                 isLoginSuccess = NO;
-                 errorStr = [NSString stringWithFormat:@"请求错误：%@", [error localizedDescription]];
                  
+                 NSString * errorStr = [NSString stringWithFormat:@"请求错误：%@", [error localizedDescription]];
+                 [SingleObject shareSingleObject].isLogin = NO;
+                 LoginSuccessblock(NO,errorStr);
              }];
         
     }else{
@@ -57,30 +62,23 @@
                                   password:PassWord
                                    success:^(NSURL *xmlrpcURL) {
                                        KLog(@"xmlrpc登录--xmlrpc--:%@", xmlrpcURL);
-                                       isLoginSuccess = YES;
+                                       [WBSUtils saveDataWithValue:siteUrl forKey:WBSSiteBaseURL];
+                                       [WBSUtils saveDataWithValue:userName forKey:WBSUserUserName];
+                                       [WBSUtils saveDataWithValue:PassWord forKey:WBSUserPassWord];
+                                       [SingleObject shareSingleObject].isLogin = YES;
+                                       LoginSuccessblock(YES,nil);
                                        
                                    }
                                    failure:^(NSError *error) {
-                                       isLoginSuccess = NO;
-                                       errorStr = [NSString stringWithFormat:@"错误：%@", [error localizedDescription]];
+                                       NSString * errorStr = [NSString stringWithFormat:@"请求错误：%@", [error localizedDescription]];
+                                       [SingleObject shareSingleObject].isLogin = NO;
+                                       LoginSuccessblock(NO,errorStr);
                                        
                                    }];
     }
     
-    if (isLoginSuccess) {
-        // 登录成功，保存数据
-        [WBSUtils saveDataWithValue:siteUrl forKey:WBSSiteBaseURL];
-        [WBSUtils saveDataWithValue:userName forKey:WBSUserUserName];
-        [WBSUtils saveDataWithValue:PassWord forKey:WBSUserPassWord];
-        [SingleObject shareSingleObject].isLogin = YES;
-    }else{
-        [SingleObject shareSingleObject].isLogin = NO;
-        if (errorStr) {
-            [WBSUtils showErrorMessage:errorStr];
-        }
-    }
     
-    return isLoginSuccess;
+    
     
 }
 

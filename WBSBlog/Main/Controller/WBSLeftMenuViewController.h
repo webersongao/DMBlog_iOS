@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface WBSSideMenuViewController : UITableViewController
+@interface WBSLeftMenuViewController : UITableViewController
 
 @end

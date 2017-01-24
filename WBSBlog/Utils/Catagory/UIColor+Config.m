@@ -6,10 +6,10 @@
 //  Copyright © 2016年 Weberson. All rights reserved.
 //
 
-#import "UIColor+Util.h"
+#import "UIColor+Config.h"
 #import "AppDelegate.h"
 
-@implementation UIColor (Util)
+@implementation UIColor (Config)
 
 #pragma mark - Hex
 

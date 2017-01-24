@@ -9,7 +9,7 @@
 #import "UIWindow+KeyWindow.h"
 #import "WBSRootTabBarController.h"
 #import "RESideMenu.h"
-#import "WBSSideMenuViewController.h"
+#import "WBSLeftMenuViewController.h"
 #import "WBSLoginViewController.h"
 #import "WBSLoginNavViewController.h"
 
@@ -20,7 +20,7 @@
     
     WBSRootTabBarController *tabBarVC = [[WBSRootTabBarController alloc]init];
     
-    RESideMenu *sideMenuTabBarViewController = [[RESideMenu alloc] initWithContentViewController:tabBarVC                                                                          leftMenuViewController:[WBSSideMenuViewController new]                                                          rightMenuViewController:nil];
+    RESideMenu *sideMenuTabBarViewController = [[RESideMenu alloc] initWithContentViewController:tabBarVC                                                                          leftMenuViewController:[WBSLeftMenuViewController new]                                                          rightMenuViewController:nil];
     
     //设置样式
     sideMenuTabBarViewController.scaleContentView = YES;

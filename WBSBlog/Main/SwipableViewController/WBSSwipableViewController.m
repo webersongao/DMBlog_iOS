@@ -7,7 +7,7 @@
 //
 
 #import "WBSSwipableViewController.h"
-#import "UIColor+Util.h"
+#import "UIColor+Config.h"
 
 @interface WBSSwipableViewController ()
 

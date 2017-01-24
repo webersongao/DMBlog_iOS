@@ -13,7 +13,6 @@
             <connections>
                 <outlet property="apiTypeButton" destination="CbH-J7-ulA" id="umY-rb-xR0"/>
                 <outlet property="baseURLField" destination="ouF-z1-9cy" id="uga-R7-cgE"/>
-                <outlet property="loginButton" destination="CbH-J7-ulA" id="fnI-QM-v1f"/>
                 <outlet property="passwordField" destination="QqO-VN-AEe" id="vIY-K9-rqG"/>
                 <outlet property="usernameField" destination="B0Y-uJ-x7q" id="7A2-dM-r7S"/>
                 <outlet property="view" destination="iN0-l3-epB" id="d5q-xT-QC9"/>

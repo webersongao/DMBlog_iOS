@@ -6,7 +6,7 @@
 //  Copyright © 2016年 Weberson. All rights reserved.
 //
 
-#import "WBSSideMenuViewController.h"
+#import "WBSLeftMenuViewController.h"
 #import "WBSLoginNavViewController.h"
 #import "WBSLoginViewController.h"
 #import "WBSMyInfoController.h"
@@ -17,11 +17,11 @@
 #import "AppDelegate.h"
 #import "WBSScanQRCodeViewController.h"
 
-@interface WBSSideMenuViewController ()
+@interface WBSLeftMenuViewController ()
 
 @end
 
-@implementation WBSSideMenuViewController
+@implementation WBSLeftMenuViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -49,7 +49,13 @@
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
     // 用户昵称数组
-    NSArray *usersInformationArr = [[NSArray alloc]initWithObjects:@"未登录", nil];
+    NSString *userNickName = @"";
+    if ([SingleObject shareSingleObject].isLogin) {
+        userNickName = [SingleObject shareSingleObject].user.name;
+    }else{
+        userNickName = @"未登录";
+    }
+    NSArray *usersInformationArr = [[NSArray alloc]initWithObjects:userNickName, nil];
     UIImage *portrait = [[UIImage alloc]init];
     
     // 用户头像View
@@ -161,7 +167,7 @@
             KLog(@"二维码");
             WBSScanQRCodeViewController *ScanQRcodeVC = [[WBSScanQRCodeViewController alloc]init];
             [self setContentViewController:ScanQRcodeVC];
-
+            
             break;
         }
         default: break;
@@ -174,10 +180,10 @@
     viewController.hidesBottomBarWhenPushed = YES;
     // 获取导航控制器
     UINavigationController *nav = (UINavigationController *)((UITabBarController *)self.sideMenuViewController.contentViewController).selectedViewController;
-        // 获取 导航控制器的第一个控制器
-    UIViewController *vc = nav.viewControllers[0];
-    vc.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStylePlain target:nil action:nil];
-    [nav pushViewController:viewController animated:NO];
+    // 获取 导航控制器的第一个控制器
+    UIViewController *VC = nav.viewControllers[0];
+    VC.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStylePlain target:nil action:nil];
+    [nav pushViewController:VC animated:NO];
     //隐藏侧边栏
     [self.sideMenuViewController hideMenuViewController];
 }
@@ -189,7 +195,7 @@
 {
     if (![WBSConfig getAuthoizedApiInfo]) {
         // 如果 没有登录 跳转到登录控制器
-        [self setContentViewController:[WBSLoginNavViewController new]];
+        [self setContentViewController:[[WBSLoginNavViewController alloc]init]];
     } else {
         // 已经登录  跳转到个人信息界面 XMLRPC接口不支持该功能
         WBSMyInfoController *myInfoVC = [[WBSMyInfoController alloc]initWithStyle:UITableViewStyleGrouped];

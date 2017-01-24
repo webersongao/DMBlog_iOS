@@ -71,13 +71,13 @@
         //执行修改操作
         FMDatabaseQueue *queue=[FMDatabaseQueue databaseQueueWithPath:self.dbPath];
         [queue inDatabase:^(FMDatabase *db) {
-            NSString *string = [NSString stringWithFormat:@"UPDATE %@ SET nickname=?, headIconVersion=?,headIcon=?, signature=? WHERE uid=?",kUserInformationTable];
-            BOOL isSucess = [self.DB executeUpdate:string,user.nickname,[user.headIconVersion stringValue], user.headIcon,user.signature,[user.uid stringValue]];
-            if (isSucess) {
-                KLog(@"更新成功");
-            }else{
-                KLog(@"更新失败");
-            }
+//            NSString *string = [NSString stringWithFormat:@"UPDATE %@ SET nickname=?, headIconVersion=?,headIcon=?, signature=? WHERE uid=?",kUserInformationTable];
+//            BOOL isSucess = [self.DB executeUpdate:string,user.nickname,[user.headIconVersion stringValue], user.headIcon,user.signature,[user.uid stringValue]];
+//            if (isSucess) {
+//                KLog(@"更新成功");
+//            }else{
+//                KLog(@"更新失败");
+//            }
         }];
         
     }else{
@@ -86,13 +86,13 @@
         [queue inDatabase:^(FMDatabase *db) {
 
             //执行插入操作
-            NSString *string = [NSString stringWithFormat:@"insert into %@(uid,nickname,headIconVersion,headIcon,signature) values (?,?,?,?,?)",kUserInformationTable];
-            BOOL insert=[self.DB executeUpdate:string, [user.uid stringValue],user.nickname,[user.headIconVersion stringValue],user.headIcon,user.signature];
-            if (insert) {
-                KLog(@"插入成功....");
-            }else{
-                KLog(@"插入失败.....");
-            }
+//            NSString *string = [NSString stringWithFormat:@"insert into %@(uid,nickname,headIconVersion,headIcon,signature) values (?,?,?,?,?)",kUserInformationTable];
+//            BOOL insert=[self.DB executeUpdate:string, [user.uid stringValue],user.nickname,[user.headIconVersion stringValue],user.headIcon,user.signature];
+//            if (insert) {
+//                KLog(@"插入成功....");
+//            }else{
+//                KLog(@"插入失败.....");
+//            }
         }];
         [queue close];
     }

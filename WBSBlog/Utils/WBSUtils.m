@@ -14,7 +14,6 @@
 #import "WBSErrorViewController.h"
 #import "WBSRootTabBarController.h"
 #import "RESideMenu.h"
-#import "WBSSideMenuViewController.h"
 #import "AppDelegate.h"
 #import "SVProgressHUD.h"
 #import "UIWindow+KeyWindow.h"
@@ -437,9 +436,31 @@
 }
 
 /// 网址 账号密码信息校验
-+(BOOL)checkUrlString:(NSString *)urlString userNameStr:(NSString *)userNameStr passWord:(NSString *)passWord{
-
-    return YES;
++(BOOL)checkUrlString:(NSString *)urlString userNameStr:(NSString *)userNameStr passWord:(NSString *)passWordStr{
+    
+    if ([urlString isEqualToString:@""]) {
+        [WBSUtils showErrorMessage:@"博客API地址不能为空！"];
+        return NO;
+    }else if([urlString hasPrefix:@"http"]) {
+        [WBSUtils showErrorMessage:@"博客地址勿带http"];
+        return NO;
+    }else if([userNameStr isEqualToString:@""]) {
+        [WBSUtils showErrorMessage:@"用户名不能为空！"];
+        
+        return NO;
+    }else if(userNameStr.length < 5 || userNameStr.length > 20) {
+        
+        [WBSUtils showErrorMessage:@"用户名只能在5-20之间！"];
+        return NO;
+    }else if([passWordStr isEqualToString:@""]) {
+        [WBSUtils showErrorMessage:@"密码不能为空!"];
+        return NO;
+    }else if(passWordStr.length < 5 || passWordStr.length > 20) {
+        [WBSUtils showErrorMessage:@"密码只能在5-20之间!"];
+        return NO;
+    }else{
+        return YES;
+    }
 }
 
 

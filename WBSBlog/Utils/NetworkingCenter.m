@@ -8,7 +8,7 @@
 
 #import "NetworkingCenter.h"
 #import "CustomAlertView_Runtime.h"
-#import "SingleObject.h"
+
 
 
 @implementation NetworkingCenter

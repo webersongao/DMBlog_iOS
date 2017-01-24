@@ -14,7 +14,7 @@
 		4E4AD5EF1D477536002BFD98 /* WBSErrorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E4AD5DD1D477536002BFD98 /* WBSErrorViewController.m */; };
 		4E4AD5F01D477536002BFD98 /* WBSBasePostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E4AD5DF1D477536002BFD98 /* WBSBasePostViewController.m */; };
 		4E4AD5F21D477536002BFD98 /* WBSRootTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E4AD5E31D477536002BFD98 /* WBSRootTabBarController.m */; };
-		4E4AD5F31D477536002BFD98 /* WBSSideMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E4AD5E51D477536002BFD98 /* WBSSideMenuViewController.m */; };
+		4E4AD5F31D477536002BFD98 /* WBSLeftMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E4AD5E51D477536002BFD98 /* WBSLeftMenuViewController.m */; };
 		4E4AD5F41D477536002BFD98 /* WBSOptionButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E4AD5EA1D477536002BFD98 /* WBSOptionButton.m */; };
 		4E4AD5F71D477570002BFD98 /* WBSSwipableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E4AD5F61D477570002BFD98 /* WBSSwipableViewController.m */; };
 		4E4AD5FA1D477582002BFD98 /* WBSTitleBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E4AD5F91D477582002BFD98 /* WBSTitleBarView.m */; };
@@ -307,7 +307,7 @@
 		4EF150831D3E37C500D28265 /* UIImage+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF1507B1D3E37C500D28265 /* UIImage+Util.m */; };
 		4EF150841D3E37C500D28265 /* UIImageView+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF1507D1D3E37C500D28265 /* UIImageView+Util.m */; };
 		4EF150851D3E37C500D28265 /* UIView+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF1507F1D3E37C500D28265 /* UIView+Util.m */; };
-		4EF150861D3E37C500D28265 /* UIColor+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF150811D3E37C500D28265 /* UIColor+Util.m */; };
+		4EF150861D3E37C500D28265 /* UIColor+Config.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF150811D3E37C500D28265 /* UIColor+Config.m */; };
 		4EF150AE1D3E387C00D28265 /* WBSTagViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF150AD1D3E387C00D28265 /* WBSTagViewController.m */; };
 		4EF150B71D3E389900D28265 /* WBSMyInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF150B01D3E389900D28265 /* WBSMyInfoController.m */; };
 		4EF38F501D42F5AC00CE28A4 /* WBSLoginNavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF38F4B1D42F5AC00CE28A4 /* WBSLoginNavViewController.m */; };
@@ -438,8 +438,8 @@
 		4E4AD5DF1D477536002BFD98 /* WBSBasePostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBSBasePostViewController.m; sourceTree = "<group>"; };
 		4E4AD5E21D477536002BFD98 /* WBSRootTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSRootTabBarController.h; sourceTree = "<group>"; };
 		4E4AD5E31D477536002BFD98 /* WBSRootTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBSRootTabBarController.m; sourceTree = "<group>"; };
-		4E4AD5E41D477536002BFD98 /* WBSSideMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WBSSideMenuViewController.h; path = ../Main/Controller/WBSSideMenuViewController.h; sourceTree = "<group>"; };
-		4E4AD5E51D477536002BFD98 /* WBSSideMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WBSSideMenuViewController.m; path = ../Main/Controller/WBSSideMenuViewController.m; sourceTree = "<group>"; };
+		4E4AD5E41D477536002BFD98 /* WBSLeftMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WBSLeftMenuViewController.h; path = ../Main/Controller/WBSLeftMenuViewController.h; sourceTree = "<group>"; };
+		4E4AD5E51D477536002BFD98 /* WBSLeftMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WBSLeftMenuViewController.m; path = ../Main/Controller/WBSLeftMenuViewController.m; sourceTree = "<group>"; };
 		4E4AD5E91D477536002BFD98 /* WBSOptionButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSOptionButton.h; sourceTree = "<group>"; };
 		4E4AD5EA1D477536002BFD98 /* WBSOptionButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBSOptionButton.m; sourceTree = "<group>"; };
 		4E4AD5F51D477570002BFD98 /* WBSSwipableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSSwipableViewController.h; sourceTree = "<group>"; };
@@ -1014,8 +1014,8 @@
 		4EF1507D1D3E37C500D28265 /* UIImageView+Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+Util.m"; sourceTree = "<group>"; };
 		4EF1507E1D3E37C500D28265 /* UIView+Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Util.h"; sourceTree = "<group>"; };
 		4EF1507F1D3E37C500D28265 /* UIView+Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Util.m"; sourceTree = "<group>"; };
-		4EF150801D3E37C500D28265 /* UIColor+Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Util.h"; sourceTree = "<group>"; };
-		4EF150811D3E37C500D28265 /* UIColor+Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Util.m"; sourceTree = "<group>"; };
+		4EF150801D3E37C500D28265 /* UIColor+Config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Config.h"; sourceTree = "<group>"; };
+		4EF150811D3E37C500D28265 /* UIColor+Config.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Config.m"; sourceTree = "<group>"; };
 		4EF150AC1D3E387C00D28265 /* WBSTagViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSTagViewController.h; sourceTree = "<group>"; };
 		4EF150AD1D3E387C00D28265 /* WBSTagViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBSTagViewController.m; sourceTree = "<group>"; };
 		4EF150AF1D3E389900D28265 /* WBSMyInfoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSMyInfoController.h; sourceTree = "<group>"; };
@@ -2335,8 +2335,8 @@
 				4EF1507D1D3E37C500D28265 /* UIImageView+Util.m */,
 				4EF1507E1D3E37C500D28265 /* UIView+Util.h */,
 				4EF1507F1D3E37C500D28265 /* UIView+Util.m */,
-				4EF150801D3E37C500D28265 /* UIColor+Util.h */,
-				4EF150811D3E37C500D28265 /* UIColor+Util.m */,
+				4EF150801D3E37C500D28265 /* UIColor+Config.h */,
+				4EF150811D3E37C500D28265 /* UIColor+Config.m */,
 				4EDFD7EF1E360462006DD1E6 /* UIWindow+KeyWindow.h */,
 				4EDFD7F01E360463006DD1E6 /* UIWindow+KeyWindow.m */,
 			);
@@ -2575,8 +2575,8 @@
 		4EF152F71D3F39A400D28265 /* 左侧栏_Left_bar */ = {
 			isa = PBXGroup;
 			children = (
-				4E4AD5E41D477536002BFD98 /* WBSSideMenuViewController.h */,
-				4E4AD5E51D477536002BFD98 /* WBSSideMenuViewController.m */,
+				4E4AD5E41D477536002BFD98 /* WBSLeftMenuViewController.h */,
+				4E4AD5E51D477536002BFD98 /* WBSLeftMenuViewController.m */,
 				4EF152F81D3F3A1A00D28265 /* SetUp_设置 */,
 			);
 			name = "左侧栏_Left_bar";
@@ -3006,7 +3006,7 @@
 				4EF14FC51D3E32F700D28265 /* GPUImageSoftLightBlendFilter.m in Sources */,
 				4EF14F4B1D3E32F700D28265 /* GPUImageAmatorkaFilter.m in Sources */,
 				4EF38FBD1D4310E300CE28A4 /* WBSPostDetailViewController.m in Sources */,
-				4EF150861D3E37C500D28265 /* UIColor+Util.m in Sources */,
+				4EF150861D3E37C500D28265 /* UIColor+Config.m in Sources */,
 				4EF14F9C1D3E32F700D28265 /* GPUImageMosaicFilter.m in Sources */,
 				4EF14FA21D3E32F700D28265 /* GPUImageNobleCornerDetectionFilter.m in Sources */,
 				4EF150541D3E36DE00D28265 /* TMDItalic.m in Sources */,
@@ -3180,7 +3180,7 @@
 				4EF1506E1D3E376000D28265 /* WBSEditingBar.m in Sources */,
 				4EDFD79B1E348E98006DD1E6 /* FMDatabaseQueue.m in Sources */,
 				4EF5E4411D4230DA002B6AFF /* (null) in Sources */,
-				4E4AD5F31D477536002BFD98 /* WBSSideMenuViewController.m in Sources */,
+				4E4AD5F31D477536002BFD98 /* WBSLeftMenuViewController.m in Sources */,
 				4EF14FBD1D3E32F700D28265 /* GPUImageSepiaFilter.m in Sources */,
 				4EF14F501D3E32F700D28265 /* GPUImageBrightnessFilter.m in Sources */,
 				4EF14F371D3E32F700D28265 /* SDWebImageDownloaderOperation.m in Sources */,

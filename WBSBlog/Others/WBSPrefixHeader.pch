@@ -19,6 +19,7 @@
 #import "WBSUtils.h"
 #import "WBSMacro.h"
 #import "WBSConfig.h"
+#import "SingleObject.h"
 #endif
 
 
@@ -36,7 +37,7 @@
 #define iOS7 ([[UIDevice currentDevice].systemVersion doubleValue] >= 7.0)
 
 // weakSelf的统一宏定义
-#define weakSelf(weakSelf)  __weak __typeof(&*self)weakSelf = self;
+#define weakSelf(ssss)  __weak __typeof(ssss)weakSelf = self;
 // 是否为空
 #define checkNull(__X__)        (__X__) == nil || [(__X__) isEqual:[NSNull null]] ? @"" : [NSString stringWithFormat:@"%@", (__X__)]
 

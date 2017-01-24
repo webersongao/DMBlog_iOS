@@ -10,25 +10,41 @@
 
 @implementation UserModel
 
-- (void)setValue:(id)value forUndefinedKey:(NSString *)key{
+
+- (instancetype)initWithDict:(NSDictionary*)dict {
     
+    if (self = [super init]) {
+        
+        [self setValuesForKeysWithDictionary:dict];
+        
+        
+    }
+    return self;
+}
+
+
++ (UserModel *)WBSUserModelWithDic:(NSDictionary*)dict{
+    
+    UserModel *model = [[UserModel alloc] initWithDict:dict];
+    return model;
+}
+
+
+-(void)setValue:(id)value forUndefinedKey:(NSString *)key{
+    
+    if([key isEqualToString:@"id"]){
+        self.uid = value;
+    }
+    if ([key isEqualToString:@"description"]) {
+        self.descriptions = value;
+    }
+    KLog(@"id description 转换完毕");
 }
 
 
 
 - (void)clearUSerinfoValue{
     self.uid = nil;
-    self.headIconVersion = nil;
-    self.nickname = nil;
-    self.signature = nil;
-    self.gender = nil;
-    self.birthday = nil;
-    self.username = nil;
-    self.lastLoginDate = nil;
-    self.role = nil;
-    self.cityId = nil;
-    self.channelCode = nil;
-    self.createDate = nil;
 }
 
 
