@@ -8,13 +8,12 @@
 
 #import "WBSUtils.h"
 #import "Reachability.h"
-#import "WBSBrowserNavViewController.h"
 #import "WBSBrowserViewController.h"
+#import "WBSBrowserNavViewController.h"
 #import "GHMarkdownParser.h"
 #import "WBSErrorViewController.h"
 #import "WBSRootTabBarController.h"
-#import "RESideMenu.h"
-#import "AppDelegate.h"
+#import "WBSBlogAppDelegate.h"
 #import "SVProgressHUD.h"
 #import "UIWindow+KeyWindow.h"
 
@@ -26,9 +25,14 @@
  */
 + (void)goToMainViewController {
     //切换控制器
-    [[UIApplication sharedApplication].keyWindow switchToRootViewController];
+//    [[UIApplication sharedApplication].keyWindow switchToRootViewController];  //原来的
+    [[UIApplication sharedApplication].keyWindow switchToRootTabbarViewController];  //最新的抽屉效果
 }
 
++ (void)goToLoginViewController {
+    //切换 登录控制器
+    [[UIApplication sharedApplication].keyWindow switchToLoginViewController];  //最新的抽屉效果
+}
 
 #pragma mark 字符串处理
 /**
@@ -429,7 +433,7 @@
     labelMessage.text = errorMessage;
     [target.view addSubview:labelMessage];
     [to.navigationItem setHidesBackButton:YES];
-    to.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"首页" style:UIBarButtonItemStylePlain target:to action:@selector(returnHome)];
+//    to.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"首页" style:UIBarButtonItemStylePlain target:to action:@selector(returnHome)];
     to.navigationItem.title = @"出错啦";
     to.errorMessage = errorMessage;
     [target.navigationController pushViewController:to animated:YES];

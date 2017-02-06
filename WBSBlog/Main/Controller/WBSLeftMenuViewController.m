@@ -7,15 +7,14 @@
 //
 
 #import "WBSLeftMenuViewController.h"
-#import "WBSLoginNavViewController.h"
 #import "WBSLoginViewController.h"
 #import "WBSMyInfoController.h"
-#import "RESideMenu.h"
 #import "WBSHomePostViewController.h"
 #import "WBSSwipableViewController.h"
 #import "WBSSettingsPage.h"
-#import "AppDelegate.h"
+#import "WBSBlogAppDelegate.h"
 #import "WBSScanQRCodeViewController.h"
+#import "UIViewController+MMDrawerController.h"
 
 @interface WBSLeftMenuViewController ()
 
@@ -158,9 +157,9 @@
             [self setContentViewController:settingPage];
             break;
         }
-        case 2: {//退出
+        case 2: {//注销退出
             KLog(@"退出");
-            [self performSelector:@selector(logout:) withObject:nil];
+            [WBSUtils goToLoginViewController];
             break;
         }
         case 3: {//二维码
@@ -179,13 +178,13 @@
 {
     viewController.hidesBottomBarWhenPushed = YES;
     // 获取导航控制器
-    UINavigationController *nav = (UINavigationController *)((UITabBarController *)self.sideMenuViewController.contentViewController).selectedViewController;
-    // 获取 导航控制器的第一个控制器
-    UIViewController *VC = nav.viewControllers[0];
-    VC.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStylePlain target:nil action:nil];
-    [nav pushViewController:VC animated:NO];
+    UINavigationController *naviVC = [[UINavigationController alloc]initWithRootViewController:viewController];
+    naviVC.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStylePlain target:nil action:nil];
+
     //隐藏侧边栏
-    [self.sideMenuViewController hideMenuViewController];
+    [self.mm_drawerController setCenterViewController:naviVC withCloseAnimation:YES completion:^(BOOL finished) {
+        //
+    }];
 }
 
 
@@ -195,7 +194,7 @@
 {
     if (![WBSConfig getAuthoizedApiInfo]) {
         // 如果 没有登录 跳转到登录控制器
-        [self setContentViewController:[[WBSLoginNavViewController alloc]init]];
+        [self setContentViewController:[[WBSLoginViewController alloc]init]];
     } else {
         // 已经登录  跳转到个人信息界面 XMLRPC接口不支持该功能
         WBSMyInfoController *myInfoVC = [[WBSMyInfoController alloc]initWithStyle:UITableViewStyleGrouped];
@@ -215,14 +214,8 @@
     [def synchronize];
     
     [WBSUtils showSuccessMessage:@"注销成功"];
+    [WBSUtils goToLoginViewController];
+
     
-    //跳转到登陆界面
-    //KLog(@"logout");
-    WBSLoginViewController *loginController = [[WBSLoginViewController alloc]init];
-    WBSLoginNavViewController *loginNaviVC = [[WBSLoginNavViewController alloc] init];
-    [loginNaviVC pushViewController:loginController animated:YES];
-    AppDelegate * appsDelegate =[[UIApplication sharedApplication] delegate];
-    [appsDelegate.window setRootViewController:nil];
-    [appsDelegate.window setRootViewController:loginNaviVC];
 }
 @end

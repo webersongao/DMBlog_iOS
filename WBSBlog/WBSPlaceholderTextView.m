@@ -7,7 +7,7 @@
 //
 
 #import "WBSPlaceholderTextView.h"
-#import "AppDelegate.h"
+#import "WBSBlogAppDelegate.h"
 
 @interface WBSPlaceholderTextView ()
 
@@ -22,8 +22,8 @@
     self = [super init];
     if (self) {
         [self setUpPlaceholderLabel:placeholder];
-        ((AppDelegate *)[UIApplication sharedApplication].delegate).inNightMode = [WBSConfig getMode];
-        if (((AppDelegate *)[UIApplication sharedApplication].delegate).inNightMode) {
+        ((WBSBlogAppDelegate *)[UIApplication sharedApplication].delegate).inNightMode = [WBSConfig getMode];
+        if (((WBSBlogAppDelegate *)[UIApplication sharedApplication].delegate).inNightMode) {
             self.keyboardAppearance = UIKeyboardAppearanceDark;
         } else {
             self.keyboardAppearance = UIKeyboardAppearanceLight;

@@ -15,7 +15,7 @@
 
 /// 用户登录
 + (void)postToLogin:(void (^) (BOOL isLoginSuccess,NSString * errorMsg)) LoginSuccessblock SiteUrlStr:(NSString *)siteUrl userNameStr:(NSString *)userName PassWordStr:(NSString *)PassWord  isJsonAPi:(BOOL)isJsonApi{
-    weakSelf(self)
+    
     if (isJsonApi) {
         // 使用JSON API登陆
         NSString *requestURL = [NSString stringWithFormat:@"%@/user/generate_auth_cookie/?username=%@&password=%@", siteUrl, userName, PassWord];

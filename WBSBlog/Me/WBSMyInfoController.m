@@ -9,12 +9,9 @@
 #import "WBSMyInfoController.h"
 #import "WBSApiInfo.h"
 #import "WBSLoginNavViewController.h"
-#import "RESideMenu.h"
 #import "UIImageView+Util.h"
 #import "TGBlogJsonApi.h"
 #import "WBSErrorViewController.h"
-
-
 
 static NSString *kMyInfoCellID = @"myInfoCell";
 
@@ -168,7 +165,7 @@ static NSString *kMyInfoCellID = @"myInfoCell";
 
 - (void)onClickMenuButton
 {
-    [self.sideMenuViewController presentLeftMenuViewController];
+    KLog(@"点击了一个没实现的按钮");
 }
 
 -(void)tapPortrait{

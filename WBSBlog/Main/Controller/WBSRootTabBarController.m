@@ -8,13 +8,12 @@
 
 #import "WBSRootTabBarController.h"
 #import "WBSOptionButton.h"
-#include "RESideMenu.h"
 #import "WBSHomePostViewController.h"
 #import "WBSSwipableViewController.h"
 #import "WBSTagViewController.h"
 #import "WBSMyInfoController.h"
-#import "WBSRootNaviViewController.h"
 #import "WBSPostEditViewController.h"
+#import "WBSBaseNaviViewController.h"
 
 @interface WBSRootTabBarController ()<UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 
@@ -127,7 +126,7 @@
 //                          };
 //    [vc.tabBarItem setTitleTextAttributes:dictS forState:UIControlStateSelected];
     //将传进来的vc包装成nav。
-    WBSRootNaviViewController *nav=[[WBSRootNaviViewController alloc]initWithRootViewController:vc];
+    WBSBaseNaviViewController *nav=[[WBSBaseNaviViewController alloc]initWithRootViewController:vc];
     
     [self addChildViewController:nav];
 }

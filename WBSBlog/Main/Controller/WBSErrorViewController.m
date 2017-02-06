@@ -40,9 +40,4 @@
     [super didReceiveMemoryWarning];
  }
 
-
-- (void)returnHome{
-    KLog(@"跳转到主界面。");
-    [WBSUtils goToMainViewController];
-}
 @end

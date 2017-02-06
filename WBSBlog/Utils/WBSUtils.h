@@ -34,6 +34,7 @@ typedef enum{
 
 //  跳转到主界面
 + (void)goToMainViewController;
++ (void)goToLoginViewController;
 
 //获取app的版本
 + (NSString *)getMyApplicationVersion;
