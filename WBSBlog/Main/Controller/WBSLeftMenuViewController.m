@@ -8,9 +8,7 @@
 
 #import "WBSLeftMenuViewController.h"
 #import "WBSLoginViewController.h"
-#import "WBSMyInfoController.h"
-#import "WBSHomePostViewController.h"
-#import "WBSSwipableViewController.h"
+#import "WBSUserInfoController.h"
 #import "WBSSettingsPage.h"
 #import "WBSBlogAppDelegate.h"
 #import "WBSScanQRCodeViewController.h"
@@ -50,11 +48,16 @@
     // 用户昵称数组
     NSString *userNickName = @"";
     if ([SingleObject shareSingleObject].isLogin) {
-        userNickName = [SingleObject shareSingleObject].user.name;
+        if ([SingleObject shareSingleObject].user.displayname.length != 0) {
+            userNickName = [SingleObject shareSingleObject].user.displayname;
+        }else{
+            userNickName = [SingleObject shareSingleObject].user.nicename;
+        }
+    }else if([SingleObject shareSingleObject].isGuest){
+        userNickName = @"游客";
     }else{
         userNickName = @"未登录";
     }
-    NSArray *usersInformationArr = [[NSArray alloc]initWithObjects:userNickName, nil];
     UIImage *portrait = [[UIImage alloc]init];
     
     // 用户头像View
@@ -79,7 +82,7 @@
      昵称名字Label
      */
     UILabel *nameLabel = [UILabel new];
-    nameLabel.text = usersInformationArr[0];
+    nameLabel.text = userNickName;
     nameLabel.font = [UIFont boldSystemFontOfSize:20];
     nameLabel.translatesAutoresizingMaskIntoConstraints = NO;
     [headerView addSubview:nameLabel];
@@ -91,9 +94,9 @@
     
     portraitView.userInteractionEnabled = YES;
     nameLabel.userInteractionEnabled = YES;
-    // 点击图像或者昵称 登录账户
-    [portraitView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pushLoginPage)]];
-    [nameLabel addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pushLoginPage)]];
+    // 点击图像或者昵称 跳转个人信息界面 或 登录账户
+    [portraitView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pushToUserInfoVC)]];
+    [nameLabel addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pushToUserInfoVC)]];
     
     return headerView;
 }
@@ -145,10 +148,7 @@
     switch (indexPath.row) {
         case 0: {
             KLog(@"博客");
-            WBSHomePostViewController *postViewCtl = [[WBSHomePostViewController alloc]initWithPostType:PostTypePost];
-            WBSSwipableViewController *blogSVC = [[WBSSwipableViewController alloc] initWithTitle:@"博客" andSubTitles:nil andControllers:@[ postViewCtl]underTabbar:NO];
-            
-            [self setContentViewController:blogSVC];
+            [WBSUtils goToMainViewController];
             break;
         }
         case 1: {
@@ -159,7 +159,7 @@
         }
         case 2: {//注销退出
             KLog(@"退出");
-            [WBSUtils goToLoginViewController];
+            [self logOutAndCleanUserData];
             break;
         }
         case 3: {//二维码
@@ -174,48 +174,60 @@
     
 }
 
+
+#pragma mark 注销 退出
+- (void)logOutAndCleanUserData{
+    // 1、清空保存数据
+    NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
+    [def setObject:nil forKey:WBSSiteBaseURL];
+    [def setObject:nil forKey:WBSUserUserName];
+    [def setObject:nil forKey:WBSUserPassWord];
+    [def setObject:nil forKey:WBSSiteAuthCookie];
+    [def setObject:nil forKey:WBSSiteAuthCookieName];
+    [def synchronize];
+    // 修改登录状态
+    [SingleObject shareSingleObject].isLogin = NO;
+    [SingleObject shareSingleObject].user = nil;
+    
+    [WBSUtils showSuccessMessage:@"注销成功"];
+    
+    // 跳转到登录界面
+    [WBSUtils goToLoginViewController];
+    
+}
+
 - (void)setContentViewController:(UIViewController *)viewController
 {
     viewController.hidesBottomBarWhenPushed = YES;
     // 获取导航控制器
     UINavigationController *naviVC = [[UINavigationController alloc]initWithRootViewController:viewController];
     naviVC.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStylePlain target:nil action:nil];
-
+    
     //隐藏侧边栏
     [self.mm_drawerController setCenterViewController:naviVC withCloseAnimation:YES completion:^(BOOL finished) {
         //
     }];
 }
 
+-(void)dealloc{
+    NSLog(@"akdhgalkhakjagj=++++++++++=");
+}
+
 
 #pragma mark - 点击登录
 
-- (void)pushLoginPage
-{
-    if (![WBSConfig getAuthoizedApiInfo]) {
+- (void)pushToUserInfoVC {
+    if (![SingleObject shareSingleObject].isLogin) {
         // 如果 没有登录 跳转到登录控制器
         [self setContentViewController:[[WBSLoginViewController alloc]init]];
-    } else {
+    }else if (![WBSConfig isJSONAPIEnable]){
+        [WBSUtils showErrorMessage:@"API不支持"];
+    }else {
         // 已经登录  跳转到个人信息界面 XMLRPC接口不支持该功能
-        WBSMyInfoController *myInfoVC = [[WBSMyInfoController alloc]initWithStyle:UITableViewStyleGrouped];
-        [self setContentViewController:myInfoVC];
+        WBSUserInfoController *userInfoVC = [[WBSUserInfoController alloc]initWithStyle:UITableViewStyleGrouped];
+        userInfoVC.userModel = [SingleObject shareSingleObject].user;
+        [self setContentViewController:userInfoVC];
     }
 }
 
-#pragma mark 退出
-//退出
--(void)logout:(id)sender{
-    //清空缓存数据
-    NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
-    [def setObject:nil forKey:WBSSiteBaseURL];
-    [def setObject:nil forKey:WBSUserUserName];
-    [def setObject:nil forKey:WBSUserPassWord];
-    [def setObject:nil forKey:WBSSiteAuthCookie];
-    [def synchronize];
-    
-    [WBSUtils showSuccessMessage:@"注销成功"];
-    [WBSUtils goToLoginViewController];
-
-    
-}
 @end

@@ -123,9 +123,15 @@
     [button setTitleColor: UIColorFromHEXRGB(0xffffff) forState:UIControlStateNormal];
     [button setTitleColor: UIColorFromHEXRGB(0xaaaaaa) forState:UIControlStateSelected];
     
-    [button addTarget:self action:@selector(toRootViewController) forControlEvents:UIControlEventTouchUpInside];
+    [button addTarget:self action:@selector(quitScanCodeVC) forControlEvents:UIControlEventTouchUpInside];
     
     [self.view addSubview:button];
+}
+/// 取消扫码
+-(void)quitScanCodeVC{
+    
+    [WBSUtils goToMainViewController];
+    
 }
 
 - (void)scanAnimation {

@@ -11,7 +11,7 @@
 #import "WBSHomePostViewController.h"
 #import "WBSSwipableViewController.h"
 #import "WBSTagViewController.h"
-#import "WBSMyInfoController.h"
+#import "WBSUserInfoController.h"
 #import "WBSPostEditViewController.h"
 #import "WBSBaseNaviViewController.h"
 
@@ -45,7 +45,7 @@
     WBSSwipableViewController *searchVC = [self createBlogViewController:YES];
     
     //我
-    WBSMyInfoController *myInfoVC = [[WBSMyInfoController alloc]initWithStyle:UITableViewStyleGrouped];
+    WBSUserInfoController *myInfoVC = [[WBSUserInfoController alloc]initWithStyle:UITableViewStyleGrouped];
     
     self.tabBar.translucent = NO;
 
@@ -82,6 +82,7 @@
                                                     andControllers:@[ postViewCtl,pageViewCtl]
                                                        underTabbar:YES];
     }else{
+        // MetaWeblog api 接口显示
         blogSVC = [[WBSSwipableViewController alloc] initWithTitle:@"首页"
                                                       andSubTitles:nil
                                                     andControllers:@[ postViewCtl]

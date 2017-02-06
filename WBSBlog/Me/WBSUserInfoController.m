@@ -1,26 +1,24 @@
 //
-//  WBSMyInfoController.m
+//  WBSUserInfoController.m
 //  WBSBlog
 //
 //  Created by Weberson on 16/7/20.
 //  Copyright © 2016年 Weberson. All rights reserved.
 //
 
-#import "WBSMyInfoController.h"
+#import "WBSUserInfoController.h"
 #import "WBSApiInfo.h"
 #import "WBSLoginNavViewController.h"
 #import "UIImageView+Util.h"
 #import "TGBlogJsonApi.h"
 #import "WBSErrorViewController.h"
 
-static NSString *kMyInfoCellID = @"myInfoCell";
+static NSString *kUserInfoCellID = @"userInfoCell";
 
-@interface WBSMyInfoController ()
+@interface WBSUserInfoController ()
 
 //@property (nonatomic, readonly, assign) int64_t myID;
 @property (nonatomic, strong) NSMutableArray *noticeCounts;
-
-@property (nonatomic,strong) NSArray *authors;
 
 @property (nonatomic, strong) UIImageView *portrait;
 @property (nonatomic, strong) UILabel *nameLabel;
@@ -35,27 +33,28 @@ static NSString *kMyInfoCellID = @"myInfoCell";
 
 @end
 
-@implementation WBSMyInfoController
+@implementation WBSUserInfoController
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:kMyInfoCellID];
+    if (![SingleObject shareSingleObject].isLogin) {
+        [WBSUtils goToLoginViewController];
+        return;
+    }else if ([SingleObject shareSingleObject].isGuest){
+        [WBSUtils showErrorMessage:@"请登录!!"];
+    }else{
+        
+    }
     
-    self.navigationItem.leftBarButtonItem  = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"navigationbar-sidebar"] style:UIBarButtonItemStylePlain target:self action:@selector(onClickMenuButton)];
+    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:kUserInfoCellID];
+    
+    self.navigationItem.leftBarButtonItem  = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"navigationbar_sidebar"] style:UIBarButtonItemStylePlain target:self action:@selector(onClickMenuButton)];
     
     self.edgesForExtendedLayout = UIRectEdgeNone;
     self.tableView.bounces = NO;
     self.navigationItem.title = @"我";
-}
-
-- (void) viewDidAppear:(BOOL)animated{
-    //非 JSON API不支持
-    if (![WBSConfig isJSONAPIEnable]) {
-        WBSErrorViewController *errorCtl = [[WBSErrorViewController alloc]init];
-        [WBSUtils showApiNotSupported:self redirectTo:errorCtl];
-        return;
-    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -95,16 +94,15 @@ static NSString *kMyInfoCellID = @"myInfoCell";
     // 头像写死
 //    [_portrait loadPortrait:[NSURL URLWithString:@"http://h.hiphotos.baidu.com/zhidao/wh%3D450%2C600/sign=433dd90830fa828bd17695e7c82f6d02/cb8065380cd7912368dec979ae345982b2b78085.jpg"]];
     _portrait.userInteractionEnabled = YES;
-    [_portrait addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapPortrait)]];
+    [_portrait addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapPortraitAction)]];
     [header addSubview:_portrait];
     
     //取第一个作者
-    NSDictionary *author = _authors[0];
     
-    _nameLabel = [UILabel new];
+    _nameLabel = [[UILabel alloc]init];
     _nameLabel.font = [UIFont boldSystemFontOfSize:18];
     _nameLabel.textColor = [UIColor colorWithHex:0xEEEEEE];
-    _nameLabel.text = [NSString stringWithFormat:@"%@ %@",[author objectForKey:@"first_name"],[author objectForKey:@"last_name"]]?:@"";
+    _nameLabel.text = [NSString stringWithFormat:@"%@ %@",self.userModel.firstname,self.userModel.lastname]?:@"";
     [header addSubview:_nameLabel];
     
     for (UIView *view in header.subviews) {
@@ -144,15 +142,13 @@ static NSString *kMyInfoCellID = @"myInfoCell";
     NSArray *title = @[@"昵称：", @"姓名：", @"主页：", @"描述："];
     
     //取第一个作者
-    NSDictionary *author = _authors[0];
+//    NSDictionary *author = _authors[0];
     
     NSMutableAttributedString *attributedText = [[NSMutableAttributedString alloc] initWithString:title[indexPath.row]
                                                                                        attributes:titleAttributes];
     [attributedText appendAttributedString:[[NSAttributedString alloc] initWithString:@[
-                                                                                        [author objectForKey:@"nickname"]?:@"",
-                                                                                        [NSString stringWithFormat:@"%@ %@",[author objectForKey:@"first_name"],[author objectForKey:@"last_name"]]?:    @"",
-                                                                                        [author objectForKey:@"url"]?:@"",
-                                                                                        [author objectForKey:@"description"]?:@""
+                                                                                        self.userModel.displayname?:@"",
+                                                                                        [NSString stringWithFormat:@"%@ %@",self.userModel.lastname,self.userModel.firstname]?:@"",self.userModel.url?:@"",self.userModel.descriptions?:@""
                                                                                         ][indexPath.row]]];
     
     cell.textLabel.attributedText = [attributedText copy];
@@ -168,79 +164,8 @@ static NSString *kMyInfoCellID = @"myInfoCell";
     KLog(@"点击了一个没实现的按钮");
 }
 
--(void)tapPortrait{
-    
-}
-
-#pragma mark 获取作者数据
-
-/**
- *  加载列表数据
- *
- *  @param page    page
- *  @param refresh refresh
- */
-- (void)fetchObjectsOnPage:(NSUInteger)page refresh:(BOOL)refresh{
-    
-    //JSON API不支持
-    if (![WBSConfig isJSONAPIEnable]) {
-        WBSErrorViewController *errorCtl = [[WBSErrorViewController alloc]init];
-        [WBSUtils showApiNotSupported:self redirectTo:errorCtl];
-        return;
-    }
-    
-    KLog(@"fetching autoer data...");
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    NSString *baseURL = [userDefaults objectForKey:WBSSiteBaseURL];
-
-    NSString *requestURL = [NSString stringWithFormat:@"%@/get_author_index/",baseURL];
-    
-    //获取作者数据
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    [manager GET:requestURL parameters:nil success:^(AFHTTPRequestOperation *operation, NSDictionary *result) {
-        
-        //刷新数据
-        dispatch_async(dispatch_get_main_queue(), ^{
-            //KLog(@"JSON: %@", responseObject);
-            KLog(@"status:%@",[result objectForKey:@"status"]);
-            NSString *status = [result objectForKey:@"status"];
-            if ([status isEqualToString:@"ok"]) {
-                KLog(@"authors get ok");
-                //处理刷新
-                if (refresh) {
-                    super.page = 0;
-                    if (super.didRefreshSucceed) {
-                        super.didRefreshSucceed();
-                    }
-                }
-                
-                //获取数据
-                self.authors = [result objectForKey:@"authors"];
-                
-                //刷新数据
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    super.lastCell.status = LastCellStatusEmpty;
-                    
-                    if (self.refreshControl.refreshing) {
-                        [self.refreshControl endRefreshing];
-                    }
-                    
-                    [self.tableView reloadData];
-                });
-            }
-        });
-        
-        
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        KLog(@"Error fetching authors: %@", [error localizedDescription]);
-        
-        [WBSUtils showErrorMessage:[NSString stringWithFormat:@"%@", error.userInfo[NSLocalizedDescriptionKey]]];
-        super.lastCell.status = LastCellStatusError;
-        if (self.refreshControl.refreshing) {
-            [self.refreshControl endRefreshing];
-        }
-        [self.tableView reloadData];
-    }];
+// 点击头像
+-(void)tapPortraitAction{
     
 }
 

@@ -14,7 +14,6 @@
 #import "NSString+FontAwesome.h"
 #import "NSTextAttachment+Util.h"
 
-
 static NSString * const kKeyYears = @"years";
 static NSString * const kKeyMonths = @"months";
 static NSString * const kKeyDays = @"days";
@@ -52,7 +51,7 @@ typedef enum{
 
 + (id)getObjectforKey:(NSString *)key;
 
-+ (BOOL)getBooltforKey:(NSString *)key;
++ (BOOL)getBoolforKey:(NSString *)key;
 
 /********************* SVProgressHUD **********************/
 

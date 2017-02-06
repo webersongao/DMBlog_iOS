@@ -9,6 +9,7 @@
 #import "WBSNetRequest.h"
 #import "NetworkingCenter.h"
 #import "TGMetaWeblogAuthApi.h"
+#import "FMDBManger.h"
 
 @implementation WBSNetRequest
 
@@ -18,23 +19,39 @@
     
     if (isJsonApi) {
         // 使用JSON API登陆
-        NSString *requestURL = [NSString stringWithFormat:@"%@/user/generate_auth_cookie/?username=%@&password=%@", siteUrl, userName, PassWord];
-        
+        NSString *requestURL = [NSString stringWithFormat:@"http://%@/api/user/generate_auth_cookie/?username=%@&password=%@&insecure=cool", siteUrl, userName, PassWord];
         KLog(@"----jsonApi登陆：login request URL:%@", requestURL);
         //获取作者数据
         AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
         [manager GET:requestURL parameters:nil
              success:^(AFHTTPRequestOperation *operation, NSDictionary *result) {
                  
-                 KLog(@"status:%@", [result objectForKey:@"status"]);
                  NSString *status = [result objectForKey:@"status"];
+                 
                  if ([status isEqualToString:@"ok"]) {
+                     NSString *cookieNameStr = result[@"cookie_name"];
                      NSString *cookieStr = result[@"cookie"];
                      [WBSUtils saveDataWithValue:cookieStr forKey:WBSSiteAuthCookie];
+                     [WBSUtils saveDataWithValue:cookieNameStr forKey:WBSSiteAuthCookieName];
                      [WBSUtils saveDataWithValue:siteUrl forKey:WBSSiteBaseURL];
                      [WBSUtils saveDataWithValue:userName forKey:WBSUserUserName];
                      [WBSUtils saveDataWithValue:PassWord forKey:WBSUserPassWord];
                      [SingleObject shareSingleObject].isLogin = YES;
+                     
+                     // 保存用户数据
+                     NSDictionary *userDict = [result objectForKey:@"user"];
+                     WBSUserModel * userModel = [WBSUserModel WBSUserModelWithDic:userDict];
+                     [WBSUtils saveDataWithValue:userModel.uid forKey:WBSUserUID];
+                     NSDictionary *administratorDict = [userDict objectForKey:@"capabilities"];
+                     // 是否是管理员
+                     if ([administratorDict objectForKey:@"administrator"]) {
+                         userModel.isAdmin = YES;
+                     }else{
+                         userModel.isAdmin = NO;
+                     }
+                     [SingleObject shareSingleObject].user = userModel;
+                     // 保存用户数据到数据库
+                     [[FMDBManger sharedFMDBManger]insertUserToUserInformationTableWith:userModel];
                      
                      LoginSuccessblock(YES,nil);
                      

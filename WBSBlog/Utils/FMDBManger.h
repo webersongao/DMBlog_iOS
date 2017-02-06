@@ -11,7 +11,7 @@
  */
 #import <Foundation/Foundation.h>
 #import "FMDB.h"
-#import "UserModel.h"
+#import "WBSUserModel.h"
 
 @interface FMDBManger : NSObject
 
@@ -22,7 +22,10 @@
 
 #pragma mark - 用户表操作
 //向用户的表中插入数据
-- (void)insertUserToUserInformationTableWith:(UserModel *)user;
+- (void)insertUserToUserInformationTableWith:(WBSUserModel *)user;
+
+// 根据uid 获取用户
+- (WBSUserModel *)getUserModelInfoWithUid:(NSString *)uid;
 
 
 #pragma mark - 搜索历史表操作

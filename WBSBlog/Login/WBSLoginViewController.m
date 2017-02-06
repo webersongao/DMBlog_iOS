@@ -53,7 +53,11 @@
     if (apiInfo) {
         // 已经登录
         KLog(@"Current baseURL:%@ username:%@ password:%@-- 已经登录！", apiInfo.baseURL, apiInfo.username, apiInfo.password);
-        //已经登录过，跳转到主界面，停止程序继续
+        [SingleObject shareSingleObject].isLogin = YES;
+        // 解档 赋值用户数据
+        WBSUserModel *userModel = [[FMDBManger sharedFMDBManger]getUserModelInfoWithUid:nil];
+        [SingleObject shareSingleObject].user = userModel;
+        //已经登录过，跳转到博文主界面，程序继续
         [WBSUtils goToMainViewController];
         return;
     }
@@ -89,10 +93,12 @@
     self.baseURLField.text = @"";
     if (!self.apiTypeButton.isSelected) {
         KLog(@"开启JSON API");
+        [WBSUtils saveDataWithBool:YES forKey:WBSIs_JSONAPI];
         self.apiTypeButton.selected = YES;
         _baseURLField.placeholder = @"请输入JSON API入口地址";
     } else {
         KLog(@"开启XMLRPC API");
+        [WBSUtils saveDataWithBool:NO forKey:WBSIs_JSONAPI];
         self.apiTypeButton.selected = NO;
         _baseURLField.placeholder = @"www.jack_blog.com";
     }
@@ -145,6 +151,7 @@
 - (IBAction)guestLogin:(UIButton *)sender {
 
     [WBSUtils saveDataWithBool:YES forKey:WBSGuestLoginMode];
+    [SingleObject shareSingleObject].isGuest = YES;
     [WBSUtils goToMainViewController];
     
 }

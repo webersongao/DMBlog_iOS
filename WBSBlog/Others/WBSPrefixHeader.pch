@@ -20,6 +20,7 @@
 #import "WBSMacro.h"
 #import "WBSConfig.h"
 #import "SingleObject.h"
+#import "FMDBManger.h"
 #endif
 
 

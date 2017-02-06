@@ -34,6 +34,12 @@
     [[UIApplication sharedApplication].keyWindow switchToLoginViewController];  //最新的抽屉效果
 }
 
+
+// 清除用户保存信息
++(void)clearUserInfoValue{
+
+}
+
 #pragma mark 字符串处理
 /**
  *  删除字符串中的换行和空白
@@ -493,7 +499,7 @@
     return [defaults objectForKey:key];
 }
 
-+ (BOOL)getBooltforKey:(NSString *)key{
++ (BOOL)getBoolforKey:(NSString *)key{
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     return [defaults boolForKey:key];
 }

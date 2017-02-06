@@ -35,7 +35,7 @@
 
 - (void)setUpPlaceholderLabel:(NSString *)placeholder
 {
-    _placeholderLabel = [UILabel new];
+    _placeholderLabel = [[UILabel alloc]init];
     _placeholderLabel.textColor = [UIColor lightGrayColor];
     _placeholderLabel.backgroundColor = [UIColor clearColor];
     _placeholderLabel.text = placeholder;

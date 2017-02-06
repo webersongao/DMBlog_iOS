@@ -52,7 +52,7 @@
     //检测登陆状态
     //===================================
     WBSApiInfo *apiInfo = [WBSConfig getAuthoizedApiInfo];
-    BOOL isguest = [WBSUtils getBooltforKey:WBSGuestLoginMode];
+    BOOL isguest = [WBSUtils getBoolforKey:WBSGuestLoginMode];
     if(!apiInfo && !isguest){
         KLog(@"登陆超时，请重新登录。");
         WBSLoginViewController *loginCtrl =[[WBSLoginViewController alloc]init];

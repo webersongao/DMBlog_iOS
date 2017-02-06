@@ -58,6 +58,7 @@
     [[UITextField appearance] setTintColor:[UIColor nameColor]];
     [[UITextView appearance]  setTintColor:[UIColor nameColor]];
     
+    
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

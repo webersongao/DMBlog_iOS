@@ -1,14 +1,14 @@
 //
-//  UserModel.h
+//  WBSUserModel.h
 //  webTest
 //
 //  Created by weberson on 15/12/3.
 //  Copyright (c) 2015年 weberson. All rights reserved.
 //
 
-#import "UserModel.h"
+#import "WBSUserModel.h"
 
-@implementation UserModel
+@implementation WBSUserModel
 
 
 - (instancetype)initWithDict:(NSDictionary*)dict {
@@ -23,9 +23,9 @@
 }
 
 
-+ (UserModel *)WBSUserModelWithDic:(NSDictionary*)dict{
++ (WBSUserModel *)WBSUserModelWithDic:(NSDictionary*)dict{
     
-    UserModel *model = [[UserModel alloc] initWithDict:dict];
+    WBSUserModel *model = [[WBSUserModel alloc] initWithDict:dict];
     return model;
 }
 
@@ -42,10 +42,6 @@
 }
 
 
-
-- (void)clearUSerinfoValue{
-    self.uid = nil;
-}
 
 
 @end
