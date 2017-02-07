@@ -15,7 +15,6 @@
 #import "WBSTitleMenuViewController.h"
 #import "WBSErrorViewController.h"
 #import "WBSLoginViewController.h"
-#import "RESideMenu.h"
 
 
 static NSString *kPostCellID = @"PostCell";//CellID
@@ -674,8 +673,8 @@ const int MAX_PAGE_SIZE = 10;//每页显示数目
     
     KLog(@"category request URL:%@",requestURL);
     //获取作者数据
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    [manager GET:requestURL parameters:nil success:^(AFHTTPRequestOperation *operation, NSDictionary *result) {
+    AFHTTPRequestOperationManager *requestManager = [AFHTTPRequestOperationManager manager];
+    [requestManager GET:requestURL parameters:nil success:^(AFHTTPRequestOperation *operation, NSDictionary *result) {
         dispatch_async(dispatch_get_main_queue(), ^{
             //刷新数据
             //KLog(@"JSON: %@", responseObject);
@@ -771,9 +770,9 @@ const int MAX_PAGE_SIZE = 10;//每页显示数目
             KLog(@"status:%@",[result objectForKey:@"status"]);
             NSString *status = [result objectForKey:@"status"];
             
-            NSString *nonce =[result objectForKey:@"nonce"];
+//            NSString *nonce =[result objectForKey:@"nonce"];
             //删除
-            NSDictionary *parmeters = @{@"id":postId,@"cookie":apiInfo.generateAauthCookie,@"nonce":nonce};
+//            NSDictionary *parmeters = @{@"id":postId,@"cookie":apiInfo.generateAauthCookie,@"nonce":nonce};
             NSString *deleteURL = [NSString stringWithFormat:@"%@/posts/delete_post/",apiInfo.baseURL];
             
             KLog(@"deleteURL URL:%@",deleteURL);

@@ -8,13 +8,12 @@
 
 #import "WBSRootTabBarController.h"
 #import "WBSOptionButton.h"
-#include "RESideMenu.h"
 #import "WBSHomePostViewController.h"
 #import "WBSSwipableViewController.h"
 #import "WBSTagViewController.h"
-#import "WBSMyInfoController.h"
-#import "WBSRootNaviViewController.h"
+#import "WBSUserCenterController.h"
 #import "WBSPostEditViewController.h"
+#import "WBSBaseNaviViewController.h"
 
 @interface WBSRootTabBarController ()<UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 
@@ -46,7 +45,7 @@
     WBSSwipableViewController *searchVC = [self createBlogViewController:YES];
     
     //我
-    WBSMyInfoController *myInfoVC = [[WBSMyInfoController alloc]initWithStyle:UITableViewStyleGrouped];
+    WBSUserCenterController *myInfoVC = [[WBSUserCenterController alloc]initWithStyle:UITableViewStyleGrouped];
     
     self.tabBar.translucent = NO;
 
@@ -83,6 +82,7 @@
                                                     andControllers:@[ postViewCtl,pageViewCtl]
                                                        underTabbar:YES];
     }else{
+        // MetaWeblog api 接口显示
         blogSVC = [[WBSSwipableViewController alloc] initWithTitle:@"首页"
                                                       andSubTitles:nil
                                                     andControllers:@[ postViewCtl]
@@ -127,7 +127,7 @@
 //                          };
 //    [vc.tabBarItem setTitleTextAttributes:dictS forState:UIControlStateSelected];
     //将传进来的vc包装成nav。
-    WBSRootNaviViewController *nav=[[WBSRootNaviViewController alloc]initWithRootViewController:vc];
+    WBSBaseNaviViewController *nav=[[WBSBaseNaviViewController alloc]initWithRootViewController:vc];
     
     [self addChildViewController:nav];
 }

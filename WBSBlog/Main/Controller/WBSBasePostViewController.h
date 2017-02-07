@@ -32,7 +32,10 @@
 @property (nonatomic, strong) UILabel *label;
 @property (nonatomic, assign) NSUInteger page;
 
-- (void)fetchMore;
-- (void)refresh;
+/// 拉取更多数据
+- (void)fetchMoreDataOfView;
+
+/// 下拉刷新 当前界面
+- (void)refreshCurrentView;
 
 @end

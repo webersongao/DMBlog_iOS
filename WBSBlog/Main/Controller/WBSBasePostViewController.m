@@ -9,7 +9,7 @@
 #import "WBSBasePostViewController.h"
 #import "WBSLoginViewController.h"
 #import "TGBlogJsonApi.h"
-#import "AppDelegate.h"
+#import "WBSBlogAppDelegate.h"
 
 @interface WBSBasePostViewController ()
 
@@ -52,7 +52,7 @@
     //检测登陆状态
     //===================================
     WBSApiInfo *apiInfo = [WBSConfig getAuthoizedApiInfo];
-    BOOL isguest = [WBSUtils getBooltforKey:WBSGuestLoginMode];
+    BOOL isguest = [WBSUtils getBoolforKey:WBSGuestLoginMode];
     if(!apiInfo && !isguest){
         KLog(@"登陆超时，请重新登录。");
         WBSLoginViewController *loginCtrl =[[WBSLoginViewController alloc]init];
@@ -80,11 +80,11 @@
     self.tableView.backgroundColor = [UIColor themeColor];
     
     _lastCell = [WBSLastCell new];
-    [_lastCell addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(fetchMore)]];
+    [_lastCell addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(fetchMoreDataOfView)]];
     self.tableView.tableFooterView = _lastCell;
     
     self.refreshControl = [UIRefreshControl new];
-    [self.refreshControl addTarget:self action:@selector(refresh) forControlEvents:UIControlEventValueChanged];
+    [self.refreshControl addTarget:self action:@selector(refreshCurrentView) forControlEvents:UIControlEventValueChanged];
     
     _label = [UILabel new];
     _label.numberOfLines = 0;
@@ -99,6 +99,7 @@
     
     [self fetchObjectsOnPage:0 refresh:NO];
 }
+
 
 #pragma mark - Private
 /**
@@ -157,65 +158,11 @@
     return 0;
 }
 
-/*
- - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
- UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
- 
- // Configure the cell...
- 
- return cell;
- }
- */
-
-/*
- // Override to support conditional editing of the table view.
- - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
- // Return NO if you do not want the specified item to be editable.
- return YES;
- }
- */
-
-/*
- // Override to support editing the table view.
- - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
- if (editingStyle == UITableViewCellEditingStyleDelete) {
- // Delete the row from the data source
- [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
- } else if (editingStyle == UITableViewCellEditingStyleInsert) {
- // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
- }
- }
- */
-
-/*
- // Override to support rearranging the table view.
- - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
- }
- */
-
-/*
- // Override to support conditional rearranging of the table view.
- - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
- // Return NO if you do not want the item to be re-orderable.
- return YES;
- }
- */
-
-/*
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
-
 
 
 #pragma mark - 刷新
 
-- (void)refresh
+- (void)refreshCurrentView
 {
     _refreshInProgress = NO;
     
@@ -235,11 +182,11 @@
 {
     if(scrollView.contentOffset.y > ((scrollView.contentSize.height - scrollView.frame.size.height)))
     {
-        [self fetchMore];
+        [self fetchMoreDataOfView];
     }
 }
 
-- (void)fetchMore
+- (void)fetchMoreDataOfView
 {
     if (!_lastCell.shouldResponseToTouch) {return;}
     

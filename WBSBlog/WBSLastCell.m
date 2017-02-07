@@ -7,7 +7,7 @@
 //
 
 #import "WBSLastCell.h"
-#import "UIColor+Util.h"
+#import "UIColor+Config.h"
 
 @interface WBSLastCell ()
 

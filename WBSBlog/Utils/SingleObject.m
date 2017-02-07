@@ -15,8 +15,9 @@
 - (instancetype)init{
     self = [super init];
     if (self) {
-        self.user = [[UserModel alloc] init];
+        self.user = [[WBSUserModel alloc] init];
         self.isLogin = NO;
+        self.isGuest = NO;
     }
     return self;
 }
@@ -29,6 +30,17 @@
         instace = [[self alloc] init];
     });
     return instace;
+}
+
+
+-(void)setIsLogin:(BOOL)isLogin{
+    _isLogin = isLogin;
+    if (isLogin == YES) {
+        // 登录成功，修改为 非游客模式
+        [WBSUtils saveDataWithBool:NO forKey:WBSGuestLoginMode];
+        self.isGuest = NO;
+    }
+    
 }
 
 @end

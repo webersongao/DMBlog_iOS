@@ -10,5 +10,9 @@
 
 @interface UIWindow (KeyWindow)
 
-- (void)switchToRootViewController;
+- (void)switchToRootTabbarViewController;
+
+/// 跳转到登录控制器
+- (void)switchToLoginViewController;
+    
 @end

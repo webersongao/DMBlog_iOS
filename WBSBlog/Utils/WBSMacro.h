@@ -8,7 +8,7 @@
 //
 /**
  *  ***********   放置网络接口  **************
- 网站源文件中带有 该标记的WP网站 都可以使用 WP-REST-API
+ 网站源文件中带有以下标记的WP网站 都可以使用 WP-REST-API
  Link: <http://example.com/wp-json/>; rel="https://api.w.org/">
  */
 
@@ -16,10 +16,10 @@
 #define GoodJob_API_h
 
 #define KbaseUrl @"www.swiftartisan.com"
-#define KuserName @""
-#define KpassWord @""
+#define KuserName @"521@weberson"
+#define KpassWord @"web@?516680"
 
- /********************* 公共接口 *************************/
+/********************* 公共接口 *************************/
 // 线上服务器
 //#define WBSBlogCommonAPI @"https://www.swiftartisan.com/wp-json"
 
@@ -34,10 +34,13 @@
 
 
 
- /********************* 公共 宏 定义 *************************/
+/********************* 公共 宏 定义 *************************/
 
 /// 站点地址
 #define WBSSiteBaseURL                          @"KBlogBaseURL"
+
+/// 用户UID
+#define WBSUserUID                              @"KUserUID"
 
 /// 账号
 #define WBSUserUserName                         @"KUserUserName"
@@ -45,7 +48,13 @@
 /// 密码
 #define WBSUserPassWord                         @"KUserPassWord"
 
-/// 授权key
+/// 授权令牌 nonce
+#define WBSSiteAuthNonce                        @"KAuthNonce"
+
+/// 登录Cookie名称
+#define WBSSiteAuthCookieName                  @"KAuthCookie_name"
+
+/// 登录Cookie
 #define WBSSiteAuthCookie                       @"KAuthCookie"
 
 // 游客登录

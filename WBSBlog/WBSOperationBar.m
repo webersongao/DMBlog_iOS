@@ -7,7 +7,7 @@
 //
 
 #import "WBSOperationBar.h"
-#import "AppDelegate.h"
+#import "WBSBlogAppDelegate.h"
 
 @implementation WBSOperationBar
 
@@ -41,8 +41,8 @@
             
             UIBarButtonItem *barButton = [[UIBarButtonItem alloc] initWithCustomView:button];
             
-            ((AppDelegate *)[UIApplication sharedApplication].delegate).inNightMode = [WBSConfig getMode];
-            if (((AppDelegate *)[UIApplication sharedApplication].delegate).inNightMode) {
+            ((WBSBlogAppDelegate *)[UIApplication sharedApplication].delegate).inNightMode = [WBSConfig getMode];
+            if (((WBSBlogAppDelegate *)[UIApplication sharedApplication].delegate).inNightMode) {
                 self.barTintColor = [UIColor colorWithRed:22.0/255 green:22.0/255 blue:22.0/255 alpha:1.0];
                 barButton.tintColor = [UIColor clearColor];
             } else {

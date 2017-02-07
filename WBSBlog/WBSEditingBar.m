@@ -8,7 +8,7 @@
 
 #import "WBSEditingBar.h"
 #import "WBSGrowingTextView.h"
-#import "AppDelegate.h"
+#import "WBSBlogAppDelegate.h"
 
 @interface WBSEditingBar ()
 
@@ -44,8 +44,8 @@
     [_editView setCornerRadius:5.0];
     [_editView setBorderWidth:1.0f andColor:[UIColor colorWithHex:0xC8C8CD]];
     
-    ((AppDelegate *)[UIApplication sharedApplication].delegate).inNightMode = [WBSConfig getMode];
-    if (((AppDelegate *)[UIApplication sharedApplication].delegate).inNightMode) {
+    ((WBSBlogAppDelegate *)[UIApplication sharedApplication].delegate).inNightMode = [WBSConfig getMode];
+    if (((WBSBlogAppDelegate *)[UIApplication sharedApplication].delegate).inNightMode) {
         self.barTintColor = [UIColor colorWithRed:22.0/255 green:22.0/255 blue:22.0/255 alpha:1.0];
         [_editView setBorderWidth:1.0f andColor:[UIColor colorWithRed:106.0/255 green:106.0/255 blue:106.0/255 alpha:1.0]];
         _modeSwitchButton.backgroundColor = [UIColor clearColor];

@@ -11,13 +11,14 @@
  */
 
 #import <Foundation/Foundation.h>
-#import "UserModel.h"
+#import "WBSUserModel.h"
 
 @interface SingleObject : NSObject
 
-@property (nonatomic, strong) UserModel *user;   //!< 用户数据
+@property (nonatomic, strong) WBSUserModel *user;   //!< 用户数据
 
 @property (nonatomic ,assign) BOOL isLogin;  //!< 是否登录
+@property (nonatomic ,assign) BOOL isGuest;  //!< 是否为游客
 
 
 /**

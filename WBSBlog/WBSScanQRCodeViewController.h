@@ -12,4 +12,5 @@
 
 @interface WBSScanQRCodeViewController : UIViewController <AVCaptureMetadataOutputObjectsDelegate>
 
+
 @end

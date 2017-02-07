@@ -54,7 +54,7 @@
 
 - (void)initSubviews {
     //计算位置
-    _mainTableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_W, SCREEN_H) style:UITableViewStylePlain];
+    _mainTableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, KSCREEN_Width, KSCREEN_Height) style:UITableViewStylePlain];
     
     //设置代理
     [_mainTableView setDataSource:self];

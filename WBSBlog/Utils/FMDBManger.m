@@ -7,10 +7,10 @@
 //
 
 #import "FMDBManger.h"
-#import "UserModel.h"
+#import "WBSUserModel.h"
 
 //存储用户信息
-#define kUserInformationTable   @"userInfor"
+#define kUserInformationTable   @"userInfomation"
 //搜索历史
 #define kSeachHistoryTableName  @"seachHistoryTabe"
 
@@ -39,22 +39,16 @@
 - (void)initDataBase{
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentDirectory = [paths objectAtIndex:0];
-    self.dbPath = [documentDirectory stringByAppendingPathComponent:@"DATABase.sqlite"];
+    self.dbPath = [documentDirectory stringByAppendingPathComponent:@"WBSBlogDATABase.sqlite"];
     self.DB = [FMDatabase databaseWithPath:self.dbPath];
+    KLog(@"dbPath is %@",self.dbPath);
+    
 }
-
-
-
-
-
-
-
-
 
 //向表中插入数据
 //如果已经存在的话执行 修改数据
 //如果没有的话执行 插入操作
-- (void)insertUserToUserInformationTableWith:(UserModel *)user{
+- (void)insertUserToUserInformationTableWith:(WBSUserModel *)user{
     if (!self.DB) {
         [self initDataBase];
     }
@@ -71,12 +65,12 @@
         //执行修改操作
         FMDatabaseQueue *queue=[FMDatabaseQueue databaseQueueWithPath:self.dbPath];
         [queue inDatabase:^(FMDatabase *db) {
-            NSString *string = [NSString stringWithFormat:@"UPDATE %@ SET nickname=?, headIconVersion=?,headIcon=?, signature=? WHERE uid=?",kUserInformationTable];
-            BOOL isSucess = [self.DB executeUpdate:string,user.nickname,[user.headIconVersion stringValue], user.headIcon,user.signature,[user.uid stringValue]];
+            NSString *string = [NSString stringWithFormat:@"UPDATE %@ SET avatar=?, username=? ,displayname=? ,nickname=? ,firstname=? ,lastname=? ,registered=? ,email=? ,nicename=? ,url=? ,descriptions=? ,isAdmin=? WHERE uid=?",kUserInformationTable];
+            BOOL isSucess = [self.DB executeUpdate:string,user.avatar,user.username, user.displayname,user.nickname,user.firstname,user.lastname,user.registered,user.email,user.nicename,user.url,user.descriptions,[NSString stringWithFormat:@"%ld",user.isAdmin],[user.uid stringValue]];
             if (isSucess) {
-                KLog(@"更新成功");
+                KLog(@"更新数据库成功");
             }else{
-                KLog(@"更新失败");
+                KLog(@"更新数据库失败");
             }
         }];
         
@@ -84,14 +78,14 @@
         //执行插入操作
         FMDatabaseQueue *queue=[FMDatabaseQueue databaseQueueWithPath:self.dbPath];
         [queue inDatabase:^(FMDatabase *db) {
-
+            
             //执行插入操作
-            NSString *string = [NSString stringWithFormat:@"insert into %@(uid,nickname,headIconVersion,headIcon,signature) values (?,?,?,?,?)",kUserInformationTable];
-            BOOL insert=[self.DB executeUpdate:string, [user.uid stringValue],user.nickname,[user.headIconVersion stringValue],user.headIcon,user.signature];
+            NSString *string = [NSString stringWithFormat:@"insert into %@(uid, avatar, username,displayname,nickname,firstname,lastname,registered,email,nicename,url,descriptions,isAdmin) values (?,?,?,?,?,?,?,?,?,?,?,?,?)",kUserInformationTable];
+            BOOL insert=[self.DB executeUpdate:string,[user.uid stringValue],user.avatar,user.username, user.displayname,user.nickname,user.firstname,user.lastname,user.registered,user.email,user.nicename,user.url,user.descriptions,[NSString stringWithFormat:@"%ld",user.isAdmin]];
             if (insert) {
-                KLog(@"插入成功....");
+                KLog(@"数据库插入成功....");
             }else{
-                KLog(@"插入失败.....");
+                KLog(@"数据库插入失败.....");
             }
         }];
         [queue close];
@@ -110,13 +104,13 @@
     }
     [_DB setShouldCacheStatements:YES];
     if (![_DB tableExists:kUserInformationTable]) {
-        NSString *string = [NSString stringWithFormat:@"create table %@(uid TEXT, nickname TEXT ,headIconVersion TEXT ,headIcon TEXT ,signature TEXT)",kUserInformationTable];
+        NSString *string = [NSString stringWithFormat:@"create table %@(uid TEXT,avatar TEXT,username TEXT ,displayname TEXT ,nickname TEXT ,firstname TEXT ,lastname TEXT ,registered TEXT ,email TEXT ,nicename TEXT ,url TEXT ,descriptions TEXT ,isAdmin TEXT )",kUserInformationTable];
         [_DB executeUpdate:string];
     }
 }
 
 //判断用户是否存在
-- (BOOL)userIsExistenceWith:(UserModel *)user{
+- (BOOL)userIsExistenceWith:(WBSUserModel *)user{
     if (!self.DB) {
         [self creatUserInforTable];
         return NO;
@@ -152,16 +146,50 @@
     FMResultSet *result=[_DB executeQuery:string,uid];
     while ([result next]) {
         NSString *uid = [result stringForColumn:@"uid"];
+        NSString *avatar = [result stringForColumn:@"avatar"];
+        NSString *username = [result stringForColumn:@"username"];
+        NSString *displayname = [result stringForColumn:@"displayname"];
         NSString *nickname = [result stringForColumn:@"nickname"];
-        NSString *headIconVersion = [result stringForColumn:@"headIconVersion"];
-        NSString *headIcon = [result stringForColumn:@"headIcon"];
-        NSString *signature = [result stringForColumn:@"signature"];
-        NSDictionary *dic = [[NSDictionary alloc] initWithObjectsAndKeys:[NSNumber numberWithInteger:[uid integerValue]],@"uid", nickname, @"nickname", [NSNumber numberWithInteger:[headIconVersion integerValue]],@"headIconVersion", headIcon,@"headIcon",signature ,@"signature", nil];
-        return dic;
+        NSString *firstname = [result stringForColumn:@"firstname"];
+        NSString *lastname = [result stringForColumn:@"lastname"];
+        NSString *registered = [result stringForColumn:@"registered"];
+        NSString *email = [result stringForColumn:@"email"];
+        NSString *nicename = [result stringForColumn:@"nicename"];
+        NSString *url = [result stringForColumn:@"url"];
+        NSString *descriptions = [result stringForColumn:@"descriptions"];
+        NSInteger isAdmin = [[result stringForColumn:@"isAdmin"] integerValue];
+        
+        NSDictionary *dict = [[NSDictionary alloc] initWithObjectsAndKeys:[NSNumber numberWithInteger:[uid integerValue]],@"uid", checkNull(avatar), @"avatar",checkNull(username),@"username", checkNull(displayname),@"displayname",checkNull(nickname) ,@"nickname",checkNull(firstname) ,@"firstname",checkNull(lastname) ,@"lastname",checkNull(registered) ,@"registered",checkNull(email) ,@"email",checkNull(nicename) ,@"nicename",checkNull(url) ,@"url",checkNull(descriptions) ,@"descriptions",[NSNumber numberWithInteger:isAdmin],@"isAdmin", nil];
+        return dict;
     }
     return nil;
 }
 
+// 根据uid 获取用户
+- (WBSUserModel *)getUserModelInfoWithUid:(NSString *)uid{
+    
+    NSDictionary *userDict = nil;
+    WBSUserModel *userModel = nil;
+    if (uid) {
+        userDict = [self getUserInforWith:uid];
+    }else{
+        NSString *UserUID = [WBSUtils getObjectforKey:WBSUserUID];
+        if (UserUID) {
+            userDict = [self getUserInforWith:UserUID];
+        }
+    }
+    if (userDict == nil) {
+        
+        [WBSUtils showErrorMessage:@"用户异常，请重新登录"];
+        return nil;
+    }else{
+        userModel = [WBSUserModel WBSUserModelWithDic:userDict];
+    }
+    
+    return userModel;
+    
+    
+}
 
 
 

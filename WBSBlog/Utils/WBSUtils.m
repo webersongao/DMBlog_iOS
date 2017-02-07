@@ -8,14 +8,12 @@
 
 #import "WBSUtils.h"
 #import "Reachability.h"
-#import "WBSBrowserNavViewController.h"
 #import "WBSBrowserViewController.h"
+#import "WBSBrowserNavViewController.h"
 #import "GHMarkdownParser.h"
 #import "WBSErrorViewController.h"
 #import "WBSRootTabBarController.h"
-#import "RESideMenu.h"
-#import "WBSSideMenuViewController.h"
-#import "AppDelegate.h"
+#import "WBSBlogAppDelegate.h"
 #import "SVProgressHUD.h"
 #import "UIWindow+KeyWindow.h"
 
@@ -27,9 +25,20 @@
  */
 + (void)goToMainViewController {
     //切换控制器
-    [[UIApplication sharedApplication].keyWindow switchToRootViewController];
+//    [[UIApplication sharedApplication].keyWindow switchToRootViewController];  //原来的
+    [[UIApplication sharedApplication].keyWindow switchToRootTabbarViewController];  //最新的抽屉效果
 }
 
++ (void)goToLoginViewController {
+    //切换 登录控制器
+    [[UIApplication sharedApplication].keyWindow switchToLoginViewController];  //最新的抽屉效果
+}
+
+
+// 清除用户保存信息
++(void)clearUserInfoValue{
+
+}
 
 #pragma mark 字符串处理
 /**
@@ -430,16 +439,38 @@
     labelMessage.text = errorMessage;
     [target.view addSubview:labelMessage];
     [to.navigationItem setHidesBackButton:YES];
-    to.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"首页" style:UIBarButtonItemStylePlain target:to action:@selector(returnHome)];
+//    to.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"首页" style:UIBarButtonItemStylePlain target:to action:@selector(returnHome)];
     to.navigationItem.title = @"出错啦";
     to.errorMessage = errorMessage;
     [target.navigationController pushViewController:to animated:YES];
 }
 
 /// 网址 账号密码信息校验
-+(BOOL)checkUrlString:(NSString *)urlString userNameStr:(NSString *)userNameStr passWord:(NSString *)passWord{
-
-    return YES;
++(BOOL)checkUrlString:(NSString *)urlString userNameStr:(NSString *)userNameStr passWord:(NSString *)passWordStr{
+    
+    if ([urlString isEqualToString:@""]) {
+        [WBSUtils showErrorMessage:@"博客API地址不能为空！"];
+        return NO;
+    }else if([urlString hasPrefix:@"http"]) {
+        [WBSUtils showErrorMessage:@"博客地址勿带http"];
+        return NO;
+    }else if([userNameStr isEqualToString:@""]) {
+        [WBSUtils showErrorMessage:@"用户名不能为空！"];
+        
+        return NO;
+    }else if(userNameStr.length < 5 || userNameStr.length > 20) {
+        
+        [WBSUtils showErrorMessage:@"用户名只能在5-20之间！"];
+        return NO;
+    }else if([passWordStr isEqualToString:@""]) {
+        [WBSUtils showErrorMessage:@"密码不能为空!"];
+        return NO;
+    }else if(passWordStr.length < 5 || passWordStr.length > 20) {
+        [WBSUtils showErrorMessage:@"密码只能在5-20之间!"];
+        return NO;
+    }else{
+        return YES;
+    }
 }
 
 
@@ -468,7 +499,7 @@
     return [defaults objectForKey:key];
 }
 
-+ (BOOL)getBooltforKey:(NSString *)key{
++ (BOOL)getBoolforKey:(NSString *)key{
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     return [defaults boolForKey:key];
 }

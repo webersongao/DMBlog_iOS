@@ -43,22 +43,22 @@
 }
 
 - (void)setBackground {
-    UIView *bv1 = [[UIView alloc] initWithFrame:(CGRect){0, 0, SCREEN_W, 150}];
+    UIView *bv1 = [[UIView alloc] initWithFrame:(CGRect){0, 0, KSCREEN_Width, 150}];
     bv1.alpha = 0.8f;
     bv1.backgroundColor = UIColorFromHEXRGB(0x333333);
     [self.view addSubview:bv1];
     
-    UIView *bv2 = [[UIView alloc] initWithFrame:(CGRect){0, 150, (SCREEN_W-285)/2, 285}];
+    UIView *bv2 = [[UIView alloc] initWithFrame:(CGRect){0, 150, (KSCREEN_Width-285)/2, 285}];
     bv2.alpha = 0.8f;
     bv2.backgroundColor = UIColorFromHEXRGB(0x333333);
     [self.view addSubview:bv2];
     
-    UIView *bv3 = [[UIView alloc] initWithFrame:(CGRect){(SCREEN_W+285)/2, 150, (SCREEN_H-285)/2, 285}];
+    UIView *bv3 = [[UIView alloc] initWithFrame:(CGRect){(KSCREEN_Width+285)/2, 150, (KSCREEN_Height-285)/2, 285}];
     bv3.alpha = 0.8f;
     bv3.backgroundColor = UIColorFromHEXRGB(0x333333);
     [self.view addSubview:bv3];
     
-    UIView *bv4 = [[UIView alloc] initWithFrame:(CGRect){0, 435, SCREEN_W, SCREEN_H-435}];
+    UIView *bv4 = [[UIView alloc] initWithFrame:(CGRect){0, 435, KSCREEN_Width, KSCREEN_Height-435}];
     bv4.alpha = 0.8f;
     bv4.backgroundColor = UIColorFromHEXRGB(0x333333);
     [self.view addSubview:bv4];
@@ -67,19 +67,19 @@
 }
 
 - (void)setScanFrame {
-    self.scanImageView = [[UIImageView alloc] initWithFrame:(CGRect){(SCREEN_W-285)/2, 150, 285, 285}];
+    self.scanImageView = [[UIImageView alloc] initWithFrame:(CGRect){(KSCREEN_Width-285)/2, 150, 285, 285}];
     self.scanImageView.image = [UIImage imageNamed:@"scan_frame.png"];
     [self.view addSubview:self.scanImageView];
 }
 
 - (void)setScanAnimation {
-    self.animationImageView = [[UIImageView alloc] initWithFrame:(CGRect){(SCREEN_W-285)/2, 150, 285, 2}];
+    self.animationImageView = [[UIImageView alloc] initWithFrame:(CGRect){(KSCREEN_Width-285)/2, 150, 285, 2}];
     self.animationImageView.image = [UIImage imageNamed:@"scan_animation.png"];
     [self.view addSubview:self.animationImageView];
 }
 
 - (void)setDescription {
-    UILabel *description = [[UILabel alloc] initWithFrame:(CGRect){0, 450.f, SCREEN_W, 16.f}];
+    UILabel *description = [[UILabel alloc] initWithFrame:(CGRect){0, 450.f, KSCREEN_Width, 16.f}];
     [description setTextColor:[UIColor colorWithWhite:256.f alpha:0.6]];
     [description setText:@"将二维码放入框内，即可自动扫描"];
     [description setFont:[UIFont fontWithName:@"Helvetica" size:13.f]];
@@ -95,7 +95,7 @@
         self.output = [[AVCaptureMetadataOutput alloc]init];
         [self.output setMetadataObjectsDelegate:self queue:dispatch_get_main_queue()];
         
-        [self.output setRectOfInterest:(CGRect){(150)/SCREEN_H, ((SCREEN_W-285)/2)/SCREEN_W, 285/SCREEN_H, 285/SCREEN_W}];
+        [self.output setRectOfInterest:(CGRect){(150)/KSCREEN_Height, ((KSCREEN_Width-285)/2)/KSCREEN_Width, 285/KSCREEN_Height, 285/KSCREEN_Width}];
         
         self.session = [[AVCaptureSession alloc]init];
         [self.session setSessionPreset:AVCaptureSessionPresetHigh];
@@ -117,15 +117,21 @@
 }
 
 - (void)setCancelButton {
-    UIButton *button = [[UIButton alloc] initWithFrame:(CGRect){(SCREEN_W-150.f)/2, (SCREEN_H-50.f), 150.f, 35.f}];
+    UIButton *button = [[UIButton alloc] initWithFrame:(CGRect){(KSCREEN_Width-150.f)/2, (KSCREEN_Height-50.f), 150.f, 35.f}];
     [button.titleLabel setFont:[UIFont fontWithName:@"Helvetica" size:14.0]];
     [button setTitle:@"取消扫码" forState:UIControlStateNormal];
     [button setTitleColor: UIColorFromHEXRGB(0xffffff) forState:UIControlStateNormal];
     [button setTitleColor: UIColorFromHEXRGB(0xaaaaaa) forState:UIControlStateSelected];
     
-    [button addTarget:self action:@selector(toRootViewController) forControlEvents:UIControlEventTouchUpInside];
+    [button addTarget:self action:@selector(quitScanCodeVC) forControlEvents:UIControlEventTouchUpInside];
     
     [self.view addSubview:button];
+}
+/// 取消扫码
+-(void)quitScanCodeVC{
+    
+    [WBSUtils goToMainViewController];
+    
 }
 
 - (void)scanAnimation {
