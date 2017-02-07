@@ -9,6 +9,7 @@
 #import "WBSLoginViewController.h"
 #import "WBSSelectBlogViewController.h"
 #import "WBSNetRequest.h"
+#import "UIView+Util.h"
 
 
 
@@ -46,8 +47,8 @@
 
 @implementation WBSLoginViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
     //判断登录状态
     WBSApiInfo *apiInfo = [WBSConfig getAuthoizedApiInfo];
     if (apiInfo) {
@@ -55,12 +56,18 @@
         KLog(@"Current baseURL:%@ username:%@ password:%@-- 已经登录！", apiInfo.baseURL, apiInfo.username, apiInfo.password);
         [SingleObject shareSingleObject].isLogin = YES;
         // 解档 赋值用户数据
-        WBSUserModel *userModel = [[FMDBManger sharedFMDBManger]getUserModelInfoWithUid:nil];
+        NSString *userUID = [WBSUtils getObjectforKey:WBSUserUID];
+        WBSUserModel *userModel = [[FMDBManger sharedFMDBManger]getUserModelInfoWithUid:userUID];
         [SingleObject shareSingleObject].user = userModel;
         //已经登录过，跳转到博文主界面，程序继续
         [WBSUtils goToMainViewController];
         return;
     }
+    
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
     
     //初始化导航栏
     self.navigationItem.title = @"登录";

@@ -8,8 +8,8 @@
 
 #import "WBSLeftMenuViewController.h"
 #import "WBSLoginViewController.h"
-#import "WBSUserInfoController.h"
-#import "WBSSettingsPage.h"
+#import "WBSUserCenterController.h"
+#import "WBSSettingViewController.h"
 #import "WBSBlogAppDelegate.h"
 #import "WBSScanQRCodeViewController.h"
 #import "UIViewController+MMDrawerController.h"
@@ -58,32 +58,27 @@
     }else{
         userNickName = @"未登录";
     }
-    UIImage *portrait = [[UIImage alloc]init];
     
     // 用户头像View
     UIView *headerView = [UIView new];
     headerView.backgroundColor = [UIColor clearColor];
     
-    UIImageView *portraitView = [UIImageView new];
+    UIImageView *portraitView = [[UIImageView alloc]init];
     portraitView.contentMode = UIViewContentModeScaleAspectFit;
     [portraitView setCornerRadius:30];
     portraitView.userInteractionEnabled = YES;
     portraitView.translatesAutoresizingMaskIntoConstraints = NO;
+    // 头像写死
+    portraitView.image = [UIImage imageNamed:@"default_portrait"];
     [headerView addSubview:portraitView];
-    
-    if (portrait == nil) {
-        portraitView.image = [UIImage imageNamed:@"default-portrait"];
-    } else {
-        portraitView.image = portrait;
-    }
     
     /**
      @author Weberson
      昵称名字Label
      */
-    UILabel *nameLabel = [UILabel new];
+    UILabel *nameLabel = [[UILabel alloc]init];
     nameLabel.text = userNickName;
-    nameLabel.font = [UIFont boldSystemFontOfSize:20];
+    nameLabel.font = [UIFont boldSystemFontOfSize:18];
     nameLabel.translatesAutoresizingMaskIntoConstraints = NO;
     [headerView addSubview:nameLabel];
     
@@ -153,8 +148,8 @@
         }
         case 1: {
             KLog(@"设置");
-            WBSSettingsPage *settingPage = [[WBSSettingsPage alloc]init];
-            [self setContentViewController:settingPage];
+            WBSSettingViewController *settingVC = [[WBSSettingViewController alloc]init];
+            [self setContentViewController:settingVC];
             break;
         }
         case 2: {//注销退出
@@ -210,22 +205,23 @@
 }
 
 -(void)dealloc{
-    NSLog(@"akdhgalkhakjagj=++++++++++=");
+    NSLog(@"WBSLeftMenuViewController is dealloc ");
 }
 
 
 #pragma mark - 点击登录
 
 - (void)pushToUserInfoVC {
-    if (![SingleObject shareSingleObject].isLogin) {
+    if (![SingleObject shareSingleObject].isLogin && ![SingleObject shareSingleObject].isGuest) {
         // 如果 没有登录 跳转到登录控制器
         [self setContentViewController:[[WBSLoginViewController alloc]init]];
     }else if (![WBSConfig isJSONAPIEnable]){
         [WBSUtils showErrorMessage:@"API不支持"];
+    }else if ([SingleObject shareSingleObject].isGuest){
+    [WBSUtils showErrorMessage:@"游客请登录"];
     }else {
-        // 已经登录  跳转到个人信息界面 XMLRPC接口不支持该功能
-        WBSUserInfoController *userInfoVC = [[WBSUserInfoController alloc]initWithStyle:UITableViewStyleGrouped];
-        userInfoVC.userModel = [SingleObject shareSingleObject].user;
+        // json Api已经登录  跳转到个人信息界面 XMLRPC接口不支持该功能
+        WBSUserCenterController *userInfoVC = [[WBSUserCenterController alloc]initWithStyle:UITableViewStyleGrouped];
         [self setContentViewController:userInfoVC];
     }
 }

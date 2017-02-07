@@ -9,7 +9,6 @@
 #import "WBSNetRequest.h"
 #import "NetworkingCenter.h"
 #import "TGMetaWeblogAuthApi.h"
-#import "FMDBManger.h"
 
 @implementation WBSNetRequest
 

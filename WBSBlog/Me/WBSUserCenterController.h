@@ -1,5 +1,5 @@
 //
-//  WBSUserInfoController.h
+//  WBSUserCenterController.h
 //  WBSBlog
 //
 //  Created by Weberson on 16/7/20.
@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "WBSUserModel.h"
 
-@interface WBSUserInfoController : UITableViewController
-@property (nonatomic, strong) WBSUserModel *userModel;  //!< 用户信息
+@interface WBSUserCenterController : UITableViewController
 
 @end

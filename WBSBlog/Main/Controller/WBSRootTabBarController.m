@@ -11,7 +11,7 @@
 #import "WBSHomePostViewController.h"
 #import "WBSSwipableViewController.h"
 #import "WBSTagViewController.h"
-#import "WBSUserInfoController.h"
+#import "WBSUserCenterController.h"
 #import "WBSPostEditViewController.h"
 #import "WBSBaseNaviViewController.h"
 
@@ -45,7 +45,7 @@
     WBSSwipableViewController *searchVC = [self createBlogViewController:YES];
     
     //我
-    WBSUserInfoController *myInfoVC = [[WBSUserInfoController alloc]initWithStyle:UITableViewStyleGrouped];
+    WBSUserCenterController *myInfoVC = [[WBSUserCenterController alloc]initWithStyle:UITableViewStyleGrouped];
     
     self.tabBar.translucent = NO;
 

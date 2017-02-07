@@ -66,10 +66,12 @@
 #define BottomTextSelectColor   RGBCOLOR(42, 143, 225)
 
 // 屏幕宽高 Bounds
-#define SCREEN_Bounds [UIScreen mainScreen].bounds
-#define SCREEN_S [UIScreen mainScreen].bounds.size
-#define SCREEN_H [UIScreen mainScreen].bounds.size.height
-#define SCREEN_W [UIScreen mainScreen].bounds.size.width
+#define KSCREEN_Bounds  [UIScreen mainScreen].bounds
+#define KSCREEN_Size    [UIScreen mainScreen].bounds.size
+#define KSCREEN_Height  [UIScreen mainScreen].bounds.size.height
+#define KSCREEN_Width   [UIScreen mainScreen].bounds.size.width
+#define KSCREEN_HeightScale  KSCREEN_Height/667
+#define KSCREEN_WidthScale   KSCREEN_Width/375
 
 /// 博客类型
 #define KWordPress @"wordpress"

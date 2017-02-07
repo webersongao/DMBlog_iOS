@@ -1,5 +1,5 @@
 //
-//  WBSSettingsPage.h
+//  WBSSettingViewController.h
 //  WBSBlog
 //
 //  Created by Weberson on 16/7/20.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface WBSSettingsPage : UITableViewController
+@interface WBSSettingViewController : UITableViewController
 
 @end
