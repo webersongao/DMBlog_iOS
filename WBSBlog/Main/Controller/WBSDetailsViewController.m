@@ -7,9 +7,7 @@
 //
 
 #import "WBSDetailsViewController.h"
-#import "WBSUtils.h"
 #import "AFNetworking.h"
-#import "WBSConfig.h"
 #import "TGBlogJsonApi.h"
 
 #define HTML_STYLE @"<style>\
@@ -29,7 +27,6 @@
 @interface WBSDetailsViewController () <UIWebViewDelegate, UIScrollViewDelegate, UIAlertViewDelegate>
 
 @property (nonatomic, strong) UIWebView *detailsView;
-@property (nonatomic, strong) MBProgressHUD *HUD;
 
 @end
 
@@ -71,8 +68,7 @@
     [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"|[detailsView]|" options:0 metrics:nil views:views]];
     [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[detailsView][bottomBar]" options:NSLayoutFormatAlignAllLeft | NSLayoutFormatAlignAllRight metrics:nil views:views]];
     // 添加等待动画
-    _HUD = [WBSUtils createHUD];
-    _HUD.userInteractionEnabled = NO;
+    [WBSUtils showStatusMessage:nil];
     
     [self fetchDetails:NO];
     
@@ -116,7 +112,7 @@
  *  刷新
  */
 - (void)refresh{
-    NSLog(@"refreshing...");
+    KLog(@"refreshing...");
     [self fetchDetails:YES];
 }
 
@@ -152,19 +148,19 @@
         categroies = [post objectForKey:@"categories"];
     }
     
-    NSLog(@"post url:%@",url);
+    KLog(@"post url:%@",url);
     NSString *authorStr = [NSString stringWithFormat:@"<a href='%@'>%@</a> 发布于 %@", url,author, [WBSUtils intervalSinceNow:dateCreated]];
     
     NSString *postContent = [NSString stringWithFormat:@"<body style='background-color:#EBEBF3'>%@<div id='WBSBlog_title'>%@</div><div id='WBSBlog_outline'>%@</div><hr/><div id='WBSBlog_body'>%@</div>%@</body>", HTML_STYLE, title, authorStr, [WBSUtils markdownToHtml:content], HTML_BOTTOM];
     
-    NSLog(@"loading details");
+    KLog(@"loading details");
     if (!flag) {
         NSString *htmlString = postContent;
         [_detailsView loadHTMLString:htmlString baseURL:nil];
-        [_HUD hide:YES afterDelay:1];
+        [WBSUtils dismissHUDWithDelay:1];
     }else{
         
-        NSLog(@"fetch details");
+        KLog(@"fetch details");
         NSString *str=[NSString stringWithFormat:@"%@",[_result objectForKey:@"link"]];
         NSURL *url = [NSURL URLWithString:[str stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
         NSURLRequest *request = [NSURLRequest requestWithURL:url];
@@ -173,17 +169,20 @@
             NSString *responseHtml = operation.responseString;
             NSString *htmlString = [WBSUtils markdownToHtml:responseHtml];
             [_detailsView loadHTMLString:htmlString baseURL:nil];
-            //NSLog(@"获取到的数据为：%@",html);
+            //KLog(@"获取到的数据为：%@",html);
             //隐藏加载状态
-            [_HUD hide:YES afterDelay:1];
+            [WBSUtils dismissHUDWithDelay:1];
         }failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-            NSLog(@"发生错误！%@",error);
-            _HUD.mode = MBProgressHUDModeCustomView;
-            _HUD.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"HUD-error"]];
+            KLog(@"发生错误！%@",error);
+    
             NSString *errorMesage =  [NSString stringWithFormat:@"网络异常，加载详情失败:%@",[error localizedDescription]];
-            _HUD.labelText = errorMesage;
-            NSLog(@"%@",errorMesage);
-            [_HUD hide:YES afterDelay:1];
+            
+            [WBSUtils showErrorMessage:errorMesage];
+            KLog(@"%@",errorMesage);
+        
+            
+        
+    
         }];
         NSOperationQueue *queue = [[NSOperationQueue alloc] init];
         [queue addOperation:operation];

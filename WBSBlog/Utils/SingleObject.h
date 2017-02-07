@@ -1,0 +1,31 @@
+//
+//  SingleObject.h
+//  web_Product
+//
+//  Created by weberson on 15/8/31.
+//  Copyright (c) 2015年 weberson. All rights reserved.
+//
+
+/**
+ *  数据单例
+ */
+
+#import <Foundation/Foundation.h>
+#import "WBSUserModel.h"
+
+@interface SingleObject : NSObject
+
+@property (nonatomic, strong) WBSUserModel *user;   //!< 用户数据
+
+@property (nonatomic ,assign) BOOL isLogin;  //!< 是否登录
+@property (nonatomic ,assign) BOOL isGuest;  //!< 是否为游客
+
+
+/**
+ *  初始化
+ *
+ */
++ (instancetype)shareSingleObject;
+
+
+@end

@@ -15,7 +15,10 @@
 @property (nonatomic, strong) WBSHorizonalTableViewController *viewPager;
 @property (nonatomic, strong) WBSTitleBarView *titleBar;
 
+// 带有Tabbar
 - (instancetype)initWithTitle:(NSString *)title andSubTitles:(NSArray *)subTitles andControllers:(NSArray *)controllers underTabbar:(BOOL)underTabbar;
+
+// 不带 Tabbar
 - (instancetype)initWithTitle:(NSString *)title andSubTitles:(NSArray *)subTitles andControllers:(NSArray *)controllers;
 
 @end
