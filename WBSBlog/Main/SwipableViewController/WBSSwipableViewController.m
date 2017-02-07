@@ -7,7 +7,7 @@
 //
 
 #import "WBSSwipableViewController.h"
-#import "UIColor+Util.h"
+#import "UIColor+Config.h"
 
 @interface WBSSwipableViewController ()
 
@@ -70,7 +70,7 @@
         };
         
         _viewPager.scrollView = ^(CGFloat offsetRatio, NSUInteger focusIndex, NSUInteger animationIndex) {
-            NSLog(@"界面滚动中:viewpager is scrolling...");
+            KLog(@"界面滚动中:viewpager is scrolling...");
             UIButton *titleFrom = weakTitleBar.titleButtons[animationIndex];
             UIButton *titleTo = weakTitleBar.titleButtons[focusIndex];
             //CGFloat colorValue = (CGFloat)0x90 / (CGFloat)0xFF;

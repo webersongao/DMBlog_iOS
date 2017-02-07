@@ -11,7 +11,6 @@
 #import "AFNetworking.h"
 #import "SAMKeychain.h"
 #import "SVProgressHUD.h"
-#import "WBSUtils.h"
 #import <CommonCrypto/CommonDigest.h>
 
 @interface WBSQRCodeLoginViewController ()
@@ -37,14 +36,14 @@
     self.view.backgroundColor = [UIColor whiteColor];
     [SVProgressHUD setDefaultStyle:SVProgressHUDStyleDark];
     
-    UIImageView *backgroundView = [[UIImageView alloc] initWithFrame:(CGRect){(SCREEN_W-147.f)/2, 170.f, 147.f, 100.f}];
+    UIImageView *backgroundView = [[UIImageView alloc] initWithFrame:(CGRect){(KSCREEN_Width-147.f)/2, 170.f, 147.f, 100.f}];
     [backgroundView setImage:[UIImage imageNamed:@"connect_alert_mac_mute.png"]];
     
     [self.view addSubview:backgroundView];
 }
 
 - (void)setDescription {
-    UILabel * description = [[UILabel alloc] initWithFrame:(CGRect){0, 300.f, SCREEN_W, 16.f}];
+    UILabel * description = [[UILabel alloc] initWithFrame:(CGRect){0, 300.f, KSCREEN_Width, 16.f}];
     [description setTextColor:UIColorFromHEXRGB(0x4b4b4b)];
     [description setText:@"点击按钮获取授权"];
     [description setFont:[UIFont fontWithName:@"Helvetica" size:18.f]];
@@ -54,7 +53,7 @@
 }
 
 - (void)setButton {
-    UIButton *button = [[UIButton alloc] initWithFrame:(CGRect){(SCREEN_W-150.f)/2, 400.f, 150.f, 35.f}];
+    UIButton *button = [[UIButton alloc] initWithFrame:(CGRect){(KSCREEN_Width-150.f)/2, 400.f, 150.f, 35.f}];
     [button setTitle:@"登录网站" forState:UIControlStateNormal];
     [button setTitleColor:UIColorFromHEXRGB(0x37c936) forState:UIControlStateNormal];
     [button setTitleColor:UIColorFromHEXRGB(0xffffff) forState:UIControlStateHighlighted];
@@ -70,7 +69,7 @@
 }
 
 - (void)setCancelButton {
-    UIButton *button = [[UIButton alloc] initWithFrame:(CGRect){(SCREEN_W-150.f)/2, 460.f, 150.f, 35.f}];
+    UIButton *button = [[UIButton alloc] initWithFrame:(CGRect){(KSCREEN_Width-150.f)/2, 460.f, 150.f, 35.f}];
     [button.titleLabel setFont:[UIFont fontWithName:@"Helvetica" size:14.0]];
     [button setTitle:@"取消登录" forState:UIControlStateNormal];
     [button setTitleColor: UIColorFromHEXRGB(0xaaaaaa) forState:UIControlStateNormal];
@@ -108,10 +107,10 @@
         [manager POST:adminUrl
            parameters:params
               success:^(NSURLSessionTask *task, id res) {
-                  NSLog(@"response:%@", res);
+                  KLog(@"response:%@", res);
               }
               failure:^(NSURLSessionTask *task, NSError *error) {
-                  NSLog(@"error:%@", error);
+                  KLog(@"error:%@", error);
               }];
     }
 
@@ -148,11 +147,11 @@
               success:^(NSURLSessionTask *task, id res) {
                   [SVProgressHUD showSuccessWithStatus:@"登录成功"];
                   [self toRootViewController];
-                  NSLog(@"response:%@", res);
+                  KLog(@"response:%@", res);
               }
               failure:^(NSURLSessionTask *task, NSError *error) {
                   [SVProgressHUD showErrorWithStatus:@"登录失败"];
-                  NSLog(@"error:%@", error);
+                  KLog(@"error:%@", error);
               }];
     }
 }

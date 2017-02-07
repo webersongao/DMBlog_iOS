@@ -7,7 +7,7 @@
 //
 
 #import "WBSOptionButton.h"
-#import "UIColor+Util.h"
+#import "UIColor+Config.h"
 
 @interface WBSOptionButton ()
 
@@ -21,7 +21,7 @@
 - (instancetype)initWithTitle:(NSString *)title image:(UIImage *)image andColor:(UIColor *)color
 {
     if (self = [super init]) {
-        _button = [UIImageView new];
+        _button = [[UIImageView alloc]init];
         _button.backgroundColor = color;
         
         _image = [UIImageView new];
@@ -29,7 +29,7 @@
         _image.translatesAutoresizingMaskIntoConstraints = NO;
         [_button addSubview:_image];
         
-        _titleLabel = [UILabel new];
+        _titleLabel = [[UILabel alloc]init];
         _titleLabel.textColor = [UIColor colorWithHex:0x666666];
         _titleLabel.font = [UIFont systemFontOfSize:14];
         _titleLabel.text = title;

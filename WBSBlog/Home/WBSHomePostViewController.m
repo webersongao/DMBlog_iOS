@@ -1,5 +1,5 @@
 //
-//  WBSBlogsViewController.m
+//  WBSHomePostViewController.m
 //  WBSBlog
 //
 //  Created by Weberson on 16/7/20.
@@ -9,28 +9,26 @@
 #import "WBSHomePostViewController.h"
 #import "TGMetaWeblogApi.h"
 #import "WBSPostCell.h"
-#import "WBSUtils.h"
 #import "WBSPostDetailViewController.h"
-#import "WBSConfig.h"
 #import "TGBlogJsonApi.h"
 #import "WBSDropdownMenuView.h"
 #import "WBSTitleMenuViewController.h"
 #import "WBSErrorViewController.h"
 #import "WBSLoginViewController.h"
-#import "RESideMenu.h"
+
 
 static NSString *kPostCellID = @"PostCell";//CellID
 const int MAX_DESCRIPTION_LENGTH = 60;//描述最多字数
 const int MAX_PAGE_SIZE = 10;//每页显示数目
 //super.page //当前页码（由于MetaWeblog API不支持分页，因此，此参数仅仅JSON API有用）
 
-@interface WBSPostViewController ()<UISearchResultsUpdating,DropdownMenuDelegate, TitleMenuDelegate>{
+@interface WBSHomePostViewController ()<UISearchResultsUpdating,DropdownMenuDelegate, TitleMenuDelegate>{
     AFHTTPRequestOperationManager *manager;
 }
 
 @end
 
-@implementation WBSPostViewController
+@implementation WBSHomePostViewController
 
 /**
  *  根据文章类型初始化
@@ -102,7 +100,7 @@ const int MAX_PAGE_SIZE = 10;//每页显示数目
     UIViewController *current = [self.navigationController.viewControllers objectAtIndex:0];
     current.navigationItem.rightBarButtonItem.title = self.tableView.editing?@"编辑":@"完成";
     self.tableView.editing=!self.tableView.editing;
-    NSLog(@"编辑");
+    KLog(@"编辑");
 }
 
 
@@ -300,7 +298,7 @@ const int MAX_PAGE_SIZE = 10;//每页显示数目
  */
 -(void)updateSearchResultsForSearchController:(UISearchController *)searchController{
     NSString *searchString = searchController.searchBar.text;
-    NSLog(@"searching %@",searchString);
+    KLog(@"searching %@",searchString);
     
     //设置搜索关键字及结果类型
     _searchString = searchString;
@@ -373,7 +371,7 @@ const int MAX_PAGE_SIZE = 10;//每页显示数目
 
 -(void)fectchRecentPosts:(NSUInteger)page refresh:(BOOL)refresh{
     NSInteger currentCount = MAX_PAGE_SIZE+page*MAX_PAGE_SIZE;
-    NSLog(@"Tring to get recent %lu posts...",(long)currentCount);
+    KLog(@"Tring to get recent %lu posts...",(long)currentCount);
     
     //===================================
     //获取文章数据
@@ -386,10 +384,10 @@ const int MAX_PAGE_SIZE = 10;//每页显示数目
         TGBlogJsonApi *jsonAPI = self.api;
         
         NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-        NSString *baseURL = [userDefaults objectForKey:@"baseURL"];
+        NSString *baseURL = [userDefaults objectForKey:WBSSiteBaseURL];
         
         //从plist读取DigPostCount
-        NSString *path = [[NSBundle mainBundle]pathForResource:@"WBSBlog" ofType:@"plist"];
+        NSString *path = [[NSBundle mainBundle]pathForResource:@"WBSBlogSetting" ofType:@"plist"];
         NSDictionary *settings = [NSDictionary dictionaryWithContentsOfFile:path];
         NSInteger digPostCount = [[settings objectForKey:@"DigPostCount"] integerValue];
         //由于置顶文章会影响分页数目，因此需要把他排除
@@ -397,13 +395,13 @@ const int MAX_PAGE_SIZE = 10;//每页显示数目
         NSString *requestURL = [NSString stringWithFormat:@"%@/get_recent_posts/?page=%lu&count=%d&post_type=%@",baseURL,super.page+1,MAX_PAGE_SIZE,(_postType == PostTypePost?@"post":@"page")];
         [jsonAPI parseURL:requestURL success:^(NSArray *posts, NSInteger postsCount) {
             
-            NSLog(@"requestURL:%@",requestURL);
+            KLog(@"requestURL:%@",requestURL);
             
-            NSLog(@"JSON API Fetched %ld posts", postsCount);
+            KLog(@"JSON API Fetched %ld posts", postsCount);
             if (self.page == 0) {
                 postsCount -= digPostCount;
             }
-            NSLog(@"NO dig posts %ld", (long)postsCount);
+            KLog(@"NO dig posts %ld", (long)postsCount);
             
             //处理刷新
             if (refresh) {
@@ -441,7 +439,7 @@ const int MAX_PAGE_SIZE = 10;//每页显示数目
             });
             
         }failure:^(NSError *error) {
-            NSLog(@"Error: %@", error);
+            KLog(@"Error: %@", error);
         }];
         
     }else{
@@ -451,7 +449,7 @@ const int MAX_PAGE_SIZE = 10;//每页显示数目
         //MetaWeblogAPI
         [self.api getRecentPosts:currentCount
                          success:^(NSArray *posts) {
-                             NSLog(@"MetaWeblogAPI have %lu posts", (unsigned long) [posts count]);
+                             KLog(@"MetaWeblogAPI have %lu posts", (unsigned long) [posts count]);
                              
                              //处理刷新
                              if (refresh) {
@@ -484,22 +482,16 @@ const int MAX_PAGE_SIZE = 10;//每页显示数目
                                  
                                  [self.tableView reloadData];
                                  //显示提示
-                                 MBProgressHUD *HUD = [WBSUtils createHUD];
-                                 HUD.detailsLabelText = @"加载成功";
-                                 [HUD hide:YES afterDelay:1];
+                                 [WBSUtils showSuccessMessage:@"加载成功"];
                              });
                              
                          }
                          failure:^(NSError *error) {
-                             NSLog(@"Error fetching posts: %@", [error localizedDescription]);
+                             KLog(@"Error fetching posts: %@", [error localizedDescription]);
                              
-                             NSLog(@"错误信息是：---%@----",error);
-                             MBProgressHUD *HUD = [WBSUtils createHUD];
-                             HUD.mode = MBProgressHUDModeCustomView;
-                             HUD.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"HUD-error"]];
-                             HUD.detailsLabelText = [NSString stringWithFormat:@"%@", error.userInfo[NSLocalizedDescriptionKey]];
+                             KLog(@"错误信息是：---%@----",error);
                              
-                             [HUD hide:YES afterDelay:1];
+                             [WBSUtils showErrorMessage:[NSString stringWithFormat:@"%@", error.userInfo[NSLocalizedDescriptionKey]]];
                              
                              super.lastCell.status = LastCellStatusError;
                              if (self.refreshControl.refreshing) {
@@ -519,8 +511,7 @@ const int MAX_PAGE_SIZE = 10;//每页显示数目
     self.apiType = APITypeJSON;
     
     //创建加载中
-    MBProgressHUD *HUD = [WBSUtils createHUD];
-    HUD.detailsLabelText = @"加载中";
+    [WBSUtils showStatusMessage:@"加载中"];
     
     TGBlogJsonApi *jsonAPI = self.api;
     if ([searchString isEqualToString:@""]) {
@@ -528,7 +519,7 @@ const int MAX_PAGE_SIZE = 10;//每页显示数目
     }
     
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    NSString *baseURL = [userDefaults objectForKey:@"baseURL"];
+    NSString *baseURL = [userDefaults objectForKey:WBSSiteBaseURL];
     
     [jsonAPI parseURL:[NSString stringWithFormat:@"%@/get_search_results/?search=%@&page=%lu&count=%d&post_type=post",baseURL,searchString,super.page+1,MAX_PAGE_SIZE]
               success:^(NSArray *postsArray, NSInteger postsCount) {
@@ -541,7 +532,7 @@ const int MAX_PAGE_SIZE = 10;//每页显示数目
                           }
                       }
                       
-                      NSLog(@"Fetched %ld posts", postsCount);
+                      KLog(@"Fetched %ld posts", postsCount);
                       self.posts = postsArray;
                       
                       //刷新数据
@@ -567,11 +558,11 @@ const int MAX_PAGE_SIZE = 10;//每页显示数目
                       [self.tableView reloadData];
                       
                       //取消加载中
-                      [HUD hide:YES afterDelay:1];
+                      [WBSUtils dismissHUD];
                   });
               }failure:^(NSError *error) {
-                  NSLog(@"Error: %@", error);
-                  [HUD hide:YES afterDelay:1];
+                  KLog(@"Error: %@", error);
+                  [WBSUtils dismissHUD];
               }];
     
 }
@@ -585,25 +576,24 @@ const int MAX_PAGE_SIZE = 10;//每页显示数目
     //设置API类型
     self.apiType = APITypeHttp;
     
-    NSLog(@"current categoryId: %lu",(unsigned long)categortId);
+    KLog(@"current categoryId: %lu",(unsigned long)categortId);
     
     //创建加载中
-    MBProgressHUD *HUD = [WBSUtils createHUD];
-    HUD.detailsLabelText = @"加载中";
+    [WBSUtils showStatusMessage:@"加载中"];
     
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    NSString *baseURL = [userDefaults objectForKey:@"baseURL"];
+    NSString *baseURL = [userDefaults objectForKey:WBSSiteBaseURL];
     
     NSString *requestURL = [NSString stringWithFormat:@"%@/get_category_posts/?id=%lu&page=%lu&count=%d&post_type=post",baseURL,categortId,super.page+1,MAX_PAGE_SIZE];
     
-    NSLog(@"category request URL:%@",requestURL);
+    KLog(@"category request URL:%@",requestURL);
     //获取作者数据
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     [manager GET:requestURL parameters:nil success:^(AFHTTPRequestOperation *operation, NSDictionary *result) {
         dispatch_async(dispatch_get_main_queue(), ^{
             //刷新数据
-            //NSLog(@"JSON: %@", responseObject);
-            NSLog(@"status:%@",[result objectForKey:@"status"]);
+            //KLog(@"JSON: %@", responseObject);
+            KLog(@"status:%@",[result objectForKey:@"status"]);
             NSString *status = [result objectForKey:@"status"];
             if ([status isEqualToString:@"ok"]) {
                 
@@ -619,7 +609,7 @@ const int MAX_PAGE_SIZE = 10;//每页显示数目
                 NSArray *posts = [result objectForKey:@"posts"];
                 self.posts = posts;
                 
-                NSLog(@"category posts get ok :%lu",posts.count);
+                KLog(@"category posts get ok :%lu",posts.count);
                 
                 //刷新数据
                 if (self.tableWillReload) {self.tableWillReload(posts.count);}
@@ -643,19 +633,16 @@ const int MAX_PAGE_SIZE = 10;//每页显示数目
                 
                 [self.tableView reloadData];
                 
-                [HUD hide:YES afterDelay:1];
+                [WBSUtils dismissHUD];
             }else{
-                NSLog(@"category posts get error");
+                KLog(@"category posts get error");
             }
         });
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"Error fetching authors: %@", [error localizedDescription]);
-        MBProgressHUD *HUD = [WBSUtils createHUD];
-        HUD.mode = MBProgressHUDModeCustomView;
-        HUD.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"HUD-error"]];
-        HUD.detailsLabelText = [NSString stringWithFormat:@"%@", error.userInfo[NSLocalizedDescriptionKey]];
         
-        [HUD hide:YES afterDelay:1];
+        [WBSUtils showErrorMessage:[NSString stringWithFormat:@"%@", error.userInfo[NSLocalizedDescriptionKey]]];
+        KLog(@"Error fetching authors: %@", [error localizedDescription]);
+    
         
         super.lastCell.status = LastCellStatusError;
         if (self.refreshControl.refreshing) {
@@ -674,25 +661,24 @@ const int MAX_PAGE_SIZE = 10;//每页显示数目
     //设置API类型
     self.apiType = APITypeHttp;
     
-    NSLog(@"current tagId: %lu",(unsigned long)tagId);
+    KLog(@"current tagId: %lu",(unsigned long)tagId);
     
     //创建加载中
-    MBProgressHUD *HUD = [WBSUtils createHUD];
-    HUD.detailsLabelText = @"加载中";
+    [WBSUtils showStatusMessage:@"加载中"];
     
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    NSString *baseURL = [userDefaults objectForKey:@"baseURL"];
+    NSString *baseURL = [userDefaults objectForKey:WBSSiteBaseURL];
     
     NSString *requestURL = [NSString stringWithFormat:@"%@/get_tag_posts/?id=%lu&page=%lu&count=%d&post_type=post",baseURL,tagId,super.page+1,MAX_PAGE_SIZE];
     
-    NSLog(@"category request URL:%@",requestURL);
+    KLog(@"category request URL:%@",requestURL);
     //获取作者数据
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    [manager GET:requestURL parameters:nil success:^(AFHTTPRequestOperation *operation, NSDictionary *result) {
+    AFHTTPRequestOperationManager *requestManager = [AFHTTPRequestOperationManager manager];
+    [requestManager GET:requestURL parameters:nil success:^(AFHTTPRequestOperation *operation, NSDictionary *result) {
         dispatch_async(dispatch_get_main_queue(), ^{
             //刷新数据
-            //NSLog(@"JSON: %@", responseObject);
-            NSLog(@"status:%@",[result objectForKey:@"status"]);
+            //KLog(@"JSON: %@", responseObject);
+            KLog(@"status:%@",[result objectForKey:@"status"]);
             NSString *status = [result objectForKey:@"status"];
             if ([status isEqualToString:@"ok"]) {
                 
@@ -704,11 +690,10 @@ const int MAX_PAGE_SIZE = 10;//每页显示数目
                     }
                 }
                 //获取数据
-                //NSDictionary *dictionaryPosts = [result objectForKey:@"category"];
                 NSArray *posts = [result objectForKey:@"posts"];
                 self.posts = posts;
                 
-                NSLog(@"tag posts get ok :%lu",(unsigned long)posts.count);
+                KLog(@"tag posts get ok :%lu",(unsigned long)posts.count);
                 
                 //刷新数据
                 if (self.tableWillReload) {self.tableWillReload(posts.count);}
@@ -732,19 +717,15 @@ const int MAX_PAGE_SIZE = 10;//每页显示数目
                 
                 [self.tableView reloadData];
                 
-                [HUD hide:YES afterDelay:1];
+                [WBSUtils dismissHUD];
             }else{
-                NSLog(@"tag posts get error");
+                KLog(@"tag posts get error");
             }
         });
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"Error fetching authors: %@", [error localizedDescription]);
-        MBProgressHUD *HUD = [WBSUtils createHUD];
-        HUD.mode = MBProgressHUDModeCustomView;
-        HUD.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"HUD-error"]];
-        HUD.detailsLabelText = [NSString stringWithFormat:@"%@", error.userInfo[NSLocalizedDescriptionKey]];
+        KLog(@"Error fetching authors: %@", [error localizedDescription]);
         
-        [HUD hide:YES afterDelay:1];
+        [WBSUtils showErrorMessage:[NSString stringWithFormat:@"%@", error.userInfo[NSLocalizedDescriptionKey]]];
         
         super.lastCell.status = LastCellStatusError;
         if (self.refreshControl.refreshing) {
@@ -786,15 +767,15 @@ const int MAX_PAGE_SIZE = 10;//每页显示数目
         //1 get nunce
         //2 delete post
         [manager GET:nonceURL parameters:nonceParmeters success:^(AFHTTPRequestOperation *operation, NSDictionary *result) {
-            NSLog(@"status:%@",[result objectForKey:@"status"]);
+            KLog(@"status:%@",[result objectForKey:@"status"]);
             NSString *status = [result objectForKey:@"status"];
             
-            NSString *nonce =[result objectForKey:@"nonce"];
+//            NSString *nonce =[result objectForKey:@"nonce"];
             //删除
-            NSDictionary *parmeters = @{@"id":postId,@"cookie":apiInfo.generateAauthCookie,@"nonce":nonce};
+//            NSDictionary *parmeters = @{@"id":postId,@"cookie":apiInfo.generateAauthCookie,@"nonce":nonce};
             NSString *deleteURL = [NSString stringWithFormat:@"%@/posts/delete_post/",apiInfo.baseURL];
             
-            NSLog(@"deleteURL URL:%@",deleteURL);
+            KLog(@"deleteURL URL:%@",deleteURL);
             
             if ([status isEqualToString:@"ok"]) {
                 //                //删除开始=======================
@@ -802,26 +783,22 @@ const int MAX_PAGE_SIZE = 10;//每页显示数目
                 //                     success:^(AFHTTPRequestOperation *operation, NSDictionary *result) {
                 //                         NSString *status = [result objectForKey:@"status"];
                 //                         if ([status isEqualToString:@"ok"]) {
-                //                             NSLog(@"删除成功。");
+                //                             KLog(@"删除成功。");
                 //                         }else{
-                //                             NSLog(@"删除失败。%@",[result objectForKey:@"error"]);
+                //                             KLog(@"删除失败。%@",[result objectForKey:@"error"]);
                 //                         }
                 //                     }
                 //                     failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                //                         NSLog(@"系统失败");
+                //                         KLog(@"系统失败");
                 //                     }];
                 //                //删除结束=======================
             }
             
         }
              failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                 NSLog(@"Error fetching authors: %@", [error localizedDescription]);
-                 MBProgressHUD *HUD = [WBSUtils createHUD];
-                 HUD.mode = MBProgressHUDModeCustomView;
-                 HUD.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"HUD-error"]];
-                 HUD.detailsLabelText = [NSString stringWithFormat:@"%@", error.userInfo[NSLocalizedDescriptionKey]];
-                 
-                 [HUD hide:YES afterDelay:1];
+                 KLog(@"Error fetching authors: %@", [error localizedDescription]);
+               
+                 [WBSUtils showErrorMessage:[NSString stringWithFormat:@"%@", error.userInfo[NSLocalizedDescriptionKey]]];
                  
                  super.lastCell.status = LastCellStatusError;
                  if (self.refreshControl.refreshing) {
@@ -841,29 +818,28 @@ const int MAX_PAGE_SIZE = 10;//每页显示数目
                          //刷新数据
                          dispatch_async(dispatch_get_main_queue(), ^{
                              if (status) {
-                                 NSLog(@"delete ok");
+                                 KLog(@"delete ok");
                                  [self fetchObjectsOnPage:super.page refresh:NO];
                                  //[self.tableView reloadData];
                              }else{
-                                 NSLog(@"delete errror");
+                                 KLog(@"delete errror");
                              }
                              
                          });
                          
                      }
                      failure:^(NSError *error) {
-                         NSLog(@"Error delete posts: %@", [error localizedDescription]);
-                         MBProgressHUD *HUD = [WBSUtils createHUD];
-                         HUD.mode = MBProgressHUDModeCustomView;
-                         HUD.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"HUD-error"]];
+                         KLog(@"Error delete posts: %@", [error localizedDescription]);
+                        
                          if ([WBSConfig isWordpressOptimization]) {
-                             HUD.detailsLabelText = [NSString stringWithFormat:@"%@", error.userInfo[NSLocalizedDescriptionKey]];
+                            
+                             [WBSUtils showErrorMessage:[NSString stringWithFormat:@"%@", error.userInfo[NSLocalizedDescriptionKey]]];
                          }
                          else{
-                             HUD.detailsLabelText = [NSString stringWithFormat:@"%@",NSLocalizedString(@"APINotSupported",nil)];
+                            
+                             [WBSUtils showErrorMessage:[NSString stringWithFormat:@"%@",NSLocalizedString(@"APINotSupported",nil)]];
                          }
                          
-                         [HUD hide:YES afterDelay:1];
                          
                          [self.tableView reloadData];
                      }];
@@ -871,26 +847,22 @@ const int MAX_PAGE_SIZE = 10;//每页显示数目
 }
 
 -(BOOL)checkApiStatus{
-    NSLog(@"Check api status:%@",((self.api == nil)?@"NO":@"YES"));
+    KLog(@"Check api status:%@",((self.api == nil)?@"NO":@"YES"));
     if (!self.api) {
         [self.refreshControl endRefreshing];
         
         NSString *errorString = @"api init error";
-        NSLog(@"%@",errorString);
-        MBProgressHUD *HUD = [WBSUtils createHUD];
-        HUD.mode = MBProgressHUDModeCustomView;
-        HUD.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"HUD-error"]];
-        HUD.detailsLabelText = [NSString stringWithFormat:@"%@",errorString];
+        KLog(@"%@",errorString);
+        [WBSUtils showErrorMessage:errorString];
         
-        [HUD hide:YES afterDelay:1];
         return NO;
     }
     
     
     if ([self.api isMemberOfClass:[TGMetaWeblogXMLRPCApi class]] ) {
-        NSLog(@"Current API is MetaWeblogApi");
+        KLog(@"Current API is MetaWeblogApi");
     }else{
-        NSLog(@"Current API is  JSON API");
+        KLog(@"Current API is  JSON API");
     }
     return YES;
 }
@@ -963,9 +935,9 @@ const int MAX_PAGE_SIZE = 10;//每页显示数目
 #pragma mark - TitleMenuDelegate
 -(void)selectAtIndexPathAndID:(NSIndexPath *)indexPath ID:(NSInteger)ID title:(NSString *)title
 {
-    NSLog(@"indexPath = %ld", indexPath.row);
-    NSLog(@"当前选择了%@", title);
-    NSLog(@"当前分类ID %ld",ID);
+    KLog(@"indexPath = %ld", indexPath.row);
+    KLog(@"当前选择了%@", title);
+    KLog(@"当前分类ID %ld",ID);
     
     //修改导航栏的标题
     [_titleButton setTitle:title forState:UIControlStateNormal];

@@ -8,17 +8,37 @@
 
 #import "WBSUtils.h"
 #import "Reachability.h"
-#import "WBSBrowserNavViewController.h"
 #import "WBSBrowserViewController.h"
+#import "WBSBrowserNavViewController.h"
 #import "GHMarkdownParser.h"
 #import "WBSErrorViewController.h"
 #import "WBSRootTabBarController.h"
-#import "RESideMenu.h"
-#import "WBSSideMenuViewController.h"
-#import "AppDelegate.h"
+#import "WBSBlogAppDelegate.h"
+#import "SVProgressHUD.h"
+#import "UIWindow+KeyWindow.h"
 
 @implementation WBSUtils
 
+
+/**
+ *  跳转到主界面
+ */
++ (void)goToMainViewController {
+    //切换控制器
+//    [[UIApplication sharedApplication].keyWindow switchToRootViewController];  //原来的
+    [[UIApplication sharedApplication].keyWindow switchToRootTabbarViewController];  //最新的抽屉效果
+}
+
++ (void)goToLoginViewController {
+    //切换 登录控制器
+    [[UIApplication sharedApplication].keyWindow switchToLoginViewController];  //最新的抽屉效果
+}
+
+
+// 清除用户保存信息
++(void)clearUserInfoValue{
+
+}
 
 #pragma mark 字符串处理
 /**
@@ -172,14 +192,14 @@
     //防止时间转换出错
     @try {
         compsPast = [calendar components:unitFlags fromDate:date];
-        daysInLastMonth = [calendar rangeOfUnit:NSDayCalendarUnit
-                                         inUnit:NSMonthCalendarUnit
+        daysInLastMonth = [calendar rangeOfUnit:NSCalendarUnitDay
+                                         inUnit:NSCalendarUnitMonth
                                         forDate:date].length;
     }
     @catch (NSException *exception) {
         compsPast = [calendar components:unitFlags fromDate:[NSDate date]];
-        daysInLastMonth = [calendar rangeOfUnit:NSDayCalendarUnit
-                                         inUnit:NSMonthCalendarUnit
+        daysInLastMonth = [calendar rangeOfUnit:NSCalendarUnitDay
+                                         inUnit:NSCalendarUnitMonth
                                         forDate:[NSDate date]].length;
     }
     
@@ -403,89 +423,246 @@
     WBSBrowserViewController *browserCtl = [[WBSBrowserViewController alloc]initWithURL:url andTitle:pageTitle];
     [browserNavCtl pushViewController:browserCtl animated:YES];
     [target presentViewController:browserNavCtl animated:NO completion:^{
-        NSLog(@"正在使用WebView打开网页:%@",[url absoluteString]);
+        KLog(@"正在使用WebView打开网页:%@",[url absoluteString]);
     }];
-}
-
-#pragma mark 消息提示框
-/**
- *  创建弹出框
- *
- *  @return 弹出框实例
- */
-+ (MBProgressHUD *)createHUD
-{
-    UIWindow *window = [[UIApplication sharedApplication].windows lastObject];
-    MBProgressHUD *HUD = [[MBProgressHUD alloc] initWithWindow:window];
-    HUD.detailsLabelFont = [UIFont boldSystemFontOfSize:16];
-    [window addSubview:HUD];
-    [HUD show:YES];
-    //[HUD addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:HUD action:@selector(hide:)]];
-    return HUD;
-}
-
-/**
- *  创建弹出框
- *
- *  @return 弹出框实例
- */
-+ (MBProgressHUD *)DismissHUD
-{
-    UIWindow *window = [[UIApplication sharedApplication].windows lastObject];
-    MBProgressHUD *HUD = [[MBProgressHUD alloc] initWithWindow:window];
-    HUD.detailsLabelFont = [UIFont boldSystemFontOfSize:16];
-    [window addSubview:HUD];
-    [HUD show:YES];
-    //[HUD addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:HUD action:@selector(hide:)]];
-    return HUD;
 }
 
 /**
  *  在当前页面展示API不受支持的信息
- *
- *  @param target target
- 
- *  @param to     to
  */
 + (void)showApiNotSupported:(UIViewController *)target redirectTo:(WBSErrorViewController *)to{
     NSString *errorMessage =  NSLocalizedString(@"APINotSupported", nil);;
-    
-    MBProgressHUD *HUD = [WBSUtils createHUD];
-    HUD.mode = MBProgressHUDModeCustomView;
-    HUD.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"HUD-error"]];
-    HUD.detailsLabelText = errorMessage;
-    [HUD hide:YES afterDelay:1];
+
+    [WBSUtils showErrorMessage:@"APINotSupported"];
     
     UILabel *labelMessage = [[UILabel alloc]init];
     labelMessage.text = errorMessage;
     [target.view addSubview:labelMessage];
     [to.navigationItem setHidesBackButton:YES];
-    to.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"首页" style:UIBarButtonItemStylePlain target:to action:@selector(returnHome)];
+//    to.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"首页" style:UIBarButtonItemStylePlain target:to action:@selector(returnHome)];
     to.navigationItem.title = @"出错啦";
     to.errorMessage = errorMessage;
     [target.navigationController pushViewController:to animated:YES];
 }
 
+/// 网址 账号密码信息校验
++(BOOL)checkUrlString:(NSString *)urlString userNameStr:(NSString *)userNameStr passWord:(NSString *)passWordStr{
+    
+    if ([urlString isEqualToString:@""]) {
+        [WBSUtils showErrorMessage:@"博客API地址不能为空！"];
+        return NO;
+    }else if([urlString hasPrefix:@"http"]) {
+        [WBSUtils showErrorMessage:@"博客地址勿带http"];
+        return NO;
+    }else if([userNameStr isEqualToString:@""]) {
+        [WBSUtils showErrorMessage:@"用户名不能为空！"];
+        
+        return NO;
+    }else if(userNameStr.length < 5 || userNameStr.length > 20) {
+        
+        [WBSUtils showErrorMessage:@"用户名只能在5-20之间！"];
+        return NO;
+    }else if([passWordStr isEqualToString:@""]) {
+        [WBSUtils showErrorMessage:@"密码不能为空!"];
+        return NO;
+    }else if(passWordStr.length < 5 || passWordStr.length > 20) {
+        [WBSUtils showErrorMessage:@"密码只能在5-20之间!"];
+        return NO;
+    }else{
+        return YES;
+    }
+}
 
-/**
- *  跳转到主界面
- */
-+ (void)goToMainViewController {
-    WBSRootTabBarController *tabBarController = [[WBSRootTabBarController alloc]init];
-    AppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
-    tabBarController.delegate = (id <UITabBarControllerDelegate>) appDelegate;
+
+//获取app的版本
++ (NSString *)getMyApplicationVersion{
+    NSDictionary *info = [[NSBundle mainBundle] infoDictionary];
+    NSString *version = [info objectForKey:@"CFBundleShortVersionString"];
+    return version;
+}
+
+/*********************---NSUserDefaults---******************/
++ (void)saveDataWithValue:(id)valuem forKey:(NSString *)key{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:valuem forKey:key];
+    [defaults synchronize];
+}
+
++ (void)saveDataWithBool:(BOOL)boo forKey:(NSString *)key{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setBool:boo forKey:key];
+    [defaults synchronize];
+}
+
++ (id)getObjectforKey:(NSString *)key{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    return [defaults objectForKey:key];
+}
+
++ (BOOL)getBoolforKey:(NSString *)key{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    return [defaults boolForKey:key];
+}
+
+/*******************--- 时间问题 ---*********************/
+//根据字符串获取到NSdate类型的数据
++ (NSDate *)getDateFromString:(NSString *)string{
+    NSDateFormatter * formatter = [[NSDateFormatter alloc]init];
+    [formatter setDateFormat:@"yyyyMMddHHmmss"];
+    NSDate *date = [formatter dateFromString:string];
+    return date;
+}
+
+//根据NSDate类型转换成字符串
++ (NSString *)getStringFromNSDate:(NSDate *)date{
+    NSDateFormatter * formatter = [[NSDateFormatter alloc]init];
+    [formatter setDateFormat:@"yyyyMMddHHmmss"];
+    NSString *str= [formatter stringFromDate:date];
+    return str;
+}
+
+/********************* SVProgressHUD **********************/
+
+/// 自动消失
++ (void)showSuccessMessage:(NSString *)message{
+    //想设置一些信息可以选择custom类型的 具体看api
+    [SVProgressHUD setDefaultStyle:SVProgressHUDStyleLight];
+    [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeBlack];
+    [SVProgressHUD showSuccessWithStatus:message];
+}
+
+/// 自动消失
++ (void)showErrorMessage:(NSString *)message{
+    [SVProgressHUD setDefaultStyle:SVProgressHUDStyleLight];
+    [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeBlack];
+    [SVProgressHUD showErrorWithStatus:message];
+}
+
+/// 需要手动 dismiss
++ (void)showStatusMessage:(NSString *)message;{
     
-    RESideMenu *sideMenuTabBarViewController = [[RESideMenu alloc] initWithContentViewController:tabBarController                                                                          leftMenuViewController:[WBSSideMenuViewController new]                                                          rightMenuViewController:nil];
+    [SVProgressHUD setDefaultStyle:SVProgressHUDStyleLight];
+    [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeBlack];
+    [SVProgressHUD showWithStatus:message];
+}
+
+/// 需要手动 dismiss
++ (void)showProgressMessage:(NSString *) message{
+    [SVProgressHUD setDefaultStyle:SVProgressHUDStyleLight];
+    [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeBlack];
+    [SVProgressHUD showWithStatus:message];
+}
+
++ (void)dismissHUDWithDelay:(double)timeInterval{
+    [SVProgressHUD dismissWithDelay:timeInterval];
+}
+
++ (void)dismissHUD{
+    [SVProgressHUD dismiss];
+}
+
+
+/*******************--检测--******************************/
+//验证手机合法性
++ (BOOL)checkPhoneNumber:(NSString *)phoneNumber{
     
-    //设置样式
-    sideMenuTabBarViewController.scaleContentView = YES;
-    sideMenuTabBarViewController.contentViewScaleValue = 0.95;
-    sideMenuTabBarViewController.scaleMenuView = NO;
-    sideMenuTabBarViewController.contentViewShadowEnabled = YES;
-    sideMenuTabBarViewController.contentViewShadowRadius = 4.5;
+    NSString * MOBILE = @"^1(3[0-9]|5[0-35-9]|8[025-9])\\d{8}$";
+    NSString * CM = @"^1(34[0-8]|(3[5-9]|5[017-9]|8[278])\\d)\\d{7}$";
+    NSString * CU = @"^1(3[0-2]|5[256]|8[56])\\d{8}$";
+    NSString * CT = @"^1((33|53|8[09])[0-9]|349)\\d{7}$";
     
-    //设置根视图
-    appDelegate.window.rootViewController = sideMenuTabBarViewController;
+    NSPredicate *regextestmobile = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", MOBILE];
+    NSPredicate *regextestcm = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", CM];
+    NSPredicate *regextestcu = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", CU];
+    NSPredicate *regextestct = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", CT];
+    BOOL res1 = [regextestmobile evaluateWithObject:phoneNumber];
+    BOOL res2 = [regextestcm evaluateWithObject:phoneNumber];
+    BOOL res3 = [regextestcu evaluateWithObject:phoneNumber];
+    BOOL res4 = [regextestct evaluateWithObject:phoneNumber];
+    
+    if (res1 || res2 || res3 || res4 )
+    {
+        return YES;
+    }
+    else
+    {
+        return NO;
+    }
+}
+
+//随机颜色
++ (UIColor *)randomColor{
+    CGFloat red=arc4random()%256/255.0;
+    CGFloat green=arc4random()%256/255.0;
+    CGFloat blue=arc4random()%256/255.0;
+    UIColor *randomColor=[UIColor colorWithRed:red green:green blue:blue alpha:1.0];
+    return randomColor;
+}
+
+/// 检测空格是不是空 或者  是空格
++ (BOOL)isBlankString:(NSString *)string{
+    
+    if (string == nil) {
+        return YES;
+    }
+    
+    if (string == NULL) {
+        return YES;
+    }
+    
+    if ([string isKindOfClass:[NSNull class]]) {
+        return YES;
+    }
+    
+    if ([[string stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] length]==0) {
+        return YES;
+    }
+    return NO;
+}
+
+/// 获取沙盒内部的路径
++ (NSString *)GetPath:(FilePath)path{
+    
+    NSString *homePath = NSHomeDirectory();
+    if (path == HomeDirectoryPath) {
+        return homePath;
+    }else if (path == DocumentsPath){
+        return  [homePath stringByAppendingPathComponent:@"Documents"];
+    }else if(path == LibraryPath){
+        return [homePath stringByAppendingPathComponent:@"Library"];
+    }else if (path == CachesPath){
+        return [NSSearchPathForDirectoriesInDomains(NSCachesDirectory,NSUserDomainMask, YES) objectAtIndex:0];
+    }else{
+        return [homePath stringByAppendingPathComponent:@"tmp"];
+    }
+}
+
+
+///  判断设备是否联网
++ (BOOL)connectedToNetwork{
+    // 创建零地址，0.0.0.0的地址表示查询本机的网络连接状态
+    struct sockaddr_storage zeroAddress;
+    bzero(&zeroAddress, sizeof(zeroAddress));
+    zeroAddress.ss_len = sizeof(zeroAddress);
+    zeroAddress.ss_family = AF_INET;
+    
+    // Recover reachability flags
+    SCNetworkReachabilityRef defaultRouteReachability = SCNetworkReachabilityCreateWithAddress(NULL, (struct sockaddr *)&zeroAddress);
+    SCNetworkReachabilityFlags flags;
+    
+    // 获得连接的标志
+    BOOL didRetrieveFlags = SCNetworkReachabilityGetFlags(defaultRouteReachability, &flags);
+    CFRelease(defaultRouteReachability);
+    
+    // 如果不能获取连接标志，则不能连接网络，直接返回
+    if (!didRetrieveFlags){
+        return NO;
+    }
+    // 根据获得的连接标志进行判断
+    
+    BOOL isReachable = flags & kSCNetworkFlagsReachable;
+    BOOL needsConnection = flags & kSCNetworkFlagsConnectionRequired;
+    return (isReachable&&!needsConnection) ? YES : NO;
 }
 
 @end

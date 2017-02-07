@@ -8,15 +8,12 @@
 
 #import "WBSRootTabBarController.h"
 #import "WBSOptionButton.h"
-#include "RESideMenu.h"
 #import "WBSHomePostViewController.h"
 #import "WBSSwipableViewController.h"
 #import "WBSTagViewController.h"
-#import "WBSMyInfoController.h"
-#import "WBSUtils.h"
-#import "WBSRootNaviViewController.h"
+#import "WBSUserCenterController.h"
 #import "WBSPostEditViewController.h"
-#import "WBSConfig.h"
+#import "WBSBaseNaviViewController.h"
 
 @interface WBSRootTabBarController ()<UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 
@@ -48,7 +45,7 @@
     WBSSwipableViewController *searchVC = [self createBlogViewController:YES];
     
     //我
-    WBSMyInfoController *myInfoVC = [[WBSMyInfoController alloc]initWithStyle:UITableViewStyleGrouped];
+    WBSUserCenterController *myInfoVC = [[WBSUserCenterController alloc]initWithStyle:UITableViewStyleGrouped];
     
     self.tabBar.translucent = NO;
 
@@ -65,7 +62,7 @@
 //创建博客视图控制器
 -(WBSSwipableViewController *)createBlogViewController:(BOOL)isSearch{
     //全部
-    WBSPostViewController *postViewCtl = [[WBSPostViewController alloc]initWithPostType:PostTypePost];
+    WBSHomePostViewController *postViewCtl = [[WBSHomePostViewController alloc]initWithPostType:PostTypePost];
     //是否搜索
     if (isSearch) {
         postViewCtl.isSearch = YES;
@@ -76,7 +73,7 @@
     //JSON API才有页面，搜索没有页面
     if ([WBSConfig isJSONAPIEnable]&& !isSearch && [WBSConfig isShowPage]) {
         //最新
-        UIViewController *pageViewCtl = [[WBSPostViewController alloc]initWithPostType:PostTypePage];
+        UIViewController *pageViewCtl = [[WBSHomePostViewController alloc]initWithPostType:PostTypePage];
         postViewCtl.postResultType = PostResultTypeRecent;
         
         //博客
@@ -85,6 +82,7 @@
                                                     andControllers:@[ postViewCtl,pageViewCtl]
                                                        underTabbar:YES];
     }else{
+        // MetaWeblog api 接口显示
         blogSVC = [[WBSSwipableViewController alloc] initWithTitle:@"首页"
                                                       andSubTitles:nil
                                                     andControllers:@[ postViewCtl]
@@ -129,7 +127,7 @@
 //                          };
 //    [vc.tabBarItem setTitleTextAttributes:dictS forState:UIControlStateSelected];
     //将传进来的vc包装成nav。
-    WBSRootNaviViewController *nav=[[WBSRootNaviViewController alloc]initWithRootViewController:vc];
+    WBSBaseNaviViewController *nav=[[WBSBaseNaviViewController alloc]initWithRootViewController:vc];
     
     [self addChildViewController:nav];
 }

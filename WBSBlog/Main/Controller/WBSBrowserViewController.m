@@ -8,13 +8,10 @@
 
 #import "WBSBrowserViewController.h"
 #import "AFNetworking.h"
-#import "MBProgressHUD.h"
-#import "WBSUtils.h"
 
 @interface WBSBrowserViewController ()<UIWebViewDelegate, UIScrollViewDelegate, UIAlertViewDelegate>
 
 @property (nonatomic, strong) UIWebView *detailsView;
-@property (nonatomic, strong) MBProgressHUD *HUD;
 
 @end
 
@@ -38,7 +35,7 @@
     self.navigationItem.title = _pageTitle;
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"分享" style:UIBarButtonItemStylePlain target:self action:@selector(showShare:)];
     
-    NSLog(@"即将访问:%@ 网页标题：%@",_url,_pageTitle);
+    KLog(@"即将访问:%@ 网页标题：%@",_url,_pageTitle);
     
     _detailsView = [[UIWebView alloc]initWithFrame:CGRectMake(0.0f,0.0f,self.view.frame.size.width, self.view.frame.size.height)];
     _detailsView.delegate = self;
@@ -82,7 +79,7 @@
     [confirmCtl addAction:yesAction];
     [confirmCtl addAction:noAction];
     [self presentViewController:confirmCtl animated:YES completion:nil];
-    NSLog(@"分享：%@",_url);
+    KLog(@"分享：%@",_url);
 }
 
 
@@ -90,27 +87,23 @@
 
 - (void)webViewDidStartLoad:(UIWebView *)webView{
     // 添加等待动画
-    _HUD = [WBSUtils createHUD];
-    _HUD.detailsLabelText = @"网页加载中";
-    _HUD.userInteractionEnabled = NO;
+    [WBSUtils showStatusMessage:@"网页加载中"];
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView{
-    [_HUD hide:YES afterDelay:1];
+    
+    [WBSUtils dismissHUDWithDelay:1];
 }
 
 -(void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error{
-    _HUD.detailsLabelText = @"加载失败";
-    _HUD.mode = MBProgressHUDModeCustomView;
-    _HUD.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"HUD-error"]];
-    [_HUD hide:YES afterDelay:1];
+    [WBSUtils showErrorMessage:@"加载失败"];
 }
 
 
 // 在界面消失的时候隐藏 状态提示
 -(void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
-    [_HUD hide:YES];
+    [WBSUtils dismissHUD];
 }
 
 #pragma mark 数据加载
@@ -120,7 +113,7 @@
  */
 - (void)fetchDetails
 {
-    NSLog(@"fetch details");
+    KLog(@"fetch details");
     NSURLRequest *request =[NSURLRequest requestWithURL:_url];
     [_detailsView loadRequest:request];
 }

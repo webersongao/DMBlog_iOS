@@ -7,8 +7,7 @@
 //
 
 #import "WBSErrorViewController.h"
-#import "UIColor+Util.h"
-#import "WBSUtils.h"
+#import "UIColor+Config.h"
 
 @interface WBSErrorViewController ()
 
@@ -41,9 +40,4 @@
     [super didReceiveMemoryWarning];
  }
 
-
-- (void)returnHome{
-    NSLog(@"跳转到主界面。");
-    [WBSUtils goToMainViewController];
-}
 @end
