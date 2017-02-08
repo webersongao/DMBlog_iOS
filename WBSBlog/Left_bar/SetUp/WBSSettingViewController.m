@@ -43,6 +43,7 @@
     self.tableView.backgroundColor = [UIColor themeColor];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+    self.tableView.showsVerticalScrollIndicator = NO;
     
 }
 

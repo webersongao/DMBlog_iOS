@@ -9,6 +9,7 @@
 #import "WBSNetRequest.h"
 #import "NetworkingCenter.h"
 #import "TGMetaWeblogAuthApi.h"
+#import "WordPressApi.h"
 
 @implementation WBSNetRequest
 
@@ -71,26 +72,29 @@
         
     }else{
         // 使用XMLRPC 登陆
-        //对baseUrl进行包装  暂时不支持Https
-        NSString * baseSiteURL = [NSString stringWithFormat:@"http://%@/%@",siteUrl,@"xmlrpc.php"];
-        [TGMetaWeblogAuthApi signInWithURL:baseSiteURL
-                                  username:userName
-                                  password:PassWord
-                                   success:^(NSURL *xmlrpcURL) {
-                                       KLog(@"xmlrpc登录--xmlrpc--:%@", xmlrpcURL);
-                                       [WBSUtils saveDataWithValue:siteUrl forKey:WBSSiteBaseURL];
-                                       [WBSUtils saveDataWithValue:userName forKey:WBSUserUserName];
-                                       [WBSUtils saveDataWithValue:PassWord forKey:WBSUserPassWord];
-                                       [SingleObject shareSingleObject].isLogin = YES;
-                                       LoginSuccessblock(YES,nil);
-                                       
-                                   }
-                                   failure:^(NSError *error) {
-                                       NSString * errorStr = [NSString stringWithFormat:@"请求错误：%@", [error localizedDescription]];
-                                       [SingleObject shareSingleObject].isLogin = NO;
-                                       LoginSuccessblock(NO,errorStr);
-                                       
-                                   }];
+        // 对baseUrl进行包装  暂时不支持Https
+        
+        [WordPressApi signInWithURL:siteUrl
+                           username:userName
+                           password:PassWord
+                            success:^(NSURL *xmlrpcURL) {
+                                
+                                [WBSUtils saveDataWithValue:siteUrl forKey:WBSSiteBaseURL];
+                                [WBSUtils saveDataWithValue:[xmlrpcURL absoluteString] forKey:WBSSiteXmlrpcURL];
+                                [WBSUtils saveDataWithValue:userName forKey:WBSUserUserName];
+                                [WBSUtils saveDataWithValue:PassWord forKey:WBSUserPassWord];
+                                [SingleObject shareSingleObject].isLogin = YES;
+                                LoginSuccessblock(YES,nil);
+                                
+                                KLog(@"-----登录成功--网址：%@ --",[xmlrpcURL absoluteString]);
+                            } failure:^(NSError *error) {
+                                KLog(@"-----登录失败啦----");
+                                NSString * errorStr = [NSString stringWithFormat:@"登录失败：%@", [error localizedDescription]];
+                                [SingleObject shareSingleObject].isLogin = NO;
+                                LoginSuccessblock(NO,errorStr);
+                            }];
+        
+        
     }
     
     

@@ -103,14 +103,14 @@
 
 #pragma mark - Private
 /**
- *  初始化MetaWeblog API
+ *  初始化 XMLRPC API
  *
  *  @param apiInfo apiInfo
  *
  *  @return API状态
  */
 - (id)setupApi:(WBSApiInfo *)apiInfo {
-    NSString *xmlrpc =apiInfo.baseURL;
+    NSString *xmlrpc =[NSString stringWithFormat:@"http://%@/xmlrpc.php",apiInfo.baseURL];
     if (xmlrpc) {
         NSString *username = apiInfo.username;
         NSString *password = apiInfo.password;

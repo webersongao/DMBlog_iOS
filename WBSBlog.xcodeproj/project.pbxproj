@@ -14,6 +14,14 @@
 		4E3B104E1E4990D2002EF825 /* default_portrait@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E3B104C1E4990D2002EF825 /* default_portrait@3x.png */; };
 		4E3B10531E49B13E002EF825 /* UserProtocol.html in Resources */ = {isa = PBXBuildFile; fileRef = 4E3B10521E49B13E002EF825 /* UserProtocol.html */; };
 		4E3B10561E49B71D002EF825 /* WBSUserProtocolViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E3B10551E49B71D002EF825 /* WBSUserProtocolViewController.m */; };
+		4E3B10591E49E159002EF825 /* back_button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E3B10571E49E159002EF825 /* back_button@2x.png */; };
+		4E3B105A1E49E159002EF825 /* back_button@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E3B10581E49E159002EF825 /* back_button@3x.png */; };
+		4E3B107F1E4AC9EF002EF825 /* WPBase64Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E3B10731E4AC9EF002EF825 /* WPBase64Utils.m */; };
+		4E3B10801E4AC9EF002EF825 /* WPStringUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E3B10751E4AC9EF002EF825 /* WPStringUtils.m */; };
+		4E3B10811E4AC9EF002EF825 /* WPXMLRPCDataCleaner.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E3B10781E4AC9EF002EF825 /* WPXMLRPCDataCleaner.m */; };
+		4E3B10821E4AC9EF002EF825 /* WPXMLRPCDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E3B107A1E4AC9EF002EF825 /* WPXMLRPCDecoder.m */; };
+		4E3B10831E4AC9EF002EF825 /* WPXMLRPCDecoderDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E3B107C1E4AC9EF002EF825 /* WPXMLRPCDecoderDelegate.m */; };
+		4E3B10841E4AC9EF002EF825 /* WPXMLRPCEncoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E3B107E1E4AC9EF002EF825 /* WPXMLRPCEncoder.m */; };
 		4E4AD5EB1D477536002BFD98 /* WBSBottomBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E4AD5D51D477536002BFD98 /* WBSBottomBarViewController.m */; };
 		4E4AD5ED1D477536002BFD98 /* WBSBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E4AD5D91D477536002BFD98 /* WBSBrowserViewController.m */; };
 		4E4AD5EE1D477536002BFD98 /* WBSDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E4AD5DB1D477536002BFD98 /* WBSDetailsViewController.m */; };
@@ -32,6 +40,18 @@
 		4EBEC6261DBB12D80038DFE0 /* SAMKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EBEC6211DBB12D80038DFE0 /* SAMKeychain.m */; };
 		4EBEC6271DBB12D80038DFE0 /* SAMKeychainQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EBEC6231DBB12D80038DFE0 /* SAMKeychainQuery.m */; };
 		4EBEC6281DBB12D80038DFE0 /* SAMKeychain.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4EBEC6251DBB12D80038DFE0 /* SAMKeychain.bundle */; };
+		4ED5A7871E4ACDC1005ADE05 /* WordPressApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ED5A76F1E4ACDC1005ADE05 /* WordPressApi.m */; };
+		4ED5A7881E4ACDC1005ADE05 /* WordPressRestApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ED5A7721E4ACDC1005ADE05 /* WordPressRestApi.m */; };
+		4ED5A7891E4ACDC1005ADE05 /* WordPressRestApiJSONRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ED5A7741E4ACDC1005ADE05 /* WordPressRestApiJSONRequestOperation.m */; };
+		4ED5A78A1E4ACDC1005ADE05 /* WordPressRestApiJSONRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ED5A7761E4ACDC1005ADE05 /* WordPressRestApiJSONRequestOperationManager.m */; };
+		4ED5A78B1E4ACDC1005ADE05 /* WordPressXMLRPCApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ED5A7781E4ACDC1005ADE05 /* WordPressXMLRPCApi.m */; };
+		4ED5A78C1E4ACDC1005ADE05 /* WPComOAuthController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ED5A77A1E4ACDC1005ADE05 /* WPComOAuthController.m */; };
+		4ED5A78D1E4ACDC1005ADE05 /* WPHTTPAuthenticationAlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ED5A77C1E4ACDC1005ADE05 /* WPHTTPAuthenticationAlertController.m */; };
+		4ED5A78E1E4ACDC1005ADE05 /* WPHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ED5A77E1E4ACDC1005ADE05 /* WPHTTPRequestOperation.m */; };
+		4ED5A78F1E4ACDC1005ADE05 /* WPRSDParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ED5A7801E4ACDC1005ADE05 /* WPRSDParser.m */; };
+		4ED5A7901E4ACDC1005ADE05 /* WPXMLRPCClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ED5A7821E4ACDC1005ADE05 /* WPXMLRPCClient.m */; };
+		4ED5A7911E4ACDC1005ADE05 /* WPXMLRPCRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ED5A7841E4ACDC1005ADE05 /* WPXMLRPCRequest.m */; };
+		4ED5A7921E4ACDC1005ADE05 /* WPXMLRPCRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ED5A7861E4ACDC1005ADE05 /* WPXMLRPCRequestOperation.m */; };
 		4EDFD7881E348C5D006DD1E6 /* NetworkingCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EDFD7841E348C5D006DD1E6 /* NetworkingCenter.m */; };
 		4EDFD78B1E348E5D006DD1E6 /* FMDBManger.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EDFD78A1E348E5D006DD1E6 /* FMDBManger.m */; };
 		4EDFD7981E348E98006DD1E6 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EDFD78E1E348E98006DD1E6 /* FMDatabase.m */; };
@@ -473,12 +493,6 @@
 		4EF38FBE1D4310E300CE28A4 /* WBSPostEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF38FB51D4310E300CE28A4 /* WBSPostEditViewController.m */; };
 		4EF38FBF1D4310E300CE28A4 /* WBSHomePostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF38FB71D4310E300CE28A4 /* WBSHomePostViewController.m */; };
 		4EF38FC01D4310E300CE28A4 /* WBSTitleMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF38FB91D4310E300CE28A4 /* WBSTitleMenuViewController.m */; };
-		4EF38FD11D4311D000CE28A4 /* WPBase64Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF38FC51D4311D000CE28A4 /* WPBase64Utils.m */; };
-		4EF38FD21D4311D000CE28A4 /* WPStringUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF38FC71D4311D000CE28A4 /* WPStringUtils.m */; };
-		4EF38FD31D4311D000CE28A4 /* WPXMLRPCDataCleaner.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF38FCA1D4311D000CE28A4 /* WPXMLRPCDataCleaner.m */; };
-		4EF38FD41D4311D000CE28A4 /* WPXMLRPCDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF38FCC1D4311D000CE28A4 /* WPXMLRPCDecoder.m */; };
-		4EF38FD51D4311D000CE28A4 /* WPXMLRPCDecoderDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF38FCE1D4311D000CE28A4 /* WPXMLRPCDecoderDelegate.m */; };
-		4EF38FD61D4311D000CE28A4 /* WPXMLRPCEncoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF38FD01D4311D000CE28A4 /* WPXMLRPCEncoder.m */; };
 		4EF38FE11D4311F000CE28A4 /* FAImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF38FD91D4311F000CE28A4 /* FAImageView.m */; };
 		4EF38FE21D4311F000CE28A4 /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4EF38FDA1D4311F000CE28A4 /* FontAwesome.ttf */; };
 		4EF38FE31D4311F000CE28A4 /* NSString+FontAwesome.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF38FDC1D4311F000CE28A4 /* NSString+FontAwesome.m */; };
@@ -545,6 +559,21 @@
 		4E3B10521E49B13E002EF825 /* UserProtocol.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = UserProtocol.html; sourceTree = "<group>"; };
 		4E3B10541E49B71D002EF825 /* WBSUserProtocolViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSUserProtocolViewController.h; sourceTree = "<group>"; };
 		4E3B10551E49B71D002EF825 /* WBSUserProtocolViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBSUserProtocolViewController.m; sourceTree = "<group>"; };
+		4E3B10571E49E159002EF825 /* back_button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back_button@2x.png"; sourceTree = "<group>"; };
+		4E3B10581E49E159002EF825 /* back_button@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back_button@3x.png"; sourceTree = "<group>"; };
+		4E3B10721E4AC9EF002EF825 /* WPBase64Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPBase64Utils.h; sourceTree = "<group>"; };
+		4E3B10731E4AC9EF002EF825 /* WPBase64Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPBase64Utils.m; sourceTree = "<group>"; };
+		4E3B10741E4AC9EF002EF825 /* WPStringUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPStringUtils.h; sourceTree = "<group>"; };
+		4E3B10751E4AC9EF002EF825 /* WPStringUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPStringUtils.m; sourceTree = "<group>"; };
+		4E3B10761E4AC9EF002EF825 /* WPXMLRPC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPXMLRPC.h; sourceTree = "<group>"; };
+		4E3B10771E4AC9EF002EF825 /* WPXMLRPCDataCleaner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPXMLRPCDataCleaner.h; sourceTree = "<group>"; };
+		4E3B10781E4AC9EF002EF825 /* WPXMLRPCDataCleaner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPXMLRPCDataCleaner.m; sourceTree = "<group>"; };
+		4E3B10791E4AC9EF002EF825 /* WPXMLRPCDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPXMLRPCDecoder.h; sourceTree = "<group>"; };
+		4E3B107A1E4AC9EF002EF825 /* WPXMLRPCDecoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPXMLRPCDecoder.m; sourceTree = "<group>"; };
+		4E3B107B1E4AC9EF002EF825 /* WPXMLRPCDecoderDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPXMLRPCDecoderDelegate.h; sourceTree = "<group>"; };
+		4E3B107C1E4AC9EF002EF825 /* WPXMLRPCDecoderDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPXMLRPCDecoderDelegate.m; sourceTree = "<group>"; };
+		4E3B107D1E4AC9EF002EF825 /* WPXMLRPCEncoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPXMLRPCEncoder.h; sourceTree = "<group>"; };
+		4E3B107E1E4AC9EF002EF825 /* WPXMLRPCEncoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPXMLRPCEncoder.m; sourceTree = "<group>"; };
 		4E4AD5D41D477536002BFD98 /* WBSBottomBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSBottomBarViewController.h; sourceTree = "<group>"; };
 		4E4AD5D51D477536002BFD98 /* WBSBottomBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBSBottomBarViewController.m; sourceTree = "<group>"; };
 		4E4AD5D81D477536002BFD98 /* WBSBrowserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSBrowserViewController.h; sourceTree = "<group>"; };
@@ -580,6 +609,32 @@
 		4EBEC6221DBB12D80038DFE0 /* SAMKeychainQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAMKeychainQuery.h; sourceTree = "<group>"; };
 		4EBEC6231DBB12D80038DFE0 /* SAMKeychainQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAMKeychainQuery.m; sourceTree = "<group>"; };
 		4EBEC6251DBB12D80038DFE0 /* SAMKeychain.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SAMKeychain.bundle; sourceTree = "<group>"; };
+		4ED5A76D1E4ACDC1005ADE05 /* WordPressApi-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WordPressApi-Prefix.pch"; sourceTree = "<group>"; };
+		4ED5A76E1E4ACDC1005ADE05 /* WordPressApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordPressApi.h; sourceTree = "<group>"; };
+		4ED5A76F1E4ACDC1005ADE05 /* WordPressApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordPressApi.m; sourceTree = "<group>"; };
+		4ED5A7701E4ACDC1005ADE05 /* WordPressBaseApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordPressBaseApi.h; sourceTree = "<group>"; };
+		4ED5A7711E4ACDC1005ADE05 /* WordPressRestApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordPressRestApi.h; sourceTree = "<group>"; };
+		4ED5A7721E4ACDC1005ADE05 /* WordPressRestApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordPressRestApi.m; sourceTree = "<group>"; };
+		4ED5A7731E4ACDC1005ADE05 /* WordPressRestApiJSONRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordPressRestApiJSONRequestOperation.h; sourceTree = "<group>"; };
+		4ED5A7741E4ACDC1005ADE05 /* WordPressRestApiJSONRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordPressRestApiJSONRequestOperation.m; sourceTree = "<group>"; };
+		4ED5A7751E4ACDC1005ADE05 /* WordPressRestApiJSONRequestOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordPressRestApiJSONRequestOperationManager.h; sourceTree = "<group>"; };
+		4ED5A7761E4ACDC1005ADE05 /* WordPressRestApiJSONRequestOperationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordPressRestApiJSONRequestOperationManager.m; sourceTree = "<group>"; };
+		4ED5A7771E4ACDC1005ADE05 /* WordPressXMLRPCApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordPressXMLRPCApi.h; sourceTree = "<group>"; };
+		4ED5A7781E4ACDC1005ADE05 /* WordPressXMLRPCApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordPressXMLRPCApi.m; sourceTree = "<group>"; };
+		4ED5A7791E4ACDC1005ADE05 /* WPComOAuthController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPComOAuthController.h; sourceTree = "<group>"; };
+		4ED5A77A1E4ACDC1005ADE05 /* WPComOAuthController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPComOAuthController.m; sourceTree = "<group>"; };
+		4ED5A77B1E4ACDC1005ADE05 /* WPHTTPAuthenticationAlertController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPHTTPAuthenticationAlertController.h; sourceTree = "<group>"; };
+		4ED5A77C1E4ACDC1005ADE05 /* WPHTTPAuthenticationAlertController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPHTTPAuthenticationAlertController.m; sourceTree = "<group>"; };
+		4ED5A77D1E4ACDC1005ADE05 /* WPHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPHTTPRequestOperation.h; sourceTree = "<group>"; };
+		4ED5A77E1E4ACDC1005ADE05 /* WPHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPHTTPRequestOperation.m; sourceTree = "<group>"; };
+		4ED5A77F1E4ACDC1005ADE05 /* WPRSDParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPRSDParser.h; sourceTree = "<group>"; };
+		4ED5A7801E4ACDC1005ADE05 /* WPRSDParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPRSDParser.m; sourceTree = "<group>"; };
+		4ED5A7811E4ACDC1005ADE05 /* WPXMLRPCClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPXMLRPCClient.h; sourceTree = "<group>"; };
+		4ED5A7821E4ACDC1005ADE05 /* WPXMLRPCClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPXMLRPCClient.m; sourceTree = "<group>"; };
+		4ED5A7831E4ACDC1005ADE05 /* WPXMLRPCRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPXMLRPCRequest.h; sourceTree = "<group>"; };
+		4ED5A7841E4ACDC1005ADE05 /* WPXMLRPCRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPXMLRPCRequest.m; sourceTree = "<group>"; };
+		4ED5A7851E4ACDC1005ADE05 /* WPXMLRPCRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPXMLRPCRequestOperation.h; sourceTree = "<group>"; };
+		4ED5A7861E4ACDC1005ADE05 /* WPXMLRPCRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPXMLRPCRequestOperation.m; sourceTree = "<group>"; };
 		4EDFD77E1E348C5D006DD1E6 /* WBSMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSMacro.h; sourceTree = "<group>"; };
 		4EDFD7831E348C5D006DD1E6 /* NetworkingCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkingCenter.h; sourceTree = "<group>"; };
 		4EDFD7841E348C5D006DD1E6 /* NetworkingCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkingCenter.m; sourceTree = "<group>"; };
@@ -780,7 +835,7 @@
 		4EF149D41D3DF61D00D28265 /* WBSBlogAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = WBSBlogAppDelegate.h; path = ../WBSBlogAppDelegate.h; sourceTree = "<group>"; };
 		4EF149D51D3DF61D00D28265 /* WBSBlogAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = WBSBlogAppDelegate.m; path = ../WBSBlogAppDelegate.m; sourceTree = "<group>"; };
 		4EF149DD1D3DF61D00D28265 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		4EF149E21D3DF61D00D28265 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4EF149E21D3DF61D00D28265 /* WBSBlogInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = WBSBlogInfo.plist; sourceTree = "<group>"; };
 		4EF149E71D3DF61D00D28265 /* WBSBlogTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WBSBlogTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EF149EB1D3DF61D00D28265 /* WBSBlogTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WBSBlogTests.m; sourceTree = "<group>"; };
 		4EF149ED1D3DF61D00D28265 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -1326,19 +1381,6 @@
 		4EF38FB71D4310E300CE28A4 /* WBSHomePostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBSHomePostViewController.m; sourceTree = "<group>"; };
 		4EF38FB81D4310E300CE28A4 /* WBSTitleMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSTitleMenuViewController.h; sourceTree = "<group>"; };
 		4EF38FB91D4310E300CE28A4 /* WBSTitleMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBSTitleMenuViewController.m; sourceTree = "<group>"; };
-		4EF38FC41D4311D000CE28A4 /* WPBase64Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPBase64Utils.h; sourceTree = "<group>"; };
-		4EF38FC51D4311D000CE28A4 /* WPBase64Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPBase64Utils.m; sourceTree = "<group>"; };
-		4EF38FC61D4311D000CE28A4 /* WPStringUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPStringUtils.h; sourceTree = "<group>"; };
-		4EF38FC71D4311D000CE28A4 /* WPStringUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPStringUtils.m; sourceTree = "<group>"; };
-		4EF38FC81D4311D000CE28A4 /* WPXMLRPC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPXMLRPC.h; sourceTree = "<group>"; };
-		4EF38FC91D4311D000CE28A4 /* WPXMLRPCDataCleaner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPXMLRPCDataCleaner.h; sourceTree = "<group>"; };
-		4EF38FCA1D4311D000CE28A4 /* WPXMLRPCDataCleaner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPXMLRPCDataCleaner.m; sourceTree = "<group>"; };
-		4EF38FCB1D4311D000CE28A4 /* WPXMLRPCDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPXMLRPCDecoder.h; sourceTree = "<group>"; };
-		4EF38FCC1D4311D000CE28A4 /* WPXMLRPCDecoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPXMLRPCDecoder.m; sourceTree = "<group>"; };
-		4EF38FCD1D4311D000CE28A4 /* WPXMLRPCDecoderDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPXMLRPCDecoderDelegate.h; sourceTree = "<group>"; };
-		4EF38FCE1D4311D000CE28A4 /* WPXMLRPCDecoderDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPXMLRPCDecoderDelegate.m; sourceTree = "<group>"; };
-		4EF38FCF1D4311D000CE28A4 /* WPXMLRPCEncoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPXMLRPCEncoder.h; sourceTree = "<group>"; };
-		4EF38FD01D4311D000CE28A4 /* WPXMLRPCEncoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPXMLRPCEncoder.m; sourceTree = "<group>"; };
 		4EF38FD81D4311F000CE28A4 /* FAImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FAImageView.h; sourceTree = "<group>"; };
 		4EF38FD91D4311F000CE28A4 /* FAImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FAImageView.m; sourceTree = "<group>"; };
 		4EF38FDA1D4311F000CE28A4 /* FontAwesome.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome.ttf; sourceTree = "<group>"; };
@@ -1405,6 +1447,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4E3B10711E4AC9EF002EF825 /* WPXMLRPC */ = {
+			isa = PBXGroup;
+			children = (
+				4E3B10721E4AC9EF002EF825 /* WPBase64Utils.h */,
+				4E3B10731E4AC9EF002EF825 /* WPBase64Utils.m */,
+				4E3B10741E4AC9EF002EF825 /* WPStringUtils.h */,
+				4E3B10751E4AC9EF002EF825 /* WPStringUtils.m */,
+				4E3B10761E4AC9EF002EF825 /* WPXMLRPC.h */,
+				4E3B10771E4AC9EF002EF825 /* WPXMLRPCDataCleaner.h */,
+				4E3B10781E4AC9EF002EF825 /* WPXMLRPCDataCleaner.m */,
+				4E3B10791E4AC9EF002EF825 /* WPXMLRPCDecoder.h */,
+				4E3B107A1E4AC9EF002EF825 /* WPXMLRPCDecoder.m */,
+				4E3B107B1E4AC9EF002EF825 /* WPXMLRPCDecoderDelegate.h */,
+				4E3B107C1E4AC9EF002EF825 /* WPXMLRPCDecoderDelegate.m */,
+				4E3B107D1E4AC9EF002EF825 /* WPXMLRPCEncoder.h */,
+				4E3B107E1E4AC9EF002EF825 /* WPXMLRPCEncoder.m */,
+			);
+			path = WPXMLRPC;
+			sourceTree = "<group>";
+		};
 		4E4AD5D21D477536002BFD98 /* 框架_Main */ = {
 			isa = PBXGroup;
 			children = (
@@ -1502,6 +1564,39 @@
 				4EBEC6251DBB12D80038DFE0 /* SAMKeychain.bundle */,
 			);
 			path = Support;
+			sourceTree = "<group>";
+		};
+		4ED5A76C1E4ACDC1005ADE05 /* WordPressApi */ = {
+			isa = PBXGroup;
+			children = (
+				4ED5A76D1E4ACDC1005ADE05 /* WordPressApi-Prefix.pch */,
+				4ED5A76E1E4ACDC1005ADE05 /* WordPressApi.h */,
+				4ED5A76F1E4ACDC1005ADE05 /* WordPressApi.m */,
+				4ED5A7701E4ACDC1005ADE05 /* WordPressBaseApi.h */,
+				4ED5A7711E4ACDC1005ADE05 /* WordPressRestApi.h */,
+				4ED5A7721E4ACDC1005ADE05 /* WordPressRestApi.m */,
+				4ED5A7731E4ACDC1005ADE05 /* WordPressRestApiJSONRequestOperation.h */,
+				4ED5A7741E4ACDC1005ADE05 /* WordPressRestApiJSONRequestOperation.m */,
+				4ED5A7751E4ACDC1005ADE05 /* WordPressRestApiJSONRequestOperationManager.h */,
+				4ED5A7761E4ACDC1005ADE05 /* WordPressRestApiJSONRequestOperationManager.m */,
+				4ED5A7771E4ACDC1005ADE05 /* WordPressXMLRPCApi.h */,
+				4ED5A7781E4ACDC1005ADE05 /* WordPressXMLRPCApi.m */,
+				4ED5A7791E4ACDC1005ADE05 /* WPComOAuthController.h */,
+				4ED5A77A1E4ACDC1005ADE05 /* WPComOAuthController.m */,
+				4ED5A77B1E4ACDC1005ADE05 /* WPHTTPAuthenticationAlertController.h */,
+				4ED5A77C1E4ACDC1005ADE05 /* WPHTTPAuthenticationAlertController.m */,
+				4ED5A77D1E4ACDC1005ADE05 /* WPHTTPRequestOperation.h */,
+				4ED5A77E1E4ACDC1005ADE05 /* WPHTTPRequestOperation.m */,
+				4ED5A77F1E4ACDC1005ADE05 /* WPRSDParser.h */,
+				4ED5A7801E4ACDC1005ADE05 /* WPRSDParser.m */,
+				4ED5A7811E4ACDC1005ADE05 /* WPXMLRPCClient.h */,
+				4ED5A7821E4ACDC1005ADE05 /* WPXMLRPCClient.m */,
+				4ED5A7831E4ACDC1005ADE05 /* WPXMLRPCRequest.h */,
+				4ED5A7841E4ACDC1005ADE05 /* WPXMLRPCRequest.m */,
+				4ED5A7851E4ACDC1005ADE05 /* WPXMLRPCRequestOperation.h */,
+				4ED5A7861E4ACDC1005ADE05 /* WPXMLRPCRequestOperation.m */,
+			);
+			path = WordPressApi;
 			sourceTree = "<group>";
 		};
 		4EDFD78C1E348E98006DD1E6 /* FMDB */ = {
@@ -1831,6 +1926,8 @@
 		4EDFF40F1E3757FD000C47D2 /* navi_bar */ = {
 			isa = PBXGroup;
 			children = (
+				4E3B10571E49E159002EF825 /* back_button@2x.png */,
+				4E3B10581E49E159002EF825 /* back_button@3x.png */,
 				4EDFF4101E3757FD000C47D2 /* left_menu@2x.png */,
 				4EDFF4111E3757FD000C47D2 /* left_menu@3x.png */,
 				4EDFF4121E3757FD000C47D2 /* navigationbar_Me@2x.png */,
@@ -1889,7 +1986,7 @@
 			isa = PBXGroup;
 			children = (
 				4EF149DD1D3DF61D00D28265 /* Assets.xcassets */,
-				4EF149E21D3DF61D00D28265 /* Info.plist */,
+				4EF149E21D3DF61D00D28265 /* WBSBlogInfo.plist */,
 				4EF149D21D3DF61D00D28265 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -1923,10 +2020,11 @@
 				4EDFD80D1E374642006DD1E6 /* MMDrawerController */,
 				4EF14D761D3E32F600D28265 /* SDWebImage */,
 				4EF14D971D3E32F600D28265 /* GPUImage */,
+				4E3B10711E4AC9EF002EF825 /* WPXMLRPC */,
+				4ED5A76C1E4ACDC1005ADE05 /* WordPressApi */,
 				4EF14FF31D3E332800D28265 /* TTTAttributedLabel */,
 				4EF38FD71D4311F000CE28A4 /* FontAwesome */,
 				4EF150351D3E36DE00D28265 /* ToMarkdown */,
-				4EF38FC31D4311D000CE28A4 /* WPXMLRPC */,
 				4EDFD7CE1E35A991006DD1E6 /* SVProgressHUD */,
 				4EBEC61F1DBB12D70038DFE0 /* SAMKeychain */,
 				4EF38F721D430F4500CE28A4 /* Masonry */,
@@ -2757,26 +2855,6 @@
 			path = Search;
 			sourceTree = "<group>";
 		};
-		4EF38FC31D4311D000CE28A4 /* WPXMLRPC */ = {
-			isa = PBXGroup;
-			children = (
-				4EF38FC41D4311D000CE28A4 /* WPBase64Utils.h */,
-				4EF38FC51D4311D000CE28A4 /* WPBase64Utils.m */,
-				4EF38FC61D4311D000CE28A4 /* WPStringUtils.h */,
-				4EF38FC71D4311D000CE28A4 /* WPStringUtils.m */,
-				4EF38FC81D4311D000CE28A4 /* WPXMLRPC.h */,
-				4EF38FC91D4311D000CE28A4 /* WPXMLRPCDataCleaner.h */,
-				4EF38FCA1D4311D000CE28A4 /* WPXMLRPCDataCleaner.m */,
-				4EF38FCB1D4311D000CE28A4 /* WPXMLRPCDecoder.h */,
-				4EF38FCC1D4311D000CE28A4 /* WPXMLRPCDecoder.m */,
-				4EF38FCD1D4311D000CE28A4 /* WPXMLRPCDecoderDelegate.h */,
-				4EF38FCE1D4311D000CE28A4 /* WPXMLRPCDecoderDelegate.m */,
-				4EF38FCF1D4311D000CE28A4 /* WPXMLRPCEncoder.h */,
-				4EF38FD01D4311D000CE28A4 /* WPXMLRPCEncoder.m */,
-			);
-			path = WPXMLRPC;
-			sourceTree = "<group>";
-		};
 		4EF38FD71D4311F000CE28A4 /* FontAwesome */ = {
 			isa = PBXGroup;
 			children = (
@@ -2921,6 +2999,7 @@
 					4EF149CD1D3DF61D00D28265 = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = 6XB2PBHRRB;
+						LastSwiftMigration = 0820;
 					};
 					4EF149E61D3DF61D00D28265 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -2962,6 +3041,7 @@
 				4EDFF3FE1E375508000C47D2 /* toolbar-reference@2x.png in Resources */,
 				4EDFF3E41E375508000C47D2 /* tabbar-news@3x.png in Resources */,
 				4EDFF3C71E375508000C47D2 /* sidemenu-software@3x.png in Resources */,
+				4E3B10591E49E159002EF825 /* back_button@2x.png in Resources */,
 				4EF14F401D3E32F700D28265 /* lookup.png in Resources */,
 				4EDFF39E1E375508000C47D2 /* scan.png in Resources */,
 				4EDFF3D51E375508000C47D2 /* tabbar-me-selected@2x.png in Resources */,
@@ -3083,6 +3163,7 @@
 				4EF14F421D3E32F700D28265 /* lookup_miss_etikate.png in Resources */,
 				4EDFF39B1E375508000C47D2 /* picture.png in Resources */,
 				4EF14F091D3E32F700D28265 /* mkdio.h.in in Resources */,
+				4E3B105A1E49E159002EF825 /* back_button@3x.png in Resources */,
 				4EDFF3AD1E375508000C47D2 /* tweetEditing@2x.png in Resources */,
 				4EF14F011D3E32F700D28265 /* blocktags in Resources */,
 				4EF38F541D42F5BA00CE28A4 /* WBSLogin.xib in Resources */,
@@ -3148,11 +3229,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				4EF38F6A1D430AE600CE28A4 /* mkdio.c in Sources */,
+				4ED5A7901E4ACDC1005ADE05 /* WPXMLRPCClient.m in Sources */,
 				4EF38F5C1D42FAB200CE28A4 /* TMDHeading.m in Sources */,
 				4EF38F581D42FA2F00CE28A4 /* WBSSettingViewController.m in Sources */,
 				4EF14F251D3E32F700D28265 /* UIProgressView+AFNetworking.m in Sources */,
 				4EF14F971D3E32F700D28265 /* GPUImageLuminosityBlendFilter.m in Sources */,
 				4EF14F1A1D3E32F700D28265 /* AFURLConnectionOperation.m in Sources */,
+				4ED5A7881E4ACDC1005ADE05 /* WordPressRestApi.m in Sources */,
+				4E3B107F1E4AC9EF002EF825 /* WPBase64Utils.m in Sources */,
 				4EF14FC61D3E32F700D28265 /* GPUImageSolidColorGenerator.m in Sources */,
 				4EF14F5A1D3E32F700D28265 /* GPUImageColorDodgeBlendFilter.m in Sources */,
 				4EF14FA81D3E32F700D28265 /* GPUImageOverlayBlendFilter.m in Sources */,
@@ -3201,6 +3285,7 @@
 				4EF14F861D3E32F700D28265 /* GPUImageHueFilter.m in Sources */,
 				4EBEC5EC1DBB10A90038DFE0 /* WBSQRCodeOauthViewController.m in Sources */,
 				4EF14F591D3E32F700D28265 /* GPUImageColorBurnBlendFilter.m in Sources */,
+				4ED5A78A1E4ACDC1005ADE05 /* WordPressRestApiJSONRequestOperationManager.m in Sources */,
 				4EF14F1C1D3E32F700D28265 /* AFURLResponseSerialization.m in Sources */,
 				4EF14F351D3E32F700D28265 /* SDWebImageDecoder.m in Sources */,
 				4EF14F341D3E32F700D28265 /* SDWebImageCompat.m in Sources */,
@@ -3210,7 +3295,6 @@
 				4EF14FD41D3E32F700D28265 /* GPUImageToneCurveFilter.m in Sources */,
 				4EF14FD31D3E32F700D28265 /* GPUImageTiltShiftFilter.m in Sources */,
 				4EF14F8C1D3E32F700D28265 /* GPUImageLaplacianFilter.m in Sources */,
-				4EF38FD41D4311D000CE28A4 /* WPXMLRPCDecoder.m in Sources */,
 				4EF38FBF1D4310E300CE28A4 /* WBSHomePostViewController.m in Sources */,
 				4EF390451D43138100CE28A4 /* TGMetaWeblogAuthApi.m in Sources */,
 				4EF14FBF1D3E32F700D28265 /* GPUImageShiTomasiFeatureDetectionFilter.m in Sources */,
@@ -3220,7 +3304,6 @@
 				4E4AD5ED1D477536002BFD98 /* WBSBrowserViewController.m in Sources */,
 				4EF14F901D3E32F700D28265 /* GPUImageLineGenerator.m in Sources */,
 				4EF14F7C1D3E32F700D28265 /* GPUImageHarrisCornerDetectionFilter.m in Sources */,
-				4EF38FD21D4311D000CE28A4 /* WPStringUtils.m in Sources */,
 				4EF14F931D3E32F700D28265 /* GPUImageLowPassFilter.m in Sources */,
 				4EF14FC31D3E32F700D28265 /* GPUImageSobelEdgeDetectionFilter.m in Sources */,
 				4EF1504E1D3E36DE00D28265 /* TMDBold.m in Sources */,
@@ -3242,6 +3325,7 @@
 				4EF14FDC1D3E32F700D28265 /* GPUImageUnsharpMaskFilter.m in Sources */,
 				4EF38FBA1D4310E300CE28A4 /* WBSCategoryCell.m in Sources */,
 				4E4AD5EB1D477536002BFD98 /* WBSBottomBarViewController.m in Sources */,
+				4ED5A78E1E4ACDC1005ADE05 /* WPHTTPRequestOperation.m in Sources */,
 				4EF14F9D1D3E32F700D28265 /* GPUImageMotionBlurFilter.m in Sources */,
 				4EF150551D3E36DE00D28265 /* TMDLineBreak.m in Sources */,
 				4EF14F581D3E32F700D28265 /* GPUImageColorBlendFilter.m in Sources */,
@@ -3252,6 +3336,7 @@
 				4EF14FCB1D3E32F700D28265 /* GPUImageSubtractBlendFilter.m in Sources */,
 				4EF14F691D3E32F700D28265 /* GPUImageEmbossFilter.m in Sources */,
 				4EF14FC41D3E32F700D28265 /* GPUImageSoftEleganceFilter.m in Sources */,
+				4ED5A7921E4ACDC1005ADE05 /* WPXMLRPCRequestOperation.m in Sources */,
 				4EF150521D3E36DE00D28265 /* TMDHorizontalRule.m in Sources */,
 				4EF14F911D3E32F700D28265 /* GPUImageLocalBinaryPatternFilter.m in Sources */,
 				4EF5E4481D4230DA002B6AFF /* (null) in Sources */,
@@ -3286,12 +3371,12 @@
 				4EF5E4451D4230DA002B6AFF /* (null) in Sources */,
 				4EF14F791D3E32F700D28265 /* GPUImageGrayscaleFilter.m in Sources */,
 				4EF390421D43138100CE28A4 /* TGTag+TGTagFromDictionary.m in Sources */,
-				4EF38FD51D4311D000CE28A4 /* WPXMLRPCDecoderDelegate.m in Sources */,
 				4EF390411D43138100CE28A4 /* TGPost.m in Sources */,
 				4EDFD7DC1E35A991006DD1E6 /* SVRadialGradientLayer.m in Sources */,
 				4EF5E4021D41C870002B6AFF /* (null) in Sources */,
 				4EF14F7A1D3E32F700D28265 /* GPUImageHalftoneFilter.m in Sources */,
 				4EF390381D43138100CE28A4 /* NSString+StringByStrippingHTML.m in Sources */,
+				4ED5A78D1E4ACDC1005ADE05 /* WPHTTPAuthenticationAlertController.m in Sources */,
 				4EF14F361D3E32F700D28265 /* SDWebImageDownloader.m in Sources */,
 				4EF14F3A1D3E32F700D28265 /* UIButton+WebCache.m in Sources */,
 				4EDFD7D91E35A991006DD1E6 /* SVProgressAnimatedView.m in Sources */,
@@ -3314,7 +3399,6 @@
 				4EF14F4E1D3E32F700D28265 /* GPUImageBilateralFilter.m in Sources */,
 				4EF14F701D3E32F700D28265 /* GPUImageFilterGroup.m in Sources */,
 				4EF14F491D3E32F700D28265 /* GPUImageAddBlendFilter.m in Sources */,
-				4EF38FD11D4311D000CE28A4 /* WPBase64Utils.m in Sources */,
 				4EF14FB91D3E32F700D28265 /* GPUImageRGBOpeningFilter.m in Sources */,
 				4EF14F7F1D3E32F700D28265 /* GPUImageHighPassFilter.m in Sources */,
 				4EF14F0C1D3E32F700D28265 /* tags.c in Sources */,
@@ -3326,6 +3410,7 @@
 				4EF150851D3E37C500D28265 /* UIView+Util.m in Sources */,
 				4EF14FC71D3E32F700D28265 /* GPUImageSourceOverBlendFilter.m in Sources */,
 				4EF14F841D3E32F700D28265 /* GPUImageHSBFilter.m in Sources */,
+				4E3B10831E4AC9EF002EF825 /* WPXMLRPCDecoderDelegate.m in Sources */,
 				4EF14F211D3E32F700D28265 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				4EF5E44B1D4230DA002B6AFF /* (null) in Sources */,
 				4EF14F191D3E32F700D28265 /* AFSecurityPolicy.m in Sources */,
@@ -3333,6 +3418,7 @@
 				4EF14F721D3E32F700D28265 /* GPUImageFramebuffer.m in Sources */,
 				4EF14FB31D3E32F700D28265 /* GPUImageRawDataInput.m in Sources */,
 				4EF14F0A1D3E32F700D28265 /* resource.c in Sources */,
+				4ED5A7871E4ACDC1005ADE05 /* WordPressApi.m in Sources */,
 				4EF3903C1D43138100CE28A4 /* TGComment+TGCommentFromDictionary.m in Sources */,
 				4EF14F261D3E32F700D28265 /* UIRefreshControl+AFNetworking.m in Sources */,
 				4EF14F511D3E32F700D28265 /* GPUImageBuffer.m in Sources */,
@@ -3350,12 +3436,11 @@
 				4EF14F371D3E32F700D28265 /* SDWebImageDownloaderOperation.m in Sources */,
 				4EBEC6271DBB12D80038DFE0 /* SAMKeychainQuery.m in Sources */,
 				4EDFD79C1E348E98006DD1E6 /* FMResultSet.m in Sources */,
-				4EF38FD31D4311D000CE28A4 /* WPXMLRPCDataCleaner.m in Sources */,
-				4EF38FD61D4311D000CE28A4 /* WPXMLRPCEncoder.m in Sources */,
 				4EF14F171D3E32F700D28265 /* AFHTTPSessionManager.m in Sources */,
 				4EF14F8D1D3E32F700D28265 /* GPUImageLevelsFilter.m in Sources */,
 				4EF38FBE1D4310E300CE28A4 /* WBSPostEditViewController.m in Sources */,
 				4EF14F8A1D3E32F700D28265 /* GPUImageKuwaharaRadius3Filter.m in Sources */,
+				4E3B10801E4AC9EF002EF825 /* WPStringUtils.m in Sources */,
 				4E4AD5F21D477536002BFD98 /* WBSRootTabBarController.m in Sources */,
 				4EF5E4401D4230DA002B6AFF /* (null) in Sources */,
 				4EBEC5EB1DBB10A90038DFE0 /* WBSScanQRCodeViewController.m in Sources */,
@@ -3401,6 +3486,7 @@
 				4EF14FBA1D3E32F700D28265 /* GPUImageSaturationBlendFilter.m in Sources */,
 				4EF150631D3E374300D28265 /* WWTagsCloudView.m in Sources */,
 				4EF14F381D3E32F700D28265 /* SDWebImageManager.m in Sources */,
+				4ED5A78F1E4ACDC1005ADE05 /* WPRSDParser.m in Sources */,
 				4EF14FD51D3E32F700D28265 /* GPUImageToonFilter.m in Sources */,
 				4EF14F6A1D3E32F700D28265 /* GPUImageErosionFilter.m in Sources */,
 				4EF14FC21D3E32F700D28265 /* GPUImageSmoothToonFilter.m in Sources */,
@@ -3424,12 +3510,15 @@
 				4EF14F561D3E32F700D28265 /* GPUImageChromaKeyFilter.m in Sources */,
 				4EF14FA01D3E32F700D28265 /* GPUImageMovieComposition.m in Sources */,
 				4EF14F461D3E32F700D28265 /* GPUImage3x3ConvolutionFilter.m in Sources */,
+				4ED5A78B1E4ACDC1005ADE05 /* WordPressXMLRPCApi.m in Sources */,
 				4EF149D31D3DF61D00D28265 /* main.m in Sources */,
+				4E3B10811E4AC9EF002EF825 /* WPXMLRPCDataCleaner.m in Sources */,
 				4EF14FDB1D3E32F700D28265 /* GPUImageUIElement.m in Sources */,
 				4EF3903B1D43138100CE28A4 /* TGCategory.m in Sources */,
 				4EF14F5F1D3E32F700D28265 /* GPUImageCropFilter.m in Sources */,
 				4EDFD7D81E35A991006DD1E6 /* SVIndefiniteAnimatedView.m in Sources */,
 				4EF14FBB1D3E32F700D28265 /* GPUImageSaturationFilter.m in Sources */,
+				4ED5A7911E4ACDC1005ADE05 /* WPXMLRPCRequest.m in Sources */,
 				4EF14F771D3E32F700D28265 /* GPUImageGaussianSelectiveBlurFilter.m in Sources */,
 				4EF14F001D3E32F700D28265 /* basename.c in Sources */,
 				4EF14FCC1D3E32F700D28265 /* GPUImageSwirlFilter.m in Sources */,
@@ -3445,6 +3534,7 @@
 				4EF38F9C1D430F4600CE28A4 /* MASConstraintMaker.m in Sources */,
 				4EF14F631D3E32F700D28265 /* GPUImageDifferenceBlendFilter.m in Sources */,
 				4EF14FA41D3E32F700D28265 /* GPUImageNormalBlendFilter.m in Sources */,
+				4ED5A7891E4ACDC1005ADE05 /* WordPressRestApiJSONRequestOperation.m in Sources */,
 				4E4AD5F71D477570002BFD98 /* WBSSwipableViewController.m in Sources */,
 				4EF14F601D3E32F700D28265 /* GPUImageCrosshairGenerator.m in Sources */,
 				4EF14F061D3E32F700D28265 /* html5.c in Sources */,
@@ -3453,9 +3543,12 @@
 				4EF14F5B1D3E32F700D28265 /* GPUImageColorInvertFilter.m in Sources */,
 				4EF14FE21D3E32F700D28265 /* GPUImageXYDerivativeFilter.m in Sources */,
 				4EF150751D3E377D00D28265 /* WBSUtils.m in Sources */,
+				4E3B10821E4AC9EF002EF825 /* WPXMLRPCDecoder.m in Sources */,
 				4EF14FD71D3E32F700D28265 /* GPUImageTwoInputCrossTextureSamplingFilter.m in Sources */,
 				4EF14F041D3E32F700D28265 /* generate.c in Sources */,
 				4EF5E43F1D4230DA002B6AFF /* (null) in Sources */,
+				4ED5A78C1E4ACDC1005ADE05 /* WPComOAuthController.m in Sources */,
+				4E3B10841E4AC9EF002EF825 /* WPXMLRPCEncoder.m in Sources */,
 				4EDFD7991E348E98006DD1E6 /* FMDatabaseAdditions.m in Sources */,
 				4EF14F761D3E32F700D28265 /* GPUImageGaussianBlurPositionFilter.m in Sources */,
 				4EF38F9B1D430F4600CE28A4 /* MASConstraint.m in Sources */,
@@ -3610,6 +3703,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = 6XB2PBHRRB;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -3617,17 +3711,18 @@
 					"$(PROJECT_DIR)/WBSBlog/Lib",
 				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/WBSBlog/Others/WBSPrefixHeader.pch";
-				INFOPLIST_FILE = WBSBlog/Info.plist;
+				INFOPLIST_FILE = WBSBlog/WBSBlogInfo.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
-					"$(PROJECT_DIR)/WBSBlog/Lib/WPXMLRPC/SAMKeychain",
-					"$(PROJECT_DIR)/WBSBlog/Lib/WPXMLRPC/SVProgressHUD",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.webersongao.WBSBlog;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "WBSBlog/Utils/WBSBlog-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -3637,6 +3732,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = 6XB2PBHRRB;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -3644,7 +3740,7 @@
 					"$(PROJECT_DIR)/WBSBlog/Lib",
 				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/WBSBlog/Others/WBSPrefixHeader.pch";
-				INFOPLIST_FILE = WBSBlog/Info.plist;
+				INFOPLIST_FILE = WBSBlog/WBSBlogInfo.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
@@ -3655,6 +3751,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.webersongao.WBSBlog;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "WBSBlog/Utils/WBSBlog-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

@@ -140,7 +140,7 @@
         author = @"admin";
         categroies = jsonPost.categoriesArray;
         url = jsonPost.URL;
-    }else{//MetaWeblogApi
+    }else{// XMLRPC API
         title = [post objectForKey:@"title"];
         content = [post objectForKey:@"description"];
         dateCreated = [post objectForKey:@"dateCreated"];

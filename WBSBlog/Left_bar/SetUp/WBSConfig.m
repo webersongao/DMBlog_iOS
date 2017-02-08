@@ -21,7 +21,7 @@
 }
 
 /**
- *  获取MetaWeblog API的授权信息
+ *  获取XMLRPC API的授权信息
  */
 +(WBSApiInfo *)getAuthoizedApiInfo
 {

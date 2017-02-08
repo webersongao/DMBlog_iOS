@@ -11,7 +11,7 @@
 @interface WBSApiInfo : NSObject
 
 /**
- *  baseURL（MetaWeblogApi时为xmlrpcURL，JSON API时为八色URL）
+ *  baseURL（XMLRPC API 时为xmlrpcURL，JSON API时为 JSON URL）
  */
 @property (nonatomic,strong) NSString *baseURL;
 /**
@@ -28,7 +28,7 @@
 @property (nonatomic,strong) NSString * generateAauthCookie;
 
 /**
- *  初始化metaWeblog API
+ *  初始化XMLRPC API
  *
  *  @param xmlrpc   xmlrpc链接
  *  @param username 用户名

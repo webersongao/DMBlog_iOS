@@ -261,7 +261,7 @@ const int MAX_PAGE_SIZE = 10;//每页显示数目
             [adaptedPost setValue:comments forKey:@"comments"];
             break;
         }
-        case APITypeMetaWeblog:{
+        case APITypeXMLRPC:{
             [adaptedPost setValue:[post valueForKey:@"postid"] forKey:@"id"];
             [adaptedPost setValue:[post valueForKey:@"title"] forKey:@"title"];
             [adaptedPost setValue:[post valueForKey:@"description"] forKey:@"content"];
@@ -444,9 +444,9 @@ const int MAX_PAGE_SIZE = 10;//每页显示数目
         
     }else{
         //设置API类型
-        self.apiType = APITypeMetaWeblog;
+        self.apiType = APITypeXMLRPC;
         
-        //MetaWeblogAPI
+        //APITypeXMLRPC API
         [self.api getRecentPosts:currentCount
                          success:^(NSArray *posts) {
                              KLog(@"MetaWeblogAPI have %lu posts", (unsigned long) [posts count]);
@@ -810,9 +810,9 @@ const int MAX_PAGE_SIZE = 10;//每页显示数目
              }];
     }else{
         //设置API类型
-        self.apiType = APITypeMetaWeblog;
+        self.apiType = APITypeXMLRPC;
         
-        //MetaWeblogAPI
+        //APITypeXMLRPC API
         [self.api deletePost:postId
                      success:^(BOOL status) {
                          //刷新数据

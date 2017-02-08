@@ -17,7 +17,7 @@
 @property (nonatomic, copy) void (^tableWillReload)(NSUInteger responseObjectsCount);
 @property (nonatomic, copy) void (^didRefreshSucceed)();
 
-//MetaWeblogApi 或者 JSON API
+//XMLRPC API 或者 JSON API
 @property(nonatomic,strong) id api;
 
 //刷新分分页数据（需要在子类重写）

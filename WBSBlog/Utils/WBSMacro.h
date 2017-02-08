@@ -16,8 +16,8 @@
 #define GoodJob_API_h
 
 #define KbaseUrl @"www.swiftartisan.com"
-#define KuserName @"521@weberson"
-#define KpassWord @"web@?516680"
+#define KuserName @"xxx"
+#define KpassWord @"xxx"
 
 /********************* 公共接口 *************************/
 // 线上服务器
@@ -38,6 +38,9 @@
 
 /// 站点地址
 #define WBSSiteBaseURL                          @"KBlogBaseURL"
+
+/// 站点xmlrpc地址
+#define WBSSiteXmlrpcURL                        @"KBlogXmlrpcURL"
 
 /// 用户UID
 #define WBSUserUID                              @"KUserUID"

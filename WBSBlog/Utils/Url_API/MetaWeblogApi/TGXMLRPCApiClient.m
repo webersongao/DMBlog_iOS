@@ -25,7 +25,7 @@
 #import "WPXMLRPCEncoder.h"
 #import "WPXMLRPCDecoder.h"
 
-NSString *const WPXMLRPCClientErrorDomain = @"XMLRPC";
+
 static NSUInteger const WPXMLRPCClientDefaultMaxConcurrentOperationCount = 4;
 
 @interface TGXMLRPCApiClient ()

@@ -1,8 +1,8 @@
 //
-//  UserProtocolViewController.h
+//  WBSUserProtocolViewController.h
 //  WBSBlog
 //
-//  Created by Weberson on 16/7/20.
+//  Created by Weberson on 17/2/7.
 //  Copyright © 2016年 Weberson. All rights reserved.
 
 /**
