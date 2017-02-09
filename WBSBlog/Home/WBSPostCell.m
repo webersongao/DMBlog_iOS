@@ -26,35 +26,35 @@
 
 - (void)initSubviews
 {
-    self.titleLabel = [UILabel new];
+    self.titleLabel = [[UILabel alloc]init];
     self.titleLabel.numberOfLines = 0;
     self.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
     self.titleLabel.font = [UIFont boldSystemFontOfSize:15];
     [self.contentView addSubview:self.titleLabel];
     
-    self.bodyLabel = [UILabel new];
+    self.bodyLabel = [[UILabel alloc]init];
     self.bodyLabel.numberOfLines = 0;
     self.bodyLabel.lineBreakMode = NSLineBreakByWordWrapping;
     self.bodyLabel.font = [UIFont systemFontOfSize:13];
     self.bodyLabel.textColor = [UIColor grayColor];
     [self.contentView addSubview:self.bodyLabel];
     
-    self.authorLabel = [UILabel new];
+    self.authorLabel = [[UILabel alloc]init];
     self.authorLabel.font = [UIFont systemFontOfSize:12];
     self.authorLabel.textColor = [UIColor nameColor];
     [self.contentView addSubview:self.authorLabel];
     
-    self.timeLabel = [UILabel new];
+    self.timeLabel = [[UILabel alloc]init];
     self.timeLabel.font = [UIFont systemFontOfSize:12];
     self.timeLabel.textColor = [UIColor grayColor];
     [self.contentView addSubview:self.timeLabel];
     
-    self.commentCount = [UILabel new];
+    self.commentCount = [[UILabel alloc]init];
     self.commentCount.font = [UIFont systemFontOfSize:12];
     self.commentCount.textColor = [UIColor grayColor];
     [self.contentView addSubview:self.commentCount];
     
-    self.categories = [UILabel new];
+    self.categories = [[UILabel alloc]init];
     self.categories.font = [UIFont systemFontOfSize:12];
     self.categories.textColor = [UIColor nameColor];
     [self.contentView addSubview:self.categories];

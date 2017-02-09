@@ -20,7 +20,7 @@
     self = [super initWithFrame:frame];
     if (self) {
         _currentIndex = 0;
-        _titleButtons = [NSMutableArray new];
+        _titleButtons = [[NSMutableArray alloc]initWithCapacity:1];
         
         CGFloat buttonWidth = frame.size.width / titles.count;
         CGFloat buttonHeight = frame.size.height;

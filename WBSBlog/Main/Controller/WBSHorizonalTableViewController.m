@@ -34,7 +34,7 @@ static NSString *kHorizonalCellID = @"HorizonalCell";
     [super viewDidLoad];
     
 //    /***** 为解决iPhone 6 下的popviewcontroller后的问题而做的无奈之举，这样会引入新的问题，very ugly，亟待解决 *****/
-    self.tableView = [UITableView new];
+    self.tableView = [[UITableView alloc]init];
     
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.scrollsToTop = NO;
