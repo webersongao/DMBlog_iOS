@@ -100,7 +100,6 @@ static NSString *kUserInfoCellID = @"userInfoCell";
 {
     
     UIView *HeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, KSCREEN_Width, HeaderViewHeight)];
-    KLog(@"tableView.tableHeaderView.height is %lf",tableView.tableHeaderView.height);
     HeaderView.backgroundColor = [UIColor infosBackViewColor];
     
     

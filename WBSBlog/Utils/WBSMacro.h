@@ -1,4 +1,3 @@
-
 //
 //  WBSAPI.h
 //  GoodJob_Weberson
@@ -55,7 +54,7 @@
 #define WBSSiteAuthNonce                        @"KAuthNonce"
 
 /// 登录Cookie名称
-#define WBSSiteAuthCookieName                  @"KAuthCookie_name"
+#define WBSSiteAuthCookieName                   @"KAuthCookie_name"
 
 /// 登录Cookie
 #define WBSSiteAuthCookie                       @"KAuthCookie"
@@ -73,13 +72,13 @@
 #define WBSIs_WP_Optimization                   @"Kis_Wordpress_Optimization"
 
 ///是否夜间模式
-#define WBSIs_NightMode                          @"K_is_NightMode"
+#define WBSIs_NightMode                         @"K_is_NightMode"
 
 ///xmlrpcURL 前缀
-#define WBSXmlrpcPrefix                          @"xmlrpcURLPrefix"
+#define WBSXmlrpcPrefix                         @"xmlrpcURLPrefix"
 
 ///xmlrpcURL 后缀
-#define WBSXmlrpcSubffix                          @"xmlrpcURLSuffix"
+#define WBSXmlrpcSubffix                        @"xmlrpcURLSuffix"
 
 //
 //#define WBSSiteBaseURL                          @"blogBaseURL"

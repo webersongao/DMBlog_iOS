@@ -395,7 +395,7 @@ const int MAX_PAGE_SIZE = 10;//每页显示数目
         NSString *requestURL = [NSString stringWithFormat:@"%@/get_recent_posts/?page=%lu&count=%d&post_type=%@",baseURL,super.page+1,MAX_PAGE_SIZE,(_postType == PostTypePost?@"post":@"page")];
         [jsonAPI parseURL:requestURL success:^(NSArray *posts, NSInteger postsCount) {
             
-            KLog(@"requestURL:%@",requestURL);
+            KLog(@"JSON API 的requestURL:%@",requestURL);
             
             KLog(@"JSON API Fetched %ld posts", postsCount);
             if (self.page == 0) {

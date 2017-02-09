@@ -148,6 +148,10 @@ static NSString *WordPressRestApiRedirectUrl = nil;
 	}];
 }
 
+-(void)deletePost:(NSString *)postId success:(void (^)(BOOL))success failure:(void (^)(NSError *))failure{
+    
+}
+
 #pragma mark - API Helpers
 
 - (NSString *)sitePath:(NSString *)path {
