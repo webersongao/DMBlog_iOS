@@ -178,7 +178,7 @@ static NSString *kUserInfoCellID = @"userInfoCell";
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    UITableViewCell *cell = [UITableViewCell new];
+    UITableViewCell *cell = [[UITableViewCell alloc]init];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     NSDictionary *titleAttributes = @{NSForegroundColorAttributeName:[UIColor grayColor]};

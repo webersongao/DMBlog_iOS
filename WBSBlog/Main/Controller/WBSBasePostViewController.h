@@ -26,10 +26,10 @@
 @property (nonatomic, assign) BOOL shouldFetchDataAfterLoaded;
 @property (nonatomic, assign) BOOL needRefreshAnimation;
 @property (nonatomic, assign) BOOL needCache;
-@property (nonatomic, strong) NSMutableArray *objects;
+@property (nonatomic, strong) NSMutableArray *postArray;  /// 内容数组
 @property (nonatomic, assign) int allCount;
 @property (nonatomic, strong) WBSLastCell *lastCell;
-@property (nonatomic, strong) UILabel *label;
+@property (nonatomic, strong) UILabel *desLabel; /// 预览文字
 @property (nonatomic, assign) NSUInteger page;
 
 /// 拉取更多数据

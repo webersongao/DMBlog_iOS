@@ -25,7 +25,7 @@
     self = [super init];
     
     if (self) {
-        _objects = [NSMutableArray new];
+        _postArray = [[NSMutableArray alloc]initWithCapacity:1];
         _page = 0;
         _needRefreshAnimation = YES;
         _shouldFetchDataAfterLoaded = YES;
@@ -39,7 +39,7 @@
     self = [super initWithStyle:style];
     
     if (self) {
-        _objects = [NSMutableArray new];
+        _postArray = [[NSMutableArray alloc]initWithCapacity:1];
         _page = 0;
         _needRefreshAnimation = YES;
         _shouldFetchDataAfterLoaded = YES;
@@ -79,17 +79,17 @@
     
     self.tableView.backgroundColor = [UIColor themeColor];
     
-    _lastCell = [WBSLastCell new];
+    _lastCell = [[WBSLastCell alloc]init];
     [_lastCell addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(fetchMoreDataOfView)]];
     self.tableView.tableFooterView = _lastCell;
     
-    self.refreshControl = [UIRefreshControl new];
+    self.refreshControl = [[UIRefreshControl alloc]init];
     [self.refreshControl addTarget:self action:@selector(refreshCurrentView) forControlEvents:UIControlEventValueChanged];
     
-    _label = [UILabel new];
-    _label.numberOfLines = 0;
-    _label.lineBreakMode = NSLineBreakByWordWrapping;
-    _label.font = [UIFont boldSystemFontOfSize:14];
+    _desLabel = [[UILabel alloc]init];
+    _desLabel.numberOfLines = 0;
+    _desLabel.lineBreakMode = NSLineBreakByWordWrapping;
+    _desLabel.font = [UIFont boldSystemFontOfSize:14];
     
     if (!_shouldFetchDataAfterLoaded) {return;}
     if (_needRefreshAnimation) {

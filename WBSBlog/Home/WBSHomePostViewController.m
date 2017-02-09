@@ -181,13 +181,13 @@ const int MAX_PAGE_SIZE = 10;//每页显示数目
     NSString *title = [adaptedPost objectForKey:@"title"];;//文章标题
     NSString *content = [adaptedPost objectForKey:@"content"];;//文章内容
     
-    self.label.font = [UIFont boldSystemFontOfSize:15];
-    [self.label setAttributedText:[WBSUtils attributedTittle:title]];
-    CGFloat height = [self.label sizeThatFits:CGSizeMake(tableView.frame.size.width - 16, MAXFLOAT)].height;
+    self.desLabel.font = [UIFont boldSystemFontOfSize:15];
+    [self.desLabel setAttributedText:[WBSUtils attributedTittle:title]];
+    CGFloat height = [self.desLabel sizeThatFits:CGSizeMake(tableView.frame.size.width - 16, MAXFLOAT)].height;
     
-    self.label.text = [WBSUtils shortString:content andLength:MAX_DESCRIPTION_LENGTH];
-    self.label.font = [UIFont systemFontOfSize:13];
-    height += [self.label sizeThatFits:CGSizeMake(tableView.frame.size.width - 16, MAXFLOAT)].height;
+    self.desLabel.text = [WBSUtils shortString:content andLength:MAX_DESCRIPTION_LENGTH];
+    self.desLabel.font = [UIFont systemFontOfSize:13];
+    height += [self.desLabel sizeThatFits:CGSizeMake(tableView.frame.size.width - 16, MAXFLOAT)].height;
     
     return height + 42;
 }

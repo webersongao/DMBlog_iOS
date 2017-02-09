@@ -104,7 +104,7 @@
 {
     NSMutableAttributedString *attributeString ;
     
-    NSTextAttachment *textAttachment = [NSTextAttachment new];
+    NSTextAttachment *textAttachment = [[NSTextAttachment alloc]init];
     //转载
     //textAttachment.image = [UIImage imageNamed:@"widget_repost"];
     //原创

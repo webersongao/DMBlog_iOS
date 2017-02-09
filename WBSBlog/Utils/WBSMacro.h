@@ -15,8 +15,8 @@
 #define GoodJob_API_h
 
 #define KbaseUrl @"www.swiftartisan.com"
-#define KuserName @"521@weberson"
-#define KpassWord @"web@?516680"
+#define KuserName @"xxx"
+#define KpassWord @"xxx"
 
 /********************* 公共接口 *************************/
 // 线上服务器

@@ -33,7 +33,7 @@
     
     self.view.backgroundColor = [UIColor themeColor];
     
-    UICollectionViewFlowLayout *flowLayout = [UICollectionViewFlowLayout new];
+    UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc]init];
     CGFloat screenWidth = [UIScreen mainScreen].bounds.size.width;
     flowLayout.minimumInteritemSpacing = (screenWidth - 40 - 30 * 7) / 7;
     flowLayout.minimumLineSpacing = 25;
@@ -114,7 +114,7 @@
             emojiImageName = [NSString stringWithFormat:@"%03ld", (long)emojiNum];
         }
         
-        NSTextAttachment *textAttachment = [NSTextAttachment new];
+        NSTextAttachment *textAttachment = [[NSTextAttachment alloc]init];
         textAttachment.image = [UIImage imageNamed:emojiImageName];
         [textAttachment adjustY:-3];
         

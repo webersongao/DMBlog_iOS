@@ -175,7 +175,7 @@ NSString * const _recognizerAngle = @"_recognizerAngle";
 - (UIImage *)updateBlur
 {
     UIImage *screenshot = [self convertViewToImage];
-    GPUImageiOSBlurFilter *blurFilter = [GPUImageiOSBlurFilter new];
+    GPUImageiOSBlurFilter *blurFilter = [[GPUImageiOSBlurFilter alloc]init];
     blurFilter.saturation = 1.0;
     blurFilter.rangeReductionFactor = 0.1;
     

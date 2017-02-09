@@ -32,7 +32,7 @@
         _editingBar.editView.delegate = self;
         if (hasAModeSwitchButton) {
             _hasAModeSwitchButton = hasAModeSwitchButton;
-            _operationBar = [WBSOperationBar new];
+            _operationBar = [[WBSOperationBar alloc]init];
             _operationBar.hidden = YES;
         }
     }
@@ -256,7 +256,7 @@
 {
     if ([text isEqualToString: @"\n"]) {
         if (![WBSConfig getAuthoizedApiInfo]) {
-            [self.navigationController pushViewController:[WBSLoginViewController new] animated:YES];
+            [self.navigationController pushViewController:[[WBSLoginViewController alloc]init] animated:YES];
         } else {
             [self sendContent];
             [textView resignFirstResponder];
