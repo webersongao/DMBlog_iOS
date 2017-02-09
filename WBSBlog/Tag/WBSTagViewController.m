@@ -9,7 +9,6 @@
 #import "WBSTagViewController.h"
 #import "AFNetworking.h"
 #import "WBSHomePostViewController.h"
-#import "WBSErrorViewController.h"
 
 @interface WBSTagViewController ()
 @property (strong, nonatomic) WWTagsCloudView* tagCloud;
@@ -30,8 +29,7 @@
     
     //JSON API不支持
     if (![WBSConfig isJSONAPIEnable]) {
-        WBSErrorViewController *errorCtl = [[WBSErrorViewController alloc]init];
-        [WBSUtils showApiNotSupported:self redirectTo:errorCtl];
+        [WBSUtils showErrorMessage:@"ApiNotSupport"];
         return;
     }
     
@@ -42,8 +40,7 @@
 - (void) viewDidAppear:(BOOL)animated{
     //JSON API不支持
     if (![WBSConfig isJSONAPIEnable]) {
-        WBSErrorViewController *errorCtl = [[WBSErrorViewController alloc]init];
-        [WBSUtils showApiNotSupported:self redirectTo:errorCtl];
+        [WBSUtils showErrorMessage:@"ApiNotSupport"];
         return;
     }
 

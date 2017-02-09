@@ -10,7 +10,6 @@
 #import "WBSApiInfo.h"
 #import "WBSLoginNavViewController.h"
 #import "WBSJsonApi.h"
-#import "WBSErrorViewController.h"
 #import "UIImageView+WebCache.h"
 #import "WBSNetRequest.h"
 

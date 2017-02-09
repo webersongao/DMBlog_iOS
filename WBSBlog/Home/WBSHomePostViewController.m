@@ -13,7 +13,6 @@
 #import "WBSJsonApi.h"
 #import "WBSDropdownMenuView.h"
 #import "WBSTitleMenuViewController.h"
-#import "WBSErrorViewController.h"
 #import "WBSLoginViewController.h"
 #import "WBSPostModel.h"
 #import "WBSCategoryModel.h"
@@ -109,8 +108,7 @@ const int MAX_PAGE_SIZE = 10;//每页显示数目
 - (void) viewDidAppear:(BOOL)animated{
     //JSON API不支持
     if (![WBSConfig isJSONAPIEnable] && _isSearch) {
-        WBSErrorViewController *errorCtl = [[WBSErrorViewController alloc]init];
-        [WBSUtils showApiNotSupported:self redirectTo:errorCtl];
+        [WBSUtils showErrorMessage:@"ApiNotSupport"];
         return;
     }
 }
@@ -339,8 +337,7 @@ const int MAX_PAGE_SIZE = 10;//每页显示数目
     
     //JSON API不支持
     if (![WBSConfig isJSONAPIEnable] && _isSearch) {
-        WBSErrorViewController *errorCtl = [[WBSErrorViewController alloc]init];
-        [WBSUtils showApiNotSupported:self redirectTo:errorCtl];
+        [WBSUtils showErrorMessage:@"ApiNotSupport"];
         [self.refreshControl endRefreshing];
         return;
     }

@@ -24,7 +24,6 @@
 		4E4AD5EB1D477536002BFD98 /* WBSBottomBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E4AD5D51D477536002BFD98 /* WBSBottomBarViewController.m */; };
 		4E4AD5ED1D477536002BFD98 /* WBSBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E4AD5D91D477536002BFD98 /* WBSBrowserViewController.m */; };
 		4E4AD5EE1D477536002BFD98 /* WBSDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E4AD5DB1D477536002BFD98 /* WBSDetailsViewController.m */; };
-		4E4AD5EF1D477536002BFD98 /* WBSErrorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E4AD5DD1D477536002BFD98 /* WBSErrorViewController.m */; };
 		4E4AD5F01D477536002BFD98 /* WBSBasePostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E4AD5DF1D477536002BFD98 /* WBSBasePostViewController.m */; };
 		4E4AD5F21D477536002BFD98 /* WBSRootTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E4AD5E31D477536002BFD98 /* WBSRootTabBarController.m */; };
 		4E4AD5F31D477536002BFD98 /* WBSLeftMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E4AD5E51D477536002BFD98 /* WBSLeftMenuViewController.m */; };
@@ -573,8 +572,6 @@
 		4E4AD5D91D477536002BFD98 /* WBSBrowserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBSBrowserViewController.m; sourceTree = "<group>"; };
 		4E4AD5DA1D477536002BFD98 /* WBSDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSDetailsViewController.h; sourceTree = "<group>"; };
 		4E4AD5DB1D477536002BFD98 /* WBSDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBSDetailsViewController.m; sourceTree = "<group>"; };
-		4E4AD5DC1D477536002BFD98 /* WBSErrorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSErrorViewController.h; sourceTree = "<group>"; };
-		4E4AD5DD1D477536002BFD98 /* WBSErrorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBSErrorViewController.m; sourceTree = "<group>"; };
 		4E4AD5DE1D477536002BFD98 /* WBSBasePostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSBasePostViewController.h; sourceTree = "<group>"; };
 		4E4AD5DF1D477536002BFD98 /* WBSBasePostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBSBasePostViewController.m; sourceTree = "<group>"; };
 		4E4AD5E21D477536002BFD98 /* WBSRootTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSRootTabBarController.h; sourceTree = "<group>"; };
@@ -1447,7 +1444,7 @@
 			path = WPXMLRPC;
 			sourceTree = "<group>";
 		};
-		4E4AD5D21D477536002BFD98 /* 框架_Main */ = {
+		4E4AD5D21D477536002BFD98 /* Main */ = {
 			isa = PBXGroup;
 			children = (
 				4E4AD5D31D477536002BFD98 /* Controller */,
@@ -1455,7 +1452,6 @@
 				4E4AD5E81D477536002BFD98 /* View */,
 				4E4AD5E71D477536002BFD98 /* SwipableViewController */,
 			);
-			name = "框架_Main";
 			path = Main;
 			sourceTree = "<group>";
 		};
@@ -1476,8 +1472,6 @@
 				4E4AD5D91D477536002BFD98 /* WBSBrowserViewController.m */,
 				4E4AD5DA1D477536002BFD98 /* WBSDetailsViewController.h */,
 				4E4AD5DB1D477536002BFD98 /* WBSDetailsViewController.m */,
-				4E4AD5DC1D477536002BFD98 /* WBSErrorViewController.h */,
-				4E4AD5DD1D477536002BFD98 /* WBSErrorViewController.m */,
 				4E4AD5DE1D477536002BFD98 /* WBSBasePostViewController.h */,
 				4E4AD5DF1D477536002BFD98 /* WBSBasePostViewController.m */,
 				4E3B10411E48675E002EF825 /* WBSBaseViewController.h */,
@@ -1965,17 +1959,15 @@
 		4EF149D01D3DF61D00D28265 /* WBSBlog */ = {
 			isa = PBXGroup;
 			children = (
-				4EF150581D3E371C00D28265 /* Temp临时 */,
-				4E4AD5D21D477536002BFD98 /* 框架_Main */,
-				4EF38FAB1D4310E300CE28A4 /* 主页_Home */,
-				4EF38FC11D4310F100CE28A4 /* 撰写_Publish */,
-				4EF14A3A1D3E30DF00D28265 /* 标签_Tag */,
-				4EF38FC21D4310F100CE28A4 /* 搜索_Search */,
-				4EF14A371D3E30DF00D28265 /* 我的_Me */,
-				4EF152F71D3F39A400D28265 /* 左侧栏_Left_bar */,
-				4EF150041D3E35BD00D28265 /* 登陆_Login */,
-				4EF14A3B1D3E30DF00D28265 /* Utils工具 */,
-				4EF14A361D3E30DF00D28265 /* Lib三方库 */,
+				4EF150581D3E371C00D28265 /* Temp */,
+				4E4AD5D21D477536002BFD98 /* Main */,
+				4EF38FAB1D4310E300CE28A4 /* Home */,
+				4EF14A3A1D3E30DF00D28265 /* Tag */,
+				4EF14A371D3E30DF00D28265 /* Me */,
+				4EF152F71D3F39A400D28265 /* Left_bar */,
+				4EF150041D3E35BD00D28265 /* Login */,
+				4EF14A3B1D3E30DF00D28265 /* Utils */,
+				4EF14A361D3E30DF00D28265 /* Lib库 */,
 				4EDFF2D31E375508000C47D2 /* Images_图片/网页 */,
 				4EF14A381D3E30DF00D28265 /* WBSSupporting_OtherFiles */,
 				4EF149D11D3DF61D00D28265 /* Supporting Files */,
@@ -2011,7 +2003,7 @@
 			path = WBSBlogUITests;
 			sourceTree = "<group>";
 		};
-		4EF14A361D3E30DF00D28265 /* Lib三方库 */ = {
+		4EF14A361D3E30DF00D28265 /* Lib库 */ = {
 			isa = PBXGroup;
 			children = (
 				4EF0E7EC1E4C3DEF00580F09 /* WBSJsonApi */,
@@ -2031,11 +2023,11 @@
 				4EBEC61F1DBB12D70038DFE0 /* SAMKeychain */,
 				4EF38F721D430F4500CE28A4 /* Masonry */,
 			);
-			name = "Lib三方库";
+			name = "Lib库";
 			path = Lib;
 			sourceTree = "<group>";
 		};
-		4EF14A371D3E30DF00D28265 /* 我的_Me */ = {
+		4EF14A371D3E30DF00D28265 /* Me */ = {
 			isa = PBXGroup;
 			children = (
 				4EF150AF1D3E389900D28265 /* WBSUserCenterController.h */,
@@ -2044,7 +2036,6 @@
 				4EDFD79E1E348F76006DD1E6 /* WBSUserModel.h */,
 				4EDFD79F1E348F76006DD1E6 /* WBSUserModel.m */,
 			);
-			name = "我的_Me";
 			path = Me;
 			sourceTree = "<group>";
 		};
@@ -2062,17 +2053,16 @@
 			path = Others;
 			sourceTree = "<group>";
 		};
-		4EF14A3A1D3E30DF00D28265 /* 标签_Tag */ = {
+		4EF14A3A1D3E30DF00D28265 /* Tag */ = {
 			isa = PBXGroup;
 			children = (
 				4EF150AC1D3E387C00D28265 /* WBSTagViewController.h */,
 				4EF150AD1D3E387C00D28265 /* WBSTagViewController.m */,
 			);
-			name = "标签_Tag";
 			path = Tag;
 			sourceTree = "<group>";
 		};
-		4EF14A3B1D3E30DF00D28265 /* Utils工具 */ = {
+		4EF14A3B1D3E30DF00D28265 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
 				4EF150711D3E377D00D28265 /* WBSUtils.h */,
@@ -2090,7 +2080,6 @@
 				4EDFD7A21E3490CE006DD1E6 /* CustomAlertView_Runtime.m */,
 				4EF150771D3E37BA00D28265 /* Catagory */,
 			);
-			name = "Utils工具";
 			path = Utils;
 			sourceTree = "<group>";
 		};
@@ -2657,7 +2646,7 @@
 			path = TTTAttributedLabel;
 			sourceTree = "<group>";
 		};
-		4EF150041D3E35BD00D28265 /* 登陆_Login */ = {
+		4EF150041D3E35BD00D28265 /* Login */ = {
 			isa = PBXGroup;
 			children = (
 				4EF38F4C1D42F5AC00CE28A4 /* WBSLoginViewController.h */,
@@ -2667,7 +2656,6 @@
 				4EF5E4031D41C878002B6AFF /* View */,
 				4EF150051D3E35F600D28265 /* Model */,
 			);
-			name = "登陆_Login";
 			path = Login;
 			sourceTree = "<group>";
 		};
@@ -2710,7 +2698,7 @@
 			path = ToMarkdown;
 			sourceTree = "<group>";
 		};
-		4EF150581D3E371C00D28265 /* Temp临时 */ = {
+		4EF150581D3E371C00D28265 /* Temp */ = {
 			isa = PBXGroup;
 			children = (
 				4EBEC5E41DBB10920038DFE0 /* 二维码 */,
@@ -2731,7 +2719,7 @@
 				4EF150611D3E374300D28265 /* WBSLastCell.h */,
 				4EF150621D3E374300D28265 /* WBSLastCell.m */,
 			);
-			name = "Temp临时";
+			name = Temp;
 			sourceTree = "<group>";
 		};
 		4EF150771D3E37BA00D28265 /* Catagory */ = {
@@ -2752,14 +2740,13 @@
 			path = catagory;
 			sourceTree = "<group>";
 		};
-		4EF152F71D3F39A400D28265 /* 左侧栏_Left_bar */ = {
+		4EF152F71D3F39A400D28265 /* Left_bar */ = {
 			isa = PBXGroup;
 			children = (
 				4E4AD5E41D477536002BFD98 /* WBSLeftMenuViewController.h */,
 				4E4AD5E51D477536002BFD98 /* WBSLeftMenuViewController.m */,
 				4EF152F81D3F3A1A00D28265 /* SetUp_设置 */,
 			);
-			name = "左侧栏_Left_bar";
 			path = Left_bar;
 			sourceTree = "<group>";
 		};
@@ -2818,7 +2805,7 @@
 			path = Masonry;
 			sourceTree = "<group>";
 		};
-		4EF38FAB1D4310E300CE28A4 /* 主页_Home */ = {
+		4EF38FAB1D4310E300CE28A4 /* Home */ = {
 			isa = PBXGroup;
 			children = (
 				4EF38FB61D4310E300CE28A4 /* WBSHomePostViewController.h */,
@@ -2836,24 +2823,7 @@
 				4EF38FB81D4310E300CE28A4 /* WBSTitleMenuViewController.h */,
 				4EF38FB91D4310E300CE28A4 /* WBSTitleMenuViewController.m */,
 			);
-			name = "主页_Home";
 			path = Home;
-			sourceTree = "<group>";
-		};
-		4EF38FC11D4310F100CE28A4 /* 撰写_Publish */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = "撰写_Publish";
-			path = Publish;
-			sourceTree = "<group>";
-		};
-		4EF38FC21D4310F100CE28A4 /* 搜索_Search */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = "搜索_Search";
-			path = Search;
 			sourceTree = "<group>";
 		};
 		4EF38FD71D4311F000CE28A4 /* FontAwesome */ = {
@@ -3420,7 +3390,6 @@
 				4E4AD5F01D477536002BFD98 /* WBSBasePostViewController.m in Sources */,
 				4EF14F471D3E32F700D28265 /* GPUImage3x3TextureSamplingFilter.m in Sources */,
 				4E4AD5F41D477536002BFD98 /* WBSOptionButton.m in Sources */,
-				4E4AD5EF1D477536002BFD98 /* WBSErrorViewController.m in Sources */,
 				4EDFD7F11E360463006DD1E6 /* UIWindow+KeyWindow.m in Sources */,
 				4EF150AE1D3E387C00D28265 /* WBSTagViewController.m in Sources */,
 				4ED5A7B41E4B2761005ADE05 /* WPHTTPAuthenticationAlertController.m in Sources */,
