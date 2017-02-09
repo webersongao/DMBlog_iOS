@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "WBSLastCell.h"
 #import "WordPressApi.h"
-#import "TGBlogJsonApi.h"
+#import "WBSJsonApi.h"
 
 @interface WBSBasePostViewController : UITableViewController
 

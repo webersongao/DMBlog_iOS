@@ -6,7 +6,7 @@
 //  Copyright © 2017年 Weberson. All rights reserved.
 //
 
-#import "NSString+StringByStrippingHTML.h"
+#import "NSString+FormatHTML.h"
 
 @implementation NSString (FormatHTML)
 

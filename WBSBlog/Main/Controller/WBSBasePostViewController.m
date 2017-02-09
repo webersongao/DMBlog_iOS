@@ -8,7 +8,7 @@
 
 #import "WBSBasePostViewController.h"
 #import "WBSLoginViewController.h"
-#import "TGBlogJsonApi.h"
+#import "WBSJsonApi.h"
 #import "WBSBlogAppDelegate.h"
 
 
@@ -126,9 +126,9 @@
  *  初始化JSON API
  */
 -(id)setupJSONApi:(WBSApiInfo *)apiInfo{
-    TGBlogJsonApi *feedParser = [[TGBlogJsonApi alloc]init];
-    if (feedParser) {
-        return feedParser;
+    WBSJsonApi *postApi = [[WBSJsonApi alloc]init];
+    if (postApi) {
+        return postApi;
     }
     return nil;
 }
