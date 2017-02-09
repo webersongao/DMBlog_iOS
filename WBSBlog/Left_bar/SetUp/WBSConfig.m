@@ -21,7 +21,7 @@
 }
 
 /**
- *  获取MetaWeblog API的授权信息
+ *  获取XMLRPC API的授权信息
  */
 +(WBSApiInfo *)getAuthoizedApiInfo
 {
@@ -29,6 +29,7 @@
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     BOOL isJSONAPIEnable = [[userDefaults objectForKey:WBSIs_JSONAPI] boolValue];
     NSString *baseURL = [userDefaults objectForKey:WBSSiteBaseURL];
+    NSString *xmlrpcURL = [userDefaults objectForKey:WBSSiteXmlrpcURL];
     NSString *username = [userDefaults objectForKey:WBSUserUserName];
     NSString *password = [userDefaults objectForKey:WBSUserPassWord];
     NSString *cookie = [userDefaults objectForKey:WBSSiteAuthCookie];
@@ -37,7 +38,7 @@
     if (isJSONAPIEnable) {
         apiInfo = [[WBSApiInfo alloc]initWithBaseURL:baseURL andGenerateAuthCookie:cookie];
     }else{
-        apiInfo = [[WBSApiInfo alloc] initWithXmlrpc:baseURL username:username password:password];
+        apiInfo = [[WBSApiInfo alloc] initWithXmlrpc:xmlrpcURL username:username password:password];
     }
     //结果处理
     return apiInfo;

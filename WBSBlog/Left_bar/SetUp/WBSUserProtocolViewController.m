@@ -1,8 +1,8 @@
 //
-//  UserProtocolViewController.m
+//  WBSUserProtocolViewController.m
 //  WBSBlog
 //
-//  Created by Weberson on 16/7/20.
+//  Created by Weberson on 17/2/7.
 //  Copyright © 2016年 Weberson. All rights reserved.
 
 
@@ -34,7 +34,7 @@
     [super viewDidLoad];
     self.navigationItem.title = @"博客汇使用协议";
     self.view.backgroundColor = [UIColor whiteColor];
-    self.navigationItem.leftBarButtonItem  = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"navigationbar_sidebar"] style:UIBarButtonItemStylePlain target:self action:@selector(leftBarButtonAction)];
+    self.navigationItem.leftBarButtonItem  = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"back_button"] style:UIBarButtonItemStylePlain target:self action:@selector(leftBarButtonAction)];
     [self.view addSubview:self.webView];
 }
 

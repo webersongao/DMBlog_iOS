@@ -11,6 +11,7 @@
 #import "TGBlogJsonApi.h"
 #import "WBSBlogAppDelegate.h"
 
+
 @interface WBSBasePostViewController ()
 
 @property (nonatomic, assign) BOOL refreshInProgress;
@@ -51,9 +52,7 @@
     //===================================
     //检测登陆状态
     //===================================
-    WBSApiInfo *apiInfo = [WBSConfig getAuthoizedApiInfo];
-    BOOL isguest = [WBSUtils getBoolforKey:WBSGuestLoginMode];
-    if(!apiInfo && !isguest){
+    if(![SingleObject shareSingleObject].isLogin && ![SingleObject shareSingleObject].isGuest){
         KLog(@"登陆超时，请重新登录。");
         WBSLoginViewController *loginCtrl =[[WBSLoginViewController alloc]init];
         
@@ -67,12 +66,13 @@
     //===================================
     
     //根据设置确认要选择的api
+    WBSApiInfo *apiInfo = [WBSConfig getAuthoizedApiInfo];
     if ([WBSConfig isJSONAPIEnable]) {
         _api = [self setupJSONApi:apiInfo];
     }else{
-        _api = [self setupApi:apiInfo];
+        _api = [self setupXMLRPCApi:apiInfo];
     }
-
+    
     [super viewDidLoad];
     
     self.edgesForExtendedLayout = UIRectEdgeNone;
@@ -103,19 +103,15 @@
 
 #pragma mark - Private
 /**
- *  初始化MetaWeblog API
- *
- *  @param apiInfo apiInfo
- *
- *  @return API状态
+ *  初始化 XMLRPC API
  */
-- (id)setupApi:(WBSApiInfo *)apiInfo {
-    NSString *xmlrpc =apiInfo.baseURL;
+- (id)setupXMLRPCApi:(WBSApiInfo *)apiInfo {
+    NSString *xmlrpc = apiInfo.siteURL;
     if (xmlrpc) {
         NSString *username = apiInfo.username;
         NSString *password = apiInfo.password;
         if (username && password) {
-            self.api = [TGMetaWeblogAuthApi apiWithXMLRPCURL:[NSURL URLWithString:xmlrpc] username:username password:password];
+            self.api = [WordPressApi apiWithXMLRPCURL:[NSURL URLWithString:xmlrpc] username:username password:password];
         }
     }
     
@@ -128,10 +124,6 @@
 
 /**
  *  初始化JSON API
- *
- *  @param apiInfo apiInfo
- *
- *  @return JSON API实例
  */
 -(id)setupJSONApi:(WBSApiInfo *)apiInfo{
     TGBlogJsonApi *feedParser = [[TGBlogJsonApi alloc]init];

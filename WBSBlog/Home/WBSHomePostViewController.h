@@ -33,9 +33,9 @@ typedef NS_ENUM(NSInteger,APIType){
      */
     APITypeJSON,
     /**
-     *  Metaweblog API
+     *  XMLRPC API
      */
-    APITypeMetaWeblog,
+    APITypeXMLRPC,
     /**
      *  Http API
      */

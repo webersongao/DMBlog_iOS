@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "WBSLastCell.h"
-#import "TGMetaWeblogApi.h"
+#import "WordPressApi.h"
 #import "TGBlogJsonApi.h"
 
 @interface WBSBasePostViewController : UITableViewController
@@ -17,7 +17,7 @@
 @property (nonatomic, copy) void (^tableWillReload)(NSUInteger responseObjectsCount);
 @property (nonatomic, copy) void (^didRefreshSucceed)();
 
-//MetaWeblogApi 或者 JSON API
+//XMLRPC API 或者 JSON API
 @property(nonatomic,strong) id api;
 
 //刷新分分页数据（需要在子类重写）

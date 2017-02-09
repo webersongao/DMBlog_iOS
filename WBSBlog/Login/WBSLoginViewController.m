@@ -53,7 +53,7 @@
     WBSApiInfo *apiInfo = [WBSConfig getAuthoizedApiInfo];
     if (apiInfo) {
         // 已经登录
-        KLog(@"Current baseURL:%@ username:%@ password:%@-- 已经登录！", apiInfo.baseURL, apiInfo.username, apiInfo.password);
+        KLog(@"Current baseURL:%@ username:%@ password:%@-- 已经登录！", apiInfo.siteURL, apiInfo.username, apiInfo.password);
         [SingleObject shareSingleObject].isLogin = YES;
         // 解档 赋值用户数据
         NSString *userUID = [WBSUtils getObjectforKey:WBSUserUID];
@@ -71,8 +71,8 @@
     
     //初始化导航栏
     self.navigationItem.title = @"登录";
-    
-    self.navigationItem.rightBarButtonItem                                                     = [[UIBarButtonItem alloc] initWithTitle:@"选择" style:UIBarButtonItemStylePlain target:self action:@selector(selectBlogAction:)];
+    [WBSUtils saveDataWithBool:NO forKey:WBSIs_JSONAPI];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"选择" style:UIBarButtonItemStylePlain target:self action:@selector(selectBlogAction:)];
     
     self.view.backgroundColor = [UIColor themeColor];
     
@@ -81,16 +81,6 @@
     UIView *indexView = [[[NSBundle mainBundle]loadNibNamed:@"WBSLogin" owner:self options:nil]lastObject];
     self.view = indexView;
     
-    
-}
-
-
-
-#pragma mark 温馨提示 按钮
-- (IBAction)tipsButtonDidClick:(UIButton *)sender {
-    
-    // 修改提示文字信息
-    KLog(@"修改提示文字信息");
     
 }
 
@@ -140,8 +130,6 @@
         return;
     }
     
-//    BOOL isLoginSuccess  = [WBSNetRequest postToLoginWithSiteUrlStr:baseURL userNameStr:username PassWordStr:password isJsonAPi:self.apiTypeButton.isSelected];
-    
     [WBSNetRequest postToLogin:^(BOOL isLoginSuccess, NSString * errorMsg) {
         // 登录结果
         if (isLoginSuccess) {
@@ -155,7 +143,7 @@
     
 }
 /// 游客登录
-- (IBAction)guestLogin:(UIButton *)sender {
+- (IBAction)guestLogin:(UIButton *)button {
 
     [WBSUtils saveDataWithBool:YES forKey:WBSGuestLoginMode];
     [SingleObject shareSingleObject].isGuest = YES;
