@@ -10,11 +10,13 @@
 #import "WordPressXMLRPCApi.h"
 #import "WBSPostCell.h"
 #import "WBSPostDetailViewController.h"
-#import "TGBlogJsonApi.h"
+#import "WBSJsonApi.h"
 #import "WBSDropdownMenuView.h"
 #import "WBSTitleMenuViewController.h"
 #import "WBSErrorViewController.h"
 #import "WBSLoginViewController.h"
+#import "WBSPostModel.h"
+#import "WBSCategoryModel.h"
 
 
 static NSString *kPostCellID = @"PostCell";//CellID
@@ -220,7 +222,7 @@ const int MAX_PAGE_SIZE = 10;//每页显示数目
     
     NSDictionary *post = self.posts[indexPath.row];
     
-    TGPost * jsonPost = self.posts[indexPath.row];
+    WBSPostModel * jsonPost = self.posts[indexPath.row];
     
     WBSPostDetailViewController *detailsViewController;
     if ([WBSConfig isJSONAPIEnable]) {
@@ -247,13 +249,13 @@ const int MAX_PAGE_SIZE = 10;//每页显示数目
     NSMutableDictionary *adaptedPost = [NSMutableDictionary dictionary];
     switch (type) {
         case APITypeJSON:{
-            TGPost *jsonPost = post;
+            WBSPostModel *jsonPost = post;
             [adaptedPost setValue:[NSString stringWithFormat:@"%ld",jsonPost.ID] forKey:@"id"];
             [adaptedPost setValue:jsonPost.title forKey:@"title"];
             [adaptedPost setValue:jsonPost.content forKey:@"content"];
             [adaptedPost setValue:[WBSUtils dateFromString:jsonPost.date] forKey:@"date"];
             [adaptedPost setValue:@"" forKey:@"author"];
-            for (TGCategory *category in jsonPost.categoriesArray) {
+            for (WBSCategoryModel *category in jsonPost.categoriesArray) {
                 [categroies addObject:category.title];
             }
             [adaptedPost setValue:categroies forKey:@"categroies"];
@@ -381,7 +383,7 @@ const int MAX_PAGE_SIZE = 10;//每页显示数目
         //设置API类型
         self.apiType = APITypeJSON;
         
-        TGBlogJsonApi *jsonAPI = self.api;
+        WBSJsonApi *jsonAPI = self.api;
         
         NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
         NSString *baseURL = [userDefaults objectForKey:WBSSiteBaseURL];
@@ -393,7 +395,7 @@ const int MAX_PAGE_SIZE = 10;//每页显示数目
         //由于置顶文章会影响分页数目，因此需要把他排除
         //另外api里面分页的索引从1开始
         NSString *requestURL = [NSString stringWithFormat:@"%@/get_recent_posts/?page=%lu&count=%d&post_type=%@",baseURL,super.page+1,MAX_PAGE_SIZE,(_postType == PostTypePost?@"post":@"page")];
-        [jsonAPI parseURL:requestURL success:^(NSArray *posts, NSInteger postsCount) {
+        [jsonAPI getPostsWithURL:requestURL success:^(NSArray *posts, NSInteger postsCount) {
             
             KLog(@"JSON API 的requestURL:%@",requestURL);
             
@@ -513,7 +515,7 @@ const int MAX_PAGE_SIZE = 10;//每页显示数目
     //创建加载中
     [WBSUtils showStatusMessage:@"加载中"];
     
-    TGBlogJsonApi *jsonAPI = self.api;
+    WBSJsonApi *jsonAPI = self.api;
     if ([searchString isEqualToString:@""]) {
         searchString = @"ios";
     }
@@ -521,7 +523,7 @@ const int MAX_PAGE_SIZE = 10;//每页显示数目
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     NSString *baseURL = [userDefaults objectForKey:WBSSiteBaseURL];
     
-    [jsonAPI parseURL:[NSString stringWithFormat:@"%@/get_search_results/?search=%@&page=%lu&count=%d&post_type=post",baseURL,searchString,super.page+1,MAX_PAGE_SIZE]
+    [jsonAPI getPostsWithURL:[NSString stringWithFormat:@"%@/get_search_results/?search=%@&page=%lu&count=%d&post_type=post",baseURL,searchString,super.page+1,MAX_PAGE_SIZE]
               success:^(NSArray *postsArray, NSInteger postsCount) {
                   dispatch_async(dispatch_get_main_queue(), ^{
                       //处理刷新

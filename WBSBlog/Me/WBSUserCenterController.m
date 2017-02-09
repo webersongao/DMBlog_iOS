@@ -9,7 +9,7 @@
 #import "WBSUserCenterController.h"
 #import "WBSApiInfo.h"
 #import "WBSLoginNavViewController.h"
-#import "TGBlogJsonApi.h"
+#import "WBSJsonApi.h"
 #import "WBSErrorViewController.h"
 #import "UIImageView+WebCache.h"
 #import "WBSNetRequest.h"

@@ -222,7 +222,6 @@
 		4EDFF4161E3757FD000C47D2 /* navigationbar_Me@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EDFF4121E3757FD000C47D2 /* navigationbar_Me@2x.png */; };
 		4EDFF4171E3757FD000C47D2 /* navigationbar_Me@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EDFF4131E3757FD000C47D2 /* navigationbar_Me@3x.png */; };
 		4EF0E8011E4C3DEF00580F09 /* NSString+FormatHTML.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF0E7EE1E4C3DEF00580F09 /* NSString+FormatHTML.m */; };
-		4EF0E8021E4C3DEF00580F09 /* WBSPostParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF0E7F01E4C3DEF00580F09 /* WBSPostParser.m */; };
 		4EF0E8041E4C3DEF00580F09 /* WBSPostModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF0E7F41E4C3DEF00580F09 /* WBSPostModel.m */; };
 		4EF0E8061E4C3DEF00580F09 /* WBSCategoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF0E7F81E4C3DEF00580F09 /* WBSCategoryModel.m */; };
 		4EF0E8081E4C3DEF00580F09 /* WBSCommentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF0E7FC1E4C3DEF00580F09 /* WBSCommentModel.m */; };
@@ -506,16 +505,6 @@
 		4EF38FE31D4311F000CE28A4 /* NSString+FontAwesome.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF38FDC1D4311F000CE28A4 /* NSString+FontAwesome.m */; };
 		4EF38FE41D4311F000CE28A4 /* UIFont+FontAwesome.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF38FDE1D4311F000CE28A4 /* UIFont+FontAwesome.m */; };
 		4EF38FE51D4311F000CE28A4 /* UIImage+FontAwesome.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF38FE01D4311F000CE28A4 /* UIImage+FontAwesome.m */; };
-		4EF390381D43138100CE28A4 /* NSString+StringByStrippingHTML.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF390141D43138100CE28A4 /* NSString+StringByStrippingHTML.m */; };
-		4EF390391D43138100CE28A4 /* TGBlogJsonApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF390161D43138100CE28A4 /* TGBlogJsonApi.m */; };
-		4EF3903A1D43138100CE28A4 /* TGCategory+TGCategoryFromDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF390181D43138100CE28A4 /* TGCategory+TGCategoryFromDictionary.m */; };
-		4EF3903B1D43138100CE28A4 /* TGCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF3901A1D43138100CE28A4 /* TGCategory.m */; };
-		4EF3903C1D43138100CE28A4 /* TGComment+TGCommentFromDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF3901C1D43138100CE28A4 /* TGComment+TGCommentFromDictionary.m */; };
-		4EF3903D1D43138100CE28A4 /* TGComment.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF3901E1D43138100CE28A4 /* TGComment.m */; };
-		4EF390401D43138100CE28A4 /* TGPost+SDPostFromDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF390261D43138100CE28A4 /* TGPost+SDPostFromDictionary.m */; };
-		4EF390411D43138100CE28A4 /* TGPost.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF390281D43138100CE28A4 /* TGPost.m */; };
-		4EF390421D43138100CE28A4 /* TGTag+TGTagFromDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF3902A1D43138100CE28A4 /* TGTag+TGTagFromDictionary.m */; };
-		4EF390431D43138100CE28A4 /* TGTag.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF3902C1D43138100CE28A4 /* TGTag.m */; };
 		4EF5E3FE1D41C847002B6AFF /* (null) in Sources */ = {isa = PBXBuildFile; };
 		4EF5E3FF1D41C847002B6AFF /* (null) in Sources */ = {isa = PBXBuildFile; };
 		4EF5E4021D41C870002B6AFF /* (null) in Sources */ = {isa = PBXBuildFile; };
@@ -836,8 +825,6 @@
 		4EDFF4131E3757FD000C47D2 /* navigationbar_Me@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navigationbar_Me@3x.png"; sourceTree = "<group>"; };
 		4EF0E7ED1E4C3DEF00580F09 /* NSString+FormatHTML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+FormatHTML.h"; sourceTree = "<group>"; };
 		4EF0E7EE1E4C3DEF00580F09 /* NSString+FormatHTML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+FormatHTML.m"; sourceTree = "<group>"; };
-		4EF0E7EF1E4C3DEF00580F09 /* WBSPostParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSPostParser.h; sourceTree = "<group>"; };
-		4EF0E7F01E4C3DEF00580F09 /* WBSPostParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBSPostParser.m; sourceTree = "<group>"; };
 		4EF0E7F31E4C3DEF00580F09 /* WBSPostModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSPostModel.h; sourceTree = "<group>"; };
 		4EF0E7F41E4C3DEF00580F09 /* WBSPostModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBSPostModel.m; sourceTree = "<group>"; };
 		4EF0E7F71E4C3DEF00580F09 /* WBSCategoryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSCategoryModel.h; sourceTree = "<group>"; };
@@ -1411,26 +1398,6 @@
 		4EF38FDE1D4311F000CE28A4 /* UIFont+FontAwesome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+FontAwesome.m"; sourceTree = "<group>"; };
 		4EF38FDF1D4311F000CE28A4 /* UIImage+FontAwesome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+FontAwesome.h"; sourceTree = "<group>"; };
 		4EF38FE01D4311F000CE28A4 /* UIImage+FontAwesome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+FontAwesome.m"; sourceTree = "<group>"; };
-		4EF390131D43138100CE28A4 /* NSString+StringByStrippingHTML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+StringByStrippingHTML.h"; sourceTree = "<group>"; };
-		4EF390141D43138100CE28A4 /* NSString+StringByStrippingHTML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+StringByStrippingHTML.m"; sourceTree = "<group>"; };
-		4EF390151D43138100CE28A4 /* TGBlogJsonApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGBlogJsonApi.h; sourceTree = "<group>"; };
-		4EF390161D43138100CE28A4 /* TGBlogJsonApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGBlogJsonApi.m; sourceTree = "<group>"; };
-		4EF390171D43138100CE28A4 /* TGCategory+TGCategoryFromDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TGCategory+TGCategoryFromDictionary.h"; sourceTree = "<group>"; };
-		4EF390181D43138100CE28A4 /* TGCategory+TGCategoryFromDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TGCategory+TGCategoryFromDictionary.m"; sourceTree = "<group>"; };
-		4EF390191D43138100CE28A4 /* TGCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGCategory.h; sourceTree = "<group>"; };
-		4EF3901A1D43138100CE28A4 /* TGCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGCategory.m; sourceTree = "<group>"; };
-		4EF3901B1D43138100CE28A4 /* TGComment+TGCommentFromDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TGComment+TGCommentFromDictionary.h"; sourceTree = "<group>"; };
-		4EF3901C1D43138100CE28A4 /* TGComment+TGCommentFromDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TGComment+TGCommentFromDictionary.m"; sourceTree = "<group>"; };
-		4EF3901D1D43138100CE28A4 /* TGComment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGComment.h; sourceTree = "<group>"; };
-		4EF3901E1D43138100CE28A4 /* TGComment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGComment.m; sourceTree = "<group>"; };
-		4EF390251D43138100CE28A4 /* TGPost+SDPostFromDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TGPost+SDPostFromDictionary.h"; sourceTree = "<group>"; };
-		4EF390261D43138100CE28A4 /* TGPost+SDPostFromDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TGPost+SDPostFromDictionary.m"; sourceTree = "<group>"; };
-		4EF390271D43138100CE28A4 /* TGPost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGPost.h; sourceTree = "<group>"; };
-		4EF390281D43138100CE28A4 /* TGPost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGPost.m; sourceTree = "<group>"; };
-		4EF390291D43138100CE28A4 /* TGTag+TGTagFromDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TGTag+TGTagFromDictionary.h"; sourceTree = "<group>"; };
-		4EF3902A1D43138100CE28A4 /* TGTag+TGTagFromDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TGTag+TGTagFromDictionary.m"; sourceTree = "<group>"; };
-		4EF3902B1D43138100CE28A4 /* TGTag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGTag.h; sourceTree = "<group>"; };
-		4EF3902C1D43138100CE28A4 /* TGTag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGTag.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1957,8 +1924,6 @@
 				4EF0E8181E4C52E600580F09 /* WBSJsonApi.m */,
 				4EF0E80B1E4C3F3000580F09 /* WBSPostJsonApi.h */,
 				4EF0E80C1E4C3F3000580F09 /* WBSPostJsonApi.m */,
-				4EF0E7EF1E4C3DEF00580F09 /* WBSPostParser.h */,
-				4EF0E7F01E4C3DEF00580F09 /* WBSPostParser.m */,
 				4EF0E7F31E4C3DEF00580F09 /* WBSPostModel.h */,
 				4EF0E7F41E4C3DEF00580F09 /* WBSPostModel.m */,
 				4EF0E7FF1E4C3DEF00580F09 /* WBSTagModel.h */,
@@ -2123,7 +2088,6 @@
 				4EDFD7841E348C5D006DD1E6 /* NetworkingCenter.m */,
 				4EDFD7A11E3490CE006DD1E6 /* CustomAlertView_Runtime.h */,
 				4EDFD7A21E3490CE006DD1E6 /* CustomAlertView_Runtime.m */,
-				4EF390111D43138100CE28A4 /* Url_API */,
 				4EF150771D3E37BA00D28265 /* Catagory */,
 			);
 			name = "Utils工具";
@@ -2908,41 +2872,6 @@
 			path = FontAwesome;
 			sourceTree = "<group>";
 		};
-		4EF390111D43138100CE28A4 /* Url_API */ = {
-			isa = PBXGroup;
-			children = (
-				4EF390121D43138100CE28A4 /* BlogJsonApi */,
-			);
-			path = Url_API;
-			sourceTree = "<group>";
-		};
-		4EF390121D43138100CE28A4 /* BlogJsonApi */ = {
-			isa = PBXGroup;
-			children = (
-				4EF390131D43138100CE28A4 /* NSString+StringByStrippingHTML.h */,
-				4EF390141D43138100CE28A4 /* NSString+StringByStrippingHTML.m */,
-				4EF390151D43138100CE28A4 /* TGBlogJsonApi.h */,
-				4EF390161D43138100CE28A4 /* TGBlogJsonApi.m */,
-				4EF390171D43138100CE28A4 /* TGCategory+TGCategoryFromDictionary.h */,
-				4EF390181D43138100CE28A4 /* TGCategory+TGCategoryFromDictionary.m */,
-				4EF390191D43138100CE28A4 /* TGCategory.h */,
-				4EF3901A1D43138100CE28A4 /* TGCategory.m */,
-				4EF3901B1D43138100CE28A4 /* TGComment+TGCommentFromDictionary.h */,
-				4EF3901C1D43138100CE28A4 /* TGComment+TGCommentFromDictionary.m */,
-				4EF3901D1D43138100CE28A4 /* TGComment.h */,
-				4EF3901E1D43138100CE28A4 /* TGComment.m */,
-				4EF390251D43138100CE28A4 /* TGPost+SDPostFromDictionary.h */,
-				4EF390261D43138100CE28A4 /* TGPost+SDPostFromDictionary.m */,
-				4EF390271D43138100CE28A4 /* TGPost.h */,
-				4EF390281D43138100CE28A4 /* TGPost.m */,
-				4EF390291D43138100CE28A4 /* TGTag+TGTagFromDictionary.h */,
-				4EF3902A1D43138100CE28A4 /* TGTag+TGTagFromDictionary.m */,
-				4EF3902B1D43138100CE28A4 /* TGTag.h */,
-				4EF3902C1D43138100CE28A4 /* TGTag.m */,
-			);
-			path = BlogJsonApi;
-			sourceTree = "<group>";
-		};
 		4EF5E4031D41C878002B6AFF /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -3289,7 +3218,6 @@
 				4EF14FE01D3E32F700D28265 /* GPUImageWeakPixelInclusionFilter.m in Sources */,
 				4EF14FDF1D3E32F700D28265 /* GPUImageVoronoiConsumerFilter.m in Sources */,
 				4ED5A7B51E4B2761005ADE05 /* WPHTTPRequestOperation.m in Sources */,
-				4EF3903D1D43138100CE28A4 /* TGComment.m in Sources */,
 				4EF14F071D3E32F700D28265 /* markdown.c in Sources */,
 				4EF14F151D3E32F700D28265 /* AFHTTPRequestOperation.m in Sources */,
 				4EF14F5E1D3E32F700D28265 /* GPUImageContrastFilter.m in Sources */,
@@ -3379,7 +3307,6 @@
 				4EF14FDA1D3E32F700D28265 /* GPUImageTwoPassTextureSamplingFilter.m in Sources */,
 				4EF14FE71D3E32F700D28265 /* GPUImagePicture.m in Sources */,
 				4E4AD5EE1D477536002BFD98 /* WBSDetailsViewController.m in Sources */,
-				4EF390391D43138100CE28A4 /* TGBlogJsonApi.m in Sources */,
 				4EF14F521D3E32F700D28265 /* GPUImageBulgeDistortionFilter.m in Sources */,
 				4ED5A7AF1E4B2761005ADE05 /* WordPressRestApi.m in Sources */,
 				4EF14F641D3E32F700D28265 /* GPUImageDilationFilter.m in Sources */,
@@ -3394,13 +3321,10 @@
 				4EF14F241D3E32F700D28265 /* UIImageView+AFNetworking.m in Sources */,
 				4EF5E4451D4230DA002B6AFF /* (null) in Sources */,
 				4EF14F791D3E32F700D28265 /* GPUImageGrayscaleFilter.m in Sources */,
-				4EF390421D43138100CE28A4 /* TGTag+TGTagFromDictionary.m in Sources */,
-				4EF390411D43138100CE28A4 /* TGPost.m in Sources */,
 				4EDFD7DC1E35A991006DD1E6 /* SVRadialGradientLayer.m in Sources */,
 				4ED5A7B11E4B2761005ADE05 /* WordPressRestApiJSONRequestOperationManager.m in Sources */,
 				4EF5E4021D41C870002B6AFF /* (null) in Sources */,
 				4EF14F7A1D3E32F700D28265 /* GPUImageHalftoneFilter.m in Sources */,
-				4EF390381D43138100CE28A4 /* NSString+StringByStrippingHTML.m in Sources */,
 				4EF14F361D3E32F700D28265 /* SDWebImageDownloader.m in Sources */,
 				4EF14F3A1D3E32F700D28265 /* UIButton+WebCache.m in Sources */,
 				4EDFD7D91E35A991006DD1E6 /* SVProgressAnimatedView.m in Sources */,
@@ -3443,7 +3367,6 @@
 				4EF14F721D3E32F700D28265 /* GPUImageFramebuffer.m in Sources */,
 				4EF14FB31D3E32F700D28265 /* GPUImageRawDataInput.m in Sources */,
 				4EF14F0A1D3E32F700D28265 /* resource.c in Sources */,
-				4EF3903C1D43138100CE28A4 /* TGComment+TGCommentFromDictionary.m in Sources */,
 				4EF14F261D3E32F700D28265 /* UIRefreshControl+AFNetworking.m in Sources */,
 				4EF14F511D3E32F700D28265 /* GPUImageBuffer.m in Sources */,
 				4EF14F0D1D3E32F700D28265 /* xml.c in Sources */,
@@ -3469,7 +3392,6 @@
 				4EF5E4401D4230DA002B6AFF /* (null) in Sources */,
 				4EBEC5EB1DBB10A90038DFE0 /* WBSScanQRCodeViewController.m in Sources */,
 				4E4AD5FA1D477582002BFD98 /* WBSTitleBarView.m in Sources */,
-				4EF390431D43138100CE28A4 /* TGTag.m in Sources */,
 				4EF14FDD1D3E32F700D28265 /* GPUImageVideoCamera.m in Sources */,
 				4EF38FA21D430F4600CE28A4 /* View+MASAdditions.m in Sources */,
 				4EF14F9B1D3E32F700D28265 /* GPUImageMonochromeFilter.m in Sources */,
@@ -3487,7 +3409,6 @@
 				4EF14F6B1D3E32F700D28265 /* GPUImageExclusionBlendFilter.m in Sources */,
 				4EF14F611D3E32F700D28265 /* GPUImageCrosshatchFilter.m in Sources */,
 				4EF14FCE1D3E32F700D28265 /* GPUImageTextureOutput.m in Sources */,
-				4EF390401D43138100CE28A4 /* TGPost+SDPostFromDictionary.m in Sources */,
 				4EF14FD61D3E32F700D28265 /* GPUImageTransformFilter.m in Sources */,
 				4EF14F161D3E32F700D28265 /* AFHTTPRequestOperationManager.m in Sources */,
 				4EF14FD21D3E32F700D28265 /* GPUImageThresholdSketchFilter.m in Sources */,
@@ -3510,7 +3431,6 @@
 				4EF14F4D1D3E32F700D28265 /* GPUImageAverageLuminanceThresholdFilter.m in Sources */,
 				4EF14FBA1D3E32F700D28265 /* GPUImageSaturationBlendFilter.m in Sources */,
 				4EF150631D3E374300D28265 /* WWTagsCloudView.m in Sources */,
-				4EF0E8021E4C3DEF00580F09 /* WBSPostParser.m in Sources */,
 				4EF14F381D3E32F700D28265 /* SDWebImageManager.m in Sources */,
 				4EF14FD51D3E32F700D28265 /* GPUImageToonFilter.m in Sources */,
 				4EF14F6A1D3E32F700D28265 /* GPUImageErosionFilter.m in Sources */,
@@ -3538,7 +3458,6 @@
 				4EF149D31D3DF61D00D28265 /* main.m in Sources */,
 				4E3B10811E4AC9EF002EF825 /* WPXMLRPCDataCleaner.m in Sources */,
 				4EF14FDB1D3E32F700D28265 /* GPUImageUIElement.m in Sources */,
-				4EF3903B1D43138100CE28A4 /* TGCategory.m in Sources */,
 				4EF14F5F1D3E32F700D28265 /* GPUImageCropFilter.m in Sources */,
 				4ED5A7B71E4B2761005ADE05 /* WPXMLRPCClient.m in Sources */,
 				4EDFD7D81E35A991006DD1E6 /* SVIndefiniteAnimatedView.m in Sources */,
@@ -3555,7 +3474,6 @@
 				4EF14FAD1D3E32F700D28265 /* GPUImagePixellatePositionFilter.m in Sources */,
 				4EF1504D1D3E36DE00D28265 /* TMDAnchor.m in Sources */,
 				4EF0E8041E4C3DEF00580F09 /* WBSPostModel.m in Sources */,
-				4EF3903A1D43138100CE28A4 /* TGCategory+TGCategoryFromDictionary.m in Sources */,
 				4EF38F9C1D430F4600CE28A4 /* MASConstraintMaker.m in Sources */,
 				4EF14F631D3E32F700D28265 /* GPUImageDifferenceBlendFilter.m in Sources */,
 				4EF14FA41D3E32F700D28265 /* GPUImageNormalBlendFilter.m in Sources */,

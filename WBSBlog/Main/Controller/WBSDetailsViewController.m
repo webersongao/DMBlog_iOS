@@ -8,7 +8,8 @@
 
 #import "WBSDetailsViewController.h"
 #import "AFNetworking.h"
-#import "TGBlogJsonApi.h"
+#import "WBSJsonApi.h"
+#import "WBSPostModel.h"
 
 #define HTML_STYLE @"<style>\
 #WBSBlog_title {color: #000000; margin-bottom: 6px; font-weight:bold;}\
@@ -123,7 +124,7 @@
 - (void)fetchDetails:(BOOL)flag
 {
     NSDictionary *post = _result;
-    TGPost *jsonPost = _result;
+    WBSPostModel *jsonPost = _result;
     
     //博客相关变量
     NSString *title;//文章标题
