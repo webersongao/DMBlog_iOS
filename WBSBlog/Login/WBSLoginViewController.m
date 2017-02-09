@@ -130,7 +130,7 @@
         return;
     }
     
-    [WBSNetRequest postToLogin:^(BOOL isLoginSuccess, NSString * errorMsg) {
+    [WBSNetRequest userLogin:^(BOOL isLoginSuccess, NSString * errorMsg) {
         // 登录结果
         if (isLoginSuccess) {
             [WBSUtils saveDataWithBool:NO forKey:WBSGuestLoginMode];

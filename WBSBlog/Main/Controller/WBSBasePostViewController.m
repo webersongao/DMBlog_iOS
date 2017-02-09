@@ -12,6 +12,7 @@
 #import "WBSBlogAppDelegate.h"
 
 
+
 @interface WBSBasePostViewController ()
 
 @property (nonatomic, assign) BOOL refreshInProgress;
@@ -126,6 +127,7 @@
  *  初始化JSON API
  */
 -(id)setupJSONApi:(WBSApiInfo *)apiInfo{
+    
     WBSJsonApi *postApi = [[WBSJsonApi alloc]init];
     if (postApi) {
         return postApi;

@@ -1,33 +1,47 @@
 //
-//  WBSPostJsonApi.m
-//  WBSJsonApi
+//  WBSBaseCoreApi.m
+//  WBSBlog
 //
-//  Created by Weberson on 2017/1/26.
-//  该API 需要 Json Api 插件支持 https://wordpress.org/plugins/json-api/
+//  Created by Weberson on 2017/2/9.
+//  该API 需要WordPress 的 Json Api  插件支持
 //  Copyright © 2017年 Weberson. All rights reserved.
 //
+// 该文件为 JSON Api 的 Core Widgets Widgets Widgets 四个Controllers的基本api 实现代码
+// 关于 JsonApi 的 Controllers的说明参看 https://wordpress.org/plugins/json-api/other_notes/#1.2.-Controllers
 
-#import "WBSPostJsonApi.h"
+
+#import "WBSBaseCoreApi.h"
 #import "WBSPostModel.h"
 #import "WBSCategoryModel.h"
 #import "WBSTagModel.h"
 #import "WBSCommentModel.h"
 
+@interface WBSBaseCoreApi ()
 
-@implementation WBSPostJsonApi
+@end
+
+
+@implementation WBSBaseCoreApi
+
+// 获取JSON API 插件的功能版本信息
+-(void)GetJsonApiVersionInfo{
+//http://www.swiftartisan.com/api/info/
+//    WBSNetworking GETRequest:<#(NSString *)#> parameters:<#(id)#> success:<#^(id responseObject)success#> failure:<#^(NSError *error)failure#>
+}
+
+
 
 
 /**
- *  1、Post
+ *  1、Post  需要JsonApi 插件 https://wordpress.org/plugins/json-api/
  */
-#pragma mark  2️⃣ Post
+#pragma mark  1️⃣ Post
+
 /// 获取文章 getPosts
 - (void)getPostsWithURL:(NSString*)urlString success:(void (^)(NSArray *postsArray, NSInteger postsCount))successBlock failure:(void (^)(NSError *error))failureBlock{
     
-    //
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    [manager GET:urlString parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        
+    [WBSNetworking GETRequest:urlString parameters:nil success:^(id responseObject) {
+        // 成功
         if ([responseObject isKindOfClass:[NSDictionary class]]) {
             
             //Get posts count
@@ -84,20 +98,20 @@
         //Trigger success block
         successBlock(self.postsArray, self.postsArray.count);
         
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        
+    } failure:^(NSError *error) {
+        // 失败
         //Trigger failure block
         failureBlock(error);
-        
     }];
     
 }
 
 
 /**
- *  2、 Setting
+ *  2、 Setting  需要JsonApi 插件 https://wordpress.org/plugins/json-api/
  */
-#pragma mark  3️⃣ Setting
+#pragma mark  2️⃣ Setting
+
 
 
 
