@@ -16,7 +16,7 @@
         if (!xmlrpc||!username||!password) {
             return nil;
         }
-        _baseURL = xmlrpc;
+        _siteURL = xmlrpc;
         _username = username;
         _password = password;
     }
@@ -29,7 +29,7 @@
         if (!baseURL||!cookie) {
             return nil;
         }
-        _baseURL = baseURL;
+        _siteURL = baseURL;
         _generateAauthCookie = cookie;
     }
     return self;

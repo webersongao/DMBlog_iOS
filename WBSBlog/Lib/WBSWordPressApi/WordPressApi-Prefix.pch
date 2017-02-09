@@ -1,0 +1,16 @@
+//
+//  Prefix header
+//
+//  The contents of this file are implicitly included at the beginning of every source file.
+//
+
+/*****
+ 该api库是根据 Wordpress官方的 WordPress-API（https://github.com/wordpress-mobile/WordPress-API-iOS）
+ 修改而来 增加了xmlRPC接口下的文章删除， 发布，编辑等接口
+ 
+ ******/
+
+#ifdef __OBJC__
+
+
+#endif

@@ -8,7 +8,6 @@
 
 #import "WBSNetRequest.h"
 #import "NetworkingCenter.h"
-#import "TGMetaWeblogAuthApi.h"
 #import "WordPressApi.h"
 
 @implementation WBSNetRequest
@@ -74,7 +73,7 @@
         // 使用XMLRPC 登陆
         // 对baseUrl进行包装  暂时不支持Https
         
-        [WordPressApi signInWithURL:siteUrl
+        [WordPressApi loginInWithURL:siteUrl
                            username:userName
                            password:PassWord
                             success:^(NSURL *xmlrpcURL) {

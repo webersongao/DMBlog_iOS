@@ -4,9 +4,9 @@
 
 @implementation WordPressApi
 
-+ (void)signInWithURL:(NSString *)url username:(NSString *)username password:(NSString *)password success:(void (^)(NSURL *xmlrpcURL))success failure:(void (^)(NSError *error))failure {
++ (void)loginInWithURL:(NSString *)url username:(NSString *)username password:(NSString *)password success:(void (^)(NSURL *xmlrpcURL))success failure:(void (^)(NSError *error))failure {
     [WordPressXMLRPCApi guessXMLRPCURLForSite:url success:^(NSURL *xmlrpcURL) {
-        [self signInWithXMLRPCURL:xmlrpcURL username:username password:password success:^{
+        [self loginInWithXMLRPCURL:xmlrpcURL username:username password:password success:^{
             if (success) {
                 success(xmlrpcURL);
             }
@@ -14,7 +14,7 @@
     } failure:failure];
 }
 
-+ (void)signInWithXMLRPCURL:(NSURL *)xmlrpcURL username:(NSString *)username password:(NSString *)password success:(void (^)())success failure:(void (^)(NSError *error))failure {
++ (void)loginInWithXMLRPCURL:(NSURL *)xmlrpcURL username:(NSString *)username password:(NSString *)password success:(void (^)())success failure:(void (^)(NSError *error))failure {
     WordPressXMLRPCApi *api = [self apiWithXMLRPCURL:xmlrpcURL username:username password:password];
     [api authenticateWithSuccess:success failure:failure];
 }
@@ -23,16 +23,16 @@
     return [WordPressXMLRPCApi apiWithXMLRPCEndpoint:xmlrpcURL username:username password:password];
 }
 
-+ (void)signInWithOauthWithSuccess:(void (^)(NSString *authToken, NSString *siteId))success failure:(void (^)(NSError *error))failure {
-    [WordPressRestApi signInWithOauthWithSuccess:success failure:failure];
++ (void)loginInWithOauthWithSuccess:(void (^)(NSString *authToken, NSString *siteId))success failure:(void (^)(NSError *error))failure {
+    [WordPressRestApi loginInWithOauthWithSuccess:success failure:failure];
 }
 
 + (id<WordPressBaseApi>)apiWithOauthToken:(NSString *)authToken siteId:(NSString *)siteId {
     return [[WordPressRestApi alloc] initWithOauthToken:authToken siteId:siteId];
 }
 
-+ (void)signInWithJetpackUsername:(NSString *)username password:(NSString *)password success:(void (^)(NSString *authToken))success failure:(void (^)(NSError *error))failure {
-    [WordPressRestApi signInWithJetpackUsername:username password:password success:success failure:failure];
++ (void)loginInWithJetpackUsername:(NSString *)username password:(NSString *)password success:(void (^)(NSString *authToken))success failure:(void (^)(NSError *error))failure {
+    [WordPressRestApi loginInWithJetpackUsername:username password:password success:success failure:failure];
 }
 
 + (void)setWordPressComClient:(NSString *)clientId {

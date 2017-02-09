@@ -11,9 +11,9 @@
 @interface WBSApiInfo : NSObject
 
 /**
- *  baseURL（XMLRPC API 时为xmlrpcURL，JSON API时为 JSON URL）
+ *  siteURL（XMLRPC API 时为xmlrpcURL，JSON API时为 JSON URL）
  */
-@property (nonatomic,strong) NSString *baseURL;
+@property (nonatomic,strong) NSString *siteURL;
 /**
  *  用户名
  */

@@ -155,6 +155,24 @@ NSString *const WordPressXMLRPCApiErrorDomain = @"WordPressXMLRPCApiError";
                     }];
 }
 
+- (void) deletePost:(NSString *)postId success:(void (^)(BOOL))success failure:(void (^)(NSError *))failure{
+    NSArray *parameters = [NSArray arrayWithObjects:@"1",postId,self.username, self.password, nil];
+    [self.client callMethod:@"metaWeblog.deletePost"
+                 parameters:parameters
+                    success:^(AFHTTPRequestOperation *operation, id responseObject) {
+                        if (success) {
+                            BOOL result = (BOOL)responseObject;
+                            success(result);
+                        }
+                    }
+                    failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                        if (failure) {
+                            failure(error);
+                        }
+                    }];
+    
+}
+
 #pragma mark - Helpers
 
 + (NSURL *)urlForXMLRPCFromUrl:(NSString *)url addXMLRPC:(BOOL) addXMLRPC error:(NSError **)error

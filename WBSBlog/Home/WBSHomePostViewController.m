@@ -7,7 +7,7 @@
 //
 
 #import "WBSHomePostViewController.h"
-#import "TGMetaWeblogApi.h"
+#import "WordPressXMLRPCApi.h"
 #import "WBSPostCell.h"
 #import "WBSPostDetailViewController.h"
 #import "TGBlogJsonApi.h"
@@ -447,7 +447,7 @@ const int MAX_PAGE_SIZE = 10;//每页显示数目
         self.apiType = APITypeXMLRPC;
         
         //APITypeXMLRPC API
-        [self.api getRecentPosts:currentCount
+        [self.api getPosts:currentCount
                          success:^(NSArray *posts) {
                              KLog(@"MetaWeblogAPI have %lu posts", (unsigned long) [posts count]);
                              
@@ -762,7 +762,7 @@ const int MAX_PAGE_SIZE = 10;//每页显示数目
         //获取API信息
         WBSApiInfo *apiInfo = [WBSConfig getAuthoizedApiInfo];
         NSDictionary *nonceParmeters = @{@"controller":@"posts",@"method":@"delete_post"};
-        NSString *nonceURL = [NSString stringWithFormat:@"%@/get_nonce/",apiInfo.baseURL];
+        NSString *nonceURL = [NSString stringWithFormat:@"%@/get_nonce/",apiInfo.siteURL];
         
         //1 get nunce
         //2 delete post
@@ -773,7 +773,7 @@ const int MAX_PAGE_SIZE = 10;//每页显示数目
 //            NSString *nonce =[result objectForKey:@"nonce"];
             //删除
 //            NSDictionary *parmeters = @{@"id":postId,@"cookie":apiInfo.generateAauthCookie,@"nonce":nonce};
-            NSString *deleteURL = [NSString stringWithFormat:@"%@/posts/delete_post/",apiInfo.baseURL];
+            NSString *deleteURL = [NSString stringWithFormat:@"%@/posts/delete_post/",apiInfo.siteURL];
             
             KLog(@"deleteURL URL:%@",deleteURL);
             
@@ -859,8 +859,8 @@ const int MAX_PAGE_SIZE = 10;//每页显示数目
     }
     
     
-    if ([self.api isMemberOfClass:[TGMetaWeblogXMLRPCApi class]] ) {
-        KLog(@"Current API is MetaWeblogApi");
+    if ([self.api isMemberOfClass:[WordPressXMLRPCApi class]] ) {
+        KLog(@"Current API is XMLRPC Api");
     }else{
         KLog(@"Current API is  JSON API");
     }

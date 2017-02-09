@@ -20,7 +20,7 @@ static NSString *WordPressRestApiClient = nil;
 static NSString *WordPressRestApiSecret = nil;
 static NSString *WordPressRestApiRedirectUrl = nil;
 
-+ (void)signInWithOauthWithSuccess:(void (^)(NSString *authToken, NSString *siteId))success failure:(void (^)(NSError *error))failure {
++ (void)loginInWithOauthWithSuccess:(void (^)(NSString *authToken, NSString *siteId))success failure:(void (^)(NSError *error))failure {
     [[WPComOAuthController sharedController] setCompletionBlock:^(NSString *token, NSString *blogId, NSString *blogUrl, NSString *scope, NSError *error) {
         if (error) {
             failure(error);
@@ -31,7 +31,7 @@ static NSString *WordPressRestApiRedirectUrl = nil;
     [[WPComOAuthController sharedController] present];
 }
 
-+ (void)signInWithJetpackUsername:(NSString *)username password:(NSString *)password success:(void (^)(NSString *authToken))success failure:(void (^)(NSError *error))failure {
++ (void)loginInWithJetpackUsername:(NSString *)username password:(NSString *)password success:(void (^)(NSString *authToken))success failure:(void (^)(NSError *error))failure {
     NSAssert(NO, @"Not implemented yet");
 }
 
