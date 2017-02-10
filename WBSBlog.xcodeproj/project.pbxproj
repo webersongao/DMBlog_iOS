@@ -2942,6 +2942,7 @@
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = 6XB2PBHRRB;
 						LastSwiftMigration = 0820;
+						ProvisioningStyle = Automatic;
 					};
 					4EF149E61D3DF61D00D28265 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -3642,6 +3643,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 6XB2PBHRRB;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -3671,6 +3673,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 6XB2PBHRRB;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
