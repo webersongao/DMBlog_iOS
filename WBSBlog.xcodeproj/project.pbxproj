@@ -878,6 +878,7 @@
 		4EF0E8941E4CC0BE00580F09 /* AFURLConnectionOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLConnectionOperation.m; sourceTree = "<group>"; };
 		4EF0E8961E4CC13F00580F09 /* AFHTTPRequestOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperationManager.h; sourceTree = "<group>"; };
 		4EF0E8971E4CC13F00580F09 /* AFHTTPRequestOperationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperationManager.m; sourceTree = "<group>"; };
+		4EF0E89F1E4D56A300580F09 /* WBSJsonMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WBSJsonMacro.h; sourceTree = "<group>"; };
 		4EF149CE1D3DF61D00D28265 /* WBSBlog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WBSBlog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EF149D21D3DF61D00D28265 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4EF149D41D3DF61D00D28265 /* WBSBlogAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = WBSBlogAppDelegate.h; path = ../WBSBlogAppDelegate.h; sourceTree = "<group>"; };
@@ -1923,6 +1924,7 @@
 			children = (
 				4EF0E8171E4C52E600580F09 /* WBSJsonApi.h */,
 				4EF0E8181E4C52E600580F09 /* WBSJsonApi.m */,
+				4EF0E89F1E4D56A300580F09 /* WBSJsonMacro.h */,
 				4EF0E84A1E4C7F5A00580F09 /* WBSNetworking.h */,
 				4EF0E84B1E4C7F5A00580F09 /* WBSNetworking.m */,
 				4EF0E82E1E4C764300580F09 /* WBSBaseCoreApi.h */,

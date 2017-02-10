@@ -37,7 +37,7 @@
     _isLogin = isLogin;
     if (isLogin == YES) {
         // 登录成功，修改为 非游客模式
-        [WBSUtils saveDataWithBool:NO forKey:WBSGuestLoginMode];
+        [WBSUtils saveBoolforKey:NO forKey:WBSGuestLoginMode];
         self.isGuest = NO;
     }
     

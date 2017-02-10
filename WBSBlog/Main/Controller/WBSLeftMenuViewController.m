@@ -174,6 +174,7 @@
 - (void)logOutAndCleanUserData{
     // 1、清空保存数据
     NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
+//    WBSUtils saveDataWithValue:nil forKey:
     [def setObject:nil forKey:WBSSiteBaseURL];
     [def setObject:nil forKey:WBSUserUserName];
     [def setObject:nil forKey:WBSUserPassWord];
