@@ -10,6 +10,8 @@
 #import "WPComOAuthController.h"
 #endif /* _WORDPRESSAPI */
 
+// webersongao 个人给予wordpress官方API 修改之后的版本 非官方版，不可随意替换
+
 @interface WordPressApi : NSObject
 
 + (void)loginInWithURL:(NSString *)url username:(NSString *)username password:(NSString *)password success:(void (^)(NSURL *xmlrpcURL))success failure:(void (^)(NSError *error))failure;
