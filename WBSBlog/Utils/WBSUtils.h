@@ -180,15 +180,6 @@ typedef enum{
  */
 + (NSMutableAttributedString *)attributedTittle:(NSString *)title;
 
-/**
- *  在当前页面展示API不受支持的信息
- *
- *  @param target target
- 
- *  @param to     to
- */
-+ (void)showApiNotSupported:(UIViewController *)target redirectTo:(UIViewController *)to;
-
 
 /// 网址 账号密码信息校验
 +(BOOL)checkUrlString:(NSString *)urlString userNameStr:(NSString *)userNameStr passWord:(NSString *)passWordStr;

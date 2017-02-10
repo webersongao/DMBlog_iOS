@@ -12,12 +12,18 @@
 		4E3B10471E4868EA002EF825 /* navigationbar-search.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E3B10461E4868EA002EF825 /* navigationbar-search.png */; };
 		4E3B104D1E4990D2002EF825 /* default_portrait@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E3B104B1E4990D2002EF825 /* default_portrait@2x.png */; };
 		4E3B104E1E4990D2002EF825 /* default_portrait@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E3B104C1E4990D2002EF825 /* default_portrait@3x.png */; };
-		4E3B10531E49B13E002EF825 /* UserProtocol.html in Resources */ = {isa = PBXBuildFile; fileRef = 4E3B10521E49B13E002EF825 /* UserProtocol.html */; };
 		4E3B10561E49B71D002EF825 /* WBSUserProtocolViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E3B10551E49B71D002EF825 /* WBSUserProtocolViewController.m */; };
+		4E3B10591E49E159002EF825 /* back_button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E3B10571E49E159002EF825 /* back_button@2x.png */; };
+		4E3B105A1E49E159002EF825 /* back_button@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E3B10581E49E159002EF825 /* back_button@3x.png */; };
+		4E3B107F1E4AC9EF002EF825 /* WPBase64Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E3B10731E4AC9EF002EF825 /* WPBase64Utils.m */; };
+		4E3B10801E4AC9EF002EF825 /* WPStringUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E3B10751E4AC9EF002EF825 /* WPStringUtils.m */; };
+		4E3B10811E4AC9EF002EF825 /* WPXMLRPCDataCleaner.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E3B10781E4AC9EF002EF825 /* WPXMLRPCDataCleaner.m */; };
+		4E3B10821E4AC9EF002EF825 /* WPXMLRPCDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E3B107A1E4AC9EF002EF825 /* WPXMLRPCDecoder.m */; };
+		4E3B10831E4AC9EF002EF825 /* WPXMLRPCDecoderDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E3B107C1E4AC9EF002EF825 /* WPXMLRPCDecoderDelegate.m */; };
+		4E3B10841E4AC9EF002EF825 /* WPXMLRPCEncoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E3B107E1E4AC9EF002EF825 /* WPXMLRPCEncoder.m */; };
 		4E4AD5EB1D477536002BFD98 /* WBSBottomBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E4AD5D51D477536002BFD98 /* WBSBottomBarViewController.m */; };
 		4E4AD5ED1D477536002BFD98 /* WBSBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E4AD5D91D477536002BFD98 /* WBSBrowserViewController.m */; };
 		4E4AD5EE1D477536002BFD98 /* WBSDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E4AD5DB1D477536002BFD98 /* WBSDetailsViewController.m */; };
-		4E4AD5EF1D477536002BFD98 /* WBSErrorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E4AD5DD1D477536002BFD98 /* WBSErrorViewController.m */; };
 		4E4AD5F01D477536002BFD98 /* WBSBasePostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E4AD5DF1D477536002BFD98 /* WBSBasePostViewController.m */; };
 		4E4AD5F21D477536002BFD98 /* WBSRootTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E4AD5E31D477536002BFD98 /* WBSRootTabBarController.m */; };
 		4E4AD5F31D477536002BFD98 /* WBSLeftMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E4AD5E51D477536002BFD98 /* WBSLeftMenuViewController.m */; };
@@ -32,6 +38,18 @@
 		4EBEC6261DBB12D80038DFE0 /* SAMKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EBEC6211DBB12D80038DFE0 /* SAMKeychain.m */; };
 		4EBEC6271DBB12D80038DFE0 /* SAMKeychainQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EBEC6231DBB12D80038DFE0 /* SAMKeychainQuery.m */; };
 		4EBEC6281DBB12D80038DFE0 /* SAMKeychain.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4EBEC6251DBB12D80038DFE0 /* SAMKeychain.bundle */; };
+		4ED5A7AE1E4B2761005ADE05 /* WordPressApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ED5A7961E4B2761005ADE05 /* WordPressApi.m */; };
+		4ED5A7AF1E4B2761005ADE05 /* WordPressRestApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ED5A7991E4B2761005ADE05 /* WordPressRestApi.m */; };
+		4ED5A7B01E4B2761005ADE05 /* WordPressRestApiJSONRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ED5A79B1E4B2761005ADE05 /* WordPressRestApiJSONRequestOperation.m */; };
+		4ED5A7B11E4B2761005ADE05 /* WordPressRestApiJSONRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ED5A79D1E4B2761005ADE05 /* WordPressRestApiJSONRequestOperationManager.m */; };
+		4ED5A7B21E4B2761005ADE05 /* WordPressXMLRPCApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ED5A79F1E4B2761005ADE05 /* WordPressXMLRPCApi.m */; };
+		4ED5A7B31E4B2761005ADE05 /* WPComOAuthController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ED5A7A11E4B2761005ADE05 /* WPComOAuthController.m */; };
+		4ED5A7B41E4B2761005ADE05 /* WPHTTPAuthenticationAlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ED5A7A31E4B2761005ADE05 /* WPHTTPAuthenticationAlertController.m */; };
+		4ED5A7B51E4B2761005ADE05 /* WPHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ED5A7A51E4B2761005ADE05 /* WPHTTPRequestOperation.m */; };
+		4ED5A7B61E4B2761005ADE05 /* WPRSDParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ED5A7A71E4B2761005ADE05 /* WPRSDParser.m */; };
+		4ED5A7B71E4B2761005ADE05 /* WPXMLRPCClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ED5A7A91E4B2761005ADE05 /* WPXMLRPCClient.m */; };
+		4ED5A7B81E4B2761005ADE05 /* WPXMLRPCRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ED5A7AB1E4B2761005ADE05 /* WPXMLRPCRequest.m */; };
+		4ED5A7B91E4B2761005ADE05 /* WPXMLRPCRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ED5A7AD1E4B2761005ADE05 /* WPXMLRPCRequestOperation.m */; };
 		4EDFD7881E348C5D006DD1E6 /* NetworkingCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EDFD7841E348C5D006DD1E6 /* NetworkingCenter.m */; };
 		4EDFD78B1E348E5D006DD1E6 /* FMDBManger.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EDFD78A1E348E5D006DD1E6 /* FMDBManger.m */; };
 		4EDFD7981E348E98006DD1E6 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EDFD78E1E348E98006DD1E6 /* FMDatabase.m */; };
@@ -202,6 +220,33 @@
 		4EDFF4151E3757FD000C47D2 /* left_menu@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EDFF4111E3757FD000C47D2 /* left_menu@3x.png */; };
 		4EDFF4161E3757FD000C47D2 /* navigationbar_Me@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EDFF4121E3757FD000C47D2 /* navigationbar_Me@2x.png */; };
 		4EDFF4171E3757FD000C47D2 /* navigationbar_Me@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EDFF4131E3757FD000C47D2 /* navigationbar_Me@3x.png */; };
+		4EF0E8011E4C3DEF00580F09 /* NSString+FormatHTML.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF0E7EE1E4C3DEF00580F09 /* NSString+FormatHTML.m */; };
+		4EF0E8191E4C52E600580F09 /* WBSJsonApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF0E8181E4C52E600580F09 /* WBSJsonApi.m */; };
+		4EF0E81E1E4C5CFB00580F09 /* UserProtocol.html in Resources */ = {isa = PBXBuildFile; fileRef = 4EF0E81D1E4C5CFB00580F09 /* UserProtocol.html */; };
+		4EF0E8301E4C764300580F09 /* WBSBaseCoreApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF0E82F1E4C764300580F09 /* WBSBaseCoreApi.m */; };
+		4EF0E84C1E4C7F5A00580F09 /* WBSNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF0E84B1E4C7F5A00580F09 /* WBSNetworking.m */; };
+		4EF0E8591E4CAA0500580F09 /* WBSCategoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF0E8521E4CAA0500580F09 /* WBSCategoryModel.m */; };
+		4EF0E85A1E4CAA0500580F09 /* WBSCommentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF0E8541E4CAA0500580F09 /* WBSCommentModel.m */; };
+		4EF0E85B1E4CAA0500580F09 /* WBSPostModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF0E8561E4CAA0500580F09 /* WBSPostModel.m */; };
+		4EF0E85C1E4CAA0500580F09 /* WBSTagModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF0E8581E4CAA0500580F09 /* WBSTagModel.m */; };
+		4EF0E8811E4CBF9500580F09 /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF0E8601E4CBF9500580F09 /* AFHTTPSessionManager.m */; };
+		4EF0E8821E4CBF9500580F09 /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF0E8631E4CBF9500580F09 /* AFNetworkReachabilityManager.m */; };
+		4EF0E8831E4CBF9500580F09 /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF0E8651E4CBF9500580F09 /* AFSecurityPolicy.m */; };
+		4EF0E8841E4CBF9600580F09 /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF0E8671E4CBF9500580F09 /* AFURLRequestSerialization.m */; };
+		4EF0E8851E4CBF9600580F09 /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF0E8691E4CBF9500580F09 /* AFURLResponseSerialization.m */; };
+		4EF0E8861E4CBF9600580F09 /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF0E86B1E4CBF9500580F09 /* AFURLSessionManager.m */; };
+		4EF0E8871E4CBF9600580F09 /* AFAutoPurgingImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF0E86E1E4CBF9500580F09 /* AFAutoPurgingImageCache.m */; };
+		4EF0E8881E4CBF9600580F09 /* AFImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF0E8701E4CBF9500580F09 /* AFImageDownloader.m */; };
+		4EF0E8891E4CBF9600580F09 /* AFNetworkActivityIndicatorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF0E8721E4CBF9500580F09 /* AFNetworkActivityIndicatorManager.m */; };
+		4EF0E88A1E4CBF9600580F09 /* UIActivityIndicatorView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF0E8741E4CBF9500580F09 /* UIActivityIndicatorView+AFNetworking.m */; };
+		4EF0E88B1E4CBF9600580F09 /* UIButton+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF0E8761E4CBF9500580F09 /* UIButton+AFNetworking.m */; };
+		4EF0E88C1E4CBF9600580F09 /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF0E8791E4CBF9500580F09 /* UIImageView+AFNetworking.m */; };
+		4EF0E88D1E4CBF9600580F09 /* UIProgressView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF0E87C1E4CBF9500580F09 /* UIProgressView+AFNetworking.m */; };
+		4EF0E88E1E4CBF9600580F09 /* UIRefreshControl+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF0E87E1E4CBF9500580F09 /* UIRefreshControl+AFNetworking.m */; };
+		4EF0E88F1E4CBF9600580F09 /* UIWebView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF0E8801E4CBF9500580F09 /* UIWebView+AFNetworking.m */; };
+		4EF0E8921E4CC09F00580F09 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF0E8911E4CC09F00580F09 /* AFHTTPRequestOperation.m */; };
+		4EF0E8951E4CC0BE00580F09 /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF0E8941E4CC0BE00580F09 /* AFURLConnectionOperation.m */; };
+		4EF0E8981E4CC13F00580F09 /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF0E8971E4CC13F00580F09 /* AFHTTPRequestOperationManager.m */; };
 		4EF149D31D3DF61D00D28265 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF149D21D3DF61D00D28265 /* main.m */; };
 		4EF149D61D3DF61D00D28265 /* WBSBlogAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF149D51D3DF61D00D28265 /* WBSBlogAppDelegate.m */; };
 		4EF149DE1D3DF61D00D28265 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4EF149DD1D3DF61D00D28265 /* Assets.xcassets */; };
@@ -221,23 +266,6 @@
 		4EF14F0B1D3E32F700D28265 /* setup.c in Sources */ = {isa = PBXBuildFile; fileRef = 4EF14D2C1D3E32F600D28265 /* setup.c */; };
 		4EF14F0C1D3E32F700D28265 /* tags.c in Sources */ = {isa = PBXBuildFile; fileRef = 4EF14D2D1D3E32F600D28265 /* tags.c */; };
 		4EF14F0D1D3E32F700D28265 /* xml.c in Sources */ = {isa = PBXBuildFile; fileRef = 4EF14D2F1D3E32F600D28265 /* xml.c */; };
-		4EF14F151D3E32F700D28265 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF14D411D3E32F600D28265 /* AFHTTPRequestOperation.m */; };
-		4EF14F161D3E32F700D28265 /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF14D431D3E32F600D28265 /* AFHTTPRequestOperationManager.m */; };
-		4EF14F171D3E32F700D28265 /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF14D451D3E32F600D28265 /* AFHTTPSessionManager.m */; };
-		4EF14F181D3E32F700D28265 /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF14D481D3E32F600D28265 /* AFNetworkReachabilityManager.m */; };
-		4EF14F191D3E32F700D28265 /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF14D4A1D3E32F600D28265 /* AFSecurityPolicy.m */; };
-		4EF14F1A1D3E32F700D28265 /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF14D4C1D3E32F600D28265 /* AFURLConnectionOperation.m */; };
-		4EF14F1B1D3E32F700D28265 /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF14D4E1D3E32F600D28265 /* AFURLRequestSerialization.m */; };
-		4EF14F1C1D3E32F700D28265 /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF14D501D3E32F600D28265 /* AFURLResponseSerialization.m */; };
-		4EF14F1D1D3E32F700D28265 /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF14D521D3E32F600D28265 /* AFURLSessionManager.m */; };
-		4EF14F201D3E32F700D28265 /* AFNetworkActivityIndicatorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF14D571D3E32F600D28265 /* AFNetworkActivityIndicatorManager.m */; };
-		4EF14F211D3E32F700D28265 /* UIActivityIndicatorView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF14D591D3E32F600D28265 /* UIActivityIndicatorView+AFNetworking.m */; };
-		4EF14F221D3E32F700D28265 /* UIAlertView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF14D5B1D3E32F600D28265 /* UIAlertView+AFNetworking.m */; };
-		4EF14F231D3E32F700D28265 /* UIButton+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF14D5D1D3E32F600D28265 /* UIButton+AFNetworking.m */; };
-		4EF14F241D3E32F700D28265 /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF14D5F1D3E32F600D28265 /* UIImageView+AFNetworking.m */; };
-		4EF14F251D3E32F700D28265 /* UIProgressView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF14D621D3E32F600D28265 /* UIProgressView+AFNetworking.m */; };
-		4EF14F261D3E32F700D28265 /* UIRefreshControl+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF14D641D3E32F600D28265 /* UIRefreshControl+AFNetworking.m */; };
-		4EF14F271D3E32F700D28265 /* UIWebView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF14D661D3E32F600D28265 /* UIWebView+AFNetworking.m */; };
 		4EF14F291D3E32F700D28265 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF14D6A1D3E32F600D28265 /* Reachability.m */; };
 		4EF14F321D3E32F700D28265 /* NSData+ImageContentType.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF14D7B1D3E32F600D28265 /* NSData+ImageContentType.m */; };
 		4EF14F331D3E32F700D28265 /* SDImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF14D7D1D3E32F600D28265 /* SDImageCache.m */; };
@@ -473,30 +501,11 @@
 		4EF38FBE1D4310E300CE28A4 /* WBSPostEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF38FB51D4310E300CE28A4 /* WBSPostEditViewController.m */; };
 		4EF38FBF1D4310E300CE28A4 /* WBSHomePostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF38FB71D4310E300CE28A4 /* WBSHomePostViewController.m */; };
 		4EF38FC01D4310E300CE28A4 /* WBSTitleMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF38FB91D4310E300CE28A4 /* WBSTitleMenuViewController.m */; };
-		4EF38FD11D4311D000CE28A4 /* WPBase64Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF38FC51D4311D000CE28A4 /* WPBase64Utils.m */; };
-		4EF38FD21D4311D000CE28A4 /* WPStringUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF38FC71D4311D000CE28A4 /* WPStringUtils.m */; };
-		4EF38FD31D4311D000CE28A4 /* WPXMLRPCDataCleaner.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF38FCA1D4311D000CE28A4 /* WPXMLRPCDataCleaner.m */; };
-		4EF38FD41D4311D000CE28A4 /* WPXMLRPCDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF38FCC1D4311D000CE28A4 /* WPXMLRPCDecoder.m */; };
-		4EF38FD51D4311D000CE28A4 /* WPXMLRPCDecoderDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF38FCE1D4311D000CE28A4 /* WPXMLRPCDecoderDelegate.m */; };
-		4EF38FD61D4311D000CE28A4 /* WPXMLRPCEncoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF38FD01D4311D000CE28A4 /* WPXMLRPCEncoder.m */; };
 		4EF38FE11D4311F000CE28A4 /* FAImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF38FD91D4311F000CE28A4 /* FAImageView.m */; };
 		4EF38FE21D4311F000CE28A4 /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4EF38FDA1D4311F000CE28A4 /* FontAwesome.ttf */; };
 		4EF38FE31D4311F000CE28A4 /* NSString+FontAwesome.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF38FDC1D4311F000CE28A4 /* NSString+FontAwesome.m */; };
 		4EF38FE41D4311F000CE28A4 /* UIFont+FontAwesome.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF38FDE1D4311F000CE28A4 /* UIFont+FontAwesome.m */; };
 		4EF38FE51D4311F000CE28A4 /* UIImage+FontAwesome.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF38FE01D4311F000CE28A4 /* UIImage+FontAwesome.m */; };
-		4EF390381D43138100CE28A4 /* NSString+StringByStrippingHTML.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF390141D43138100CE28A4 /* NSString+StringByStrippingHTML.m */; };
-		4EF390391D43138100CE28A4 /* TGBlogJsonApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF390161D43138100CE28A4 /* TGBlogJsonApi.m */; };
-		4EF3903A1D43138100CE28A4 /* TGCategory+TGCategoryFromDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF390181D43138100CE28A4 /* TGCategory+TGCategoryFromDictionary.m */; };
-		4EF3903B1D43138100CE28A4 /* TGCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF3901A1D43138100CE28A4 /* TGCategory.m */; };
-		4EF3903C1D43138100CE28A4 /* TGComment+TGCommentFromDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF3901C1D43138100CE28A4 /* TGComment+TGCommentFromDictionary.m */; };
-		4EF3903D1D43138100CE28A4 /* TGComment.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF3901E1D43138100CE28A4 /* TGComment.m */; };
-		4EF390401D43138100CE28A4 /* TGPost+SDPostFromDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF390261D43138100CE28A4 /* TGPost+SDPostFromDictionary.m */; };
-		4EF390411D43138100CE28A4 /* TGPost.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF390281D43138100CE28A4 /* TGPost.m */; };
-		4EF390421D43138100CE28A4 /* TGTag+TGTagFromDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF3902A1D43138100CE28A4 /* TGTag+TGTagFromDictionary.m */; };
-		4EF390431D43138100CE28A4 /* TGTag.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF3902C1D43138100CE28A4 /* TGTag.m */; };
-		4EF390451D43138100CE28A4 /* TGMetaWeblogAuthApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF390321D43138100CE28A4 /* TGMetaWeblogAuthApi.m */; };
-		4EF390461D43138100CE28A4 /* TGMetaWeblogXMLRPCApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF390351D43138100CE28A4 /* TGMetaWeblogXMLRPCApi.m */; };
-		4EF390471D43138100CE28A4 /* TGXMLRPCApiClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF390371D43138100CE28A4 /* TGXMLRPCApiClient.m */; };
 		4EF5E3FE1D41C847002B6AFF /* (null) in Sources */ = {isa = PBXBuildFile; };
 		4EF5E3FF1D41C847002B6AFF /* (null) in Sources */ = {isa = PBXBuildFile; };
 		4EF5E4021D41C870002B6AFF /* (null) in Sources */ = {isa = PBXBuildFile; };
@@ -542,17 +551,29 @@
 		4E3B10461E4868EA002EF825 /* navigationbar-search.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navigationbar-search.png"; sourceTree = "<group>"; };
 		4E3B104B1E4990D2002EF825 /* default_portrait@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "default_portrait@2x.png"; sourceTree = "<group>"; };
 		4E3B104C1E4990D2002EF825 /* default_portrait@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "default_portrait@3x.png"; sourceTree = "<group>"; };
-		4E3B10521E49B13E002EF825 /* UserProtocol.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = UserProtocol.html; sourceTree = "<group>"; };
 		4E3B10541E49B71D002EF825 /* WBSUserProtocolViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSUserProtocolViewController.h; sourceTree = "<group>"; };
 		4E3B10551E49B71D002EF825 /* WBSUserProtocolViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBSUserProtocolViewController.m; sourceTree = "<group>"; };
+		4E3B10571E49E159002EF825 /* back_button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back_button@2x.png"; sourceTree = "<group>"; };
+		4E3B10581E49E159002EF825 /* back_button@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back_button@3x.png"; sourceTree = "<group>"; };
+		4E3B10721E4AC9EF002EF825 /* WPBase64Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPBase64Utils.h; sourceTree = "<group>"; };
+		4E3B10731E4AC9EF002EF825 /* WPBase64Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPBase64Utils.m; sourceTree = "<group>"; };
+		4E3B10741E4AC9EF002EF825 /* WPStringUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPStringUtils.h; sourceTree = "<group>"; };
+		4E3B10751E4AC9EF002EF825 /* WPStringUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPStringUtils.m; sourceTree = "<group>"; };
+		4E3B10761E4AC9EF002EF825 /* WPXMLRPC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPXMLRPC.h; sourceTree = "<group>"; };
+		4E3B10771E4AC9EF002EF825 /* WPXMLRPCDataCleaner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPXMLRPCDataCleaner.h; sourceTree = "<group>"; };
+		4E3B10781E4AC9EF002EF825 /* WPXMLRPCDataCleaner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPXMLRPCDataCleaner.m; sourceTree = "<group>"; };
+		4E3B10791E4AC9EF002EF825 /* WPXMLRPCDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPXMLRPCDecoder.h; sourceTree = "<group>"; };
+		4E3B107A1E4AC9EF002EF825 /* WPXMLRPCDecoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPXMLRPCDecoder.m; sourceTree = "<group>"; };
+		4E3B107B1E4AC9EF002EF825 /* WPXMLRPCDecoderDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPXMLRPCDecoderDelegate.h; sourceTree = "<group>"; };
+		4E3B107C1E4AC9EF002EF825 /* WPXMLRPCDecoderDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPXMLRPCDecoderDelegate.m; sourceTree = "<group>"; };
+		4E3B107D1E4AC9EF002EF825 /* WPXMLRPCEncoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPXMLRPCEncoder.h; sourceTree = "<group>"; };
+		4E3B107E1E4AC9EF002EF825 /* WPXMLRPCEncoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPXMLRPCEncoder.m; sourceTree = "<group>"; };
 		4E4AD5D41D477536002BFD98 /* WBSBottomBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSBottomBarViewController.h; sourceTree = "<group>"; };
 		4E4AD5D51D477536002BFD98 /* WBSBottomBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBSBottomBarViewController.m; sourceTree = "<group>"; };
 		4E4AD5D81D477536002BFD98 /* WBSBrowserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSBrowserViewController.h; sourceTree = "<group>"; };
 		4E4AD5D91D477536002BFD98 /* WBSBrowserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBSBrowserViewController.m; sourceTree = "<group>"; };
 		4E4AD5DA1D477536002BFD98 /* WBSDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSDetailsViewController.h; sourceTree = "<group>"; };
 		4E4AD5DB1D477536002BFD98 /* WBSDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBSDetailsViewController.m; sourceTree = "<group>"; };
-		4E4AD5DC1D477536002BFD98 /* WBSErrorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSErrorViewController.h; sourceTree = "<group>"; };
-		4E4AD5DD1D477536002BFD98 /* WBSErrorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBSErrorViewController.m; sourceTree = "<group>"; };
 		4E4AD5DE1D477536002BFD98 /* WBSBasePostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSBasePostViewController.h; sourceTree = "<group>"; };
 		4E4AD5DF1D477536002BFD98 /* WBSBasePostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBSBasePostViewController.m; sourceTree = "<group>"; };
 		4E4AD5E21D477536002BFD98 /* WBSRootTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSRootTabBarController.h; sourceTree = "<group>"; };
@@ -580,6 +601,32 @@
 		4EBEC6221DBB12D80038DFE0 /* SAMKeychainQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAMKeychainQuery.h; sourceTree = "<group>"; };
 		4EBEC6231DBB12D80038DFE0 /* SAMKeychainQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAMKeychainQuery.m; sourceTree = "<group>"; };
 		4EBEC6251DBB12D80038DFE0 /* SAMKeychain.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SAMKeychain.bundle; sourceTree = "<group>"; };
+		4ED5A7941E4B2761005ADE05 /* WordPressApi-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WordPressApi-Prefix.pch"; sourceTree = "<group>"; };
+		4ED5A7951E4B2761005ADE05 /* WordPressApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordPressApi.h; sourceTree = "<group>"; };
+		4ED5A7961E4B2761005ADE05 /* WordPressApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordPressApi.m; sourceTree = "<group>"; };
+		4ED5A7971E4B2761005ADE05 /* WordPressBaseApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordPressBaseApi.h; sourceTree = "<group>"; };
+		4ED5A7981E4B2761005ADE05 /* WordPressRestApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordPressRestApi.h; sourceTree = "<group>"; };
+		4ED5A7991E4B2761005ADE05 /* WordPressRestApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordPressRestApi.m; sourceTree = "<group>"; };
+		4ED5A79A1E4B2761005ADE05 /* WordPressRestApiJSONRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordPressRestApiJSONRequestOperation.h; sourceTree = "<group>"; };
+		4ED5A79B1E4B2761005ADE05 /* WordPressRestApiJSONRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordPressRestApiJSONRequestOperation.m; sourceTree = "<group>"; };
+		4ED5A79C1E4B2761005ADE05 /* WordPressRestApiJSONRequestOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordPressRestApiJSONRequestOperationManager.h; sourceTree = "<group>"; };
+		4ED5A79D1E4B2761005ADE05 /* WordPressRestApiJSONRequestOperationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordPressRestApiJSONRequestOperationManager.m; sourceTree = "<group>"; };
+		4ED5A79E1E4B2761005ADE05 /* WordPressXMLRPCApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordPressXMLRPCApi.h; sourceTree = "<group>"; };
+		4ED5A79F1E4B2761005ADE05 /* WordPressXMLRPCApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordPressXMLRPCApi.m; sourceTree = "<group>"; };
+		4ED5A7A01E4B2761005ADE05 /* WPComOAuthController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPComOAuthController.h; sourceTree = "<group>"; };
+		4ED5A7A11E4B2761005ADE05 /* WPComOAuthController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPComOAuthController.m; sourceTree = "<group>"; };
+		4ED5A7A21E4B2761005ADE05 /* WPHTTPAuthenticationAlertController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPHTTPAuthenticationAlertController.h; sourceTree = "<group>"; };
+		4ED5A7A31E4B2761005ADE05 /* WPHTTPAuthenticationAlertController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPHTTPAuthenticationAlertController.m; sourceTree = "<group>"; };
+		4ED5A7A41E4B2761005ADE05 /* WPHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPHTTPRequestOperation.h; sourceTree = "<group>"; };
+		4ED5A7A51E4B2761005ADE05 /* WPHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPHTTPRequestOperation.m; sourceTree = "<group>"; };
+		4ED5A7A61E4B2761005ADE05 /* WPRSDParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPRSDParser.h; sourceTree = "<group>"; };
+		4ED5A7A71E4B2761005ADE05 /* WPRSDParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPRSDParser.m; sourceTree = "<group>"; };
+		4ED5A7A81E4B2761005ADE05 /* WPXMLRPCClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPXMLRPCClient.h; sourceTree = "<group>"; };
+		4ED5A7A91E4B2761005ADE05 /* WPXMLRPCClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPXMLRPCClient.m; sourceTree = "<group>"; };
+		4ED5A7AA1E4B2761005ADE05 /* WPXMLRPCRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPXMLRPCRequest.h; sourceTree = "<group>"; };
+		4ED5A7AB1E4B2761005ADE05 /* WPXMLRPCRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPXMLRPCRequest.m; sourceTree = "<group>"; };
+		4ED5A7AC1E4B2761005ADE05 /* WPXMLRPCRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPXMLRPCRequestOperation.h; sourceTree = "<group>"; };
+		4ED5A7AD1E4B2761005ADE05 /* WPXMLRPCRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPXMLRPCRequestOperation.m; sourceTree = "<group>"; };
 		4EDFD77E1E348C5D006DD1E6 /* WBSMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSMacro.h; sourceTree = "<group>"; };
 		4EDFD7831E348C5D006DD1E6 /* NetworkingCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkingCenter.h; sourceTree = "<group>"; };
 		4EDFD7841E348C5D006DD1E6 /* NetworkingCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkingCenter.m; sourceTree = "<group>"; };
@@ -775,12 +822,68 @@
 		4EDFF4111E3757FD000C47D2 /* left_menu@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "left_menu@3x.png"; sourceTree = "<group>"; };
 		4EDFF4121E3757FD000C47D2 /* navigationbar_Me@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navigationbar_Me@2x.png"; sourceTree = "<group>"; };
 		4EDFF4131E3757FD000C47D2 /* navigationbar_Me@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navigationbar_Me@3x.png"; sourceTree = "<group>"; };
+		4EF0E7ED1E4C3DEF00580F09 /* NSString+FormatHTML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+FormatHTML.h"; sourceTree = "<group>"; };
+		4EF0E7EE1E4C3DEF00580F09 /* NSString+FormatHTML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+FormatHTML.m"; sourceTree = "<group>"; };
+		4EF0E8171E4C52E600580F09 /* WBSJsonApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSJsonApi.h; sourceTree = "<group>"; };
+		4EF0E8181E4C52E600580F09 /* WBSJsonApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBSJsonApi.m; sourceTree = "<group>"; };
+		4EF0E81D1E4C5CFB00580F09 /* UserProtocol.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = UserProtocol.html; sourceTree = "<group>"; };
+		4EF0E82E1E4C764300580F09 /* WBSBaseCoreApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSBaseCoreApi.h; sourceTree = "<group>"; };
+		4EF0E82F1E4C764300580F09 /* WBSBaseCoreApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBSBaseCoreApi.m; sourceTree = "<group>"; };
+		4EF0E84A1E4C7F5A00580F09 /* WBSNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSNetworking.h; sourceTree = "<group>"; };
+		4EF0E84B1E4C7F5A00580F09 /* WBSNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBSNetworking.m; sourceTree = "<group>"; };
+		4EF0E8511E4CAA0500580F09 /* WBSCategoryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSCategoryModel.h; sourceTree = "<group>"; };
+		4EF0E8521E4CAA0500580F09 /* WBSCategoryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBSCategoryModel.m; sourceTree = "<group>"; };
+		4EF0E8531E4CAA0500580F09 /* WBSCommentModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSCommentModel.h; sourceTree = "<group>"; };
+		4EF0E8541E4CAA0500580F09 /* WBSCommentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBSCommentModel.m; sourceTree = "<group>"; };
+		4EF0E8551E4CAA0500580F09 /* WBSPostModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSPostModel.h; sourceTree = "<group>"; };
+		4EF0E8561E4CAA0500580F09 /* WBSPostModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBSPostModel.m; sourceTree = "<group>"; };
+		4EF0E8571E4CAA0500580F09 /* WBSTagModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSTagModel.h; sourceTree = "<group>"; };
+		4EF0E8581E4CAA0500580F09 /* WBSTagModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBSTagModel.m; sourceTree = "<group>"; };
+		4EF0E85F1E4CBF9500580F09 /* AFHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPSessionManager.h; sourceTree = "<group>"; };
+		4EF0E8601E4CBF9500580F09 /* AFHTTPSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPSessionManager.m; sourceTree = "<group>"; };
+		4EF0E8611E4CBF9500580F09 /* AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworking.h; sourceTree = "<group>"; };
+		4EF0E8621E4CBF9500580F09 /* AFNetworkReachabilityManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworkReachabilityManager.h; sourceTree = "<group>"; };
+		4EF0E8631E4CBF9500580F09 /* AFNetworkReachabilityManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNetworkReachabilityManager.m; sourceTree = "<group>"; };
+		4EF0E8641E4CBF9500580F09 /* AFSecurityPolicy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFSecurityPolicy.h; sourceTree = "<group>"; };
+		4EF0E8651E4CBF9500580F09 /* AFSecurityPolicy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFSecurityPolicy.m; sourceTree = "<group>"; };
+		4EF0E8661E4CBF9500580F09 /* AFURLRequestSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLRequestSerialization.h; sourceTree = "<group>"; };
+		4EF0E8671E4CBF9500580F09 /* AFURLRequestSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLRequestSerialization.m; sourceTree = "<group>"; };
+		4EF0E8681E4CBF9500580F09 /* AFURLResponseSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLResponseSerialization.h; sourceTree = "<group>"; };
+		4EF0E8691E4CBF9500580F09 /* AFURLResponseSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLResponseSerialization.m; sourceTree = "<group>"; };
+		4EF0E86A1E4CBF9500580F09 /* AFURLSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLSessionManager.h; sourceTree = "<group>"; };
+		4EF0E86B1E4CBF9500580F09 /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLSessionManager.m; sourceTree = "<group>"; };
+		4EF0E86D1E4CBF9500580F09 /* AFAutoPurgingImageCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFAutoPurgingImageCache.h; sourceTree = "<group>"; };
+		4EF0E86E1E4CBF9500580F09 /* AFAutoPurgingImageCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFAutoPurgingImageCache.m; sourceTree = "<group>"; };
+		4EF0E86F1E4CBF9500580F09 /* AFImageDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFImageDownloader.h; sourceTree = "<group>"; };
+		4EF0E8701E4CBF9500580F09 /* AFImageDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFImageDownloader.m; sourceTree = "<group>"; };
+		4EF0E8711E4CBF9500580F09 /* AFNetworkActivityIndicatorManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworkActivityIndicatorManager.h; sourceTree = "<group>"; };
+		4EF0E8721E4CBF9500580F09 /* AFNetworkActivityIndicatorManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNetworkActivityIndicatorManager.m; sourceTree = "<group>"; };
+		4EF0E8731E4CBF9500580F09 /* UIActivityIndicatorView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIActivityIndicatorView+AFNetworking.h"; sourceTree = "<group>"; };
+		4EF0E8741E4CBF9500580F09 /* UIActivityIndicatorView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIActivityIndicatorView+AFNetworking.m"; sourceTree = "<group>"; };
+		4EF0E8751E4CBF9500580F09 /* UIButton+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+AFNetworking.h"; sourceTree = "<group>"; };
+		4EF0E8761E4CBF9500580F09 /* UIButton+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+AFNetworking.m"; sourceTree = "<group>"; };
+		4EF0E8771E4CBF9500580F09 /* UIImage+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+AFNetworking.h"; sourceTree = "<group>"; };
+		4EF0E8781E4CBF9500580F09 /* UIImageView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+AFNetworking.h"; sourceTree = "<group>"; };
+		4EF0E8791E4CBF9500580F09 /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
+		4EF0E87A1E4CBF9500580F09 /* UIKit+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIKit+AFNetworking.h"; sourceTree = "<group>"; };
+		4EF0E87B1E4CBF9500580F09 /* UIProgressView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIProgressView+AFNetworking.h"; sourceTree = "<group>"; };
+		4EF0E87C1E4CBF9500580F09 /* UIProgressView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIProgressView+AFNetworking.m"; sourceTree = "<group>"; };
+		4EF0E87D1E4CBF9500580F09 /* UIRefreshControl+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIRefreshControl+AFNetworking.h"; sourceTree = "<group>"; };
+		4EF0E87E1E4CBF9500580F09 /* UIRefreshControl+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIRefreshControl+AFNetworking.m"; sourceTree = "<group>"; };
+		4EF0E87F1E4CBF9500580F09 /* UIWebView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWebView+AFNetworking.h"; sourceTree = "<group>"; };
+		4EF0E8801E4CBF9500580F09 /* UIWebView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+AFNetworking.m"; sourceTree = "<group>"; };
+		4EF0E8901E4CC09F00580F09 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
+		4EF0E8911E4CC09F00580F09 /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperation.m; sourceTree = "<group>"; };
+		4EF0E8931E4CC0BE00580F09 /* AFURLConnectionOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLConnectionOperation.h; sourceTree = "<group>"; };
+		4EF0E8941E4CC0BE00580F09 /* AFURLConnectionOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLConnectionOperation.m; sourceTree = "<group>"; };
+		4EF0E8961E4CC13F00580F09 /* AFHTTPRequestOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperationManager.h; sourceTree = "<group>"; };
+		4EF0E8971E4CC13F00580F09 /* AFHTTPRequestOperationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperationManager.m; sourceTree = "<group>"; };
 		4EF149CE1D3DF61D00D28265 /* WBSBlog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WBSBlog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EF149D21D3DF61D00D28265 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4EF149D41D3DF61D00D28265 /* WBSBlogAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = WBSBlogAppDelegate.h; path = ../WBSBlogAppDelegate.h; sourceTree = "<group>"; };
 		4EF149D51D3DF61D00D28265 /* WBSBlogAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = WBSBlogAppDelegate.m; path = ../WBSBlogAppDelegate.m; sourceTree = "<group>"; };
 		4EF149DD1D3DF61D00D28265 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		4EF149E21D3DF61D00D28265 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4EF149E21D3DF61D00D28265 /* WBSBlogInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = WBSBlogInfo.plist; sourceTree = "<group>"; };
 		4EF149E71D3DF61D00D28265 /* WBSBlogTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WBSBlogTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EF149EB1D3DF61D00D28265 /* WBSBlogTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WBSBlogTests.m; sourceTree = "<group>"; };
 		4EF149ED1D3DF61D00D28265 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -808,42 +911,6 @@
 		4EF14D2D1D3E32F600D28265 /* tags.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.objc; fileEncoding = 4; path = tags.c; sourceTree = "<group>"; };
 		4EF14D2E1D3E32F600D28265 /* tags.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tags.h; sourceTree = "<group>"; };
 		4EF14D2F1D3E32F600D28265 /* xml.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.objc; fileEncoding = 4; path = xml.c; sourceTree = "<group>"; };
-		4EF14D401D3E32F600D28265 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
-		4EF14D411D3E32F600D28265 /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperation.m; sourceTree = "<group>"; };
-		4EF14D421D3E32F600D28265 /* AFHTTPRequestOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperationManager.h; sourceTree = "<group>"; };
-		4EF14D431D3E32F600D28265 /* AFHTTPRequestOperationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperationManager.m; sourceTree = "<group>"; };
-		4EF14D441D3E32F600D28265 /* AFHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPSessionManager.h; sourceTree = "<group>"; };
-		4EF14D451D3E32F600D28265 /* AFHTTPSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPSessionManager.m; sourceTree = "<group>"; };
-		4EF14D461D3E32F600D28265 /* AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworking.h; sourceTree = "<group>"; };
-		4EF14D471D3E32F600D28265 /* AFNetworkReachabilityManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworkReachabilityManager.h; sourceTree = "<group>"; };
-		4EF14D481D3E32F600D28265 /* AFNetworkReachabilityManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNetworkReachabilityManager.m; sourceTree = "<group>"; };
-		4EF14D491D3E32F600D28265 /* AFSecurityPolicy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFSecurityPolicy.h; sourceTree = "<group>"; };
-		4EF14D4A1D3E32F600D28265 /* AFSecurityPolicy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFSecurityPolicy.m; sourceTree = "<group>"; };
-		4EF14D4B1D3E32F600D28265 /* AFURLConnectionOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLConnectionOperation.h; sourceTree = "<group>"; };
-		4EF14D4C1D3E32F600D28265 /* AFURLConnectionOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLConnectionOperation.m; sourceTree = "<group>"; };
-		4EF14D4D1D3E32F600D28265 /* AFURLRequestSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLRequestSerialization.h; sourceTree = "<group>"; };
-		4EF14D4E1D3E32F600D28265 /* AFURLRequestSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLRequestSerialization.m; sourceTree = "<group>"; };
-		4EF14D4F1D3E32F600D28265 /* AFURLResponseSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLResponseSerialization.h; sourceTree = "<group>"; };
-		4EF14D501D3E32F600D28265 /* AFURLResponseSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLResponseSerialization.m; sourceTree = "<group>"; };
-		4EF14D511D3E32F600D28265 /* AFURLSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLSessionManager.h; sourceTree = "<group>"; };
-		4EF14D521D3E32F600D28265 /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLSessionManager.m; sourceTree = "<group>"; };
-		4EF14D561D3E32F600D28265 /* AFNetworkActivityIndicatorManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworkActivityIndicatorManager.h; sourceTree = "<group>"; };
-		4EF14D571D3E32F600D28265 /* AFNetworkActivityIndicatorManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNetworkActivityIndicatorManager.m; sourceTree = "<group>"; };
-		4EF14D581D3E32F600D28265 /* UIActivityIndicatorView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIActivityIndicatorView+AFNetworking.h"; sourceTree = "<group>"; };
-		4EF14D591D3E32F600D28265 /* UIActivityIndicatorView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIActivityIndicatorView+AFNetworking.m"; sourceTree = "<group>"; };
-		4EF14D5A1D3E32F600D28265 /* UIAlertView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+AFNetworking.h"; sourceTree = "<group>"; };
-		4EF14D5B1D3E32F600D28265 /* UIAlertView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+AFNetworking.m"; sourceTree = "<group>"; };
-		4EF14D5C1D3E32F600D28265 /* UIButton+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+AFNetworking.h"; sourceTree = "<group>"; };
-		4EF14D5D1D3E32F600D28265 /* UIButton+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+AFNetworking.m"; sourceTree = "<group>"; };
-		4EF14D5E1D3E32F600D28265 /* UIImageView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+AFNetworking.h"; sourceTree = "<group>"; };
-		4EF14D5F1D3E32F600D28265 /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
-		4EF14D601D3E32F600D28265 /* UIKit+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIKit+AFNetworking.h"; sourceTree = "<group>"; };
-		4EF14D611D3E32F600D28265 /* UIProgressView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIProgressView+AFNetworking.h"; sourceTree = "<group>"; };
-		4EF14D621D3E32F600D28265 /* UIProgressView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIProgressView+AFNetworking.m"; sourceTree = "<group>"; };
-		4EF14D631D3E32F600D28265 /* UIRefreshControl+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIRefreshControl+AFNetworking.h"; sourceTree = "<group>"; };
-		4EF14D641D3E32F600D28265 /* UIRefreshControl+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIRefreshControl+AFNetworking.m"; sourceTree = "<group>"; };
-		4EF14D651D3E32F600D28265 /* UIWebView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWebView+AFNetworking.h"; sourceTree = "<group>"; };
-		4EF14D661D3E32F600D28265 /* UIWebView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+AFNetworking.m"; sourceTree = "<group>"; };
 		4EF14D681D3E32F600D28265 /* LICENCE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENCE.txt; sourceTree = "<group>"; };
 		4EF14D691D3E32F600D28265 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		4EF14D6A1D3E32F600D28265 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
@@ -1326,19 +1393,6 @@
 		4EF38FB71D4310E300CE28A4 /* WBSHomePostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBSHomePostViewController.m; sourceTree = "<group>"; };
 		4EF38FB81D4310E300CE28A4 /* WBSTitleMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSTitleMenuViewController.h; sourceTree = "<group>"; };
 		4EF38FB91D4310E300CE28A4 /* WBSTitleMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBSTitleMenuViewController.m; sourceTree = "<group>"; };
-		4EF38FC41D4311D000CE28A4 /* WPBase64Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPBase64Utils.h; sourceTree = "<group>"; };
-		4EF38FC51D4311D000CE28A4 /* WPBase64Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPBase64Utils.m; sourceTree = "<group>"; };
-		4EF38FC61D4311D000CE28A4 /* WPStringUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPStringUtils.h; sourceTree = "<group>"; };
-		4EF38FC71D4311D000CE28A4 /* WPStringUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPStringUtils.m; sourceTree = "<group>"; };
-		4EF38FC81D4311D000CE28A4 /* WPXMLRPC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPXMLRPC.h; sourceTree = "<group>"; };
-		4EF38FC91D4311D000CE28A4 /* WPXMLRPCDataCleaner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPXMLRPCDataCleaner.h; sourceTree = "<group>"; };
-		4EF38FCA1D4311D000CE28A4 /* WPXMLRPCDataCleaner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPXMLRPCDataCleaner.m; sourceTree = "<group>"; };
-		4EF38FCB1D4311D000CE28A4 /* WPXMLRPCDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPXMLRPCDecoder.h; sourceTree = "<group>"; };
-		4EF38FCC1D4311D000CE28A4 /* WPXMLRPCDecoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPXMLRPCDecoder.m; sourceTree = "<group>"; };
-		4EF38FCD1D4311D000CE28A4 /* WPXMLRPCDecoderDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPXMLRPCDecoderDelegate.h; sourceTree = "<group>"; };
-		4EF38FCE1D4311D000CE28A4 /* WPXMLRPCDecoderDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPXMLRPCDecoderDelegate.m; sourceTree = "<group>"; };
-		4EF38FCF1D4311D000CE28A4 /* WPXMLRPCEncoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPXMLRPCEncoder.h; sourceTree = "<group>"; };
-		4EF38FD01D4311D000CE28A4 /* WPXMLRPCEncoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPXMLRPCEncoder.m; sourceTree = "<group>"; };
 		4EF38FD81D4311F000CE28A4 /* FAImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FAImageView.h; sourceTree = "<group>"; };
 		4EF38FD91D4311F000CE28A4 /* FAImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FAImageView.m; sourceTree = "<group>"; };
 		4EF38FDA1D4311F000CE28A4 /* FontAwesome.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome.ttf; sourceTree = "<group>"; };
@@ -1348,34 +1402,6 @@
 		4EF38FDE1D4311F000CE28A4 /* UIFont+FontAwesome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+FontAwesome.m"; sourceTree = "<group>"; };
 		4EF38FDF1D4311F000CE28A4 /* UIImage+FontAwesome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+FontAwesome.h"; sourceTree = "<group>"; };
 		4EF38FE01D4311F000CE28A4 /* UIImage+FontAwesome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+FontAwesome.m"; sourceTree = "<group>"; };
-		4EF390131D43138100CE28A4 /* NSString+StringByStrippingHTML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+StringByStrippingHTML.h"; sourceTree = "<group>"; };
-		4EF390141D43138100CE28A4 /* NSString+StringByStrippingHTML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+StringByStrippingHTML.m"; sourceTree = "<group>"; };
-		4EF390151D43138100CE28A4 /* TGBlogJsonApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGBlogJsonApi.h; sourceTree = "<group>"; };
-		4EF390161D43138100CE28A4 /* TGBlogJsonApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGBlogJsonApi.m; sourceTree = "<group>"; };
-		4EF390171D43138100CE28A4 /* TGCategory+TGCategoryFromDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TGCategory+TGCategoryFromDictionary.h"; sourceTree = "<group>"; };
-		4EF390181D43138100CE28A4 /* TGCategory+TGCategoryFromDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TGCategory+TGCategoryFromDictionary.m"; sourceTree = "<group>"; };
-		4EF390191D43138100CE28A4 /* TGCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGCategory.h; sourceTree = "<group>"; };
-		4EF3901A1D43138100CE28A4 /* TGCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGCategory.m; sourceTree = "<group>"; };
-		4EF3901B1D43138100CE28A4 /* TGComment+TGCommentFromDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TGComment+TGCommentFromDictionary.h"; sourceTree = "<group>"; };
-		4EF3901C1D43138100CE28A4 /* TGComment+TGCommentFromDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TGComment+TGCommentFromDictionary.m"; sourceTree = "<group>"; };
-		4EF3901D1D43138100CE28A4 /* TGComment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGComment.h; sourceTree = "<group>"; };
-		4EF3901E1D43138100CE28A4 /* TGComment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGComment.m; sourceTree = "<group>"; };
-		4EF390251D43138100CE28A4 /* TGPost+SDPostFromDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TGPost+SDPostFromDictionary.h"; sourceTree = "<group>"; };
-		4EF390261D43138100CE28A4 /* TGPost+SDPostFromDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TGPost+SDPostFromDictionary.m"; sourceTree = "<group>"; };
-		4EF390271D43138100CE28A4 /* TGPost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGPost.h; sourceTree = "<group>"; };
-		4EF390281D43138100CE28A4 /* TGPost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGPost.m; sourceTree = "<group>"; };
-		4EF390291D43138100CE28A4 /* TGTag+TGTagFromDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TGTag+TGTagFromDictionary.h"; sourceTree = "<group>"; };
-		4EF3902A1D43138100CE28A4 /* TGTag+TGTagFromDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TGTag+TGTagFromDictionary.m"; sourceTree = "<group>"; };
-		4EF3902B1D43138100CE28A4 /* TGTag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGTag.h; sourceTree = "<group>"; };
-		4EF3902C1D43138100CE28A4 /* TGTag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGTag.m; sourceTree = "<group>"; };
-		4EF390301D43138100CE28A4 /* TGMetaWeblogApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGMetaWeblogApi.h; sourceTree = "<group>"; };
-		4EF390311D43138100CE28A4 /* TGMetaWeblogAuthApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGMetaWeblogAuthApi.h; sourceTree = "<group>"; };
-		4EF390321D43138100CE28A4 /* TGMetaWeblogAuthApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGMetaWeblogAuthApi.m; sourceTree = "<group>"; };
-		4EF390331D43138100CE28A4 /* TGMetaWeblogBaseApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGMetaWeblogBaseApi.h; sourceTree = "<group>"; };
-		4EF390341D43138100CE28A4 /* TGMetaWeblogXMLRPCApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGMetaWeblogXMLRPCApi.h; sourceTree = "<group>"; };
-		4EF390351D43138100CE28A4 /* TGMetaWeblogXMLRPCApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGMetaWeblogXMLRPCApi.m; sourceTree = "<group>"; };
-		4EF390361D43138100CE28A4 /* TGXMLRPCApiClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGXMLRPCApiClient.h; sourceTree = "<group>"; };
-		4EF390371D43138100CE28A4 /* TGXMLRPCApiClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGXMLRPCApiClient.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1405,7 +1431,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4E4AD5D21D477536002BFD98 /* 框架_Main */ = {
+		4E3B10711E4AC9EF002EF825 /* WPXMLRPC */ = {
+			isa = PBXGroup;
+			children = (
+				4E3B10721E4AC9EF002EF825 /* WPBase64Utils.h */,
+				4E3B10731E4AC9EF002EF825 /* WPBase64Utils.m */,
+				4E3B10741E4AC9EF002EF825 /* WPStringUtils.h */,
+				4E3B10751E4AC9EF002EF825 /* WPStringUtils.m */,
+				4E3B10761E4AC9EF002EF825 /* WPXMLRPC.h */,
+				4E3B10771E4AC9EF002EF825 /* WPXMLRPCDataCleaner.h */,
+				4E3B10781E4AC9EF002EF825 /* WPXMLRPCDataCleaner.m */,
+				4E3B10791E4AC9EF002EF825 /* WPXMLRPCDecoder.h */,
+				4E3B107A1E4AC9EF002EF825 /* WPXMLRPCDecoder.m */,
+				4E3B107B1E4AC9EF002EF825 /* WPXMLRPCDecoderDelegate.h */,
+				4E3B107C1E4AC9EF002EF825 /* WPXMLRPCDecoderDelegate.m */,
+				4E3B107D1E4AC9EF002EF825 /* WPXMLRPCEncoder.h */,
+				4E3B107E1E4AC9EF002EF825 /* WPXMLRPCEncoder.m */,
+			);
+			path = WPXMLRPC;
+			sourceTree = "<group>";
+		};
+		4E4AD5D21D477536002BFD98 /* Main */ = {
 			isa = PBXGroup;
 			children = (
 				4E4AD5D31D477536002BFD98 /* Controller */,
@@ -1413,7 +1459,6 @@
 				4E4AD5E81D477536002BFD98 /* View */,
 				4E4AD5E71D477536002BFD98 /* SwipableViewController */,
 			);
-			name = "框架_Main";
 			path = Main;
 			sourceTree = "<group>";
 		};
@@ -1434,8 +1479,6 @@
 				4E4AD5D91D477536002BFD98 /* WBSBrowserViewController.m */,
 				4E4AD5DA1D477536002BFD98 /* WBSDetailsViewController.h */,
 				4E4AD5DB1D477536002BFD98 /* WBSDetailsViewController.m */,
-				4E4AD5DC1D477536002BFD98 /* WBSErrorViewController.h */,
-				4E4AD5DD1D477536002BFD98 /* WBSErrorViewController.m */,
 				4E4AD5DE1D477536002BFD98 /* WBSBasePostViewController.h */,
 				4E4AD5DF1D477536002BFD98 /* WBSBasePostViewController.m */,
 				4E3B10411E48675E002EF825 /* WBSBaseViewController.h */,
@@ -1502,6 +1545,39 @@
 				4EBEC6251DBB12D80038DFE0 /* SAMKeychain.bundle */,
 			);
 			path = Support;
+			sourceTree = "<group>";
+		};
+		4ED5A7931E4B2761005ADE05 /* WBSWordPressApi */ = {
+			isa = PBXGroup;
+			children = (
+				4ED5A7941E4B2761005ADE05 /* WordPressApi-Prefix.pch */,
+				4ED5A7951E4B2761005ADE05 /* WordPressApi.h */,
+				4ED5A7961E4B2761005ADE05 /* WordPressApi.m */,
+				4ED5A7971E4B2761005ADE05 /* WordPressBaseApi.h */,
+				4ED5A7981E4B2761005ADE05 /* WordPressRestApi.h */,
+				4ED5A7991E4B2761005ADE05 /* WordPressRestApi.m */,
+				4ED5A79A1E4B2761005ADE05 /* WordPressRestApiJSONRequestOperation.h */,
+				4ED5A79B1E4B2761005ADE05 /* WordPressRestApiJSONRequestOperation.m */,
+				4ED5A79C1E4B2761005ADE05 /* WordPressRestApiJSONRequestOperationManager.h */,
+				4ED5A79D1E4B2761005ADE05 /* WordPressRestApiJSONRequestOperationManager.m */,
+				4ED5A79E1E4B2761005ADE05 /* WordPressXMLRPCApi.h */,
+				4ED5A79F1E4B2761005ADE05 /* WordPressXMLRPCApi.m */,
+				4ED5A7A01E4B2761005ADE05 /* WPComOAuthController.h */,
+				4ED5A7A11E4B2761005ADE05 /* WPComOAuthController.m */,
+				4ED5A7A21E4B2761005ADE05 /* WPHTTPAuthenticationAlertController.h */,
+				4ED5A7A31E4B2761005ADE05 /* WPHTTPAuthenticationAlertController.m */,
+				4ED5A7A41E4B2761005ADE05 /* WPHTTPRequestOperation.h */,
+				4ED5A7A51E4B2761005ADE05 /* WPHTTPRequestOperation.m */,
+				4ED5A7A61E4B2761005ADE05 /* WPRSDParser.h */,
+				4ED5A7A71E4B2761005ADE05 /* WPRSDParser.m */,
+				4ED5A7A81E4B2761005ADE05 /* WPXMLRPCClient.h */,
+				4ED5A7A91E4B2761005ADE05 /* WPXMLRPCClient.m */,
+				4ED5A7AA1E4B2761005ADE05 /* WPXMLRPCRequest.h */,
+				4ED5A7AB1E4B2761005ADE05 /* WPXMLRPCRequest.m */,
+				4ED5A7AC1E4B2761005ADE05 /* WPXMLRPCRequestOperation.h */,
+				4ED5A7AD1E4B2761005ADE05 /* WPXMLRPCRequestOperation.m */,
+			);
+			path = WBSWordPressApi;
 			sourceTree = "<group>";
 		};
 		4EDFD78C1E348E98006DD1E6 /* FMDB */ = {
@@ -1586,6 +1662,7 @@
 				4EDFF3531E375508000C47D2 /* toolbar */,
 				4EDFF3741E375508000C47D2 /* user_background */,
 				4EDFF40F1E3757FD000C47D2 /* navi_bar */,
+				4EF0E81D1E4C5CFB00580F09 /* UserProtocol.html */,
 			);
 			name = "Images_图片/网页";
 			path = Images;
@@ -1831,12 +1908,107 @@
 		4EDFF40F1E3757FD000C47D2 /* navi_bar */ = {
 			isa = PBXGroup;
 			children = (
+				4E3B10571E49E159002EF825 /* back_button@2x.png */,
+				4E3B10581E49E159002EF825 /* back_button@3x.png */,
 				4EDFF4101E3757FD000C47D2 /* left_menu@2x.png */,
 				4EDFF4111E3757FD000C47D2 /* left_menu@3x.png */,
 				4EDFF4121E3757FD000C47D2 /* navigationbar_Me@2x.png */,
 				4EDFF4131E3757FD000C47D2 /* navigationbar_Me@3x.png */,
 			);
 			path = navi_bar;
+			sourceTree = "<group>";
+		};
+		4EF0E7EC1E4C3DEF00580F09 /* WBSJsonApi */ = {
+			isa = PBXGroup;
+			children = (
+				4EF0E8171E4C52E600580F09 /* WBSJsonApi.h */,
+				4EF0E8181E4C52E600580F09 /* WBSJsonApi.m */,
+				4EF0E84A1E4C7F5A00580F09 /* WBSNetworking.h */,
+				4EF0E84B1E4C7F5A00580F09 /* WBSNetworking.m */,
+				4EF0E82E1E4C764300580F09 /* WBSBaseCoreApi.h */,
+				4EF0E82F1E4C764300580F09 /* WBSBaseCoreApi.m */,
+				4EF0E7ED1E4C3DEF00580F09 /* NSString+FormatHTML.h */,
+				4EF0E7EE1E4C3DEF00580F09 /* NSString+FormatHTML.m */,
+				4EF0E8501E4CAA0500580F09 /* ApiModel */,
+			);
+			path = WBSJsonApi;
+			sourceTree = "<group>";
+		};
+		4EF0E8501E4CAA0500580F09 /* ApiModel */ = {
+			isa = PBXGroup;
+			children = (
+				4EF0E8571E4CAA0500580F09 /* WBSTagModel.h */,
+				4EF0E8581E4CAA0500580F09 /* WBSTagModel.m */,
+				4EF0E8551E4CAA0500580F09 /* WBSPostModel.h */,
+				4EF0E8561E4CAA0500580F09 /* WBSPostModel.m */,
+				4EF0E8511E4CAA0500580F09 /* WBSCategoryModel.h */,
+				4EF0E8521E4CAA0500580F09 /* WBSCategoryModel.m */,
+				4EF0E8531E4CAA0500580F09 /* WBSCommentModel.h */,
+				4EF0E8541E4CAA0500580F09 /* WBSCommentModel.m */,
+			);
+			path = ApiModel;
+			sourceTree = "<group>";
+		};
+		4EF0E85D1E4CBF9500580F09 /* AFNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				4EF0E85E1E4CBF9500580F09 /* AFNetworking */,
+				4EF0E86C1E4CBF9500580F09 /* UIKit+AFNetworking */,
+			);
+			path = AFNetworking;
+			sourceTree = "<group>";
+		};
+		4EF0E85E1E4CBF9500580F09 /* AFNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				4EF0E8901E4CC09F00580F09 /* AFHTTPRequestOperation.h */,
+				4EF0E8911E4CC09F00580F09 /* AFHTTPRequestOperation.m */,
+				4EF0E8931E4CC0BE00580F09 /* AFURLConnectionOperation.h */,
+				4EF0E8941E4CC0BE00580F09 /* AFURLConnectionOperation.m */,
+				4EF0E8961E4CC13F00580F09 /* AFHTTPRequestOperationManager.h */,
+				4EF0E8971E4CC13F00580F09 /* AFHTTPRequestOperationManager.m */,
+				4EF0E85F1E4CBF9500580F09 /* AFHTTPSessionManager.h */,
+				4EF0E8601E4CBF9500580F09 /* AFHTTPSessionManager.m */,
+				4EF0E8611E4CBF9500580F09 /* AFNetworking.h */,
+				4EF0E8621E4CBF9500580F09 /* AFNetworkReachabilityManager.h */,
+				4EF0E8631E4CBF9500580F09 /* AFNetworkReachabilityManager.m */,
+				4EF0E8641E4CBF9500580F09 /* AFSecurityPolicy.h */,
+				4EF0E8651E4CBF9500580F09 /* AFSecurityPolicy.m */,
+				4EF0E8661E4CBF9500580F09 /* AFURLRequestSerialization.h */,
+				4EF0E8671E4CBF9500580F09 /* AFURLRequestSerialization.m */,
+				4EF0E8681E4CBF9500580F09 /* AFURLResponseSerialization.h */,
+				4EF0E8691E4CBF9500580F09 /* AFURLResponseSerialization.m */,
+				4EF0E86A1E4CBF9500580F09 /* AFURLSessionManager.h */,
+				4EF0E86B1E4CBF9500580F09 /* AFURLSessionManager.m */,
+			);
+			path = AFNetworking;
+			sourceTree = "<group>";
+		};
+		4EF0E86C1E4CBF9500580F09 /* UIKit+AFNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				4EF0E86D1E4CBF9500580F09 /* AFAutoPurgingImageCache.h */,
+				4EF0E86E1E4CBF9500580F09 /* AFAutoPurgingImageCache.m */,
+				4EF0E86F1E4CBF9500580F09 /* AFImageDownloader.h */,
+				4EF0E8701E4CBF9500580F09 /* AFImageDownloader.m */,
+				4EF0E8711E4CBF9500580F09 /* AFNetworkActivityIndicatorManager.h */,
+				4EF0E8721E4CBF9500580F09 /* AFNetworkActivityIndicatorManager.m */,
+				4EF0E8731E4CBF9500580F09 /* UIActivityIndicatorView+AFNetworking.h */,
+				4EF0E8741E4CBF9500580F09 /* UIActivityIndicatorView+AFNetworking.m */,
+				4EF0E8751E4CBF9500580F09 /* UIButton+AFNetworking.h */,
+				4EF0E8761E4CBF9500580F09 /* UIButton+AFNetworking.m */,
+				4EF0E8771E4CBF9500580F09 /* UIImage+AFNetworking.h */,
+				4EF0E8781E4CBF9500580F09 /* UIImageView+AFNetworking.h */,
+				4EF0E8791E4CBF9500580F09 /* UIImageView+AFNetworking.m */,
+				4EF0E87A1E4CBF9500580F09 /* UIKit+AFNetworking.h */,
+				4EF0E87B1E4CBF9500580F09 /* UIProgressView+AFNetworking.h */,
+				4EF0E87C1E4CBF9500580F09 /* UIProgressView+AFNetworking.m */,
+				4EF0E87D1E4CBF9500580F09 /* UIRefreshControl+AFNetworking.h */,
+				4EF0E87E1E4CBF9500580F09 /* UIRefreshControl+AFNetworking.m */,
+				4EF0E87F1E4CBF9500580F09 /* UIWebView+AFNetworking.h */,
+				4EF0E8801E4CBF9500580F09 /* UIWebView+AFNetworking.m */,
+			);
+			path = "UIKit+AFNetworking";
 			sourceTree = "<group>";
 		};
 		4EF149C51D3DF61D00D28265 = {
@@ -1866,19 +2038,16 @@
 		4EF149D01D3DF61D00D28265 /* WBSBlog */ = {
 			isa = PBXGroup;
 			children = (
-				4EF150581D3E371C00D28265 /* Temp临时 */,
-				4E4AD5D21D477536002BFD98 /* 框架_Main */,
-				4EF38FAB1D4310E300CE28A4 /* 主页_Home */,
-				4EF38FC11D4310F100CE28A4 /* 撰写_Publish */,
-				4EF14A3A1D3E30DF00D28265 /* 标签_Tag */,
-				4EF38FC21D4310F100CE28A4 /* 搜索_Search */,
-				4EF14A371D3E30DF00D28265 /* 我的_Me */,
-				4EF152F71D3F39A400D28265 /* 左侧栏_Left_bar */,
-				4EF150041D3E35BD00D28265 /* 登陆_Login */,
-				4EF14A3B1D3E30DF00D28265 /* Utils工具 */,
-				4EF14A361D3E30DF00D28265 /* Lib三方库 */,
+				4EF150581D3E371C00D28265 /* Temp */,
+				4E4AD5D21D477536002BFD98 /* Main */,
+				4EF38FAB1D4310E300CE28A4 /* Home */,
+				4EF14A3A1D3E30DF00D28265 /* Tag */,
+				4EF14A371D3E30DF00D28265 /* Me */,
+				4EF152F71D3F39A400D28265 /* Left_bar */,
+				4EF150041D3E35BD00D28265 /* Login */,
+				4EF14A3B1D3E30DF00D28265 /* Utils */,
+				4EF14A361D3E30DF00D28265 /* Lib库 */,
 				4EDFF2D31E375508000C47D2 /* Images_图片/网页 */,
-				4E3B10521E49B13E002EF825 /* UserProtocol.html */,
 				4EF14A381D3E30DF00D28265 /* WBSSupporting_OtherFiles */,
 				4EF149D11D3DF61D00D28265 /* Supporting Files */,
 			);
@@ -1889,7 +2058,7 @@
 			isa = PBXGroup;
 			children = (
 				4EF149DD1D3DF61D00D28265 /* Assets.xcassets */,
-				4EF149E21D3DF61D00D28265 /* Info.plist */,
+				4EF149E21D3DF61D00D28265 /* WBSBlogInfo.plist */,
 				4EF149D21D3DF61D00D28265 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -1913,29 +2082,31 @@
 			path = WBSBlogUITests;
 			sourceTree = "<group>";
 		};
-		4EF14A361D3E30DF00D28265 /* Lib三方库 */ = {
+		4EF14A361D3E30DF00D28265 /* Lib库 */ = {
 			isa = PBXGroup;
 			children = (
+				4EF0E7EC1E4C3DEF00580F09 /* WBSJsonApi */,
+				4ED5A7931E4B2761005ADE05 /* WBSWordPressApi */,
+				4EF0E85D1E4CBF9500580F09 /* AFNetworking */,
 				4EDFD78C1E348E98006DD1E6 /* FMDB */,
 				4EF14D191D3E32F600D28265 /* GHMarkdownParser */,
-				4EF14D3E1D3E32F600D28265 /* AFNetworking */,
 				4EF14D671D3E32F600D28265 /* Reachability */,
 				4EDFD80D1E374642006DD1E6 /* MMDrawerController */,
 				4EF14D761D3E32F600D28265 /* SDWebImage */,
 				4EF14D971D3E32F600D28265 /* GPUImage */,
+				4E3B10711E4AC9EF002EF825 /* WPXMLRPC */,
 				4EF14FF31D3E332800D28265 /* TTTAttributedLabel */,
 				4EF38FD71D4311F000CE28A4 /* FontAwesome */,
 				4EF150351D3E36DE00D28265 /* ToMarkdown */,
-				4EF38FC31D4311D000CE28A4 /* WPXMLRPC */,
 				4EDFD7CE1E35A991006DD1E6 /* SVProgressHUD */,
 				4EBEC61F1DBB12D70038DFE0 /* SAMKeychain */,
 				4EF38F721D430F4500CE28A4 /* Masonry */,
 			);
-			name = "Lib三方库";
+			name = "Lib库";
 			path = Lib;
 			sourceTree = "<group>";
 		};
-		4EF14A371D3E30DF00D28265 /* 我的_Me */ = {
+		4EF14A371D3E30DF00D28265 /* Me */ = {
 			isa = PBXGroup;
 			children = (
 				4EF150AF1D3E389900D28265 /* WBSUserCenterController.h */,
@@ -1944,7 +2115,6 @@
 				4EDFD79E1E348F76006DD1E6 /* WBSUserModel.h */,
 				4EDFD79F1E348F76006DD1E6 /* WBSUserModel.m */,
 			);
-			name = "我的_Me";
 			path = Me;
 			sourceTree = "<group>";
 		};
@@ -1962,17 +2132,16 @@
 			path = Others;
 			sourceTree = "<group>";
 		};
-		4EF14A3A1D3E30DF00D28265 /* 标签_Tag */ = {
+		4EF14A3A1D3E30DF00D28265 /* Tag */ = {
 			isa = PBXGroup;
 			children = (
 				4EF150AC1D3E387C00D28265 /* WBSTagViewController.h */,
 				4EF150AD1D3E387C00D28265 /* WBSTagViewController.m */,
 			);
-			name = "标签_Tag";
 			path = Tag;
 			sourceTree = "<group>";
 		};
-		4EF14A3B1D3E30DF00D28265 /* Utils工具 */ = {
+		4EF14A3B1D3E30DF00D28265 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
 				4EF150711D3E377D00D28265 /* WBSUtils.h */,
@@ -1988,10 +2157,8 @@
 				4EDFD7841E348C5D006DD1E6 /* NetworkingCenter.m */,
 				4EDFD7A11E3490CE006DD1E6 /* CustomAlertView_Runtime.h */,
 				4EDFD7A21E3490CE006DD1E6 /* CustomAlertView_Runtime.m */,
-				4EF390111D43138100CE28A4 /* Url_API */,
 				4EF150771D3E37BA00D28265 /* Catagory */,
 			);
-			name = "Utils工具";
 			path = Utils;
 			sourceTree = "<group>";
 		};
@@ -2041,65 +2208,6 @@
 				4EF38F6B1D430E6B00CE28A4 /* Foundation and Class Additions */,
 			);
 			path = GHMarkdownParser;
-			sourceTree = "<group>";
-		};
-		4EF14D3E1D3E32F600D28265 /* AFNetworking */ = {
-			isa = PBXGroup;
-			children = (
-				4EF14D3F1D3E32F600D28265 /* AFNetworking */,
-				4EF14D551D3E32F600D28265 /* UIKit+AFNetworking */,
-			);
-			path = AFNetworking;
-			sourceTree = "<group>";
-		};
-		4EF14D3F1D3E32F600D28265 /* AFNetworking */ = {
-			isa = PBXGroup;
-			children = (
-				4EF14D401D3E32F600D28265 /* AFHTTPRequestOperation.h */,
-				4EF14D411D3E32F600D28265 /* AFHTTPRequestOperation.m */,
-				4EF14D421D3E32F600D28265 /* AFHTTPRequestOperationManager.h */,
-				4EF14D431D3E32F600D28265 /* AFHTTPRequestOperationManager.m */,
-				4EF14D441D3E32F600D28265 /* AFHTTPSessionManager.h */,
-				4EF14D451D3E32F600D28265 /* AFHTTPSessionManager.m */,
-				4EF14D461D3E32F600D28265 /* AFNetworking.h */,
-				4EF14D471D3E32F600D28265 /* AFNetworkReachabilityManager.h */,
-				4EF14D481D3E32F600D28265 /* AFNetworkReachabilityManager.m */,
-				4EF14D491D3E32F600D28265 /* AFSecurityPolicy.h */,
-				4EF14D4A1D3E32F600D28265 /* AFSecurityPolicy.m */,
-				4EF14D4B1D3E32F600D28265 /* AFURLConnectionOperation.h */,
-				4EF14D4C1D3E32F600D28265 /* AFURLConnectionOperation.m */,
-				4EF14D4D1D3E32F600D28265 /* AFURLRequestSerialization.h */,
-				4EF14D4E1D3E32F600D28265 /* AFURLRequestSerialization.m */,
-				4EF14D4F1D3E32F600D28265 /* AFURLResponseSerialization.h */,
-				4EF14D501D3E32F600D28265 /* AFURLResponseSerialization.m */,
-				4EF14D511D3E32F600D28265 /* AFURLSessionManager.h */,
-				4EF14D521D3E32F600D28265 /* AFURLSessionManager.m */,
-			);
-			path = AFNetworking;
-			sourceTree = "<group>";
-		};
-		4EF14D551D3E32F600D28265 /* UIKit+AFNetworking */ = {
-			isa = PBXGroup;
-			children = (
-				4EF14D561D3E32F600D28265 /* AFNetworkActivityIndicatorManager.h */,
-				4EF14D571D3E32F600D28265 /* AFNetworkActivityIndicatorManager.m */,
-				4EF14D581D3E32F600D28265 /* UIActivityIndicatorView+AFNetworking.h */,
-				4EF14D591D3E32F600D28265 /* UIActivityIndicatorView+AFNetworking.m */,
-				4EF14D5A1D3E32F600D28265 /* UIAlertView+AFNetworking.h */,
-				4EF14D5B1D3E32F600D28265 /* UIAlertView+AFNetworking.m */,
-				4EF14D5C1D3E32F600D28265 /* UIButton+AFNetworking.h */,
-				4EF14D5D1D3E32F600D28265 /* UIButton+AFNetworking.m */,
-				4EF14D5E1D3E32F600D28265 /* UIImageView+AFNetworking.h */,
-				4EF14D5F1D3E32F600D28265 /* UIImageView+AFNetworking.m */,
-				4EF14D601D3E32F600D28265 /* UIKit+AFNetworking.h */,
-				4EF14D611D3E32F600D28265 /* UIProgressView+AFNetworking.h */,
-				4EF14D621D3E32F600D28265 /* UIProgressView+AFNetworking.m */,
-				4EF14D631D3E32F600D28265 /* UIRefreshControl+AFNetworking.h */,
-				4EF14D641D3E32F600D28265 /* UIRefreshControl+AFNetworking.m */,
-				4EF14D651D3E32F600D28265 /* UIWebView+AFNetworking.h */,
-				4EF14D661D3E32F600D28265 /* UIWebView+AFNetworking.m */,
-			);
-			path = "UIKit+AFNetworking";
 			sourceTree = "<group>";
 		};
 		4EF14D671D3E32F600D28265 /* Reachability */ = {
@@ -2558,7 +2666,7 @@
 			path = TTTAttributedLabel;
 			sourceTree = "<group>";
 		};
-		4EF150041D3E35BD00D28265 /* 登陆_Login */ = {
+		4EF150041D3E35BD00D28265 /* Login */ = {
 			isa = PBXGroup;
 			children = (
 				4EF38F4C1D42F5AC00CE28A4 /* WBSLoginViewController.h */,
@@ -2568,7 +2676,6 @@
 				4EF5E4031D41C878002B6AFF /* View */,
 				4EF150051D3E35F600D28265 /* Model */,
 			);
-			name = "登陆_Login";
 			path = Login;
 			sourceTree = "<group>";
 		};
@@ -2611,7 +2718,7 @@
 			path = ToMarkdown;
 			sourceTree = "<group>";
 		};
-		4EF150581D3E371C00D28265 /* Temp临时 */ = {
+		4EF150581D3E371C00D28265 /* Temp */ = {
 			isa = PBXGroup;
 			children = (
 				4EBEC5E41DBB10920038DFE0 /* 二维码 */,
@@ -2632,7 +2739,7 @@
 				4EF150611D3E374300D28265 /* WBSLastCell.h */,
 				4EF150621D3E374300D28265 /* WBSLastCell.m */,
 			);
-			name = "Temp临时";
+			name = Temp;
 			sourceTree = "<group>";
 		};
 		4EF150771D3E37BA00D28265 /* Catagory */ = {
@@ -2653,14 +2760,13 @@
 			path = catagory;
 			sourceTree = "<group>";
 		};
-		4EF152F71D3F39A400D28265 /* 左侧栏_Left_bar */ = {
+		4EF152F71D3F39A400D28265 /* Left_bar */ = {
 			isa = PBXGroup;
 			children = (
 				4E4AD5E41D477536002BFD98 /* WBSLeftMenuViewController.h */,
 				4E4AD5E51D477536002BFD98 /* WBSLeftMenuViewController.m */,
 				4EF152F81D3F3A1A00D28265 /* SetUp_设置 */,
 			);
-			name = "左侧栏_Left_bar";
 			path = Left_bar;
 			sourceTree = "<group>";
 		};
@@ -2719,7 +2825,7 @@
 			path = Masonry;
 			sourceTree = "<group>";
 		};
-		4EF38FAB1D4310E300CE28A4 /* 主页_Home */ = {
+		4EF38FAB1D4310E300CE28A4 /* Home */ = {
 			isa = PBXGroup;
 			children = (
 				4EF38FB61D4310E300CE28A4 /* WBSHomePostViewController.h */,
@@ -2737,44 +2843,7 @@
 				4EF38FB81D4310E300CE28A4 /* WBSTitleMenuViewController.h */,
 				4EF38FB91D4310E300CE28A4 /* WBSTitleMenuViewController.m */,
 			);
-			name = "主页_Home";
 			path = Home;
-			sourceTree = "<group>";
-		};
-		4EF38FC11D4310F100CE28A4 /* 撰写_Publish */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = "撰写_Publish";
-			path = Publish;
-			sourceTree = "<group>";
-		};
-		4EF38FC21D4310F100CE28A4 /* 搜索_Search */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = "搜索_Search";
-			path = Search;
-			sourceTree = "<group>";
-		};
-		4EF38FC31D4311D000CE28A4 /* WPXMLRPC */ = {
-			isa = PBXGroup;
-			children = (
-				4EF38FC41D4311D000CE28A4 /* WPBase64Utils.h */,
-				4EF38FC51D4311D000CE28A4 /* WPBase64Utils.m */,
-				4EF38FC61D4311D000CE28A4 /* WPStringUtils.h */,
-				4EF38FC71D4311D000CE28A4 /* WPStringUtils.m */,
-				4EF38FC81D4311D000CE28A4 /* WPXMLRPC.h */,
-				4EF38FC91D4311D000CE28A4 /* WPXMLRPCDataCleaner.h */,
-				4EF38FCA1D4311D000CE28A4 /* WPXMLRPCDataCleaner.m */,
-				4EF38FCB1D4311D000CE28A4 /* WPXMLRPCDecoder.h */,
-				4EF38FCC1D4311D000CE28A4 /* WPXMLRPCDecoder.m */,
-				4EF38FCD1D4311D000CE28A4 /* WPXMLRPCDecoderDelegate.h */,
-				4EF38FCE1D4311D000CE28A4 /* WPXMLRPCDecoderDelegate.m */,
-				4EF38FCF1D4311D000CE28A4 /* WPXMLRPCEncoder.h */,
-				4EF38FD01D4311D000CE28A4 /* WPXMLRPCEncoder.m */,
-			);
-			path = WPXMLRPC;
 			sourceTree = "<group>";
 		};
 		4EF38FD71D4311F000CE28A4 /* FontAwesome */ = {
@@ -2791,57 +2860,6 @@
 				4EF38FE01D4311F000CE28A4 /* UIImage+FontAwesome.m */,
 			);
 			path = FontAwesome;
-			sourceTree = "<group>";
-		};
-		4EF390111D43138100CE28A4 /* Url_API */ = {
-			isa = PBXGroup;
-			children = (
-				4EF390121D43138100CE28A4 /* BlogJsonApi */,
-				4EF3902F1D43138100CE28A4 /* MetaWeblogApi */,
-			);
-			path = Url_API;
-			sourceTree = "<group>";
-		};
-		4EF390121D43138100CE28A4 /* BlogJsonApi */ = {
-			isa = PBXGroup;
-			children = (
-				4EF390131D43138100CE28A4 /* NSString+StringByStrippingHTML.h */,
-				4EF390141D43138100CE28A4 /* NSString+StringByStrippingHTML.m */,
-				4EF390151D43138100CE28A4 /* TGBlogJsonApi.h */,
-				4EF390161D43138100CE28A4 /* TGBlogJsonApi.m */,
-				4EF390171D43138100CE28A4 /* TGCategory+TGCategoryFromDictionary.h */,
-				4EF390181D43138100CE28A4 /* TGCategory+TGCategoryFromDictionary.m */,
-				4EF390191D43138100CE28A4 /* TGCategory.h */,
-				4EF3901A1D43138100CE28A4 /* TGCategory.m */,
-				4EF3901B1D43138100CE28A4 /* TGComment+TGCommentFromDictionary.h */,
-				4EF3901C1D43138100CE28A4 /* TGComment+TGCommentFromDictionary.m */,
-				4EF3901D1D43138100CE28A4 /* TGComment.h */,
-				4EF3901E1D43138100CE28A4 /* TGComment.m */,
-				4EF390251D43138100CE28A4 /* TGPost+SDPostFromDictionary.h */,
-				4EF390261D43138100CE28A4 /* TGPost+SDPostFromDictionary.m */,
-				4EF390271D43138100CE28A4 /* TGPost.h */,
-				4EF390281D43138100CE28A4 /* TGPost.m */,
-				4EF390291D43138100CE28A4 /* TGTag+TGTagFromDictionary.h */,
-				4EF3902A1D43138100CE28A4 /* TGTag+TGTagFromDictionary.m */,
-				4EF3902B1D43138100CE28A4 /* TGTag.h */,
-				4EF3902C1D43138100CE28A4 /* TGTag.m */,
-			);
-			path = BlogJsonApi;
-			sourceTree = "<group>";
-		};
-		4EF3902F1D43138100CE28A4 /* MetaWeblogApi */ = {
-			isa = PBXGroup;
-			children = (
-				4EF390301D43138100CE28A4 /* TGMetaWeblogApi.h */,
-				4EF390311D43138100CE28A4 /* TGMetaWeblogAuthApi.h */,
-				4EF390321D43138100CE28A4 /* TGMetaWeblogAuthApi.m */,
-				4EF390331D43138100CE28A4 /* TGMetaWeblogBaseApi.h */,
-				4EF390341D43138100CE28A4 /* TGMetaWeblogXMLRPCApi.h */,
-				4EF390351D43138100CE28A4 /* TGMetaWeblogXMLRPCApi.m */,
-				4EF390361D43138100CE28A4 /* TGXMLRPCApiClient.h */,
-				4EF390371D43138100CE28A4 /* TGXMLRPCApiClient.m */,
-			);
-			path = MetaWeblogApi;
 			sourceTree = "<group>";
 		};
 		4EF5E4031D41C878002B6AFF /* View */ = {
@@ -2921,6 +2939,7 @@
 					4EF149CD1D3DF61D00D28265 = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = 6XB2PBHRRB;
+						LastSwiftMigration = 0820;
 					};
 					4EF149E61D3DF61D00D28265 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -2962,6 +2981,7 @@
 				4EDFF3FE1E375508000C47D2 /* toolbar-reference@2x.png in Resources */,
 				4EDFF3E41E375508000C47D2 /* tabbar-news@3x.png in Resources */,
 				4EDFF3C71E375508000C47D2 /* sidemenu-software@3x.png in Resources */,
+				4E3B10591E49E159002EF825 /* back_button@2x.png in Resources */,
 				4EF14F401D3E32F700D28265 /* lookup.png in Resources */,
 				4EDFF39E1E375508000C47D2 /* scan.png in Resources */,
 				4EDFF3D51E375508000C47D2 /* tabbar-me-selected@2x.png in Resources */,
@@ -3027,7 +3047,6 @@
 				4EDFF3C41E375508000C47D2 /* sidemenu-night@2x.png in Resources */,
 				4EDFF4021E375508000C47D2 /* toolbar-separatorline@2x.png in Resources */,
 				4EDFF3E31E375508000C47D2 /* tabbar-news@2x.png in Resources */,
-				4E3B10531E49B13E002EF825 /* UserProtocol.html in Resources */,
 				4EDFF3791E375508000C47D2 /* widget-original@3x.png in Resources */,
 				4EDFF3EC1E375508000C47D2 /* send@2x.png in Resources */,
 				4EDFF3CC1E375508000C47D2 /* sidemenu_setting@2x.png in Resources */,
@@ -3083,6 +3102,7 @@
 				4EF14F421D3E32F700D28265 /* lookup_miss_etikate.png in Resources */,
 				4EDFF39B1E375508000C47D2 /* picture.png in Resources */,
 				4EF14F091D3E32F700D28265 /* mkdio.h.in in Resources */,
+				4E3B105A1E49E159002EF825 /* back_button@3x.png in Resources */,
 				4EDFF3AD1E375508000C47D2 /* tweetEditing@2x.png in Resources */,
 				4EF14F011D3E32F700D28265 /* blocktags in Resources */,
 				4EF38F541D42F5BA00CE28A4 /* WBSLogin.xib in Resources */,
@@ -3097,6 +3117,7 @@
 				4EDFF3C81E375508000C47D2 /* sidemenu_blog@2x.png in Resources */,
 				4EDFF3E61E375508000C47D2 /* tabbar-tweet-selected@2x.png in Resources */,
 				4EDFF3901E375508000C47D2 /* menu-background(375x667)@2x.png in Resources */,
+				4EF0E81E1E4C5CFB00580F09 /* UserProtocol.html in Resources */,
 				4EDFF3FD1E375508000C47D2 /* toolbar-mention@3x.png in Resources */,
 				4EDFF37C1E375508000C47D2 /* widget_taday@2x.png in Resources */,
 				4EDFF38C1E375508000C47D2 /* login-url@3x.png in Resources */,
@@ -3150,12 +3171,12 @@
 				4EF38F6A1D430AE600CE28A4 /* mkdio.c in Sources */,
 				4EF38F5C1D42FAB200CE28A4 /* TMDHeading.m in Sources */,
 				4EF38F581D42FA2F00CE28A4 /* WBSSettingViewController.m in Sources */,
-				4EF14F251D3E32F700D28265 /* UIProgressView+AFNetworking.m in Sources */,
 				4EF14F971D3E32F700D28265 /* GPUImageLuminosityBlendFilter.m in Sources */,
-				4EF14F1A1D3E32F700D28265 /* AFURLConnectionOperation.m in Sources */,
+				4E3B107F1E4AC9EF002EF825 /* WPBase64Utils.m in Sources */,
 				4EF14FC61D3E32F700D28265 /* GPUImageSolidColorGenerator.m in Sources */,
 				4EF14F5A1D3E32F700D28265 /* GPUImageColorDodgeBlendFilter.m in Sources */,
 				4EF14FA81D3E32F700D28265 /* GPUImageOverlayBlendFilter.m in Sources */,
+				4EF0E8011E4C3DEF00580F09 /* NSString+FormatHTML.m in Sources */,
 				4EF38FA31D430F4600CE28A4 /* ViewController+MASAdditions.m in Sources */,
 				4EF14F7B1D3E32F700D28265 /* GPUImageHardLightBlendFilter.m in Sources */,
 				4EF14F871D3E32F700D28265 /* GPUImageiOSBlurFilter.m in Sources */,
@@ -3165,6 +3186,7 @@
 				4EF14FA71D3E32F700D28265 /* GPUImageOutput.m in Sources */,
 				4EDFD8201E374A74006DD1E6 /* WBSBrowserNavViewController.m in Sources */,
 				4EF14FD11D3E32F700D28265 /* GPUImageThresholdedNonMaximumSuppressionFilter.m in Sources */,
+				4ED5A7B81E4B2761005ADE05 /* WPXMLRPCRequest.m in Sources */,
 				4EF14FCA1D3E32F700D28265 /* GPUImageStretchDistortionFilter.m in Sources */,
 				4EF14FC51D3E32F700D28265 /* GPUImageSoftLightBlendFilter.m in Sources */,
 				4EF14F4B1D3E32F700D28265 /* GPUImageAmatorkaFilter.m in Sources */,
@@ -3177,14 +3199,15 @@
 				4EF14FDE1D3E32F700D28265 /* GPUImageVignetteFilter.m in Sources */,
 				4EF38FE11D4311F000CE28A4 /* FAImageView.m in Sources */,
 				4EF150671D3E374300D28265 /* WBSLastCell.m in Sources */,
-				4EF14F231D3E32F700D28265 /* UIButton+AFNetworking.m in Sources */,
 				4EF14F571D3E32F700D28265 /* GPUImageClosingFilter.m in Sources */,
 				4EF150821D3E37C500D28265 /* NSTextAttachment+Util.m in Sources */,
 				4EF14FE01D3E32F700D28265 /* GPUImageWeakPixelInclusionFilter.m in Sources */,
 				4EF14FDF1D3E32F700D28265 /* GPUImageVoronoiConsumerFilter.m in Sources */,
-				4EF3903D1D43138100CE28A4 /* TGComment.m in Sources */,
+				4ED5A7B51E4B2761005ADE05 /* WPHTTPRequestOperation.m in Sources */,
+				4EF0E8981E4CC13F00580F09 /* AFHTTPRequestOperationManager.m in Sources */,
 				4EF14F071D3E32F700D28265 /* markdown.c in Sources */,
-				4EF14F151D3E32F700D28265 /* AFHTTPRequestOperation.m in Sources */,
+				4EF0E8591E4CAA0500580F09 /* WBSCategoryModel.m in Sources */,
+				4EF0E88A1E4CBF9600580F09 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				4EF14F5E1D3E32F700D28265 /* GPUImageContrastFilter.m in Sources */,
 				4EDFD78B1E348E5D006DD1E6 /* FMDBManger.m in Sources */,
 				4EF14F711D3E32F700D28265 /* GPUImageFilterPipeline.m in Sources */,
@@ -3198,10 +3221,12 @@
 				4EF14F3C1D3E32F700D28265 /* UIImage+MultiFormat.m in Sources */,
 				4EF14F831D3E32F700D28265 /* GPUImageHoughTransformLineDetector.m in Sources */,
 				4EF14FA31D3E32F700D28265 /* GPUImageNonMaximumSuppressionFilter.m in Sources */,
+				4EF0E85A1E4CAA0500580F09 /* WBSCommentModel.m in Sources */,
 				4EF14F861D3E32F700D28265 /* GPUImageHueFilter.m in Sources */,
 				4EBEC5EC1DBB10A90038DFE0 /* WBSQRCodeOauthViewController.m in Sources */,
+				4EF0E84C1E4C7F5A00580F09 /* WBSNetworking.m in Sources */,
 				4EF14F591D3E32F700D28265 /* GPUImageColorBurnBlendFilter.m in Sources */,
-				4EF14F1C1D3E32F700D28265 /* AFURLResponseSerialization.m in Sources */,
+				4EF0E8301E4C764300580F09 /* WBSBaseCoreApi.m in Sources */,
 				4EF14F351D3E32F700D28265 /* SDWebImageDecoder.m in Sources */,
 				4EF14F341D3E32F700D28265 /* SDWebImageCompat.m in Sources */,
 				4EF150701D3E376000D28265 /* WBSOperationBar.m in Sources */,
@@ -3210,25 +3235,25 @@
 				4EF14FD41D3E32F700D28265 /* GPUImageToneCurveFilter.m in Sources */,
 				4EF14FD31D3E32F700D28265 /* GPUImageTiltShiftFilter.m in Sources */,
 				4EF14F8C1D3E32F700D28265 /* GPUImageLaplacianFilter.m in Sources */,
-				4EF38FD41D4311D000CE28A4 /* WPXMLRPCDecoder.m in Sources */,
 				4EF38FBF1D4310E300CE28A4 /* WBSHomePostViewController.m in Sources */,
-				4EF390451D43138100CE28A4 /* TGMetaWeblogAuthApi.m in Sources */,
 				4EF14FBF1D3E32F700D28265 /* GPUImageShiTomasiFeatureDetectionFilter.m in Sources */,
+				4EF0E88E1E4CBF9600580F09 /* UIRefreshControl+AFNetworking.m in Sources */,
 				4EDFD8181E374642006DD1E6 /* MMDrawerController.m in Sources */,
 				4EF14FC91D3E32F700D28265 /* GPUImageStillCamera.m in Sources */,
 				4EF14F4F1D3E32F700D28265 /* GPUImageBoxBlurFilter.m in Sources */,
 				4E4AD5ED1D477536002BFD98 /* WBSBrowserViewController.m in Sources */,
 				4EF14F901D3E32F700D28265 /* GPUImageLineGenerator.m in Sources */,
 				4EF14F7C1D3E32F700D28265 /* GPUImageHarrisCornerDetectionFilter.m in Sources */,
-				4EF38FD21D4311D000CE28A4 /* WPStringUtils.m in Sources */,
 				4EF14F931D3E32F700D28265 /* GPUImageLowPassFilter.m in Sources */,
 				4EF14FC31D3E32F700D28265 /* GPUImageSobelEdgeDetectionFilter.m in Sources */,
 				4EF1504E1D3E36DE00D28265 /* TMDBold.m in Sources */,
 				4EF14F4A1D3E32F700D28265 /* GPUImageAlphaBlendFilter.m in Sources */,
 				4EF14F941D3E32F700D28265 /* GPUImageLuminanceRangeFilter.m in Sources */,
 				4EF5E44A1D4230DA002B6AFF /* (null) in Sources */,
+				4ED5A7B21E4B2761005ADE05 /* WordPressXMLRPCApi.m in Sources */,
 				4EF14F031D3E32F700D28265 /* emmatch.c in Sources */,
 				4EF38F9D1D430F4600CE28A4 /* MASLayoutConstraint.m in Sources */,
+				4EF0E8851E4CBF9600580F09 /* AFURLResponseSerialization.m in Sources */,
 				4EF14FD91D3E32F700D28265 /* GPUImageTwoPassFilter.m in Sources */,
 				4EF14FE31D3E32F700D28265 /* GPUImageZoomBlurFilter.m in Sources */,
 				4EDFD7BC1E34B973006DD1E6 /* WBSNetRequest.m in Sources */,
@@ -3241,6 +3266,9 @@
 				4EF14F981D3E32F700D28265 /* GPUImageMaskFilter.m in Sources */,
 				4EF14FDC1D3E32F700D28265 /* GPUImageUnsharpMaskFilter.m in Sources */,
 				4EF38FBA1D4310E300CE28A4 /* WBSCategoryCell.m in Sources */,
+				4EF0E8831E4CBF9500580F09 /* AFSecurityPolicy.m in Sources */,
+				4EF0E8891E4CBF9600580F09 /* AFNetworkActivityIndicatorManager.m in Sources */,
+				4EF0E8841E4CBF9600580F09 /* AFURLRequestSerialization.m in Sources */,
 				4E4AD5EB1D477536002BFD98 /* WBSBottomBarViewController.m in Sources */,
 				4EF14F9D1D3E32F700D28265 /* GPUImageMotionBlurFilter.m in Sources */,
 				4EF150551D3E36DE00D28265 /* TMDLineBreak.m in Sources */,
@@ -3260,21 +3288,22 @@
 				4EF14F9E1D3E32F700D28265 /* GPUImageMotionDetector.m in Sources */,
 				4EF14F5C1D3E32F700D28265 /* GPUImageColorMatrixFilter.m in Sources */,
 				4EF14FE81D3E32F700D28265 /* GPUImageView.m in Sources */,
+				4EF0E85C1E4CAA0500580F09 /* WBSTagModel.m in Sources */,
 				4EF14F3D1D3E32F700D28265 /* UIImageView+HighlightedWebCache.m in Sources */,
 				4EF38FBB1D4310E300CE28A4 /* WBSDropdownMenuView.m in Sources */,
 				4EF14F781D3E32F700D28265 /* GPUImageGlassSphereFilter.m in Sources */,
 				4EF14F851D3E32F700D28265 /* GPUImageHueBlendFilter.m in Sources */,
-				4EF14F221D3E32F700D28265 /* UIAlertView+AFNetworking.m in Sources */,
 				4EF14F6C1D3E32F700D28265 /* GPUImageExposureFilter.m in Sources */,
+				4EF0E85B1E4CAA0500580F09 /* WBSPostModel.m in Sources */,
+				4ED5A7B91E4B2761005ADE05 /* WPXMLRPCRequestOperation.m in Sources */,
 				4EDFD7A31E3490CE006DD1E6 /* CustomAlertView_Runtime.m in Sources */,
 				4EF14FA91D3E32F700D28265 /* GPUImageParallelCoordinateLineTransformFilter.m in Sources */,
 				4EF14FDA1D3E32F700D28265 /* GPUImageTwoPassTextureSamplingFilter.m in Sources */,
 				4EF14FE71D3E32F700D28265 /* GPUImagePicture.m in Sources */,
 				4E4AD5EE1D477536002BFD98 /* WBSDetailsViewController.m in Sources */,
-				4EF390391D43138100CE28A4 /* TGBlogJsonApi.m in Sources */,
 				4EF14F521D3E32F700D28265 /* GPUImageBulgeDistortionFilter.m in Sources */,
+				4ED5A7AF1E4B2761005ADE05 /* WordPressRestApi.m in Sources */,
 				4EF14F641D3E32F700D28265 /* GPUImageDilationFilter.m in Sources */,
-				4EF14F271D3E32F700D28265 /* UIWebView+AFNetworking.m in Sources */,
 				4EBEC6261DBB12D80038DFE0 /* SAMKeychain.m in Sources */,
 				4EF150501D3E36DE00D28265 /* TMDElement.m in Sources */,
 				4EDFD79A1E348E98006DD1E6 /* FMDatabasePool.m in Sources */,
@@ -3282,29 +3311,28 @@
 				4EDFD7CD1E35A90E006DD1E6 /* WBSConfig.m in Sources */,
 				4EF14FAB1D3E32F700D28265 /* GPUImagePinchDistortionFilter.m in Sources */,
 				4EF14FCF1D3E32F700D28265 /* GPUImageThreeInputFilter.m in Sources */,
-				4EF14F241D3E32F700D28265 /* UIImageView+AFNetworking.m in Sources */,
 				4EF5E4451D4230DA002B6AFF /* (null) in Sources */,
 				4EF14F791D3E32F700D28265 /* GPUImageGrayscaleFilter.m in Sources */,
-				4EF390421D43138100CE28A4 /* TGTag+TGTagFromDictionary.m in Sources */,
-				4EF38FD51D4311D000CE28A4 /* WPXMLRPCDecoderDelegate.m in Sources */,
-				4EF390411D43138100CE28A4 /* TGPost.m in Sources */,
 				4EDFD7DC1E35A991006DD1E6 /* SVRadialGradientLayer.m in Sources */,
+				4ED5A7B11E4B2761005ADE05 /* WordPressRestApiJSONRequestOperationManager.m in Sources */,
 				4EF5E4021D41C870002B6AFF /* (null) in Sources */,
 				4EF14F7A1D3E32F700D28265 /* GPUImageHalftoneFilter.m in Sources */,
-				4EF390381D43138100CE28A4 /* NSString+StringByStrippingHTML.m in Sources */,
+				4EF0E8921E4CC09F00580F09 /* AFHTTPRequestOperation.m in Sources */,
 				4EF14F361D3E32F700D28265 /* SDWebImageDownloader.m in Sources */,
 				4EF14F3A1D3E32F700D28265 /* UIButton+WebCache.m in Sources */,
 				4EDFD7D91E35A991006DD1E6 /* SVProgressAnimatedView.m in Sources */,
 				4EF14FE11D3E32F700D28265 /* GPUImageWhiteBalanceFilter.m in Sources */,
 				4EF38FBC1D4310E300CE28A4 /* WBSPostCell.m in Sources */,
+				4EF0E88B1E4CBF9600580F09 /* UIButton+AFNetworking.m in Sources */,
 				4EF14FFB1D3E332800D28265 /* TTTAttributedLabel.m in Sources */,
 				4EF14F921D3E32F700D28265 /* GPUImageLookupFilter.m in Sources */,
 				4EF14FB51D3E32F700D28265 /* GPUImageRGBClosingFilter.m in Sources */,
-				4EF390471D43138100CE28A4 /* TGXMLRPCApiClient.m in Sources */,
 				4EF38FA11D430F4600CE28A4 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
+				4EF0E8191E4C52E600580F09 /* WBSJsonApi.m in Sources */,
 				4EF38F9A1D430F4600CE28A4 /* MASCompositeConstraint.m in Sources */,
 				4EF38FE41D4311F000CE28A4 /* UIFont+FontAwesome.m in Sources */,
 				4EF14FB11D3E32F700D28265 /* GPUImagePosterizeFilter.m in Sources */,
+				4ED5A7AE1E4B2761005ADE05 /* WordPressApi.m in Sources */,
 				4EF14FCD1D3E32F700D28265 /* GPUImageTextureInput.m in Sources */,
 				4EDFD7881E348C5D006DD1E6 /* NetworkingCenter.m in Sources */,
 				4EDFD81A1E374642006DD1E6 /* UIViewController+MMDrawerController.m in Sources */,
@@ -3314,7 +3342,7 @@
 				4EF14F4E1D3E32F700D28265 /* GPUImageBilateralFilter.m in Sources */,
 				4EF14F701D3E32F700D28265 /* GPUImageFilterGroup.m in Sources */,
 				4EF14F491D3E32F700D28265 /* GPUImageAddBlendFilter.m in Sources */,
-				4EF38FD11D4311D000CE28A4 /* WPBase64Utils.m in Sources */,
+				4EF0E88C1E4CBF9600580F09 /* UIImageView+AFNetworking.m in Sources */,
 				4EF14FB91D3E32F700D28265 /* GPUImageRGBOpeningFilter.m in Sources */,
 				4EF14F7F1D3E32F700D28265 /* GPUImageHighPassFilter.m in Sources */,
 				4EF14F0C1D3E32F700D28265 /* tags.c in Sources */,
@@ -3326,15 +3354,12 @@
 				4EF150851D3E37C500D28265 /* UIView+Util.m in Sources */,
 				4EF14FC71D3E32F700D28265 /* GPUImageSourceOverBlendFilter.m in Sources */,
 				4EF14F841D3E32F700D28265 /* GPUImageHSBFilter.m in Sources */,
-				4EF14F211D3E32F700D28265 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
+				4E3B10831E4AC9EF002EF825 /* WPXMLRPCDecoderDelegate.m in Sources */,
+				4EF0E8871E4CBF9600580F09 /* AFAutoPurgingImageCache.m in Sources */,
 				4EF5E44B1D4230DA002B6AFF /* (null) in Sources */,
-				4EF14F191D3E32F700D28265 /* AFSecurityPolicy.m in Sources */,
-				4EF14F1D1D3E32F700D28265 /* AFURLSessionManager.m in Sources */,
 				4EF14F721D3E32F700D28265 /* GPUImageFramebuffer.m in Sources */,
 				4EF14FB31D3E32F700D28265 /* GPUImageRawDataInput.m in Sources */,
 				4EF14F0A1D3E32F700D28265 /* resource.c in Sources */,
-				4EF3903C1D43138100CE28A4 /* TGComment+TGCommentFromDictionary.m in Sources */,
-				4EF14F261D3E32F700D28265 /* UIRefreshControl+AFNetworking.m in Sources */,
 				4EF14F511D3E32F700D28265 /* GPUImageBuffer.m in Sources */,
 				4EF14F0D1D3E32F700D28265 /* xml.c in Sources */,
 				4EDFD8191E374642006DD1E6 /* MMDrawerVisualState.m in Sources */,
@@ -3350,17 +3375,14 @@
 				4EF14F371D3E32F700D28265 /* SDWebImageDownloaderOperation.m in Sources */,
 				4EBEC6271DBB12D80038DFE0 /* SAMKeychainQuery.m in Sources */,
 				4EDFD79C1E348E98006DD1E6 /* FMResultSet.m in Sources */,
-				4EF38FD31D4311D000CE28A4 /* WPXMLRPCDataCleaner.m in Sources */,
-				4EF38FD61D4311D000CE28A4 /* WPXMLRPCEncoder.m in Sources */,
-				4EF14F171D3E32F700D28265 /* AFHTTPSessionManager.m in Sources */,
 				4EF14F8D1D3E32F700D28265 /* GPUImageLevelsFilter.m in Sources */,
 				4EF38FBE1D4310E300CE28A4 /* WBSPostEditViewController.m in Sources */,
 				4EF14F8A1D3E32F700D28265 /* GPUImageKuwaharaRadius3Filter.m in Sources */,
+				4E3B10801E4AC9EF002EF825 /* WPStringUtils.m in Sources */,
 				4E4AD5F21D477536002BFD98 /* WBSRootTabBarController.m in Sources */,
 				4EF5E4401D4230DA002B6AFF /* (null) in Sources */,
 				4EBEC5EB1DBB10A90038DFE0 /* WBSScanQRCodeViewController.m in Sources */,
 				4E4AD5FA1D477582002BFD98 /* WBSTitleBarView.m in Sources */,
-				4EF390431D43138100CE28A4 /* TGTag.m in Sources */,
 				4EF14FDD1D3E32F700D28265 /* GPUImageVideoCamera.m in Sources */,
 				4EF38FA21D430F4600CE28A4 /* View+MASAdditions.m in Sources */,
 				4EF14F9B1D3E32F700D28265 /* GPUImageMonochromeFilter.m in Sources */,
@@ -3372,17 +3394,13 @@
 				4EF14F021D3E32F700D28265 /* Csio.c in Sources */,
 				4EF14FD01D3E32F700D28265 /* GPUImageThresholdEdgeDetectionFilter.m in Sources */,
 				4EF14F541D3E32F700D28265 /* GPUImageCGAColorspaceFilter.m in Sources */,
-				4EF14F181D3E32F700D28265 /* AFNetworkReachabilityManager.m in Sources */,
 				4EF149D61D3DF61D00D28265 /* WBSBlogAppDelegate.m in Sources */,
 				4EF150651D3E374300D28265 /* WBSEmojiPanelVC.m in Sources */,
 				4EF14F6B1D3E32F700D28265 /* GPUImageExclusionBlendFilter.m in Sources */,
 				4EF14F611D3E32F700D28265 /* GPUImageCrosshatchFilter.m in Sources */,
 				4EF14FCE1D3E32F700D28265 /* GPUImageTextureOutput.m in Sources */,
-				4EF390401D43138100CE28A4 /* TGPost+SDPostFromDictionary.m in Sources */,
 				4EF14FD61D3E32F700D28265 /* GPUImageTransformFilter.m in Sources */,
-				4EF14F161D3E32F700D28265 /* AFHTTPRequestOperationManager.m in Sources */,
 				4EF14FD21D3E32F700D28265 /* GPUImageThresholdSketchFilter.m in Sources */,
-				4EF14F1B1D3E32F700D28265 /* AFURLRequestSerialization.m in Sources */,
 				4EF14F331D3E32F700D28265 /* SDImageCache.m in Sources */,
 				4EF14FB21D3E32F700D28265 /* GPUImagePrewittEdgeDetectionFilter.m in Sources */,
 				4EF5E43C1D4230DA002B6AFF /* (null) in Sources */,
@@ -3390,9 +3408,9 @@
 				4E4AD5F01D477536002BFD98 /* WBSBasePostViewController.m in Sources */,
 				4EF14F471D3E32F700D28265 /* GPUImage3x3TextureSamplingFilter.m in Sources */,
 				4E4AD5F41D477536002BFD98 /* WBSOptionButton.m in Sources */,
-				4E4AD5EF1D477536002BFD98 /* WBSErrorViewController.m in Sources */,
 				4EDFD7F11E360463006DD1E6 /* UIWindow+KeyWindow.m in Sources */,
 				4EF150AE1D3E387C00D28265 /* WBSTagViewController.m in Sources */,
+				4ED5A7B41E4B2761005ADE05 /* WPHTTPAuthenticationAlertController.m in Sources */,
 				4EF5E43D1D4230DA002B6AFF /* (null) in Sources */,
 				4EDFD7A01E348F76006DD1E6 /* WBSUserModel.m in Sources */,
 				4EF14F821D3E32F700D28265 /* GPUImageHistogramGenerator.m in Sources */,
@@ -3420,28 +3438,33 @@
 				4EF14F891D3E32F700D28265 /* GPUImageKuwaharaFilter.m in Sources */,
 				4EF14F7E1D3E32F700D28265 /* GPUImageHighlightShadowFilter.m in Sources */,
 				4EF14F961D3E32F700D28265 /* GPUImageLuminosity.m in Sources */,
+				4EF0E8881E4CBF9600580F09 /* AFImageDownloader.m in Sources */,
 				4EF150831D3E37C500D28265 /* UIImage+Util.m in Sources */,
 				4EF14F561D3E32F700D28265 /* GPUImageChromaKeyFilter.m in Sources */,
 				4EF14FA01D3E32F700D28265 /* GPUImageMovieComposition.m in Sources */,
+				4EF0E8821E4CBF9500580F09 /* AFNetworkReachabilityManager.m in Sources */,
 				4EF14F461D3E32F700D28265 /* GPUImage3x3ConvolutionFilter.m in Sources */,
 				4EF149D31D3DF61D00D28265 /* main.m in Sources */,
+				4EF0E8811E4CBF9500580F09 /* AFHTTPSessionManager.m in Sources */,
+				4E3B10811E4AC9EF002EF825 /* WPXMLRPCDataCleaner.m in Sources */,
 				4EF14FDB1D3E32F700D28265 /* GPUImageUIElement.m in Sources */,
-				4EF3903B1D43138100CE28A4 /* TGCategory.m in Sources */,
+				4EF0E8861E4CBF9600580F09 /* AFURLSessionManager.m in Sources */,
 				4EF14F5F1D3E32F700D28265 /* GPUImageCropFilter.m in Sources */,
+				4ED5A7B71E4B2761005ADE05 /* WPXMLRPCClient.m in Sources */,
 				4EDFD7D81E35A991006DD1E6 /* SVIndefiniteAnimatedView.m in Sources */,
 				4EF14FBB1D3E32F700D28265 /* GPUImageSaturationFilter.m in Sources */,
+				4EF0E88F1E4CBF9600580F09 /* UIWebView+AFNetworking.m in Sources */,
 				4EF14F771D3E32F700D28265 /* GPUImageGaussianSelectiveBlurFilter.m in Sources */,
 				4EF14F001D3E32F700D28265 /* basename.c in Sources */,
 				4EF14FCC1D3E32F700D28265 /* GPUImageSwirlFilter.m in Sources */,
 				4EF14F731D3E32F700D28265 /* GPUImageFramebufferCache.m in Sources */,
-				4EF14F201D3E32F700D28265 /* AFNetworkActivityIndicatorManager.m in Sources */,
+				4EF0E8951E4CC0BE00580F09 /* AFURLConnectionOperation.m in Sources */,
 				4EF150561D3E36DE00D28265 /* TMDParagraph.m in Sources */,
 				4EF14F4C1D3E32F700D28265 /* GPUImageAverageColor.m in Sources */,
 				4EF5E4471D4230DA002B6AFF /* (null) in Sources */,
 				4EF14F651D3E32F700D28265 /* GPUImageDirectionalNonMaximumSuppressionFilter.m in Sources */,
 				4EF14FAD1D3E32F700D28265 /* GPUImagePixellatePositionFilter.m in Sources */,
 				4EF1504D1D3E36DE00D28265 /* TMDAnchor.m in Sources */,
-				4EF3903A1D43138100CE28A4 /* TGCategory+TGCategoryFromDictionary.m in Sources */,
 				4EF38F9C1D430F4600CE28A4 /* MASConstraintMaker.m in Sources */,
 				4EF14F631D3E32F700D28265 /* GPUImageDifferenceBlendFilter.m in Sources */,
 				4EF14FA41D3E32F700D28265 /* GPUImageNormalBlendFilter.m in Sources */,
@@ -3453,15 +3476,17 @@
 				4EF14F5B1D3E32F700D28265 /* GPUImageColorInvertFilter.m in Sources */,
 				4EF14FE21D3E32F700D28265 /* GPUImageXYDerivativeFilter.m in Sources */,
 				4EF150751D3E377D00D28265 /* WBSUtils.m in Sources */,
+				4E3B10821E4AC9EF002EF825 /* WPXMLRPCDecoder.m in Sources */,
 				4EF14FD71D3E32F700D28265 /* GPUImageTwoInputCrossTextureSamplingFilter.m in Sources */,
+				4ED5A7B31E4B2761005ADE05 /* WPComOAuthController.m in Sources */,
 				4EF14F041D3E32F700D28265 /* generate.c in Sources */,
 				4EF5E43F1D4230DA002B6AFF /* (null) in Sources */,
+				4E3B10841E4AC9EF002EF825 /* WPXMLRPCEncoder.m in Sources */,
 				4EDFD7991E348E98006DD1E6 /* FMDatabaseAdditions.m in Sources */,
 				4EF14F761D3E32F700D28265 /* GPUImageGaussianBlurPositionFilter.m in Sources */,
 				4EF38F9B1D430F4600CE28A4 /* MASConstraint.m in Sources */,
 				4EF14F6D1D3E32F700D28265 /* GPUImageFalseColorFilter.m in Sources */,
 				4EF38FA01D430F4600CE28A4 /* NSArray+MASAdditions.m in Sources */,
-				4EF390461D43138100CE28A4 /* TGMetaWeblogXMLRPCApi.m in Sources */,
 				4EF14FC81D3E32F700D28265 /* GPUImageSphereRefractionFilter.m in Sources */,
 				4EF38F9F1D430F4600CE28A4 /* MASViewConstraint.m in Sources */,
 				4EF14FC01D3E32F700D28265 /* GPUImageSingleComponentGaussianBlurFilter.m in Sources */,
@@ -3469,6 +3494,7 @@
 				4EF14EFF1D3E32F700D28265 /* amalloc.c in Sources */,
 				4EF150081D3E360900D28265 /* WBSApiInfo.m in Sources */,
 				4EDFD8171E374642006DD1E6 /* MMDrawerBarButtonItem.m in Sources */,
+				4EF0E88D1E4CBF9600580F09 /* UIProgressView+AFNetworking.m in Sources */,
 				4EF14F9A1D3E32F700D28265 /* GPUImageMissEtikateFilter.m in Sources */,
 				4EF14FE61D3E32F700D28265 /* GPUImagePicture+TextureSubimage.m in Sources */,
 				4EF150661D3E374300D28265 /* WBSPlaceholderTextView.m in Sources */,
@@ -3477,6 +3503,7 @@
 				4EF14F3B1D3E32F700D28265 /* UIImage+GIF.m in Sources */,
 				4E4AD5FD1D477595002BFD98 /* WBSHorizonalTableViewController.m in Sources */,
 				4EF38F9E1D430F4600CE28A4 /* MASViewAttribute.m in Sources */,
+				4ED5A7B61E4B2761005ADE05 /* WPRSDParser.m in Sources */,
 				4EF38F511D42F5AC00CE28A4 /* WBSLoginViewController.m in Sources */,
 				4EF14F051D3E32F700D28265 /* github_flavoured.c in Sources */,
 				4EF38F711D430E6B00CE28A4 /* GHMarkdownParser.m in Sources */,
@@ -3484,6 +3511,7 @@
 				4EF14F751D3E32F700D28265 /* GPUImageGaussianBlurFilter.m in Sources */,
 				4EF14F8F1D3E32F700D28265 /* GPUImageLinearBurnBlendFilter.m in Sources */,
 				4EF14FA11D3E32F700D28265 /* GPUImageMultiplyBlendFilter.m in Sources */,
+				4ED5A7B01E4B2761005ADE05 /* WordPressRestApiJSONRequestOperation.m in Sources */,
 				4EF14FAE1D3E32F700D28265 /* GPUImagePoissonBlendFilter.m in Sources */,
 				4EF14F6E1D3E32F700D28265 /* GPUImageFASTCornerDetectionFilter.m in Sources */,
 			);
@@ -3610,6 +3638,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = 6XB2PBHRRB;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -3617,17 +3646,18 @@
 					"$(PROJECT_DIR)/WBSBlog/Lib",
 				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/WBSBlog/Others/WBSPrefixHeader.pch";
-				INFOPLIST_FILE = WBSBlog/Info.plist;
+				INFOPLIST_FILE = WBSBlog/WBSBlogInfo.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
-					"$(PROJECT_DIR)/WBSBlog/Lib/WPXMLRPC/SAMKeychain",
-					"$(PROJECT_DIR)/WBSBlog/Lib/WPXMLRPC/SVProgressHUD",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.webersongao.WBSBlog;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "WBSBlog/Utils/WBSBlog-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -3637,6 +3667,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = 6XB2PBHRRB;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -3644,7 +3675,7 @@
 					"$(PROJECT_DIR)/WBSBlog/Lib",
 				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/WBSBlog/Others/WBSPrefixHeader.pch";
-				INFOPLIST_FILE = WBSBlog/Info.plist;
+				INFOPLIST_FILE = WBSBlog/WBSBlogInfo.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
@@ -3655,6 +3686,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.webersongao.WBSBlog;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "WBSBlog/Utils/WBSBlog-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

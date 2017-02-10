@@ -27,7 +27,7 @@
 
 - (void)setLayout
 {
-    NSMutableArray *items = [NSMutableArray new];
+    NSMutableArray *items = [[NSMutableArray alloc]init];
     NSArray *images    = @[@"toolbar-keyboardUp", @"toolbar-separatorline", @"toolbar-comments", @"toolbar-editingComment", @"toolbar-star", @"toolbar-share", @"toolbar-report"];
     NSArray *selectors = @[@"switchMode:", @"", @"showComments:", @"editComment:", @"toggleStar:", @"share:", @"report:"];
     
@@ -118,12 +118,12 @@
 
 - (void)addBorder
 {
-    UIView *upperBorder = [UIView new];
+    UIView *upperBorder = [[UIView alloc]init];
     upperBorder.backgroundColor = [UIColor lightGrayColor];
     upperBorder.translatesAutoresizingMaskIntoConstraints = NO;
     [self addSubview:upperBorder];
     
-    UIView *bottomBorder = [UIView new];
+    UIView *bottomBorder = [[UIView alloc]init];
     bottomBorder.backgroundColor = [UIColor lightGrayColor];
     bottomBorder.translatesAutoresizingMaskIntoConstraints = NO;
     [self addSubview:bottomBorder];

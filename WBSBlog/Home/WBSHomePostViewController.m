@@ -7,14 +7,15 @@
 //
 
 #import "WBSHomePostViewController.h"
-#import "TGMetaWeblogApi.h"
+#import "WordPressXMLRPCApi.h"
 #import "WBSPostCell.h"
 #import "WBSPostDetailViewController.h"
-#import "TGBlogJsonApi.h"
+#import "WBSJsonApi.h"
 #import "WBSDropdownMenuView.h"
 #import "WBSTitleMenuViewController.h"
-#import "WBSErrorViewController.h"
 #import "WBSLoginViewController.h"
+#import "WBSPostModel.h"
+#import "WBSCategoryModel.h"
 
 
 static NSString *kPostCellID = @"PostCell";//CellID
@@ -107,8 +108,7 @@ const int MAX_PAGE_SIZE = 10;//每页显示数目
 - (void) viewDidAppear:(BOOL)animated{
     //JSON API不支持
     if (![WBSConfig isJSONAPIEnable] && _isSearch) {
-        WBSErrorViewController *errorCtl = [[WBSErrorViewController alloc]init];
-        [WBSUtils showApiNotSupported:self redirectTo:errorCtl];
+        [WBSUtils showErrorMessage:@"ApiNotSupport"];
         return;
     }
 }
@@ -179,13 +179,13 @@ const int MAX_PAGE_SIZE = 10;//每页显示数目
     NSString *title = [adaptedPost objectForKey:@"title"];;//文章标题
     NSString *content = [adaptedPost objectForKey:@"content"];;//文章内容
     
-    self.label.font = [UIFont boldSystemFontOfSize:15];
-    [self.label setAttributedText:[WBSUtils attributedTittle:title]];
-    CGFloat height = [self.label sizeThatFits:CGSizeMake(tableView.frame.size.width - 16, MAXFLOAT)].height;
+    self.desLabel.font = [UIFont boldSystemFontOfSize:15];
+    [self.desLabel setAttributedText:[WBSUtils attributedTittle:title]];
+    CGFloat height = [self.desLabel sizeThatFits:CGSizeMake(tableView.frame.size.width - 16, MAXFLOAT)].height;
     
-    self.label.text = [WBSUtils shortString:content andLength:MAX_DESCRIPTION_LENGTH];
-    self.label.font = [UIFont systemFontOfSize:13];
-    height += [self.label sizeThatFits:CGSizeMake(tableView.frame.size.width - 16, MAXFLOAT)].height;
+    self.desLabel.text = [WBSUtils shortString:content andLength:MAX_DESCRIPTION_LENGTH];
+    self.desLabel.font = [UIFont systemFontOfSize:13];
+    height += [self.desLabel sizeThatFits:CGSizeMake(tableView.frame.size.width - 16, MAXFLOAT)].height;
     
     return height + 42;
 }
@@ -220,7 +220,7 @@ const int MAX_PAGE_SIZE = 10;//每页显示数目
     
     NSDictionary *post = self.posts[indexPath.row];
     
-    TGPost * jsonPost = self.posts[indexPath.row];
+    WBSPostModel * jsonPost = self.posts[indexPath.row];
     
     WBSPostDetailViewController *detailsViewController;
     if ([WBSConfig isJSONAPIEnable]) {
@@ -247,13 +247,13 @@ const int MAX_PAGE_SIZE = 10;//每页显示数目
     NSMutableDictionary *adaptedPost = [NSMutableDictionary dictionary];
     switch (type) {
         case APITypeJSON:{
-            TGPost *jsonPost = post;
+            WBSPostModel *jsonPost = post;
             [adaptedPost setValue:[NSString stringWithFormat:@"%ld",jsonPost.ID] forKey:@"id"];
             [adaptedPost setValue:jsonPost.title forKey:@"title"];
             [adaptedPost setValue:jsonPost.content forKey:@"content"];
             [adaptedPost setValue:[WBSUtils dateFromString:jsonPost.date] forKey:@"date"];
             [adaptedPost setValue:@"" forKey:@"author"];
-            for (TGCategory *category in jsonPost.categoriesArray) {
+            for (WBSCategoryModel *category in jsonPost.categoriesArray) {
                 [categroies addObject:category.title];
             }
             [adaptedPost setValue:categroies forKey:@"categroies"];
@@ -261,7 +261,7 @@ const int MAX_PAGE_SIZE = 10;//每页显示数目
             [adaptedPost setValue:comments forKey:@"comments"];
             break;
         }
-        case APITypeMetaWeblog:{
+        case APITypeXMLRPC:{
             [adaptedPost setValue:[post valueForKey:@"postid"] forKey:@"id"];
             [adaptedPost setValue:[post valueForKey:@"title"] forKey:@"title"];
             [adaptedPost setValue:[post valueForKey:@"description"] forKey:@"content"];
@@ -337,8 +337,7 @@ const int MAX_PAGE_SIZE = 10;//每页显示数目
     
     //JSON API不支持
     if (![WBSConfig isJSONAPIEnable] && _isSearch) {
-        WBSErrorViewController *errorCtl = [[WBSErrorViewController alloc]init];
-        [WBSUtils showApiNotSupported:self redirectTo:errorCtl];
+        [WBSUtils showErrorMessage:@"ApiNotSupport"];
         [self.refreshControl endRefreshing];
         return;
     }
@@ -381,7 +380,7 @@ const int MAX_PAGE_SIZE = 10;//每页显示数目
         //设置API类型
         self.apiType = APITypeJSON;
         
-        TGBlogJsonApi *jsonAPI = self.api;
+        WBSJsonApi *jsonAPI = self.api;
         
         NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
         NSString *baseURL = [userDefaults objectForKey:WBSSiteBaseURL];
@@ -393,9 +392,9 @@ const int MAX_PAGE_SIZE = 10;//每页显示数目
         //由于置顶文章会影响分页数目，因此需要把他排除
         //另外api里面分页的索引从1开始
         NSString *requestURL = [NSString stringWithFormat:@"%@/get_recent_posts/?page=%lu&count=%d&post_type=%@",baseURL,super.page+1,MAX_PAGE_SIZE,(_postType == PostTypePost?@"post":@"page")];
-        [jsonAPI parseURL:requestURL success:^(NSArray *posts, NSInteger postsCount) {
+        [jsonAPI getPostsWithURL:requestURL success:^(NSArray *posts, NSInteger postsCount) {
             
-            KLog(@"requestURL:%@",requestURL);
+            KLog(@"JSON API 的requestURL:%@",requestURL);
             
             KLog(@"JSON API Fetched %ld posts", postsCount);
             if (self.page == 0) {
@@ -444,10 +443,10 @@ const int MAX_PAGE_SIZE = 10;//每页显示数目
         
     }else{
         //设置API类型
-        self.apiType = APITypeMetaWeblog;
+        self.apiType = APITypeXMLRPC;
         
-        //MetaWeblogAPI
-        [self.api getRecentPosts:currentCount
+        //APITypeXMLRPC API
+        [self.api getPosts:currentCount
                          success:^(NSArray *posts) {
                              KLog(@"MetaWeblogAPI have %lu posts", (unsigned long) [posts count]);
                              
@@ -513,7 +512,7 @@ const int MAX_PAGE_SIZE = 10;//每页显示数目
     //创建加载中
     [WBSUtils showStatusMessage:@"加载中"];
     
-    TGBlogJsonApi *jsonAPI = self.api;
+    WBSJsonApi *jsonAPI = self.api;
     if ([searchString isEqualToString:@""]) {
         searchString = @"ios";
     }
@@ -521,7 +520,7 @@ const int MAX_PAGE_SIZE = 10;//每页显示数目
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     NSString *baseURL = [userDefaults objectForKey:WBSSiteBaseURL];
     
-    [jsonAPI parseURL:[NSString stringWithFormat:@"%@/get_search_results/?search=%@&page=%lu&count=%d&post_type=post",baseURL,searchString,super.page+1,MAX_PAGE_SIZE]
+    [jsonAPI getPostsWithURL:[NSString stringWithFormat:@"%@/get_search_results/?search=%@&page=%lu&count=%d&post_type=post",baseURL,searchString,super.page+1,MAX_PAGE_SIZE]
               success:^(NSArray *postsArray, NSInteger postsCount) {
                   dispatch_async(dispatch_get_main_queue(), ^{
                       //处理刷新
@@ -762,7 +761,7 @@ const int MAX_PAGE_SIZE = 10;//每页显示数目
         //获取API信息
         WBSApiInfo *apiInfo = [WBSConfig getAuthoizedApiInfo];
         NSDictionary *nonceParmeters = @{@"controller":@"posts",@"method":@"delete_post"};
-        NSString *nonceURL = [NSString stringWithFormat:@"%@/get_nonce/",apiInfo.baseURL];
+        NSString *nonceURL = [NSString stringWithFormat:@"%@/get_nonce/",apiInfo.siteURL];
         
         //1 get nunce
         //2 delete post
@@ -773,7 +772,7 @@ const int MAX_PAGE_SIZE = 10;//每页显示数目
 //            NSString *nonce =[result objectForKey:@"nonce"];
             //删除
 //            NSDictionary *parmeters = @{@"id":postId,@"cookie":apiInfo.generateAauthCookie,@"nonce":nonce};
-            NSString *deleteURL = [NSString stringWithFormat:@"%@/posts/delete_post/",apiInfo.baseURL];
+            NSString *deleteURL = [NSString stringWithFormat:@"%@/posts/delete_post/",apiInfo.siteURL];
             
             KLog(@"deleteURL URL:%@",deleteURL);
             
@@ -810,9 +809,9 @@ const int MAX_PAGE_SIZE = 10;//每页显示数目
              }];
     }else{
         //设置API类型
-        self.apiType = APITypeMetaWeblog;
+        self.apiType = APITypeXMLRPC;
         
-        //MetaWeblogAPI
+        //APITypeXMLRPC API
         [self.api deletePost:postId
                      success:^(BOOL status) {
                          //刷新数据
@@ -859,8 +858,8 @@ const int MAX_PAGE_SIZE = 10;//每页显示数目
     }
     
     
-    if ([self.api isMemberOfClass:[TGMetaWeblogXMLRPCApi class]] ) {
-        KLog(@"Current API is MetaWeblogApi");
+    if ([self.api isMemberOfClass:[WordPressXMLRPCApi class]] ) {
+        KLog(@"Current API is XMLRPC Api");
     }else{
         KLog(@"Current API is  JSON API");
     }

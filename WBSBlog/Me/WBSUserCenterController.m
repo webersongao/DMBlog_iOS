@@ -9,12 +9,13 @@
 #import "WBSUserCenterController.h"
 #import "WBSApiInfo.h"
 #import "WBSLoginNavViewController.h"
-#import "TGBlogJsonApi.h"
-#import "WBSErrorViewController.h"
+#import "WBSJsonApi.h"
 #import "UIImageView+WebCache.h"
+#import "WBSNetRequest.h"
 
 static NSString *kUserInfoCellID = @"userInfoCell";
 #define HeaderViewHeight    160
+#define footerViewHeight    250
 #define portraitHeight      60
 
 @interface WBSUserCenterController ()
@@ -46,6 +47,26 @@ static NSString *kUserInfoCellID = @"userInfoCell";
     }else{
         // 游客状态
     }
+    // 初始化用户数据
+    [self checkUserData];
+    
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+
+    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:kUserInfoCellID];
+    
+    self.navigationItem.leftBarButtonItem  = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"navigationbar_sidebar"] style:UIBarButtonItemStylePlain target:self action:@selector(onClickMenuButton)];
+    
+    self.edgesForExtendedLayout = UIRectEdgeNone;
+    self.tableView.showsVerticalScrollIndicator = NO;
+    self.navigationItem.title = @"用户中心";
+}
+
+
+/// 初始化用户数据
+- (void)checkUserData {
     NSString *registeredTimeStr = checkNull(self.userModel.registered);
     if (registeredTimeStr.length>1) {
         //实例化一个NSDateFormatter对象
@@ -63,33 +84,14 @@ static NSString *kUserInfoCellID = @"userInfoCell";
     
 }
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    
-    if ([SingleObject shareSingleObject].isGuest){
-        [WBSUtils showErrorMessage:@"请登录!!"];
-    }
-    
-    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:kUserInfoCellID];
-    
-    self.navigationItem.leftBarButtonItem  = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"navigationbar_sidebar"] style:UIBarButtonItemStylePlain target:self action:@selector(onClickMenuButton)];
-    
-    self.edgesForExtendedLayout = UIRectEdgeNone;
-    self.tableView.bounces = NO;
-    self.navigationItem.title = @"我";
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 #pragma mark - Table view data source
-
-
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
     return HeaderViewHeight;
+}
+-(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
+
+    return footerViewHeight;
 }
 
 
@@ -97,7 +99,6 @@ static NSString *kUserInfoCellID = @"userInfoCell";
 {
     
     UIView *HeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, KSCREEN_Width, HeaderViewHeight)];
-    KLog(@"tableView.tableHeaderView.height is %lf",tableView.tableHeaderView.height);
     HeaderView.backgroundColor = [UIColor infosBackViewColor];
     
     
@@ -123,9 +124,8 @@ static NSString *kUserInfoCellID = @"userInfoCell";
     [_portraitImageView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapPortraitAction)]];
     [HeaderView addSubview:_portraitImageView];
     
-    //取第一个作者
-    
-    _headerNameLabel = [[UILabel alloc]initWithFrame:CGRectMake(30, HeaderViewHeight -30, KSCREEN_Width-80, 20)];
+    // 作者昵称
+    _headerNameLabel = [[UILabel alloc]initWithFrame:CGRectMake(30, HeaderViewHeight -40, KSCREEN_Width-60, 20)];
     _headerNameLabel.font = [UIFont boldSystemFontOfSize:18];
     _headerNameLabel.textColor = [UIColor colorWithHex:0xEEEEEE];
     _headerNameLabel.textAlignment = NSTextAlignmentCenter;
@@ -135,6 +135,33 @@ static NSString *kUserInfoCellID = @"userInfoCell";
     
     return HeaderView;
     
+}
+
+// footerView
+-(UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
+
+    UIView *footerView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, KSCREEN_Width, footerViewHeight)];
+    footerView.backgroundColor = [UIColor whiteColor];
+    
+    UILabel *titleLabel = [[UILabel alloc]initWithFrame:CGRectMake(20, 10, 120, 20)];
+    titleLabel.text = @"个人说明：";
+    [footerView addSubview:titleLabel];
+    
+    // 分割线
+    UIView *lineView = [[UIView alloc]initWithFrame:CGRectMake(0, titleLabel.bottom +10, KSCREEN_Width, 0.5)];
+    lineView.backgroundColor = [UIColor lightGrayColor];
+    [footerView addSubview:lineView];
+    
+    // 文字
+    UITextView *infotextView = [[UITextView alloc]initWithFrame:CGRectMake(titleLabel.left, lineView.bottom +10, KSCREEN_Width -(titleLabel.left*2), footerViewHeight -titleLabel.font.lineHeight -30)];
+    infotextView.userInteractionEnabled = NO;
+    infotextView.backgroundColor = [UIColor clearColor];
+    infotextView.textAlignment =NSTextAlignmentLeft;
+    infotextView.font = [UIFont systemFontOfSize:15];
+    infotextView.text = self.userModel.descriptions;
+    [footerView addSubview:infotextView];
+    
+    return footerView;
 }
 
 
@@ -150,7 +177,7 @@ static NSString *kUserInfoCellID = @"userInfoCell";
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    UITableViewCell *cell = [UITableViewCell new];
+    UITableViewCell *cell = [[UITableViewCell alloc]init];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     NSDictionary *titleAttributes = @{NSForegroundColorAttributeName:[UIColor grayColor]};
