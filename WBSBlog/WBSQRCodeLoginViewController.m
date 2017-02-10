@@ -105,8 +105,7 @@
         
         AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
         [manager POST:adminUrl
-           parameters:params
-              success:^(NSURLSessionTask *task, id res) {
+           parameters:params progress:nil success:^(NSURLSessionTask *task, id res) {
                   KLog(@"response:%@", res);
               }
               failure:^(NSURLSessionTask *task, NSError *error) {
@@ -143,8 +142,7 @@
         
         AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
         [manager POST:adminUrl
-           parameters:params
-              success:^(NSURLSessionTask *task, id res) {
+           parameters:params progress:nil success:^(NSURLSessionTask *task, id res) {
                   [SVProgressHUD showSuccessWithStatus:@"登录成功"];
                   [self toRootViewController];
                   KLog(@"response:%@", res);

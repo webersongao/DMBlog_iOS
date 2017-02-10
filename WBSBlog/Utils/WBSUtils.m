@@ -465,13 +465,13 @@
 }
 
 /*********************---NSUserDefaults---******************/
-+ (void)saveDataWithValue:(id)valuem forKey:(NSString *)key{
++ (void)saveObjectforKey:(id)valuem forKey:(NSString *)key{
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setObject:valuem forKey:key];
     [defaults synchronize];
 }
 
-+ (void)saveDataWithBool:(BOOL)boo forKey:(NSString *)key{
++ (void)saveBoolforKey:(BOOL)boo forKey:(NSString *)key{
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setBool:boo forKey:key];
     [defaults synchronize];

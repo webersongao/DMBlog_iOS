@@ -38,7 +38,6 @@
     if ([key isEqualToString:@"description"]) {
         self.descriptions = value;
     }
-    KLog(@"id description 转换完毕");
 }
 
 

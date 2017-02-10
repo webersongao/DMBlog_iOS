@@ -12,6 +12,7 @@
 
 #import <Foundation/Foundation.h>
 #import "WBSNetworking.h"
+#import "WBSJsonMacro.h"
 
 @interface WBSBaseCoreApi : NSObject
 
@@ -34,7 +35,7 @@
  */
 #pragma mark  1️⃣ Post
 /// 获取文章 getPosts
-- (void)getPostsWithURL:(NSString*)urlString success:(void (^)(NSArray *postsArray, NSInteger postsCount))successBlock failure:(void (^)(NSError *error))failureBlock;
+- (void)getPostsWithSiteUrlStr:(NSString *)siteUrlString queryString:(NSString *)queryString success:(void (^)(NSArray *postsArray, NSInteger postsCount))successBlock failure:(void (^)(NSError *error))failureBlock;
 
 
 /**

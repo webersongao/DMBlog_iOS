@@ -382,19 +382,16 @@ const int MAX_PAGE_SIZE = 10;//每页显示数目
         
         WBSJsonApi *jsonAPI = self.api;
         
-        NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-        NSString *baseURL = [userDefaults objectForKey:WBSSiteBaseURL];
-        
         //从plist读取DigPostCount
         NSString *path = [[NSBundle mainBundle]pathForResource:@"WBSBlogSetting" ofType:@"plist"];
         NSDictionary *settings = [NSDictionary dictionaryWithContentsOfFile:path];
         NSInteger digPostCount = [[settings objectForKey:@"DigPostCount"] integerValue];
         //由于置顶文章会影响分页数目，因此需要把他排除
         //另外api里面分页的索引从1开始
-        NSString *requestURL = [NSString stringWithFormat:@"%@/get_recent_posts/?page=%lu&count=%d&post_type=%@",baseURL,super.page+1,MAX_PAGE_SIZE,(_postType == PostTypePost?@"post":@"page")];
-        [jsonAPI getPostsWithURL:requestURL success:^(NSArray *posts, NSInteger postsCount) {
+        NSString *queryStr = [NSString stringWithFormat:@"page=%lu&count=%d&post_type=%@",super.page+1,MAX_PAGE_SIZE,(_postType == PostTypePost?@"post":@"page")];
+        [jsonAPI getPostsWithSiteUrlStr:@"一会补上" queryString:queryStr success:^(NSArray *posts, NSInteger postsCount) {
             
-            KLog(@"JSON API 的requestURL:%@",requestURL);
+            KLog(@"JSON API 的queryStr:%@",queryStr);
             
             KLog(@"JSON API Fetched %ld posts", postsCount);
             if (self.page == 0) {
@@ -517,10 +514,9 @@ const int MAX_PAGE_SIZE = 10;//每页显示数目
         searchString = @"ios";
     }
     
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    NSString *baseURL = [userDefaults objectForKey:WBSSiteBaseURL];
+    NSString *baseURL = [WBSUtils getObjectforKey:WBSSiteBaseURL];
     
-    [jsonAPI getPostsWithURL:[NSString stringWithFormat:@"%@/get_search_results/?search=%@&page=%lu&count=%d&post_type=post",baseURL,searchString,super.page+1,MAX_PAGE_SIZE]
+    [jsonAPI getPostsWithSiteUrlStr:@"一会补上" queryString:[NSString stringWithFormat:@"%@/get_search_results/?search=%@&page=%lu&count=%d&post_type=post",baseURL,searchString,super.page+1,MAX_PAGE_SIZE]
               success:^(NSArray *postsArray, NSInteger postsCount) {
                   dispatch_async(dispatch_get_main_queue(), ^{
                       //处理刷新
@@ -579,9 +575,8 @@ const int MAX_PAGE_SIZE = 10;//每页显示数目
     
     //创建加载中
     [WBSUtils showStatusMessage:@"加载中"];
-    
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    NSString *baseURL = [userDefaults objectForKey:WBSSiteBaseURL];
+
+    NSString *baseURL = [WBSUtils getObjectforKey:WBSSiteBaseURL];
     
     NSString *requestURL = [NSString stringWithFormat:@"%@/get_category_posts/?id=%lu&page=%lu&count=%d&post_type=post",baseURL,categortId,super.page+1,MAX_PAGE_SIZE];
     
@@ -664,9 +659,8 @@ const int MAX_PAGE_SIZE = 10;//每页显示数目
     
     //创建加载中
     [WBSUtils showStatusMessage:@"加载中"];
-    
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    NSString *baseURL = [userDefaults objectForKey:WBSSiteBaseURL];
+
+    NSString *baseURL = [WBSUtils getObjectforKey:WBSSiteBaseURL];
     
     NSString *requestURL = [NSString stringWithFormat:@"%@/get_tag_posts/?id=%lu&page=%lu&count=%d&post_type=post",baseURL,tagId,super.page+1,MAX_PAGE_SIZE];
     

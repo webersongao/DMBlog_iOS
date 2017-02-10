@@ -19,9 +19,9 @@
 #pragma mark  About User
 
 /// 用户登陆 Login
-+ (void)userLoginWithURL:(NSString *)siteUrl username:(NSString *)userName password:(NSString *)password inSSLSecure:(BOOL)inSSLSecure success:(void (^)(NSDictionary *resultDict))success failure:(void (^)(NSError *error))failure{
++ (void)userLoginWithSiteUrlStr:(NSString *)siteUrlString queryString:(NSString *)QueryString inSSLSecure:(BOOL)inSSLSecure success:(void (^)(NSDictionary *resultDict))success failure:(void (^)(NSError *error))failure{
     
-    NSString *requestURL = [NSString stringWithFormat:@"%@/api/user/generate_auth_cookie/?username=%@&password=%@%@", siteUrl, userName, password,inSSLSecure?@"":@"&insecure=cool"];
+    NSString *requestURL = [NSString stringWithFormat:@"%@/%@/%@/?%@%@",siteUrlString,KAPI_base_URL,KUser_Generate_auth_cookie,QueryString,inSSLSecure?@"":@"&insecure=cool"];
     
     [WBSNetworking GETRequest:requestURL parameters:nil success:^(id responseObject) {
         // 成功

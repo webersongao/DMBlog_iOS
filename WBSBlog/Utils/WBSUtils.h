@@ -45,9 +45,9 @@ typedef enum{
 + (NSString *)getStringFromNSDate:(NSDate *)date;
 
 /********************* NSUserDefaults **********************/
-+ (void)saveDataWithValue:(id)valuem forKey:(NSString *)key;
++ (void)saveObjectforKey:(id)valuem forKey:(NSString *)key;
 
-+ (void)saveDataWithBool:(BOOL)boo forKey:(NSString *)key;
++ (void)saveBoolforKey:(BOOL)boo forKey:(NSString *)key;
 
 + (id)getObjectforKey:(NSString *)key;
 
