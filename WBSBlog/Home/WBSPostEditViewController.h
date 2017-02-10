@@ -6,9 +6,9 @@
 //  Copyright © 2016年 Weberson. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "WBSBaseViewController.h"
 
-@interface WBSPostEditViewController : UIViewController
+@interface WBSPostEditViewController : WBSBaseViewController
 
 @property (nonatomic,strong) NSDictionary *post;
 

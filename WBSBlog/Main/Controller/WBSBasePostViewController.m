@@ -54,10 +54,9 @@
     //检测登陆状态
     //===================================
     if(![SingleObject shareSingleObject].isLogin && ![SingleObject shareSingleObject].isGuest){
-        KLog(@"登陆超时，请重新登录。");
-        WBSLoginViewController *loginCtrl =[[WBSLoginViewController alloc]init];
-        
-        [self.navigationController pushViewController:loginCtrl animated:YES];
+        KLog(@"未登录 非游客模式 登陆超时，请重新登录。");
+        WBSLoginViewController *loginVC =[[WBSLoginViewController alloc]init];
+        [self presentViewController:loginVC animated:YES completion:nil];
         
         return;
     }

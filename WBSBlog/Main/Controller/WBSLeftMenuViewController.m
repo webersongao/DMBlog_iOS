@@ -222,7 +222,7 @@
     [WBSUtils showErrorMessage:@"游客请登录"];
     }else {
         // json Api已经登录  跳转到个人信息界面 XMLRPC接口不支持该功能
-        WBSUserCenterController *userInfoVC = [[WBSUserCenterController alloc]initWithStyle:UITableViewStyleGrouped];
+        WBSUserCenterController *userInfoVC = [[WBSUserCenterController alloc]init];
         [self setContentViewController:userInfoVC];
     }
 }

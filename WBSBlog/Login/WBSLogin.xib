@@ -91,9 +91,9 @@
                         <constraint firstAttribute="width" constant="35" id="tMG-PA-teZ"/>
                         <constraint firstAttribute="height" constant="20" id="vq4-6U-yom"/>
                     </constraints>
-                    <state key="normal" title="Button" image="login-Close.png"/>
-                    <state key="selected" image="login-Open.png"/>
-                    <state key="highlighted" image="login-Open.png"/>
+                    <state key="normal" title="Button" image="login-Open.png"/>
+                    <state key="selected" image="login-Close.png"/>
+                    <state key="highlighted" image="login-Close.png"/>
                     <connections>
                         <action selector="apiTypeButtonDidClick:" destination="-1" eventType="touchUpInside" id="RL3-f9-wn3"/>
                     </connections>

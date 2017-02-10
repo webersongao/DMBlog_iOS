@@ -7,8 +7,8 @@
 //
 
 
-#import <UIKit/UIKit.h>
+#import "WBSBaseViewController.h"
 #import "WWTagsCloudView.h"
-@interface WBSTagViewController : UIViewController<WWTagsCloudViewDelegate>
+@interface WBSTagViewController : WBSBaseViewController<WWTagsCloudViewDelegate>
 
 @end

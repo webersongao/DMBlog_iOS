@@ -6,11 +6,11 @@
 //  Copyright © 2016年 Weberson. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "WBSBaseViewController.h"
 
 typedef void(^ReturnBlock) (NSString *footerUrlStr,NSString *footerApi);
 
-@interface WBSSelectBlogViewController : UIViewController
+@interface WBSSelectBlogViewController : WBSBaseViewController
 
 @property (nonatomic,copy)ReturnBlock returnBlock; // 回调的接口文字
 
