@@ -174,13 +174,15 @@
 - (void)logOutAndCleanUserData{
     // 1、清空保存数据
     NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
-//    WBSUtils saveDataWithValue:nil forKey:
     [def setObject:nil forKey:WBSSiteBaseURL];
+    [def setObject:nil forKey:WBSSiteXmlrpcURL];
     [def setObject:nil forKey:WBSUserUserName];
     [def setObject:nil forKey:WBSUserPassWord];
     [def setObject:nil forKey:WBSSiteAuthCookie];
     [def setObject:nil forKey:WBSSiteAuthCookieName];
     [def synchronize];
+    // 恢复默认配置
+    [WBSConfig resetUserConfigToDefault];
     // 修改登录状态
     [SingleObject shareSingleObject].isLogin = NO;
     [SingleObject shareSingleObject].user = nil;
@@ -219,7 +221,7 @@
     }else if (![WBSConfig isJSONAPIEnable]){
         [WBSUtils showErrorMessage:@"API不支持"];
     }else if ([SingleObject shareSingleObject].isGuest){
-    [WBSUtils showErrorMessage:@"游客请登录"];
+        [WBSUtils showErrorMessage:@"游客请登录"];
     }else {
         // json Api已经登录  跳转到个人信息界面 XMLRPC接口不支持该功能
         WBSUserCenterController *userInfoVC = [[WBSUserCenterController alloc]init];

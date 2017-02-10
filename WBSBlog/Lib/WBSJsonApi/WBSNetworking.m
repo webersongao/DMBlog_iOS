@@ -28,7 +28,7 @@
 @implementation WBSNetworking
 
 
-/// 常用
+// 常用 get
 + (NSURLSessionDataTask *)GETRequest:(NSString *)URLString parameters:(id)parameters success:(void (^)(id responseObject))success failure:(void (^)(NSError *error))failure{
 
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
@@ -58,7 +58,7 @@
 }
 
 
-/// 常用
+// 常用 post
 + (NSURLSessionDataTask *)POSTRequest:(NSString *)URLString parameters:(id)parameters success:(void (^)(id responseObject))success failure:(void (^)(NSError *error))failure{
     
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;

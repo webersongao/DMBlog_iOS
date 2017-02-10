@@ -27,20 +27,119 @@
 
 /********************* 公共方法 *************************/
 
-// 获取JSON API 插件的功能版本信息
--(void)GetJsonApiVersionInfo;
+// 版本信息 info
+-(void)GetJsonApiVersionInfoWithSiteURLStr:(NSString *)siteURLStr success:(void (^)(id versioInfo))successBlock failure:(void (^)(NSError *error))failureBlock;
 
 /**
- *  1、Post  需要JsonApi 插件 https://wordpress.org/plugins/json-api/
+ *  1、Core  需要JsonApi 插件 https://wordpress.org/plugins/json-api/    并在 Json Api 设置中开启 Core 模块
  */
-#pragma mark  1️⃣ Post
-/// 获取文章 getPosts
-- (void)getPostsWithSiteUrlStr:(NSString *)siteUrlString queryString:(NSString *)queryString success:(void (^)(NSArray *postsArray, NSInteger postsCount))successBlock failure:(void (^)(NSError *error))failureBlock;
+#pragma mark  1️⃣ Core
+
+/// 获取文章 get_recent_posts
+- (void)get_recent_posts_WithSiteUrlStr:(NSString *)siteUrlString queryString:(NSString *)queryString success:(void (^)(NSArray *postsArray, NSInteger postsCount))successBlock failure:(void (^)(NSError *error))failureBlock;
+
+///  get_posts
+- (void)get_Posts_WithSiteUrlStr:(NSString *)siteUrlString queryString:(NSString *)queryString success:(void (^)(NSArray *postsArray, NSInteger postsCount,BOOL isIgnoreStickyPosts))successBlock failure:(void (^)(NSError *error))failureBlock;
+
+/// get_post
+- (void)get_post_WithSiteUrlStr:(NSString *)siteUrlString queryString:(NSString *)queryString success:(void (^)(NSArray *postsArray, NSInteger postsCount))successBlock failure:(void (^)(NSError *error))failureBlock;
+
+/// get_page
+- (void)get_page_WithSiteUrlStr:(NSString *)siteUrlString queryString:(NSString *)queryString success:(void (^)(NSArray *postsArray, NSInteger postsCount))successBlock failure:(void (^)(NSError *error))failureBlock;
+
+/// get_date_posts
+- (void)get_date_posts_WithSiteUrlStr:(NSString *)siteUrlString queryString:(NSString *)queryString success:(void (^)(NSArray *postsArray, NSInteger postsCount))successBlock failure:(void (^)(NSError *error))failureBlock;
+
+/// get_category_posts
+- (void)get_category_posts_WithSiteUrlStr:(NSString *)siteUrlString queryString:(NSString *)queryString success:(void (^)(NSArray *postsArray, NSInteger postsCount))successBlock failure:(void (^)(NSError *error))failureBlock;
+
+/// get_tag_posts
+- (void)get_tag_posts_WithSiteUrlStr:(NSString *)siteUrlString queryString:(NSString *)queryString success:(void (^)(NSArray *postsArray, NSInteger postsCount))successBlock failure:(void (^)(NSError *error))failureBlock;
+
+/// get_author_posts
+- (void)get_author_posts_WithSiteUrlStr:(NSString *)siteUrlString queryString:(NSString *)queryString success:(void (^)(NSArray *postsArray, NSInteger postsCount))successBlock failure:(void (^)(NSError *error))failureBlock;
+
+/// get_search_results
+- (void)get_search_results_WithSiteUrlStr:(NSString *)siteUrlString queryString:(NSString *)queryString success:(void (^)(NSArray *postsArray, NSInteger postsCount))successBlock failure:(void (^)(NSError *error))failureBlock;
+
+/// get_date_index
+- (void)get_date_index_WithSiteUrlStr:(NSString *)siteUrlString queryString:(NSString *)queryString success:(void (^)(NSArray *postsArray, NSInteger postsCount))successBlock failure:(void (^)(NSError *error))failureBlock;
+
+/// get_category_index
+- (void)get_category_index_WithSiteUrlStr:(NSString *)siteUrlString queryString:(NSString *)queryString success:(void (^)(NSArray *postsArray, NSInteger postsCount))successBlock failure:(void (^)(NSError *error))failureBlock;
+
+/// get_tag_index
+- (void)get_tag_index_WithSiteUrlStr:(NSString *)siteUrlString queryString:(NSString *)queryString success:(void (^)(NSArray *postsArray, NSInteger postsCount))successBlock failure:(void (^)(NSError *error))failureBlock;
+
+/// get_author_index
+- (void)get_author_index_WithSiteUrlStr:(NSString *)siteUrlString queryString:(NSString *)queryString success:(void (^)(NSArray *postsArray, NSInteger postsCount))successBlock failure:(void (^)(NSError *error))failureBlock;
+
+/// get_page_index
+- (void)get_page_index_WithSiteUrlStr:(NSString *)siteUrlString queryString:(NSString *)queryString success:(void (^)(NSArray *postsArray, NSInteger postsCount))successBlock failure:(void (^)(NSError *error))failureBlock;
+
+/// get_nonce
+- (void)get_nonce_WithSiteUrlStr:(NSString *)siteUrlString queryString:(NSString *)queryString success:(void (^)(NSArray *postsArray, NSInteger postsCount))successBlock failure:(void (^)(NSError *error))failureBlock;
+
+
+
+
 
 
 /**
- *  2、 Setting  需要JsonApi 插件 https://wordpress.org/plugins/json-api/
+ *  2、 Posts  需要JsonApi 插件 https://wordpress.org/plugins/json-api/  并在 Json Api 设置中开启 Posts 模块
  */
-#pragma mark  2️⃣ Setting
+#pragma mark  2️⃣ Posts
+
+
+
+/// create_post
+- (void)create_post_WithSiteUrlStr:(NSString *)siteUrlString queryString:(NSString *)queryString success:(void (^)(NSArray *postsArray, NSInteger postsCount))successBlock failure:(void (^)(NSError *error))failureBlock;
+
+/// update_post
+- (void)update_post_WithSiteUrlStr:(NSString *)siteUrlString queryString:(NSString *)queryString success:(void (^)(NSArray *postsArray, NSInteger postsCount))successBlock failure:(void (^)(NSError *error))failureBlock;
+
+/// delete_post
+- (void)delete_post_WithSiteUrlStr:(NSString *)siteUrlString queryString:(NSString *)queryString success:(void (^)(NSArray *postsArray, NSInteger postsCount))successBlock failure:(void (^)(NSError *error))failureBlock;
+
+
+
+
+
+/**
+ *  3、 Respond  需要JsonApi 插件 https://wordpress.org/plugins/json-api/    并在 Json Api 设置中开启 Respond 模块
+ */
+#pragma mark  3️⃣ Respond
+
+
+/// submit_comment
+- (void)submit_comment_WithSiteUrlStr:(NSString *)siteUrlString queryString:(NSString *)queryString success:(void (^)(NSArray *postsArray, NSInteger postsCount))successBlock failure:(void (^)(NSError *error))failureBlock;
+
+
+
+
+
+/**
+ *  4、 Widgets  需要JsonApi 插件 https://wordpress.org/plugins/json-api/    并在 Json Api 设置中开启 Widgets 模块
+ */
+#pragma mark  4️⃣ Widgets
+
+
+/// get_sidebar
+- (void)get_sidebar_WithSiteUrlStr:(NSString *)siteUrlString queryString:(NSString *)queryString success:(void (^)(NSArray *postsArray, NSInteger postsCount))successBlock failure:(void (^)(NSError *error))failureBlock;
+
+
+
+
+
 
 @end
+
+
+
+
+
+
+
+
+
+
