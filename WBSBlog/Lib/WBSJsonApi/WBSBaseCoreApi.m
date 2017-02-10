@@ -38,9 +38,10 @@
 #pragma mark  1️⃣ Post
 
 /// 获取文章 getPosts
-- (void)getPostsWithURL:(NSString*)urlString success:(void (^)(NSArray *postsArray, NSInteger postsCount))successBlock failure:(void (^)(NSError *error))failureBlock{
+- (void)getPostsWithSiteUrlStr:(NSString *)siteUrlString queryString:(NSString *)queryString success:(void (^)(NSArray *postsArray, NSInteger postsCount))successBlock failure:(void (^)(NSError *error))failureBlock{
     
-    [WBSNetworking GETRequest:urlString parameters:nil success:^(id responseObject) {
+    NSString *getPostsURLStr = [NSString stringWithFormat:@"%@/api/get_recent_posts/?%@",siteUrlString,queryString];
+    [WBSNetworking GETRequest:getPostsURLStr parameters:nil success:^(id responseObject) {
         // 成功
         if ([responseObject isKindOfClass:[NSDictionary class]]) {
             

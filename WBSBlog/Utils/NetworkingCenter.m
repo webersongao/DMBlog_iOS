@@ -28,7 +28,7 @@
     
     NetworkingCenter *manger = [NetworkingCenter manager];
     manger.responseSerializer = [AFJSONResponseSerializer serializer];
-    NSString *sk = [[NSUserDefaults standardUserDefaults]objectForKey:@"sk"];
+    NSString *sk = [WBSUtils getObjectforKey:@"sk"];
     //是否登录
     if ([WBSUtils isBlankString:sk] || [SingleObject shareSingleObject].isLogin == NO) {
         noLigin();
@@ -41,7 +41,7 @@
         [WBSUtils showProgressMessage:@"请稍后..."];
     }
     [manger.requestSerializer setValue:sk forHTTPHeaderField:@"sk"];
-    NSURLSessionDataTask *sessionDataTask =[manger GET:urlString parameters:parameters success:^(NSURLSessionDataTask *task, id responseObject) {
+    NSURLSessionDataTask *sessionDataTask =[manger GET:urlString parameters:parameters progress:nil success:^(NSURLSessionDataTask *task, id responseObject) {
         [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
         @try {
             success(responseObject);
@@ -74,7 +74,7 @@
     KLog(@"这个网络的URL是: %@ ",urlString);
     NetworkingCenter *manger = [NetworkingCenter manager];
     manger.responseSerializer = [AFJSONResponseSerializer serializer];
-    NSString *sk = [[NSUserDefaults standardUserDefaults]objectForKey:@"sk"];
+    NSString *sk = [WBSUtils getObjectforKey:@"sk"];
     
     //sk为空
     if ([WBSUtils isBlankString:sk] || [SingleObject shareSingleObject].isLogin == NO) {
@@ -90,7 +90,7 @@
     
     [manger.requestSerializer setValue:sk forHTTPHeaderField:@"sk"];
     
-    NSURLSessionDataTask *sessionDataTask = [manger POST:urlString parameters:parameters success:^(NSURLSessionDataTask *task, id responseObject) {
+    NSURLSessionDataTask *sessionDataTask = [manger POST:urlString parameters:parameters progress:nil success:^(NSURLSessionDataTask *task, id responseObject) {
         [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
         if (show) {
             [WBSUtils dismissHUD];
@@ -133,7 +133,7 @@
     manger.responseSerializer = [AFJSONResponseSerializer serializer];
     
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
-    NSURLSessionDataTask *sessionDataTask = [manger GET:URLString parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
+    NSURLSessionDataTask *sessionDataTask = [manger GET:URLString parameters:nil progress:nil success:^(NSURLSessionDataTask *task, id responseObject) {
         [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
         @try {
             success(responseObject);
@@ -172,7 +172,7 @@
     
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
     [WBSUtils showProgressMessage:@"请稍后..."];
-    NSURLSessionDataTask *sessionDataTask = [manger POST:URLString parameters:parameters success:^(NSURLSessionDataTask *task, id responseObject) {
+    NSURLSessionDataTask *sessionDataTask = [manger POST:URLString parameters:parameters progress:nil success:^(NSURLSessionDataTask *task, id responseObject) {
         KLog(@"注册成功%@",responseObject);
         [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
         [WBSUtils dismissHUD];
@@ -202,7 +202,9 @@
                         success:(void (^)(NSURLSessionDataTask *task, id responseObject))success
                         failure:(void (^)(NSURLSessionDataTask *task, NSError *error))failure;{
     KLog(@"这个网络的URL是: %@ ",URLString);
-    return [[NetworkingCenter manager] GET:URLString parameters:parameters success:success failure:failure];
+    return [[NetworkingCenter manager]GET:URLString parameters:parameters progress:^(NSProgress * _Nonnull downloadProgress) {
+        //进度
+    } success:success failure:failure];
 }
 
 + (NSURLSessionDataTask *)POST:(NSString *)URLString
@@ -210,7 +212,9 @@
                          success:(void (^)(NSURLSessionDataTask *task, id responseObject))success
                          failure:(void (^)(NSURLSessionDataTask *task, NSError *error))failure{
     KLog(@"这个网络的URL是: %@ ",URLString);
-    return [[NetworkingCenter manager] POST:URLString parameters:parameters success:success failure:failure];
+    return [[NetworkingCenter manager]POST:URLString parameters:parameters progress:^(NSProgress * _Nonnull downloadProgress) {
+        //进度
+    } success:success failure:failure];
 }
 
 

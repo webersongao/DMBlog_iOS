@@ -8,7 +8,6 @@
 
 #import "WBSNetworking.h"
 
-
 @implementation WBSClient
 
 + (instancetype)sharedClient {
@@ -31,7 +30,7 @@
 
 /// 常用
 + (NSURLSessionDataTask *)GETRequest:(NSString *)URLString parameters:(id)parameters success:(void (^)(id responseObject))success failure:(void (^)(NSError *error))failure{
-    
+
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
     
     NSURLSessionDataTask * sessionDataTask = [[WBSClient sharedClient] GET:URLString parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
@@ -63,8 +62,8 @@
 + (NSURLSessionDataTask *)POSTRequest:(NSString *)URLString parameters:(id)parameters success:(void (^)(id responseObject))success failure:(void (^)(NSError *error))failure{
     
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
-    
-    NSURLSessionDataTask *sessionDataTask = [[WBSClient sharedClient] POST:URLString parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
+    NSString *URLStr = [NSString stringWithFormat:@""];
+    NSURLSessionDataTask *sessionDataTask = [[WBSClient sharedClient] POST:URLStr parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
         // 进度
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         // 成功

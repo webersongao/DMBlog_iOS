@@ -20,7 +20,7 @@
 #pragma mark  1️⃣   About User
 
 /// 用户登陆 Login
-+ (void)userLoginWithURL:(NSString *)siteUrl username:(NSString *)userName password:(NSString *)password inSSLSecure:(BOOL)inSSLsecure success:(void (^)(NSDictionary *resultDict))success failure:(void (^)(NSError *error))failure;
++ (void)userLoginWithSiteUrlStr:(NSString *)siteUrlString queryString:(NSString *)QueryString inSSLSecure:(BOOL)inSSLSecure success:(void (^)(NSDictionary *resultDict))success failure:(void (^)(NSError *error))failure;
 
 
 

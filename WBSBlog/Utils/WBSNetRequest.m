@@ -14,13 +14,14 @@
 @implementation WBSNetRequest
 
 /// 用户登录
-+ (void)userLogin:(void (^) (BOOL isLoginSuccess,NSString * errorMsg)) LoginSuccessblock SiteUrlStr:(NSString *)siteUrl userNameStr:(NSString *)userName PassWordStr:(NSString *)PassWord  isJsonAPi:(BOOL)isJsonApi{
++ (void)userLogin:(void (^) (BOOL isLoginSuccess,NSString * errorMsg)) LoginSuccessblock userNameStr:(NSString *)userName PassWordStr:(NSString *)PassWord  isJsonAPi:(BOOL)isJsonApi{
     
+    NSString *siteUrlStr = [WBSUtils getObjectforKey:WBSSiteBaseURL];
     if (isJsonApi) {
         // 使用JSON API登陆
-        NSString *fullURL = [NSString stringWithFormat:@"%@://%@",@"http",siteUrl];
+        NSString *queryStr = [NSString stringWithFormat:@"username=%@&password=%@",userName,PassWord];
         
-        [WBSJsonApi userLoginWithURL:fullURL username:userName password:PassWord inSSLSecure:NO success:^(NSDictionary *resultDict) {
+        [WBSJsonApi userLoginWithSiteUrlStr:siteUrlStr queryString:queryStr inSSLSecure:NO success:^(NSDictionary *resultDict) {
             // 成功
             
             NSString *status = [resultDict objectForKey:@"status"];
@@ -28,17 +29,17 @@
             if ([status isEqualToString:@"ok"]) {
                 NSString *cookieNameStr = resultDict[@"cookie_name"];
                 NSString *cookieStr = resultDict[@"cookie"];
-                [WBSUtils saveDataWithValue:cookieStr forKey:WBSSiteAuthCookie];
-                [WBSUtils saveDataWithValue:cookieNameStr forKey:WBSSiteAuthCookieName];
-                [WBSUtils saveDataWithValue:siteUrl forKey:WBSSiteBaseURL];
-                [WBSUtils saveDataWithValue:userName forKey:WBSUserUserName];
-                [WBSUtils saveDataWithValue:PassWord forKey:WBSUserPassWord];
+                [WBSUtils saveObjectforKey:cookieStr forKey:WBSSiteAuthCookie];
+                [WBSUtils saveObjectforKey:cookieNameStr forKey:WBSSiteAuthCookieName];
+                [WBSUtils saveObjectforKey:siteUrlStr forKey:WBSSiteBaseURL];
+                [WBSUtils saveObjectforKey:userName forKey:WBSUserUserName];
+                [WBSUtils saveObjectforKey:PassWord forKey:WBSUserPassWord];
                 [SingleObject shareSingleObject].isLogin = YES;
                 
                 // 保存用户数据
                 NSDictionary *userDict = [resultDict objectForKey:@"user"];
                 WBSUserModel * userModel = [WBSUserModel WBSUserModelWithDic:userDict];
-                [WBSUtils saveDataWithValue:userModel.uid forKey:WBSUserUID];
+                [WBSUtils saveObjectforKey:userModel.uid forKey:WBSUserUID];
                 NSDictionary *administratorDict = [userDict objectForKey:@"capabilities"];
                 // 是否是管理员
                 if ([administratorDict objectForKey:@"administrator"]) {
@@ -68,18 +69,16 @@
         }];
         
     }else{
-        // 使用XMLRPC 登陆
-        // 对baseUrl进行包装  暂时不支持Https
-        
-        [WordPressApi loginInWithURL:siteUrl
+        // 使用XMLRPC 登陆  暂时不支持Https
+       siteUrlStr = [WBSUtils getObjectforKey:WBSSiteXmlrpcURL];
+        [WordPressApi loginInWithURL:siteUrlStr
                            username:userName
                            password:PassWord
                             success:^(NSURL *xmlrpcURL) {
-                                
-                                [WBSUtils saveDataWithValue:siteUrl forKey:WBSSiteBaseURL];
-                                [WBSUtils saveDataWithValue:[xmlrpcURL absoluteString] forKey:WBSSiteXmlrpcURL];
-                                [WBSUtils saveDataWithValue:userName forKey:WBSUserUserName];
-                                [WBSUtils saveDataWithValue:PassWord forKey:WBSUserPassWord];
+                                [WBSUtils saveObjectforKey:siteUrlStr forKey:WBSSiteBaseURL];
+                                [WBSUtils saveObjectforKey:[xmlrpcURL absoluteString] forKey:WBSSiteXmlrpcURL];
+                                [WBSUtils saveObjectforKey:userName forKey:WBSUserUserName];
+                                [WBSUtils saveObjectforKey:PassWord forKey:WBSUserPassWord];
                                 [SingleObject shareSingleObject].isLogin = YES;
                                 LoginSuccessblock(YES,nil);
                                 
