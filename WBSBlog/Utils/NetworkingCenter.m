@@ -14,7 +14,7 @@
 @implementation NetworkingCenter
 
 /*-------------------- 加header的 get OR post请求 -----------------*/
-+ (AFHTTPRequestOperation *)GetWithHeader:(NSString *)urlString parameters:(id)parameters isShowHUB:(BOOL)show success:(void (^)(id responseObject))success noLogin:(void(^)())noLigin failure:(void (^)(NSError *error))failure{
++ (NSURLSessionDataTask *)GetWithHeader:(NSString *)urlString parameters:(id)parameters isShowHUB:(BOOL)show success:(void (^)(id responseObject))success noLogin:(void(^)())noLigin failure:(void (^)(NSError *error))failure{
     
     if (![WBSUtils connectedToNetwork]) {
         //没网了....就别走了
@@ -28,7 +28,7 @@
     
     NetworkingCenter *manger = [NetworkingCenter manager];
     manger.responseSerializer = [AFJSONResponseSerializer serializer];
-    NSString *sk = [[NSUserDefaults standardUserDefaults]objectForKey:@"sk"];
+    NSString *sk = [WBSUtils getObjectforKey:@"sk"];
     //是否登录
     if ([WBSUtils isBlankString:sk] || [SingleObject shareSingleObject].isLogin == NO) {
         noLigin();
@@ -41,7 +41,7 @@
         [WBSUtils showProgressMessage:@"请稍后..."];
     }
     [manger.requestSerializer setValue:sk forHTTPHeaderField:@"sk"];
-    AFHTTPRequestOperation *httpRequestOperation =[manger GET:urlString parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    NSURLSessionDataTask *sessionDataTask =[manger GET:urlString parameters:parameters progress:nil success:^(NSURLSessionDataTask *task, id responseObject) {
         [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
         @try {
             success(responseObject);
@@ -52,16 +52,16 @@
         @finally {
         }
         
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
         [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
         failure(error);
     }];
     
-    return httpRequestOperation;
+    return sessionDataTask;
 }
 
 
-+ (AFHTTPRequestOperation *)PostWithHeader:(NSString *)urlString parameters:(id)parameters isShowHUB:(BOOL)show success:(void (^)(id responseObject))success noLogin:(void(^)())noLigin failure:(void (^)(NSError *error))failure{
++ (NSURLSessionDataTask *)PostWithHeader:(NSString *)urlString parameters:(id)parameters isShowHUB:(BOOL)show success:(void (^)(id responseObject))success noLogin:(void(^)())noLigin failure:(void (^)(NSError *error))failure{
     
     if (![WBSUtils connectedToNetwork]) {
         //没网了....就别走了
@@ -74,7 +74,7 @@
     KLog(@"这个网络的URL是: %@ ",urlString);
     NetworkingCenter *manger = [NetworkingCenter manager];
     manger.responseSerializer = [AFJSONResponseSerializer serializer];
-    NSString *sk = [[NSUserDefaults standardUserDefaults]objectForKey:@"sk"];
+    NSString *sk = [WBSUtils getObjectforKey:@"sk"];
     
     //sk为空
     if ([WBSUtils isBlankString:sk] || [SingleObject shareSingleObject].isLogin == NO) {
@@ -90,7 +90,7 @@
     
     [manger.requestSerializer setValue:sk forHTTPHeaderField:@"sk"];
     
-    AFHTTPRequestOperation *httpRequestOperation = [manger POST:urlString parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    NSURLSessionDataTask *sessionDataTask = [manger POST:urlString parameters:parameters progress:nil success:^(NSURLSessionDataTask *task, id responseObject) {
         [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
         if (show) {
             [WBSUtils dismissHUD];
@@ -105,19 +105,19 @@
             
         }
         
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
         [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
         if (show) {
             [WBSUtils dismissHUD];
         }
         failure(error);
     }];
-    return httpRequestOperation;
+    return sessionDataTask;
 }
 
 /*------------------ 不加header HTTP -----------------*/
 /// 常用
-+ (AFHTTPRequestOperation *)GETRequest:(NSString *)URLString parameters:(id)parameters success:(void (^)(id responseObject))success failure:(void (^)(NSError *error))failure{
++ (NSURLSessionDataTask *)GETRequest:(NSString *)URLString parameters:(id)parameters success:(void (^)(id responseObject))success failure:(void (^)(NSError *error))failure{
     
     if (![WBSUtils connectedToNetwork]) {
         //没网了....就别走了
@@ -133,7 +133,7 @@
     manger.responseSerializer = [AFJSONResponseSerializer serializer];
     
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
-    AFHTTPRequestOperation *httpRequestOperation = [manger GET:URLString parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    NSURLSessionDataTask *sessionDataTask = [manger GET:URLString parameters:nil progress:nil success:^(NSURLSessionDataTask *task, id responseObject) {
         [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
         @try {
             success(responseObject);
@@ -145,17 +145,17 @@
             
         }
         
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
         KLog(@"网络错误%@",error);
         [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
         failure(error);
     }];
-    return httpRequestOperation;
+    return sessionDataTask;
 }
 
 
 /// 常用
-+ (AFHTTPRequestOperation *)POSTRequest:(NSString *)URLString parameters:(id)parameters success:(void (^)(id responseObject))success failure:(void (^)(NSError *error))failure{
++ (NSURLSessionDataTask *)POSTRequest:(NSString *)URLString parameters:(id)parameters success:(void (^)(id responseObject))success failure:(void (^)(NSError *error))failure{
     
     if (![WBSUtils connectedToNetwork]) {
         //没网了....就别走了
@@ -172,7 +172,7 @@
     
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
     [WBSUtils showProgressMessage:@"请稍后..."];
-    AFHTTPRequestOperation *httpRequestOperation = [manger POST:URLString parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    NSURLSessionDataTask *sessionDataTask = [manger POST:URLString parameters:parameters progress:nil success:^(NSURLSessionDataTask *task, id responseObject) {
         KLog(@"注册成功%@",responseObject);
         [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
         [WBSUtils dismissHUD];
@@ -187,30 +187,34 @@
             
         }
         
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
         [WBSUtils dismissHUD];
         KLog(@"网络错误%@",error);
         [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
         failure(error);
     }];
-    return httpRequestOperation;
+    return sessionDataTask;
 }
 
 /*************** 方便取消下载任务 ******************/
-+ (AFHTTPRequestOperation *)GET:(NSString *)URLString
++ (NSURLSessionDataTask *)GET:(NSString *)URLString
                      parameters:(id)parameters
-                        success:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success
-                        failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure;{
+                        success:(void (^)(NSURLSessionDataTask *task, id responseObject))success
+                        failure:(void (^)(NSURLSessionDataTask *task, NSError *error))failure;{
     KLog(@"这个网络的URL是: %@ ",URLString);
-    return [[NetworkingCenter manager] GET:URLString parameters:parameters success:success failure:failure];
+    return [[NetworkingCenter manager]GET:URLString parameters:parameters progress:^(NSProgress * _Nonnull downloadProgress) {
+        //进度
+    } success:success failure:failure];
 }
 
-+ (AFHTTPRequestOperation *)POST:(NSString *)URLString
++ (NSURLSessionDataTask *)POST:(NSString *)URLString
                       parameters:(id)parameters
-                         success:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success
-                         failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure{
+                         success:(void (^)(NSURLSessionDataTask *task, id responseObject))success
+                         failure:(void (^)(NSURLSessionDataTask *task, NSError *error))failure{
     KLog(@"这个网络的URL是: %@ ",URLString);
-    return [[NetworkingCenter manager] POST:URLString parameters:parameters success:success failure:failure];
+    return [[NetworkingCenter manager]POST:URLString parameters:parameters progress:^(NSProgress * _Nonnull downloadProgress) {
+        //进度
+    } success:success failure:failure];
 }
 
 

@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "WBSLastCell.h"
-#import "TGMetaWeblogApi.h"
-#import "TGBlogJsonApi.h"
+#import "WordPressApi.h"
+#import "WBSJsonApi.h"
 
 @interface WBSBasePostViewController : UITableViewController
 
@@ -17,7 +17,7 @@
 @property (nonatomic, copy) void (^tableWillReload)(NSUInteger responseObjectsCount);
 @property (nonatomic, copy) void (^didRefreshSucceed)();
 
-//MetaWeblogApi 或者 JSON API
+//XMLRPC API 或者 JSON API
 @property(nonatomic,strong) id api;
 
 //刷新分分页数据（需要在子类重写）
@@ -26,10 +26,10 @@
 @property (nonatomic, assign) BOOL shouldFetchDataAfterLoaded;
 @property (nonatomic, assign) BOOL needRefreshAnimation;
 @property (nonatomic, assign) BOOL needCache;
-@property (nonatomic, strong) NSMutableArray *objects;
+@property (nonatomic, strong) NSMutableArray *postArray;  /// 内容数组
 @property (nonatomic, assign) int allCount;
 @property (nonatomic, strong) WBSLastCell *lastCell;
-@property (nonatomic, strong) UILabel *label;
+@property (nonatomic, strong) UILabel *desLabel; /// 预览文字
 @property (nonatomic, assign) NSUInteger page;
 
 /// 拉取更多数据

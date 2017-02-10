@@ -8,8 +8,10 @@
 
 #import "WBSBasePostViewController.h"
 #import "WBSLoginViewController.h"
-#import "TGBlogJsonApi.h"
+#import "WBSJsonApi.h"
 #import "WBSBlogAppDelegate.h"
+
+
 
 @interface WBSBasePostViewController ()
 
@@ -24,7 +26,7 @@
     self = [super init];
     
     if (self) {
-        _objects = [NSMutableArray new];
+        _postArray = [[NSMutableArray alloc]initWithCapacity:1];
         _page = 0;
         _needRefreshAnimation = YES;
         _shouldFetchDataAfterLoaded = YES;
@@ -38,7 +40,7 @@
     self = [super initWithStyle:style];
     
     if (self) {
-        _objects = [NSMutableArray new];
+        _postArray = [[NSMutableArray alloc]initWithCapacity:1];
         _page = 0;
         _needRefreshAnimation = YES;
         _shouldFetchDataAfterLoaded = YES;
@@ -51,9 +53,7 @@
     //===================================
     //检测登陆状态
     //===================================
-    WBSApiInfo *apiInfo = [WBSConfig getAuthoizedApiInfo];
-    BOOL isguest = [WBSUtils getBoolforKey:WBSGuestLoginMode];
-    if(!apiInfo && !isguest){
+    if(![SingleObject shareSingleObject].isLogin && ![SingleObject shareSingleObject].isGuest){
         KLog(@"登陆超时，请重新登录。");
         WBSLoginViewController *loginCtrl =[[WBSLoginViewController alloc]init];
         
@@ -67,29 +67,30 @@
     //===================================
     
     //根据设置确认要选择的api
+    WBSApiInfo *apiInfo = [WBSConfig getAuthoizedApiInfo];
     if ([WBSConfig isJSONAPIEnable]) {
         _api = [self setupJSONApi:apiInfo];
     }else{
-        _api = [self setupApi:apiInfo];
+        _api = [self setupXMLRPCApi:apiInfo];
     }
-
+    
     [super viewDidLoad];
     
     self.edgesForExtendedLayout = UIRectEdgeNone;
     
     self.tableView.backgroundColor = [UIColor themeColor];
     
-    _lastCell = [WBSLastCell new];
+    _lastCell = [[WBSLastCell alloc]init];
     [_lastCell addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(fetchMoreDataOfView)]];
     self.tableView.tableFooterView = _lastCell;
     
-    self.refreshControl = [UIRefreshControl new];
+    self.refreshControl = [[UIRefreshControl alloc]init];
     [self.refreshControl addTarget:self action:@selector(refreshCurrentView) forControlEvents:UIControlEventValueChanged];
     
-    _label = [UILabel new];
-    _label.numberOfLines = 0;
-    _label.lineBreakMode = NSLineBreakByWordWrapping;
-    _label.font = [UIFont boldSystemFontOfSize:14];
+    _desLabel = [[UILabel alloc]init];
+    _desLabel.numberOfLines = 0;
+    _desLabel.lineBreakMode = NSLineBreakByWordWrapping;
+    _desLabel.font = [UIFont boldSystemFontOfSize:14];
     
     if (!_shouldFetchDataAfterLoaded) {return;}
     if (_needRefreshAnimation) {
@@ -103,19 +104,15 @@
 
 #pragma mark - Private
 /**
- *  初始化MetaWeblog API
- *
- *  @param apiInfo apiInfo
- *
- *  @return API状态
+ *  初始化 XMLRPC API
  */
-- (id)setupApi:(WBSApiInfo *)apiInfo {
-    NSString *xmlrpc =apiInfo.baseURL;
+- (id)setupXMLRPCApi:(WBSApiInfo *)apiInfo {
+    NSString *xmlrpc = apiInfo.siteURL;
     if (xmlrpc) {
         NSString *username = apiInfo.username;
         NSString *password = apiInfo.password;
         if (username && password) {
-            self.api = [TGMetaWeblogAuthApi apiWithXMLRPCURL:[NSURL URLWithString:xmlrpc] username:username password:password];
+            self.api = [WordPressApi apiWithXMLRPCURL:[NSURL URLWithString:xmlrpc] username:username password:password];
         }
     }
     
@@ -128,15 +125,12 @@
 
 /**
  *  初始化JSON API
- *
- *  @param apiInfo apiInfo
- *
- *  @return JSON API实例
  */
 -(id)setupJSONApi:(WBSApiInfo *)apiInfo{
-    TGBlogJsonApi *feedParser = [[TGBlogJsonApi alloc]init];
-    if (feedParser) {
-        return feedParser;
+    
+    WBSJsonApi *postApi = [[WBSJsonApi alloc]init];
+    if (postApi) {
+        return postApi;
     }
     return nil;
 }

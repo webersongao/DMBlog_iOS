@@ -11,7 +11,6 @@
 #import "WBSBrowserViewController.h"
 #import "WBSBrowserNavViewController.h"
 #import "GHMarkdownParser.h"
-#import "WBSErrorViewController.h"
 #import "WBSRootTabBarController.h"
 #import "WBSBlogAppDelegate.h"
 #import "SVProgressHUD.h"
@@ -104,7 +103,7 @@
 {
     NSMutableAttributedString *attributeString ;
     
-    NSTextAttachment *textAttachment = [NSTextAttachment new];
+    NSTextAttachment *textAttachment = [[NSTextAttachment alloc]init];
     //转载
     //textAttachment.image = [UIImage imageNamed:@"widget_repost"];
     //原创
@@ -427,23 +426,7 @@
     }];
 }
 
-/**
- *  在当前页面展示API不受支持的信息
- */
-+ (void)showApiNotSupported:(UIViewController *)target redirectTo:(WBSErrorViewController *)to{
-    NSString *errorMessage =  NSLocalizedString(@"APINotSupported", nil);;
 
-    [WBSUtils showErrorMessage:@"APINotSupported"];
-    
-    UILabel *labelMessage = [[UILabel alloc]init];
-    labelMessage.text = errorMessage;
-    [target.view addSubview:labelMessage];
-    [to.navigationItem setHidesBackButton:YES];
-//    to.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"首页" style:UIBarButtonItemStylePlain target:to action:@selector(returnHome)];
-    to.navigationItem.title = @"出错啦";
-    to.errorMessage = errorMessage;
-    [target.navigationController pushViewController:to animated:YES];
-}
 
 /// 网址 账号密码信息校验
 +(BOOL)checkUrlString:(NSString *)urlString userNameStr:(NSString *)userNameStr passWord:(NSString *)passWordStr{
@@ -482,13 +465,13 @@
 }
 
 /*********************---NSUserDefaults---******************/
-+ (void)saveDataWithValue:(id)valuem forKey:(NSString *)key{
++ (void)saveObjectforKey:(id)valuem forKey:(NSString *)key{
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setObject:valuem forKey:key];
     [defaults synchronize];
 }
 
-+ (void)saveDataWithBool:(BOOL)boo forKey:(NSString *)key{
++ (void)saveBoolforKey:(BOOL)boo forKey:(NSString *)key{
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setBool:boo forKey:key];
     [defaults synchronize];

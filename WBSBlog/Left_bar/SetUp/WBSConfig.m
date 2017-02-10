@@ -15,29 +15,27 @@
  */
 + (BOOL)getMode
 {
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    
-    return [[userDefaults objectForKey:WBSIs_NightMode] boolValue];
+    return [[WBSUtils getObjectforKey:WBSIs_NightMode] boolValue];
 }
 
 /**
- *  获取MetaWeblog API的授权信息
+ *  获取XMLRPC API的授权信息
  */
 +(WBSApiInfo *)getAuthoizedApiInfo
 {
     //获取相关存储信息
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    BOOL isJSONAPIEnable = [[userDefaults objectForKey:WBSIs_JSONAPI] boolValue];
-    NSString *baseURL = [userDefaults objectForKey:WBSSiteBaseURL];
-    NSString *username = [userDefaults objectForKey:WBSUserUserName];
-    NSString *password = [userDefaults objectForKey:WBSUserPassWord];
-    NSString *cookie = [userDefaults objectForKey:WBSSiteAuthCookie];
+    BOOL isJSONAPIEnable = [[WBSUtils getObjectforKey:WBSIs_JSONAPI] boolValue];
+    NSString *baseURL = [WBSUtils getObjectforKey:WBSSiteBaseURL];
+    NSString *xmlrpcURL = [WBSUtils getObjectforKey:WBSSiteXmlrpcURL];
+    NSString *username = [WBSUtils getObjectforKey:WBSUserUserName];
+    NSString *password = [WBSUtils getObjectforKey:WBSUserPassWord];
+    NSString *cookie = [WBSUtils getObjectforKey:WBSSiteAuthCookie];
     //初始化ApiInfo
     WBSApiInfo *apiInfo = nil;
     if (isJSONAPIEnable) {
         apiInfo = [[WBSApiInfo alloc]initWithBaseURL:baseURL andGenerateAuthCookie:cookie];
     }else{
-        apiInfo = [[WBSApiInfo alloc] initWithXmlrpc:baseURL username:username password:password];
+        apiInfo = [[WBSApiInfo alloc] initWithXmlrpc:xmlrpcURL username:username password:password];
     }
     //结果处理
     return apiInfo;

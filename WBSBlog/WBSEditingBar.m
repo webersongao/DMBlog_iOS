@@ -82,12 +82,12 @@
 
 - (void)addBorder
 {
-    UIView *upperBorder = [UIView new];
+    UIView *upperBorder = [[UIView alloc]init];
     upperBorder.backgroundColor = [UIColor lightGrayColor];
     upperBorder.translatesAutoresizingMaskIntoConstraints = NO;
     [self addSubview:upperBorder];
     
-    UIView *bottomBorder = [UIView new];
+    UIView *bottomBorder = [[UIView alloc]init];
     bottomBorder.backgroundColor = [UIColor lightGrayColor];
     bottomBorder.translatesAutoresizingMaskIntoConstraints = NO;
     [self addSubview:bottomBorder];

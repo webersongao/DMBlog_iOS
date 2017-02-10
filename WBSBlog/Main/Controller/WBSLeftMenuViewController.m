@@ -60,7 +60,7 @@
     }
     
     // 用户头像View
-    UIView *headerView = [UIView new];
+    UIView *headerView = [[UIView alloc]init];
     headerView.backgroundColor = [UIColor clearColor];
     
     UIImageView *portraitView = [[UIImageView alloc]init];
@@ -111,11 +111,11 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [UITableViewCell new];
+    UITableViewCell *cell = [[UITableViewCell alloc]init];
     
     cell.backgroundColor = [UIColor clearColor];
     
-    UIView *selectedBackgroundView = [UIView new];
+    UIView *selectedBackgroundView = [[UIView alloc]init];
     selectedBackgroundView.backgroundColor = [UIColor colorWithHex:0xCFCFCF];
     [cell setSelectedBackgroundView:selectedBackgroundView];
     
@@ -174,6 +174,7 @@
 - (void)logOutAndCleanUserData{
     // 1、清空保存数据
     NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
+//    WBSUtils saveDataWithValue:nil forKey:
     [def setObject:nil forKey:WBSSiteBaseURL];
     [def setObject:nil forKey:WBSUserUserName];
     [def setObject:nil forKey:WBSUserPassWord];

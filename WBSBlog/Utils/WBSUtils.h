@@ -45,9 +45,9 @@ typedef enum{
 + (NSString *)getStringFromNSDate:(NSDate *)date;
 
 /********************* NSUserDefaults **********************/
-+ (void)saveDataWithValue:(id)valuem forKey:(NSString *)key;
++ (void)saveObjectforKey:(id)valuem forKey:(NSString *)key;
 
-+ (void)saveDataWithBool:(BOOL)boo forKey:(NSString *)key;
++ (void)saveBoolforKey:(BOOL)boo forKey:(NSString *)key;
 
 + (id)getObjectforKey:(NSString *)key;
 
@@ -179,15 +179,6 @@ typedef enum{
  *  @return 设置标志后的标题
  */
 + (NSMutableAttributedString *)attributedTittle:(NSString *)title;
-
-/**
- *  在当前页面展示API不受支持的信息
- *
- *  @param target target
- 
- *  @param to     to
- */
-+ (void)showApiNotSupported:(UIViewController *)target redirectTo:(UIViewController *)to;
 
 
 /// 网址 账号密码信息校验

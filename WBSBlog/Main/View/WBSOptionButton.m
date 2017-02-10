@@ -24,7 +24,7 @@
         _button = [[UIImageView alloc]init];
         _button.backgroundColor = color;
         
-        _image = [UIImageView new];
+        _image = [[UIImageView alloc]init];
         _image.image = image;
         _image.translatesAutoresizingMaskIntoConstraints = NO;
         [_button addSubview:_image];

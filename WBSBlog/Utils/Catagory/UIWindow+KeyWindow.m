@@ -22,11 +22,9 @@
 
     WBSRootTabBarController *centerVC = [[WBSRootTabBarController alloc]init];
     WBSLeftMenuViewController *leftVC = [[WBSLeftMenuViewController alloc]init];
-//    UIViewController *rightVC = [[UIViewController alloc]init];
     //2、初始化导航控制器
     WBSBaseNaviViewController *centerNvaVC = [[WBSBaseNaviViewController alloc]initWithRootViewController:centerVC];
     UINavigationController *leftNvaVC = [[UINavigationController alloc]initWithRootViewController:leftVC];
-//    UINavigationController *rightNvaVC = [[UINavigationController alloc]initWithRootViewController:rightVC];
     
     //3、使用MMDrawerController
     MMDrawerController * drawerController = [[MMDrawerController alloc]initWithCenterViewController:centerNvaVC leftDrawerViewController:leftNvaVC rightDrawerViewController:nil];

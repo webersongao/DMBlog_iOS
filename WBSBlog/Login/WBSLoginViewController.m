@@ -53,7 +53,7 @@
     WBSApiInfo *apiInfo = [WBSConfig getAuthoizedApiInfo];
     if (apiInfo) {
         // 已经登录
-        KLog(@"Current baseURL:%@ username:%@ password:%@-- 已经登录！", apiInfo.baseURL, apiInfo.username, apiInfo.password);
+        KLog(@"Current baseURL:%@ username:%@ password:%@-- 已经登录！", apiInfo.siteURL, apiInfo.username, apiInfo.password);
         [SingleObject shareSingleObject].isLogin = YES;
         // 解档 赋值用户数据
         NSString *userUID = [WBSUtils getObjectforKey:WBSUserUID];
@@ -71,8 +71,8 @@
     
     //初始化导航栏
     self.navigationItem.title = @"登录";
-    
-    self.navigationItem.rightBarButtonItem                                                     = [[UIBarButtonItem alloc] initWithTitle:@"选择" style:UIBarButtonItemStylePlain target:self action:@selector(selectBlogAction:)];
+    [WBSUtils saveBoolforKey:NO forKey:WBSIs_JSONAPI];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"选择" style:UIBarButtonItemStylePlain target:self action:@selector(selectBlogAction:)];
     
     self.view.backgroundColor = [UIColor themeColor];
     
@@ -84,28 +84,18 @@
     
 }
 
-
-
-#pragma mark 温馨提示 按钮
-- (IBAction)tipsButtonDidClick:(UIButton *)sender {
-    
-    // 修改提示文字信息
-    KLog(@"修改提示文字信息");
-    
-}
-
 #pragma mark 选择api接口类型按钮
 - (IBAction)apiTypeButtonDidClick:(UIButton *)sender {
     
     self.baseURLField.text = @"";
     if (!self.apiTypeButton.isSelected) {
         KLog(@"开启JSON API");
-        [WBSUtils saveDataWithBool:YES forKey:WBSIs_JSONAPI];
+        [WBSUtils saveBoolforKey:YES forKey:WBSIs_JSONAPI];
         self.apiTypeButton.selected = YES;
         _baseURLField.placeholder = @"请输入JSON API入口地址";
     } else {
         KLog(@"开启XMLRPC API");
-        [WBSUtils saveDataWithBool:NO forKey:WBSIs_JSONAPI];
+        [WBSUtils saveBoolforKey:NO forKey:WBSIs_JSONAPI];
         self.apiTypeButton.selected = NO;
         _baseURLField.placeholder = @"www.jack_blog.com";
     }
@@ -136,28 +126,30 @@
     // 验证账号密码 格式
     if ([WBSUtils checkUrlString:baseURL userNameStr:username passWord:password]) {
        [WBSUtils showStatusMessage:@"登录中..."];
+        // 保存登录地址
+        NSString *jsonUrl = [NSString stringWithFormat:@"http://%@",baseURL];
+        NSString *xmlRpcUrl = [NSString stringWithFormat:@"http://%@/xmlrpc.php",baseURL];
+        [WBSUtils saveObjectforKey:jsonUrl forKey:WBSSiteBaseURL];
+        [WBSUtils saveObjectforKey:xmlRpcUrl forKey:WBSSiteXmlrpcURL];
     }else{
         return;
     }
-    
-//    BOOL isLoginSuccess  = [WBSNetRequest postToLoginWithSiteUrlStr:baseURL userNameStr:username PassWordStr:password isJsonAPi:self.apiTypeButton.isSelected];
-    
-    [WBSNetRequest postToLogin:^(BOOL isLoginSuccess, NSString * errorMsg) {
+    [WBSNetRequest userLogin:^(BOOL isLoginSuccess, NSString * errorMsg) {
         // 登录结果
         if (isLoginSuccess) {
-            [WBSUtils saveDataWithBool:NO forKey:WBSGuestLoginMode];
+            [WBSUtils saveBoolforKey:NO forKey:WBSGuestLoginMode];
             [WBSUtils goToMainViewController];
         }else{
             [WBSUtils showErrorMessage:errorMsg];
         }
-    } SiteUrlStr:baseURL userNameStr:username PassWordStr:password isJsonAPi:self.apiTypeButton.isSelected];
+    } userNameStr:username PassWordStr:password isJsonAPi:self.apiTypeButton.isSelected];
     
     
 }
 /// 游客登录
-- (IBAction)guestLogin:(UIButton *)sender {
+- (IBAction)guestLogin:(UIButton *)button {
 
-    [WBSUtils saveDataWithBool:YES forKey:WBSGuestLoginMode];
+    [WBSUtils saveBoolforKey:YES forKey:WBSGuestLoginMode];
     [SingleObject shareSingleObject].isGuest = YES;
     [WBSUtils goToMainViewController];
     
