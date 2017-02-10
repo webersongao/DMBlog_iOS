@@ -9,7 +9,7 @@
 #import "WBSBlogAppDelegate.h"
 #import "WBSBaseNaviViewController.h"
 #import "WBSLoginViewController.h"
-
+#import "UIWindow+KeyWindow.h"
 
 @interface WBSBlogAppDelegate ()<UIApplicationDelegate, UITabBarControllerDelegate>
 
@@ -19,12 +19,12 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    //初始化程序入口，设置登录界面为首页
-    WBSLoginViewController *loginController = [[WBSLoginViewController alloc]initWithNibName:@"WBSLogin" bundle:nil];
-    WBSBaseNaviViewController *loginNavViewController = [[WBSBaseNaviViewController alloc] initWithRootViewController:loginController];
+    // 1、设置创建主窗口，不能使用applicaion.keyWindow.
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    self.window.rootViewController = loginNavViewController;
+    // 2、设置为可见
     [self.window makeKeyAndVisible];
+    // 跳转设置 Window的 rootViewController
+    [self.window switchToRootTabbarViewController];
     
     // 全局设置
     [self initCommonSetting];
@@ -34,7 +34,7 @@
 
 
 -(void)initCommonSetting{
-
+    
     /************ 全局控件外观设置 **************/
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     

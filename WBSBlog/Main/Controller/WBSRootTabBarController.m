@@ -45,7 +45,7 @@
     WBSSwipableViewController *searchVC = [self createBlogViewController:YES];
     
     //我
-    WBSUserCenterController *myInfoVC = [[WBSUserCenterController alloc]initWithStyle:UITableViewStyleGrouped];
+    WBSUserCenterController *myInfoVC = [[WBSUserCenterController alloc]init];
     
     self.tabBar.translucent = NO;
 

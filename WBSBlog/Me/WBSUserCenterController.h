@@ -6,9 +6,9 @@
 //  Copyright © 2016年 Weberson. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "WBSBaseViewController.h"
 #import "WBSUserModel.h"
 
-@interface WBSUserCenterController : UITableViewController
+@interface WBSUserCenterController : WBSBaseViewController
 
 @end

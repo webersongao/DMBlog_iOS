@@ -6,9 +6,9 @@
 //  Copyright © 2016年 puckjs.com. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "WBSBaseViewController.h"
 
-@interface WBSQRCodeLoginViewController : UIViewController
+@interface WBSQRCodeLoginViewController : WBSBaseViewController
 
 @property (strong, nonatomic) NSString *url;
 

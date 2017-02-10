@@ -18,11 +18,11 @@ static NSString *kUserInfoCellID = @"userInfoCell";
 #define footerViewHeight    250
 #define portraitHeight      60
 
-@interface WBSUserCenterController ()
+@interface WBSUserCenterController ()<UITableViewDataSource,UITableViewDelegate>
 
 //@property (nonatomic, readonly, assign) int64_t myID;
 @property (nonatomic, strong) NSMutableArray *noticeCounts;
-
+@property (nonatomic, strong) UITableView *mainTableView;  //!< <#属性注释#>
 @property (nonatomic, strong) UIImageView *portraitImageView;
 @property (nonatomic, strong) UILabel *headerNameLabel;
 @property (nonatomic, strong) UIImageView *myQRCodeButton; //!< 二维码
@@ -40,12 +40,6 @@ static NSString *kUserInfoCellID = @"userInfoCell";
     self.titleArray = @[@"账号：",@"昵称：", @"姓名：", @"主页：", @"邮箱：",@"注册时间："];
     if ([SingleObject shareSingleObject].isLogin) {
         self.userModel = [SingleObject shareSingleObject].user;
-    }else if (![SingleObject shareSingleObject].isLogin){
-        // 未登录
-        [WBSUtils goToLoginViewController];
-        return;
-    }else{
-        // 游客状态
     }
     // 初始化用户数据
     [self checkUserData];
@@ -55,12 +49,11 @@ static NSString *kUserInfoCellID = @"userInfoCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:kUserInfoCellID];
-    
+    [self.mainTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:kUserInfoCellID];
     self.navigationItem.leftBarButtonItem  = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"navigationbar_sidebar"] style:UIBarButtonItemStylePlain target:self action:@selector(onClickMenuButton)];
     
     self.edgesForExtendedLayout = UIRectEdgeNone;
-    self.tableView.showsVerticalScrollIndicator = NO;
+    self.mainTableView.showsVerticalScrollIndicator = NO;
     self.navigationItem.title = @"用户中心";
 }
 
@@ -205,5 +198,14 @@ static NSString *kUserInfoCellID = @"userInfoCell";
     
 }
 
-
+ /********************* 懒加载 *************************/
+-(UITableView *)mainTableView{
+    if (_mainTableView == nil) {
+        _mainTableView = [[UITableView alloc]initWithFrame:self.view.bounds style:UITableViewStyleGrouped];
+        _mainTableView.dataSource = self;
+        _mainTableView.delegate = self;
+        [self.view addSubview:_mainTableView];
+    }
+    return _mainTableView;
+}
 @end

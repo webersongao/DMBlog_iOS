@@ -29,7 +29,7 @@
  */
 @property (weak, nonatomic) IBOutlet UITextField *passwordField;
 /**
- *  是否启用JSON API
+ *  是否启用JSON API 默认 JSONAPI
  */
 @property (weak, nonatomic) IBOutlet UIButton* apiTypeButton;
 
@@ -71,7 +71,8 @@
     
     //初始化导航栏
     self.navigationItem.title = @"登录";
-    [WBSUtils saveBoolforKey:NO forKey:WBSIs_JSONAPI];
+    // 默认开启 JSONAPI
+    [WBSUtils saveBoolforKey:YES forKey:WBSIs_JSONAPI];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"选择" style:UIBarButtonItemStylePlain target:self action:@selector(selectBlogAction:)];
     
     self.view.backgroundColor = [UIColor themeColor];
@@ -84,20 +85,18 @@
     
 }
 
-#pragma mark 选择api接口类型按钮
+#pragma mark 选择api接口类型按钮  默认JsonApi
 - (IBAction)apiTypeButtonDidClick:(UIButton *)sender {
     
-    self.baseURLField.text = @"";
-    if (!self.apiTypeButton.isSelected) {
-        KLog(@"开启JSON API");
-        [WBSUtils saveBoolforKey:YES forKey:WBSIs_JSONAPI];
-        self.apiTypeButton.selected = YES;
-        _baseURLField.placeholder = @"请输入JSON API入口地址";
-    } else {
+    self.apiTypeButton.selected = !sender.isSelected;
+    if (self.apiTypeButton.isSelected) {
         KLog(@"开启XMLRPC API");
         [WBSUtils saveBoolforKey:NO forKey:WBSIs_JSONAPI];
-        self.apiTypeButton.selected = NO;
         _baseURLField.placeholder = @"www.jack_blog.com";
+    } else {
+        KLog(@"开启JSON API");
+        [WBSUtils saveBoolforKey:YES forKey:WBSIs_JSONAPI];
+        _baseURLField.placeholder = @"请输入JSON API入口地址";
     }
 }
 
@@ -125,7 +124,7 @@
     
     // 验证账号密码 格式
     if ([WBSUtils checkUrlString:baseURL userNameStr:username passWord:password]) {
-       [WBSUtils showStatusMessage:@"登录中..."];
+        [WBSUtils showStatusMessage:@"登录中..."];
         // 保存登录地址
         NSString *jsonUrl = [NSString stringWithFormat:@"http://%@",baseURL];
         NSString *xmlRpcUrl = [NSString stringWithFormat:@"http://%@/xmlrpc.php",baseURL];
@@ -142,13 +141,13 @@
         }else{
             [WBSUtils showErrorMessage:errorMsg];
         }
-    } userNameStr:username PassWordStr:password isJsonAPi:self.apiTypeButton.isSelected];
+    } userNameStr:username PassWordStr:password isJsonAPi:!self.apiTypeButton.isSelected];
     
     
 }
 /// 游客登录
 - (IBAction)guestLogin:(UIButton *)button {
-
+    
     [WBSUtils saveBoolforKey:YES forKey:WBSGuestLoginMode];
     [SingleObject shareSingleObject].isGuest = YES;
     [WBSUtils goToMainViewController];

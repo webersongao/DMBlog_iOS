@@ -6,10 +6,9 @@
 //  Copyright © 2016年 Weberson. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "WBSBaseViewController.h"
 
-
-@interface WBSEmojiPanelVC : UIViewController
+@interface WBSEmojiPanelVC : WBSBaseViewController
 
 - (instancetype)initWithPageIndex:(int)pageIndex;
 
