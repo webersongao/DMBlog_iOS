@@ -22,10 +22,7 @@
 {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor themeColor];
-    
-    UIViewController *ctl =  [self.navigationController.viewControllers objectAtIndex:0];
-    [ctl setTitle:@"标签"];
-    ctl.navigationItem.rightBarButtonItem = nil;
+    self.navigationItem.title = @"标签";
     
     //JSON API不支持
     if (![WBSConfig isJSONAPIEnable]) {
@@ -38,11 +35,6 @@
 }
 
 - (void) viewDidAppear:(BOOL)animated{
-    //JSON API不支持
-    if (![WBSConfig isJSONAPIEnable]) {
-        [WBSUtils showErrorMessage:@"ApiNotSupport"];
-        return;
-    }
 
     CGRect tagFrame = _tagCloud.frame;
     KLog(@"%g", tagFrame.origin.y);
@@ -129,7 +121,6 @@
     NSString *requestURL = [NSString stringWithFormat:@"%@/get_tag_index/",baseURL];
     
     //创建加载中
-    
     [WBSUtils showStatusMessage:@"标签加载中..."];
     KLog(@"category request URL:%@",requestURL);
     //获取作者数据

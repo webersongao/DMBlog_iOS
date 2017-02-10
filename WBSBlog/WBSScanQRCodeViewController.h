@@ -6,11 +6,11 @@
 //  Copyright © 2016年 puckjs.com. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "WBSBaseViewController.h"
 @import SafariServices;
 #import <AVFoundation/AVFoundation.h>
 
-@interface WBSScanQRCodeViewController : UIViewController <AVCaptureMetadataOutputObjectsDelegate>
+@interface WBSScanQRCodeViewController : WBSBaseViewController <AVCaptureMetadataOutputObjectsDelegate>
 
 
 @end

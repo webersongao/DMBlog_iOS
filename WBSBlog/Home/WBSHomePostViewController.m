@@ -389,7 +389,7 @@ const int MAX_PAGE_SIZE = 10;//每页显示数目
         //由于置顶文章会影响分页数目，因此需要把他排除
         //另外api里面分页的索引从1开始
         NSString *queryStr = [NSString stringWithFormat:@"page=%lu&count=%d&post_type=%@",super.page+1,MAX_PAGE_SIZE,(_postType == PostTypePost?@"post":@"page")];
-        [jsonAPI getPostsWithSiteUrlStr:@"一会补上" queryString:queryStr success:^(NSArray *posts, NSInteger postsCount) {
+        [jsonAPI getPostsWithSiteUrlStr:@"http://www.swiftartisan.com" queryString:queryStr success:^(NSArray *posts, NSInteger postsCount) {
             
             KLog(@"JSON API 的queryStr:%@",queryStr);
             
@@ -516,7 +516,7 @@ const int MAX_PAGE_SIZE = 10;//每页显示数目
     
     NSString *baseURL = [WBSUtils getObjectforKey:WBSSiteBaseURL];
     
-    [jsonAPI getPostsWithSiteUrlStr:@"一会补上" queryString:[NSString stringWithFormat:@"%@/get_search_results/?search=%@&page=%lu&count=%d&post_type=post",baseURL,searchString,super.page+1,MAX_PAGE_SIZE]
+    [jsonAPI getPostsWithSiteUrlStr:@"http://www.swiftartisan.com" queryString:[NSString stringWithFormat:@"%@/get_search_results/?search=%@&page=%lu&count=%d&post_type=post",baseURL,searchString,super.page+1,MAX_PAGE_SIZE]
               success:^(NSArray *postsArray, NSInteger postsCount) {
                   dispatch_async(dispatch_get_main_queue(), ^{
                       //处理刷新
