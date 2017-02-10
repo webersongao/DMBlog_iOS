@@ -35,4 +35,13 @@
  *  是否针对Wordpress优化
  */
 +(BOOL)isWordpressOptimization;
+
+/**
+ *  退出登录时 恢复用户设置 到默认设置
+ */
++(void)resetUserConfigToDefault;
+
 @end
+
+
+

@@ -15,6 +15,8 @@
 #import "WBSCategoryModel.h"
 #import "WBSTagModel.h"
 #import "WBSCommentModel.h"
+#import "WBSVersioInfoModel.h"
+
 
 @interface WBSBaseCoreApi ()
 
@@ -23,10 +25,21 @@
 
 @implementation WBSBaseCoreApi
 
-// 获取JSON API 插件的功能版本信息
--(void)GetJsonApiVersionInfo{
-//http://www.swiftartisan.com/api/info/
-//    WBSNetworking GETRequest:<#(NSString *)#> parameters:<#(id)#> success:<#^(id responseObject)success#> failure:<#^(NSError *error)failure#>
+// 版本信息 info
+-(void)GetJsonApiVersionInfoWithSiteURLStr:(NSString *)siteURLStr success:(void (^)(id versioInfo))successBlock failure:(void (^)(NSError *error))failureBlock{
+    //http://www.swiftartisan.com/api/info/
+    NSString *requestStr = [NSString stringWithFormat:@"%@/%@/%@",siteURLStr,KAPI_base_URL,KBase_Versioninfo];
+    [WBSNetworking GETRequest:requestStr parameters:nil success:^(id responseObject) {
+        //成功
+        WBSVersioInfoModel *VersioInfoModel = [[WBSVersioInfoModel alloc]init];
+        if ([responseObject isKindOfClass:[NSDictionary class]]) {
+            VersioInfoModel = [WBSVersioInfoModel VersioInfoModelWithDictionary:responseObject];
+        }
+        successBlock(VersioInfoModel);
+    } failure:^(NSError *error) {
+        // 失败
+        failureBlock(error);
+    }];
 }
 
 
@@ -37,8 +50,8 @@
  */
 #pragma mark  1️⃣ Post
 
-/// 获取文章 getPosts
-- (void)getPostsWithSiteUrlStr:(NSString *)siteUrlString queryString:(NSString *)queryString success:(void (^)(NSArray *postsArray, NSInteger postsCount))successBlock failure:(void (^)(NSError *error))failureBlock{
+/// get_recent_posts
+- (void)get_recent_posts_WithSiteUrlStr:(NSString *)siteUrlString queryString:(NSString *)queryString success:(void (^)(NSArray *postsArray, NSInteger postsCount))successBlock failure:(void (^)(NSError *error))failureBlock{
     
     NSString *getPostsURLStr = [NSString stringWithFormat:@"%@/api/get_recent_posts/?%@",siteUrlString,queryString];
     [WBSNetworking GETRequest:getPostsURLStr parameters:nil success:^(id responseObject) {
@@ -106,6 +119,85 @@
     }];
     
 }
+
+
+/// 获取文章 get_posts
+- (void)get_Posts_WithSiteUrlStr:(NSString *)siteUrlString queryString:(NSString *)queryString success:(void (^)(NSArray *postsArray, NSInteger postsCount ,BOOL isIgnoreStickyPosts))successBlock failure:(void (^)(NSError *error))failureBlock{
+    
+    NSString *getPostsURLStr = [NSString stringWithFormat:@"%@/api/get_recent_posts/?%@",siteUrlString,queryString];
+    [WBSNetworking GETRequest:getPostsURLStr parameters:nil success:^(id responseObject) {
+        // 成功
+        if ([responseObject isKindOfClass:[NSDictionary class]]) {
+            
+            //Get posts count
+            _postsCount = [responseObject[@"count_total"] integerValue];
+            
+            //Get pages count
+            _pagesCount = [responseObject[@"pages"] integerValue];
+            
+            //Fetch posts
+            NSMutableArray *allPosts = [[NSMutableArray alloc]initWithCapacity:[responseObject[@"count_total"] integerValue]];
+            NSArray *fetchedPostsArray = responseObject[@"posts"];
+            for (NSDictionary *eachPost in fetchedPostsArray) {
+                
+                WBSPostModel *currentPost = [WBSPostModel PostModelWithDictionary:eachPost];
+                
+                //Fetch posts category
+                NSMutableArray *allCategories = [[NSMutableArray alloc]init];
+                NSArray *fetchedCategoriesArray = eachPost[@"categories"];
+                for (NSDictionary *eachCategory in fetchedCategoriesArray) {
+                    
+                    WBSCategoryModel *currentCategory = [WBSCategoryModel CategoryModelWithDictionary:eachCategory];
+                    [allCategories addObject:currentCategory];
+                }
+                currentPost.categoriesArray = [allCategories copy];
+                
+                //Fetch posts tags
+                NSMutableArray *allTags = [[NSMutableArray alloc]init];
+                NSArray *fetchedTagsArray = eachPost[@"tags"];
+                for (NSDictionary *eachTag in fetchedTagsArray) {
+                    
+                    WBSTagModel *currentTag = [WBSTagModel TagModelWithDictionary:eachTag];
+                    [allTags addObject:currentTag];
+                }
+                currentPost.tagsArray = [allTags copy];
+                currentPost.authorInfo = eachPost[@"author"];
+                
+                //Fetch posts comments
+                NSMutableArray *allComments = [[NSMutableArray alloc]initWithCapacity:[eachPost[@"comment_count"] integerValue]];
+                NSArray *fetchedCommentsArray = eachPost[@"comments"];
+                for (NSDictionary *eachComment in fetchedCommentsArray) {
+                    
+                    WBSCommentModel *currentComment = [WBSCommentModel CommentModelWithDictionary:eachComment];
+                    [allComments addObject:currentComment];
+                }
+                currentPost.commentsArray = [allComments copy];
+                currentPost.commentsCount = [eachPost[@"comment_count"] integerValue];
+                currentPost.status = responseObject[@"comment_status"];
+                
+                [allPosts addObject:currentPost];
+            }
+            _postsArray = [allPosts copy];
+        }
+        
+        // 是否忽略 置顶文章
+        NSDictionary *queryDict = responseObject[@"query"];
+        NSString *IgnoreStickyPostsStr = [queryDict objectForKey:@"ignore_sticky_posts"];
+        BOOL isIgnoreStickyPosts = YES;
+        if (![IgnoreStickyPostsStr isEqualToString:@"true"]) {
+            isIgnoreStickyPosts = NO;
+        }
+        //Trigger success block
+        successBlock(self.postsArray, self.postsArray.count,isIgnoreStickyPosts);
+        
+    } failure:^(NSError *error) {
+        // 失败
+        //Trigger failure block
+        failureBlock(error);
+    }];
+    
+}
+
 
 
 /**

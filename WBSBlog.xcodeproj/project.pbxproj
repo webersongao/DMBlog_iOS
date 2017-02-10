@@ -247,6 +247,7 @@
 		4EF0E8921E4CC09F00580F09 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF0E8911E4CC09F00580F09 /* AFHTTPRequestOperation.m */; };
 		4EF0E8951E4CC0BE00580F09 /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF0E8941E4CC0BE00580F09 /* AFURLConnectionOperation.m */; };
 		4EF0E8981E4CC13F00580F09 /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF0E8971E4CC13F00580F09 /* AFHTTPRequestOperationManager.m */; };
+		4EF0E8C91E4DC9E400580F09 /* WBSVersioInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF0E8C81E4DC9E400580F09 /* WBSVersioInfoModel.m */; };
 		4EF149D31D3DF61D00D28265 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF149D21D3DF61D00D28265 /* main.m */; };
 		4EF149D61D3DF61D00D28265 /* WBSBlogAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF149D51D3DF61D00D28265 /* WBSBlogAppDelegate.m */; };
 		4EF149DE1D3DF61D00D28265 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4EF149DD1D3DF61D00D28265 /* Assets.xcassets */; };
@@ -879,6 +880,8 @@
 		4EF0E8961E4CC13F00580F09 /* AFHTTPRequestOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperationManager.h; sourceTree = "<group>"; };
 		4EF0E8971E4CC13F00580F09 /* AFHTTPRequestOperationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperationManager.m; sourceTree = "<group>"; };
 		4EF0E89F1E4D56A300580F09 /* WBSJsonMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WBSJsonMacro.h; sourceTree = "<group>"; };
+		4EF0E8C71E4DC9E400580F09 /* WBSVersioInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSVersioInfoModel.h; sourceTree = "<group>"; };
+		4EF0E8C81E4DC9E400580F09 /* WBSVersioInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBSVersioInfoModel.m; sourceTree = "<group>"; };
 		4EF149CE1D3DF61D00D28265 /* WBSBlog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WBSBlog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EF149D21D3DF61D00D28265 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4EF149D41D3DF61D00D28265 /* WBSBlogAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = WBSBlogAppDelegate.h; path = ../WBSBlogAppDelegate.h; sourceTree = "<group>"; };
@@ -1947,6 +1950,8 @@
 				4EF0E8521E4CAA0500580F09 /* WBSCategoryModel.m */,
 				4EF0E8531E4CAA0500580F09 /* WBSCommentModel.h */,
 				4EF0E8541E4CAA0500580F09 /* WBSCommentModel.m */,
+				4EF0E8C71E4DC9E400580F09 /* WBSVersioInfoModel.h */,
+				4EF0E8C81E4DC9E400580F09 /* WBSVersioInfoModel.m */,
 			);
 			path = ApiModel;
 			sourceTree = "<group>";
@@ -3234,6 +3239,7 @@
 				4EF14F341D3E32F700D28265 /* SDWebImageCompat.m in Sources */,
 				4EF150701D3E376000D28265 /* WBSOperationBar.m in Sources */,
 				4EF14FB61D3E32F700D28265 /* GPUImageRGBDilationFilter.m in Sources */,
+				4EF0E8C91E4DC9E400580F09 /* WBSVersioInfoModel.m in Sources */,
 				4EDFD7A61E349897006DD1E6 /* SingleObject.m in Sources */,
 				4EF14FD41D3E32F700D28265 /* GPUImageToneCurveFilter.m in Sources */,
 				4EF14FD31D3E32F700D28265 /* GPUImageTiltShiftFilter.m in Sources */,
