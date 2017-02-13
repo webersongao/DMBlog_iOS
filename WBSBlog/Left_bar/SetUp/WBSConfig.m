@@ -72,4 +72,17 @@
 
 }
 
+
+/**
+ *  退出登录时 恢复用户设置 到默认设置
+ */
++(void)resetUserConfigToDefault{
+    
+    [WBSUtils saveBoolforKey:YES forKey:WBSIs_JSONAPI];
+    [WBSUtils saveBoolforKey:YES forKey:WBSIs_WP_Optimization];
+    [WBSUtils saveBoolforKey:NO forKey:WBSIs_ShowPage];
+
+}
+
+
 @end
