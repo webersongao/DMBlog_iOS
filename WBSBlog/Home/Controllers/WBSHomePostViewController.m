@@ -17,12 +17,11 @@
 #import "WBSPostModel.h"
 #import "WBSCategoryModel.h"
 
-
+//super.page //当前页码（由于MetaWeblog API不支持分页，因此，此参数仅仅JSON API有用）
 static NSString *kPostCellID = @"PostCell";//CellID
+
 const int MAX_DESCRIPTION_LENGTH = 60;//描述最多字数
 const int MAX_PAGE_SIZE = 10;//每页显示数目
-//super.page //当前页码（由于MetaWeblog API不支持分页，因此，此参数仅仅JSON API有用）
-
 @interface WBSHomePostViewController ()<UISearchResultsUpdating,DropdownMenuDelegate, TitleMenuDelegate>{
     AFHTTPRequestOperationManager *manager;
 }
@@ -47,14 +46,12 @@ const int MAX_PAGE_SIZE = 10;//每页显示数目
     return self;
 }
 
+
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
     
-    [self.tableView registerClass:[WBSPostCell class] forCellReuseIdentifier:kPostCellID];
-    
-    self.tableView.dataSource = self;
-    self.tableView.delegate = self;
-    
+//    [self.tableView registerClass:[WBSPostCell class] forCellReuseIdentifier:kPostCellID];
     //搜索框
     if([WBSConfig isJSONAPIEnable] && _isSearch){
         // 设置导航栏中间的titleView
@@ -118,27 +115,28 @@ const int MAX_PAGE_SIZE = 10;//每页显示数目
     // Dispose of any resources that can be recreated.
 }
 
+
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     // Return the number of sections.
-    return 1;
+    return 0;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-    //JSON API
-    return _posts.count;
+    return self.posts.count;
 }
 
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    WBSPostCell *cell = [self.tableView dequeueReusableCellWithIdentifier:kPostCellID forIndexPath:indexPath];
+    WBSPostCell *cell = [tableView dequeueReusableCellWithIdentifier:kPostCellID forIndexPath:indexPath];
     cell.backgroundColor = [UIColor themeColor];
     
     //为了兼容，利用适配方法
-    NSDictionary * adaptedPost = [self adaptPostByAPIType:_apiType post:self.posts[indexPath.row]];
+    NSDictionary * adaptedPost = [self adaptPostByAPIType:self.apiType post:self.posts[indexPath.row]];
     
     //博客相关变量
     NSString *title = [adaptedPost objectForKey:@"title"];;//文章标题
@@ -240,7 +238,7 @@ const int MAX_PAGE_SIZE = 10;//每页显示数目
  *
  *  @return 适配后的文章
  */
--(NSDictionary *)adaptPostByAPIType:(APIType)type post:(id)post{
+-(NSDictionary *)adaptPostByAPIType:(PostResultType)type post:(id)post{
     NSMutableArray *categroies = [NSMutableArray array];
     NSArray *comments =  [NSMutableArray array];
     
@@ -287,6 +285,8 @@ const int MAX_PAGE_SIZE = 10;//每页显示数目
     return adaptedPost;
 }
 
+
+
 #pragma mark 搜索处理
 /**
  *  处理搜索结果
@@ -319,7 +319,7 @@ const int MAX_PAGE_SIZE = 10;//每页显示数目
 
 
 
-#pragma mark - 数据加载
+#pragma mark - 下拉刷新 数据
 
 /**
  *  加载列表数据
@@ -338,7 +338,6 @@ const int MAX_PAGE_SIZE = 10;//每页显示数目
     //JSON API不支持
     if (![WBSConfig isJSONAPIEnable] && _isSearch) {
         [WBSUtils showErrorMessage:@"ApiNotSupport"];
-        [self.refreshControl endRefreshing];
         return;
     }
     
@@ -415,21 +414,19 @@ const int MAX_PAGE_SIZE = 10;//每页显示数目
                 if (self.tableWillReload) {self.tableWillReload(posts.count);}
                 else {
                     if (super.page == 0 && postsCount == 0) {//首页无数据
-                        super.lastCell.status = LastCellStatusEmpty;
+                        
                     }
                     else if (postsCount == 0 || ((postsCount - MAX_PAGE_SIZE)%MAX_PAGE_SIZE > 0)) {
                         //注：当前页面数目小于MAX_PAGE_SIZE或者没有结果表示全部加载完成
                         //另外：默认返回的每页的数目会自动加上置顶文章数目，因此需要修正
-                        super.lastCell.status = LastCellStatusFinished;
+                        
                         self.page = 0;//最后一页无数据，回到初始页
                     } else {
-                        super.lastCell.status = LastCellStatusMore;
+                        
                     }
                 }
                 
-                if (self.refreshControl.refreshing) {
-                    [self.refreshControl endRefreshing];
-                }
+                
                 
                 [self.tableView reloadData];
             });
@@ -444,57 +441,42 @@ const int MAX_PAGE_SIZE = 10;//每页显示数目
         
         //APITypeXMLRPC API
         [self.api getPosts:currentCount
-                         success:^(NSArray *posts) {
-                             KLog(@"MetaWeblogAPI have %lu posts", (unsigned long) [posts count]);
-                             
-                             //处理刷新
-                             if (refresh) {
-                                 super.page = 0;
-                                 if (super.didRefreshSucceed) {
-                                     super.didRefreshSucceed();
-                                 }
-                             }
-                             
-                             //获取数据
-                             self.posts = posts;
-                             
-                             //刷新数据
-                             dispatch_async(dispatch_get_main_queue(), ^{
-                                 if (self.tableWillReload) {self.tableWillReload(posts.count);}
-                                 else {
-                                     if (super.page == 0 && posts.count == 0) {
-                                         super.lastCell.status = LastCellStatusEmpty;
-                                     } else if (posts.count == 0 || posts.count%MAX_PAGE_SIZE > 0) {
-                                         //注：当前页面数目小于MAX_PAGE_SIZE或者没有结果表示全部加载完成
-                                         super.lastCell.status = LastCellStatusFinished;
-                                     } else {
-                                         super.lastCell.status = LastCellStatusMore;
-                                     }
-                                 }
-                                 
-                                 if (self.refreshControl.refreshing) {
-                                     [self.refreshControl endRefreshing];
-                                 }
-                                 
-                                 [self.tableView reloadData];
-                                 //显示提示
-                                 [WBSUtils showSuccessMessage:@"加载成功"];
-                             });
-                             
-                         }
-                         failure:^(NSError *error) {
-                             KLog(@"Error fetching posts: %@", [error localizedDescription]);
-                             
-                             KLog(@"错误信息是：---%@----",error);
-                             
-                             [WBSUtils showErrorMessage:[NSString stringWithFormat:@"%@", error.userInfo[NSLocalizedDescriptionKey]]];
-                             
-                             super.lastCell.status = LastCellStatusError;
-                             if (self.refreshControl.refreshing) {
-                                 [self.refreshControl endRefreshing];
-                             }
-                             [self.tableView reloadData];
-                         }];
+                   success:^(NSArray *posts) {
+                       KLog(@"MetaWeblogAPI have %lu posts", (unsigned long) [posts count]);
+                       
+                       //处理刷新
+                       if (refresh) {
+                           super.page = 0;
+                           if (super.didRefreshSucceed) {
+                               super.didRefreshSucceed();
+                           }
+                       }
+                       
+                       //获取数据
+                       self.posts = posts;
+                       
+                       //刷新数据
+                       dispatch_async(dispatch_get_main_queue(), ^{
+                           if (self.tableWillReload) {self.tableWillReload(posts.count);}
+                           else {
+                               
+                           }
+                           
+                           [self.tableView reloadData];
+                           //显示提示
+                           [WBSUtils showSuccessMessage:@"加载成功"];
+                       });
+                       
+                   }
+                   failure:^(NSError *error) {
+                       KLog(@"Error fetching posts: %@", [error localizedDescription]);
+                       
+                       KLog(@"错误信息是：---%@----",error);
+                       
+                       [WBSUtils showErrorMessage:[NSString stringWithFormat:@"%@", error.userInfo[NSLocalizedDescriptionKey]]];
+                       
+                       [self.tableView reloadData];
+                   }];
     }
 }
 
@@ -517,48 +499,42 @@ const int MAX_PAGE_SIZE = 10;//每页显示数目
     NSString *baseURL = [WBSUtils getObjectforKey:WBSSiteBaseURL];
     
     [jsonAPI get_recent_posts_WithSiteUrlStr:@"http://www.swiftartisan.com" queryString:[NSString stringWithFormat:@"%@/get_search_results/?search=%@&page=%lu&count=%d&post_type=post",baseURL,searchString,super.page+1,MAX_PAGE_SIZE]
-              success:^(NSArray *postsArray, NSInteger postsCount) {
-                  dispatch_async(dispatch_get_main_queue(), ^{
-                      //处理刷新
-                      if (refresh) {
-                          super.page = 0;
-                          if (super.didRefreshSucceed) {
-                              super.didRefreshSucceed();
-                          }
-                      }
-                      
-                      KLog(@"Fetched %ld posts", postsCount);
-                      self.posts = postsArray;
-                      
-                      //刷新数据
-                      if (self.tableWillReload) {self.tableWillReload(postsCount);}
-                      else {
-                          if (super.page == 0 && postsCount == 0) {//首页无数据
-                              super.lastCell.status = LastCellStatusEmpty;
-                          }
-                          else if (postsCount == 0 || ((postsCount - MAX_PAGE_SIZE)%MAX_PAGE_SIZE > 0)) {
-                              //注：当前页面数目小于MAX_PAGE_SIZE或者没有结果表示全部加载完成
-                              //另外：默认返回的每页的数目会自动加上置顶文章数目，因此需要修正
-                              super.lastCell.status = LastCellStatusFinished;
-                              self.page = 0;//最后一页无数据，回到初始页
-                          } else {
-                              super.lastCell.status = LastCellStatusMore;
-                          }
-                      }
-                      
-                      if (self.refreshControl.refreshing) {
-                          [self.refreshControl endRefreshing];
-                      }
-                      
-                      [self.tableView reloadData];
-                      
-                      //取消加载中
-                      [WBSUtils dismissHUD];
-                  });
-              }failure:^(NSError *error) {
-                  KLog(@"Error: %@", error);
-                  [WBSUtils dismissHUD];
-              }];
+                                     success:^(NSArray *postsArray, NSInteger postsCount) {
+                                         dispatch_async(dispatch_get_main_queue(), ^{
+                                             //处理刷新
+                                             if (refresh) {
+                                                 super.page = 0;
+                                                 if (super.didRefreshSucceed) {
+                                                     super.didRefreshSucceed();
+                                                 }
+                                             }
+                                             
+                                             KLog(@"Fetched %ld posts", postsCount);
+                                             self.posts = postsArray;
+                                             
+                                             //刷新数据
+                                             if (self.tableWillReload) {self.tableWillReload(postsCount);}
+                                             else {
+                                                 if (super.page == 0 && postsCount == 0) {//首页无数据
+                                                     
+                                                 }
+                                                 else if (postsCount == 0 || ((postsCount - MAX_PAGE_SIZE)%MAX_PAGE_SIZE > 0)) {
+                                                     
+                                                 } else {
+                                                     
+                                                 }
+                                             }
+                                             
+                                             
+                                             [self.tableView reloadData];
+                                             
+                                             //取消加载中
+                                             [WBSUtils dismissHUD];
+                                         });
+                                     }failure:^(NSError *error) {
+                                         KLog(@"Error: %@", error);
+                                         [WBSUtils dismissHUD];
+                                     }];
     
 }
 
@@ -575,7 +551,7 @@ const int MAX_PAGE_SIZE = 10;//每页显示数目
     
     //创建加载中
     [WBSUtils showStatusMessage:@"加载中"];
-
+    
     NSString *baseURL = [WBSUtils getObjectforKey:WBSSiteBaseURL];
     
     NSString *requestURL = [NSString stringWithFormat:@"%@/get_category_posts/?id=%lu&page=%lu&count=%d&post_type=post",baseURL,categortId,super.page+1,MAX_PAGE_SIZE];
@@ -608,22 +584,9 @@ const int MAX_PAGE_SIZE = 10;//每页显示数目
                 //刷新数据
                 if (self.tableWillReload) {self.tableWillReload(posts.count);}
                 else {
-                    if (super.page == 0 && posts.count == 0) {//首页无数据
-                        super.lastCell.status = LastCellStatusEmpty;
-                    }
-                    else if (posts.count == 0 || ((posts.count - MAX_PAGE_SIZE)%MAX_PAGE_SIZE > 0)) {
-                        //注：当前页面数目小于MAX_PAGE_SIZE或者没有结果表示全部加载完成
-                        //另外：默认返回的每页的数目会自动加上置顶文章数目，因此需要修正
-                        super.lastCell.status = LastCellStatusFinished;
-                        self.page = 0;//最后一页无数据，回到初始页
-                    } else {
-                        super.lastCell.status = LastCellStatusMore;
-                    }
+                    
                 }
                 
-                if (self.refreshControl.refreshing) {
-                    [self.refreshControl endRefreshing];
-                }
                 
                 [self.tableView reloadData];
                 
@@ -636,12 +599,8 @@ const int MAX_PAGE_SIZE = 10;//每页显示数目
         
         [WBSUtils showErrorMessage:[NSString stringWithFormat:@"%@", error.userInfo[NSLocalizedDescriptionKey]]];
         KLog(@"Error fetching authors: %@", [error localizedDescription]);
-    
         
-        super.lastCell.status = LastCellStatusError;
-        if (self.refreshControl.refreshing) {
-            [self.refreshControl endRefreshing];
-        }
+        
         [self.tableView reloadData];
     }];
 }
@@ -659,7 +618,7 @@ const int MAX_PAGE_SIZE = 10;//每页显示数目
     
     //创建加载中
     [WBSUtils showStatusMessage:@"加载中"];
-
+    
     NSString *baseURL = [WBSUtils getObjectforKey:WBSSiteBaseURL];
     
     NSString *requestURL = [NSString stringWithFormat:@"%@/get_tag_posts/?id=%lu&page=%lu&count=%d&post_type=post",baseURL,tagId,super.page+1,MAX_PAGE_SIZE];
@@ -692,21 +651,19 @@ const int MAX_PAGE_SIZE = 10;//每页显示数目
                 if (self.tableWillReload) {self.tableWillReload(posts.count);}
                 else {
                     if (super.page == 0 && posts.count == 0) {//首页无数据
-                        super.lastCell.status = LastCellStatusEmpty;
+                        
                     }
                     else if (posts.count == 0 || ((posts.count - MAX_PAGE_SIZE)%MAX_PAGE_SIZE > 0)) {
                         //注：当前页面数目小于MAX_PAGE_SIZE或者没有结果表示全部加载完成
                         //另外：默认返回的每页的数目会自动加上置顶文章数目，因此需要修正
-                        super.lastCell.status = LastCellStatusFinished;
+                        
                         self.page = 0;//最后一页无数据，回到初始页
                     } else {
-                        super.lastCell.status = LastCellStatusMore;
+                        
                     }
                 }
                 
-                if (self.refreshControl.refreshing) {
-                    [self.refreshControl endRefreshing];
-                }
+                
                 
                 [self.tableView reloadData];
                 
@@ -720,10 +677,6 @@ const int MAX_PAGE_SIZE = 10;//每页显示数目
         
         [WBSUtils showErrorMessage:[NSString stringWithFormat:@"%@", error.userInfo[NSLocalizedDescriptionKey]]];
         
-        super.lastCell.status = LastCellStatusError;
-        if (self.refreshControl.refreshing) {
-            [self.refreshControl endRefreshing];
-        }
         [self.tableView reloadData];
     }];
 }
@@ -763,9 +716,9 @@ const int MAX_PAGE_SIZE = 10;//每页显示数目
             KLog(@"status:%@",[result objectForKey:@"status"]);
             NSString *status = [result objectForKey:@"status"];
             
-//            NSString *nonce =[result objectForKey:@"nonce"];
+            //            NSString *nonce =[result objectForKey:@"nonce"];
             //删除
-//            NSDictionary *parmeters = @{@"id":postId,@"cookie":apiInfo.generateAauthCookie,@"nonce":nonce};
+            //            NSDictionary *parmeters = @{@"id":postId,@"cookie":apiInfo.generateAauthCookie,@"nonce":nonce};
             NSString *deleteURL = [NSString stringWithFormat:@"%@/posts/delete_post/",apiInfo.siteURL];
             
             KLog(@"deleteURL URL:%@",deleteURL);
@@ -790,13 +743,10 @@ const int MAX_PAGE_SIZE = 10;//每页显示数目
         }
              failure:^(AFHTTPRequestOperation *operation, NSError *error) {
                  KLog(@"Error fetching authors: %@", [error localizedDescription]);
-               
+                 
                  [WBSUtils showErrorMessage:[NSString stringWithFormat:@"%@", error.userInfo[NSLocalizedDescriptionKey]]];
                  
-                 super.lastCell.status = LastCellStatusError;
-                 if (self.refreshControl.refreshing) {
-                     [self.refreshControl endRefreshing];
-                 }
+                 
                  [self.tableView reloadData];
                  
                  
@@ -823,13 +773,13 @@ const int MAX_PAGE_SIZE = 10;//每页显示数目
                      }
                      failure:^(NSError *error) {
                          KLog(@"Error delete posts: %@", [error localizedDescription]);
-                        
+                         
                          if ([WBSConfig isWordpressOptimization]) {
-                            
+                             
                              [WBSUtils showErrorMessage:[NSString stringWithFormat:@"%@", error.userInfo[NSLocalizedDescriptionKey]]];
                          }
                          else{
-                            
+                             
                              [WBSUtils showErrorMessage:[NSString stringWithFormat:@"%@",NSLocalizedString(@"APINotSupported",nil)]];
                          }
                          
@@ -842,7 +792,6 @@ const int MAX_PAGE_SIZE = 10;//每页显示数目
 -(BOOL)checkApiStatus{
     KLog(@"Check api status:%@",((self.api == nil)?@"NO":@"YES"));
     if (!self.api) {
-        [self.refreshControl endRefreshing];
         
         NSString *errorString = @"api init error";
         KLog(@"%@",errorString);
@@ -940,4 +889,14 @@ const int MAX_PAGE_SIZE = 10;//每页显示数目
     _categoryId = ID;
     [self fetchObjectsOnPage:super.page refresh:NO];
 }
+
+
+-(void)UpToFetchMoreDataOfView{
+    KLog(@"上拉刷新数据");
+}
+
+-(void)DownToFetchMoreDataOfView{
+    KLog(@"下拉加载更多");
+}
+
 @end

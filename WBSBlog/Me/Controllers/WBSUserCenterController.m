@@ -8,7 +8,6 @@
 
 #import "WBSUserCenterController.h"
 #import "WBSApiInfo.h"
-#import "WBSLoginNavViewController.h"
 #import "WBSJsonApi.h"
 #import "UIImageView+WebCache.h"
 #import "WBSNetRequest.h"

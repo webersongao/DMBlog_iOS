@@ -274,7 +274,7 @@
 }
 
 //删除搜索历史表中某一条数据
-- (void)deleteSearchHistory:(NSString *)sting{
+- (void)deleteSearchHistory:(NSString *)string{
     if (!self.DB) {
         [self initDataBase];
     }
@@ -289,7 +289,7 @@
     [queue inDatabase:^(FMDatabase *db) {
         //删除数据
         NSString *string = [NSString stringWithFormat:@"delete from %@ where title = ?",kSeachHistoryTableName];
-        BOOL delete = [self.DB executeUpdate:string, sting];
+        BOOL delete = [self.DB executeUpdate:string, string];
         if (delete) {
             KLog(@"删除成功");
         }else{
