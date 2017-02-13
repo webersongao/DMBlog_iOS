@@ -61,12 +61,12 @@
     NSInteger tagID = [self getIDByTag:_tags[tagIndex]];
     KLog(@"%ld",tagID);
     
-    WBSHomePostViewController *postCtl = [[WBSHomePostViewController alloc]initWithPostType:PostTypePost];
-    postCtl.title = [NSString stringWithFormat:@"当前标签:%@",_tags[tagIndex]];
-    //设置结果类型为标签文章，并且设置标签ID
-    postCtl.postResultType = PostResultTypeTag;
-    postCtl.tagId = tagID;
-    [self.navigationController pushViewController:postCtl animated:YES];
+//    WBSHomePostViewController *postCtl = [[WBSHomePostViewController alloc]initWithPostType:PostTypePost];
+//    postCtl.title = [NSString stringWithFormat:@"当前标签:%@",_tags[tagIndex]];
+//    //设置结果类型为标签文章，并且设置标签ID
+//    postCtl.postResultType = PostResultTypeTag;
+//    postCtl.tagId = tagID;
+//    [self.navigationController pushViewController:postCtl animated:YES];
 }
 
 /**
@@ -100,11 +100,7 @@
     NSArray* colors = @[[UIColor colorWithRed:0 green:0.63 blue:0.8 alpha:1], [UIColor colorWithRed:1 green:0.2 blue:0.31 alpha:1], [UIColor colorWithRed:0.53 green:0.78 blue:0 alpha:1], [UIColor colorWithRed:1 green:0.55 blue:0 alpha:1]];
     NSArray* fonts = @[[UIFont systemFontOfSize:12], [UIFont systemFontOfSize:16], [UIFont systemFontOfSize:20]];
     //初始化
-    _tagCloud = [[WWTagsCloudView alloc] initWithFrame:CGRectMake(0.0, 20.0, self.view.frame.size.width, self.view.frame.size.height)
-                                               andTags:_tags                                          andTagColors:colors
-                                              andFonts:fonts
-                                       andParallaxRate:1.7
-                                          andNumOfLine:10];
+    _tagCloud = [[WWTagsCloudView alloc] initWithFrame:CGRectMake(0.0, 20.0, self.view.frame.size.width, self.view.frame.size.height) andTags:_tags                                          andTagColors:colors andFonts:fonts andParallaxRate:1.7 andNumOfLine:10];
     _tagCloud.delegate = self;
     [self.view addSubview:_tagCloud];
 }
