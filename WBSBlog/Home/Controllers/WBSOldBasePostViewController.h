@@ -1,5 +1,5 @@
 //
-//  WBSBasePostViewController.h
+//  WBSOldBasePostViewController.h
 //  WBSBlog
 //
 //  Created by Weberson on 16/7/20.
@@ -11,7 +11,7 @@
 #import "WordPressApi.h"
 #import "WBSJsonApi.h"
 
-@interface WBSBasePostViewController : UITableViewController
+@interface WBSOldBasePostViewController : UITableViewController
 
 @property (nonatomic, copy) NSString * (^generateURL)(NSUInteger page);
 @property (nonatomic, copy) void (^tableWillReload)(NSUInteger responseObjectsCount);

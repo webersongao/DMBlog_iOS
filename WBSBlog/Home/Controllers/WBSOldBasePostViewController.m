@@ -1,25 +1,25 @@
 //
-//  WBSBasePostViewController.m
+//  WBSOldBasePostViewController.m
 //  WBSBlog
 //
 //  Created by Weberson on 16/7/20.
 //  Copyright © 2016年 Weberson. All rights reserved.
 //
 
-#import "WBSBasePostViewController.h"
+#import "WBSOldBasePostViewController.h"
 #import "WBSLoginViewController.h"
 #import "WBSJsonApi.h"
 #import "WBSBlogAppDelegate.h"
 
 
 
-@interface WBSBasePostViewController ()
+@interface WBSOldBasePostViewController ()
 
 @property (nonatomic, assign) BOOL refreshInProgress;
 
 @end
 
-@implementation WBSBasePostViewController
+@implementation WBSOldBasePostViewController
 
 - (instancetype)init
 {
