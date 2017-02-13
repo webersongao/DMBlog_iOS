@@ -39,5 +39,5 @@
 - (NSMutableArray *)getDataForSearchHistory;
 
 //删除表中的数据
-- (void)deleteSearchHistory:(NSString *)sting;
+- (void)deleteSearchHistory:(NSString *)string;
 @end
