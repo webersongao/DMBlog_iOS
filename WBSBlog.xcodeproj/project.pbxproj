@@ -22,6 +22,8 @@
 		4EBC23381E52E41D00121233 /* WBSAuthorModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EBC23371E52E41D00121233 /* WBSAuthorModel.m */; };
 		4EBC233B1E52FCB400121233 /* WBSBaseDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EBC233A1E52FCB400121233 /* WBSBaseDetailsViewController.m */; };
 		4EBC233E1E52FEEA00121233 /* WBSLeftMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EBC233D1E52FEEA00121233 /* WBSLeftMenuViewController.m */; };
+		4EBC23411E530D0E00121233 /* downback_button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EBC233F1E530D0E00121233 /* downback_button@2x.png */; };
+		4EBC23421E530D0E00121233 /* downback_button@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EBC23401E530D0E00121233 /* downback_button@3x.png */; };
 		4EBEC6261DBB12D80038DFE0 /* SAMKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EBEC6211DBB12D80038DFE0 /* SAMKeychain.m */; };
 		4EBEC6271DBB12D80038DFE0 /* SAMKeychainQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EBEC6231DBB12D80038DFE0 /* SAMKeychainQuery.m */; };
 		4EBEC6281DBB12D80038DFE0 /* SAMKeychain.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4EBEC6251DBB12D80038DFE0 /* SAMKeychain.bundle */; };
@@ -596,6 +598,8 @@
 		4EBC233A1E52FCB400121233 /* WBSBaseDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBSBaseDetailsViewController.m; sourceTree = "<group>"; };
 		4EBC233C1E52FEEA00121233 /* WBSLeftMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSLeftMenuViewController.h; sourceTree = "<group>"; };
 		4EBC233D1E52FEEA00121233 /* WBSLeftMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBSLeftMenuViewController.m; sourceTree = "<group>"; };
+		4EBC233F1E530D0E00121233 /* downback_button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "downback_button@2x.png"; sourceTree = "<group>"; };
+		4EBC23401E530D0E00121233 /* downback_button@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "downback_button@3x.png"; sourceTree = "<group>"; };
 		4EBEC6201DBB12D80038DFE0 /* SAMKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAMKeychain.h; sourceTree = "<group>"; };
 		4EBEC6211DBB12D80038DFE0 /* SAMKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAMKeychain.m; sourceTree = "<group>"; };
 		4EBEC6221DBB12D80038DFE0 /* SAMKeychainQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAMKeychainQuery.h; sourceTree = "<group>"; };
@@ -1904,6 +1908,8 @@
 		4EDFF40F1E3757FD000C47D2 /* navi_bar */ = {
 			isa = PBXGroup;
 			children = (
+				4EBC233F1E530D0E00121233 /* downback_button@2x.png */,
+				4EBC23401E530D0E00121233 /* downback_button@3x.png */,
 				4E3B10571E49E159002EF825 /* back_button@2x.png */,
 				4E3B10581E49E159002EF825 /* back_button@3x.png */,
 				4EDFF4101E3757FD000C47D2 /* left_menu@2x.png */,
@@ -3319,6 +3325,7 @@
 				4EDFF3831E375508000C47D2 /* error@3x.png in Resources */,
 				4EDFF39F1E375508000C47D2 /* scan@2x.png in Resources */,
 				4EDFF3BA1E375508000C47D2 /* greenHL@2x.png in Resources */,
+				4EBC23411E530D0E00121233 /* downback_button@2x.png in Resources */,
 				4EDFF3A11E375508000C47D2 /* search.png in Resources */,
 				4EDFF3A71E375508000C47D2 /* shooting@2x.png in Resources */,
 				4EDFF3FB1E375508000C47D2 /* toolbar-keyboardUp@3x.png in Resources */,
@@ -3371,6 +3378,7 @@
 				4EDFF3C41E375508000C47D2 /* sidemenu-night@2x.png in Resources */,
 				4EDFF4021E375508000C47D2 /* toolbar-separatorline@2x.png in Resources */,
 				4EDFF3E31E375508000C47D2 /* tabbar-news@2x.png in Resources */,
+				4EBC23421E530D0E00121233 /* downback_button@3x.png in Resources */,
 				4EDFF3791E375508000C47D2 /* widget-original@3x.png in Resources */,
 				4EDFF3EC1E375508000C47D2 /* send@2x.png in Resources */,
 				4EDFF3CC1E375508000C47D2 /* sidemenu_setting@2x.png in Resources */,

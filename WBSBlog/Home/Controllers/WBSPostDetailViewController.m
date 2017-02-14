@@ -7,7 +7,6 @@
 //
 
 #import "WBSPostDetailViewController.h"
-#import "WBSPostEditViewController.h"
 
 @interface WBSPostDetailViewController ()
 
@@ -18,29 +17,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    KLog(@"This is post detail...");
-    
     self.navigationItem.title = @"文章详情";
-    self.navigationItem.backBarButtonItem =[[UIBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStylePlain target:nil action:nil];
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCompose target:self action:@selector(editPost)];
-    
-    [self setNavigationBarView];
-
-}
-
--(void)setNavigationBarView{
-    
-    UIBarButtonItem *leftBackItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"back_button"] style:UIBarButtonItemStylePlain target:self action:@selector(leftBackBarButtonItemAction)];
-    self.navigationItem.leftBarButtonItem = leftBackItem;
     
 }
 
 
-///
--(void)leftBackBarButtonItemAction{
-    
-    [self.navigationController popViewControllerAnimated:YES];
-}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -49,14 +30,5 @@
 
 
 
-/**
- *  编辑文章
- */
-- (void)editPost{
-    KLog(@"editing post...");
-    WBSPostEditViewController *postEditVC = [[WBSPostEditViewController alloc]init];
-    postEditVC.post = super.result;
-    [self.navigationController pushViewController:postEditVC animated:NO];
-}
 
 @end
