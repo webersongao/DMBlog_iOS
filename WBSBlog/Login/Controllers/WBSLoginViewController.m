@@ -8,10 +8,9 @@
 
 #import "WBSLoginViewController.h"
 #import "WBSSelectBlogViewController.h"
-#import "WBSNetRequest.h"
+#import "WBSJsonRequest.h"
 #import "UIView+Util.h"
-
-
+#import "NetworkingCenter.h"
 
 @interface WBSLoginViewController () <UITextFieldDelegate, UIGestureRecognizerDelegate>
 
@@ -133,7 +132,7 @@
     }else{
         return;
     }
-    [WBSNetRequest userLogin:^(BOOL isLoginSuccess, NSString * errorMsg) {
+    [WBSJsonRequest userLogin:^(BOOL isLoginSuccess, NSString * errorMsg) {
         // 登录结果
         if (isLoginSuccess) {
             [WBSUtils saveBoolforKey:NO forKey:WBSGuestLoginMode];
@@ -151,7 +150,6 @@
     [WBSUtils saveBoolforKey:YES forKey:WBSGuestLoginMode];
     [SingleObject shareSingleObject].isGuest = YES;
     [WBSUtils goToMainViewController];
-    
 }
 
 

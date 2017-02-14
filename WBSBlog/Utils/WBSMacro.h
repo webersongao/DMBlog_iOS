@@ -31,8 +31,6 @@
 //用户登录地址 json api
 #define WBSBlogLoginUrl  HandleApiWith(@"/user/generate_auth_cookie")
 
-
-
 /********************* 公共 宏 定义 *************************/
 
 /// 站点地址

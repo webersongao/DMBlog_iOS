@@ -76,6 +76,7 @@
     //((AppDelegate *)[UIApplication sharedApplication].delegate).inNightMode = [Config getMode];
 }
 
+
 /**
  *  隐藏右侧和底部滚动条，去掉滚动边界的黑色背景,禁止左右滑动
  *

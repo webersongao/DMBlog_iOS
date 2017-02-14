@@ -8,12 +8,16 @@
 
 #import "WBSHomePostViewController.h"
 #import "WBSPostTableView.h"
+#import "WBSJsonRequest.h"
+#import "WBSPostDetailViewController.h"
 
 
-@interface WBSHomePostViewController ()
+@interface WBSHomePostViewController ()<PostTableViewDelegate>
 
-@property (nonatomic, strong) UITableView *tableView;  //!< 展示文章的tableView
-@property (nonatomic, assign) PostViewType postType;  //!< 文章页面类型
+@property (nonatomic, strong) WBSPostTableView *tableView;  //!< 展示文章的tableView
+@property (nonatomic, assign) PostViewType postViewType;  //!< 文章页面类型
+@property (nonatomic, assign) PostAPIType postApiType;  //!< API类型
+@property (nonatomic, strong) NSMutableArray *postsModelArray;  //!< 文章数据源
 
 @end
 
@@ -31,29 +35,46 @@
 {
     if (self = [super init]) {
         //设置文章类型，仅仅高级API支持
-        _postType = type;
+        _postViewType = type;
+        _postsModelArray = [[NSMutableArray alloc]initWithCapacity:2];
+        _postApiType = APITypeJSON; // 默认JSON API
     }
     return self;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    // 设置界面
+    [self setTableViewWithPostType:self.postViewType];
+    // 请求数据
+    [self beginRequestRecentPost];
     
-    [self setTableViewWithType:self.postType];
+    
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+// 开始请求最近的文章数据
+-(void)beginRequestRecentPost{
+    
+    [WBSJsonRequest getRecentPostsWithQueryString:nil success:^(NSArray *postsModelArray, NSInteger postsCount) {
+        //
+        self.postsModelArray = [[NSMutableArray alloc]initWithArray:postsModelArray];
+        self.tableView.dataArray = self.postsModelArray;
+        [self.tableView reloadData];
+        
+    } failure:^(NSError *error) {
+        //
+        [WBSUtils showErrorMessage:@"数据请求异常"];
+    }];
 }
 
 // 设置界面要展示的tableView
--(void)setTableViewWithType:(PostViewType)type{
+-(void)setTableViewWithPostType:(PostViewType)type{
     switch (type) {
         case PostResultTypeRecent:
         {
             // 博客文章界面
-            WBSPostTableView *postTableView = [[WBSPostTableView alloc]initWithFrame:self.view.bounds style:UITableViewStyleGrouped];
+            WBSPostTableView *postTableView = [[WBSPostTableView alloc]initWithFrame:self.view.bounds style:UITableViewStyleGrouped withAPiType:self.postApiType];
+            postTableView.selectDelegate = self;
             [self.view addSubview:postTableView];
             self.tableView = postTableView;
             
@@ -85,6 +106,16 @@
     
     
 }
+
+
+/// PostTableViewDelegate 点击文章cell的方法
+-(void)PostTableViewCellDidSelectWithTableView:(WBSPostTableView *)tableView andPostModel:(WBSPostModel *)postModel{
+    
+    WBSPostDetailViewController *detailVC = [[WBSPostDetailViewController alloc] initWithPost:postModel];
+    [self.navigationController pushViewController:detailVC animated:YES];
+    
+}
+
 
 
 @end

@@ -19,6 +19,7 @@
 
 @property (nonatomic ,assign) BOOL isLogin;  //!< 是否登录
 @property (nonatomic ,assign) BOOL isGuest;  //!< 是否为游客
+@property (nonatomic ,copy) NSString * siteBaseUrlStr;  //!< 登录之后 记录的站点地址
 
 
 /**
