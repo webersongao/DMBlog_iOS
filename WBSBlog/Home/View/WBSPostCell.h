@@ -7,19 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "WBSPostModel.h"
 
 @interface WBSPostCell : UITableViewCell
-//文章标题
-@property (nonatomic, strong) UILabel *titleLabel;
-//文章摘要
-@property (nonatomic, strong) UILabel *bodyLabel;
-//作者
-@property (nonatomic, strong) UILabel *authorLabel;
-//发表时间
-@property (nonatomic, strong) UILabel *timeLabel;
-//评论数
-@property (nonatomic, strong) UILabel *commentCount;
-//文章分类
-@property (nonatomic,strong) UILabel *categories;
+
+@property (nonatomic, strong) WBSPostModel *postModel;  //!< 单条数据
+
+@property (nonatomic, assign) CGFloat cellHeight;  //!< cell高度
 
 @end

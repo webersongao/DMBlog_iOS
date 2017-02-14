@@ -6,8 +6,8 @@
 //  Copyright © 2016年 Weberson. All rights reserved.
 //
 
-#import "WBSDetailsViewController.h"
+#import "WBSBaseDetailsViewController.h"
 
-@interface WBSPostDetailViewController : WBSDetailsViewController
+@interface WBSPostDetailViewController : WBSBaseDetailsViewController
 
 @end

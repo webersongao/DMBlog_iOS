@@ -6,7 +6,7 @@
 //  Copyright © 2016年 Weberson. All rights reserved.
 //
 
-#import "WBSDetailsViewController.h"
+#import "WBSBaseDetailsViewController.h"
 #import "AFNetworking.h"
 #import "WBSJsonApi.h"
 #import "WBSPostModel.h"
@@ -25,13 +25,13 @@
 
 #define HTML_BOTTOM @"<div style='margin-bottom:60px'/>"
 
-@interface WBSDetailsViewController () <UIWebViewDelegate, UIScrollViewDelegate, UIAlertViewDelegate>
+@interface WBSBaseDetailsViewController () <UIWebViewDelegate, UIScrollViewDelegate, UIAlertViewDelegate>
 
 @property (nonatomic, strong) UIWebView *detailsView;
 
 @end
 
-@implementation WBSDetailsViewController
+@implementation WBSBaseDetailsViewController
 
 - (instancetype)initWithPost:(id)post
 {
@@ -75,6 +75,7 @@
     
     //((AppDelegate *)[UIApplication sharedApplication].delegate).inNightMode = [Config getMode];
 }
+
 
 /**
  *  隐藏右侧和底部滚动条，去掉滚动边界的黑色背景,禁止左右滑动
@@ -180,10 +181,7 @@
             
             [WBSUtils showErrorMessage:errorMesage];
             KLog(@"%@",errorMesage);
-        
-            
-        
-    
+
         }];
         NSOperationQueue *queue = [[NSOperationQueue alloc] init];
         [queue addOperation:operation];

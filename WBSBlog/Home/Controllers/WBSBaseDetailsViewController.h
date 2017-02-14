@@ -1,5 +1,5 @@
 //
-//  WBSDetailsViewController.h
+//  WBSBaseDetailsViewController.h
 //  WBSBlog
 //
 //  Created by Weberson on 16/7/20.
@@ -8,7 +8,7 @@
 
 #import "WBSBottomBarViewController.h"
 
-@interface WBSDetailsViewController : WBSBottomBarViewController
+@interface WBSBaseDetailsViewController : WBSBottomBarViewController
 
 /**
  *  详情实体

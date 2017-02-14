@@ -10,4 +10,6 @@
 
 @interface WBSBasePostViewController : WBSBaseViewController
 
+@property (nonatomic, strong) UILabel *desLabel; /// 预览文字
+
 @end

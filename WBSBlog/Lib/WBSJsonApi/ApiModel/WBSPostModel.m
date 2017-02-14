@@ -14,7 +14,7 @@
 + (WBSPostModel *)PostModelWithDictionary:(NSDictionary *)dictionary
 {
     WBSPostModel *PostModel = [[WBSPostModel alloc]init];
-    PostModel.ID = [dictionary[@"id"] integerValue];
+    PostModel.postId = [dictionary[@"id"] integerValue];
     PostModel.slug = dictionary[@"slug"];
     PostModel.URL = dictionary[@"url"];
     PostModel.title = [NSString stringByStrippingHTML:dictionary[@"title"]];

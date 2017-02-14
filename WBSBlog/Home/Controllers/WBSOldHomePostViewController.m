@@ -15,13 +15,14 @@
 #import "WBSTitleMenuViewController.h"
 #import "WBSLoginViewController.h"
 #import "WBSPostModel.h"
+#import "WBSJsonRequest.h"
 #import "WBSCategoryModel.h"
 
 //super.page //当前页码（由于MetaWeblog API不支持分页，因此，此参数仅仅JSON API有用）
 static NSString *kPostCellID = @"PostCell";//CellID
 
-const int MAX_DESCRIPTION_LENGTH = 60;//描述最多字数
-const int MAX_PAGE_SIZE = 10;//每页显示数目
+const int MAX_POST_DESCRIPTION_LENGTH = 60;//描述最多字数
+const int MAX_POST_COUNT = 10;//每页显示数目
 @interface WBSOldHomePostViewController ()<UISearchResultsUpdating,DropdownMenuDelegate, TitleMenuDelegate>{
     AFHTTPRequestOperationManager *manager;
 }
@@ -42,7 +43,7 @@ const int MAX_PAGE_SIZE = 10;//每页显示数目
     if (self = [super init]) {
         //设置文章类型，仅仅高级API支持
         _postType = type;
-
+        
     }
     return self;
 }
@@ -52,7 +53,7 @@ const int MAX_PAGE_SIZE = 10;//每页显示数目
     
     [super viewDidLoad];
     
-//    [self.tableView registerClass:[WBSPostCell class] forCellReuseIdentifier:kPostCellID];
+    //    [self.tableView registerClass:[WBSPostCell class] forCellReuseIdentifier:kPostCellID];
     //搜索框
     if([WBSConfig isJSONAPIEnable] && _isSearch){
         // 设置导航栏中间的titleView
@@ -143,20 +144,20 @@ const int MAX_PAGE_SIZE = 10;//每页显示数目
     NSArray *comments = [adaptedPost objectForKey:@"comments"];//评论
     
     //表格数据绑定
-    [cell.titleLabel setAttributedText:[WBSUtils attributedTittle:title]];
-    [cell.bodyLabel setText:[WBSUtils shortString:content andLength:MAX_DESCRIPTION_LENGTH]];
-    //作者处理
-    [cell.authorLabel setText:(!author||[author isEqual:@""])?@"admin":author];
-    cell.titleLabel.textColor = [UIColor titleColor];
-    NSDate *createdDate = dateCreated;
-    [cell.timeLabel setAttributedText:[WBSUtils attributedTimeString:createdDate]];
-    //metaWeblog api暂时不支持评论
-    [cell.commentCount setAttributedText:[WBSUtils attributedCommentCount:(int)comments.count]];
-    NSArray *categories = categroies;
-    NSString *joinedString = [WBSUtils shortString:[categories componentsJoinedByString:@","] andLength:15];
-    //处理分类为空的情况
-    NSString *categoriesString = [NSString stringWithFormat:@"  发布在【%@】",[joinedString isEqualToString: @""]?@"默认分类":joinedString];
-    cell.categories.text =categoriesString;
+//    [cell.titleLabel setAttributedText:[WBSUtils attributedTittle:title]];
+//    [cell.bodyLabel setText:[WBSUtils shortString:content andLength:MAX_POST_DESCRIPTION_LENGTH]];
+//    //作者处理
+//    [cell.authorLabel setText:(!author||[author isEqual:@""])?@"admin":author];
+//    cell.titleLabel.textColor = [UIColor titleColor];
+//    NSDate *createdDate = dateCreated;
+//    [cell.timeLabel setAttributedText:[WBSUtils attributedTimeString:createdDate]];
+//    //metaWeblog api暂时不支持评论
+//    [cell.commentCountLabel setAttributedText:[WBSUtils attributedCommentCount:(int)comments.count]];
+//    NSArray *categories = categroies;
+//    NSString *joinedString = [WBSUtils shortString:[categories componentsJoinedByString:@","] andLength:15];
+//    //处理分类为空的情况
+//    NSString *categoriesString = [NSString stringWithFormat:@"  发布在【%@】",[joinedString isEqualToString: @""]?@"默认分类":joinedString];
+//    cell.categoriesLabel.text =categoriesString;
     
     cell.selectedBackgroundView = [[UIView alloc] initWithFrame:cell.frame];
     cell.selectedBackgroundView.backgroundColor = [UIColor selectCellSColor];
@@ -177,7 +178,7 @@ const int MAX_PAGE_SIZE = 10;//每页显示数目
     [self.desLabel setAttributedText:[WBSUtils attributedTittle:title]];
     CGFloat height = [self.desLabel sizeThatFits:CGSizeMake(tableView.frame.size.width - 16, MAXFLOAT)].height;
     
-    self.desLabel.text = [WBSUtils shortString:content andLength:MAX_DESCRIPTION_LENGTH];
+    self.desLabel.text = [WBSUtils shortString:content andLength:MAX_POST_DESCRIPTION_LENGTH];
     self.desLabel.font = [UIFont systemFontOfSize:13];
     height += [self.desLabel sizeThatFits:CGSizeMake(tableView.frame.size.width - 16, MAXFLOAT)].height;
     
@@ -242,7 +243,7 @@ const int MAX_PAGE_SIZE = 10;//每页显示数目
     switch (type) {
         case APITypeJSON:{
             WBSPostModel *jsonPost = post;
-            [adaptedPost setValue:[NSString stringWithFormat:@"%ld",jsonPost.ID] forKey:@"id"];
+            [adaptedPost setValue:[NSString stringWithFormat:@"%ld",jsonPost.postId] forKey:@"id"];
             [adaptedPost setValue:jsonPost.title forKey:@"title"];
             [adaptedPost setValue:jsonPost.content forKey:@"content"];
             [adaptedPost setValue:[WBSUtils dateFromString:jsonPost.date] forKey:@"date"];
@@ -364,7 +365,7 @@ const int MAX_PAGE_SIZE = 10;//每页显示数目
 #pragma mark 加载最近文章数据
 
 -(void)fectchRecentPosts:(NSUInteger)page refresh:(BOOL)refresh{
-    NSInteger currentCount = MAX_PAGE_SIZE+page*MAX_PAGE_SIZE;
+    NSInteger currentCount = MAX_POST_COUNT+page*MAX_POST_COUNT;
     KLog(@"Tring to get recent %lu posts...",(long)currentCount);
     
     //===================================
@@ -383,9 +384,10 @@ const int MAX_PAGE_SIZE = 10;//每页显示数目
         NSInteger digPostCount = [[settings objectForKey:@"DigPostCount"] integerValue];
         //由于置顶文章会影响分页数目，因此需要把他排除
         //另外api里面分页的索引从1开始
-        NSString *queryStr = [NSString stringWithFormat:@"page=%lu&count=%d&post_type=%@",super.page+1,MAX_PAGE_SIZE,(_postType == PostTypePost?@"post":@"page")];
-        [jsonAPI get_recent_posts_WithSiteUrlStr:@"http://www.swiftartisan.com" queryString:queryStr success:^(NSArray *posts, NSInteger postsCount) {
-            
+        NSString *queryStr = [NSString stringWithFormat:@"page=%lu&count=%d&post_type=%@",super.page+1,MAX_POST_COUNT,(_postType == PostTypePost?@"post":@"page")];
+        
+        [WBSJsonRequest getRecentPostsWithQueryString:queryStr success:^(NSArray *postsArray, NSInteger postsCount) {
+            // 成功
             KLog(@"JSON API 的queryStr:%@",queryStr);
             
             KLog(@"JSON API Fetched %ld posts", postsCount);
@@ -403,17 +405,17 @@ const int MAX_PAGE_SIZE = 10;//每页显示数目
             }
             
             //获取数据
-            self.posts = posts;
+            self.posts = postsArray;
             
             //刷新数据
             dispatch_async(dispatch_get_main_queue(), ^{
-                if (self.tableWillReload) {self.tableWillReload(posts.count);}
+                if (self.tableWillReload) {self.tableWillReload(postsArray.count);}
                 else {
                     if (super.page == 0 && postsCount == 0) {//首页无数据
                         
                     }
-                    else if (postsCount == 0 || ((postsCount - MAX_PAGE_SIZE)%MAX_PAGE_SIZE > 0)) {
-                        //注：当前页面数目小于MAX_PAGE_SIZE或者没有结果表示全部加载完成
+                    else if (postsCount == 0 || ((postsCount - MAX_POST_COUNT)%MAX_POST_COUNT > 0)) {
+                        //注：当前页面数目小于MAX_POST_COUNT或者没有结果表示全部加载完成
                         //另外：默认返回的每页的数目会自动加上置顶文章数目，因此需要修正
                         
                         self.page = 0;//最后一页无数据，回到初始页
@@ -494,43 +496,45 @@ const int MAX_PAGE_SIZE = 10;//每页显示数目
     
     NSString *baseURL = [WBSUtils getObjectforKey:WBSSiteBaseURL];
     
-    [jsonAPI get_recent_posts_WithSiteUrlStr:@"http://www.swiftartisan.com" queryString:[NSString stringWithFormat:@"%@/get_search_results/?search=%@&page=%lu&count=%d&post_type=post",baseURL,searchString,super.page+1,MAX_PAGE_SIZE]
-                                     success:^(NSArray *postsArray, NSInteger postsCount) {
-                                         dispatch_async(dispatch_get_main_queue(), ^{
-                                             //处理刷新
-                                             if (refresh) {
-                                                 super.page = 0;
-                                                 if (super.didRefreshSucceed) {
-                                                     super.didRefreshSucceed();
-                                                 }
-                                             }
-                                             
-                                             KLog(@"Fetched %ld posts", postsCount);
-                                             self.posts = postsArray;
-                                             
-                                             //刷新数据
-                                             if (self.tableWillReload) {self.tableWillReload(postsCount);}
-                                             else {
-                                                 if (super.page == 0 && postsCount == 0) {//首页无数据
-                                                     
-                                                 }
-                                                 else if (postsCount == 0 || ((postsCount - MAX_PAGE_SIZE)%MAX_PAGE_SIZE > 0)) {
-                                                     
-                                                 } else {
-                                                     
-                                                 }
-                                             }
-                                             
-                                             
-                                             [self.tableView reloadData];
-                                             
-                                             //取消加载中
-                                             [WBSUtils dismissHUD];
-                                         });
-                                     }failure:^(NSError *error) {
-                                         KLog(@"Error: %@", error);
-                                         [WBSUtils dismissHUD];
-                                     }];
+    [WBSJsonRequest getRecentPostsWithQueryString:nil success:^(NSArray *postsArray, NSInteger postsCount) {
+        //
+        //    [jsonAPI get_recent_posts_WithSiteUrlStr:@"http://www.swiftartisan.com" queryString:[NSString stringWithFormat:@"%@/get_search_results/?search=%@&page=%lu&count=%d&post_type=post",baseURL,searchString,super.page+1,MAX_POST_COUNT]
+        //                                     success:^(NSArray *postsArray, NSInteger postsCount) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            //处理刷新
+            if (refresh) {
+                super.page = 0;
+                if (super.didRefreshSucceed) {
+                    super.didRefreshSucceed();
+                }
+            }
+            
+            KLog(@"Fetched %ld posts", postsCount);
+            self.posts = postsArray;
+            
+            //刷新数据
+            if (self.tableWillReload) {self.tableWillReload(postsCount);}
+            else {
+                if (super.page == 0 && postsCount == 0) {//首页无数据
+                    
+                }
+                else if (postsCount == 0 || ((postsCount - MAX_POST_COUNT)%MAX_POST_COUNT > 0)) {
+                    
+                } else {
+                    
+                }
+            }
+            
+            
+            [self.tableView reloadData];
+            
+            //取消加载中
+            [WBSUtils dismissHUD];
+        });
+    }failure:^(NSError *error) {
+        KLog(@"Error: %@", error);
+        [WBSUtils dismissHUD];
+    }];
     
 }
 
@@ -550,7 +554,7 @@ const int MAX_PAGE_SIZE = 10;//每页显示数目
     
     NSString *baseURL = [WBSUtils getObjectforKey:WBSSiteBaseURL];
     
-    NSString *requestURL = [NSString stringWithFormat:@"%@/get_category_posts/?id=%lu&page=%lu&count=%d&post_type=post",baseURL,categortId,super.page+1,MAX_PAGE_SIZE];
+    NSString *requestURL = [NSString stringWithFormat:@"%@/get_category_posts/?id=%lu&page=%lu&count=%d&post_type=post",baseURL,categortId,super.page+1,MAX_POST_COUNT];
     
     KLog(@"category request URL:%@",requestURL);
     //获取作者数据
@@ -617,7 +621,7 @@ const int MAX_PAGE_SIZE = 10;//每页显示数目
     
     NSString *baseURL = [WBSUtils getObjectforKey:WBSSiteBaseURL];
     
-    NSString *requestURL = [NSString stringWithFormat:@"%@/get_tag_posts/?id=%lu&page=%lu&count=%d&post_type=post",baseURL,tagId,super.page+1,MAX_PAGE_SIZE];
+    NSString *requestURL = [NSString stringWithFormat:@"%@/get_tag_posts/?id=%lu&page=%lu&count=%d&post_type=post",baseURL,tagId,super.page+1,MAX_POST_COUNT];
     
     KLog(@"category request URL:%@",requestURL);
     //获取作者数据
@@ -649,8 +653,8 @@ const int MAX_PAGE_SIZE = 10;//每页显示数目
                     if (super.page == 0 && posts.count == 0) {//首页无数据
                         
                     }
-                    else if (posts.count == 0 || ((posts.count - MAX_PAGE_SIZE)%MAX_PAGE_SIZE > 0)) {
-                        //注：当前页面数目小于MAX_PAGE_SIZE或者没有结果表示全部加载完成
+                    else if (posts.count == 0 || ((posts.count - MAX_POST_COUNT)%MAX_POST_COUNT > 0)) {
+                        //注：当前页面数目小于MAX_POST_COUNT或者没有结果表示全部加载完成
                         //另外：默认返回的每页的数目会自动加上置顶文章数目，因此需要修正
                         
                         self.page = 0;//最后一页无数据，回到初始页

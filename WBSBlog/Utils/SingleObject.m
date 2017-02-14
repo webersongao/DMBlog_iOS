@@ -18,6 +18,7 @@
         self.user = [[WBSUserModel alloc] init];
         self.isLogin = NO;
         self.isGuest = NO;
+        self.siteBaseUrlStr = @"";
     }
     return self;
 }
@@ -38,7 +39,10 @@
     if (isLogin == YES) {
         // 登录成功，修改为 非游客模式
         [WBSUtils saveBoolforKey:NO forKey:WBSGuestLoginMode];
+        self.siteBaseUrlStr = [WBSUtils getObjectforKey:WBSSiteBaseURL];
         self.isGuest = NO;
+    }else{
+    self.siteBaseUrlStr = @"";
     }
     
 }

@@ -7,10 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "WBSAuthorModel.h"
 
 @interface WBSPostModel : NSObject
 
-@property (nonatomic) NSInteger ID;
+@property (nonatomic) NSInteger postId;
 @property (nonatomic) NSString *URL;
 @property (nonatomic) NSString *slug;
 @property (nonatomic) NSString *title;
@@ -25,7 +26,7 @@
 @property (nonatomic) NSString *lastModifiedDate;
 @property (nonatomic) NSArray *categoriesArray;
 @property (nonatomic) NSArray *tagsArray;
-@property (nonatomic) NSDictionary *authorInfo;
+@property (nonatomic) WBSAuthorModel *authorModel;
 @property (nonatomic) NSArray *commentsArray;
 @property (nonatomic) NSInteger commentsCount;
 @property (nonatomic) NSString *commentsStatus;
