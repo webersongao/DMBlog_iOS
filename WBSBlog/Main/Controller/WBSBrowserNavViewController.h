@@ -6,9 +6,9 @@
 //  Copyright © 2016年 Weberson. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "WBSBaseNaviViewController.h"
 
-@interface WBSBrowserNavViewController : UINavigationController
+@interface WBSBrowserNavViewController : WBSBaseNaviViewController
 
 /**
  *  要浏览的url

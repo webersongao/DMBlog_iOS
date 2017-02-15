@@ -1,5 +1,5 @@
 //
-//  UIView+Util.h
+//  UIView+Sizes.h
 //  WBSBlog
 //
 //  Created by Weberson on 16/7/20.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UIView (Util)
+@interface UIView (Sizes)
 
 @property (nonatomic) CGFloat left;        ///< Shortcut for frame.origin.x.
 @property (nonatomic) CGFloat top;         ///< Shortcut for frame.origin.y

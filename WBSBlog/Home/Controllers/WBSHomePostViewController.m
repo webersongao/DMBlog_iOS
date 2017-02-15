@@ -8,13 +8,12 @@
 
 #import "WBSHomePostViewController.h"
 #import "WBSPostTableView.h"
-#import "WBSJsonRequest.h"
+#import "WBSNetRequest.h"
 #import "WBSPostDetailViewController.h"
 
 
 @interface WBSHomePostViewController ()<PostTableViewDelegate>
 
-@property (nonatomic, strong) WBSPostTableView *tableView;  //!< 展示文章的tableView
 @property (nonatomic, assign) PostViewType postViewType;  //!< 文章页面类型
 @property (nonatomic, assign) PostAPIType postApiType;  //!< API类型
 @property (nonatomic, strong) NSMutableArray *postsModelArray;  //!< 文章数据源
@@ -47,20 +46,20 @@
     // 设置界面
     [self setTableViewWithPostType:self.postViewType];
     // 请求数据
-    [self beginRequestRecentPost];
-    
+//    [self beginRequestRecentPost];
     
 }
 
 // 开始请求最近的文章数据
 -(void)beginRequestRecentPost{
     
-    [WBSJsonRequest getRecentPostsWithQueryString:nil success:^(NSArray *postsModelArray, NSInteger postsCount) {
+    [WBSUtils showProgressMessage:@"加载中..."];
+    [[WBSNetRequest sharedRequest]getRecentPostsWithQueryString:nil success:^(NSArray *postsModelArray, NSInteger postsCount) {
         //
         self.postsModelArray = [[NSMutableArray alloc]initWithArray:postsModelArray];
         self.tableView.dataArray = self.postsModelArray;
         [self.tableView reloadData];
-        
+        [WBSUtils dismissHUD];
     } failure:^(NSError *error) {
         //
         [WBSUtils showErrorMessage:@"数据请求异常"];
@@ -73,11 +72,10 @@
         case PostResultTypeRecent:
         {
             // 博客文章界面
-            WBSPostTableView *postTableView = [[WBSPostTableView alloc]initWithFrame:self.view.bounds style:UITableViewStyleGrouped withAPiType:self.postApiType];
+            WBSPostTableView *postTableView = [[WBSPostTableView alloc]initWithFrame:self.view.bounds style:UITableViewStylePlain withAPiType:self.postApiType];
             postTableView.selectDelegate = self;
             [self.view addSubview:postTableView];
             self.tableView = postTableView;
-            
             break;
         }
             

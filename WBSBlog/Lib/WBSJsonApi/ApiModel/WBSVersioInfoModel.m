@@ -27,6 +27,9 @@
 -(void)setValue:(id)value forUndefinedKey:(NSString *)key{
     
     //防止崩溃
+    if ([key isEqualToString:@"description"]) {
+        self.descriptions = value;
+    }
 }
 
 @end

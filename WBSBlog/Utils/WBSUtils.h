@@ -8,7 +8,6 @@
 
 #import <Foundation/Foundation.h>
 #import "UIColor+Config.h"
-#import "UIView+Util.h"
 #import "UIImage+Util.h"
 #import "UIFont+FontAwesome.h"
 #import "NSString+FontAwesome.h"

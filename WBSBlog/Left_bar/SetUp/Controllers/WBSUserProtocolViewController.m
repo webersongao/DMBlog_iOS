@@ -32,9 +32,9 @@
 #pragma mark - lifecycle
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationItem.title = @"博客汇使用协议";
+    self.navigationItem.title = @"\"博客汇\" 使用协议";
     self.view.backgroundColor = [UIColor whiteColor];
-    self.navigationItem.leftBarButtonItem  = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"back_button"] style:UIBarButtonItemStylePlain target:self action:@selector(leftBarButtonAction)];
+    self.navigationItem.rightBarButtonItem  = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"downback_button"] style:UIBarButtonItemStylePlain target:self action:@selector(rightBarButtonAction)];
     [self.view addSubview:self.webView];
 }
 
@@ -44,7 +44,7 @@
 
 #pragma mark - events
 //导航左侧返回按钮
-- (void)leftBarButtonAction{
+- (void)rightBarButtonAction{
     [self dismissViewControllerAnimated:YES completion:^{
         
     }];

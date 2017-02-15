@@ -18,29 +18,61 @@
  */
 #pragma mark  About User
 
-/// 用户登陆 Login
-+ (void)userLoginWithSiteUrlStr:(NSString *)siteUrlString queryString:(NSString *)QueryString inSSLSecure:(BOOL)inSSLSecure success:(void (^)(NSDictionary *resultDict))success failure:(void (^)(NSError *error))failure{
+/// 用户登陆 POST Login
++ (void)post_UserLogin_WithSiteUrlStr:(NSString *)siteUrlString userNameStr:(NSString *)userName passWordStr:(NSString *)passWord inSSLSecure:(BOOL)inSSLSecure success:(void (^)(id responseObject,NSString *cookieName,NSString *cookie))success failure:(void (^)(NSError *error))failure{
     
-    NSString *requestURL = [NSString stringWithFormat:@"%@/%@/%@/?%@%@",siteUrlString,KAPI_base_URL,KUser_Generate_auth_cookie,QueryString,inSSLSecure?@"":@"&insecure=cool"];
+    NSString *requestURL = [NSString stringWithFormat:@"%@/%@/%@/",siteUrlString,KBase_Api,KUser_Generate_auth_cookie];
     
-    [WBSNetworking GETRequest:requestURL parameters:nil success:^(id responseObject) {
+    NSMutableDictionary *parameterDict = [NSMutableDictionary dictionary];
+    [parameterDict setObject:checkNull(userName) forKey:@"username"];
+    [parameterDict setObject:checkNull(passWord) forKey:@"password"];
+    if (!inSSLSecure) {
+        // 不使用https
+        [parameterDict setObject:@"cool" forKey:@"insecure"];
+    }
+    
+    [WBSNetworking POSTRequest:requestURL parameters:parameterDict success:^(id responseObject) {
         // 成功
+        NSString *cookieNameStr = @"";
+        NSString *cookieStr = @"";
+        id response = responseObject;
         if ([responseObject isKindOfClass:[NSDictionary class]]) {
             
             NSString *status = [responseObject objectForKey:@"status"];
             
             if (![status isEqualToString:@"ok"]) {
                 // login fail
-                responseObject = [NSDictionary dictionaryWithObject:@"WBSUserJsonApi result block error" forKey:@"errorStr"];
+                response = [NSDictionary dictionaryWithObject:@"WBSUserJsonApi result block error" forKey:@"errorStr"];
+            }else{
+                
+                cookieNameStr = responseObject[@"cookie_name"];
+                cookieStr = responseObject[@"cookie"];
+                [WBSUtils saveObjectforKey:cookieStr forKey:WBSSiteAuthCookie];
+                [WBSUtils saveObjectforKey:cookieNameStr forKey:WBSSiteAuthCookieName];
+                
+                // 保存用户数据
+                NSDictionary *userDict = [responseObject objectForKey:@"user"];
+                WBSUserModel * userModel = [WBSUserModel WBSUserModelWithDic:userDict];
+                [WBSUtils saveObjectforKey:userModel.uid forKey:WBSUserUID];
+                NSDictionary *administratorDict = [userDict objectForKey:@"capabilities"];
+                // 是否是管理员
+                if ([administratorDict objectForKey:@"administrator"]) {
+                    userModel.isAdmin = YES;
+                }else{
+                    userModel.isAdmin = NO;
+                }
+                
+                responseObject = userModel;
             }
         }
         
-        success(responseObject);
+        success(response,cookieNameStr,cookieStr);
         
     } failure:^(NSError *error) {
         // 失败
         failure(error);
     }];
+    
 }
 
 @end

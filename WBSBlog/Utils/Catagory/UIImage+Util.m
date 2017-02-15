@@ -38,7 +38,7 @@
 }
 
 
-- (UIImage *)cropToRect:(CGRect)rect
+- (UIImage *)clipToRect:(CGRect)rect
 {
     CGImageRef imageRef   = CGImageCreateWithImageInRect([self CGImage], rect);
     UIImage *croppedImage = [UIImage imageWithCGImage:imageRef];

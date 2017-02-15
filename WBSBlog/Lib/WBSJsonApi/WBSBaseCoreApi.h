@@ -14,15 +14,16 @@
 #import "WBSNetworking.h"
 #import "WBSJsonMacro.h"
 
+
 @interface WBSBaseCoreApi : NSObject
-
-
 
 
 /********************* 公共方法 *************************/
 
-/// get info    获取JSON API版本信息
-+ (void)GetJsonApiVersionInfoWithSiteURLStr:(NSString *)siteURLStr success:(void (^)(id versionInfoModel))successBlock failure:(void (^)(NSError *error))failureBlock;
+/// get info  Returns information about JSON API.
+// 版本信息 info -> Returns information about JSON API or detailed information about a specific controller
+// controllerStr
++ (void)get_JsonApi_Info_WithSiteURLStr:(NSString *)siteURLStr controllerStr:(NSString *)controllerStr success:(void (^)(id versionInfoModel))successBlock failure:(void (^)(NSError *error))failureBlock;
 
 /**
  *  1、Core  需要JsonApi 插件 https://wordpress.org/plugins/json-api/    并在 Json Api 设置中开启 Core 模块
@@ -30,13 +31,14 @@
 #pragma mark  1️⃣ Core
 
 /// get_recent_posts    获取文章
-+ (void)get_recent_posts_WithSiteUrlStr:(NSString *)siteUrlString queryString:(NSString *)queryString success:(void (^)(NSArray *postsModelArray, NSInteger postsCount))successBlock failure:(void (^)(NSError *error))failureBlock;
+/// get_recent_posts -> home page（eg:json=1） or any page by setting json=get_recent_posts
++ (void)get_recent_posts_WithSiteUrlStr:(NSString *)siteUrlString count:(NSInteger)count page:(NSInteger)page postType:(NSString *)postType success:(void (^)(NSArray *postsModelArray, NSInteger postsCount))successBlock failure:(void (^)(NSError *error))failureBlock;
 
-///  get_posts  获取所有文章
-+ (void)get_Posts_WithSiteUrlStr:(NSString *)siteUrlString queryString:(NSString *)queryString success:(void (^)(NSArray *postsModelArray, NSInteger postsCount ,BOOL isIgnoreStickyPosts))successBlock failure:(void (^)(NSError *error))failureBlock;
+/// get_posts   获取文章
++ (void)get_Posts_WithSiteUrlStr:(NSString *)siteUrlString count:(NSInteger)count page:(NSInteger)page postType:(NSString *)postType IgnoreStickyPosts:(BOOL)isIgnoreStickyPosts success:(void (^)(NSArray *postsModelArray, NSInteger postsCount ,BOOL isIgnoreStickyPosts))successBlock failure:(void (^)(NSError *error))failureBlock;
 
 /// get_post    获取指定文章
-+ (void)get_post_WithSiteUrlStr:(NSString *)siteUrlString queryString:(NSString *)queryString success:(void (^)(NSArray *postsArray, NSInteger postsCount))successBlock failure:(void (^)(NSError *error))failureBlock;
++ (void)get_post_WithSiteUrlStr:(NSString *)siteUrlString postId:(NSInteger)postId postSlug:(NSString *)postSlug postType:(NSString *)postType success:(void (^)(NSArray *postsArray, NSInteger postsCount))successBlock failure:(void (^)(NSError *error))failureBlock;
 
 /// get_page
 + (void)get_page_WithSiteUrlStr:(NSString *)siteUrlString queryString:(NSString *)queryString success:(void (^)(NSArray *postsArray, NSInteger postsCount))successBlock failure:(void (^)(NSError *error))failureBlock;

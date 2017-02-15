@@ -17,6 +17,7 @@
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 #import "WBSUtils.h"
+#import "UIView+Sizes.h"
 #import "WBSMacro.h"
 #import "WBSConfig.h"
 #import "SingleObject.h"

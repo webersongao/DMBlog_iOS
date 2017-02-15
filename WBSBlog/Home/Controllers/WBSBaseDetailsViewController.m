@@ -10,6 +10,7 @@
 #import "AFNetworking.h"
 #import "WBSJsonApi.h"
 #import "WBSPostModel.h"
+#import "WBSPostEditViewController.h"
 
 #define HTML_STYLE @"<style>\
 #WBSBlog_title {color: #000000; margin-bottom: 6px; font-weight:bold;}\
@@ -38,7 +39,7 @@
     self = [super initWithModeSwitchButton:YES];
     if (self) {
         self.hidesBottomBarWhenPushed = YES;
-         self.result = post;
+        self.result = post;
     }
     
     return self;
@@ -74,8 +75,37 @@
     [self fetchDetails:NO];
     
     //((AppDelegate *)[UIApplication sharedApplication].delegate).inNightMode = [Config getMode];
+    [self setNavigationBarView];
 }
 
+
+
+-(void)setNavigationBarView{
+    
+    UIBarButtonItem *rightEditItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"tweetEditing"] style:UIBarButtonItemStylePlain target:self action:@selector(rightEditBarButtonItemAction)];
+    
+    UIBarButtonItem *leftBackItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"back_button"] style:UIBarButtonItemStylePlain target:self action:@selector(leftBackBarButtonItemAction)];
+    self.navigationItem.leftBarButtonItem = leftBackItem;
+    self.navigationItem.rightBarButtonItem = rightEditItem;
+    
+}
+
+/**
+ *  编辑文章
+ */
+- (void)rightEditBarButtonItemAction{
+    WBSPostEditViewController *postEditVC = [[WBSPostEditViewController alloc]init];
+    postEditVC.post = self.result;
+    [self.navigationController pushViewController:postEditVC animated:NO];
+}
+
+/**
+ *   返回
+ */
+-(void)leftBackBarButtonItemAction{
+    
+    [self.navigationController popViewControllerAnimated:YES];
+}
 
 /**
  *  隐藏右侧和底部滚动条，去掉滚动边界的黑色背景,禁止左右滑动
@@ -139,7 +169,7 @@
         title = jsonPost.title;
         content = jsonPost.content;
         dateCreated = [WBSUtils dateFromString:jsonPost.date];
-        author = @"admin";
+        author = jsonPost.authorModel.name;
         categroies = jsonPost.categoriesArray;
         url = jsonPost.URL;
     }else{// XMLRPC API
@@ -176,12 +206,12 @@
             [WBSUtils dismissHUDWithDelay:1];
         }failure:^(AFHTTPRequestOperation *operation, NSError *error) {
             KLog(@"发生错误！%@",error);
-    
+            
             NSString *errorMesage =  [NSString stringWithFormat:@"网络异常，加载详情失败:%@",[error localizedDescription]];
             
             [WBSUtils showErrorMessage:errorMesage];
             KLog(@"%@",errorMesage);
-
+            
         }];
         NSOperationQueue *queue = [[NSOperationQueue alloc] init];
         [queue addOperation:operation];

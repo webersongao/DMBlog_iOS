@@ -10,7 +10,7 @@
 #import "WBSApiInfo.h"
 #import "WBSJsonApi.h"
 #import "UIImageView+WebCache.h"
-#import "WBSJsonRequest.h"
+#import "WBSNetRequest.h"
 
 static NSString *kUserInfoCellID = @"userInfoCell";
 #define HeaderViewHeight    160

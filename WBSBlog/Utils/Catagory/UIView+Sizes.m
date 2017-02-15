@@ -1,17 +1,17 @@
 //
-//  UIView+Util.m
+//  UIView+Sizes.m
 //  WBSBlog
 //
 //  Created by Weberson on 16/7/20.
 //  Copyright © 2016年 Weberson. All rights reserved.
 //
 
-#import "UIView+Util.h"
+#import "UIView+Sizes.h"
 #import "GPUImage.h"
 #import <objc/runtime.h>
 
 
-@implementation UIView (Util)
+@implementation UIView (Sizes)
 
 
 NSString * const _recognizerScale = @"_recognizerScale";

@@ -32,6 +32,7 @@
     //4、设置打开/关闭抽屉的手势
     drawerController.openDrawerGestureModeMask = MMOpenDrawerGestureModeAll;
     drawerController.closeDrawerGestureModeMask =MMCloseDrawerGestureModeAll;
+    
     //5、设置左右两边抽屉显示的多少
     drawerController.maximumLeftDrawerWidth = 200.0;
     drawerController.maximumRightDrawerWidth = 200.0;

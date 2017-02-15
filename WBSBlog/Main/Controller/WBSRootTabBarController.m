@@ -75,30 +75,30 @@
  *  @param imageName       默认显示的图片名字
  *  @param selectImageName 选中显示的图片名字
  */
-- (void)addChildVC:(UIViewController *)vc Background:(UIColor *)Color title:(NSString *)title imageName:(NSString *)imageName selectImageName:(NSString *)selectImageName
+- (void)addChildVC:(UIViewController *)childVC Background:(UIColor *)Color title:(NSString *)title imageName:(NSString *)imageName selectImageName:(NSString *)selectImageName
 {
-    vc.title=title;
+    childVC.title=title;
     //如果直接复制，tabbar会渲染成灰色
     //UIImageRenderingModeAlwaysOriginal 告诉图片不要渲染
-    vc.tabBarItem.image=[[UIImage imageNamed:imageName] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    childVC.tabBarItem.image=[[UIImage imageNamed:imageName] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     //如果直接复制，tabbar会渲染成蓝色
     //UIImageRenderingModeAlwaysOriginal 告诉图片不要渲染
-    vc.tabBarItem.selectedImage=[[UIImage imageNamed:selectImageName] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    childVC.tabBarItem.selectedImage=[[UIImage imageNamed:selectImageName] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     // 修改文字颜色
     //    NSDictionary *dict=@{
     //                         NSForegroundColorAttributeName:BottomTextColor,
     //                         NSFontAttributeName:[UIFont systemFontOfSize:12.0f]
     //                         };
-    //    [vc.tabBarItem setTitleTextAttributes:dict forState:UIControlStateNormal];
+    //    [childVC.tabBarItem setTitleTextAttributes:dict forState:UIControlStateNormal];
     //    NSDictionary *dictS=@{
     //                          NSForegroundColorAttributeName:BottomTextSelectColor,
     //                          NSFontAttributeName:[UIFont systemFontOfSize:12.0f]
     //                          };
-    //    [vc.tabBarItem setTitleTextAttributes:dictS forState:UIControlStateSelected];
-    //将传进来的vc包装成nav。
-    WBSBaseNaviViewController *nav=[[WBSBaseNaviViewController alloc]initWithRootViewController:vc];
+    //    [childVC.tabBarItem setTitleTextAttributes:dictS forState:UIControlStateSelected];
+    //将传进来的childVC包装成nav。
+    //    WBSBaseNaviViewController *childNav=[[WBSBaseNaviViewController alloc]initWithRootViewController:childVC];
     
-    [self addChildViewController:nav];
+    [self addChildViewController:childVC];
 }
 
 
