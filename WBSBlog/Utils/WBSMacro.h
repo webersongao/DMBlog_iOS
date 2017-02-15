@@ -33,10 +33,10 @@
 
 /********************* 公共 宏 定义 *************************/
 
-/// 站点地址
+/// 站点地址 JSON API 地址
 #define WBSSiteBaseURL                  @"KBlogBaseURL"  //示例： http://www.baidu.com
 
-/// 站点xmlrpc地址
+/// 站点 xmlrpc 地址
 #define WBSSiteXmlrpcURL                @"KBlogXmlrpcURL"  //示例： http://www.baidu.com/xmlrpc.php
 
 /// 用户UID

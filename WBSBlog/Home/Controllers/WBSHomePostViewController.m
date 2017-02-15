@@ -8,7 +8,7 @@
 
 #import "WBSHomePostViewController.h"
 #import "WBSPostTableView.h"
-#import "WBSJsonRequest.h"
+#import "WBSNetRequest.h"
 #import "WBSPostDetailViewController.h"
 
 
@@ -46,7 +46,7 @@
     // 设置界面
     [self setTableViewWithPostType:self.postViewType];
     // 请求数据
-    [self beginRequestRecentPost];
+//    [self beginRequestRecentPost];
     
 }
 
@@ -54,7 +54,7 @@
 -(void)beginRequestRecentPost{
     
     [WBSUtils showProgressMessage:@"加载中..."];
-    [WBSJsonRequest getRecentPostsWithQueryString:nil success:^(NSArray *postsModelArray, NSInteger postsCount) {
+    [[WBSNetRequest sharedRequest]getRecentPostsWithQueryString:nil success:^(NSArray *postsModelArray, NSInteger postsCount) {
         //
         self.postsModelArray = [[NSMutableArray alloc]initWithArray:postsModelArray];
         self.tableView.dataArray = self.postsModelArray;
@@ -76,7 +76,6 @@
             postTableView.selectDelegate = self;
             [self.view addSubview:postTableView];
             self.tableView = postTableView;
-            
             break;
         }
             

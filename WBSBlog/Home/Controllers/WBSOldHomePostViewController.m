@@ -15,7 +15,7 @@
 #import "WBSTitleMenuViewController.h"
 #import "WBSLoginViewController.h"
 #import "WBSPostModel.h"
-#import "WBSJsonRequest.h"
+#import "WBSNetRequest.h"
 #import "WBSCategoryModel.h"
 
 //super.page //当前页码（由于MetaWeblog API不支持分页，因此，此参数仅仅JSON API有用）
@@ -386,7 +386,7 @@ const int MAX_POST_COUNT = 10;//每页显示数目
         //另外api里面分页的索引从1开始
         NSString *queryStr = [NSString stringWithFormat:@"page=%lu&count=%d&post_type=%@",super.page+1,MAX_POST_COUNT,(_postType == PostTypePost?@"post":@"page")];
         
-        [WBSJsonRequest getRecentPostsWithQueryString:queryStr success:^(NSArray *postsArray, NSInteger postsCount) {
+        [[WBSNetRequest sharedRequest]getRecentPostsWithQueryString:queryStr success:^(NSArray *postsArray, NSInteger postsCount) {
             // 成功
             KLog(@"JSON API 的queryStr:%@",queryStr);
             
@@ -496,7 +496,7 @@ const int MAX_POST_COUNT = 10;//每页显示数目
     
     NSString *baseURL = [WBSUtils getObjectforKey:WBSSiteBaseURL];
     
-    [WBSJsonRequest getRecentPostsWithQueryString:nil success:^(NSArray *postsArray, NSInteger postsCount) {
+    [[WBSNetRequest sharedRequest]getRecentPostsWithQueryString:nil success:^(NSArray *postsArray, NSInteger postsCount) {
         //
         //    [jsonAPI get_recent_posts_WithSiteUrlStr:@"http://www.swiftartisan.com" queryString:[NSString stringWithFormat:@"%@/get_search_results/?search=%@&page=%lu&count=%d&post_type=post",baseURL,searchString,super.page+1,MAX_POST_COUNT]
         //                                     success:^(NSArray *postsArray, NSInteger postsCount) {

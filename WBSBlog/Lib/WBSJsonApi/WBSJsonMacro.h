@@ -15,7 +15,7 @@
 
 #define KHttps          @"https://"
 
-#define KAPI_base_URL    @"api"
+#define KBase_Api       @"api"
 
 
 /// 方法 User
@@ -58,7 +58,7 @@
 
 /// 方法 core
 
-#define KBase_Versioninfo    @"info"
+#define KJsonApi_Versioninfo    @"info"
 
 #define KBase_Get_recent_posts    @"get_recent_posts"
 

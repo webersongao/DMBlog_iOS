@@ -169,7 +169,7 @@
         title = jsonPost.title;
         content = jsonPost.content;
         dateCreated = [WBSUtils dateFromString:jsonPost.date];
-        author = @"admin";
+        author = jsonPost.authorModel.name;
         categroies = jsonPost.categoriesArray;
         url = jsonPost.URL;
     }else{// XMLRPC API
