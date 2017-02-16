@@ -24,8 +24,6 @@ typedef enum : NSUInteger {
 
 @interface WBSNetRequest : NSObject
 
-@property (nonatomic, strong) NSString *jsonSiteUrl;  //!< JSON API 站点地址
-@property (nonatomic, strong) NSString *xmlSiteUrl;   //!< XMLRPC 站点地址
 
 + (instancetype)sharedRequest;
 

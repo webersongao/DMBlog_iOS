@@ -138,14 +138,14 @@
     
     [WBSNetworking GETRequest:getPostsURLStr parameters:nil success:^(id responseObject) {
         // 成功
-        NSInteger postsCount = 0;
+        NSInteger postsTotalCount = 0;
         NSInteger pagesCount = 0;
         NSArray * postsArray = [NSArray array];
         
         if ([responseObject isKindOfClass:[NSDictionary class]]) {
             
             //Get posts count
-            postsCount = [responseObject[@"count_total"] integerValue];
+            postsTotalCount = [responseObject[@"count_total"] integerValue];
             
             //Get pages count
             pagesCount = [responseObject[@"pages"] integerValue];
@@ -206,6 +206,10 @@
             isIgnoreStickyPosts = NO;
         }
         //Trigger success block
+        if (count > postsTotalCount) {
+            // 超过总文章数 返回空数组
+            postsArray = [NSArray array];
+        }
         successBlock(postsArray, postsArray.count,isIgnoreStickyPosts);
         
     } failure:^(NSError *error) {
