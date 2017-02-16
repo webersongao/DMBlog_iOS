@@ -74,7 +74,14 @@
          success:(void (^)(NSArray *posts))success
          failure:(void (^)(NSError *error))failure;
 
-- (void) deletePost:(NSString *)postId
+/**
+ Delete a post
+ 
+ @param the  id  of post need delete
+ @param success A block object to execute when the method delete the post.
+ @param failure A block object to execute when the method can't delete the post. This block has no return value and takes one argument: a NSError object with details on the error.
+ */
+- (void)deletePost:(NSString *)postId
             success:(void (^)(BOOL))success
             failure:(void (^)(NSError *))failure;
 
