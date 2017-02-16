@@ -35,25 +35,21 @@
         // 成功
         NSString *cookieNameStr = @"";
         NSString *cookieStr = @"";
-        id response = responseObject;
+        
         if ([responseObject isKindOfClass:[NSDictionary class]]) {
             
             NSString *status = [responseObject objectForKey:@"status"];
             
             if (![status isEqualToString:@"ok"]) {
                 // login fail
-                response = [NSDictionary dictionaryWithObject:@"WBSUserJsonApi result block error" forKey:@"errorStr"];
+                cookieStr =@"";
+                cookieNameStr = @"";
             }else{
-                
                 cookieNameStr = responseObject[@"cookie_name"];
                 cookieStr = responseObject[@"cookie"];
-                [WBSUtils saveObjectforKey:cookieStr forKey:WBSSiteAuthCookie];
-                [WBSUtils saveObjectforKey:cookieNameStr forKey:WBSSiteAuthCookieName];
-                
                 // 保存用户数据
                 NSDictionary *userDict = [responseObject objectForKey:@"user"];
                 WBSUserModel * userModel = [WBSUserModel WBSUserModelWithDic:userDict];
-                [WBSUtils saveObjectforKey:userModel.uid forKey:WBSUserUID];
                 NSDictionary *administratorDict = [userDict objectForKey:@"capabilities"];
                 // 是否是管理员
                 if ([administratorDict objectForKey:@"administrator"]) {
@@ -66,7 +62,7 @@
             }
         }
         
-        success(response,cookieNameStr,cookieStr);
+        success(responseObject,cookieNameStr,cookieStr);
         
     } failure:^(NSError *error) {
         // 失败

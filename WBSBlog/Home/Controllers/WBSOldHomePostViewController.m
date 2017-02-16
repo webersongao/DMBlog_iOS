@@ -144,20 +144,20 @@ const int MAX_POST_COUNT = 10;//每页显示数目
     NSArray *comments = [adaptedPost objectForKey:@"comments"];//评论
     
     //表格数据绑定
-//    [cell.titleLabel setAttributedText:[WBSUtils attributedTittle:title]];
-//    [cell.bodyLabel setText:[WBSUtils shortString:content andLength:MAX_POST_DESCRIPTION_LENGTH]];
-//    //作者处理
-//    [cell.authorLabel setText:(!author||[author isEqual:@""])?@"admin":author];
-//    cell.titleLabel.textColor = [UIColor titleColor];
-//    NSDate *createdDate = dateCreated;
-//    [cell.timeLabel setAttributedText:[WBSUtils attributedTimeString:createdDate]];
-//    //metaWeblog api暂时不支持评论
-//    [cell.commentCountLabel setAttributedText:[WBSUtils attributedCommentCount:(int)comments.count]];
-//    NSArray *categories = categroies;
-//    NSString *joinedString = [WBSUtils shortString:[categories componentsJoinedByString:@","] andLength:15];
-//    //处理分类为空的情况
-//    NSString *categoriesString = [NSString stringWithFormat:@"  发布在【%@】",[joinedString isEqualToString: @""]?@"默认分类":joinedString];
-//    cell.categoriesLabel.text =categoriesString;
+    //    [cell.titleLabel setAttributedText:[WBSUtils attributedTittle:title]];
+    //    [cell.bodyLabel setText:[WBSUtils shortString:content andLength:MAX_POST_DESCRIPTION_LENGTH]];
+    //    //作者处理
+    //    [cell.authorLabel setText:(!author||[author isEqual:@""])?@"admin":author];
+    //    cell.titleLabel.textColor = [UIColor titleColor];
+    //    NSDate *createdDate = dateCreated;
+    //    [cell.timeLabel setAttributedText:[WBSUtils attributedTimeString:createdDate]];
+    //    //metaWeblog api暂时不支持评论
+    //    [cell.commentCountLabel setAttributedText:[WBSUtils attributedCommentCount:(int)comments.count]];
+    //    NSArray *categories = categroies;
+    //    NSString *joinedString = [WBSUtils shortString:[categories componentsJoinedByString:@","] andLength:15];
+    //    //处理分类为空的情况
+    //    NSString *categoriesString = [NSString stringWithFormat:@"  发布在【%@】",[joinedString isEqualToString: @""]?@"默认分类":joinedString];
+    //    cell.categoriesLabel.text =categoriesString;
     
     cell.selectedBackgroundView = [[UIView alloc] initWithFrame:cell.frame];
     cell.selectedBackgroundView.backgroundColor = [UIColor selectCellSColor];
@@ -385,8 +385,7 @@ const int MAX_POST_COUNT = 10;//每页显示数目
         //由于置顶文章会影响分页数目，因此需要把他排除
         //另外api里面分页的索引从1开始
         NSString *queryStr = [NSString stringWithFormat:@"page=%lu&count=%d&post_type=%@",super.page+1,MAX_POST_COUNT,(_postType == PostTypePost?@"post":@"page")];
-        
-        [[WBSNetRequest sharedRequest]getRecentPostsWithQueryString:queryStr success:^(NSArray *postsArray, NSInteger postsCount) {
+        [[WBSNetRequest sharedRequest]getRecentPosts_WithCount:0 page:0 postType:0 success:^(NSArray *postsArray, NSInteger postsCount) {
             // 成功
             KLog(@"JSON API 的queryStr:%@",queryStr);
             
@@ -495,8 +494,7 @@ const int MAX_POST_COUNT = 10;//每页显示数目
     }
     
     NSString *baseURL = [WBSUtils getObjectforKey:WBSSiteBaseURL];
-    
-    [[WBSNetRequest sharedRequest]getRecentPostsWithQueryString:nil success:^(NSArray *postsArray, NSInteger postsCount) {
+    [[WBSNetRequest sharedRequest]getRecentPosts_WithCount:0 page:0 postType:0 success:^(NSArray *postsArray, NSInteger postsCount) {
         //
         //    [jsonAPI get_recent_posts_WithSiteUrlStr:@"http://www.swiftartisan.com" queryString:[NSString stringWithFormat:@"%@/get_search_results/?search=%@&page=%lu&count=%d&post_type=post",baseURL,searchString,super.page+1,MAX_POST_COUNT]
         //                                     success:^(NSArray *postsArray, NSInteger postsCount) {

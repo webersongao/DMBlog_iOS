@@ -16,6 +16,12 @@ typedef enum : NSUInteger {
     JSONAPIControllerTypeUser,
 } JSONAPIControllerType;
 
+typedef enum : NSUInteger {
+    JSONAPIPostTypeDefault = 0,  // 默认是 post 类型
+    JSONAPIPostTypePost,
+    JSONAPIPostTypeTemp,
+} JSONAPIPostType;
+
 @interface WBSNetRequest : NSObject
 
 @property (nonatomic, strong) NSString *jsonSiteUrl;  //!< JSON API 站点地址
@@ -27,14 +33,30 @@ typedef enum : NSUInteger {
 -(void)GetJsonApiVersionInfoWithControllerType:(JSONAPIControllerType)controllerType SuccessBlock:(void (^)(id versioInfo))successBlock failure:(void (^)(NSError *error))failureBlock;
 
 /// 用户登录
-- (void)userLogin:(void (^) (BOOL isLoginSuccess,NSString * errorMsg)) LoginSuccessblock userNameStr:(NSString *)userName PassWordStr:(NSString *)PassWord  isJsonAPi:(BOOL)isJsonApi;
+- (void)userLoginWithSiteBaseUrlStr:(NSString *)siteBaseUrlStr successBlock:(void (^) (BOOL isLoginSuccess,NSString * errorMsg)) LoginSuccessblock userNameStr:(NSString *)userName PassWordStr:(NSString *)PassWord  isJsonAPi:(BOOL)isJsonApi;
 
 /// 获取最近文章 Recent_Posts
-- (void)getRecentPostsWithQueryString:(NSString *)queryString success:(void (^)(NSArray *postsModelArray, NSInteger postsCount))successBlock failure:(void (^)(NSError *error))failureBlock;
+- (void)getRecentPosts_WithCount:(NSInteger)count page:(NSInteger)page postType:(JSONAPIPostType)postType success:(void (^)(NSArray *postsArray, NSInteger postsCount))successBlock failure:(void (^)(NSError *error))failureBlock;
 
 /// 获取文章 get_posts
-- (void)getPostsWithQueryString:(NSString *)queryString success:(void (^)(NSArray *postsModelArray, NSInteger postsCount ,BOOL isIgnoreStickyPosts))successBlock failure:(void (^)(NSError *error))failureBlock;
+- (void)getPosts_WithCount:(NSInteger)count page:(NSInteger)page postType:(JSONAPIPostType)postType IgnoreStickyPosts:(BOOL)isIgnoreStickyPosts success:(void (^)(NSArray *postsArray, NSInteger postsCount ,BOOL isIgnoreStickyPosts))successBlock failure:(void (^)(NSError *error))failureBlock;
+
+/// 获取指定文章 get_post
+- (void)getPost_WithPostId:(NSInteger)postId postSlug:(NSString *)postSlug postType:(JSONAPIPostType)postType success:(void (^)(NSArray *postsArray, NSInteger postsCount))successBlock failure:(void (^)(NSError *error))failureBlock;
 
 
 
 @end
+
+
+
+
+
+
+
+
+
+
+
+
+

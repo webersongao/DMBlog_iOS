@@ -46,7 +46,7 @@
     // 设置界面
     [self setTableViewWithPostType:self.postViewType];
     // 请求数据
-//    [self beginRequestRecentPost];
+    [self beginRequestRecentPost];
     
 }
 
@@ -54,14 +54,14 @@
 -(void)beginRequestRecentPost{
     
     [WBSUtils showProgressMessage:@"加载中..."];
-    [[WBSNetRequest sharedRequest]getRecentPostsWithQueryString:nil success:^(NSArray *postsModelArray, NSInteger postsCount) {
-        //
-        self.postsModelArray = [[NSMutableArray alloc]initWithArray:postsModelArray];
+    [[WBSNetRequest sharedRequest]getPosts_WithCount:10 page:0 postType:JSONAPIPostTypePost IgnoreStickyPosts:YES success:^(NSArray *postsArray, NSInteger postsCount, BOOL isIgnoreStickyPosts) {
+        ////
+        self.postsModelArray = [[NSMutableArray alloc]initWithArray:postsArray];
         self.tableView.dataArray = self.postsModelArray;
         [self.tableView reloadData];
         [WBSUtils dismissHUD];
     } failure:^(NSError *error) {
-        //
+        // 失败
         [WBSUtils showErrorMessage:@"数据请求异常"];
     }];
 }

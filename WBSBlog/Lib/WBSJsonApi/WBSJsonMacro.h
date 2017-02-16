@@ -10,6 +10,16 @@
 #define WBSJsonMacro_h
 
 
+/// Default Setting
+
+#define KPostType          @"post"
+
+#define KPostCount         10
+
+#define KPostPage          0
+
+ /********************* Request Api *************************/
+
 /// header
 #define KHttp           @"http://"
 

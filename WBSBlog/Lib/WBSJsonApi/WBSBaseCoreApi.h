@@ -15,8 +15,9 @@
 #import "WBSJsonMacro.h"
 
 
-@interface WBSBaseCoreApi : NSObject
 
+
+@interface WBSBaseCoreApi : NSObject
 
 /********************* 公共方法 *************************/
 

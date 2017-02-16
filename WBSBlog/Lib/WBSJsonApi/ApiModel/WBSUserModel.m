@@ -1,6 +1,6 @@
 //
 //  WBSUserModel.h
-//  webTest
+//  WBSJsonApi
 //
 //  Created by weberson on 15/12/3.
 //  Copyright (c) 2015年 weberson. All rights reserved.
