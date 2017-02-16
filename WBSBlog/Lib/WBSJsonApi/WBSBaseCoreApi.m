@@ -54,7 +54,7 @@
 /// get_recent_posts -> home page（eg:json=1） or any page by setting json=get_recent_posts
 + (void)get_recent_posts_WithSiteUrlStr:(NSString *)siteUrlString count:(NSInteger)count page:(NSInteger)page postType:(NSString *)postType success:(void (^)(NSArray *postsModelArray, NSInteger postsCount))successBlock failure:(void (^)(NSError *error))failureBlock{
     
-    NSString *getPostsURLStr = [NSString stringWithFormat:@"%@/%@/%@/?json=%@&page=%ld&count=%ld&post_type=%@",siteUrlString,KBase_Api,KBase_Get_recent_posts,KBase_Get_recent_posts,page,count,postType];
+    NSString *getPostsURLStr = [NSString stringWithFormat:@"%@/%@/%@/?json=%@&page=%ld&count=%ld&post_type=%@",siteUrlString,KBase_Api,KBase_Get_recent_posts,KBase_Get_recent_posts,page?page:KPostPage,count?count:KPostCount,postType?postType:KPostType];
     [WBSNetworking GETRequest:getPostsURLStr parameters:nil success:^(id responseObject) {
         // 成功
         NSInteger postsCount = 0;
@@ -68,8 +68,11 @@
             //Get pages count
             pagesCount = [responseObject[@"pages"] integerValue];
             
+            // Query dict
+            NSDictionary *queryDict = [responseObject objectForKey:@"query"];
+            
             //Fetch posts
-            NSMutableArray *allPosts = [[NSMutableArray alloc]initWithCapacity:[responseObject[@"count_total"] integerValue]];
+            NSMutableArray *allPosts = [[NSMutableArray alloc]initWithCapacity:postsCount];
             NSArray *fetchedPostsArray = responseObject[@"posts"];
             for (NSDictionary *eachPost in fetchedPostsArray) {
                 
@@ -131,7 +134,7 @@
 /// get_posts   获取文章
 + (void)get_Posts_WithSiteUrlStr:(NSString *)siteUrlString count:(NSInteger)count page:(NSInteger)page postType:(NSString *)postType IgnoreStickyPosts:(BOOL)isIgnoreStickyPosts success:(void (^)(NSArray *postsModelArray, NSInteger postsCount ,BOOL isIgnoreStickyPosts))successBlock failure:(void (^)(NSError *error))failureBlock{
     
-    NSString *getPostsURLStr = [NSString stringWithFormat:@"%@/%@/%@/?count=%ld&page=%ld&post_type=%@&ignore_sticky_posts=%d",siteUrlString,KBase_Api,KBase_Get_posts,count,page,postType,isIgnoreStickyPosts];
+    NSString *getPostsURLStr = [NSString stringWithFormat:@"%@/%@/%@/?count=%ld&page=%ld&post_type=%@&ignore_sticky_posts=%d",siteUrlString,KBase_Api,KBase_Get_posts,count?count:KPostCount,page?page:KPostPage,postType?postType:KPostType,isIgnoreStickyPosts];
     
     [WBSNetworking GETRequest:getPostsURLStr parameters:nil success:^(id responseObject) {
         // 成功
@@ -217,7 +220,7 @@
 /// get_post    获取指定文章
 + (void)get_post_WithSiteUrlStr:(NSString *)siteUrlString postId:(NSInteger)postId postSlug:(NSString *)postSlug postType:(NSString *)postType success:(void (^)(NSArray *postsArray, NSInteger postsCount))successBlock failure:(void (^)(NSError *error))failureBlock{
     
-    NSString *getPostURLStr = [NSString stringWithFormat:@"%@/%@/%@/?post_id=%ld&post_slug=%@&post_type=%@",siteUrlString,KBase_Api,KBase_Get_post,postId,postSlug,postType];
+    NSString *getPostURLStr = [NSString stringWithFormat:@"%@/%@/%@/?post_id=%ld&post_slug=%@&post_type=%@",siteUrlString,KBase_Api,KBase_Get_post,postId,postSlug,postType?postType:KPostType];
     [WBSNetworking GETRequest:getPostURLStr parameters:nil success:^(id responseObject) {
         //成功
     } failure:^(NSError *error) {
@@ -229,7 +232,7 @@
 /// get_page
 + (void)get_page_WithSiteUrlStr:(NSString *)siteUrlString postId:(NSInteger)postId postSlug:(NSString *)postSlug children:(NSString *)children postType:(NSString *)postType success:(void (^)(NSArray *postsArray, NSInteger postsCount))successBlock failure:(void (^)(NSError *error))failureBlock{
     
-    NSString *getPageURLStr = [NSString stringWithFormat:@"%@/%@/%@/?post_id=%ld&post_slug=%@&children=%@&post_type=%@",siteUrlString,KBase_Api,KBase_Get_page,postId,postSlug,children,postType];
+    NSString *getPageURLStr = [NSString stringWithFormat:@"%@/%@/%@/?post_id=%ld&post_slug=%@&children=%@&post_type=%@",siteUrlString,KBase_Api,KBase_Get_page,postId,postSlug,children,postType?postType:KPostType];
     [WBSNetworking GETRequest:getPageURLStr parameters:nil success:^(id responseObject) {
         //成功
     } failure:^(NSError *error) {

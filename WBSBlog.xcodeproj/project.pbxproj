@@ -20,6 +20,7 @@
 		4E3B10831E4AC9EF002EF825 /* WPXMLRPCDecoderDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E3B107C1E4AC9EF002EF825 /* WPXMLRPCDecoderDelegate.m */; };
 		4E3B10841E4AC9EF002EF825 /* WPXMLRPCEncoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E3B107E1E4AC9EF002EF825 /* WPXMLRPCEncoder.m */; };
 		4EB5D6B51E54655C00401F2F /* NSArray+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EB5D6B41E54655C00401F2F /* NSArray+Log.m */; };
+		4EB5D6C31E555F3100401F2F /* WBSUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EB5D6C21E555F3100401F2F /* WBSUserModel.m */; };
 		4EBC23381E52E41D00121233 /* WBSAuthorModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EBC23371E52E41D00121233 /* WBSAuthorModel.m */; };
 		4EBC233B1E52FCB400121233 /* WBSBaseDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EBC233A1E52FCB400121233 /* WBSBaseDetailsViewController.m */; };
 		4EBC233E1E52FEEA00121233 /* WBSLeftMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EBC233D1E52FEEA00121233 /* WBSLeftMenuViewController.m */; };
@@ -521,7 +522,6 @@
 		4EF788041E51517E00DA058F /* WBSOptionButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF787D01E51517E00DA058F /* WBSOptionButton.m */; };
 		4EF788051E51517E00DA058F /* WBSTitleBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF787D21E51517E00DA058F /* WBSTitleBarView.m */; };
 		4EF788091E51517E00DA058F /* WBSUserCenterController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF787DC1E51517E00DA058F /* WBSUserCenterController.m */; };
-		4EF7880A1E51517E00DA058F /* WBSUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF787DF1E51517E00DA058F /* WBSUserModel.m */; };
 		4EF7880B1E51517E00DA058F /* WBSTagViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF787E81E51517E00DA058F /* WBSTagViewController.m */; };
 		4EF788161E51539900DA058F /* WBSQRCodeLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF7880F1E51539900DA058F /* WBSQRCodeLoginViewController.m */; };
 		4EF788171E51539900DA058F /* WBSQRCodeOauthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF788111E51539900DA058F /* WBSQRCodeOauthViewController.m */; };
@@ -594,6 +594,8 @@
 		4E3B107E1E4AC9EF002EF825 /* WPXMLRPCEncoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPXMLRPCEncoder.m; sourceTree = "<group>"; };
 		4EB5D6B31E54655C00401F2F /* NSArray+Log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSArray+Log.h"; path = "WBSBlog/Utils/Catagory/NSArray+Log.h"; sourceTree = SOURCE_ROOT; };
 		4EB5D6B41E54655C00401F2F /* NSArray+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSArray+Log.m"; path = "WBSBlog/Utils/Catagory/NSArray+Log.m"; sourceTree = SOURCE_ROOT; };
+		4EB5D6C11E555F3100401F2F /* WBSUserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSUserModel.h; sourceTree = "<group>"; };
+		4EB5D6C21E555F3100401F2F /* WBSUserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBSUserModel.m; sourceTree = "<group>"; };
 		4EBC23361E52E41D00121233 /* WBSAuthorModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSAuthorModel.h; sourceTree = "<group>"; };
 		4EBC23371E52E41D00121233 /* WBSAuthorModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBSAuthorModel.m; sourceTree = "<group>"; };
 		4EBC23391E52FCB400121233 /* WBSBaseDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSBaseDetailsViewController.h; sourceTree = "<group>"; };
@@ -1421,8 +1423,6 @@
 		4EF787D21E51517E00DA058F /* WBSTitleBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBSTitleBarView.m; sourceTree = "<group>"; };
 		4EF787DB1E51517E00DA058F /* WBSUserCenterController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSUserCenterController.h; sourceTree = "<group>"; };
 		4EF787DC1E51517E00DA058F /* WBSUserCenterController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBSUserCenterController.m; sourceTree = "<group>"; };
-		4EF787DE1E51517E00DA058F /* WBSUserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSUserModel.h; sourceTree = "<group>"; };
-		4EF787DF1E51517E00DA058F /* WBSUserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBSUserModel.m; sourceTree = "<group>"; };
 		4EF787E71E51517E00DA058F /* WBSTagViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSTagViewController.h; sourceTree = "<group>"; };
 		4EF787E81E51517E00DA058F /* WBSTagViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBSTagViewController.m; sourceTree = "<group>"; };
 		4EF7880E1E51539900DA058F /* WBSQRCodeLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSQRCodeLoginViewController.h; sourceTree = "<group>"; };
@@ -1944,6 +1944,8 @@
 				4EF0E8581E4CAA0500580F09 /* WBSTagModel.m */,
 				4EF0E8551E4CAA0500580F09 /* WBSPostModel.h */,
 				4EF0E8561E4CAA0500580F09 /* WBSPostModel.m */,
+				4EB5D6C11E555F3100401F2F /* WBSUserModel.h */,
+				4EB5D6C21E555F3100401F2F /* WBSUserModel.m */,
 				4EBC23361E52E41D00121233 /* WBSAuthorModel.h */,
 				4EBC23371E52E41D00121233 /* WBSAuthorModel.m */,
 				4EF0E8511E4CAA0500580F09 /* WBSCategoryModel.h */,
@@ -2988,8 +2990,6 @@
 		4EF787DD1E51517E00DA058F /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				4EF787DE1E51517E00DA058F /* WBSUserModel.h */,
-				4EF787DF1E51517E00DA058F /* WBSUserModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -3845,7 +3845,6 @@
 				4EF38FA01D430F4600CE28A4 /* NSArray+MASAdditions.m in Sources */,
 				4EF14FC81D3E32F700D28265 /* GPUImageSphereRefractionFilter.m in Sources */,
 				4EF38F9F1D430F4600CE28A4 /* MASViewConstraint.m in Sources */,
-				4EF7880A1E51517E00DA058F /* WBSUserModel.m in Sources */,
 				4EF14FC01D3E32F700D28265 /* GPUImageSingleComponentGaussianBlurFilter.m in Sources */,
 				4EF14FB41D3E32F700D28265 /* GPUImageRawDataOutput.m in Sources */,
 				4EF14EFF1D3E32F700D28265 /* amalloc.c in Sources */,
@@ -3866,6 +3865,7 @@
 				4EF14F051D3E32F700D28265 /* github_flavoured.c in Sources */,
 				4EF38F711D430E6B00CE28A4 /* GHMarkdownParser.m in Sources */,
 				4EF5E3FE1D41C847002B6AFF /* (null) in Sources */,
+				4EB5D6C31E555F3100401F2F /* WBSUserModel.m in Sources */,
 				4EF14F751D3E32F700D28265 /* GPUImageGaussianBlurFilter.m in Sources */,
 				4EF14F8F1D3E32F700D28265 /* GPUImageLinearBurnBlendFilter.m in Sources */,
 				4EF14FA11D3E32F700D28265 /* GPUImageMultiplyBlendFilter.m in Sources */,
