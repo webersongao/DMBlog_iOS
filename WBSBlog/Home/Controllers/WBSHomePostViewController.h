@@ -13,21 +13,21 @@
  */
 typedef NS_ENUM(NSUInteger, PostViewType){
     /**
-     *  最近文章
+     *  普通文章
      */
-    PostResultTypeRecent,
+    PostViewTypePost,
     /**
      *  搜索文章
      */
-    PostResultTypeSearch,
+    PostViewTypeSearch,
     /**
      *  分类文章
      */
-    PostResultTypeCategory,
+    PostViewTypeCategory,
     /**
      *  标签文章
      */
-    PostResultTypeTag
+    PostViewTypeTag
 };
 
 @interface WBSHomePostViewController : WBSBasePostViewController

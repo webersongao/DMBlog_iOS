@@ -20,6 +20,9 @@
 
 @interface WBSNetRequest ()
 
+@property (nonatomic, strong) NSString *jsonSiteUrl;  //!< JSON API 站点地址
+@property (nonatomic, strong) NSString *xmlSiteUrl;   //!< XMLRPC 站点地址
+
 @end
 
 
@@ -29,8 +32,6 @@
 - (instancetype)init{
     self = [super init];
     if (self) {
-        self.jsonSiteUrl = [WBSUtils getObjectforKey:WBSSiteBaseURL];
-        self.xmlSiteUrl = [WBSUtils getObjectforKey:WBSSiteXmlrpcURL];
     }
     return self;
 }
@@ -42,6 +43,9 @@
     dispatch_once(&onceToken, ^{
         instace = [[self alloc] init];
     });
+    instace.jsonSiteUrl = [WBSUtils getObjectforKey:WBSSiteBaseURL];
+    instace.xmlSiteUrl = [WBSUtils getObjectforKey:WBSSiteXmlrpcURL];
+    KLog(@"jsonSiteUrl is %@  == xmlSiteUrl is %@ ",instace.jsonSiteUrl,instace.xmlSiteUrl);
     return instace;
 }
 
