@@ -62,8 +62,8 @@
 + (NSURLSessionDataTask *)POSTRequest:(NSString *)URLString parameters:(id)parameters success:(void (^)(id responseObject))success failure:(void (^)(NSError *error))failure{
     
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
-    NSString *URLStr = [NSString stringWithFormat:@""];
-    NSURLSessionDataTask *sessionDataTask = [[WBSClient sharedClient] POST:URLStr parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
+
+    NSURLSessionDataTask *sessionDataTask = [[WBSClient sharedClient] POST:URLString parameters:parameters progress:^(NSProgress * _Nonnull downloadProgress) {
         // 进度
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         // 成功

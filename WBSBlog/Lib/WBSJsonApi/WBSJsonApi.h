@@ -20,16 +20,13 @@
 /// 框架 info
 -(void)Get_constructInfo_WithSiteURLStr:(NSString *)siteURLStr success:(void (^)(id versioInfo))successBlock failure:(void (^)(NSError *error))failureBlock;
 
-
-
 /**
  *  1、User  需要 Json Api User 插件支持  https://wordpress.org/plugins/json-api-user/ 并在 Json Api 设置中开启 User 模块
  */
 #pragma mark  1️⃣   About User
 
-/// 用户登陆 Login  generate_auth_cookie
-+ (void)userLoginWithSiteUrlStr:(NSString *)siteUrlString queryString:(NSString *)QueryString inSSLSecure:(BOOL)inSSLSecure success:(void (^)(NSDictionary *resultDict))success failure:(void (^)(NSError *error))failure;
-
+/// 用户登陆 POST Login generate_auth_cookie
++ (void)post_UserLogin_WithSiteUrlStr:(NSString *)siteUrlString userNameStr:(NSString *)userName passWordStr:(NSString *)passWord inSSLSecure:(BOOL)inSSLSecure success:(void (^)(id responseObject,NSString *cookieName,NSString *cookie))success failure:(void (^)(NSError *error))failure;
 
 /// register
 - (void)register_WithSiteUrlStr:(NSString *)siteUrlString queryString:(NSString *)queryString success:(void (^)(NSArray *postsArray, NSInteger postsCount))successBlock failure:(void (^)(NSError *error))failureBlock;
