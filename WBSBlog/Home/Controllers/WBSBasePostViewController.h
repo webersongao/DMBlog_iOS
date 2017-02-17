@@ -8,6 +8,7 @@
 
 #import "WBSBaseViewController.h"
 #import "WBSPostTableView.h"
+#import "MJRefresh.h"
 
 @interface WBSBasePostViewController : WBSBaseViewController
 
@@ -15,4 +16,26 @@
 
 @property (nonatomic, strong) WBSPostTableView *tableView;  //!< 展示文章的tableView
 
+@property (nonatomic, assign) NSInteger postCount;  //!< 文章数量
+
+
+/// 下拉刷新 最新数据
+- (void)downToRefreshLatestDataWithHeaderAction;
+
+/// 上拉加载更多
+- (void)upToRefreshLatestDataWithFooterAction;
+
+
+
 @end
+
+
+
+
+
+
+
+
+
+
+

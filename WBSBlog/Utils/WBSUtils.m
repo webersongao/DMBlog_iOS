@@ -441,14 +441,14 @@
         [WBSUtils showErrorMessage:@"用户名不能为空！"];
         
         return NO;
-    }else if(userNameStr.length < 5 || userNameStr.length > 20) {
+    }else if(userNameStr.length < 5 || userNameStr.length > 40) {
         
         [WBSUtils showErrorMessage:@"用户名只能在5-20之间！"];
         return NO;
     }else if([passWordStr isEqualToString:@""]) {
         [WBSUtils showErrorMessage:@"密码不能为空!"];
         return NO;
-    }else if(passWordStr.length < 5 || passWordStr.length > 20) {
+    }else if(passWordStr.length < 5 || passWordStr.length > 40) {
         [WBSUtils showErrorMessage:@"密码只能在5-20之间!"];
         return NO;
     }else{
@@ -509,6 +509,7 @@
 /// 自动消失
 + (void)showSuccessMessage:(NSString *)message{
     //想设置一些信息可以选择custom类型的 具体看api
+
     [SVProgressHUD setDefaultStyle:SVProgressHUDStyleLight];
     [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeBlack];
     [SVProgressHUD showSuccessWithStatus:message];
@@ -516,6 +517,7 @@
 
 /// 自动消失
 + (void)showErrorMessage:(NSString *)message{
+
     [SVProgressHUD setDefaultStyle:SVProgressHUDStyleLight];
     [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeBlack];
     [SVProgressHUD showErrorWithStatus:message];
@@ -523,7 +525,6 @@
 
 /// 需要手动 dismiss
 + (void)showStatusMessage:(NSString *)message;{
-    
     [SVProgressHUD setDefaultStyle:SVProgressHUDStyleLight];
     [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeBlack];
     [SVProgressHUD showWithStatus:message];

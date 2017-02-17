@@ -27,9 +27,11 @@ static NSString *PostCellID = @"WBSPostCellID";
     
     self = [super initWithFrame:frame style:style];
     if (self) {
+        
         self.ApiType = type;
         self.delegate = self;
         self.dataSource = self;
+        self.bounces = YES;
         [self registerClass:[WBSPostCell class] forCellReuseIdentifier:PostCellID];
         
     }
@@ -37,8 +39,8 @@ static NSString *PostCellID = @"WBSPostCellID";
 }
 
 
-
 #pragma mark - 数据源方法
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.dataArray.count;
 }
@@ -73,6 +75,10 @@ static NSString *PostCellID = @"WBSPostCellID";
     return titleHeight + 42;
 }
 
+-(CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 90;
+}
+
 
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -83,13 +89,13 @@ static NSString *PostCellID = @"WBSPostCellID";
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    WBSPostModel *postModel = self.dataArray[indexPath.row];
-    NSString *postId =[NSString stringWithFormat:@"%ld",postModel.postId];//文章ID
+//    WBSPostModel *postModel = self.dataArray[indexPath.row];
+//    NSInteger postId =[NSString stringWithFormat:@"%ld",postModel.postId];//文章ID
     
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // 调用删除文章的方法
         // Delete the row from the data source
-        //[tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // 调用插入文章的方法
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view

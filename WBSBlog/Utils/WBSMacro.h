@@ -14,9 +14,11 @@
 #ifndef GoodJob_API_h
 #define GoodJob_API_h
 
-#define KbaseUrl @"www.swiftartisan.com"
+#define KbaseUrl @"www.weberson.com.cn"
 #define KuserName @"xxx"
 #define KpassWord @"xxx"
+
+
 
 /********************* 公共接口 *************************/
 // 线上服务器
@@ -78,10 +80,6 @@
 ///xmlrpcURL 后缀
 #define WBSXmlrpcSubffix                @"xmlrpcURLSuffix"
 
-//
-//#define WBSSiteBaseURL                          @"blogBaseURL"
-//
-//#define WBSSiteBaseURL                          @"blogBaseURL"
 
 
 

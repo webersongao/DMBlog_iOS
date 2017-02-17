@@ -11,7 +11,6 @@
 #import "WBSNetRequest.h"
 #import "WBSPostDetailViewController.h"
 
-
 @interface WBSHomePostViewController ()<PostTableViewDelegate>
 
 @property (nonatomic, assign) PostViewType postViewType;  //!< 文章页面类型
@@ -30,46 +29,33 @@
  *
  *  @return 当前对象
  */
-- (instancetype)initWithPostType:(PostViewType)type
-{
-    if (self = [super init]) {
-        //设置文章类型，仅仅高级API支持
-        _postViewType = type;
-        _postsModelArray = [[NSMutableArray alloc]initWithCapacity:2];
+//- (instancetype)initWithPostType:(PostViewType)type
+-(instancetype)init{
+    self = [super init];
+    if (self) {
+        _postViewType = PostViewTypePost;
+        _postsModelArray = [[NSMutableArray alloc]initWithCapacity:10];
         _postApiType = APITypeJSON; // 默认JSON API
     }
     return self;
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // 设置界面
     [self setTableViewWithPostType:self.postViewType];
-    // 请求数据
-//    [self beginRequestRecentPost];
     
 }
 
-// 开始请求最近的文章数据
--(void)beginRequestRecentPost{
-    
-    [WBSUtils showProgressMessage:@"加载中..."];
-    [[WBSNetRequest sharedRequest]getRecentPostsWithQueryString:nil success:^(NSArray *postsModelArray, NSInteger postsCount) {
-        //
-        self.postsModelArray = [[NSMutableArray alloc]initWithArray:postsModelArray];
-        self.tableView.dataArray = self.postsModelArray;
-        [self.tableView reloadData];
-        [WBSUtils dismissHUD];
-    } failure:^(NSError *error) {
-        //
-        [WBSUtils showErrorMessage:@"数据请求异常"];
-    }];
-}
 
 // 设置界面要展示的tableView
 -(void)setTableViewWithPostType:(PostViewType)type{
     switch (type) {
-        case PostResultTypeRecent:
+        case PostViewTypePost:
         {
             // 博客文章界面
             WBSPostTableView *postTableView = [[WBSPostTableView alloc]initWithFrame:self.view.bounds style:UITableViewStylePlain withAPiType:self.postApiType];
@@ -79,19 +65,19 @@
             break;
         }
             
-        case PostResultTypeSearch:
+        case PostViewTypeSearch:
         {
             
             break;
         }
             
-        case PostResultTypeTag:
+        case PostViewTypeTag:
         {
             
             break;
         }
             
-        case PostResultTypeCategory:
+        case PostViewTypeCategory:
         {
             
             break;
@@ -106,6 +92,56 @@
 }
 
 
+
+
+/// 下拉刷新 最新数据
+- (void)downToRefreshLatestDataWithHeaderAction {
+    [super downToRefreshLatestDataWithHeaderAction];
+    //    [WBSUtils showProgressMessage:@"加载中..."];
+    [[WBSNetRequest sharedRequest]getPosts_WithCount:self.postCount+10 page:0 postType:JSONAPIPostTypePost IgnoreStickyPosts:YES success:^(NSArray *postsArray, NSInteger postsCount, BOOL isIgnoreStickyPosts) {
+        ////
+        if (postsCount) {
+            for (WBSPostModel *postModel in [postsArray reverseObjectEnumerator]) {
+                [self.postsModelArray insertObject:postModel atIndex:0];
+            }
+            self.tableView.dataArray = self.postsModelArray;
+            [self.tableView reloadData];
+            //        [WBSUtils dismissHUD];
+            self.postCount+=postsCount;
+            [self.tableView.mj_header endRefreshing];
+        }
+    } failure:^(NSError *error) {
+        // 失败
+        [WBSUtils showErrorMessage:@"数据请求异常"];
+        [self.tableView.mj_header endRefreshing];
+    }];
+    
+}
+
+/// 上拉加载更多
+- (void)upToRefreshLatestDataWithFooterAction {
+    [super upToRefreshLatestDataWithFooterAction];
+    KLog(@"002 - 上拉加载 ");
+    [WBSUtils showProgressMessage:@"加载中..."];
+    [[WBSNetRequest sharedRequest]getPosts_WithCount:self.postCount+10 page:0 postType:JSONAPIPostTypePost IgnoreStickyPosts:YES success:^(NSArray *postsArray, NSInteger postsCount, BOOL isIgnoreStickyPosts) {
+        //// 成功
+        if (postsCount) {
+            self.postsModelArray = [[NSMutableArray alloc]initWithArray:postsArray];
+            self.tableView.dataArray = self.postsModelArray;
+            [self.tableView reloadData];
+            [WBSUtils dismissHUD];
+            self.postCount+=postsCount;
+            [self.tableView.mj_footer endRefreshing];
+        }
+    } failure:^(NSError *error) {
+        // 失败
+        [WBSUtils showErrorMessage:@"数据请求异常"];
+        [self.tableView.mj_footer endRefreshing];
+    }];
+    
+}
+
+
 /// PostTableViewDelegate 点击文章cell的方法
 -(void)PostTableViewCellDidSelectWithTableView:(WBSPostTableView *)tableView andPostModel:(WBSPostModel *)postModel{
     
@@ -113,6 +149,12 @@
     [self.navigationController pushViewController:detailVC animated:YES];
     
 }
+
+
+
+
+
+
 
 
 

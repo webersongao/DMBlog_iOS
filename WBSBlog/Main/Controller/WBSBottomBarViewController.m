@@ -11,7 +11,7 @@
 #import "WBSOperationBar.h"
 #import "WBSGrowingTextView.h"
 #import "WBSEmojiPageVC.h"
-#import "WBSLoginViewController.h"
+#import "WBSUserLoginViewController.h"
 
 
 @interface WBSBottomBarViewController () <UITextViewDelegate>
@@ -256,7 +256,7 @@
 {
     if ([text isEqualToString: @"\n"]) {
         if (![WBSConfig getAuthoizedApiInfo]) {
-            [self.navigationController pushViewController:[[WBSLoginViewController alloc]init] animated:YES];
+            [self.navigationController pushViewController:[[WBSUserLoginViewController alloc]init] animated:YES];
         } else {
             [self sendContent];
             [textView resignFirstResponder];

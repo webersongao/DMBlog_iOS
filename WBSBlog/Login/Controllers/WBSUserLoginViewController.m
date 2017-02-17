@@ -1,18 +1,18 @@
 //
-//  WBSLoginViewController.m
+//  WBSUserLoginViewController.m
 //  WBSBlog
 //
 //  Created by Weberson on 16/7/20.
 //  Copyright © 2016年 Weberson. All rights reserved.
 //
 
-#import "WBSLoginViewController.h"
+#import "WBSUserLoginViewController.h"
 #import "WBSSelectBlogViewController.h"
 #import "WBSNetRequest.h"
 #import "NetworkingCenter.h"
 #import "WBSNetworking.h"
 
-@interface WBSLoginViewController () <UITextFieldDelegate, UIGestureRecognizerDelegate>
+@interface WBSUserLoginViewController () <UITextFieldDelegate, UIGestureRecognizerDelegate>
 
 /**
  *  xmlrpcURL
@@ -44,7 +44,7 @@
 
 @end
 
-@implementation WBSLoginViewController
+@implementation WBSUserLoginViewController
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
@@ -123,20 +123,24 @@
     
     // 验证账号密码 格式
     if ([WBSUtils checkUrlString:baseURL userNameStr:username passWord:password]) {
-        [WBSUtils showStatusMessage:@"登录中..."];
         // 保存登录地址
+        [WBSUtils showProgressMessage:@"登录中..."];
         NSString *jsonUrl = [NSString stringWithFormat:@"http://%@",baseURL];
         NSString *xmlRpcUrl = [NSString stringWithFormat:@"http://%@/xmlrpc.php",baseURL];
         [WBSUtils saveObjectforKey:jsonUrl forKey:WBSSiteBaseURL];
         [WBSUtils saveObjectforKey:xmlRpcUrl forKey:WBSSiteXmlrpcURL];
     }else{
+        [WBSUtils showErrorMessage:@"账号异常,请稍后再试"];
         return;
     }
-    [[WBSNetRequest sharedRequest]userLogin:^(BOOL isLoginSuccess, NSString *errorMsg) {
+    [[WBSNetRequest sharedRequest] userLoginWithSiteBaseUrlStr:baseURL successBlock:^(BOOL isLoginSuccess, NSString *errorMsg) {
         // 登录结果
         if (isLoginSuccess) {
+            [WBSUtils showSuccessMessage:@"登录成功"];
             [WBSUtils saveBoolforKey:NO forKey:WBSGuestLoginMode];
-            [WBSUtils goToMainViewController];
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                 [WBSUtils goToMainViewController];
+            });
         }else{
             [WBSUtils showErrorMessage:errorMsg];
         }

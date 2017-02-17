@@ -128,7 +128,7 @@ const int MAX_PAGE_SIZE = 10;//每页默认显示文章数目
     [self.timeLabel setAttributedText:[WBSUtils attributedTimeString:createdDate]];
     [self.commentCountLabel setAttributedText:[WBSUtils attributedCommentCount:(int)postModel.commentsArray.count]];
     NSArray *categories = postModel.categoriesArray;
-    NSString *joinedString = [WBSUtils shortString:[categories componentsJoinedByString:@","] andLength:15];
+    NSString *joinedString = [WBSUtils shortString:[[categories firstObject]title] andLength:15];
     //处理分类为空的情况
     NSString *categoriesString = [NSString stringWithFormat:@"  发布在【%@】",[joinedString isEqualToString: @""]?@"默认分类":joinedString];
     self.categoriesLabel.text =categoriesString;

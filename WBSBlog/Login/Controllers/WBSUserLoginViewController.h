@@ -1,5 +1,5 @@
 //
-//  WBSLoginViewController.h
+//  WBSUserLoginViewController.h
 //  WBSBlog
 //
 //  Created by Weberson on 16/7/20.
@@ -8,6 +8,6 @@
 
 #import "WBSBaseViewController.h"
 
-@interface WBSLoginViewController : WBSBaseViewController
+@interface WBSUserLoginViewController : WBSBaseViewController
 
 @end
