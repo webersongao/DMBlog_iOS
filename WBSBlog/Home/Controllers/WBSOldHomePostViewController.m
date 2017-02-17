@@ -13,7 +13,7 @@
 #import "WBSJsonApi.h"
 #import "WBSDropdownMenuView.h"
 #import "WBSTitleMenuViewController.h"
-#import "WBSLoginViewController.h"
+#import "WBSUserLoginViewController.h"
 #import "WBSPostModel.h"
 #import "WBSNetRequest.h"
 #import "WBSCategoryModel.h"

@@ -8,7 +8,6 @@
 
 #import "WBSBlogAppDelegate.h"
 #import "WBSBaseNaviViewController.h"
-#import "WBSLoginViewController.h"
 #import "UIWindow+KeyWindow.h"
 
 @interface WBSBlogAppDelegate ()<UIApplicationDelegate, UITabBarControllerDelegate>

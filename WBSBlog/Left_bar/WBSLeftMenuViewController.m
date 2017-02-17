@@ -7,7 +7,7 @@
 //
 
 #import "WBSLeftMenuViewController.h"
-#import "WBSLoginViewController.h"
+#import "WBSUserLoginViewController.h"
 #import "WBSUserCenterController.h"
 #import "WBSSettingViewController.h"
 #import "WBSBlogAppDelegate.h"
@@ -217,7 +217,7 @@
 - (void)pushToUserInfoVC {
     if (![SingleObject shareSingleObject].isLogin && ![SingleObject shareSingleObject].isGuest) {
         // 如果 没有登录 跳转到登录控制器
-        [self setContentViewController:[[WBSLoginViewController alloc]init]];
+        [self setContentViewController:[[WBSUserLoginViewController alloc]init]];
     }else if (![WBSConfig isJSONAPIEnable]){
         [WBSUtils showErrorMessage:@"API不支持"];
     }else if ([SingleObject shareSingleObject].isGuest){

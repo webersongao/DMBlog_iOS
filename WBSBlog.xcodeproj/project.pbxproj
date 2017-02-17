@@ -510,7 +510,7 @@
 		4EF787F21E51517E00DA058F /* WBSSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF787A31E51517E00DA058F /* WBSSettingViewController.m */; };
 		4EF787F31E51517E00DA058F /* WBSUserProtocolViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF787A51E51517E00DA058F /* WBSUserProtocolViewController.m */; };
 		4EF787F41E51517E00DA058F /* WBSConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF787A91E51517E00DA058F /* WBSConfig.m */; };
-		4EF787F51E51517E00DA058F /* WBSLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF787AD1E51517E00DA058F /* WBSLoginViewController.m */; };
+		4EF787F51E51517E00DA058F /* WBSUserLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF787AD1E51517E00DA058F /* WBSUserLoginViewController.m */; };
 		4EF787F61E51517E00DA058F /* WBSSelectBlogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF787AF1E51517E00DA058F /* WBSSelectBlogViewController.m */; };
 		4EF787F71E51517E00DA058F /* WBSLogin.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EF787B21E51517E00DA058F /* WBSLogin.xib */; };
 		4EF787F81E51517E00DA058F /* WBSApiInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF787B41E51517E00DA058F /* WBSApiInfo.m */; };
@@ -1402,8 +1402,8 @@
 		4EF787A51E51517E00DA058F /* WBSUserProtocolViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBSUserProtocolViewController.m; sourceTree = "<group>"; };
 		4EF787A81E51517E00DA058F /* WBSConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSConfig.h; sourceTree = "<group>"; };
 		4EF787A91E51517E00DA058F /* WBSConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBSConfig.m; sourceTree = "<group>"; };
-		4EF787AC1E51517E00DA058F /* WBSLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSLoginViewController.h; sourceTree = "<group>"; };
-		4EF787AD1E51517E00DA058F /* WBSLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBSLoginViewController.m; sourceTree = "<group>"; };
+		4EF787AC1E51517E00DA058F /* WBSUserLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSUserLoginViewController.h; sourceTree = "<group>"; };
+		4EF787AD1E51517E00DA058F /* WBSUserLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBSUserLoginViewController.m; sourceTree = "<group>"; };
 		4EF787AE1E51517E00DA058F /* WBSSelectBlogViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSSelectBlogViewController.h; sourceTree = "<group>"; };
 		4EF787AF1E51517E00DA058F /* WBSSelectBlogViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBSSelectBlogViewController.m; sourceTree = "<group>"; };
 		4EF787B21E51517E00DA058F /* WBSLogin.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WBSLogin.xib; sourceTree = "<group>"; };
@@ -2914,8 +2914,8 @@
 		4EF787AB1E51517E00DA058F /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				4EF787AC1E51517E00DA058F /* WBSLoginViewController.h */,
-				4EF787AD1E51517E00DA058F /* WBSLoginViewController.m */,
+				4EF787AC1E51517E00DA058F /* WBSUserLoginViewController.h */,
+				4EF787AD1E51517E00DA058F /* WBSUserLoginViewController.m */,
 				4EF787AE1E51517E00DA058F /* WBSSelectBlogViewController.h */,
 				4EF787AF1E51517E00DA058F /* WBSSelectBlogViewController.m */,
 			);
@@ -3615,7 +3615,7 @@
 				4EF14FDC1D3E32F700D28265 /* GPUImageUnsharpMaskFilter.m in Sources */,
 				4EF0E8831E4CBF9500580F09 /* AFSecurityPolicy.m in Sources */,
 				4EF0E8891E4CBF9600580F09 /* AFNetworkActivityIndicatorManager.m in Sources */,
-				4EF787F51E51517E00DA058F /* WBSLoginViewController.m in Sources */,
+				4EF787F51E51517E00DA058F /* WBSUserLoginViewController.m in Sources */,
 				4EF0E8841E4CBF9600580F09 /* AFURLRequestSerialization.m in Sources */,
 				4EF14F9D1D3E32F700D28265 /* GPUImageMotionBlurFilter.m in Sources */,
 				4EF150551D3E36DE00D28265 /* TMDLineBreak.m in Sources */,

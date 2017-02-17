@@ -7,7 +7,7 @@
 //
 
 #import "WBSBaseViewController.h"
-#import "WBSLoginViewController.h"
+#import "WBSUserLoginViewController.h"
 
 
 @interface WBSBaseViewController ()
@@ -28,7 +28,7 @@
 - (void)checkUserLoginState {
     if (![SingleObject shareSingleObject].isLogin && ![SingleObject shareSingleObject].isGuest){
         // 未登录 非游客模式
-        WBSLoginViewController *loginVC = [[WBSLoginViewController alloc]init];
+        WBSUserLoginViewController *loginVC = [[WBSUserLoginViewController alloc]init];
         [self presentViewController:loginVC animated:YES completion:nil];
     }
 }

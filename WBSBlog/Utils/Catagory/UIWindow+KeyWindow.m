@@ -12,7 +12,7 @@
 #import "WBSLeftMenuViewController.h"
 #import "WBSBaseNaviViewController.h"
 
-#import "WBSLoginViewController.h"
+#import "WBSUserLoginViewController.h"
 
 
 @implementation UIWindow (KeyWindow)
@@ -49,7 +49,7 @@
 - (void)switchToLoginViewController{
     
     //初始化程序入口，设置登录界面为首页
-    WBSLoginViewController *loginVC = [[WBSLoginViewController alloc]initWithNibName:@"WBSLogin" bundle:nil];
+    WBSUserLoginViewController *loginVC = [[WBSUserLoginViewController alloc]initWithNibName:@"WBSLogin" bundle:nil];
     WBSBaseNaviViewController *loginNavi = [[WBSBaseNaviViewController alloc] initWithRootViewController:loginVC];
     //6、初始化窗口、设置根控制器、显示窗口
     self.rootViewController = loginNavi;

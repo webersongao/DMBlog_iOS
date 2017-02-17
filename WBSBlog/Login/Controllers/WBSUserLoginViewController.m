@@ -1,18 +1,18 @@
 //
-//  WBSLoginViewController.m
+//  WBSUserLoginViewController.m
 //  WBSBlog
 //
 //  Created by Weberson on 16/7/20.
 //  Copyright © 2016年 Weberson. All rights reserved.
 //
 
-#import "WBSLoginViewController.h"
+#import "WBSUserLoginViewController.h"
 #import "WBSSelectBlogViewController.h"
 #import "WBSNetRequest.h"
 #import "NetworkingCenter.h"
 #import "WBSNetworking.h"
 
-@interface WBSLoginViewController () <UITextFieldDelegate, UIGestureRecognizerDelegate>
+@interface WBSUserLoginViewController () <UITextFieldDelegate, UIGestureRecognizerDelegate>
 
 /**
  *  xmlrpcURL
@@ -44,7 +44,7 @@
 
 @end
 
-@implementation WBSLoginViewController
+@implementation WBSUserLoginViewController
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
