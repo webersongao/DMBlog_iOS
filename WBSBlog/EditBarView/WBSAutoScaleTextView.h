@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "WBSPlaceholderTextView.h"
 
-@interface WBSGrowingTextView : WBSPlaceholderTextView
+@interface WBSAutoScaleTextView : WBSPlaceholderTextView
 
 @property (nonatomic, assign) NSUInteger maxNumberOfLines;
 @property (nonatomic, readonly) CGFloat maxHeight;

@@ -9,7 +9,7 @@
 #import "WBSBottomBarViewController.h"
 #import "WBSEditingBar.h"
 #import "WBSOperationBar.h"
-#import "WBSGrowingTextView.h"
+#import "WBSAutoScaleTextView.h"
 #import "WBSEmojiPageVC.h"
 #import "WBSUserLoginViewController.h"
 
@@ -142,7 +142,7 @@
 
 #pragma mark - textView的基本设置
 
-- (WBSGrowingTextView *)textView
+- (WBSAutoScaleTextView *)textView
 {
     return _editingBar.editView;
 }

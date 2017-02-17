@@ -7,13 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "WBSGrowingTextView.h"
+#import "WBSAutoScaleTextView.h"
 
 @interface WBSEditingBar : UIToolbar
 
 @property (nonatomic, copy) void (^sendContent)(NSString *content);
 
-@property (nonatomic, strong) WBSGrowingTextView *editView;
+@property (nonatomic, strong) WBSAutoScaleTextView *editView;
 @property (nonatomic, strong) UIButton *modeSwitchButton;
 @property (nonatomic, strong) UIButton *inputViewButton;
 

@@ -6,9 +6,9 @@
 //  Copyright © 2016年 Weberson. All rights reserved.
 //
 
-#import "WBSGrowingTextView.h"
+#import "WBSAutoScaleTextView.h"
 
-@implementation WBSGrowingTextView
+@implementation WBSAutoScaleTextView
 
 - (instancetype)initWithPlaceholder:(NSString *)placeholder
 {
