@@ -7,7 +7,7 @@
 //
 
 #import "WBSEditingBar.h"
-#import "WBSGrowingTextView.h"
+#import "WBSAutoScaleTextView.h"
 #import "WBSBlogAppDelegate.h"
 
 @interface WBSEditingBar ()
@@ -32,13 +32,16 @@
 
 - (void)setLayoutWithModeSwitchButton:(BOOL)hasAModeSwitchButton
 {
+    // 左侧切换 输入模式
     _modeSwitchButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [_modeSwitchButton setImage:[UIImage imageNamed:@"toolbar-barSwitch"] forState:UIControlStateNormal];
     
+    // 右侧Emoji表情
     _inputViewButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [_inputViewButton setImage:[UIImage imageNamed:@"toolbar-emoji2"] forState:UIControlStateNormal];
     
-    _editView = [[WBSGrowingTextView alloc] initWithPlaceholder:@"说点什么"];
+    // 中间 文字输入框
+    _editView = [[WBSAutoScaleTextView alloc] initWithPlaceholder:@"说点什么"];
     _editView.placeholderFont = [UIFont systemFontOfSize:16];
     _editView.returnKeyType = UIReturnKeySend;
     [_editView setCornerRadius:5.0];
@@ -82,20 +85,20 @@
 
 - (void)addBorder
 {
-    UIView *upperBorder = [[UIView alloc]init];
-    upperBorder.backgroundColor = [UIColor lightGrayColor];
-    upperBorder.translatesAutoresizingMaskIntoConstraints = NO;
-    [self addSubview:upperBorder];
+    UIView *upperLineBorder = [[UIView alloc]init];
+    upperLineBorder.backgroundColor = [UIColor lightGrayColor];
+    upperLineBorder.translatesAutoresizingMaskIntoConstraints = NO;
+    [self addSubview:upperLineBorder];
     
-    UIView *bottomBorder = [[UIView alloc]init];
-    bottomBorder.backgroundColor = [UIColor lightGrayColor];
-    bottomBorder.translatesAutoresizingMaskIntoConstraints = NO;
-    [self addSubview:bottomBorder];
+    UIView *bottomLineBorder = [[UIView alloc]init];
+    bottomLineBorder.backgroundColor = [UIColor lightGrayColor];
+    bottomLineBorder.translatesAutoresizingMaskIntoConstraints = NO;
+    [self addSubview:bottomLineBorder];
     
-    NSDictionary *views = NSDictionaryOfVariableBindings(upperBorder, bottomBorder);
+    NSDictionary *views = NSDictionaryOfVariableBindings(upperLineBorder, bottomLineBorder);
     
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"|[upperBorder]|" options:0 metrics:nil views:views]];
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[upperBorder(0.5)]->=0-[bottomBorder(0.5)]|"
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"|[upperLineBorder]|" options:0 metrics:nil views:views]];
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[upperLineBorder(0.5)]->=0-[bottomLineBorder(0.5)]|"
                                                                  options:NSLayoutFormatAlignAllLeft | NSLayoutFormatAlignAllRight
                                                                  metrics:nil views:views]];
 }

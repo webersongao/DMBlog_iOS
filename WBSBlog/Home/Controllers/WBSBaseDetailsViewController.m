@@ -82,7 +82,7 @@
 
 -(void)setNavigationBarView{
     
-    UIBarButtonItem *rightEditItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"tweetEditing"] style:UIBarButtonItemStylePlain target:self action:@selector(rightEditBarButtonItemAction)];
+    UIBarButtonItem *rightEditItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"post_Editing"] style:UIBarButtonItemStylePlain target:self action:@selector(rightEditBarButtonItemAction)];
     
     UIBarButtonItem *leftBackItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"back_button"] style:UIBarButtonItemStylePlain target:self action:@selector(leftBackBarButtonItemAction)];
     self.navigationItem.leftBarButtonItem = leftBackItem;
