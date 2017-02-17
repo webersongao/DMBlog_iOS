@@ -2095,7 +2095,7 @@
 				4EF14A3B1D3E30DF00D28265 /* Utils */,
 				4EF14A361D3E30DF00D28265 /* Lib库 */,
 				4EDFF2D31E375508000C47D2 /* Images_图片/网页 */,
-				4EF14A381D3E30DF00D28265 /* WBSSupporting_OtherFiles */,
+				4EF14A381D3E30DF00D28265 /* AppSupporting_OtherFiles */,
 				4EF149D11D3DF61D00D28265 /* Supporting Files */,
 			);
 			path = WBSBlog;
@@ -2155,7 +2155,7 @@
 			path = Lib;
 			sourceTree = "<group>";
 		};
-		4EF14A381D3E30DF00D28265 /* WBSSupporting_OtherFiles */ = {
+		4EF14A381D3E30DF00D28265 /* AppSupporting_OtherFiles */ = {
 			isa = PBXGroup;
 			children = (
 				4EF149D41D3DF61D00D28265 /* WBSBlogAppDelegate.h */,
@@ -2165,7 +2165,7 @@
 				4EF150EB1D3E3AAF00D28265 /* WBSBlogSetting.plist */,
 				4EF151171D3F1DC200D28265 /* WBSPrefixHeader.pch */,
 			);
-			name = WBSSupporting_OtherFiles;
+			name = AppSupporting_OtherFiles;
 			path = Others;
 			sourceTree = "<group>";
 		};
