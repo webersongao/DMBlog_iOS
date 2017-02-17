@@ -28,13 +28,13 @@
 /// 用户登陆 POST Login generate_auth_cookie
 + (void)post_UserLogin_WithSiteUrlStr:(NSString *)siteUrlString userNameStr:(NSString *)userName passWordStr:(NSString *)passWord inSSLSecure:(BOOL)inSSLSecure success:(void (^)(id responseObject,NSString *cookieName,NSString *cookie))success failure:(void (^)(NSError *error))failure;
 
-/// register
+/// register  暂时不用 未实现
 - (void)register_WithSiteUrlStr:(NSString *)siteUrlString queryString:(NSString *)queryString success:(void (^)(NSArray *postsArray, NSInteger postsCount))successBlock failure:(void (^)(NSError *error))failureBlock;
 
-/// get_avatar
+/// get_avatar  //需要安装 BuddyPress 插件 type= thumb or full 未实现
 - (void)get_avatar_WithSiteUrlStr:(NSString *)siteUrlString queryString:(NSString *)queryString success:(void (^)(NSArray *postsArray, NSInteger postsCount))successBlock failure:(void (^)(NSError *error))failureBlock;
 
-/// retrieve_password
+/// retrieve_password  需要主机支持 mail() 函数
 - (void)retrieve_password_WithSiteUrlStr:(NSString *)siteUrlString queryString:(NSString *)queryString success:(void (^)(NSArray *postsArray, NSInteger postsCount))successBlock failure:(void (^)(NSError *error))failureBlock;
 
 /// validate_auth_cookie

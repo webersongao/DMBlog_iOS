@@ -80,10 +80,6 @@
 ///xmlrpcURL 后缀
 #define WBSXmlrpcSubffix                @"xmlrpcURLSuffix"
 
-//
-//#define WBSSiteBaseURL                          @"blogBaseURL"
-//
-//#define WBSSiteBaseURL                          @"blogBaseURL"
 
 
 
