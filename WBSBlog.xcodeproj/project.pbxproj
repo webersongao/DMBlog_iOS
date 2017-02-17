@@ -21,6 +21,8 @@
 		4E3B10841E4AC9EF002EF825 /* WPXMLRPCEncoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E3B107E1E4AC9EF002EF825 /* WPXMLRPCEncoder.m */; };
 		4EB5D6B51E54655C00401F2F /* NSArray+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EB5D6B41E54655C00401F2F /* NSArray+Log.m */; };
 		4EB5D6C31E555F3100401F2F /* WBSUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EB5D6C21E555F3100401F2F /* WBSUserModel.m */; };
+		4EB5D75E1E55ADB500401F2F /* WBSQueryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EB5D75D1E55ADB500401F2F /* WBSQueryModel.m */; };
+		4EB5D7611E56A3CE00401F2F /* WBSErrorModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EB5D7601E56A3CE00401F2F /* WBSErrorModel.m */; };
 		4EBC23381E52E41D00121233 /* WBSAuthorModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EBC23371E52E41D00121233 /* WBSAuthorModel.m */; };
 		4EBC233B1E52FCB400121233 /* WBSBaseDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EBC233A1E52FCB400121233 /* WBSBaseDetailsViewController.m */; };
 		4EBC233E1E52FEEA00121233 /* WBSLeftMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EBC233D1E52FEEA00121233 /* WBSLeftMenuViewController.m */; };
@@ -596,6 +598,10 @@
 		4EB5D6B41E54655C00401F2F /* NSArray+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSArray+Log.m"; path = "WBSBlog/Utils/Catagory/NSArray+Log.m"; sourceTree = SOURCE_ROOT; };
 		4EB5D6C11E555F3100401F2F /* WBSUserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSUserModel.h; sourceTree = "<group>"; };
 		4EB5D6C21E555F3100401F2F /* WBSUserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBSUserModel.m; sourceTree = "<group>"; };
+		4EB5D75C1E55ADB500401F2F /* WBSQueryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSQueryModel.h; sourceTree = "<group>"; };
+		4EB5D75D1E55ADB500401F2F /* WBSQueryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBSQueryModel.m; sourceTree = "<group>"; };
+		4EB5D75F1E56A3CE00401F2F /* WBSErrorModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSErrorModel.h; sourceTree = "<group>"; };
+		4EB5D7601E56A3CE00401F2F /* WBSErrorModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBSErrorModel.m; sourceTree = "<group>"; };
 		4EBC23361E52E41D00121233 /* WBSAuthorModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSAuthorModel.h; sourceTree = "<group>"; };
 		4EBC23371E52E41D00121233 /* WBSAuthorModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBSAuthorModel.m; sourceTree = "<group>"; };
 		4EBC23391E52FCB400121233 /* WBSBaseDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSBaseDetailsViewController.h; sourceTree = "<group>"; };
@@ -1946,6 +1952,10 @@
 				4EF0E8561E4CAA0500580F09 /* WBSPostModel.m */,
 				4EB5D6C11E555F3100401F2F /* WBSUserModel.h */,
 				4EB5D6C21E555F3100401F2F /* WBSUserModel.m */,
+				4EB5D75F1E56A3CE00401F2F /* WBSErrorModel.h */,
+				4EB5D7601E56A3CE00401F2F /* WBSErrorModel.m */,
+				4EB5D75C1E55ADB500401F2F /* WBSQueryModel.h */,
+				4EB5D75D1E55ADB500401F2F /* WBSQueryModel.m */,
 				4EBC23361E52E41D00121233 /* WBSAuthorModel.h */,
 				4EBC23371E52E41D00121233 /* WBSAuthorModel.m */,
 				4EF0E8511E4CAA0500580F09 /* WBSCategoryModel.h */,
@@ -3676,6 +3686,7 @@
 				4EF14F921D3E32F700D28265 /* GPUImageLookupFilter.m in Sources */,
 				4EF14FB51D3E32F700D28265 /* GPUImageRGBClosingFilter.m in Sources */,
 				4EF38FA11D430F4600CE28A4 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
+				4EB5D7611E56A3CE00401F2F /* WBSErrorModel.m in Sources */,
 				4EF0E8191E4C52E600580F09 /* WBSJsonApi.m in Sources */,
 				4EF38F9A1D430F4600CE28A4 /* MASCompositeConstraint.m in Sources */,
 				4EF38FE41D4311F000CE28A4 /* UIFont+FontAwesome.m in Sources */,
@@ -3862,6 +3873,7 @@
 				4EF38F9E1D430F4600CE28A4 /* MASViewAttribute.m in Sources */,
 				4EBC233E1E52FEEA00121233 /* WBSLeftMenuViewController.m in Sources */,
 				4ED5A7B61E4B2761005ADE05 /* WPRSDParser.m in Sources */,
+				4EB5D75E1E55ADB500401F2F /* WBSQueryModel.m in Sources */,
 				4EF14F051D3E32F700D28265 /* github_flavoured.c in Sources */,
 				4EF38F711D430E6B00CE28A4 /* GHMarkdownParser.m in Sources */,
 				4EF5E3FE1D41C847002B6AFF /* (null) in Sources */,
