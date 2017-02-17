@@ -441,14 +441,14 @@
         [WBSUtils showErrorMessage:@"用户名不能为空！"];
         
         return NO;
-    }else if(userNameStr.length < 5 || userNameStr.length > 20) {
+    }else if(userNameStr.length < 5 || userNameStr.length > 40) {
         
         [WBSUtils showErrorMessage:@"用户名只能在5-20之间！"];
         return NO;
     }else if([passWordStr isEqualToString:@""]) {
         [WBSUtils showErrorMessage:@"密码不能为空!"];
         return NO;
-    }else if(passWordStr.length < 5 || passWordStr.length > 20) {
+    }else if(passWordStr.length < 5 || passWordStr.length > 40) {
         [WBSUtils showErrorMessage:@"密码只能在5-20之间!"];
         return NO;
     }else{

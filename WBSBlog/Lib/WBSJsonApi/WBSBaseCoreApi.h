@@ -13,7 +13,7 @@
 #import <Foundation/Foundation.h>
 #import "WBSNetworking.h"
 #import "WBSJsonMacro.h"
-
+#import "WBSErrorModel.h"
 
 
 

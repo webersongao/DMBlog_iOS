@@ -110,10 +110,11 @@
         NSString *jsonUrl = [NSString stringWithFormat:@"http://%@",siteBaseUrlStr];
         [WBSJsonApi post_UserLogin_WithSiteUrlStr:jsonUrl userNameStr:userName passWordStr:PassWord inSSLSecure:NO success:^(id responseObject, NSString *cookieName, NSString *cookie) {
             // 成功
-            WBSUserModel *userModel = (WBSUserModel *)responseObject;
             BOOL isSuccess = NO;
-            if (cookie && cookieName) {
+            NSString *errorStr = @"";
+            if (![cookie isEqualToString:@""] && ![cookieName isEqualToString:@""]) {
                 isSuccess = YES;
+                WBSUserModel *userModel = (WBSUserModel *)responseObject;
                 [WBSUtils saveObjectforKey:cookie forKey:WBSSiteAuthCookie];
                 [WBSUtils saveObjectforKey:cookieName forKey:WBSSiteAuthCookieName];
                 [WBSUtils saveObjectforKey:self.jsonSiteUrl forKey:WBSSiteBaseURL];
@@ -129,12 +130,13 @@
                 
             }else{
                 isSuccess = NO;
+                errorStr = [responseObject objectForKey:@"error"];
             }
             
-            LoginSuccessblock(isSuccess,nil);
+            LoginSuccessblock(isSuccess,errorStr);
         } failure:^(NSError *error) {
             //失败
-            NSString * errorStr = [NSString stringWithFormat:@"请求错误：%@", [error localizedDescription]];
+            NSString * errorStr = [NSString stringWithFormat:@"request failure：%@", [error localizedDescription]];
             [SingleObject shareSingleObject].isLogin = NO;
             LoginSuccessblock(NO,errorStr);
         }];

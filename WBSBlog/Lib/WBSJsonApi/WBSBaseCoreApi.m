@@ -17,6 +17,8 @@
 #import "WBSCommentModel.h"
 #import "WBSVersioInfoModel.h"
 #import "WBSAuthorModel.h"
+#import "WBSQueryModel.h"
+
 
 
 @interface WBSBaseCoreApi ()
@@ -67,9 +69,6 @@
             
             //Get pages count
             pagesCount = [responseObject[@"pages"] integerValue];
-            
-            // Query dict
-            NSDictionary *queryDict = [responseObject objectForKey:@"query"];
             
             //Fetch posts
             NSMutableArray *allPosts = [[NSMutableArray alloc]initWithCapacity:postsCount];
@@ -149,6 +148,10 @@
             
             //Get pages count
             pagesCount = [responseObject[@"pages"] integerValue];
+            
+            // Query dict
+            NSDictionary *queryDict = [responseObject objectForKey:@"query"];
+            WBSQueryModel *queryModel = [WBSQueryModel QueryserModelWithDic:queryDict];
             
             //Fetch posts
             NSMutableArray *allPosts = [[NSMutableArray alloc]initWithCapacity:[responseObject[@"count_total"] integerValue]];

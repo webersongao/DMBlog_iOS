@@ -36,7 +36,7 @@
         NSString *cookieNameStr = @"";
         NSString *cookieStr = @"";
         
-        if ([responseObject isKindOfClass:[NSDictionary class]]) {
+        if ([responseObject isKindOfClass:[NSDictionary class]] &&[[responseObject objectForKey:@"status"]isEqualToString:@"ok"]) {
             
             NSString *status = [responseObject objectForKey:@"status"];
             
@@ -60,6 +60,10 @@
                 
                 responseObject = userModel;
             }
+        }else{
+            cookieStr = @"";
+            cookieNameStr = @"";
+            responseObject = [[NSDictionary alloc]initWithObjects:@[@"error",[responseObject objectForKey:@"error"] ] forKeys:@[@"status",@"error"] ];
         }
         
         success(responseObject,cookieNameStr,cookieStr);
