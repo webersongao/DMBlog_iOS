@@ -11,8 +11,9 @@
 #import "WBSNetRequest.h"
 #import "NetworkingCenter.h"
 #import "WBSNetworking.h"
+#import "WBSScaleView.h"
 
-@interface WBSUserLoginViewController () <UITextFieldDelegate, UIGestureRecognizerDelegate>
+@interface WBSUserLoginViewController () <UITextFieldDelegate, UIGestureRecognizerDelegate,scaleViewSelectRowDelegate>
 
 /**
  *  xmlrpcURL
@@ -104,8 +105,12 @@
 #pragma mark 选择博客类型
 - (void)selectBlogAction:(UIButton *)button {
     
-    WBSSelectBlogViewController *selectBlogController = [[WBSSelectBlogViewController alloc] init];
-    [self.navigationController pushViewController:selectBlogController animated:YES];
+    CGPoint point = CGPointMake(self.view.width-32,66);
+    NSArray *titleArr = @[@"编辑信息",@"博客模式", @"导入资料"];
+    NSArray *imagesArr = @[@"home_PopMenu_edit",@"home_PopMenu_list", @"home_PopMenu_Import"];
+    WBSScaleView *scaleview = [[WBSScaleView alloc] initWithOrigin:point Width:130 Height:40 * 3 Type:WBSScaleDirectionTypeUpRight Color:[UIColor themeColor] titleArray:titleArr imagesArray:imagesArr superView:self.view];
+    scaleview.delegate = self;
+    [scaleview showScaleView];
     
 }
 
@@ -139,7 +144,7 @@
             [WBSUtils showSuccessMessage:@"登录成功"];
             [WBSUtils saveBoolforKey:NO forKey:WBSGuestLoginMode];
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                 [WBSUtils goToMainViewController];
+                [WBSUtils goToMainViewController];
             });
         }else{
             [WBSUtils showErrorMessage:errorMsg];
@@ -149,6 +154,39 @@
     
     
 }
+
+-(void)scaleView:(WBSScaleView *)scaleView didSelectRow:(NSInteger)rowIndex{
+    
+    switch (rowIndex) {
+        case 0:
+        {
+            NSLog(@"编辑信息");
+        }
+            break;
+        case 1:
+        {
+            NSLog(@"博客模式");
+        }
+            break;
+        case 2:
+        {
+            NSLog(@"导入资料");
+        }
+            break;
+            
+        default:
+            break;
+    }
+}
+
+
+
+
+
+
+
+
+
 /// 游客登录
 - (IBAction)guestLogin:(UIButton *)button {
     
