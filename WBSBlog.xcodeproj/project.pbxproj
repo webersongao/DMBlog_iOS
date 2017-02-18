@@ -40,6 +40,8 @@
 		4EB5D79C1E5802BD00401F2F /* home_PopMenu_Import@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EB5D7941E5802BD00401F2F /* home_PopMenu_Import@3x.png */; };
 		4EB5D79D1E5802BD00401F2F /* home_PopMenu_list@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EB5D7951E5802BD00401F2F /* home_PopMenu_list@2x.png */; };
 		4EB5D79E1E5802BD00401F2F /* home_PopMenu_list@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EB5D7961E5802BD00401F2F /* home_PopMenu_list@3x.png */; };
+		4EB5D7A11E58232A00401F2F /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 4EB5D79F1E58232A00401F2F /* LICENSE */; };
+		4EB5D7A21E58232A00401F2F /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 4EB5D7A01E58232A00401F2F /* README.md */; };
 		4EBC23381E52E41D00121233 /* WBSAuthorModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EBC23371E52E41D00121233 /* WBSAuthorModel.m */; };
 		4EBC233B1E52FCB400121233 /* WBSBaseDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EBC233A1E52FCB400121233 /* WBSBaseDetailsViewController.m */; };
 		4EBC233E1E52FEEA00121233 /* WBSLeftMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EBC233D1E52FEEA00121233 /* WBSLeftMenuViewController.m */; };
@@ -637,6 +639,8 @@
 		4EB5D7941E5802BD00401F2F /* home_PopMenu_Import@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home_PopMenu_Import@3x.png"; sourceTree = "<group>"; };
 		4EB5D7951E5802BD00401F2F /* home_PopMenu_list@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home_PopMenu_list@2x.png"; sourceTree = "<group>"; };
 		4EB5D7961E5802BD00401F2F /* home_PopMenu_list@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home_PopMenu_list@3x.png"; sourceTree = "<group>"; };
+		4EB5D79F1E58232A00401F2F /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		4EB5D7A01E58232A00401F2F /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		4EBC23361E52E41D00121233 /* WBSAuthorModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSAuthorModel.h; sourceTree = "<group>"; };
 		4EBC23371E52E41D00121233 /* WBSAuthorModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBSAuthorModel.m; sourceTree = "<group>"; };
 		4EBC23391E52FCB400121233 /* WBSBaseDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSBaseDetailsViewController.h; sourceTree = "<group>"; };
@@ -2010,6 +2014,8 @@
 		4EF0E8501E4CAA0500580F09 /* ApiModel */ = {
 			isa = PBXGroup;
 			children = (
+				4EB5D79F1E58232A00401F2F /* LICENSE */,
+				4EB5D7A01E58232A00401F2F /* README.md */,
 				4EF0E8571E4CAA0500580F09 /* WBSTagModel.h */,
 				4EF0E8581E4CAA0500580F09 /* WBSTagModel.m */,
 				4EF0E8551E4CAA0500580F09 /* WBSPostModel.h */,
@@ -3475,6 +3481,7 @@
 				4EDFF3F51E375508000C47D2 /* toolbar-emoji2@3x.png in Resources */,
 				4EDFF3811E375508000C47D2 /* error.png in Resources */,
 				4EDFF37E1E375508000C47D2 /* done.png in Resources */,
+				4EB5D7A11E58232A00401F2F /* LICENSE in Resources */,
 				4EF14F431D3E32F700D28265 /* lookup_soft_elegance_1.png in Resources */,
 				4EF5E4151D41FD23002B6AFF /* (null) in Resources */,
 				4EDFF3BE1E375508000C47D2 /* scan_frame@2x.png in Resources */,
@@ -3726,6 +3733,7 @@
 				4EF5E4021D41C870002B6AFF /* (null) in Sources */,
 				4EF788561E51609500DA058F /* MJRefreshBackGifFooter.m in Sources */,
 				4EF14F7A1D3E32F700D28265 /* GPUImageHalftoneFilter.m in Sources */,
+				4EB5D7A21E58232A00401F2F /* README.md in Sources */,
 				4EF0E8921E4CC09F00580F09 /* AFHTTPRequestOperation.m in Sources */,
 				4EF14F361D3E32F700D28265 /* SDWebImageDownloader.m in Sources */,
 				4EF14F3A1D3E32F700D28265 /* UIButton+WebCache.m in Sources */,
