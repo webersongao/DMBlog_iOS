@@ -8,11 +8,13 @@
 
 #import "WBSPostCell.h"
 #import "UIImageView+WebCache.h"
+#import "Masonry.h"
 
 #define topMarginOfCell 8
 #define leftMarginOfCell 10
 #define verticalMarginOfCell 8
-#define horizontalMarginOfCell 10
+#define horizontalMarginOfCell 10  // 水平间隔
+
 
 const int MAX_DESCRIPTION_LENGTH = 60;//描述最多字数
 const int MAX_PAGE_SIZE = 10;//每页默认显示文章数目
@@ -47,7 +49,7 @@ const int MAX_PAGE_SIZE = 10;//每页默认显示文章数目
         self.selectedBackgroundView = [[UIView alloc] initWithFrame:self.frame];
         self.selectedBackgroundView.backgroundColor = [UIColor selectCellSColor];
         [self initSubviews];
-        [self setLayout];
+        [self setConstraintLayout];
     }
     return self;
 }
@@ -55,47 +57,93 @@ const int MAX_PAGE_SIZE = 10;//每页默认显示文章数目
 
 - (void)initSubviews
 {
-    self.thumbImageView = [[UIImageView alloc]initWithFrame:CGRectMake(leftMarginOfCell, topMarginOfCell, self.width-(leftMarginOfCell *2), self.height-(topMarginOfCell*2))];
+    self.thumbImageView = [[UIImageView alloc]init];
     [self.contentView addSubview:self.thumbImageView];
     self.thumbImageView.backgroundColor = [UIColor lightGrayColor];
     
-    
-    self.titleLabel = [[UILabel alloc]initWithFrame:CGRectMake(leftMarginOfCell, self.thumbImageView.bottom+verticalMarginOfCell, self.width-(leftMarginOfCell*2), leftMarginOfCell)];
+    self.titleLabel = [[UILabel alloc]init];
     self.titleLabel.numberOfLines = 0;
     self.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
     self.titleLabel.font = [UIFont boldSystemFontOfSize:15];
     [self.contentView addSubview:self.titleLabel];
     
-    self.bodyLabel = [[UILabel alloc]initWithFrame:CGRectMake(self.timeLabel.left, self.timeLabel.bottom+verticalMarginOfCell, self.width-(leftMarginOfCell*2), leftMarginOfCell)];
+    self.bodyLabel = [[UILabel alloc]init];
     self.bodyLabel.numberOfLines = 0;
     self.bodyLabel.lineBreakMode = NSLineBreakByWordWrapping;
     self.bodyLabel.font = [UIFont systemFontOfSize:13];
     self.bodyLabel.textColor = [UIColor grayColor];
     [self.contentView addSubview:self.bodyLabel];
     
-    self.authorLabel = [[UILabel alloc]initWithFrame:CGRectMake(self.timeLabel.left, self.thumbImageView.bottom+verticalMarginOfCell, self.width-(leftMarginOfCell*2), leftMarginOfCell)];
+    self.authorLabel = [[UILabel alloc]init];
     self.authorLabel.font = [UIFont systemFontOfSize:12];
     self.authorLabel.textColor = [UIColor nameColor];
     [self.contentView addSubview:self.authorLabel];
     
-    self.timeLabel = [[UILabel alloc]initWithFrame:CGRectMake(leftMarginOfCell, self.thumbImageView.bottom+verticalMarginOfCell, self.width-(leftMarginOfCell*2), leftMarginOfCell)];
+    self.timeLabel = [[UILabel alloc]init];
     self.timeLabel.font = [UIFont systemFontOfSize:12];
     self.timeLabel.textColor = [UIColor grayColor];
     [self.contentView addSubview:self.timeLabel];
     
-    self.commentCountLabel = [[UILabel alloc]initWithFrame:CGRectMake(leftMarginOfCell, self.thumbImageView.bottom+verticalMarginOfCell, self.width-(leftMarginOfCell*2), leftMarginOfCell)];
+    self.commentCountLabel = [[UILabel alloc]init];
     self.commentCountLabel.font = [UIFont systemFontOfSize:12];
     self.commentCountLabel.textColor = [UIColor grayColor];
     [self.contentView addSubview:self.commentCountLabel];
     
-    self.categoriesLabel = [[UILabel alloc]initWithFrame:CGRectMake(leftMarginOfCell, self.thumbImageView.bottom+verticalMarginOfCell, self.width-(leftMarginOfCell*2), leftMarginOfCell)];
+    self.categoriesLabel = [[UILabel alloc]init];
     self.categoriesLabel.font = [UIFont systemFontOfSize:12];
     self.categoriesLabel.textColor = [UIColor nameColor];
     [self.contentView addSubview:self.categoriesLabel];
 }
 
-- (void)setLayout
+
+/// masonry 布局
+- (void)setMyAutoLayout
 {
+    [self.thumbImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.contentView).offset(leftMarginOfCell);
+        make.top.equalTo(self.contentView).offset(topMarginOfCell);
+        make.right.equalTo(self.contentView).offset(-leftMarginOfCell);
+        make.height.equalTo(@40);
+    }];
+    
+    [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.thumbImageView).offset(verticalMarginOfCell);
+        make.left.equalTo(self.contentView).offset(leftMarginOfCell);
+        make.right.equalTo(self.contentView).offset(-leftMarginOfCell);
+    }];
+    
+    [self.bodyLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.titleLabel);
+        make.top.equalTo(self.titleLabel).offset(verticalMarginOfCell);
+        make.right.equalTo(self.contentView).offset(-leftMarginOfCell);
+    }];
+    
+    [self.authorLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.timeLabel);
+        make.top.equalTo(self.bodyLabel).offset(verticalMarginOfCell);
+    }];
+    
+    [self.timeLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.authorLabel).offset(horizontalMarginOfCell);
+        make.top.equalTo(self.authorLabel);
+    }];
+    
+    [self.commentCountLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.authorLabel);
+        make.left.equalTo(self.timeLabel).offset(horizontalMarginOfCell);
+    }];
+    
+    [self.categoriesLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.authorLabel);
+        make.left.equalTo(self.commentCountLabel).offset(horizontalMarginOfCell);
+    }];
+    
+}
+
+/// 系统 Constraint 布局
+- (void)setConstraintLayout
+{
+    
     for (UIView *view in [self.contentView subviews]) {
         view.translatesAutoresizingMaskIntoConstraints = NO;
     }
@@ -142,11 +190,14 @@ const int MAX_PAGE_SIZE = 10;//每页默认显示文章数目
     
     // 计算cell高度
     [self setCellHeightWithModel:postModel];
-
+    
 }
 
-- (void)setCellHeightWithModel:(WBSPostModel *)postModel{
 
+
+
+- (void)setCellHeightWithModel:(WBSPostModel *)postModel{
+    
     UILabel *tempLabel = [[UILabel alloc]init];
     tempLabel.numberOfLines = 0;
     tempLabel.lineBreakMode = NSLineBreakByWordWrapping;

@@ -69,8 +69,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    //初始化导航栏
-    self.navigationItem.title = @"登录";
     // 默认开启 JSONAPI
     [WBSUtils saveBoolforKey:YES forKey:WBSIs_JSONAPI];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"选择" style:UIBarButtonItemStylePlain target:self action:@selector(selectBlogAction:)];
@@ -82,6 +80,11 @@
     UIView *indexView = [[[NSBundle mainBundle]loadNibNamed:@"WBSLogin" owner:self options:nil]lastObject];
     self.view = indexView;
     
+    
+    UIButton *temp = [[UIButton alloc]initWithFrame:CGRectMake(KSCREEN_Width - 60 , 20, 40, 40)];
+    temp.backgroundColor = [UIColor orangeColor];
+    [self.view addSubview:temp];
+    [temp addTarget:self action:@selector(tempButtonAction) forControlEvents:UIControlEventTouchUpInside];
     
 }
 
@@ -198,6 +201,11 @@
 
 
 
+
+-(void)tempButtonAction{
+    [SingleObject shareSingleObject].isGuest = YES;
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 
 
 

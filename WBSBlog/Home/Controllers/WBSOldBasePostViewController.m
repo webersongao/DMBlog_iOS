@@ -11,8 +11,6 @@
 #import "WBSJsonApi.h"
 #import "WBSBlogAppDelegate.h"
 
-
-
 @interface WBSOldBasePostViewController ()
 
 @property (nonatomic, assign) BOOL refreshInProgress;
@@ -34,6 +32,7 @@
     
     return self;
 }
+
 
 - (instancetype)initWithStyle:(UITableViewStyle)style
 {
