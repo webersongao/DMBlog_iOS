@@ -34,6 +34,8 @@ static NSString *PostCellID = @"WBSPostCellID";
         self.bounces = YES;
         [self registerClass:[WBSPostCell class] forCellReuseIdentifier:PostCellID];
         
+//        self.rowHeight = UITableViewAutomaticDimension;  // 开启预估行高
+//        self.estimatedRowHeight = 90;
     }
     return self;
 }
@@ -72,11 +74,13 @@ static NSString *PostCellID = @"WBSPostCellID";
     tempLabel.font = [UIFont systemFontOfSize:13];
     titleHeight += [tempLabel sizeThatFits:CGSizeMake(self.width - 16, MAXFLOAT)].height;
     
-    return titleHeight + 42;
+    return titleHeight + 42 +(postModel.thumbnailURL?40:0);
 }
 
 -(CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
     return 90;
+    
 }
 
 
@@ -89,8 +93,8 @@ static NSString *PostCellID = @"WBSPostCellID";
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     
-//    WBSPostModel *postModel = self.dataArray[indexPath.row];
-//    NSInteger postId =[NSString stringWithFormat:@"%ld",postModel.postId];//文章ID
+    //    WBSPostModel *postModel = self.dataArray[indexPath.row];
+    //    NSInteger postId =[NSString stringWithFormat:@"%ld",postModel.postId];//文章ID
     
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // 调用删除文章的方法

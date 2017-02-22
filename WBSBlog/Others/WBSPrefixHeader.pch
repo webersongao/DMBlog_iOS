@@ -24,8 +24,6 @@
 #import "FMDBManger.h"
 #endif
 
-
-
 #ifdef DEBUG // 调试
 
 #define KLog(...) NSLog(__VA_ARGS__)

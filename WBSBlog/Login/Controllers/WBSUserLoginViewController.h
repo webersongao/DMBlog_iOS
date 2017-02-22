@@ -6,8 +6,9 @@
 //  Copyright © 2016年 Weberson. All rights reserved.
 //
 
-#import "WBSBaseViewController.h"
 
-@interface WBSUserLoginViewController : WBSBaseViewController
+#import <UIKit/UIKit.h>
+
+@interface WBSUserLoginViewController : UIViewController
 
 @end
