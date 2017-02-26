@@ -15,7 +15,7 @@
 @interface WWTagsCloudView : UIView
 @property (strong, nonatomic) id<WWTagsCloudViewDelegate> delegate;
 
--(id)initWithFrame:(CGRect)frame andTags:(NSArray*)tags andTagColors:(NSArray*)tagColors andFonts:(NSArray*)fonts andParallaxRate:(CGFloat)parallaxRate andNumOfLine:(NSInteger)lineNum;
+-(id)initWithFrame:(CGRect)frame andTags:(NSArray*)tagTitleArr andTagColors:(NSArray*)tagColors andFonts:(NSArray*)fonts andParallaxRate:(CGFloat)parallaxRate andNumOfLine:(NSInteger)lineNum;
 
 -(void)reloadAllTags;
 @end

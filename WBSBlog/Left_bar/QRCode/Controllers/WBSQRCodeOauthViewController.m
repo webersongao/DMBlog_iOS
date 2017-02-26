@@ -43,7 +43,7 @@
 - (void)setDescription {
     UILabel *description = [[UILabel alloc] initWithFrame:(CGRect){0, 300.f, KSCREEN_Width, 16.f}];
     [description setTextColor:UIColorFromHEXRGB(0x4b4b4b)];
-    [description setText:@"点击按钮获取授权"];
+    [description setText:@"点击按钮获取网站授权"];
     [description setFont:[UIFont fontWithName:@"Helvetica" size:18.f]];
     [description setTextAlignment:NSTextAlignmentCenter];
     
@@ -52,7 +52,7 @@
 
 - (void)setButton {
     UIButton *button = [[UIButton alloc] initWithFrame:(CGRect){(KSCREEN_Width-150.f)/2, 400.f, 150.f, 35.f}];
-    [button setTitle:@"授权网站" forState:UIControlStateNormal];
+    [button setTitle:@"获取网站授权" forState:UIControlStateNormal];
     [button setTitleColor:UIColorFromHEXRGB(0x37c936) forState:UIControlStateNormal];
     [button setTitleColor:UIColorFromHEXRGB(0xffffff) forState:UIControlStateHighlighted];
     [button setBackgroundImage:[UIImage imageNamed:@"greenHL.png"] forState:UIControlStateHighlighted];
@@ -69,7 +69,7 @@
 - (void)setCancelButton {
     UIButton *button = [[UIButton alloc] initWithFrame:(CGRect){(KSCREEN_Width-150.f)/2, 460.f, 150.f, 35.f}];
     [button.titleLabel setFont:[UIFont fontWithName:@"Helvetica" size:14.0]];
-    [button setTitle:@"取消授权" forState:UIControlStateNormal];
+    [button setTitle:@"拒绝授权" forState:UIControlStateNormal];
     [button setTitleColor: UIColorFromHEXRGB(0xaaaaaa) forState:UIControlStateNormal];
     [button setTitleColor: UIColorFromHEXRGB(0x888888) forState:UIControlStateSelected];
     
@@ -88,8 +88,8 @@
     NSString *appkey = [resultArray objectAtIndex:1];
     
     NSString *UUID = [[NSUUID UUID] UUIDString];
-    [SAMKeychain setPassword:UUID forService:@"com.puckjs.iUnlocker" account:@"UUID"];
-    [SAMKeychain setPassword:[resultArray objectAtIndex:0] forService:@"com.puckjs.iUnlocker" account:@"ADMINURL"];
+    [SAMKeychain setPassword:UUID forService:WBSScanQRCode_AppID_Service account:WBSScanQRCode_UUID_Acount];
+    [SAMKeychain setPassword:[resultArray objectAtIndex:0] forService:WBSScanQRCode_AppID_Service account:WBSScanQRCode_AdminUrl_Acount];
     
     NSDictionary *params = @{
                              @"UUID": UUID,
@@ -104,10 +104,10 @@
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     [manager POST:adminUrl
        parameters:params progress:nil success:^(NSURLSessionTask *task, id res) {
-              [SVProgressHUD showSuccessWithStatus:@"授权成功"];
-              [self toRootViewController];
-              KLog(@"response:%@", res);
-          }
+           [SVProgressHUD showSuccessWithStatus:@"授权成功"];
+           [self toRootViewController];
+           KLog(@"response:%@", res);
+       }
           failure:^(NSURLSessionTask *task, NSError *error) {
               [SVProgressHUD showErrorWithStatus:@"授权失败"];
               KLog(@"error:%@", error);
@@ -116,10 +116,10 @@
 
 //授权成功 或者 取消授权 之后 的跳转
 - (void)toRootViewController {
-//    [self.navigationController popToRootViewControllerAnimated:YES];
+    //    [self.navigationController popToRootViewControllerAnimated:YES];
     // 回到tabbar的第一个index处
     [SVProgressHUD dismiss];
-   [WBSUtils goToMainViewController];
+    [WBSUtils goToMainViewController];
 }
 
 - (void)viewWillAppear:(BOOL)animated {

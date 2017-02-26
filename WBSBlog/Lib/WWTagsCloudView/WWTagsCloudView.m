@@ -56,11 +56,11 @@
 @property (nonatomic) CGFloat parallaxRate;
 @end
 @implementation WWTagsCloudView
--(id)initWithFrame:(CGRect)frame andTags:(NSArray*)tags andTagColors:(NSArray*)tagColors andFonts:(NSArray*)fonts andParallaxRate:(CGFloat)parallaxRate andNumOfLine:(NSInteger)lineNum
+-(id)initWithFrame:(CGRect)frame andTags:(NSArray*)tagTitleArr andTagColors:(NSArray*)tagColors andFonts:(NSArray*)fonts andParallaxRate:(CGFloat)parallaxRate andNumOfLine:(NSInteger)lineNum
 {
     //初始化
     self = [super initWithFrame:frame];
-    _tagArray = tags;
+    _tagArray = tagTitleArr;
     _tagColorArray = tagColors;
     _fontArray = fonts;
     _lineNum = lineNum;

@@ -11,7 +11,7 @@
 #import "WBSNetRequest.h"
 #import "NetworkingCenter.h"
 #import "WBSNetworking.h"
-#import "WBSScaleView.h"
+#import "WBSPopoverView.h"
 
 @interface WBSUserLoginViewController () <UITextFieldDelegate, UIGestureRecognizerDelegate,scaleViewSelectRowDelegate>
 
@@ -111,9 +111,9 @@
     CGPoint point = CGPointMake(self.view.width-32,66);
     NSArray *titleArr = @[@"编辑信息",@"博客模式", @"导入资料"];
     NSArray *imagesArr = @[@"home_PopMenu_edit",@"home_PopMenu_list", @"home_PopMenu_Import"];
-    WBSScaleView *scaleview = [[WBSScaleView alloc] initWithOrigin:point Width:130 Height:40 * 3 Type:WBSScaleDirectionTypeUpRight Color:[UIColor themeColor] titleArray:titleArr imagesArray:imagesArr superView:self.view];
-    scaleview.delegate = self;
-    [scaleview showScaleView];
+    WBSPopoverView *popoverView = [[WBSPopoverView alloc] initWithOrigin:point Width:130 Height:40 * 3 Type:WBSScaleDirectionTypeUpRight Color:[UIColor themeColor] titleArray:titleArr imagesArray:imagesArr superView:self.view];
+    popoverView.delegate = self;
+    [popoverView showScaleView];
     
 }
 
@@ -158,7 +158,7 @@
     
 }
 
--(void)scaleView:(WBSScaleView *)scaleView didSelectRow:(NSInteger)rowIndex{
+-(void)scaleView:(WBSPopoverView *)scaleView didSelectRow:(NSInteger)rowIndex{
     
     switch (rowIndex) {
         case 0:

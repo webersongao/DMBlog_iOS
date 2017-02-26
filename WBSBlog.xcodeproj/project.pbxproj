@@ -31,7 +31,7 @@
 		4EB5D7841E56E7D500401F2F /* WBSEmojiPanelVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EB5D77C1E56E7D500401F2F /* WBSEmojiPanelVC.m */; };
 		4EB5D7851E56E7D500401F2F /* WBSOperationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EB5D77E1E56E7D500401F2F /* WBSOperationBar.m */; };
 		4EB5D7861E56E7D500401F2F /* WBSPlaceholderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EB5D7801E56E7D500401F2F /* WBSPlaceholderTextView.m */; };
-		4EB5D78E1E57FCF600401F2F /* WBSScaleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EB5D78D1E57FCF600401F2F /* WBSScaleView.m */; };
+		4EB5D78E1E57FCF600401F2F /* WBSPopoverView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EB5D78D1E57FCF600401F2F /* WBSPopoverView.m */; };
 		4EB5D7971E5802BD00401F2F /* home_PopMenu_edit@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EB5D78F1E5802BD00401F2F /* home_PopMenu_edit@2x.png */; };
 		4EB5D7981E5802BD00401F2F /* home_PopMenu_edit@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EB5D7901E5802BD00401F2F /* home_PopMenu_edit@3x.png */; };
 		4EB5D7991E5802BD00401F2F /* home_PopMenu_Grid@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EB5D7911E5802BD00401F2F /* home_PopMenu_Grid@2x.png */; };
@@ -629,8 +629,8 @@
 		4EB5D77E1E56E7D500401F2F /* WBSOperationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBSOperationBar.m; sourceTree = "<group>"; };
 		4EB5D77F1E56E7D500401F2F /* WBSPlaceholderTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSPlaceholderTextView.h; sourceTree = "<group>"; };
 		4EB5D7801E56E7D500401F2F /* WBSPlaceholderTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBSPlaceholderTextView.m; sourceTree = "<group>"; };
-		4EB5D78C1E57FCF600401F2F /* WBSScaleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSScaleView.h; sourceTree = "<group>"; };
-		4EB5D78D1E57FCF600401F2F /* WBSScaleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBSScaleView.m; sourceTree = "<group>"; };
+		4EB5D78C1E57FCF600401F2F /* WBSPopoverView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSPopoverView.h; sourceTree = "<group>"; };
+		4EB5D78D1E57FCF600401F2F /* WBSPopoverView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBSPopoverView.m; sourceTree = "<group>"; };
 		4EB5D78F1E5802BD00401F2F /* home_PopMenu_edit@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home_PopMenu_edit@2x.png"; sourceTree = "<group>"; };
 		4EB5D7901E5802BD00401F2F /* home_PopMenu_edit@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home_PopMenu_edit@3x.png"; sourceTree = "<group>"; };
 		4EB5D7911E5802BD00401F2F /* home_PopMenu_Grid@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home_PopMenu_Grid@2x.png"; sourceTree = "<group>"; };
@@ -1594,8 +1594,8 @@
 		4EB5D78B1E57FCDD00401F2F /* WBSViews */ = {
 			isa = PBXGroup;
 			children = (
-				4EB5D78C1E57FCF600401F2F /* WBSScaleView.h */,
-				4EB5D78D1E57FCF600401F2F /* WBSScaleView.m */,
+				4EB5D78C1E57FCF600401F2F /* WBSPopoverView.h */,
+				4EB5D78D1E57FCF600401F2F /* WBSPopoverView.m */,
 			);
 			path = WBSViews;
 			sourceTree = "<group>";
@@ -3726,7 +3726,7 @@
 				4EF788601E51609500DA058F /* UIScrollView+MJRefresh.m in Sources */,
 				4EF14FCF1D3E32F700D28265 /* GPUImageThreeInputFilter.m in Sources */,
 				4EF5E4451D4230DA002B6AFF /* (null) in Sources */,
-				4EB5D78E1E57FCF600401F2F /* WBSScaleView.m in Sources */,
+				4EB5D78E1E57FCF600401F2F /* WBSPopoverView.m in Sources */,
 				4EF14F791D3E32F700D28265 /* GPUImageGrayscaleFilter.m in Sources */,
 				4EDFD7DC1E35A991006DD1E6 /* SVRadialGradientLayer.m in Sources */,
 				4ED5A7B11E4B2761005ADE05 /* WordPressRestApiJSONRequestOperationManager.m in Sources */,

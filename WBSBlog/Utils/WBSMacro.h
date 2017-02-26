@@ -78,6 +78,16 @@
 ///xmlrpcURL 后缀
 #define WBSXmlrpcSubffix                @"xmlrpcURLSuffix"
 
+///Scan QRCode APPID
+#define WBSScanQRCode_AppID_Service     @"com.webersongao.bokehui"
+
+///Scan QRCode UUID Account
+#define WBSScanQRCode_UUID_Acount        @"WBSScanQRCodeUUIDAcount"
+
+///Scan QRCode adminUrl Account
+#define WBSScanQRCode_AdminUrl_Acount    @"WBSScanQRCodeAdminUrlAcount"
+
+
 
 
 

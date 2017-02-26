@@ -30,7 +30,7 @@
 
 // 版本信息 info -> Returns information about JSON API or detailed information about a specific controller
 + (void)get_JsonApi_Info_WithSiteURLStr:(NSString *)siteURLStr controllerStr:(NSString *)controllerStr success:(void (^)(id versionInfoModel))successBlock failure:(void (^)(NSError *error))failureBlock{
-
+    
     NSString *requestStr = [NSString stringWithFormat:@"%@/%@/%@/?controller=%@",siteURLStr,KBase_Api,KJsonApi_Versioninfo,controllerStr];
     [WBSNetworking GETRequest:requestStr parameters:nil success:^(id responseObject) {
         //成功
@@ -347,13 +347,26 @@
 
 
 /// get_tag_index
-+ (void)get_tag_index_WithSiteUrlStr:(NSString *)siteUrlString success:(void (^)(NSArray *postsArray, NSInteger postsCount))successBlock failure:(void (^)(NSError *error))failureBlock{
++ (void)get_tag_index_WithSiteUrlStr:(NSString *)siteUrlString success:(void (^)(NSArray *tagsArray, NSInteger tagsCount))successBlock failure:(void (^)(NSError *error))failureBlock{
     
-    NSString *getTagIndexURLStr = [NSString stringWithFormat:@"%@/%@/%@/",siteUrlString,KBase_Api,KBase_Get_date_index];
+    NSString *getTagIndexURLStr = [NSString stringWithFormat:@"%@/%@/%@/",siteUrlString,KBase_Api,KBase_Get_tag_index];
     [WBSNetworking GETRequest:getTagIndexURLStr parameters:nil success:^(id responseObject) {
         //成功
+        NSInteger tagCount = 0;
+        NSMutableArray *tagMutableArr = [[NSMutableArray alloc]initWithCapacity:5];
+        if ([responseObject isKindOfClass:[NSDictionary class]]) {
+            tagCount = (NSInteger)[responseObject objectForKey:@"count"];
+            NSArray *tagDictArr = [responseObject objectForKey:@"tags"];
+            for (NSDictionary * tagDict in tagDictArr) {
+                
+                WBSTagModel *tagModel = [WBSTagModel TagModelWithDictionary:tagDict];
+                [tagMutableArr addObject:tagModel];
+            }
+        }
+        successBlock(tagMutableArr,tagCount);
     } failure:^(NSError *error) {
         // 失败
+        failureBlock(error);
     }];
     
     
@@ -463,11 +476,11 @@
 /// delete_post
 /**
  @required:
-nonce - available from the get_nonce method (call with vars controller=posts and method=delete_post)
+ nonce - available from the get_nonce method (call with vars controller=posts and method=delete_post)
  @required: One of the following
-id or post_id - set to the post's ID
-slug or post_slug - set to the post's URL slug
-**/
+ id or post_id - set to the post's ID
+ slug or post_slug - set to the post's URL slug
+ **/
 + (void)delete_post_WithSiteUrlStr:(NSString *)siteUrlString controller:(NSString *)controllerStr method:(NSString *)methodStr success:(void (^)(NSArray *postsArray, NSInteger postsCount))successBlock failure:(void (^)(NSError *error))failureBlock{
     
     NSString *getNonceURLStr = [NSString stringWithFormat:@"%@/%@/%@/?controller=%@&method=%@",siteUrlString,KBase_Api,KBase_Get_date_index,controllerStr,methodStr];
