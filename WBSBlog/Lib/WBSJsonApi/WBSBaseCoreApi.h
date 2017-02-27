@@ -66,7 +66,7 @@
 + (void)get_category_index_WithSiteUrlStr:(NSString *)siteUrlString queryString:(NSString *)queryString success:(void (^)(NSArray *postsArray, NSInteger postsCount))successBlock failure:(void (^)(NSError *error))failureBlock;
 
 /// get_tag_index
-+ (void)get_tag_index_WithSiteUrlStr:(NSString *)siteUrlString queryString:(NSString *)queryString success:(void (^)(NSArray *postsArray, NSInteger postsCount))successBlock failure:(void (^)(NSError *error))failureBlock;
++ (void)get_tag_index_WithSiteUrlStr:(NSString *)siteUrlString success:(void (^)(NSArray *tagsArray, NSInteger tagsCount))successBlock failure:(void (^)(NSError *error))failureBlock;
 
 /// get_author_index
 + (void)get_author_index_WithSiteUrlStr:(NSString *)siteUrlString queryString:(NSString *)queryString success:(void (^)(NSArray *postsArray, NSInteger postsCount))successBlock failure:(void (^)(NSError *error))failureBlock;

@@ -81,8 +81,8 @@
 }
 
 - (void)scaned {
-    NSString *adminUrl = [SAMKeychain passwordForService:@"com.puckjs.iUnlocker" account:@"ADMINURL"];
-    NSString *UUID = [SAMKeychain passwordForService:@"com.puckjs.iUnlocker" account:@"UUID"];
+    NSString *adminUrl = [SAMKeychain passwordForService:WBSScanQRCode_AppID_Service account:WBSScanQRCode_AdminUrl_Acount];
+    NSString *UUID = [SAMKeychain passwordForService:WBSScanQRCode_AppID_Service account:WBSScanQRCode_UUID_Acount];
     
     if (adminUrl == nil || UUID == nil) {
         [SVProgressHUD showErrorWithStatus:@"需要网站授权"];
@@ -116,8 +116,8 @@
 }
 
 - (void)generateUUID {
-    NSString *adminUrl = [SAMKeychain passwordForService:@"com.puckjs.iUnlocker" account:@"ADMINURL"];
-    NSString *UUID = [SAMKeychain passwordForService:@"com.puckjs.iUnlocker" account:@"UUID"];
+    NSString *adminUrl = [SAMKeychain passwordForService:WBSScanQRCode_AppID_Service account:WBSScanQRCode_AdminUrl_Acount];
+    NSString *UUID = [SAMKeychain passwordForService:WBSScanQRCode_AppID_Service account:WBSScanQRCode_UUID_Acount];
     
     if (adminUrl == nil || UUID == nil) {
         [SVProgressHUD showErrorWithStatus:@"需要网站授权"];

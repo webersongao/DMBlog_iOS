@@ -1,15 +1,15 @@
 //
-//  WBSScaleView.h
+//  WBSPopoverView.m
 //  WBSBlog
 //
 //  Created by Weberson on 17/2/18.
 //  Copyright © 2016年 Weberson. All rights reserved.
 //
 
-#import "WBSScaleView.h"
+#import "WBSPopoverView.h"
 #define Length 5
 #define Length2 15
-@interface WBSScaleView ()<UITableViewDelegate, UITableViewDataSource>
+@interface WBSPopoverView ()<UITableViewDelegate, UITableViewDataSource>
 {
     UIView *coverView;
 }
@@ -19,9 +19,9 @@
 
 @property (nonatomic, assign) CGFloat scaleWidth;
 // titles
-@property (nonatomic, strong) NSArray * _Nonnull titleArray;
+@property (nonatomic, strong) NSArray * titleArray;
 // images
-@property (nonatomic, strong) NSArray * _Nonnull imagesArray;
+@property (nonatomic, strong) NSArray * imagesArray;
 
 @property (nonatomic, assign) WBSScaleDirectionType type;
 
@@ -29,7 +29,7 @@
 
 @end
 
-@implementation WBSScaleView
+@implementation WBSPopoverView
 
 - (instancetype)initWithOrigin:(CGPoint)origin Width:(CGFloat)width Height:(CGFloat)height Type:(WBSScaleDirectionType)type Color:(UIColor *)color titleArray:(NSArray *)titleArr imagesArray:(NSArray *)imagesArr superView:(UIView *)superView
 {

@@ -1,5 +1,5 @@
 //
-//  WBSScaleView.h
+//  WBSPopoverView.h
 //  WBSBlog
 //
 //  Created by Weberson on 17/2/18.
@@ -28,26 +28,26 @@ typedef NS_ENUM(NSInteger, WBSScaleDirectionType)
     WBSScaleDirectionTypeRightDown,  // 右下
     
 };
-@class WBSScaleView ;
+@class WBSPopoverView ;
 
 @protocol scaleViewSelectRowDelegate <NSObject>
 
-- (void)scaleView:(WBSScaleView * _Nonnull )scaleView didSelectRow:(NSInteger )rowIndex;
+- (void)scaleView:(WBSPopoverView *  )scaleView didSelectRow:(NSInteger )rowIndex;
 
 @end
 
-@interface WBSScaleView : UIView
+@interface WBSPopoverView : UIView
 
 /// backGoundView
-@property (nonatomic, strong) UIView  *  _Nonnull backGoundView;
+@property (nonatomic, strong) UIView  * backGoundView;
 /// height  默认是平均值
 @property (nonatomic, assign) CGFloat row_height;
 /// font  默认 13
 @property (nonatomic, assign) CGFloat fontSize;
 /// textColor  默认 blackColor
-@property (nonatomic, strong) UIColor * _Nonnull titleTextColor;
+@property (nonatomic, strong) UIColor * titleTextColor;
 // delegate
-@property (nonatomic, assign) id <scaleViewSelectRowDelegate> _Nonnull delegate;
+@property (nonatomic, assign) id <scaleViewSelectRowDelegate>  delegate;
 /// 初始化方法
 - (instancetype)initWithOrigin:(CGPoint)origin Width:(CGFloat)width Height:(CGFloat)height Type:(WBSScaleDirectionType)type Color:(UIColor *)color titleArray:(NSArray *)titleArr imagesArray:(NSArray *)imagesArr superView:(UIView *)superView;
 

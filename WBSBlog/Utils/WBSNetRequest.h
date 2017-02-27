@@ -44,6 +44,10 @@ typedef enum : NSUInteger {
 
 
 
+
+/// 获取文章tag get_tag_index
+- (void)getTag_WithSuccess:(void (^)(NSArray *tagsArray, NSInteger tagsCount))successBlock failure:(void (^)(NSError *error))failureBlock;
+
 @end
 
 
