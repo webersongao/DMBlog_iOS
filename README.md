@@ -84,7 +84,7 @@ v0.1 2016-07-19
 
 >作者: Weberson Gao
 
->作者博客：http://www.swiftartisan.com
+>作者博客：http://www.webersongao.com
 
 >作者邮箱: weberson@163.com
 
