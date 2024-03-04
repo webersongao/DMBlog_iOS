@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A9D5AEE7415F893038E4FAD /* Pods_WBSBlogTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB74F6493927E51CE9912774 /* Pods_WBSBlogTests.framework */; };
+		279AC64E50DCEFEEF18CB5BD /* Pods_WBSBlog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35216CFC29B528836F163404 /* Pods_WBSBlog.framework */; };
 		4E3B10451E4868E2002EF825 /* navigationbar_sidebar.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E3B10441E4868E2002EF825 /* navigationbar_sidebar.png */; };
 		4E3B10471E4868EA002EF825 /* navigationbar-search.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E3B10461E4868EA002EF825 /* navigationbar-search.png */; };
 		4E3B104D1E4990D2002EF825 /* default_portrait@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E3B104B1E4990D2002EF825 /* default_portrait@2x.png */; };
@@ -79,10 +81,6 @@
 		4EDFD7DB1E35A991006DD1E6 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EDFD7D51E35A991006DD1E6 /* SVProgressHUD.m */; };
 		4EDFD7DC1E35A991006DD1E6 /* SVRadialGradientLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EDFD7D71E35A991006DD1E6 /* SVRadialGradientLayer.m */; };
 		4EDFD7F11E360463006DD1E6 /* UIWindow+KeyWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EDFD7F01E360463006DD1E6 /* UIWindow+KeyWindow.m */; };
-		4EDFD8171E374642006DD1E6 /* MMDrawerBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EDFD80F1E374642006DD1E6 /* MMDrawerBarButtonItem.m */; };
-		4EDFD8181E374642006DD1E6 /* MMDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EDFD8121E374642006DD1E6 /* MMDrawerController.m */; };
-		4EDFD8191E374642006DD1E6 /* MMDrawerVisualState.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EDFD8141E374642006DD1E6 /* MMDrawerVisualState.m */; };
-		4EDFD81A1E374642006DD1E6 /* UIViewController+MMDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EDFD8161E374642006DD1E6 /* UIViewController+MMDrawerController.m */; };
 		4EDFF3781E375508000C47D2 /* widget-original@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EDFF2D51E375508000C47D2 /* widget-original@2x.png */; };
 		4EDFF3791E375508000C47D2 /* widget-original@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EDFF2D61E375508000C47D2 /* widget-original@3x.png */; };
 		4EDFF37A1E375508000C47D2 /* widget_repost@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EDFF2D71E375508000C47D2 /* widget_repost@2x.png */; };
@@ -566,6 +564,7 @@
 		4EF788731E51A9D800DA058F /* WBSOldHomePostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF788711E51A9D800DA058F /* WBSOldHomePostViewController.m */; };
 		4EF788991E51BDC400DA058F /* WBSPostTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF788981E51BDC400DA058F /* WBSPostTableView.m */; };
 		4EF7889C1E51BF0100DA058F /* WBSBasePostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF7889B1E51BF0100DA058F /* WBSBasePostViewController.m */; };
+		EFEC670009DA8B0FC5E78A16 /* Pods_WBSBlog_WBSBlogUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3A18153B6D8DE9FEE2DD1D0 /* Pods_WBSBlog_WBSBlogUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -586,6 +585,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		05A52E00FD8F14942E4F4321 /* Pods-WBSBlog-WBSBlogUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WBSBlog-WBSBlogUITests.release.xcconfig"; path = "Target Support Files/Pods-WBSBlog-WBSBlogUITests/Pods-WBSBlog-WBSBlogUITests.release.xcconfig"; sourceTree = "<group>"; };
+		2B094F9945C0BD3178FDFC5B /* Pods-WBSBlog.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WBSBlog.release.xcconfig"; path = "Target Support Files/Pods-WBSBlog/Pods-WBSBlog.release.xcconfig"; sourceTree = "<group>"; };
+		35216CFC29B528836F163404 /* Pods_WBSBlog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WBSBlog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E3B10441E4868E2002EF825 /* navigationbar_sidebar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navigationbar_sidebar.png; sourceTree = "<group>"; };
 		4E3B10461E4868EA002EF825 /* navigationbar-search.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navigationbar-search.png"; sourceTree = "<group>"; };
 		4E3B104B1E4990D2002EF825 /* default_portrait@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "default_portrait@2x.png"; sourceTree = "<group>"; };
@@ -714,15 +716,6 @@
 		4EDFD7D71E35A991006DD1E6 /* SVRadialGradientLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVRadialGradientLayer.m; sourceTree = "<group>"; };
 		4EDFD7EF1E360462006DD1E6 /* UIWindow+KeyWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIWindow+KeyWindow.h"; path = "WBSBlog/Utils/Catagory/UIWindow+KeyWindow.h"; sourceTree = SOURCE_ROOT; };
 		4EDFD7F01E360463006DD1E6 /* UIWindow+KeyWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIWindow+KeyWindow.m"; path = "WBSBlog/Utils/Catagory/UIWindow+KeyWindow.m"; sourceTree = SOURCE_ROOT; };
-		4EDFD80E1E374642006DD1E6 /* MMDrawerBarButtonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMDrawerBarButtonItem.h; sourceTree = "<group>"; };
-		4EDFD80F1E374642006DD1E6 /* MMDrawerBarButtonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMDrawerBarButtonItem.m; sourceTree = "<group>"; };
-		4EDFD8101E374642006DD1E6 /* MMDrawerController+Subclass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MMDrawerController+Subclass.h"; sourceTree = "<group>"; };
-		4EDFD8111E374642006DD1E6 /* MMDrawerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMDrawerController.h; sourceTree = "<group>"; };
-		4EDFD8121E374642006DD1E6 /* MMDrawerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMDrawerController.m; sourceTree = "<group>"; };
-		4EDFD8131E374642006DD1E6 /* MMDrawerVisualState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMDrawerVisualState.h; sourceTree = "<group>"; };
-		4EDFD8141E374642006DD1E6 /* MMDrawerVisualState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMDrawerVisualState.m; sourceTree = "<group>"; };
-		4EDFD8151E374642006DD1E6 /* UIViewController+MMDrawerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+MMDrawerController.h"; sourceTree = "<group>"; };
-		4EDFD8161E374642006DD1E6 /* UIViewController+MMDrawerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+MMDrawerController.m"; sourceTree = "<group>"; };
 		4EDFF2D51E375508000C47D2 /* widget-original@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "widget-original@2x.png"; sourceTree = "<group>"; };
 		4EDFF2D61E375508000C47D2 /* widget-original@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "widget-original@3x.png"; sourceTree = "<group>"; };
 		4EDFF2D71E375508000C47D2 /* widget_repost@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "widget_repost@2x.png"; sourceTree = "<group>"; };
@@ -1514,6 +1507,12 @@
 		4EF788981E51BDC400DA058F /* WBSPostTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBSPostTableView.m; sourceTree = "<group>"; };
 		4EF7889A1E51BF0100DA058F /* WBSBasePostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBSBasePostViewController.h; sourceTree = "<group>"; };
 		4EF7889B1E51BF0100DA058F /* WBSBasePostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBSBasePostViewController.m; sourceTree = "<group>"; };
+		56DA46F9A50FA823A4338123 /* Pods-WBSBlog.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WBSBlog.debug.xcconfig"; path = "Target Support Files/Pods-WBSBlog/Pods-WBSBlog.debug.xcconfig"; sourceTree = "<group>"; };
+		5AD3C10E69C28CB761990DA8 /* Pods-WBSBlogTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WBSBlogTests.debug.xcconfig"; path = "Target Support Files/Pods-WBSBlogTests/Pods-WBSBlogTests.debug.xcconfig"; sourceTree = "<group>"; };
+		8A0BDA3D2F5A5D70280732FF /* Pods-WBSBlog-WBSBlogUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WBSBlog-WBSBlogUITests.debug.xcconfig"; path = "Target Support Files/Pods-WBSBlog-WBSBlogUITests/Pods-WBSBlog-WBSBlogUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		B3A18153B6D8DE9FEE2DD1D0 /* Pods_WBSBlog_WBSBlogUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WBSBlog_WBSBlogUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB74F6493927E51CE9912774 /* Pods_WBSBlogTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WBSBlogTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FCA9F0CE9737D28EA0AE54B8 /* Pods-WBSBlogTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WBSBlogTests.release.xcconfig"; path = "Target Support Files/Pods-WBSBlogTests/Pods-WBSBlogTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1523,6 +1522,7 @@
 			files = (
 				4EDFD7A91E349BB6006DD1E6 /* libsqlite3.0.tbd in Frameworks */,
 				4EF38F691D42FBD200CE28A4 /* libiconv.tbd in Frameworks */,
+				279AC64E50DCEFEEF18CB5BD /* Pods_WBSBlog.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1530,6 +1530,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A9D5AEE7415F893038E4FAD /* Pods_WBSBlogTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1537,12 +1538,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFEC670009DA8B0FC5E78A16 /* Pods_WBSBlog_WBSBlogUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3FFEC6B855391D365D5F74A5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				56DA46F9A50FA823A4338123 /* Pods-WBSBlog.debug.xcconfig */,
+				2B094F9945C0BD3178FDFC5B /* Pods-WBSBlog.release.xcconfig */,
+				8A0BDA3D2F5A5D70280732FF /* Pods-WBSBlog-WBSBlogUITests.debug.xcconfig */,
+				05A52E00FD8F14942E4F4321 /* Pods-WBSBlog-WBSBlogUITests.release.xcconfig */,
+				5AD3C10E69C28CB761990DA8 /* Pods-WBSBlogTests.debug.xcconfig */,
+				FCA9F0CE9737D28EA0AE54B8 /* Pods-WBSBlogTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		4E3B10711E4AC9EF002EF825 /* WPXMLRPC */ = {
 			isa = PBXGroup;
 			children = (
@@ -1675,6 +1690,9 @@
 			isa = PBXGroup;
 			children = (
 				4EDFD7A81E349BB6006DD1E6 /* libsqlite3.0.tbd */,
+				35216CFC29B528836F163404 /* Pods_WBSBlog.framework */,
+				B3A18153B6D8DE9FEE2DD1D0 /* Pods_WBSBlog_WBSBlogUITests.framework */,
+				DB74F6493927E51CE9912774 /* Pods_WBSBlogTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1693,22 +1711,6 @@
 				4EDFD7D71E35A991006DD1E6 /* SVRadialGradientLayer.m */,
 			);
 			path = SVProgressHUD;
-			sourceTree = "<group>";
-		};
-		4EDFD80D1E374642006DD1E6 /* MMDrawerController */ = {
-			isa = PBXGroup;
-			children = (
-				4EDFD80E1E374642006DD1E6 /* MMDrawerBarButtonItem.h */,
-				4EDFD80F1E374642006DD1E6 /* MMDrawerBarButtonItem.m */,
-				4EDFD8101E374642006DD1E6 /* MMDrawerController+Subclass.h */,
-				4EDFD8111E374642006DD1E6 /* MMDrawerController.h */,
-				4EDFD8121E374642006DD1E6 /* MMDrawerController.m */,
-				4EDFD8131E374642006DD1E6 /* MMDrawerVisualState.h */,
-				4EDFD8141E374642006DD1E6 /* MMDrawerVisualState.m */,
-				4EDFD8151E374642006DD1E6 /* UIViewController+MMDrawerController.h */,
-				4EDFD8161E374642006DD1E6 /* UIViewController+MMDrawerController.m */,
-			);
-			path = MMDrawerController;
 			sourceTree = "<group>";
 		};
 		4EDFF2D31E375508000C47D2 /* Images_图片/网页 */ = {
@@ -2109,6 +2111,7 @@
 				4EF149F51D3DF61D00D28265 /* WBSBlogUITests */,
 				4EF149CF1D3DF61D00D28265 /* Products */,
 				4EDFD7A71E349BB5006DD1E6 /* Frameworks */,
+				3FFEC6B855391D365D5F74A5 /* Pods */,
 			);
 			sourceTree = "<group>";
 			usesTabs = 0;
@@ -2180,7 +2183,6 @@
 				4EDFD78C1E348E98006DD1E6 /* FMDB */,
 				4EF14D191D3E32F600D28265 /* GHMarkdownParser */,
 				4EF14D671D3E32F600D28265 /* Reachability */,
-				4EDFD80D1E374642006DD1E6 /* MMDrawerController */,
 				4EF14D761D3E32F600D28265 /* SDWebImage */,
 				4EF14D971D3E32F600D28265 /* GPUImage */,
 				4EF7881F1E51609500DA058F /* MJRefresh */,
@@ -3267,9 +3269,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4EF149FB1D3DF61D00D28265 /* Build configuration list for PBXNativeTarget "WBSBlog" */;
 			buildPhases = (
+				BA8933E2276DED280309710F /* [CP] Check Pods Manifest.lock */,
 				4EF149CA1D3DF61D00D28265 /* Sources */,
 				4EF149CB1D3DF61D00D28265 /* Frameworks */,
 				4EF149CC1D3DF61D00D28265 /* Resources */,
+				F802B47B873E969A8CC767C4 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -3284,6 +3288,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4EF149FE1D3DF61D00D28265 /* Build configuration list for PBXNativeTarget "WBSBlogTests" */;
 			buildPhases = (
+				184C7D9FF747B86B0E5E7295 /* [CP] Check Pods Manifest.lock */,
 				4EF149E31D3DF61D00D28265 /* Sources */,
 				4EF149E41D3DF61D00D28265 /* Frameworks */,
 				4EF149E51D3DF61D00D28265 /* Resources */,
@@ -3302,9 +3307,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4EF14A011D3DF61D00D28265 /* Build configuration list for PBXNativeTarget "WBSBlogUITests" */;
 			buildPhases = (
+				0E6F5E3FE2E501B88D7AA516 /* [CP] Check Pods Manifest.lock */,
 				4EF149EE1D3DF61D00D28265 /* Sources */,
 				4EF149EF1D3DF61D00D28265 /* Frameworks */,
 				4EF149F01D3DF61D00D28265 /* Resources */,
+				91A27601EA5BA2D9B3907D24 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -3328,7 +3335,7 @@
 				TargetAttributes = {
 					4EF149CD1D3DF61D00D28265 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = 6XB2PBHRRB;
+						DevelopmentTeam = S37Y3YKZVB;
 						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
@@ -3347,6 +3354,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -3566,6 +3574,111 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0E6F5E3FE2E501B88D7AA516 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WBSBlog-WBSBlogUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		184C7D9FF747B86B0E5E7295 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WBSBlogTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		91A27601EA5BA2D9B3907D24 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WBSBlog-WBSBlogUITests/Pods-WBSBlog-WBSBlogUITests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/MMDrawerController/MMDrawerController.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MMDrawerController.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WBSBlog-WBSBlogUITests/Pods-WBSBlog-WBSBlogUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BA8933E2276DED280309710F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WBSBlog-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F802B47B873E969A8CC767C4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WBSBlog/Pods-WBSBlog-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/MMDrawerController/MMDrawerController.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MMDrawerController.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WBSBlog/Pods-WBSBlog-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		4EF149CA1D3DF61D00D28265 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -3642,7 +3755,6 @@
 				4EF14F8C1D3E32F700D28265 /* GPUImageLaplacianFilter.m in Sources */,
 				4EF14FBF1D3E32F700D28265 /* GPUImageShiTomasiFeatureDetectionFilter.m in Sources */,
 				4EF0E88E1E4CBF9600580F09 /* UIRefreshControl+AFNetworking.m in Sources */,
-				4EDFD8181E374642006DD1E6 /* MMDrawerController.m in Sources */,
 				4EF14FC91D3E32F700D28265 /* GPUImageStillCamera.m in Sources */,
 				4EF14F4F1D3E32F700D28265 /* GPUImageBoxBlurFilter.m in Sources */,
 				4EF14F901D3E32F700D28265 /* GPUImageLineGenerator.m in Sources */,
@@ -3756,7 +3868,6 @@
 				4ED5A7AE1E4B2761005ADE05 /* WordPressApi.m in Sources */,
 				4EF14FCD1D3E32F700D28265 /* GPUImageTextureInput.m in Sources */,
 				4EDFD7881E348C5D006DD1E6 /* NetworkingCenter.m in Sources */,
-				4EDFD81A1E374642006DD1E6 /* UIViewController+MMDrawerController.m in Sources */,
 				4EF14FD81D3E32F700D28265 /* GPUImageTwoInputFilter.m in Sources */,
 				4EF7886D1E51A9A500DA058F /* WBSHomePostViewController.m in Sources */,
 				4EF787EC1E51517E00DA058F /* WBSPostDetailViewController.m in Sources */,
@@ -3787,7 +3898,6 @@
 				4EF787F11E51517E00DA058F /* WBSPostCell.m in Sources */,
 				4EF14F511D3E32F700D28265 /* GPUImageBuffer.m in Sources */,
 				4EF14F0D1D3E32F700D28265 /* xml.c in Sources */,
-				4EDFD8191E374642006DD1E6 /* MMDrawerVisualState.m in Sources */,
 				4EB5D7841E56E7D500401F2F /* WBSEmojiPanelVC.m in Sources */,
 				4EF14F3F1D3E32F700D28265 /* UIView+WebCacheOperation.m in Sources */,
 				4EF14FA61D3E32F700D28265 /* GPUImageOpeningFilter.m in Sources */,
@@ -3921,7 +4031,6 @@
 				4EF14FC01D3E32F700D28265 /* GPUImageSingleComponentGaussianBlurFilter.m in Sources */,
 				4EF14FB41D3E32F700D28265 /* GPUImageRawDataOutput.m in Sources */,
 				4EF14EFF1D3E32F700D28265 /* amalloc.c in Sources */,
-				4EDFD8171E374642006DD1E6 /* MMDrawerBarButtonItem.m in Sources */,
 				4EF0E88D1E4CBF9600580F09 /* UIProgressView+AFNetworking.m in Sources */,
 				4EF14F9A1D3E32F700D28265 /* GPUImageMissEtikateFilter.m in Sources */,
 				4EF14FE61D3E32F700D28265 /* GPUImagePicture+TextureSubimage.m in Sources */,
@@ -4067,20 +4176,21 @@
 		};
 		4EF149FC1D3DF61D00D28265 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 56DA46F9A50FA823A4338123 /* Pods-WBSBlog.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 6XB2PBHRRB;
+				DEVELOPMENT_TEAM = S37Y3YKZVB;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/WBSBlog/Lib",
 				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/WBSBlog/Others/WBSPrefixHeader.pch";
 				INFOPLIST_FILE = WBSBlog/WBSBlogInfo.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -4097,20 +4207,21 @@
 		};
 		4EF149FD1D3DF61D00D28265 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2B094F9945C0BD3178FDFC5B /* Pods-WBSBlog.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 6XB2PBHRRB;
+				DEVELOPMENT_TEAM = S37Y3YKZVB;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/WBSBlog/Lib",
 				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/WBSBlog/Others/WBSPrefixHeader.pch";
 				INFOPLIST_FILE = WBSBlog/WBSBlogInfo.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -4128,6 +4239,7 @@
 		};
 		4EF149FF1D3DF61D00D28265 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5AD3C10E69C28CB761990DA8 /* Pods-WBSBlogTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = WBSBlogTests/Info.plist;
@@ -4140,6 +4252,7 @@
 		};
 		4EF14A001D3DF61D00D28265 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FCA9F0CE9737D28EA0AE54B8 /* Pods-WBSBlogTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = WBSBlogTests/Info.plist;
@@ -4152,6 +4265,7 @@
 		};
 		4EF14A021D3DF61D00D28265 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8A0BDA3D2F5A5D70280732FF /* Pods-WBSBlog-WBSBlogUITests.debug.xcconfig */;
 			buildSettings = {
 				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = WBSBlogUITests/Info.plist;
@@ -4164,6 +4278,7 @@
 		};
 		4EF14A031D3DF61D00D28265 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 05A52E00FD8F14942E4F4321 /* Pods-WBSBlog-WBSBlogUITests.release.xcconfig */;
 			buildSettings = {
 				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = WBSBlogUITests/Info.plist;
