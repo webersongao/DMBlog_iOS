@@ -60,3 +60,6 @@ fastlane/screenshots
 iOSInjectionProject/
 
 .DS_Store
+Pods
+*.xcworkspacedata
+WBSBlog.xcworkspace/xcshareddata

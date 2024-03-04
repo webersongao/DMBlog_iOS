@@ -492,25 +492,25 @@
 		4EF38FE31D4311F000CE28A4 /* NSString+FontAwesome.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF38FDC1D4311F000CE28A4 /* NSString+FontAwesome.m */; };
 		4EF38FE41D4311F000CE28A4 /* UIFont+FontAwesome.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF38FDE1D4311F000CE28A4 /* UIFont+FontAwesome.m */; };
 		4EF38FE51D4311F000CE28A4 /* UIImage+FontAwesome.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF38FE01D4311F000CE28A4 /* UIImage+FontAwesome.m */; };
-		4EF5E3FE1D41C847002B6AFF /* BuildFile in Sources */ = {isa = PBXBuildFile; };
-		4EF5E3FF1D41C847002B6AFF /* BuildFile in Sources */ = {isa = PBXBuildFile; };
-		4EF5E4021D41C870002B6AFF /* BuildFile in Sources */ = {isa = PBXBuildFile; };
-		4EF5E4111D41EC67002B6AFF /* BuildFile in Resources */ = {isa = PBXBuildFile; };
-		4EF5E4141D41FD23002B6AFF /* BuildFile in Resources */ = {isa = PBXBuildFile; };
-		4EF5E4151D41FD23002B6AFF /* BuildFile in Resources */ = {isa = PBXBuildFile; };
-		4EF5E43C1D4230DA002B6AFF /* BuildFile in Sources */ = {isa = PBXBuildFile; };
-		4EF5E43D1D4230DA002B6AFF /* BuildFile in Sources */ = {isa = PBXBuildFile; };
-		4EF5E43F1D4230DA002B6AFF /* BuildFile in Sources */ = {isa = PBXBuildFile; };
-		4EF5E4401D4230DA002B6AFF /* BuildFile in Sources */ = {isa = PBXBuildFile; };
-		4EF5E4411D4230DA002B6AFF /* BuildFile in Sources */ = {isa = PBXBuildFile; };
-		4EF5E4421D4230DA002B6AFF /* BuildFile in Sources */ = {isa = PBXBuildFile; };
-		4EF5E4441D4230DA002B6AFF /* BuildFile in Sources */ = {isa = PBXBuildFile; };
-		4EF5E4451D4230DA002B6AFF /* BuildFile in Sources */ = {isa = PBXBuildFile; };
-		4EF5E4471D4230DA002B6AFF /* BuildFile in Sources */ = {isa = PBXBuildFile; };
-		4EF5E4481D4230DA002B6AFF /* BuildFile in Sources */ = {isa = PBXBuildFile; };
-		4EF5E4491D4230DA002B6AFF /* BuildFile in Sources */ = {isa = PBXBuildFile; };
-		4EF5E44A1D4230DA002B6AFF /* BuildFile in Sources */ = {isa = PBXBuildFile; };
-		4EF5E44B1D4230DA002B6AFF /* BuildFile in Sources */ = {isa = PBXBuildFile; };
+		4EF5E3FE1D41C847002B6AFF /* (null) in Sources */ = {isa = PBXBuildFile; };
+		4EF5E3FF1D41C847002B6AFF /* (null) in Sources */ = {isa = PBXBuildFile; };
+		4EF5E4021D41C870002B6AFF /* (null) in Sources */ = {isa = PBXBuildFile; };
+		4EF5E4111D41EC67002B6AFF /* (null) in Resources */ = {isa = PBXBuildFile; };
+		4EF5E4141D41FD23002B6AFF /* (null) in Resources */ = {isa = PBXBuildFile; };
+		4EF5E4151D41FD23002B6AFF /* (null) in Resources */ = {isa = PBXBuildFile; };
+		4EF5E43C1D4230DA002B6AFF /* (null) in Sources */ = {isa = PBXBuildFile; };
+		4EF5E43D1D4230DA002B6AFF /* (null) in Sources */ = {isa = PBXBuildFile; };
+		4EF5E43F1D4230DA002B6AFF /* (null) in Sources */ = {isa = PBXBuildFile; };
+		4EF5E4401D4230DA002B6AFF /* (null) in Sources */ = {isa = PBXBuildFile; };
+		4EF5E4411D4230DA002B6AFF /* (null) in Sources */ = {isa = PBXBuildFile; };
+		4EF5E4421D4230DA002B6AFF /* (null) in Sources */ = {isa = PBXBuildFile; };
+		4EF5E4441D4230DA002B6AFF /* (null) in Sources */ = {isa = PBXBuildFile; };
+		4EF5E4451D4230DA002B6AFF /* (null) in Sources */ = {isa = PBXBuildFile; };
+		4EF5E4471D4230DA002B6AFF /* (null) in Sources */ = {isa = PBXBuildFile; };
+		4EF5E4481D4230DA002B6AFF /* (null) in Sources */ = {isa = PBXBuildFile; };
+		4EF5E4491D4230DA002B6AFF /* (null) in Sources */ = {isa = PBXBuildFile; };
+		4EF5E44A1D4230DA002B6AFF /* (null) in Sources */ = {isa = PBXBuildFile; };
+		4EF5E44B1D4230DA002B6AFF /* (null) in Sources */ = {isa = PBXBuildFile; };
 		4EF787EC1E51517E00DA058F /* WBSPostDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF787921E51517E00DA058F /* WBSPostDetailViewController.m */; };
 		4EF787ED1E51517E00DA058F /* WBSPostEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF787941E51517E00DA058F /* WBSPostEditViewController.m */; };
 		4EF787EE1E51517E00DA058F /* WBSTitleMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EF787961E51517E00DA058F /* WBSTitleMenuViewController.m */; };
@@ -1555,7 +1555,6 @@
 				5AD3C10E69C28CB761990DA8 /* Pods-WBSBlogTests.debug.xcconfig */,
 				FCA9F0CE9737D28EA0AE54B8 /* Pods-WBSBlogTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -3336,7 +3335,7 @@
 				TargetAttributes = {
 					4EF149CD1D3DF61D00D28265 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = 6XB2PBHRRB;
+						DevelopmentTeam = S37Y3YKZVB;
 						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
@@ -3485,14 +3484,14 @@
 				4EB5D79C1E5802BD00401F2F /* home_PopMenu_Import@3x.png in Resources */,
 				4EDFF37B1E375508000C47D2 /* widget_repost@3x.png in Resources */,
 				4EDFF3CE1E375508000C47D2 /* tabbar-discover-selected@2x.png in Resources */,
-				4EF5E4141D41FD23002B6AFF /* BuildFile in Resources */,
+				4EF5E4141D41FD23002B6AFF /* (null) in Resources */,
 				4EDFF3DA1E375508000C47D2 /* tabbar-me@3x.png in Resources */,
 				4EDFF3F51E375508000C47D2 /* toolbar-emoji2@3x.png in Resources */,
 				4EDFF3811E375508000C47D2 /* error.png in Resources */,
 				4EDFF37E1E375508000C47D2 /* done.png in Resources */,
 				4EB5D7A11E58232A00401F2F /* LICENSE in Resources */,
 				4EF14F431D3E32F700D28265 /* lookup_soft_elegance_1.png in Resources */,
-				4EF5E4151D41FD23002B6AFF /* BuildFile in Resources */,
+				4EF5E4151D41FD23002B6AFF /* (null) in Resources */,
 				4EDFF3BE1E375508000C47D2 /* scan_frame@2x.png in Resources */,
 				4EDFF3CB1E375508000C47D2 /* sidemenu_QA@3x.png in Resources */,
 				4EF7885C1E51609500DA058F /* MJRefresh.bundle in Resources */,
@@ -3505,7 +3504,7 @@
 				4EDFF3D81E375508000C47D2 /* tabbar-me.png in Resources */,
 				4EDFF3ED1E375508000C47D2 /* send@3x.png in Resources */,
 				4EDFF4141E3757FD000C47D2 /* left_menu@2x.png in Resources */,
-				4EF5E4111D41EC67002B6AFF /* BuildFile in Resources */,
+				4EF5E4111D41EC67002B6AFF /* (null) in Resources */,
 				4EDFF37D1E375508000C47D2 /* widget_taday@3x.png in Resources */,
 				4EDFF3FC1E375508000C47D2 /* toolbar-mention@2x.png in Resources */,
 				4EF14F421D3E32F700D28265 /* lookup_miss_etikate.png in Resources */,
@@ -3766,7 +3765,7 @@
 				4EF1504E1D3E36DE00D28265 /* TMDBold.m in Sources */,
 				4EF14F4A1D3E32F700D28265 /* GPUImageAlphaBlendFilter.m in Sources */,
 				4EF14F941D3E32F700D28265 /* GPUImageLuminanceRangeFilter.m in Sources */,
-				4EF5E44A1D4230DA002B6AFF /* BuildFile in Sources */,
+				4EF5E44A1D4230DA002B6AFF /* (null) in Sources */,
 				4ED5A7B21E4B2761005ADE05 /* WordPressXMLRPCApi.m in Sources */,
 				4EF14F031D3E32F700D28265 /* emmatch.c in Sources */,
 				4EF38F9D1D430F4600CE28A4 /* MASLayoutConstraint.m in Sources */,
@@ -3806,7 +3805,7 @@
 				4EF14FC41D3E32F700D28265 /* GPUImageSoftEleganceFilter.m in Sources */,
 				4EF150521D3E36DE00D28265 /* TMDHorizontalRule.m in Sources */,
 				4EF14F911D3E32F700D28265 /* GPUImageLocalBinaryPatternFilter.m in Sources */,
-				4EF5E4481D4230DA002B6AFF /* BuildFile in Sources */,
+				4EF5E4481D4230DA002B6AFF /* (null) in Sources */,
 				4EF14F0B1D3E32F700D28265 /* setup.c in Sources */,
 				4EF14F9E1D3E32F700D28265 /* GPUImageMotionDetector.m in Sources */,
 				4EF788021E51517E00DA058F /* WBSRootTabBarController.m in Sources */,
@@ -3838,12 +3837,12 @@
 				4EF14FAB1D3E32F700D28265 /* GPUImagePinchDistortionFilter.m in Sources */,
 				4EF788601E51609500DA058F /* UIScrollView+MJRefresh.m in Sources */,
 				4EF14FCF1D3E32F700D28265 /* GPUImageThreeInputFilter.m in Sources */,
-				4EF5E4451D4230DA002B6AFF /* BuildFile in Sources */,
+				4EF5E4451D4230DA002B6AFF /* (null) in Sources */,
 				4EB5D78E1E57FCF600401F2F /* WBSPopoverView.m in Sources */,
 				4EF14F791D3E32F700D28265 /* GPUImageGrayscaleFilter.m in Sources */,
 				4EDFD7DC1E35A991006DD1E6 /* SVRadialGradientLayer.m in Sources */,
 				4ED5A7B11E4B2761005ADE05 /* WordPressRestApiJSONRequestOperationManager.m in Sources */,
-				4EF5E4021D41C870002B6AFF /* BuildFile in Sources */,
+				4EF5E4021D41C870002B6AFF /* (null) in Sources */,
 				4EF788561E51609500DA058F /* MJRefreshBackGifFooter.m in Sources */,
 				4EF14F7A1D3E32F700D28265 /* GPUImageHalftoneFilter.m in Sources */,
 				4EB5D7A21E58232A00401F2F /* README.md in Sources */,
@@ -3872,7 +3871,7 @@
 				4EF14FD81D3E32F700D28265 /* GPUImageTwoInputFilter.m in Sources */,
 				4EF7886D1E51A9A500DA058F /* WBSHomePostViewController.m in Sources */,
 				4EF787EC1E51517E00DA058F /* WBSPostDetailViewController.m in Sources */,
-				4EF5E4491D4230DA002B6AFF /* BuildFile in Sources */,
+				4EF5E4491D4230DA002B6AFF /* (null) in Sources */,
 				4EF14F4E1D3E32F700D28265 /* GPUImageBilateralFilter.m in Sources */,
 				4EF14F701D3E32F700D28265 /* GPUImageFilterGroup.m in Sources */,
 				4EF14F491D3E32F700D28265 /* GPUImageAddBlendFilter.m in Sources */,
@@ -3880,7 +3879,7 @@
 				4EF14FB91D3E32F700D28265 /* GPUImageRGBOpeningFilter.m in Sources */,
 				4EF14F7F1D3E32F700D28265 /* GPUImageHighPassFilter.m in Sources */,
 				4EF14F0C1D3E32F700D28265 /* tags.c in Sources */,
-				4EF5E4421D4230DA002B6AFF /* BuildFile in Sources */,
+				4EF5E4421D4230DA002B6AFF /* (null) in Sources */,
 				4EF14FB01D3E32F700D28265 /* GPUImagePolkaDotFilter.m in Sources */,
 				4EF14FAA1D3E32F700D28265 /* GPUImagePerlinNoiseFilter.m in Sources */,
 				4EF14F481D3E32F700D28265 /* GPUImageAdaptiveThresholdFilter.m in Sources */,
@@ -3890,7 +3889,7 @@
 				4EF14F841D3E32F700D28265 /* GPUImageHSBFilter.m in Sources */,
 				4E3B10831E4AC9EF002EF825 /* WPXMLRPCDecoderDelegate.m in Sources */,
 				4EF0E8871E4CBF9600580F09 /* AFAutoPurgingImageCache.m in Sources */,
-				4EF5E44B1D4230DA002B6AFF /* BuildFile in Sources */,
+				4EF5E44B1D4230DA002B6AFF /* (null) in Sources */,
 				4EF14F721D3E32F700D28265 /* GPUImageFramebuffer.m in Sources */,
 				4EF14FB31D3E32F700D28265 /* GPUImageRawDataInput.m in Sources */,
 				4EF7885F1E51609500DA058F /* UIScrollView+MJExtension.m in Sources */,
@@ -3904,7 +3903,7 @@
 				4EF14FA61D3E32F700D28265 /* GPUImageOpeningFilter.m in Sources */,
 				4EF14FA51D3E32F700D28265 /* GPUImageOpacityFilter.m in Sources */,
 				4EDFD79B1E348E98006DD1E6 /* FMDatabaseQueue.m in Sources */,
-				4EF5E4411D4230DA002B6AFF /* BuildFile in Sources */,
+				4EF5E4411D4230DA002B6AFF /* (null) in Sources */,
 				4EF14FBD1D3E32F700D28265 /* GPUImageSepiaFilter.m in Sources */,
 				4EB5D7731E56E71A00401F2F /* WBSBottomBarViewController.m in Sources */,
 				4EF14F501D3E32F700D28265 /* GPUImageBrightnessFilter.m in Sources */,
@@ -3914,7 +3913,7 @@
 				4EF14F8D1D3E32F700D28265 /* GPUImageLevelsFilter.m in Sources */,
 				4EF14F8A1D3E32F700D28265 /* GPUImageKuwaharaRadius3Filter.m in Sources */,
 				4E3B10801E4AC9EF002EF825 /* WPStringUtils.m in Sources */,
-				4EF5E4401D4230DA002B6AFF /* BuildFile in Sources */,
+				4EF5E4401D4230DA002B6AFF /* (null) in Sources */,
 				4EF14FDD1D3E32F700D28265 /* GPUImageVideoCamera.m in Sources */,
 				4EF38FA21D430F4600CE28A4 /* View+MASAdditions.m in Sources */,
 				4EF14F9B1D3E32F700D28265 /* GPUImageMonochromeFilter.m in Sources */,
@@ -3940,13 +3939,13 @@
 				4EF14FD21D3E32F700D28265 /* GPUImageThresholdSketchFilter.m in Sources */,
 				4EF14F331D3E32F700D28265 /* SDImageCache.m in Sources */,
 				4EF14FB21D3E32F700D28265 /* GPUImagePrewittEdgeDetectionFilter.m in Sources */,
-				4EF5E43C1D4230DA002B6AFF /* BuildFile in Sources */,
-				4EF5E4441D4230DA002B6AFF /* BuildFile in Sources */,
+				4EF5E43C1D4230DA002B6AFF /* (null) in Sources */,
+				4EF5E4441D4230DA002B6AFF /* (null) in Sources */,
 				4EF788001E51517E00DA058F /* WBSHorizonalTableViewController.m in Sources */,
 				4EF14F471D3E32F700D28265 /* GPUImage3x3TextureSamplingFilter.m in Sources */,
 				4EDFD7F11E360463006DD1E6 /* UIWindow+KeyWindow.m in Sources */,
 				4ED5A7B41E4B2761005ADE05 /* WPHTTPAuthenticationAlertController.m in Sources */,
-				4EF5E43D1D4230DA002B6AFF /* BuildFile in Sources */,
+				4EF5E43D1D4230DA002B6AFF /* (null) in Sources */,
 				4EF14F821D3E32F700D28265 /* GPUImageHistogramGenerator.m in Sources */,
 				4EF14F6F1D3E32F700D28265 /* GPUImageFilter.m in Sources */,
 				4EF14F4D1D3E32F700D28265 /* GPUImageAverageLuminanceThresholdFilter.m in Sources */,
@@ -4000,7 +3999,7 @@
 				4EF0E8951E4CC0BE00580F09 /* AFURLConnectionOperation.m in Sources */,
 				4EF150561D3E36DE00D28265 /* TMDParagraph.m in Sources */,
 				4EF14F4C1D3E32F700D28265 /* GPUImageAverageColor.m in Sources */,
-				4EF5E4471D4230DA002B6AFF /* BuildFile in Sources */,
+				4EF5E4471D4230DA002B6AFF /* (null) in Sources */,
 				4EF14F651D3E32F700D28265 /* GPUImageDirectionalNonMaximumSuppressionFilter.m in Sources */,
 				4EF14FAD1D3E32F700D28265 /* GPUImagePixellatePositionFilter.m in Sources */,
 				4EF1504D1D3E36DE00D28265 /* TMDAnchor.m in Sources */,
@@ -4010,7 +4009,7 @@
 				4EF14F601D3E32F700D28265 /* GPUImageCrosshairGenerator.m in Sources */,
 				4EF14F061D3E32F700D28265 /* html5.c in Sources */,
 				4EF14FBE1D3E32F700D28265 /* GPUImageSharpenFilter.m in Sources */,
-				4EF5E3FF1D41C847002B6AFF /* BuildFile in Sources */,
+				4EF5E3FF1D41C847002B6AFF /* (null) in Sources */,
 				4EF14F5B1D3E32F700D28265 /* GPUImageColorInvertFilter.m in Sources */,
 				4EF787FE1E51517E00DA058F /* WBSBrowserViewController.m in Sources */,
 				4EF14FE21D3E32F700D28265 /* GPUImageXYDerivativeFilter.m in Sources */,
@@ -4019,7 +4018,7 @@
 				4EF14FD71D3E32F700D28265 /* GPUImageTwoInputCrossTextureSamplingFilter.m in Sources */,
 				4ED5A7B31E4B2761005ADE05 /* WPComOAuthController.m in Sources */,
 				4EF14F041D3E32F700D28265 /* generate.c in Sources */,
-				4EF5E43F1D4230DA002B6AFF /* BuildFile in Sources */,
+				4EF5E43F1D4230DA002B6AFF /* (null) in Sources */,
 				4E3B10841E4AC9EF002EF825 /* WPXMLRPCEncoder.m in Sources */,
 				4EF788501E51609500DA058F /* MJRefreshComponent.m in Sources */,
 				4EDFD7991E348E98006DD1E6 /* FMDatabaseAdditions.m in Sources */,
@@ -4048,7 +4047,7 @@
 				4EF14F051D3E32F700D28265 /* github_flavoured.c in Sources */,
 				4EB5D7811E56E7D500401F2F /* WBSAutoScaleTextView.m in Sources */,
 				4EF38F711D430E6B00CE28A4 /* GHMarkdownParser.m in Sources */,
-				4EF5E3FE1D41C847002B6AFF /* BuildFile in Sources */,
+				4EF5E3FE1D41C847002B6AFF /* (null) in Sources */,
 				4EB5D6C31E555F3100401F2F /* WBSUserModel.m in Sources */,
 				4EF14F751D3E32F700D28265 /* GPUImageGaussianBlurFilter.m in Sources */,
 				4EF14F8F1D3E32F700D28265 /* GPUImageLinearBurnBlendFilter.m in Sources */,
@@ -4184,7 +4183,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 6XB2PBHRRB;
+				DEVELOPMENT_TEAM = S37Y3YKZVB;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/WBSBlog/Lib",
@@ -4215,7 +4214,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 6XB2PBHRRB;
+				DEVELOPMENT_TEAM = S37Y3YKZVB;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/WBSBlog/Lib",
