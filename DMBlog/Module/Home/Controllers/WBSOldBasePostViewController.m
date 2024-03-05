@@ -52,11 +52,10 @@
     //===================================
     //检测登陆状态
     //===================================
-    if(![SingleObject shareSingleObject].isLogin && ![SingleObject shareSingleObject].isGuest){
+    if(![DMGUICtrl sharedCtrl].isLogin && ![DMGUICtrl sharedCtrl].isGuest){
         KLog(@"未登录 非游客模式 登陆超时，请重新登录。");
         WBSUserLoginViewController *loginVC =[[WBSUserLoginViewController alloc]init];
         [self presentViewController:loginVC animated:YES completion:nil];
-        
         return;
     }
     

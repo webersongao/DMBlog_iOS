@@ -3,7 +3,6 @@
 //  DMBlog
 //
 //  Created by WebersonGao on 2017/2/9.
-//  该API 需要WordPress 的 Json Api  插件支持
 //  Copyright © 2017年 WebersonGao. All rights reserved.
 //
 // 该文件为 JSON Api 的 Core Widgets Widgets Widgets 四个Controllers的基本api 实现代码
@@ -18,8 +17,6 @@
 #import "WBSVersioInfoModel.h"
 #import "WBSAuthorModel.h"
 #import "WBSQueryModel.h"
-
-
 
 @interface WBSBaseCoreApi ()
 

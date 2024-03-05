@@ -1,5 +1,5 @@
 //
-//  WBSUtils.h
+//  DMSUtils.h
 //  DMBlog
 //
 //  Created by WebersonGao on 16/7/20.
@@ -28,7 +28,7 @@ typedef enum{
     CachesPath = 5//cash文件的路径
 }FilePath;
 
-@interface WBSUtils : NSObject
+@interface DMSUtils : NSObject
 
 //  跳转到主界面
 + (void)goToMainViewController;

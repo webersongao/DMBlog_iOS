@@ -78,7 +78,7 @@ static NSString *kCategoryCellID = @"categoryCell";
     NSString *requestURL = [NSString stringWithFormat:@"%@/get_category_index/",baseURL];
     
     //创建加载中
-    [WBSUtils showStatusMessage:@"分类加载中..."];
+    [DMSUtils showStatusMessage:@"分类加载中..."];
     KLog(@"category request URL:%@",requestURL);
     //获取作者数据
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
@@ -97,14 +97,14 @@ static NSString *kCategoryCellID = @"categoryCell";
                 [self.tableView reloadData];
                 
                 //取消加载中
-                [WBSUtils dismissHUD];
+                [DMSUtils dismissHUD];
             }else{
                 KLog(@"category posts get error");
             }
         });
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         KLog(@"Error fetching authors: %@", [error localizedDescription]);
-        [WBSUtils showErrorMessage:[NSString stringWithFormat:@"%@", error.userInfo[NSLocalizedDescriptionKey]]];
+        [DMSUtils showErrorMessage:[NSString stringWithFormat:@"%@", error.userInfo[NSLocalizedDescriptionKey]]];
         
         [self.tableView reloadData];
     }];

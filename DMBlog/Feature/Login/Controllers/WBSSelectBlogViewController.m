@@ -100,52 +100,52 @@
     
     switch (indexPath.row) {
         case 0:
-            [WBSUtils showSuccessMessage:@"Wordpress"];
+            [DMSUtils showSuccessMessage:@"Wordpress"];
             //            _xmlrpcURLSuffix = @"http://www.webersongao.com/xmlrpc.php";
             _xmlrpcURLPrefix = KWordPress;
             _xmlrpcURLSuffix = @"xmlrpc.php";
             [self doSelectBlog];
             break;
         case 1:
-            [WBSUtils showErrorMessage:@"ZBlog"];
+            [DMSUtils showErrorMessage:@"ZBlog"];
             //            _xmlrpcURLSuffix = @"http://www.webersongao.com:8080/xmlrpc";
             _xmlrpcURLPrefix = KZBlog;
             _xmlrpcURLSuffix = @"xmlrpc";
             [self doSelectBlog];
             break;
         case 2:
-            [WBSUtils showStatusMessage:@"Cnblogs"];
+            [DMSUtils showStatusMessage:@"Cnblogs"];
             //            _xmlrpcURLSuffix = @"http://www.cnblogs.com/weberson/services/metaweblog.aspx";
             _xmlrpcURLPrefix = @"http://www.cnblogs.com";
             _xmlrpcURLSuffix = @"services/metaweblog.aspx";
             [self doSelectBlog];
             break;
         case 3:
-            [WBSUtils showSuccessMessage:@"OSChina"];
+            [DMSUtils showSuccessMessage:@"OSChina"];
             _xmlrpcURLPrefix = KOtherBlog;
             _xmlrpcURLSuffix = @"http://my.oschina.net/action/xmlrpc";
             [self doSelectBlog];
             break;
         case 4:
-             [WBSUtils showSuccessMessage:@"163博客"];
+             [DMSUtils showSuccessMessage:@"163博客"];
             _xmlrpcURLPrefix = KOtherBlog;
             _xmlrpcURLSuffix = @"http://os.blog.163.com/api/xmlrpc/metaweblog/";
             [self doSelectBlog];
             break;
         case 5:
-             [WBSUtils showSuccessMessage:@"51CTO"];
+             [DMSUtils showSuccessMessage:@"51CTO"];
             _xmlrpcURLPrefix = KOtherBlog;
             _xmlrpcURLSuffix = @"http://weberson.blog.51cto.com/xmlrpc.php";
             [self doSelectBlog];
             break;
         case 6:
-             [WBSUtils showSuccessMessage:@"Sina博客"];
+             [DMSUtils showSuccessMessage:@"Sina博客"];
             _xmlrpcURLPrefix = KOtherBlog;
             _xmlrpcURLSuffix = @"http://upload.move.blog.sina.com.cn/blog_rebuild/blog/xmlrpc.php";
             [self doSelectBlog];
             break;
         case 7: {
-             [WBSUtils showSuccessMessage:@"JSON API"];
+             [DMSUtils showSuccessMessage:@"JSON API"];
             // JSON API 的方式 暂时未修改
             _xmlrpcURLSuffix = @"http://www.webersongao.com/api/";
             NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
@@ -169,7 +169,7 @@
  */
 - (void)doSelectBlog {
     if (!_xmlrpcURLSuffix) {
-        [WBSUtils showErrorMessage:@"请选择博客类型"];
+        [DMSUtils showErrorMessage:@"请选择博客类型"];
         return;
     }
     KLog(@"选择了博客：　%@", _xmlrpcURLSuffix);

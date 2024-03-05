@@ -10,7 +10,7 @@
 #import "WBSApiInfo.h"
 #import "WBSJsonApi.h"
 #import "UIImageView+WebCache.h"
-#import "WBSNetRequest.h"
+#import "DMNetRequest.h"
 
 static NSString *kUserInfoCellID = @"userInfoCell";
 #define HeaderViewHeight    160
@@ -37,8 +37,8 @@ static NSString *kUserInfoCellID = @"userInfoCell";
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     self.titleArray = @[@"账号：",@"昵称：", @"姓名：", @"主页：", @"邮箱：",@"注册时间："];
-    if ([SingleObject shareSingleObject].isLogin) {
-        self.userModel = [SingleObject shareSingleObject].user;
+    if ([DMGUICtrl sharedCtrl].isLogin) {
+        self.userModel = [DMGUICtrl sharedCtrl].user;
     }
     // 初始化用户数据
     [self checkUserData];

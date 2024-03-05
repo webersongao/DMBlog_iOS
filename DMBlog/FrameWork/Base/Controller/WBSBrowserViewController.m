@@ -87,23 +87,23 @@
 
 - (void)webViewDidStartLoad:(UIWebView *)webView{
     // 添加等待动画
-    [WBSUtils showStatusMessage:@"网页加载中"];
+    [DMSUtils showStatusMessage:@"网页加载中"];
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView{
     
-    [WBSUtils dismissHUDWithDelay:1];
+    [DMSUtils dismissHUDWithDelay:1];
 }
 
 -(void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error{
-    [WBSUtils showErrorMessage:@"加载失败"];
+    [DMSUtils showErrorMessage:@"加载失败"];
 }
 
 
 // 在界面消失的时候隐藏 状态提示
 -(void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
-    [WBSUtils dismissHUD];
+    [DMSUtils dismissHUD];
 }
 
 #pragma mark 数据加载

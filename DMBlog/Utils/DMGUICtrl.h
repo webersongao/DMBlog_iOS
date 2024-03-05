@@ -1,6 +1,6 @@
 //
-//  SingleObject.h
-//  web_Product
+//  DMGUICtrl.h
+//  DMBlog
 //
 //  Created by WebersonGao on 15/8/31.
 //  Copyright (c) 2015年 WebersonGao. All rights reserved.
@@ -13,20 +13,20 @@
 #import <Foundation/Foundation.h>
 #import "WBSUserModel.h"
 
-@interface SingleObject : NSObject
-
-@property (nonatomic, strong) WBSUserModel *user;   //!< 用户数据
+@interface DMGUICtrl : NSObject
 
 @property (nonatomic ,assign) BOOL isLogin;  //!< 是否登录
 @property (nonatomic ,assign) BOOL isGuest;  //!< 是否为游客
+@property (nonatomic, strong) WBSUserModel *user;   //!< 用户数据
 @property (nonatomic ,copy) NSString * siteBaseUrlStr;  //!< 登录之后 记录的站点地址
-
 
 /**
  *  初始化
  *
  */
-+ (instancetype)shareSingleObject;
++ (instancetype)sharedCtrl;
 
+
+-(NSString *)requestUrl;
 
 @end

@@ -173,14 +173,14 @@
     if (uid) {
         userDict = [self getUserInforWith:uid];
     }else{
-        NSString *UserUID = [WBSUtils getObjectforKey:WBSUserUID];
+        NSString *UserUID = [DMSUtils getObjectforKey:WBSUserUID];
         if (UserUID) {
             userDict = [self getUserInforWith:UserUID];
         }
     }
     if (userDict == nil) {
         
-        [WBSUtils showErrorMessage:@"用户异常，请重新登录"];
+        [DMSUtils showErrorMessage:@"用户异常，请重新登录"];
         return nil;
     }else{
         userModel = [WBSUserModel WBSUserModelWithDic:userDict];

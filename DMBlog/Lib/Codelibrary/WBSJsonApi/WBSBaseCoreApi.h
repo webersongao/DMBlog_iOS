@@ -3,7 +3,6 @@
 //  DMBlog
 //
 //  Created by WebersonGao on 2017/2/9.
-//  该API 需要WordPress 的 Json Api  插件支持
 //  Copyright © 2017年 WebersonGao. All rights reserved.
 //
 // 该文件

@@ -70,7 +70,7 @@
     [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"|[detailsView]|" options:0 metrics:nil views:views]];
     [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[detailsView][bottomBar]" options:NSLayoutFormatAlignAllLeft | NSLayoutFormatAlignAllRight metrics:nil views:views]];
     // 添加等待动画
-    [WBSUtils showStatusMessage:nil];
+    [DMSUtils showStatusMessage:nil];
     
     [self fetchDetails:NO];
     
@@ -168,7 +168,7 @@
     if ([WBSConfig isJSONAPIEnable]) {
         title = jsonPost.title;
         content = jsonPost.content;
-        dateCreated = [WBSUtils dateFromString:jsonPost.date];
+        dateCreated = [DMSUtils dateFromString:jsonPost.date];
         author = jsonPost.authorModel.name;
         categroies = jsonPost.categoriesArray;
         url = jsonPost.URL;
@@ -181,15 +181,15 @@
     }
     
     KLog(@"post url:%@",url);
-    NSString *authorStr = [NSString stringWithFormat:@"<a href='%@'>%@</a> 发布于 %@", url,author, [WBSUtils intervalSinceNow:dateCreated]];
+    NSString *authorStr = [NSString stringWithFormat:@"<a href='%@'>%@</a> 发布于 %@", url,author, [DMSUtils intervalSinceNow:dateCreated]];
     
-    NSString *postContent = [NSString stringWithFormat:@"<body style='background-color:#EBEBF3'>%@<div id='DMBlog_title'>%@</div><div id='DMBlog_outline'>%@</div><hr/><div id='DMBlog_body'>%@</div>%@</body>", HTML_STYLE, title, authorStr, [WBSUtils markdownToHtml:content], HTML_BOTTOM];
+    NSString *postContent = [NSString stringWithFormat:@"<body style='background-color:#EBEBF3'>%@<div id='DMBlog_title'>%@</div><div id='DMBlog_outline'>%@</div><hr/><div id='DMBlog_body'>%@</div>%@</body>", HTML_STYLE, title, authorStr, [DMSUtils markdownToHtml:content], HTML_BOTTOM];
     
     KLog(@"loading details");
     if (!flag) {
         NSString *htmlString = postContent;
         [_detailsView loadHTMLString:htmlString baseURL:nil];
-        [WBSUtils dismissHUDWithDelay:1];
+        [DMSUtils dismissHUDWithDelay:1];
     }else{
         
         KLog(@"fetch details");
@@ -199,17 +199,17 @@
         AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
         [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
             NSString *responseHtml = operation.responseString;
-            NSString *htmlString = [WBSUtils markdownToHtml:responseHtml];
+            NSString *htmlString = [DMSUtils markdownToHtml:responseHtml];
             [_detailsView loadHTMLString:htmlString baseURL:nil];
             //KLog(@"获取到的数据为：%@",html);
             //隐藏加载状态
-            [WBSUtils dismissHUDWithDelay:1];
+            [DMSUtils dismissHUDWithDelay:1];
         }failure:^(AFHTTPRequestOperation *operation, NSError *error) {
             KLog(@"发生错误！%@",error);
             
             NSString *errorMesage =  [NSString stringWithFormat:@"网络异常，加载详情失败:%@",[error localizedDescription]];
             
-            [WBSUtils showErrorMessage:errorMesage];
+            [DMSUtils showErrorMessage:errorMesage];
             KLog(@"%@",errorMesage);
             
         }];

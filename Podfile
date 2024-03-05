@@ -8,9 +8,8 @@ target 'DMBlog' do
   # Pods for DMBlog
 
     pod 'MMDrawerController'
+    pod "WordPressKit" # https://github.com/wordpress-mobile/WordPressKit-iOS
     pod 'LookinServer', :configurations => ['Debug']
-
-
 
   target 'DMBlogTests' do
     inherit! :search_paths

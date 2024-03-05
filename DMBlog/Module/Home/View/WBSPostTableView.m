@@ -67,10 +67,10 @@ static NSString *PostCellID = @"WBSPostCellID";
     tempLabel.font = [UIFont boldSystemFontOfSize:14];
     
     tempLabel.font = [UIFont boldSystemFontOfSize:15];
-    [tempLabel setAttributedText:[WBSUtils attributedTittle:postModel.title]];
+    [tempLabel setAttributedText:[DMSUtils attributedTittle:postModel.title]];
     CGFloat titleHeight = [tempLabel sizeThatFits:CGSizeMake(self.width - 16, MAXFLOAT)].height;
     
-    tempLabel.text = [WBSUtils shortString:postModel.content andLength:60];
+    tempLabel.text = [DMSUtils shortString:postModel.content andLength:60];
     tempLabel.font = [UIFont systemFontOfSize:13];
     titleHeight += [tempLabel sizeThatFits:CGSizeMake(self.width - 16, MAXFLOAT)].height;
     
@@ -144,7 +144,7 @@ static NSString *PostCellID = @"WBSPostCellID";
             [adaptedPost setValue:[NSString stringWithFormat:@"%ld",jsonPost.postId] forKey:@"id"];
             [adaptedPost setValue:jsonPost.title forKey:@"title"];
             [adaptedPost setValue:jsonPost.content forKey:@"content"];
-            [adaptedPost setValue:[WBSUtils dateFromString:jsonPost.date] forKey:@"date"];
+            [adaptedPost setValue:[DMSUtils dateFromString:jsonPost.date] forKey:@"date"];
             [adaptedPost setValue:@"" forKey:@"author"];
             for (WBSCategoryModel *category in jsonPost.categoriesArray) {
                 [categroies addObject:category.title];
@@ -168,7 +168,7 @@ static NSString *PostCellID = @"WBSPostCellID";
             [adaptedPost setValue:[post valueForKey:@"id"] forKey:@"id"];
             [adaptedPost setValue:[post objectForKey:@"title"] forKey:@"title"];
             [adaptedPost setValue:[post objectForKey:@"content"] forKey:@"content"];
-            [adaptedPost setValue:[WBSUtils dateFromString:[post objectForKey:@"date"]] forKey:@"date"];
+            [adaptedPost setValue:[DMSUtils dateFromString:[post objectForKey:@"date"]] forKey:@"date"];
             [adaptedPost setValue:@"" forKey:@"author"];
             [adaptedPost setValue:categroies forKey:@"categroies"];
             [adaptedPost setValue:comments forKey:@"comments"];

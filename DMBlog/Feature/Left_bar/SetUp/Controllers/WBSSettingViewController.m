@@ -208,7 +208,7 @@
         //操作提示
         NSIndexPath *indexPath = [NSIndexPath indexPathForRow:1 inSection:0];
         [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
-        [WBSUtils showSuccessMessage:@"缓存清除成功"];
+        [DMSUtils showSuccessMessage:@"缓存清除成功"];
     }
 }
 
@@ -222,7 +222,7 @@
     
     //检测设置依赖
     if(! [[def objectForKey:WBSIs_JSONAPI] boolValue] && sender.tag != 1){
-        [WBSUtils showErrorMessage:@"此选项需要JSON API支持"];
+        [DMSUtils showErrorMessage:@"此选项需要JSON API支持"];
         return;
     }
     

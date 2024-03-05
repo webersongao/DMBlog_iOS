@@ -8,7 +8,7 @@
 
 #import "WBSHomePostViewController.h"
 #import "WBSPostTableView.h"
-#import "WBSNetRequest.h"
+#import "DMNetRequest.h"
 #import "WBSPostDetailViewController.h"
 
 @interface WBSHomePostViewController ()<PostTableViewDelegate>
@@ -97,8 +97,8 @@
 /// 下拉刷新 最新数据
 - (void)downToRefreshLatestDataWithHeaderAction {
     [super downToRefreshLatestDataWithHeaderAction];
-    //    [WBSUtils showProgressMessage:@"加载中..."];
-    [[WBSNetRequest sharedRequest]getPosts_WithCount:self.postCount+10 page:0 postType:JSONAPIPostTypePost IgnoreStickyPosts:YES success:^(NSArray *postsArray, NSInteger postsCount, BOOL isIgnoreStickyPosts) {
+    //    [DMSUtils showProgressMessage:@"加载中..."];
+    [[DMNetRequest sharedRequest]getPosts_WithCount:self.postCount+10 page:0 postType:JSONAPIPostTypePost IgnoreStickyPosts:YES success:^(NSArray *postsArray, NSInteger postsCount, BOOL isIgnoreStickyPosts) {
         ////
         if (postsCount) {
             for (WBSPostModel *postModel in [postsArray reverseObjectEnumerator]) {
@@ -106,13 +106,13 @@
             }
             self.tableView.dataArray = self.postsModelArray;
             [self.tableView reloadData];
-            //        [WBSUtils dismissHUD];
+            //        [DMSUtils dismissHUD];
             self.postCount+=postsCount;
             [self.tableView.mj_header endRefreshing];
         }
     } failure:^(NSError *error) {
         // 失败
-        [WBSUtils showErrorMessage:@"数据请求异常"];
+        [DMSUtils showErrorMessage:@"数据请求异常"];
         [self.tableView.mj_header endRefreshing];
     }];
     
@@ -122,20 +122,20 @@
 - (void)upToRefreshLatestDataWithFooterAction {
     [super upToRefreshLatestDataWithFooterAction];
     KLog(@"002 - 上拉加载 ");
-    [WBSUtils showProgressMessage:@"加载中..."];
-    [[WBSNetRequest sharedRequest]getPosts_WithCount:self.postCount+10 page:0 postType:JSONAPIPostTypePost IgnoreStickyPosts:YES success:^(NSArray *postsArray, NSInteger postsCount, BOOL isIgnoreStickyPosts) {
+    [DMSUtils showProgressMessage:@"加载中..."];
+    [[DMNetRequest sharedRequest]getPosts_WithCount:self.postCount+10 page:0 postType:JSONAPIPostTypePost IgnoreStickyPosts:YES success:^(NSArray *postsArray, NSInteger postsCount, BOOL isIgnoreStickyPosts) {
         //// 成功
         if (postsCount) {
             self.postsModelArray = [[NSMutableArray alloc]initWithArray:postsArray];
             self.tableView.dataArray = self.postsModelArray;
             [self.tableView reloadData];
-            [WBSUtils dismissHUD];
+            [DMSUtils dismissHUD];
             self.postCount+=postsCount;
             [self.tableView.mj_footer endRefreshing];
         }
     } failure:^(NSError *error) {
         // 失败
-        [WBSUtils showErrorMessage:@"数据请求异常"];
+        [DMSUtils showErrorMessage:@"数据请求异常"];
         [self.tableView.mj_footer endRefreshing];
     }];
     

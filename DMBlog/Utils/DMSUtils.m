@@ -1,12 +1,12 @@
 //
-//  WBSUtils.m
+//  DMSUtils.m
 //  DMBlog
 //
 //  Created by WebersonGao on 16/7/20.
 //  Copyright © 2016年 WebersonGao. All rights reserved.
 //
 
-#import "WBSUtils.h"
+#import "DMSUtils.h"
 #import "Reachability.h"
 #import "WBSBrowserViewController.h"
 #import "WBSBrowserNavViewController.h"
@@ -16,7 +16,7 @@
 #import "SVProgressHUD.h"
 #import "UIWindow+KeyWindow.h"
 
-@implementation WBSUtils
+@implementation DMSUtils
 
 
 /**
@@ -67,7 +67,7 @@
  *  @return <#return value description#>
  */
 +(NSString *)shortString:(NSString *)str andLength:(NSInteger)length{
-    NSString *cleanedStr = [WBSUtils removeSpaceAndNewlineAndChars:str];
+    NSString *cleanedStr = [DMSUtils removeSpaceAndNewlineAndChars:str];
     if ([cleanedStr length]<length) {
         return cleanedStr;
     }
@@ -247,7 +247,7 @@
  */
 + (NSString *)intervalSinceNow:(NSDate *)date
 {
-    NSDictionary *dic = [WBSUtils timeIntervalArrayFromString:date];
+    NSDictionary *dic = [DMSUtils timeIntervalArrayFromString:date];
     //NSInteger years = [[dic objectForKey:kKeyYears] integerValue];
     NSInteger months = [[dic objectForKey:kKeyMonths] integerValue];
     NSInteger days = [[dic objectForKey:kKeyDays] integerValue];
@@ -432,24 +432,24 @@
 +(BOOL)checkUrlString:(NSString *)urlString userNameStr:(NSString *)userNameStr passWord:(NSString *)passWordStr{
     
     if ([urlString isEqualToString:@""]) {
-        [WBSUtils showErrorMessage:@"博客API地址不能为空！"];
+        [DMSUtils showErrorMessage:@"博客API地址不能为空！"];
         return NO;
     }else if([urlString hasPrefix:@"http"]) {
-        [WBSUtils showErrorMessage:@"博客地址勿带http"];
+        [DMSUtils showErrorMessage:@"博客地址勿带http"];
         return NO;
     }else if([userNameStr isEqualToString:@""]) {
-        [WBSUtils showErrorMessage:@"用户名不能为空！"];
+        [DMSUtils showErrorMessage:@"用户名不能为空！"];
         
         return NO;
     }else if(userNameStr.length < 5 || userNameStr.length > 40) {
         
-        [WBSUtils showErrorMessage:@"用户名只能在5-20之间！"];
+        [DMSUtils showErrorMessage:@"用户名只能在5-20之间！"];
         return NO;
     }else if([passWordStr isEqualToString:@""]) {
-        [WBSUtils showErrorMessage:@"密码不能为空!"];
+        [DMSUtils showErrorMessage:@"密码不能为空!"];
         return NO;
     }else if(passWordStr.length < 5 || passWordStr.length > 40) {
-        [WBSUtils showErrorMessage:@"密码只能在5-20之间!"];
+        [DMSUtils showErrorMessage:@"密码只能在5-20之间!"];
         return NO;
     }else{
         return YES;

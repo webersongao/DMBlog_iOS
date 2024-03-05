@@ -15,7 +15,7 @@
 #import "WBSTitleMenuViewController.h"
 #import "WBSUserLoginViewController.h"
 #import "WBSPostModel.h"
-#import "WBSNetRequest.h"
+#import "DMNetRequest.h"
 #import "WBSCategoryModel.h"
 
 //super.page //当前页码（由于MetaWeblog API不支持分页，因此，此参数仅仅JSON API有用）
@@ -107,7 +107,7 @@ const int MAX_POST_COUNT = 10;//每页显示数目
 - (void) viewDidAppear:(BOOL)animated{
     //JSON API不支持
     if (![WBSConfig isJSONAPIEnable] && _isSearch) {
-        [WBSUtils showErrorMessage:@"ApiNotSupport"];
+        [DMSUtils showErrorMessage:@"ApiNotSupport"];
         return;
     }
 }
@@ -144,17 +144,17 @@ const int MAX_POST_COUNT = 10;//每页显示数目
     NSArray *comments = [adaptedPost objectForKey:@"comments"];//评论
     
     //表格数据绑定
-    //    [cell.titleLabel setAttributedText:[WBSUtils attributedTittle:title]];
-    //    [cell.bodyLabel setText:[WBSUtils shortString:content andLength:MAX_POST_DESCRIPTION_LENGTH]];
+    //    [cell.titleLabel setAttributedText:[DMSUtils attributedTittle:title]];
+    //    [cell.bodyLabel setText:[DMSUtils shortString:content andLength:MAX_POST_DESCRIPTION_LENGTH]];
     //    //作者处理
     //    [cell.authorLabel setText:(!author||[author isEqual:@""])?@"admin":author];
     //    cell.titleLabel.textColor = [UIColor titleColor];
     //    NSDate *createdDate = dateCreated;
-    //    [cell.timeLabel setAttributedText:[WBSUtils attributedTimeString:createdDate]];
+    //    [cell.timeLabel setAttributedText:[DMSUtils attributedTimeString:createdDate]];
     //    //metaWeblog api暂时不支持评论
-    //    [cell.commentCountLabel setAttributedText:[WBSUtils attributedCommentCount:(int)comments.count]];
+    //    [cell.commentCountLabel setAttributedText:[DMSUtils attributedCommentCount:(int)comments.count]];
     //    NSArray *categories = categroies;
-    //    NSString *joinedString = [WBSUtils shortString:[categories componentsJoinedByString:@","] andLength:15];
+    //    NSString *joinedString = [DMSUtils shortString:[categories componentsJoinedByString:@","] andLength:15];
     //    //处理分类为空的情况
     //    NSString *categoriesString = [NSString stringWithFormat:@"  发布在【%@】",[joinedString isEqualToString: @""]?@"默认分类":joinedString];
     //    cell.categoriesLabel.text =categoriesString;
@@ -175,10 +175,10 @@ const int MAX_POST_COUNT = 10;//每页显示数目
     NSString *content = [adaptedPost objectForKey:@"content"];;//文章内容
     
     self.desLabel.font = [UIFont boldSystemFontOfSize:15];
-    [self.desLabel setAttributedText:[WBSUtils attributedTittle:title]];
+    [self.desLabel setAttributedText:[DMSUtils attributedTittle:title]];
     CGFloat height = [self.desLabel sizeThatFits:CGSizeMake(tableView.frame.size.width - 16, MAXFLOAT)].height;
     
-    self.desLabel.text = [WBSUtils shortString:content andLength:MAX_POST_DESCRIPTION_LENGTH];
+    self.desLabel.text = [DMSUtils shortString:content andLength:MAX_POST_DESCRIPTION_LENGTH];
     self.desLabel.font = [UIFont systemFontOfSize:13];
     height += [self.desLabel sizeThatFits:CGSizeMake(tableView.frame.size.width - 16, MAXFLOAT)].height;
     
@@ -246,7 +246,7 @@ const int MAX_POST_COUNT = 10;//每页显示数目
             [adaptedPost setValue:[NSString stringWithFormat:@"%ld",jsonPost.postId] forKey:@"id"];
             [adaptedPost setValue:jsonPost.title forKey:@"title"];
             [adaptedPost setValue:jsonPost.content forKey:@"content"];
-            [adaptedPost setValue:[WBSUtils dateFromString:jsonPost.date] forKey:@"date"];
+            [adaptedPost setValue:[DMSUtils dateFromString:jsonPost.date] forKey:@"date"];
             [adaptedPost setValue:@"" forKey:@"author"];
             for (WBSCategoryModel *category in jsonPost.categoriesArray) {
                 [categroies addObject:category.title];
@@ -270,7 +270,7 @@ const int MAX_POST_COUNT = 10;//每页显示数目
             [adaptedPost setValue:[post valueForKey:@"id"] forKey:@"id"];
             [adaptedPost setValue:[post objectForKey:@"title"] forKey:@"title"];
             [adaptedPost setValue:[post objectForKey:@"content"] forKey:@"content"];
-            [adaptedPost setValue:[WBSUtils dateFromString:[post objectForKey:@"date"]] forKey:@"date"];
+            [adaptedPost setValue:[DMSUtils dateFromString:[post objectForKey:@"date"]] forKey:@"date"];
             [adaptedPost setValue:@"" forKey:@"author"];
             [adaptedPost setValue:categroies forKey:@"categroies"];
             [adaptedPost setValue:comments forKey:@"comments"];
@@ -334,7 +334,7 @@ const int MAX_POST_COUNT = 10;//每页显示数目
     
     //JSON API不支持
     if (![WBSConfig isJSONAPIEnable] && _isSearch) {
-        [WBSUtils showErrorMessage:@"ApiNotSupport"];
+        [DMSUtils showErrorMessage:@"ApiNotSupport"];
         return;
     }
     
@@ -385,7 +385,7 @@ const int MAX_POST_COUNT = 10;//每页显示数目
         //由于置顶文章会影响分页数目，因此需要把他排除
         //另外api里面分页的索引从1开始
         NSString *queryStr = [NSString stringWithFormat:@"page=%lu&count=%d&post_type=%@",super.page+1,MAX_POST_COUNT,(_postType == PostTypePost?@"post":@"page")];
-        [[WBSNetRequest sharedRequest]getRecentPosts_WithCount:0 page:0 postType:0 success:^(NSArray *postsArray, NSInteger postsCount) {
+        [[DMNetRequest sharedRequest]getRecentPosts_WithCount:0 page:0 postType:0 success:^(NSArray *postsArray, NSInteger postsCount) {
             // 成功
             KLog(@"JSON API 的queryStr:%@",queryStr);
             
@@ -461,7 +461,7 @@ const int MAX_POST_COUNT = 10;//每页显示数目
                            
                            [self.tableView reloadData];
                            //显示提示
-                           [WBSUtils showSuccessMessage:@"加载成功"];
+                           [DMSUtils showSuccessMessage:@"加载成功"];
                        });
                        
                    }
@@ -470,7 +470,7 @@ const int MAX_POST_COUNT = 10;//每页显示数目
                        
                        KLog(@"错误信息是：---%@----",error);
                        
-                       [WBSUtils showErrorMessage:[NSString stringWithFormat:@"%@", error.userInfo[NSLocalizedDescriptionKey]]];
+                       [DMSUtils showErrorMessage:[NSString stringWithFormat:@"%@", error.userInfo[NSLocalizedDescriptionKey]]];
                        
                        [self.tableView reloadData];
                    }];
@@ -486,15 +486,15 @@ const int MAX_POST_COUNT = 10;//每页显示数目
     self.apiType = APITypeJSON;
     
     //创建加载中
-    [WBSUtils showStatusMessage:@"加载中"];
+    [DMSUtils showStatusMessage:@"加载中"];
     
     WBSJsonApi *jsonAPI = self.api;
     if ([searchString isEqualToString:@""]) {
         searchString = @"ios";
     }
     
-    NSString *baseURL = [WBSUtils getObjectforKey:WBSSiteBaseURL];
-    [[WBSNetRequest sharedRequest]getRecentPosts_WithCount:0 page:0 postType:0 success:^(NSArray *postsArray, NSInteger postsCount) {
+    NSString *baseURL = [DMSUtils getObjectforKey:WBSSiteBaseURL];
+    [[DMNetRequest sharedRequest]getRecentPosts_WithCount:0 page:0 postType:0 success:^(NSArray *postsArray, NSInteger postsCount) {
         //
         //    [jsonAPI get_recent_posts_WithSiteUrlStr:@"http://www.swiftartisan.com" queryString:[NSString stringWithFormat:@"%@/get_search_results/?search=%@&page=%lu&count=%d&post_type=post",baseURL,searchString,super.page+1,MAX_POST_COUNT]
         //                                     success:^(NSArray *postsArray, NSInteger postsCount) {
@@ -527,11 +527,11 @@ const int MAX_POST_COUNT = 10;//每页显示数目
             [self.tableView reloadData];
             
             //取消加载中
-            [WBSUtils dismissHUD];
+            [DMSUtils dismissHUD];
         });
     }failure:^(NSError *error) {
         KLog(@"Error: %@", error);
-        [WBSUtils dismissHUD];
+        [DMSUtils dismissHUD];
     }];
     
 }
@@ -548,9 +548,9 @@ const int MAX_POST_COUNT = 10;//每页显示数目
     KLog(@"current categoryId: %lu",(unsigned long)categortId);
     
     //创建加载中
-    [WBSUtils showStatusMessage:@"加载中"];
+    [DMSUtils showStatusMessage:@"加载中"];
     
-    NSString *baseURL = [WBSUtils getObjectforKey:WBSSiteBaseURL];
+    NSString *baseURL = [DMSUtils getObjectforKey:WBSSiteBaseURL];
     
     NSString *requestURL = [NSString stringWithFormat:@"%@/get_category_posts/?id=%lu&page=%lu&count=%d&post_type=post",baseURL,categortId,super.page+1,MAX_POST_COUNT];
     
@@ -588,14 +588,14 @@ const int MAX_POST_COUNT = 10;//每页显示数目
                 
                 [self.tableView reloadData];
                 
-                [WBSUtils dismissHUD];
+                [DMSUtils dismissHUD];
             }else{
                 KLog(@"category posts get error");
             }
         });
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         
-        [WBSUtils showErrorMessage:[NSString stringWithFormat:@"%@", error.userInfo[NSLocalizedDescriptionKey]]];
+        [DMSUtils showErrorMessage:[NSString stringWithFormat:@"%@", error.userInfo[NSLocalizedDescriptionKey]]];
         KLog(@"Error fetching authors: %@", [error localizedDescription]);
         
         
@@ -615,9 +615,9 @@ const int MAX_POST_COUNT = 10;//每页显示数目
     KLog(@"current tagId: %lu",(unsigned long)tagId);
     
     //创建加载中
-    [WBSUtils showStatusMessage:@"加载中"];
+    [DMSUtils showStatusMessage:@"加载中"];
     
-    NSString *baseURL = [WBSUtils getObjectforKey:WBSSiteBaseURL];
+    NSString *baseURL = [DMSUtils getObjectforKey:WBSSiteBaseURL];
     
     NSString *requestURL = [NSString stringWithFormat:@"%@/get_tag_posts/?id=%lu&page=%lu&count=%d&post_type=post",baseURL,tagId,super.page+1,MAX_POST_COUNT];
     
@@ -665,7 +665,7 @@ const int MAX_POST_COUNT = 10;//每页显示数目
                 
                 [self.tableView reloadData];
                 
-                [WBSUtils dismissHUD];
+                [DMSUtils dismissHUD];
             }else{
                 KLog(@"tag posts get error");
             }
@@ -673,7 +673,7 @@ const int MAX_POST_COUNT = 10;//每页显示数目
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         KLog(@"Error fetching authors: %@", [error localizedDescription]);
         
-        [WBSUtils showErrorMessage:[NSString stringWithFormat:@"%@", error.userInfo[NSLocalizedDescriptionKey]]];
+        [DMSUtils showErrorMessage:[NSString stringWithFormat:@"%@", error.userInfo[NSLocalizedDescriptionKey]]];
         
         [self.tableView reloadData];
     }];
@@ -742,7 +742,7 @@ const int MAX_POST_COUNT = 10;//每页显示数目
              failure:^(AFHTTPRequestOperation *operation, NSError *error) {
                  KLog(@"Error fetching authors: %@", [error localizedDescription]);
                  
-                 [WBSUtils showErrorMessage:[NSString stringWithFormat:@"%@", error.userInfo[NSLocalizedDescriptionKey]]];
+                 [DMSUtils showErrorMessage:[NSString stringWithFormat:@"%@", error.userInfo[NSLocalizedDescriptionKey]]];
                  
                  
                  [self.tableView reloadData];
@@ -774,11 +774,11 @@ const int MAX_POST_COUNT = 10;//每页显示数目
                          
                          if ([WBSConfig isWordpressOptimization]) {
                              
-                             [WBSUtils showErrorMessage:[NSString stringWithFormat:@"%@", error.userInfo[NSLocalizedDescriptionKey]]];
+                             [DMSUtils showErrorMessage:[NSString stringWithFormat:@"%@", error.userInfo[NSLocalizedDescriptionKey]]];
                          }
                          else{
                              
-                             [WBSUtils showErrorMessage:[NSString stringWithFormat:@"%@",NSLocalizedString(@"APINotSupported",nil)]];
+                             [DMSUtils showErrorMessage:[NSString stringWithFormat:@"%@",NSLocalizedString(@"APINotSupported",nil)]];
                          }
                          
                          
@@ -793,7 +793,7 @@ const int MAX_POST_COUNT = 10;//每页显示数目
         
         NSString *errorString = @"api init error";
         KLog(@"%@",errorString);
-        [WBSUtils showErrorMessage:errorString];
+        [DMSUtils showErrorMessage:errorString];
         
         return NO;
     }

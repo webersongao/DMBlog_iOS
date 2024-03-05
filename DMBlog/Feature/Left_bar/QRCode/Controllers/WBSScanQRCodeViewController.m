@@ -130,7 +130,7 @@
 /// 取消扫码
 -(void)quitScanCodeVC{
     
-    [WBSUtils goToMainViewController];
+    [DMSUtils goToMainViewController];
     
 }
 

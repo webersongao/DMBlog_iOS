@@ -9,7 +9,7 @@
 #import "WBSTagViewController.h"
 #import "AFNetworking.h"
 #import "WBSHomePostViewController.h"
-#import "WBSNetRequest.h"
+#import "DMNetRequest.h"
 #import "WBSTagModel.h"
 
 @interface WBSTagViewController ()
@@ -83,8 +83,8 @@
  */
 -(void)requestTagsFromSite{
     
-    [WBSUtils showProgressMessage:@"标签加载中..."];
-    [[WBSNetRequest sharedRequest]getTag_WithSuccess:^(NSArray *tagsArray, NSInteger tagsCount) {
+    [DMSUtils showProgressMessage:@"标签加载中..."];
+    [[DMNetRequest sharedRequest]getTag_WithSuccess:^(NSArray *tagsArray, NSInteger tagsCount) {
         //成功
         if (tagsArray.count>1) {
             NSMutableArray *tempTitlteArr = [[NSMutableArray alloc]initWithCapacity:tagsCount];
@@ -96,13 +96,13 @@
             self.tagsTitleArray = tempTitlteArr;
             [self showTagsView];
             
-            [WBSUtils dismissHUD];
+            [DMSUtils dismissHUD];
         }else{
-            [WBSUtils showErrorMessage:@"数据异常，稍后重试"];
+            [DMSUtils showErrorMessage:@"数据异常，稍后重试"];
         }
     } failure:^(NSError *error) {
         // 失败
-        [WBSUtils dismissHUD];
+        [DMSUtils dismissHUD];
     }];
     
 //    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
@@ -111,7 +111,7 @@
 //    NSString *requestURL = [NSString stringWithFormat:@"%@/api/get_tag_index/",baseURL];
 //    
 //    //创建加载中
-//    [WBSUtils showStatusMessage:@"标签加载中..."];
+//    [DMSUtils showStatusMessage:@"标签加载中..."];
 //    KLog(@"tag request URL:%@",requestURL);
 //    //获取作者数据
 //    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
@@ -146,13 +146,13 @@
 //                [self showTagsView];
 //                
 //                //取消加载中
-//                [WBSUtils dismissHUD];
+//                [DMSUtils dismissHUD];
 //            }else{
 //                KLog(@"tags get error");
 //            }
 //        });
 //    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-//        [WBSUtils showErrorMessage:[NSString stringWithFormat:@"%@", error.userInfo[NSLocalizedDescriptionKey]]];
+//        [DMSUtils showErrorMessage:[NSString stringWithFormat:@"%@", error.userInfo[NSLocalizedDescriptionKey]]];
 //        KLog(@"Error fetching authors: %@", [error localizedDescription]);
 //        
 //    }];

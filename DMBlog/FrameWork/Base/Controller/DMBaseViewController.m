@@ -19,8 +19,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor themeColor];
-    
-    
 }
 
 
@@ -31,9 +29,9 @@
     
 }
 
-/// 检车用户登录状态
+/// 检测用户登录状态
 - (void)checkUserLoginState {
-    if (![SingleObject shareSingleObject].isLogin && ![SingleObject shareSingleObject].isGuest){
+    if (![DMGUICtrl sharedCtrl].isLogin && ![DMGUICtrl sharedCtrl].isGuest){
         // 未登录 非游客模式
         WBSUserLoginViewController *loginVC = [[WBSUserLoginViewController alloc]init];
         [self presentViewController:loginVC animated:YES completion:nil];

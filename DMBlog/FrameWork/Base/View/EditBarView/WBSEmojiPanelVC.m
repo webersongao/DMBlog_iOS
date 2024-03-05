@@ -86,7 +86,7 @@
         NSInteger emojiNum = _pageIndex * 20 + section * 7 + row + 1;
         NSString *emojiImageName;
         if (emojiNum >= 106) {
-            emojiImageName = [WBSUtils.emojiDict[@(emojiNum).stringValue] stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@":"]];
+            emojiImageName = [DMSUtils.emojiDict[@(emojiNum).stringValue] stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@":"]];
         } else {
             emojiImageName = [NSString stringWithFormat:@"%03ld", (long)emojiNum];
         }
@@ -107,7 +107,7 @@
         NSInteger emojiNum = _pageIndex * 20 + section * 7 + row + 1;
         NSString *emojiImageName, *emojiStr;
         if (emojiNum >= 106) {
-            emojiStr = WBSUtils.emojiDict[@(emojiNum).stringValue];
+            emojiStr = DMSUtils.emojiDict[@(emojiNum).stringValue];
             emojiImageName = [emojiStr stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@":"]];
         } else {
             emojiStr = [NSString stringWithFormat:@"[%d]", (int)emojiNum - 1];

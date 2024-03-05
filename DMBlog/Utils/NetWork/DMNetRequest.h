@@ -1,5 +1,5 @@
 //
-//  WBSNetRequest.h
+//  DMNetRequest.h
 //  DMBlog
 //
 //  Created by WebersonGao on 2017/1/22.
@@ -22,7 +22,7 @@ typedef enum : NSUInteger {
     JSONAPIPostTypeTemp,
 } JSONAPIPostType;
 
-@interface WBSNetRequest : NSObject
+@interface DMNetRequest : NSObject
 
 
 + (instancetype)sharedRequest;

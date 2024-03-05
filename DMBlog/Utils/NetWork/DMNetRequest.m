@@ -1,15 +1,14 @@
 //
-//  WBSNetRequest.m
+//  DMNetRequest.m
 //  DMBlog
 //
 //  Created by WebersonGao on 2017/1/22.
 //  Copyright © 2017年 WebersonGao. All rights reserved.
 //
 
-#import "WBSNetRequest.h"
+#import "DMNetRequest.h"
 #import "WBSJsonApi.h"
 #import "WordPressApi.h"
-#import "NetworkingCenter.h"
 #import "WBSPostModel.h"
 #import "WBSCategoryModel.h"
 #import "WBSTagModel.h"
@@ -18,15 +17,14 @@
 #import "WBSUserModel.h"
 
 
-@interface WBSNetRequest ()
-
-@property (nonatomic, strong) NSString *jsonSiteUrl;  //!< JSON API 站点地址
-@property (nonatomic, strong) NSString *xmlSiteUrl;   //!< XMLRPC 站点地址
+@interface DMNetRequest ()
+//!
+@property (nonatomic, strong) NSString *siteApiUrl;   //!< XMLRPC 站点地址
 
 @end
 
 
-@implementation WBSNetRequest
+@implementation DMNetRequest
 
 //系统的初始化
 - (instancetype)init{
@@ -38,14 +36,12 @@
 
 //对外接口
 + (instancetype)sharedRequest{
-    static WBSNetRequest *instace = nil;
+    static DMNetRequest *instace = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         instace = [[self alloc] init];
     });
-    instace.jsonSiteUrl = [WBSUtils getObjectforKey:WBSSiteBaseURL];
-    instace.xmlSiteUrl = [WBSUtils getObjectforKey:WBSSiteXmlrpcURL];
-    KLog(@"jsonSiteUrl is %@  == xmlSiteUrl is %@ ",instace.jsonSiteUrl,instace.xmlSiteUrl);
+    instace.siteApiUrl = [DMGUICtrl sharedCtrl].requestUrl;
     return instace;
 }
 
@@ -94,7 +90,7 @@
         default:
             break;
     }
-    [WBSJsonApi get_JsonApi_Info_WithSiteURLStr:self.jsonSiteUrl controllerStr:controllerStr success:^(id versionInfoModel) {
+    [WBSJsonApi get_JsonApi_Info_WithSiteURLStr:self.siteApiUrl controllerStr:controllerStr success:^(id versionInfoModel) {
         // success
         successBlock(versionInfoModel);
     } failure:^(NSError *error) {
@@ -115,14 +111,13 @@
             if (![cookie isEqualToString:@""] && ![cookieName isEqualToString:@""]) {
                 isSuccess = YES;
                 WBSUserModel *userModel = (WBSUserModel *)responseObject;
-                [WBSUtils saveObjectforKey:cookie forKey:WBSSiteAuthCookie];
-                [WBSUtils saveObjectforKey:cookieName forKey:WBSSiteAuthCookieName];
-                [WBSUtils saveObjectforKey:self.jsonSiteUrl forKey:WBSSiteBaseURL];
-                [WBSUtils saveObjectforKey:userName forKey:WBSUserUserName];
-                [WBSUtils saveObjectforKey:PassWord forKey:WBSUserPassWord];
-                [SingleObject shareSingleObject].isLogin = YES;
+                [DMSUtils saveObjectforKey:cookie forKey:WBSSiteAuthCookie];
+                [DMSUtils saveObjectforKey:cookieName forKey:WBSSiteAuthCookieName];
+                [DMSUtils saveObjectforKey:userName forKey:WBSUserUserName];
+                [DMSUtils saveObjectforKey:PassWord forKey:WBSUserPassWord];
+                [DMGUICtrl sharedCtrl].isLogin = YES;
                 // 保存用户数据
-                [SingleObject shareSingleObject].user = userModel;
+                [DMGUICtrl sharedCtrl].user = userModel;
                 // 保存用户数据到数据库
                 [[FMDBManger sharedFMDBManger]insertUserToUserInformationTableWith:userModel];
                 
@@ -137,7 +132,7 @@
         } failure:^(NSError *error) {
             //失败
             NSString * errorStr = [NSString stringWithFormat:@"request failure：%@", [error localizedDescription]];
-            [SingleObject shareSingleObject].isLogin = NO;
+            [DMGUICtrl sharedCtrl].isLogin = NO;
             LoginSuccessblock(NO,errorStr);
         }];
         
@@ -148,19 +143,17 @@
                             username:userName
                             password:PassWord
                              success:^(NSURL *xmlrpcURL) {
-                                 [WBSUtils saveObjectforKey:self.jsonSiteUrl forKey:WBSSiteBaseURL];
-                                 [WBSUtils saveObjectforKey:[xmlrpcURL absoluteString] forKey:WBSSiteXmlrpcURL];
-                                 [WBSUtils saveObjectforKey:userName forKey:WBSUserUserName];
-                                 [WBSUtils saveObjectforKey:PassWord forKey:WBSUserPassWord];
-                                 [SingleObject shareSingleObject].isLogin = YES;
-                                 LoginSuccessblock(YES,nil);
-                                 KLog(@"-----登录成功--网址：%@ --",[xmlrpcURL absoluteString]);
-                             } failure:^(NSError *error) {
-                                 KLog(@"-----登录失败啦----");
-                                 NSString * errorStr = [NSString stringWithFormat:@"登录失败：%@", [error localizedDescription]];
-                                 [SingleObject shareSingleObject].isLogin = NO;
-                                 LoginSuccessblock(NO,errorStr);
-                             }];
+            [DMSUtils saveObjectforKey:userName forKey:WBSUserUserName];
+            [DMSUtils saveObjectforKey:PassWord forKey:WBSUserPassWord];
+            [DMGUICtrl sharedCtrl].isLogin = YES;
+            LoginSuccessblock(YES,nil);
+            KLog(@"-----登录成功--网址：%@ --",[xmlrpcURL absoluteString]);
+        } failure:^(NSError *error) {
+            KLog(@"-----登录失败啦----");
+            NSString * errorStr = [NSString stringWithFormat:@"登录失败：%@", [error localizedDescription]];
+            [DMGUICtrl sharedCtrl].isLogin = NO;
+            LoginSuccessblock(NO,errorStr);
+        }];
     }
     
 }
@@ -169,7 +162,7 @@
 /// 获取最近文章 get_recent_posts
 - (void)getRecentPosts_WithCount:(NSInteger)count page:(NSInteger)page postType:(JSONAPIPostType)postType success:(void (^)(NSArray *postsArray, NSInteger postsCount))successBlock failure:(void (^)(NSError *error))failureBlock{
     
-    [WBSJsonApi get_recent_posts_WithSiteUrlStr:self.jsonSiteUrl count:count page:page postType:[self setPostType:postType] success:^(NSArray *postsModelArray, NSInteger postsCount) {
+    [WBSJsonApi get_recent_posts_WithSiteUrlStr:self.siteApiUrl count:count page:page postType:[self setPostType:postType] success:^(NSArray *postsModelArray, NSInteger postsCount) {
         // 成功
         successBlock(postsModelArray,postsCount);
     }failure:^(NSError *error) {
@@ -184,7 +177,7 @@
 /// 获取文章 get_posts
 - (void)getPosts_WithCount:(NSInteger)count page:(NSInteger)page postType:(JSONAPIPostType)postType IgnoreStickyPosts:(BOOL)isIgnoreStickyPosts success:(void (^)(NSArray *postsArray, NSInteger postsCount ,BOOL isIgnoreStickyPosts))successBlock failure:(void (^)(NSError *error))failureBlock{
     
-    [WBSJsonApi get_Posts_WithSiteUrlStr:self.jsonSiteUrl count:count page:page postType:[self setPostType:postType] IgnoreStickyPosts:isIgnoreStickyPosts success:^(NSArray *postsModelArray, NSInteger postsCount, BOOL isIgnoreStickyPosts) {
+    [WBSJsonApi get_Posts_WithSiteUrlStr:self.siteApiUrl count:count page:page postType:[self setPostType:postType] IgnoreStickyPosts:isIgnoreStickyPosts success:^(NSArray *postsModelArray, NSInteger postsCount, BOOL isIgnoreStickyPosts) {
         // 成功
         successBlock(postsModelArray,postsCount,isIgnoreStickyPosts);
     } failure:^(NSError *error) {
@@ -199,7 +192,7 @@
 /// 获取指定文章 get_post
 - (void)getPost_WithPostId:(NSInteger)postId postSlug:(NSString *)postSlug postType:(JSONAPIPostType)postType success:(void (^)(NSArray *postsArray, NSInteger postsCount))successBlock failure:(void (^)(NSError *error))failureBlock{
     
-    [WBSJsonApi get_post_WithSiteUrlStr:self.jsonSiteUrl postId:postId postSlug:postSlug postType:[self setPostType:postType] success:^(NSArray *postsArray, NSInteger postsCount) {
+    [WBSJsonApi get_post_WithSiteUrlStr:self.siteApiUrl postId:postId postSlug:postSlug postType:[self setPostType:postType] success:^(NSArray *postsArray, NSInteger postsCount) {
         //
         successBlock(postsArray,postsCount);
     } failure:^(NSError *error) {
@@ -215,7 +208,7 @@
 /// 获取文章tag get_tag_index
 - (void)getTag_WithSuccess:(void (^)(NSArray *tagsArray, NSInteger tagsCount))successBlock failure:(void (^)(NSError *error))failureBlock{
     
-    [WBSJsonApi get_tag_index_WithSiteUrlStr:self.jsonSiteUrl success:^(NSArray *tagsArray, NSInteger tagsCount) {
+    [WBSJsonApi get_tag_index_WithSiteUrlStr:self.siteApiUrl success:^(NSArray *tagsArray, NSInteger tagsCount) {
         successBlock(tagsArray,tagsCount);
     } failure:^(NSError *error) {
         failureBlock(error);

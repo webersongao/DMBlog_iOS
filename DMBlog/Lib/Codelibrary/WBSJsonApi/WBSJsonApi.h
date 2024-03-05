@@ -3,7 +3,6 @@
 //  WBSJsonApi
 //
 //  Created by WebersonGao on 2017/1/26.
-//  该API 需要WordPress 的 Json Api-User 插件支持
 //  Copyright © 2017年 WebersonGao. All rights reserved.
 //
 // 该文件主要包含 【博客用户】 的 注册 删除 修改 搜索 等操作，【博客文章】的 增 删 改 查 参看 WBSBaseCoreApi 类

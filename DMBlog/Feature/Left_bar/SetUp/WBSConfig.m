@@ -15,7 +15,7 @@
  */
 + (BOOL)getMode
 {
-    return [[WBSUtils getObjectforKey:WBSIs_NightMode] boolValue];
+    return [[DMSUtils getObjectforKey:WBSIs_NightMode] boolValue];
 }
 
 /**
@@ -24,18 +24,17 @@
 +(WBSApiInfo *)getAuthoizedApiInfo
 {
     //获取相关存储信息
-    BOOL isJSONAPIEnable = [[WBSUtils getObjectforKey:WBSIs_JSONAPI] boolValue];
-    NSString *baseURL = [WBSUtils getObjectforKey:WBSSiteBaseURL];
-    NSString *xmlrpcURL = [WBSUtils getObjectforKey:WBSSiteXmlrpcURL];
-    NSString *username = [WBSUtils getObjectforKey:WBSUserUserName];
-    NSString *password = [WBSUtils getObjectforKey:WBSUserPassWord];
-    NSString *cookie = [WBSUtils getObjectforKey:WBSSiteAuthCookie];
+    BOOL isJSONAPIEnable = [[DMSUtils getObjectforKey:WBSIs_JSONAPI] boolValue];
+    NSString *baseURL = [DMSUtils getObjectforKey:WBSSiteBaseURL];
+    NSString *username = [DMSUtils getObjectforKey:WBSUserUserName];
+    NSString *password = [DMSUtils getObjectforKey:WBSUserPassWord];
+    NSString *cookie = [DMSUtils getObjectforKey:WBSSiteAuthCookie];
     //初始化ApiInfo
     WBSApiInfo *apiInfo = nil;
     if (isJSONAPIEnable) {
         apiInfo = [[WBSApiInfo alloc]initWithBaseURL:baseURL andGenerateAuthCookie:cookie];
     }else{
-        apiInfo = [[WBSApiInfo alloc] initWithXmlrpc:xmlrpcURL username:username password:password];
+//        apiInfo = [[WBSApiInfo alloc] initWithXmlrpc:xmlrpcURL username:username password:password];
     }
     //结果处理
     return apiInfo;
@@ -78,9 +77,9 @@
  */
 +(void)resetUserConfigToDefault{
     
-    [WBSUtils saveBoolforKey:YES forKey:WBSIs_JSONAPI];
-    [WBSUtils saveBoolforKey:YES forKey:WBSIs_WP_Optimization];
-    [WBSUtils saveBoolforKey:NO forKey:WBSIs_ShowPage];
+    [DMSUtils saveBoolforKey:YES forKey:WBSIs_JSONAPI];
+    [DMSUtils saveBoolforKey:YES forKey:WBSIs_WP_Optimization];
+    [DMSUtils saveBoolforKey:NO forKey:WBSIs_ShowPage];
 
 }
 

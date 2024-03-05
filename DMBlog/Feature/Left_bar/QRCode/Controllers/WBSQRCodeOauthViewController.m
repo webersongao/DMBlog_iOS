@@ -119,7 +119,7 @@
     //    [self.navigationController popToRootViewControllerAnimated:YES];
     // 回到tabbar的第一个index处
     [SVProgressHUD dismiss];
-    [WBSUtils goToMainViewController];
+    [DMSUtils goToMainViewController];
 }
 
 - (void)viewWillAppear:(BOOL)animated {

@@ -11,7 +11,6 @@
 #import "MMDrawerController.h"
 #import "WBSLeftMenuViewController.h"
 #import "DMBaseNaviViewController.h"
-
 #import "WBSUserLoginViewController.h"
 
 
@@ -37,24 +36,21 @@
     drawerController.maximumLeftDrawerWidth = 200.0;
     drawerController.maximumRightDrawerWidth = 200.0;
     
-    
     //6、初始化窗口、设置根控制器、显示窗口
     self.rootViewController = drawerController;
-    
-    
 }
 
 
 /// 跳转到登录控制器
 - (void)switchToLoginViewController{
-    
     //初始化程序入口，设置登录界面为首页
     WBSUserLoginViewController *loginVC = [[WBSUserLoginViewController alloc]initWithNibName:@"WBSLogin" bundle:nil];
     DMBaseNaviViewController *loginNavi = [[DMBaseNaviViewController alloc] initWithRootViewController:loginVC];
     //6、初始化窗口、设置根控制器、显示窗口
     self.rootViewController = loginNavi;
-    
-    
 }
+
+
+
 
 @end

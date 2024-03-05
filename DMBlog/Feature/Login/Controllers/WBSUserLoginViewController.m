@@ -8,8 +8,7 @@
 
 #import "WBSUserLoginViewController.h"
 #import "WBSSelectBlogViewController.h"
-#import "WBSNetRequest.h"
-#import "NetworkingCenter.h"
+#import "DMNetRequest.h"
 #import "WBSNetworking.h"
 #import "WBSPopoverView.h"
 
@@ -53,13 +52,13 @@
     if (apiInfo) {
         // 已经登录
         KLog(@"Current baseURL:%@ username:%@ password:%@-- 已经登录！", apiInfo.siteURL, apiInfo.username, apiInfo.password);
-        [SingleObject shareSingleObject].isLogin = YES;
+        [DMGUICtrl sharedCtrl].isLogin = YES;
         // 解档 赋值用户数据
-        NSString *userUID = [WBSUtils getObjectforKey:WBSUserUID];
+        NSString *userUID = [DMSUtils getObjectforKey:WBSUserUID];
         WBSUserModel *userModel = [[FMDBManger sharedFMDBManger]getUserModelInfoWithUid:userUID];
-        [SingleObject shareSingleObject].user = userModel;
+        [DMGUICtrl sharedCtrl].user = userModel;
         //已经登录过，跳转到博文主界面，程序继续
-        [WBSUtils goToMainViewController];
+        [DMSUtils goToMainViewController];
         return;
     }
 }
@@ -68,7 +67,7 @@
     [super viewDidLoad];
     
     // 默认开启 JSONAPI
-    [WBSUtils saveBoolforKey:YES forKey:WBSIs_JSONAPI];
+    [DMSUtils saveBoolforKey:YES forKey:WBSIs_JSONAPI];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"选择" style:UIBarButtonItemStylePlain target:self action:@selector(selectBlogAction:)];
     
     self.view.backgroundColor = [UIColor themeColor];
@@ -91,11 +90,11 @@
     self.apiTypeButton.selected = !sender.isSelected;
     if (self.apiTypeButton.isSelected) {
         KLog(@"开启XMLRPC API");
-        [WBSUtils saveBoolforKey:NO forKey:WBSIs_JSONAPI];
+        [DMSUtils saveBoolforKey:NO forKey:WBSIs_JSONAPI];
         _baseURLField.placeholder = @"www.jack_blog.com";
     } else {
         KLog(@"开启JSON API");
-        [WBSUtils saveBoolforKey:YES forKey:WBSIs_JSONAPI];
+        [DMSUtils saveBoolforKey:YES forKey:WBSIs_JSONAPI];
         _baseURLField.placeholder = @"请输入JSON API入口地址";
     }
 }
@@ -127,27 +126,23 @@
     NSString *password = [_passwordField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     
     // 验证账号密码 格式
-    if ([WBSUtils checkUrlString:baseURL userNameStr:username passWord:password]) {
+    if ([DMSUtils checkUrlString:baseURL userNameStr:username passWord:password]) {
         // 保存登录地址
-        [WBSUtils showProgressMessage:@"登录中..."];
-        NSString *jsonUrl = [NSString stringWithFormat:@"http://%@",baseURL];
-        NSString *xmlRpcUrl = [NSString stringWithFormat:@"http://%@/xmlrpc.php",baseURL];
-        [WBSUtils saveObjectforKey:jsonUrl forKey:WBSSiteBaseURL];
-        [WBSUtils saveObjectforKey:xmlRpcUrl forKey:WBSSiteXmlrpcURL];
+        [DMSUtils showProgressMessage:@"登录中..."];
     }else{
-        [WBSUtils showErrorMessage:@"账号异常,请稍后再试"];
+        [DMSUtils showErrorMessage:@"账号异常,请稍后再试"];
         return;
     }
-    [[WBSNetRequest sharedRequest] userLoginWithSiteBaseUrlStr:baseURL successBlock:^(BOOL isLoginSuccess, NSString *errorMsg) {
+    [[DMNetRequest sharedRequest] userLoginWithSiteBaseUrlStr:baseURL successBlock:^(BOOL isLoginSuccess, NSString *errorMsg) {
         // 登录结果
         if (isLoginSuccess) {
-            [WBSUtils showSuccessMessage:@"登录成功"];
-            [WBSUtils saveBoolforKey:NO forKey:WBSGuestLoginMode];
+            [DMSUtils showSuccessMessage:@"登录成功"];
+            [DMSUtils saveBoolforKey:NO forKey:WBSGuestLoginMode];
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                [WBSUtils goToMainViewController];
+                [DMSUtils goToMainViewController];
             });
         }else{
-            [WBSUtils showErrorMessage:errorMsg];
+            [DMSUtils showErrorMessage:errorMsg];
         }
     } userNameStr:username PassWordStr:password isJsonAPi:!self.apiTypeButton.isSelected];
     
@@ -190,9 +185,9 @@
 /// 游客登录
 - (IBAction)guestLogin:(UIButton *)button {
     
-    [WBSUtils saveBoolforKey:YES forKey:WBSGuestLoginMode];
-    [SingleObject shareSingleObject].isGuest = YES;
-    [WBSUtils goToMainViewController];
+    [DMSUtils saveBoolforKey:YES forKey:WBSGuestLoginMode];
+    [DMGUICtrl sharedCtrl].isGuest = YES;
+    [DMSUtils goToMainViewController];
     
 }
 
@@ -200,7 +195,7 @@
 
 
 -(void)tempButtonAction{
-    [SingleObject shareSingleObject].isGuest = YES;
+    [DMGUICtrl sharedCtrl].isGuest = YES;
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

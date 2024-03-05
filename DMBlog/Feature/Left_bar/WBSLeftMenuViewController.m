@@ -47,13 +47,13 @@
 {
     // 用户昵称数组
     NSString *userNickName = @"";
-    if ([SingleObject shareSingleObject].isLogin) {
-        if ([SingleObject shareSingleObject].user.displayname.length != 0) {
-            userNickName = [SingleObject shareSingleObject].user.displayname;
+    if ([DMGUICtrl sharedCtrl].isLogin) {
+        if ([DMGUICtrl sharedCtrl].user.displayname.length != 0) {
+            userNickName = [DMGUICtrl sharedCtrl].user.displayname;
         }else{
-            userNickName = [SingleObject shareSingleObject].user.nicename;
+            userNickName = [DMGUICtrl sharedCtrl].user.nicename;
         }
-    }else if([SingleObject shareSingleObject].isGuest){
+    }else if([DMGUICtrl sharedCtrl].isGuest){
         userNickName = @"游客";
     }else{
         userNickName = @"未登录";
@@ -143,7 +143,7 @@
     switch (indexPath.row) {
         case 0: {
             KLog(@"博客");
-            [WBSUtils goToMainViewController];
+            [DMSUtils goToMainViewController];
             break;
         }
         case 1: {
@@ -175,7 +175,6 @@
     // 1、清空保存数据
     NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
     [def setObject:nil forKey:WBSSiteBaseURL];
-    [def setObject:nil forKey:WBSSiteXmlrpcURL];
     [def setObject:nil forKey:WBSUserUserName];
     [def setObject:nil forKey:WBSUserPassWord];
     [def setObject:nil forKey:WBSSiteAuthCookie];
@@ -184,13 +183,13 @@
     // 恢复默认配置
     [WBSConfig resetUserConfigToDefault];
     // 修改登录状态
-    [SingleObject shareSingleObject].isLogin = NO;
-    [SingleObject shareSingleObject].user = nil;
+    [DMGUICtrl sharedCtrl].isLogin = NO;
+    [DMGUICtrl sharedCtrl].user = nil;
     
-    [WBSUtils showSuccessMessage:@"注销成功"];
+    [DMSUtils showSuccessMessage:@"注销成功"];
     
     // 跳转到登录界面
-    [WBSUtils goToLoginViewController];
+    [DMSUtils goToLoginViewController];
     
 }
 
@@ -215,13 +214,13 @@
 #pragma mark - 点击登录
 
 - (void)pushToUserInfoVC {
-    if (![SingleObject shareSingleObject].isLogin && ![SingleObject shareSingleObject].isGuest) {
+    if (![DMGUICtrl sharedCtrl].isLogin && ![DMGUICtrl sharedCtrl].isGuest) {
         // 如果 没有登录 跳转到登录控制器
         [self setContentViewController:[[WBSUserLoginViewController alloc]init]];
     }else if (![WBSConfig isJSONAPIEnable]){
-        [WBSUtils showErrorMessage:@"API不支持"];
-    }else if ([SingleObject shareSingleObject].isGuest){
-        [WBSUtils showErrorMessage:@"游客请登录"];
+        [DMSUtils showErrorMessage:@"API不支持"];
+    }else if ([DMGUICtrl sharedCtrl].isGuest){
+        [DMSUtils showErrorMessage:@"游客请登录"];
     }else {
         // json Api已经登录  跳转到个人信息界面 XMLRPC接口不支持该功能
         WBSUserCenterController *userInfoVC = [[WBSUserCenterController alloc]init];

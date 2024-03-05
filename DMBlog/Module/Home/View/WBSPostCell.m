@@ -173,17 +173,17 @@ const int MAX_PAGE_SIZE = 10;//每页默认显示文章数目
     _postModel = postModel;
     
     //表格数据绑定
-    [self.titleLabel setAttributedText:[WBSUtils attributedTittle:postModel.title]];
-    [self.bodyLabel setText:[WBSUtils shortString:postModel.content andLength:MAX_DESCRIPTION_LENGTH]];
+    [self.titleLabel setAttributedText:[DMSUtils attributedTittle:postModel.title]];
+    [self.bodyLabel setText:[DMSUtils shortString:postModel.content andLength:MAX_DESCRIPTION_LENGTH]];
     //作者处理
     NSString *authorStr = postModel.authorModel.name;
     [self.authorLabel setText:(!authorStr||[authorStr isEqual:@""])?@"admin":authorStr];
     self.titleLabel.textColor = [UIColor titleColor];
-    NSDate *createdDate = [WBSUtils dateFromString:postModel.date];
-    [self.timeLabel setAttributedText:[WBSUtils attributedTimeString:createdDate]];
-    [self.commentCountLabel setAttributedText:[WBSUtils attributedCommentCount:(int)postModel.commentsArray.count]];
+    NSDate *createdDate = [DMSUtils dateFromString:postModel.date];
+    [self.timeLabel setAttributedText:[DMSUtils attributedTimeString:createdDate]];
+    [self.commentCountLabel setAttributedText:[DMSUtils attributedCommentCount:(int)postModel.commentsArray.count]];
     NSArray *categories = postModel.categoriesArray;
-    NSString *joinedString = [WBSUtils shortString:[[categories firstObject]title] andLength:15];
+    NSString *joinedString = [DMSUtils shortString:[[categories firstObject]title] andLength:15];
     //处理分类为空的情况
     NSString *categoriesString = [NSString stringWithFormat:@"  发布在【%@】",[joinedString isEqualToString: @""]?@"默认分类":joinedString];
     self.categoriesLabel.text =categoriesString;
@@ -204,10 +204,10 @@ const int MAX_PAGE_SIZE = 10;//每页默认显示文章数目
     tempLabel.font = [UIFont boldSystemFontOfSize:14];
     
     tempLabel.font = [UIFont boldSystemFontOfSize:15];
-    [tempLabel setAttributedText:[WBSUtils attributedTittle:postModel.title]];
+    [tempLabel setAttributedText:[DMSUtils attributedTittle:postModel.title]];
     CGFloat titleHeight = [tempLabel sizeThatFits:CGSizeMake(self.width - 16, MAXFLOAT)].height;
     
-    tempLabel.text = [WBSUtils shortString:postModel.content andLength:MAX_DESCRIPTION_LENGTH];
+    tempLabel.text = [DMSUtils shortString:postModel.content andLength:MAX_DESCRIPTION_LENGTH];
     tempLabel.font = [UIFont systemFontOfSize:13];
     titleHeight += [tempLabel sizeThatFits:CGSizeMake(self.width - 16, MAXFLOAT)].height;
     
