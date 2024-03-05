@@ -8,6 +8,7 @@ target 'DMBlog' do
   # Pods for DMBlog
 
     pod 'MMDrawerController'
+    pod 'LookinServer', :configurations => ['Debug']
 
 
 

@@ -10,7 +10,7 @@
 #import "WBSRootTabBarController.h"
 #import "MMDrawerController.h"
 #import "WBSLeftMenuViewController.h"
-#import "WBSBaseNaviViewController.h"
+#import "DMBaseNaviViewController.h"
 
 #import "WBSUserLoginViewController.h"
 
@@ -23,7 +23,7 @@
     WBSRootTabBarController *centerVC = [[WBSRootTabBarController alloc]init];
     WBSLeftMenuViewController *leftVC = [[WBSLeftMenuViewController alloc]init];
     //2、初始化导航控制器
-    WBSBaseNaviViewController *centerNvaVC = [[WBSBaseNaviViewController alloc]initWithRootViewController:centerVC];
+    DMBaseNaviViewController *centerNvaVC = [[DMBaseNaviViewController alloc]initWithRootViewController:centerVC];
     UINavigationController *leftNvaVC = [[UINavigationController alloc]initWithRootViewController:leftVC];
     
     //3、使用MMDrawerController
@@ -50,7 +50,7 @@
     
     //初始化程序入口，设置登录界面为首页
     WBSUserLoginViewController *loginVC = [[WBSUserLoginViewController alloc]initWithNibName:@"WBSLogin" bundle:nil];
-    WBSBaseNaviViewController *loginNavi = [[WBSBaseNaviViewController alloc] initWithRootViewController:loginVC];
+    DMBaseNaviViewController *loginNavi = [[DMBaseNaviViewController alloc] initWithRootViewController:loginVC];
     //6、初始化窗口、设置根控制器、显示窗口
     self.rootViewController = loginNavi;
     
