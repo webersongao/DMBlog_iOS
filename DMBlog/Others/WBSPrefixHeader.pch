@@ -1,0 +1,87 @@
+//
+//  WBSPrefixHeader.pch
+//  DMBlog
+//
+//  Created by WebersonGao on 16/7/1.
+//  Copyright © 2016年 WebersonGao. All rights reserved.
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_5_0
+#warning "This project uses features only available in iOS SDK 5.0 and later."
+#endif
+
+#ifdef __OBJC__
+
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import "WBSUtils.h"
+#import "UIView+Sizes.h"
+#import "WBSMacro.h"
+#import "WBSConfig.h"
+#import "SingleObject.h"
+#import "FMDBManger.h"
+#endif
+
+#ifdef DEBUG // 调试
+
+#define KLog(...) NSLog(__VA_ARGS__)
+
+#else // 发布
+
+#define KLog(...)
+
+#endif
+
+#define iOS7 ([[UIDevice currentDevice].systemVersion doubleValue] >= 7.0)
+
+// weakSelf的统一宏定义
+#define weakSelf(ssss)  __weak __typeof(ssss)weakSelf = self;
+// 是否为空
+#define checkNull(__X__)        (__X__) == nil || [(__X__) isEqual:[NSNull null]] ? @"" : [NSString stringWithFormat:@"%@", (__X__)]
+
+/// 16进制 颜色
+/// 16进制 颜色
+#define UIColorFromHEXRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0] //<! 16进制 颜色
+
+// 定义RGB颜色
+#define RGBCOLOR(r,g,b) [UIColor colorWithRed:(r)/255.0f green:(g)/255.0f blue:(b)/255.0f alpha:1]
+
+#define HEXColor(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]   //<! 16进制 颜色
+
+#define HEXColor(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]   //<! 16进制 颜色
+
+#define HEXColor(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]   //<! 16进制 颜色
+
+/// 浅蓝色按钮
+#define kBlueColorOfButton RGBCOLOR(92, 154, 213)
+
+/// 左右 边距  大小
+#define kMarginSize 20
+
+// tababr的文字颜色
+#define BottomTextColor         RGBCOLOR(158, 158, 158)
+#define BottomTextSelectColor   RGBCOLOR(42, 143, 225)
+
+// 屏幕宽高 Bounds
+#define KSCREEN_Bounds  [UIScreen mainScreen].bounds
+#define KSCREEN_Size    [UIScreen mainScreen].bounds.size
+#define KSCREEN_Height  [UIScreen mainScreen].bounds.size.height
+#define KSCREEN_Width   [UIScreen mainScreen].bounds.size.width
+#define KSCREEN_HeightScale  KSCREEN_Height/667
+#define KSCREEN_WidthScale   KSCREEN_Width/375
+
+/// 博客类型
+#define KWordPress @"wordpress"
+#define KZBlog @"ZBlog"
+#define KCnBlog @"http://www.cnblogs.com"
+#define KOtherBlog @"otherBlog"
+
+
+//临时增加
+#pragma mark ---- RGBA color functions
+#define RGBA(c,a) [UIColor colorWithRed:((float)((c&0xFF0000)>>16))/255.0 green:((float)((c&0xFF00)>>8))/255.0 blue:((float)(c&0xFF))/255.0 alpha:a]
+#define TempRGB(c) RGBA(c,1)
+
+
