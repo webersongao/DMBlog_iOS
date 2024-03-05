@@ -15,6 +15,7 @@
 		3E9279612B96BE74005D2061 /* DMBlogTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E9279602B96BE74005D2061 /* DMBlogTests.m */; };
 		3E9279632B96BE90005D2061 /* DMBlogUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E9279622B96BE90005D2061 /* DMBlogUITests.m */; };
 		3E9279692B96BFE3005D2061 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E9279682B96BFE3005D2061 /* libiconv.tbd */; };
+		3E92796D2B96D796005D2061 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E92796C2B96D796005D2061 /* Launch Screen.storyboard */; };
 		4E3B10451E4868E2002EF825 /* navigationbar_sidebar.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E3B10441E4868E2002EF825 /* navigationbar_sidebar.png */; };
 		4E3B10471E4868EA002EF825 /* navigationbar-search.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E3B10461E4868EA002EF825 /* navigationbar-search.png */; };
 		4E3B104D1E4990D2002EF825 /* default_portrait@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E3B104B1E4990D2002EF825 /* default_portrait@2x.png */; };
@@ -598,6 +599,7 @@
 		3E9279622B96BE90005D2061 /* DMBlogUITests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMBlogUITests.m; sourceTree = "<group>"; };
 		3E9279652B96BF6B005D2061 /* libPods-iUnlocker.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libPods-iUnlocker.a"; sourceTree = "<group>"; };
 		3E9279682B96BFE3005D2061 /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
+		3E92796C2B96D796005D2061 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		4E3B10441E4868E2002EF825 /* navigationbar_sidebar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navigationbar_sidebar.png; sourceTree = "<group>"; };
 		4E3B10461E4868EA002EF825 /* navigationbar-search.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navigationbar-search.png"; sourceTree = "<group>"; };
 		4E3B104B1E4990D2002EF825 /* default_portrait@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "default_portrait@2x.png"; sourceTree = "<group>"; };
@@ -1366,7 +1368,7 @@
 		4EF150811D3E37C500D28265 /* UIColor+Config.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Config.m"; sourceTree = "<group>"; };
 		4EF150E91D3E3AAF00D28265 /* emoji.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = emoji.plist; sourceTree = "<group>"; };
 		4EF150EA1D3E3AAF00D28265 /* emojiToText.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = emojiToText.plist; sourceTree = "<group>"; };
-		4EF151171D3F1DC200D28265 /* WBSPrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WBSPrefixHeader.pch; sourceTree = "<group>"; };
+		4EF151171D3F1DC200D28265 /* PrefixMHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixMHeader.pch; sourceTree = "<group>"; };
 		4EF38F6C1D430E6B00CE28A4 /* NSString+GHMarkdownParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+GHMarkdownParser.h"; sourceTree = "<group>"; };
 		4EF38F6D1D430E6B00CE28A4 /* NSString+GHMarkdownParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+GHMarkdownParser.m"; sourceTree = "<group>"; };
 		4EF38F6E1D430E6B00CE28A4 /* GHMarkdownParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHMarkdownParser.h; sourceTree = "<group>"; };
@@ -2207,7 +2209,7 @@
 				3E92796A2B96C3B8005D2061 /* Module */,
 				4EF14A3B1D3E30DF00D28265 /* Utils */,
 				4EF14A361D3E30DF00D28265 /* Lib库 */,
-				4EF14A381D3E30DF00D28265 /* Others */,
+				4EF14A381D3E30DF00D28265 /* Resource */,
 				4EDFF2D31E375508000C47D2 /* localImages */,
 				3E92795B2B96BCF7005D2061 /* FrameWork */,
 				4EF149D11D3DF61D00D28265 /* Supporting Files */,
@@ -2250,7 +2252,7 @@
 			path = Lib;
 			sourceTree = "<group>";
 		};
-		4EF14A381D3E30DF00D28265 /* Others */ = {
+		4EF14A381D3E30DF00D28265 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
 				4EF149DD1D3DF61D00D28265 /* Assets.xcassets */,
@@ -2259,9 +2261,10 @@
 				4EF150E91D3E3AAF00D28265 /* emoji.plist */,
 				4EF150EA1D3E3AAF00D28265 /* emojiToText.plist */,
 				3E9279552B96BAFF005D2061 /* DMBlogSetting.plist */,
-				4EF151171D3F1DC200D28265 /* WBSPrefixHeader.pch */,
+				4EF151171D3F1DC200D28265 /* PrefixMHeader.pch */,
+				3E92796C2B96D796005D2061 /* Launch Screen.storyboard */,
 			);
-			path = Others;
+			path = Resource;
 			sourceTree = "<group>";
 		};
 		4EF14A3B1D3E30DF00D28265 /* Utils */ = {
@@ -3306,10 +3309,9 @@
 			};
 			buildConfigurationList = 4EF149C91D3DF61D00D28265 /* Build configuration list for PBXProject "DMBlog" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				English,
 				en,
 				Base,
 			);
@@ -3444,6 +3446,7 @@
 				4EF5E4141D41FD23002B6AFF /* (null) in Resources */,
 				4EDFF3DA1E375508000C47D2 /* tabbar-me@3x.png in Resources */,
 				4EDFF3F51E375508000C47D2 /* toolbar-emoji2@3x.png in Resources */,
+				3E92796D2B96D796005D2061 /* Launch Screen.storyboard in Resources */,
 				4EDFF3811E375508000C47D2 /* error.png in Resources */,
 				4EDFF37E1E375508000C47D2 /* done.png in Resources */,
 				4EB5D7A11E58232A00401F2F /* LICENSE in Resources */,
@@ -4140,7 +4143,6 @@
 			baseConfigurationReference = 56DA46F9A50FA823A4338123 /* Pods-DMBlog.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -4149,8 +4151,8 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/DMBlog/Lib",
 				);
-				GCC_PREFIX_HEADER = "$(SRCROOT)/DMBlog/Others/WBSPrefixHeader.pch";
-				INFOPLIST_FILE = DMBlog/Others/blogInfo.plist;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/DMBlog/Resource/PrefixMHeader.pch";
+				INFOPLIST_FILE = DMBlog/Resource/blogInfo.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
@@ -4172,7 +4174,6 @@
 			baseConfigurationReference = 2B094F9945C0BD3178FDFC5B /* Pods-DMBlog.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -4181,8 +4182,8 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/DMBlog/Lib",
 				);
-				GCC_PREFIX_HEADER = "$(SRCROOT)/DMBlog/Others/WBSPrefixHeader.pch";
-				INFOPLIST_FILE = DMBlog/Others/blogInfo.plist;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/DMBlog/Resource/PrefixMHeader.pch";
+				INFOPLIST_FILE = DMBlog/Resource/blogInfo.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
