@@ -11,6 +11,7 @@
 #import "DMNetRequest.h"
 #import "WBSNetworking.h"
 #import "WBSPopoverView.h"
+#import "WordPressXMLRPCApi.h"
 
 @interface WBSUserLoginViewController () <UITextFieldDelegate, UIGestureRecognizerDelegate,scaleViewSelectRowDelegate>
 
@@ -124,6 +125,20 @@
     NSString *baseURL = [_baseURLField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     NSString *username = [_usernameField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     NSString *password = [_passwordField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    
+    
+    NSURL *xmlrpcbaseURL = [NSURL URLWithString:[NSString stringWithFormat:@"https://%@",baseURL]];
+    NSString *title = @"weibo001 -My cat";
+    NSString *content = @"weibo content -- She likes to sleep like that";
+    
+    WordPressXMLRPCApi *wp = [[WordPressXMLRPCApi alloc] initWithXMLRPCEndpoint:xmlrpcbaseURL username:username password:password];
+    [wp publishPostWithText:content title:title success:^(NSUInteger postId, NSURL *permalink) {
+        NSLog(@"Image post successful with ID %d at %@", postId, permalink);
+    } failure:^(NSError *error) {
+        NSLog(@"Post upload failed: %@", [error localizedDescription]);
+    }];
+    
+    return;
     
     // 验证账号密码 格式
     if ([DMSUtils checkUrlString:baseURL userNameStr:username passWord:password]) {

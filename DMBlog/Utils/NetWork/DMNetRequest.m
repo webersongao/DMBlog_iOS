@@ -103,7 +103,7 @@
 - (void)userLoginWithSiteBaseUrlStr:(NSString *)siteBaseUrlStr successBlock:(void (^) (BOOL isLoginSuccess,NSString * errorMsg)) LoginSuccessblock userNameStr:(NSString *)userName PassWordStr:(NSString *)PassWord  isJsonAPi:(BOOL)isJsonApi{
     if (isJsonApi) {
         // 使用JSON API登陆
-        NSString *jsonUrl = [NSString stringWithFormat:@"http://%@",siteBaseUrlStr];
+        NSString *jsonUrl = [NSString stringWithFormat:@"https://%@",siteBaseUrlStr];
         [WBSJsonApi post_UserLogin_WithSiteUrlStr:jsonUrl userNameStr:userName passWordStr:PassWord inSSLSecure:NO success:^(id responseObject, NSString *cookieName, NSString *cookie) {
             // 成功
             BOOL isSuccess = NO;
